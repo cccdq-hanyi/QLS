@@ -1,0 +1,407 @@
+arm-none-eabi-objdump -d -S -x "Sources\\spi_comm.o" 
+
+Sources\spi_comm.o:     file format elf32-littlearm
+Sources\spi_comm.o
+architecture: arm, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+private flags = 5000000: [Version5 EABI]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .group        00000008  00000000  00000000  00000034  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  1 .group        00000008  00000000  00000000  0000003c  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  2 .group        00000008  00000000  00000000  00000044  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  3 .group        00000008  00000000  00000000  0000004c  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  4 .group        00000008  00000000  00000000  00000054  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  5 .group        00000008  00000000  00000000  0000005c  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  6 .group        00000008  00000000  00000000  00000064  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  7 .group        00000008  00000000  00000000  0000006c  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  8 .group        00000008  00000000  00000000  00000074  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+  9 .group        00000008  00000000  00000000  0000007c  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 10 .group        00000008  00000000  00000000  00000084  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 11 .group        00000008  00000000  00000000  0000008c  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 12 .group        00000008  00000000  00000000  00000094  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 13 .group        00000008  00000000  00000000  0000009c  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 14 .group        00000008  00000000  00000000  000000a4  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 15 .group        00000008  00000000  00000000  000000ac  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 16 .group        00000008  00000000  00000000  000000b4  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 17 .group        00000008  00000000  00000000  000000bc  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 18 .group        00000008  00000000  00000000  000000c4  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 19 .group        00000008  00000000  00000000  000000cc  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 20 .group        00000008  00000000  00000000  000000d4  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 21 .group        00000008  00000000  00000000  000000dc  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 22 .group        00000008  00000000  00000000  000000e4  2**2
+                  CONTENTS, READONLY, EXCLUDE, GROUP, LINK_ONCE_DISCARD
+ 23 .text         00000000  00000000  00000000  000000ec  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 24 .data         00000000  00000000  00000000  000000ec  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 25 .bss          00000000  00000000  00000000  000000ec  2**0
+                  ALLOC
+ 26 .text.spi_comm_Spi_Init 00000018  00000000  00000000  000000ec  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 27 .text.spi_comm_Spi_Transfer 00000098  00000000  00000000  00000104  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 28 .text.cal     00000004  00000000  00000000  0000019c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 29 .debug_info   00000a87  00000000  00000000  000001a0  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 30 .debug_abbrev 000001e7  00000000  00000000  00000c27  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 31 .debug_loc    00000053  00000000  00000000  00000e0e  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 32 .debug_aranges 00000030  00000000  00000000  00000e61  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 33 .debug_ranges 00000020  00000000  00000000  00000e91  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 34 .debug_macro  00000ae8  00000000  00000000  00000eb1  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 35 .debug_macro  00000016  00000000  00000000  00001999  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 36 .debug_macro  00000064  00000000  00000000  000019af  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 37 .debug_macro  000001b5  00000000  00000000  00001a13  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 38 .debug_macro  00000147  00000000  00000000  00001bc8  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 39 .debug_macro  0000009d  00000000  00000000  00001d0f  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 40 .debug_macro  00000010  00000000  00000000  00001dac  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 41 .debug_macro  000001a1  00000000  00000000  00001dbc  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 42 .debug_macro  00000052  00000000  00000000  00001f5d  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 43 .debug_macro  0000001c  00000000  00000000  00001faf  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 44 .debug_macro  00000010  00000000  00000000  00001fcb  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 45 .debug_macro  0000006b  00000000  00000000  00001fdb  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 46 .debug_macro  0000c63c  00000000  00000000  00002046  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 47 .debug_macro  000008b1  00000000  00000000  0000e682  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 48 .debug_macro  00000071  00000000  00000000  0000ef33  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 49 .debug_macro  00000016  00000000  00000000  0000efa4  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 50 .debug_macro  00000016  00000000  00000000  0000efba  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 51 .debug_macro  00000016  00000000  00000000  0000efd0  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 52 .debug_macro  00000016  00000000  00000000  0000efe6  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 53 .debug_macro  00000010  00000000  00000000  0000effc  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 54 .debug_macro  00000022  00000000  00000000  0000f00c  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 55 .debug_macro  00000010  00000000  00000000  0000f02e  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 56 .debug_macro  00000016  00000000  00000000  0000f03e  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 57 .debug_macro  00000064  00000000  00000000  0000f054  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 58 .debug_line   00000644  00000000  00000000  0000f0b8  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 59 .debug_str    00058c20  00000000  00000000  0000f6fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 60 .comment      00000071  00000000  00000000  0006831c  2**0
+                  CONTENTS, READONLY
+ 61 .debug_frame  00000054  00000000  00000000  00068390  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 62 .ARM.attributes 00000032  00000000  00000000  000683e4  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    df *ABS*	00000000 spi_comm.c
+00000000 l    d  .text	00000000 .text
+00000000 l    d  .data	00000000 .data
+00000000 l    d  .bss	00000000 .bss
+00000000 l    d  .text.spi_comm_Spi_Init	00000000 .text.spi_comm_Spi_Init
+00000000 l    d  .text.spi_comm_Spi_Transfer	00000000 .text.spi_comm_Spi_Transfer
+00000000 l    d  .text.cal	00000000 .text.cal
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_macro	00000000 .debug_macro
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l       .group	00000000 wm4.ewl_c_version.h.9.0bcb57d6a3f89baae1f9b121de2772f5
+00000000 l       .group	00000000 wm4.os_enum.h.9.f9446d6af68b3fa72a37d4d924d3b347
+00000000 l       .group	00000000 wm4.ansi_prefix.arm.h.13.b0de14de1ea9fd784b0a4f77984591e5
+00000000 l       .group	00000000 wm4.ansi_parms.h.64.05090287ebda70c0d79c02b050dca090
+00000000 l       .group	00000000 wm4.limits_api.h.9.6601ad3a87acd51f21a23e3a64c044eb
+00000000 l       .group	00000000 wm4.ewl_lib_ext1.h.14.f9b057cc049671136093886db2a3473f
+00000000 l       .group	00000000 wm4.cstdint.134.ec1cae7344170c6e77058adbe7517048
+00000000 l       .group	00000000 wm4.spi_comm.h.5.618bb2063f69dc9d76c7f17839061a0e
+00000000 l       .group	00000000 wm4.stdbool.h.9.9f273cdcc0550514899d19e595572d8a
+00000000 l       .group	00000000 wm4.device_registers.h.28.3cbad87728c0993d419263813538fbd1
+00000000 l       .group	00000000 wm4.s32_core_cm0.h.47.00ca01b99fc70b024058ebd211e615e6
+00000000 l       .group	00000000 wm4.S32K116.h.96.1143282ffabc87329ac2c2079847f767
+00000000 l       .group	00000000 wm4.S32K116_features.h.58.b46dea2830c3ccf908672e4732490674
+00000000 l       .group	00000000 wm4.clock_s32k1xx.h.20.5fd1936fa7ecc650230835c2101cb459
+00000000 l       .group	00000000 wm4.size_t.h.9.f983491a73b5c81f421ee8223b1ac5c0
+00000000 l       .group	00000000 wm4.ewl_rsize_t.h.11.b283831bb803e76ceb1756da2df9a1b5
+00000000 l       .group	00000000 wm4.cstddef.32.067e2ea187472b6198f9ace951e27a51
+00000000 l       .group	00000000 wm4.edma_driver.h.59.964a8a074df48f6d035c19bf239e917e
+00000000 l       .group	00000000 wm4.osif.h.20.66cae24aca2541939a431dfa48db3572
+00000000 l       .group	00000000 wm4.system_S32K116.h.29.5c65e05a637ef71e559d5709a5b3a973
+00000000 l       .group	00000000 wm4.dmaController1.h.87.ce9436c1a87581f8b26095c106f62551
+00000000 l       .group	00000000 wm4.clockMan1.h.83.e1e0f7a411e723df7cfc9c4f77f9e2e8
+00000000 l       .group	00000000 wm4.common.h.13.d60a6f9d4fb4db47a7cf54cc688c5816
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 l    d  .group	00000000 .group
+00000000 g     F .text.spi_comm_Spi_Init	00000018 spi_comm_Spi_Init
+00000000         *UND*	00000000 LPSPI_DRV_SlaveInit
+00000000         *UND*	00000000 lpspiCom1State
+00000000         *UND*	00000000 lpspiCom1_SlaveConfig0
+00000000 g     F .text.spi_comm_Spi_Transfer	00000098 spi_comm_Spi_Transfer
+00000000         *UND*	00000000 LPSPI_DRV_SlaveTransferBlocking
+00000018       O *COM*	00000008 results
+00000000 g     F .text.cal	00000002 cal
+0000000c       O *COM*	00000004 sendresults
+0000000c       O *COM*	00000004 runion_qls_results
+
+
+
+Disassembly of section .text.spi_comm_Spi_Init:
+
+00000000 <spi_comm_Spi_Init>:
+#include "common.h"
+
+
+qls_results results;
+void spi_comm_Spi_Init(void)
+{
+   0:	b508      	push	{r3, lr}
+	uint8_t ret=0;
+    /* Initialize LPSPI0 */
+    ret = LPSPI_DRV_SlaveInit(LPSPICOM1, &lpspiCom1State, &lpspiCom1_SlaveConfig0);
+   2:	2000      	movs	r0, #0
+   4:	4902      	ldr	r1, [pc, #8]	; (10 <spi_comm_Spi_Init+0x10>)
+   6:	4a03      	ldr	r2, [pc, #12]	; (14 <spi_comm_Spi_Init+0x14>)
+   8:	f7ff fffe 	bl	0 <LPSPI_DRV_SlaveInit>
+			8: R_ARM_THM_CALL	LPSPI_DRV_SlaveInit
+    return;
+}
+   c:	bd08      	pop	{r3, pc}
+   e:	46c0      	nop			; (mov r8, r8)
+	...
+			10: R_ARM_ABS32	lpspiCom1State
+			14: R_ARM_ABS32	lpspiCom1_SlaveConfig0
+
+Disassembly of section .text.spi_comm_Spi_Transfer:
+
+00000000 <spi_comm_Spi_Transfer>:
+
+uint8_t spi_comm_Spi_Transfer(void)
+{
+   0:	b510      	push	{r4, lr}
+   2:	b08e      	sub	sp, #56	; 0x38
+	uint8_t spi_comm_received = 0;
+	uint8_t spiDataSend[sizeof(qls_results_members)];
+    uint8_t spiDataReceive[sizeof(qls_results_members)];
+	uint8_t ret=0;
+	memset(spiDataReceive,0x0,sizeof(spiDataReceive));
+   4:	ac02      	add	r4, sp, #8
+   6:	2300      	movs	r3, #0
+   8:	9302      	str	r3, [sp, #8]
+   a:	9303      	str	r3, [sp, #12]
+   c:	9304      	str	r3, [sp, #16]
+   e:	9305      	str	r3, [sp, #20]
+  10:	9306      	str	r3, [sp, #24]
+  12:	9307      	str	r3, [sp, #28]
+	spiDataSend[0] = 0x55;
+  14:	a908      	add	r1, sp, #32
+  16:	3355      	adds	r3, #85	; 0x55
+  18:	700b      	strb	r3, [r1, #0]
+	ret = LPSPI_DRV_SlaveTransferBlocking(LPSPICOM1, spiDataSend, spiDataReceive, SPI_BUFFER_SIZE, SPICOMM_TIMEOUT);
+  1a:	3b41      	subs	r3, #65	; 0x41
+  1c:	9300      	str	r3, [sp, #0]
+  1e:	2000      	movs	r0, #0
+  20:	1c22      	adds	r2, r4, #0
+  22:	3304      	adds	r3, #4
+  24:	f7ff fffe 	bl	0 <LPSPI_DRV_SlaveTransferBlocking>
+			24: R_ARM_THM_CALL	LPSPI_DRV_SlaveTransferBlocking
+	if ((spiDataReceive[0] == 0xA5) && (spiDataReceive[1] == 0x5A))
+  28:	7823      	ldrb	r3, [r4, #0]
+    return;
+}
+
+uint8_t spi_comm_Spi_Transfer(void)
+{
+	uint8_t spi_comm_received = 0;
+  2a:	2000      	movs	r0, #0
+    uint8_t spiDataReceive[sizeof(qls_results_members)];
+	uint8_t ret=0;
+	memset(spiDataReceive,0x0,sizeof(spiDataReceive));
+	spiDataSend[0] = 0x55;
+	ret = LPSPI_DRV_SlaveTransferBlocking(LPSPICOM1, spiDataSend, spiDataReceive, SPI_BUFFER_SIZE, SPICOMM_TIMEOUT);
+	if ((spiDataReceive[0] == 0xA5) && (spiDataReceive[1] == 0x5A))
+  2c:	2ba5      	cmp	r3, #165	; 0xa5
+  2e:	d12f      	bne.n	90 <spi_comm_Spi_Transfer+0x90>
+  30:	ab02      	add	r3, sp, #8
+  32:	785b      	ldrb	r3, [r3, #1]
+  34:	2b5a      	cmp	r3, #90	; 0x5a
+  36:	d12b      	bne.n	90 <spi_comm_Spi_Transfer+0x90>
+	{
+
+		uint16_t tmp_ultrasonic,tmp_concentration;
+		uint64_t tmp_level,tmp_concen;
+		results.members.status = (spiDataReceive[3]<<8)+spiDataReceive[2];
+  38:	4a16      	ldr	r2, [pc, #88]	; (94 <spi_comm_Spi_Transfer+0x94>)
+  3a:	ab02      	add	r3, sp, #8
+  3c:	78d9      	ldrb	r1, [r3, #3]
+  3e:	0209      	lsls	r1, r1, #8
+  40:	7898      	ldrb	r0, [r3, #2]
+  42:	1841      	adds	r1, r0, r1
+  44:	8011      	strh	r1, [r2, #0]
+		results.members.temp_ultrasonic = (spiDataReceive[5]<<8)+spiDataReceive[4];
+  46:	7959      	ldrb	r1, [r3, #5]
+  48:	0209      	lsls	r1, r1, #8
+  4a:	7918      	ldrb	r0, [r3, #4]
+  4c:	1841      	adds	r1, r0, r1
+  4e:	8051      	strh	r1, [r2, #2]
+		results.members.temp_environment = (spiDataReceive[7]<<8)+spiDataReceive[6];
+  50:	79d9      	ldrb	r1, [r3, #7]
+  52:	0209      	lsls	r1, r1, #8
+  54:	7998      	ldrb	r0, [r3, #6]
+  56:	1841      	adds	r1, r0, r1
+  58:	8091      	strh	r1, [r2, #4]
+		results.members.tof_concentration = (spiDataReceive[15]<<56)+(spiDataReceive[14]<<48)+(spiDataReceive[13]<<40)+
+				(spiDataReceive[12]<<32)+(spiDataReceive[11]<<24)+(spiDataReceive[10]<<16)+(spiDataReceive[9]<<8)+spiDataReceive[8];
+  5a:	7ad8      	ldrb	r0, [r3, #11]
+  5c:	0604      	lsls	r4, r0, #24
+  5e:	7a98      	ldrb	r0, [r3, #10]
+  60:	0401      	lsls	r1, r0, #16
+  62:	1860      	adds	r0, r4, r1
+  64:	7a59      	ldrb	r1, [r3, #9]
+  66:	0209      	lsls	r1, r1, #8
+  68:	1840      	adds	r0, r0, r1
+  6a:	7a19      	ldrb	r1, [r3, #8]
+  6c:	1841      	adds	r1, r0, r1
+		uint16_t tmp_ultrasonic,tmp_concentration;
+		uint64_t tmp_level,tmp_concen;
+		results.members.status = (spiDataReceive[3]<<8)+spiDataReceive[2];
+		results.members.temp_ultrasonic = (spiDataReceive[5]<<8)+spiDataReceive[4];
+		results.members.temp_environment = (spiDataReceive[7]<<8)+spiDataReceive[6];
+		results.members.tof_concentration = (spiDataReceive[15]<<56)+(spiDataReceive[14]<<48)+(spiDataReceive[13]<<40)+
+  6e:	6091      	str	r1, [r2, #8]
+  70:	17c9      	asrs	r1, r1, #31
+  72:	60d1      	str	r1, [r2, #12]
+				(spiDataReceive[12]<<32)+(spiDataReceive[11]<<24)+(spiDataReceive[10]<<16)+(spiDataReceive[9]<<8)+spiDataReceive[8];
+		results.members.tof_level=(spiDataReceive[23]<<56)+(spiDataReceive[22]<<48)+(spiDataReceive[21]<<40)+
+				(spiDataReceive[20]<<32)+(spiDataReceive[19]<<24)+(spiDataReceive[18]<<16)+(spiDataReceive[17]<<8)+spiDataReceive[16];
+  74:	7cd8      	ldrb	r0, [r3, #19]
+  76:	0600      	lsls	r0, r0, #24
+  78:	7c99      	ldrb	r1, [r3, #18]
+  7a:	0409      	lsls	r1, r1, #16
+  7c:	1840      	adds	r0, r0, r1
+  7e:	7c59      	ldrb	r1, [r3, #17]
+  80:	0209      	lsls	r1, r1, #8
+  82:	1841      	adds	r1, r0, r1
+  84:	7c1b      	ldrb	r3, [r3, #16]
+  86:	18cb      	adds	r3, r1, r3
+		results.members.status = (spiDataReceive[3]<<8)+spiDataReceive[2];
+		results.members.temp_ultrasonic = (spiDataReceive[5]<<8)+spiDataReceive[4];
+		results.members.temp_environment = (spiDataReceive[7]<<8)+spiDataReceive[6];
+		results.members.tof_concentration = (spiDataReceive[15]<<56)+(spiDataReceive[14]<<48)+(spiDataReceive[13]<<40)+
+				(spiDataReceive[12]<<32)+(spiDataReceive[11]<<24)+(spiDataReceive[10]<<16)+(spiDataReceive[9]<<8)+spiDataReceive[8];
+		results.members.tof_level=(spiDataReceive[23]<<56)+(spiDataReceive[22]<<48)+(spiDataReceive[21]<<40)+
+  88:	6113      	str	r3, [r2, #16]
+  8a:	17db      	asrs	r3, r3, #31
+  8c:	6153      	str	r3, [r2, #20]
+				(spiDataReceive[20]<<32)+(spiDataReceive[19]<<24)+(spiDataReceive[18]<<16)+(spiDataReceive[17]<<8)+spiDataReceive[16];
+		spi_comm_received = 1;
+  8e:	2001      	movs	r0, #1
+	}
+	return spi_comm_received;
+}
+  90:	b00e      	add	sp, #56	; 0x38
+  92:	bd10      	pop	{r4, pc}
+  94:	00000000 	.word	0x00000000
+			94: R_ARM_ABS32	results
+
+Disassembly of section .text.cal:
+
+00000000 <cal>:
+//        	tmp_ultrasonic=results.members.temp_ultrasonic & 0xFFFF;
+//        	sendresults.members.ru16_level=cal_level(tmp_ultrasonic);
+//        	tmp_concentration=results.members.temp_ultrasonic & 0xFFFF;
+//        	sendresults.members.ru8_concentration=cal_concentration(tmp_concentration);
+	return;
+}
+   0:	4770      	bx	lr
+   2:	46c0      	nop			; (mov r8, r8)

@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/CPATH/delimiter=;
+environment/buildEnvironmentInclude/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/CPATH/operation=remove
+environment/buildEnvironmentInclude/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/C_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/append=true
+environment/buildEnvironmentInclude/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/appendContributed=true
+environment/buildEnvironmentLibrary/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/LIBRARY_PATH/delimiter=;
+environment/buildEnvironmentLibrary/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/LIBRARY_PATH/operation=remove
+environment/buildEnvironmentLibrary/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/append=true
+environment/buildEnvironmentLibrary/com.freescale.s32ds.cross.gnu.arm.cortexm.exe.Debug_FLASH/appendContributed=true

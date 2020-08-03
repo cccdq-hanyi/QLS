@@ -1,0 +1,385 @@
+{
+  "port": 41000,
+  "bonjour": "FreeMASTER service",
+  "web_root": "path_to_web_root",
+  "dirs": [
+    {
+      "path": "<tbd>",
+      "opts": "r",
+      "exts": [
+        ".txt",
+        ".json"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "name": "preset",
+      "description": "Default connection",
+      "connection_string": "{225E034C-1AA6-4EC5-9A6C-A9FA9E890373};drv=6;ptype=3;pnum=1;devid=;devlock=0;jtagspd=500",
+      "elf": ".\\lpspi_transfer_slave_s32k116.elf"
+    }
+  ],
+  "variables": [
+    {
+      "name": "results.members.tof_concentration",
+      "addr": "results.members.tof_concentration",
+      "size": 8,
+      "type": "uint"
+    },
+    {
+      "name": "results.members.tof_level",
+      "addr": "results.members.tof_level",
+      "size": 8,
+      "type": "uint"
+    },
+    {
+      "name": "results.members.temp_environment",
+      "addr": "results.members.temp_environment",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "results.members.temp_ultrasonic",
+      "addr": "results.members.temp_ultrasonic",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "global_temp",
+      "addr": "global_temp",
+      "size": 1,
+      "type": "uint"
+    },
+    {
+      "name": "TempDataTable[0].temp",
+      "addr": "TempDataTable[0].temp",
+      "size": 4,
+      "type": "float"
+    },
+    {
+      "name": "u8_timer_cnt",
+      "addr": "u8_timer_cnt",
+      "size": 1,
+      "type": "uint"
+    },
+    {
+      "name": "u8_10ms_cnt",
+      "addr": "u8_10ms_cnt",
+      "size": 1,
+      "type": "uint"
+    },
+    {
+      "name": "u8_100ms_cnt",
+      "addr": "u8_100ms_cnt",
+      "size": 1,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable",
+      "addr": "ADtable",
+      "size": 86,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[0]",
+      "addr": "ADtable[0]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[1]",
+      "addr": "ADtable[1]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[2]",
+      "addr": "ADtable[2]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[3]",
+      "addr": "ADtable[3]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[4]",
+      "addr": "ADtable[4]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[5]",
+      "addr": "ADtable[5]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[6]",
+      "addr": "ADtable[6]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[7]",
+      "addr": "ADtable[7]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[8]",
+      "addr": "ADtable[8]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[9]",
+      "addr": "ADtable[9]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[10]",
+      "addr": "ADtable[10]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[11]",
+      "addr": "ADtable[11]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[12]",
+      "addr": "ADtable[12]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[13]",
+      "addr": "ADtable[13]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[14]",
+      "addr": "ADtable[14]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[15]",
+      "addr": "ADtable[15]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[16]",
+      "addr": "ADtable[16]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[17]",
+      "addr": "ADtable[17]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[18]",
+      "addr": "ADtable[18]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[19]",
+      "addr": "ADtable[19]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[20]",
+      "addr": "ADtable[20]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[21]",
+      "addr": "ADtable[21]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[22]",
+      "addr": "ADtable[22]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[23]",
+      "addr": "ADtable[23]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[24]",
+      "addr": "ADtable[24]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[25]",
+      "addr": "ADtable[25]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[26]",
+      "addr": "ADtable[26]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[27]",
+      "addr": "ADtable[27]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[28]",
+      "addr": "ADtable[28]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[29]",
+      "addr": "ADtable[29]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[30]",
+      "addr": "ADtable[30]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[31]",
+      "addr": "ADtable[31]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[32]",
+      "addr": "ADtable[32]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[33]",
+      "addr": "ADtable[33]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[34]",
+      "addr": "ADtable[34]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[35]",
+      "addr": "ADtable[35]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[36]",
+      "addr": "ADtable[36]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[37]",
+      "addr": "ADtable[37]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[38]",
+      "addr": "ADtable[38]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[39]",
+      "addr": "ADtable[39]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[40]",
+      "addr": "ADtable[40]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[41]",
+      "addr": "ADtable[41]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "ADtable[42]",
+      "addr": "ADtable[42]",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "TempDataTable",
+      "addr": "TempDataTable",
+      "size": 2,
+      "type": "uint"
+    },
+    {
+      "name": "TempDataTable[0].alpha",
+      "addr": "TempDataTable[0].alpha",
+      "size": 4,
+      "type": "float"
+    },
+    {
+      "name": "TempDataTable[0].temp",
+      "addr": "TempDataTable[0].temp",
+      "size": 4,
+      "type": "float"
+    },
+    {
+      "name": "TempDataTable[2].alpha",
+      "addr": "TempDataTable[2].alpha",
+      "size": 4,
+      "type": "float"
+    },
+    {
+      "name": "TempDataTable[2].temp",
+      "addr": "TempDataTable[2].temp",
+      "size": 4,
+      "type": "float"
+    }
+    {
+      "name": "TempDataTable[3].temp",
+      "addr": "TempDataTable[3].temp",
+      "size": 4,
+      "type": "float"
+    }
+    {
+      "name": "TempDataTable[3].alpha",
+      "addr": "TempDataTable[3].alpha",
+      "size": 4,
+      "type": "float"
+    }    
+  ]
+}
