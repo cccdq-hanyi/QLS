@@ -3906,6 +3906,8 @@ pcm_pScopeVarAddr:
 	.ascii	"FMSTR_CMD_GETINFO 0xc0U\000"
 .LASF222:
 	.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
+.LASF271:
+	.ascii	"__HQ_IBIT__ 0\000"
 .LASF694:
 	.ascii	"FMSTR_CMD_READVAR16 0xD1U\000"
 .LASF233:
@@ -4259,8 +4261,6 @@ pcm_pScopeVarAddr:
 	.ascii	"CANMB_CTXREADY<<8 )))); FMSTR_MACROCODE_END()\000"
 .LASF705:
 	.ascii	"FMSTR_CMD_WRITEVAR32 0xf0U\000"
-.LASF545:
-	.ascii	"FMSTR_SCIC1_OFFSET 2\000"
 .LASF395:
 	.ascii	"FMSTR_USE_JTAG 0\000"
 .LASF28:
@@ -4578,12 +4578,6 @@ pcm_pScopeVarAddr:
 	.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
 .LASF215:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
-.LASF774:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
 .LASF275:
 	.ascii	"__DQ_IBIT__ 0\000"
 .LASF680:
@@ -4878,6 +4872,13 @@ pcm_pScopeVarAddr:
 .LASF587:
 	.ascii	"FMSTR_SCI_TE() FMSTR_SETBIT8(FMSTR_SCI_BASE, FMSTR_"
 	.ascii	"SCIC2_OFFSET, FMSTR_SCIC2_TE)\000"
+.LASF774:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF635:
 	.ascii	"FMSTR_FCAN_CLEAR_RXFLG() ( ((FMSTR_FLEXCAN_RXMB)&0x"
 	.ascii	"20) ? FMSTR_SETREG32(FMSTR_CAN_BASE, FMSTR_FCANIFR2"
@@ -4914,8 +4915,8 @@ pcm_pScopeVarAddr:
 .LASF539:
 	.ascii	"FMSTR_GETREG32(base,offset) (*(volatile FMSTR_U32*)"
 	.ascii	"(((FMSTR_U32)(base))+(offset)))\000"
-.LASF355:
-	.ascii	"FMSTR_CAN_BASE 0x40024000UL\000"
+.LASF545:
+	.ascii	"FMSTR_SCIC1_OFFSET 2\000"
 .LASF179:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
 .LASF714:
@@ -5001,8 +5002,8 @@ pcm_pScopeVarAddr:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
 .LASF11:
 	.ascii	"__ATOMIC_ACQ_REL 4\000"
-.LASF271:
-	.ascii	"__HQ_IBIT__ 0\000"
+.LASF355:
+	.ascii	"FMSTR_CAN_BASE 0x40024000UL\000"
 .LASF142:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF574:

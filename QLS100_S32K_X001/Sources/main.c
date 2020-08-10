@@ -59,13 +59,13 @@ int main(void)
 {
     /* Write your local variable definition here */
 	/*** ≤‚ ‘¡Ÿ ±±‰¡ø ***/
-    static float rf_us_tof_level;
-    static float rf_us_tof_concentra;
-	static float rf_VBat = 0.0;
-	static float rf_ult_temp = 0.0;
-	static float rf_pcb_temp = 0.0;
-	static float rf_Velocity = 0.0,level = 0.0;
-	static uint32_t r32u_tofcon = 0,r32u_toflevel = 0;
+	static float rf_us_tof_level;
+	static float rf_us_tof_concentra;
+    static float rf_VBat = 0.0;
+    static float rf_ult_temp = 0.0;
+    static float rf_tmr_level = 0.0;
+    static float rf_Velocity = 0.0,level = 0.0;
+    static uint32_t r32u_tofcon = 0,r32u_toflevel = 0;
 
     /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 #ifdef PEX_RTOS_INIT
@@ -152,9 +152,10 @@ int main(void)
 			rf_us_tof_level =  (float) results.members.tof_level / 1000000;
 			rf_us_tof_concentra =  (float) results.members.tof_concentration / 1000000;
 			rf_Velocity = tof_capture_Get_AvgVelocity(rf_us_tof_concentra);
-			rf_VBat = adsample_Get_Voltage();
-			rf_pcb_temp = adsample_Get_EnvirTemp();
+//			rf_VBat = adsample_Get_Voltage();
+			rf_tmr_level = adsample_Get_TmrLevel();
 			rf_ult_temp = adsample_Get_NTCTemp();
+			adsample_Get_EnvirTemp();
 		}
     }
 

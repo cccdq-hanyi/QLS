@@ -5127,6 +5127,8 @@ pcm_nAppCmdResult:
 	.ascii	"__INTPTR_MAX__ 2147483647\000"
 .LASF153:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
+.LASF355:
+	.ascii	"FMSTR_CAN_BASE 0x40024000UL\000"
 .LASF621:
 	.ascii	"FMSTR_FCMBDSR4 0x0F\000"
 .LASF515:
@@ -6184,12 +6186,6 @@ pcm_nAppCmdResult:
 	.ascii	"nArgsLen\000"
 .LASF215:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
-.LASF809:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
 .LASF482:
 	.ascii	"FMSTR_TSA_MEMBER(parenttype,name,type) \000"
 .LASF275:
@@ -6265,8 +6261,6 @@ pcm_nAppCmdResult:
 	.ascii	"FMSTR_U16\000"
 .LASF54:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
-.LASF545:
-	.ascii	"FMSTR_SCIC1_OFFSET 2\000"
 .LASF4:
 	.ascii	"__GNUC_MINOR__ 9\000"
 .LASF35:
@@ -6494,6 +6488,13 @@ pcm_nAppCmdResult:
 	.ascii	"SCIC2_OFFSET, FMSTR_SCIC2_TE)\000"
 .LASF784:
 	.ascii	"FMSTR_GetAppCmdRespData\000"
+.LASF809:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF635:
 	.ascii	"FMSTR_FCAN_CLEAR_RXFLG() ( ((FMSTR_FLEXCAN_RXMB)&0x"
 	.ascii	"20) ? FMSTR_SETREG32(FMSTR_CAN_BASE, FMSTR_FCANIFR2"
@@ -6534,8 +6535,8 @@ pcm_nAppCmdResult:
 .LASF539:
 	.ascii	"FMSTR_GETREG32(base,offset) (*(volatile FMSTR_U32*)"
 	.ascii	"(((FMSTR_U32)(base))+(offset)))\000"
-.LASF355:
-	.ascii	"FMSTR_CAN_BASE 0x40024000UL\000"
+.LASF545:
+	.ascii	"FMSTR_SCIC1_OFFSET 2\000"
 .LASF179:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
 .LASF384:

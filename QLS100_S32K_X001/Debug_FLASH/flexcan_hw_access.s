@@ -39183,8 +39183,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"DMA_ERQ_ERQ10_WIDTH 1u\000"
 .LASF391:
 	.ascii	"_EWL_OS_DISK_FILE_SUPPORT 0\000"
-.LASF2889:
-	.ascii	"FLEXIO_CTRL_SWRST_SHIFT 1u\000"
+.LASF462:
+	.ascii	"_EWL_BEGIN_NAMESPACE_STD \000"
 .LASF5920:
 	.ascii	"MPU_CESR_VLD_SHIFT 0u\000"
 .LASF401:
@@ -40460,8 +40460,6 @@ FLEXCAN_ConfigPN:
 	.ascii	"LPUART_CTRL_TCIE_WIDTH 1u\000"
 .LASF3871:
 	.ascii	"FTM_SYNCONF_SWWRBUF_SHIFT 9u\000"
-.LASF1844:
-	.ascii	"CMP_C2_CH7F_MASK 0x800000u\000"
 .LASF410:
 	.ascii	"_EWL_POSIX 0\000"
 .LASF995:
@@ -40770,8 +40768,6 @@ FLEXCAN_ConfigPN:
 	.ascii	"N_CTRL1_PSEG1_SHIFT))&CAN_CTRL1_PSEG1_MASK)\000"
 .LASF4752:
 	.ascii	"LPI2C_SCFGR2_DATAVD_WIDTH 6u\000"
-.LASF4832:
-	.ascii	"LPIT_MCR_SW_RST_SHIFT 1u\000"
 .LASF7944:
 	.ascii	"FEATURE_FLS_EE_SIZE_0101 (0x0200u)\000"
 .LASF1841:
@@ -41341,10 +41337,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"PDB_SC_SWTRIG_MASK 0x10000u\000"
 .LASF3932:
 	.ascii	"FTM_SWOCTRL_CH2OC_WIDTH 1u\000"
-.LASF4946:
-	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
-	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
-	.ascii	"TRG_SEL_MASK)\000"
+.LASF4832:
+	.ascii	"LPIT_MCR_SW_RST_SHIFT 1u\000"
 .LASF8430:
 	.ascii	"FLEXCAN_FILTER_MATCH_RANGE\000"
 .LASF6424:
@@ -41878,8 +41872,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"DMA_TCD_NBYTES_MLOFFYES_MLOFF_WIDTH 20u\000"
 .LASF2929:
 	.ascii	"FLEXIO_TIMIEN_TEIE_SHIFT 0u\000"
-.LASF2777:
-	.ascii	"DMAMUX_CHCFG_SOURCE_WIDTH 6u\000"
+.LASF2889:
+	.ascii	"FLEXIO_CTRL_SWRST_SHIFT 1u\000"
 .LASF1486:
 	.ascii	"CAN_FLT_DLC_FLT_DLC_LO_WIDTH 4u\000"
 .LASF1887:
@@ -42340,10 +42334,13 @@ FLEXCAN_ConfigPN:
 	.ascii	"ADC_INSTANCE_COUNT (1u)\000"
 .LASF1272:
 	.ascii	"CAN_ESR1_CRCERR_FAST_MASK 0x10000000u\000"
-.LASF2636:
-	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
-	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
-	.ascii	")\000"
+.LASF8552:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF6935:
 	.ascii	"RTC_CR_UM_WIDTH 1u\000"
 .LASF6114:
@@ -43507,8 +43504,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF3746:
 	.ascii	"FTM_FLTCTRL_FAULT2EN_MASK 0x4u\000"
-.LASF1782:
-	.ascii	"CMP_C1_CHN4_WIDTH 1u\000"
+.LASF632:
+	.ascii	"ADC_IRQS_CH_COUNT (1u)\000"
 .LASF5802:
 	.ascii	"MCM_LMDR_CF0(x) (((uint32_t)(((uint32_t)(x))<<MCM_L"
 	.ascii	"MDR_CF0_SHIFT))&MCM_LMDR_CF0_MASK)\000"
@@ -45077,12 +45074,10 @@ FLEXCAN_ConfigPN:
 	.ascii	"S_OPACR_TP3_SHIFT))&AIPS_OPACR_TP3_MASK)\000"
 .LASF973:
 	.ascii	"AIPS_OPACR_SP1_MASK 0x4000000u\000"
-.LASF8552:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
+.LASF4946:
+	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
+	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
+	.ascii	"TRG_SEL_MASK)\000"
 .LASF7445:
 	.ascii	"SIM_CHIPCTL_ADC_SUPPLYEN_MASK 0x80000u\000"
 .LASF4892:
@@ -47430,8 +47425,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"LPTMR_PSR_PCS_SHIFT 0u\000"
 .LASF7176:
 	.ascii	"S32_SysTick_INSTANCE_COUNT (1u)\000"
-.LASF632:
-	.ascii	"ADC_IRQS_CH_COUNT (1u)\000"
+.LASF1844:
+	.ascii	"CMP_C2_CH7F_MASK 0x800000u\000"
 .LASF4459:
 	.ascii	"LPI2C_MCFGR1_PRESCALE_SHIFT 0u\000"
 .LASF6849:
@@ -47947,6 +47942,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"TM_MODE_CAPTEST_SHIFT))&FTM_MODE_CAPTEST_MASK)\000"
 .LASF1968:
 	.ascii	"CRC_GPOLY_LOW_SHIFT 0u\000"
+.LASF1782:
+	.ascii	"CMP_C1_CHN4_WIDTH 1u\000"
 .LASF5623:
 	.ascii	"LPUART_DATA_FRETSC_WIDTH 1u\000"
 .LASF3107:
@@ -49105,6 +49102,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"S32_SCB_SHCSR_SVCALLPENDED_MASK 0x8000u\000"
 .LASF8512:
 	.ascii	"FLEXCAN_ClearErrIntStatusFlag\000"
+.LASF2777:
+	.ascii	"DMAMUX_CHCFG_SOURCE_WIDTH 6u\000"
 .LASF6155:
 	.ascii	"MSCM_CPxCFG0_DCSZ_WIDTH 8u\000"
 .LASF4092:
@@ -49725,8 +49724,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"FTM_PAIR2DEADTIME_DTPS_WIDTH 2u\000"
 .LASF2910:
 	.ascii	"FLEXIO_SHIFTSTAT_SSF_WIDTH 4u\000"
-.LASF462:
-	.ascii	"_EWL_BEGIN_NAMESPACE_STD \000"
+.LASF5402:
+	.ascii	"LPUART_STAT_FE_SHIFT 17u\000"
 .LASF2526:
 	.ascii	"DMA_HRS_HRS12_SHIFT 12u\000"
 .LASF112:
@@ -50151,8 +50150,6 @@ FLEXCAN_ConfigPN:
 	.ascii	"OL_POL0_SHIFT))&FTM_POL_POL0_MASK)\000"
 .LASF6007:
 	.ascii	"MPU_RGD_WORD2_M3SM_MASK 0x600000u\000"
-.LASF8534:
-	.ascii	"mb_index\000"
 .LASF1373:
 	.ascii	"CAN_CRCR_MBCRC_SHIFT 16u\000"
 .LASF3977:
@@ -52111,8 +52108,8 @@ FLEXCAN_ConfigPN:
 	.ascii	"FTM_OUTMASK_CH1OM_SHIFT))&FTM_OUTMASK_CH1OM_MASK)\000"
 .LASF1536:
 	.ascii	"CAN_PL2_PLMASK_LO_Data_byte_2_MASK 0xFF00u\000"
-.LASF5402:
-	.ascii	"LPUART_STAT_FE_SHIFT 17u\000"
+.LASF8534:
+	.ascii	"mb_index\000"
 .LASF7437:
 	.ascii	"SIM_CHIPCTL_PDB_BB_SEL_MASK 0x2000u\000"
 .LASF8012:
@@ -54326,6 +54323,10 @@ FLEXCAN_ConfigPN:
 .LASF8223:
 	.ascii	"FLEXCAN_RX_FIFO_ID_FILTER_FORMATA_STD_MASK (0x3FF80"
 	.ascii	"000U)\000"
+.LASF2636:
+	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
+	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
+	.ascii	")\000"
 .LASF1263:
 	.ascii	"CAN_ESR1_ERROVR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ERROVR_SHIFT))&CAN_ESR1_ERROVR_MASK)\000"

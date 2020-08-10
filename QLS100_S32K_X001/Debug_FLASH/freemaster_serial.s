@@ -2492,12 +2492,8 @@
 	.ascii	"_CAST(x)}\000"
 .LASF584:
 	.ascii	"FMSTR_SCICTRL_TIE 0x800000\000"
-.LASF761:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
+.LASF545:
+	.ascii	"FMSTR_SCIC1_OFFSET 2\000"
 .LASF78:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
 .LASF423:
@@ -2747,6 +2743,9 @@
 	.ascii	"FMSTR_FCMBIDR2 0x06\000"
 .LASF52:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
+.LASF526:
+	.ascii	"FMSTR_PTR2ADDR(tmpAddr,ptr) ( tmpAddr = (FMSTR_ADDR"
+	.ascii	") (FMSTR_U8*) ptr )\000"
 .LASF702:
 	.ascii	"FMSTR_CMD_WRITEVAR16 0xe4U\000"
 .LASF119:
@@ -2887,9 +2886,13 @@
 	.ascii	"FMSTR_CMD_GETINFO 0xc0U\000"
 .LASF269:
 	.ascii	"__QQ_IBIT__ 0\000"
-.LASF526:
-	.ascii	"FMSTR_PTR2ADDR(tmpAddr,ptr) ( tmpAddr = (FMSTR_ADDR"
-	.ascii	") (FMSTR_U8*) ptr )\000"
+.LASF761:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF444:
 	.ascii	"FMSTR_TSATBL_STRPTR_CAST(x) ((FMSTR_TSATBL_STRPTR)("
 	.ascii	"x))\000"
@@ -3255,8 +3258,12 @@
 	.ascii	"FMSTR_TSA_INFO_VAR_FLAG 0x0001U\000"
 .LASF49:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
-.LASF545:
-	.ascii	"FMSTR_SCIC1_OFFSET 2\000"
+.LASF636:
+	.ascii	"FMSTR_FCAN_TEST_TXFLG() ( ((FMSTR_FLEXCAN_TXMB)&0x2"
+	.ascii	"0) ? FMSTR_TSTBIT32(FMSTR_CAN_BASE, FMSTR_FCANIFR2_"
+	.ascii	"OFFSET, (1<<((FMSTR_FLEXCAN_TXMB)-32))): FMSTR_TSTB"
+	.ascii	"IT32(FMSTR_CAN_BASE, FMSTR_FCANIFR1_OFFSET, (1<<(FM"
+	.ascii	"STR_FLEXCAN_TXMB))) )\000"
 .LASF493:
 	.ascii	"FMSTR_TSA_TABLE(id) \000"
 .LASF732:
@@ -3895,12 +3902,6 @@
 .LASF517:
 	.ascii	"FMSTR_SkipInBuffer(pDest,nSize) ( ((FMSTR_BPTR)(pDe"
 	.ascii	"st)) + (nSize) )\000"
-.LASF636:
-	.ascii	"FMSTR_FCAN_TEST_TXFLG() ( ((FMSTR_FLEXCAN_TXMB)&0x2"
-	.ascii	"0) ? FMSTR_TSTBIT32(FMSTR_CAN_BASE, FMSTR_FCANIFR2_"
-	.ascii	"OFFSET, (1<<((FMSTR_FLEXCAN_TXMB)-32))): FMSTR_TSTB"
-	.ascii	"IT32(FMSTR_CAN_BASE, FMSTR_FCANIFR1_OFFSET, (1<<(FM"
-	.ascii	"STR_FLEXCAN_TXMB))) )\000"
 .LASF437:
 	.ascii	"FMSTR_TSA_INFO_STRUCT 0x0000U\000"
 .LASF465:

@@ -69,7 +69,7 @@ QLS111_S32K_X001.siz \
 all: warning-messages explicit-dependencies QLS111_S32K_X001.elf secondary-outputs
 
 # Tool invocations
-QLS111_S32K_X001.elf: $(OBJS) D:/s32dsworkspace/QLS/QLS111_S32K_X001/Project_Settings/Linker_Files/S32K116_17_flash.ld $(USER_OBJS)
+QLS111_S32K_X001.elf: $(OBJS) D:/QLS/QLS111_S32K_X001/Project_Settings/Linker_Files/S32K116_17_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Executing target #63 $@'
 	@echo 'Invoking: Standard S32DS C Linker'

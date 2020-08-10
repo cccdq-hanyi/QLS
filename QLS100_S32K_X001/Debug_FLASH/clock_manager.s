@@ -35080,10 +35080,13 @@ g_clockState:
 	.ascii	"ADC_INSTANCE_COUNT (1u)\000"
 .LASF1263:
 	.ascii	"CAN_ESR1_CRCERR_FAST_MASK 0x10000000u\000"
-.LASF2627:
-	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
-	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
-	.ascii	")\000"
+.LASF8576:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF6926:
 	.ascii	"RTC_CR_UM_WIDTH 1u\000"
 .LASF6105:
@@ -46815,12 +46818,6 @@ g_clockState:
 	.ascii	"SIRC_CLK\000"
 .LASF3105:
 	.ascii	"FTFC_FSEC_MEEN_WIDTH 2u\000"
-.LASF8576:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
 .LASF643:
 	.ascii	"ADC_CFG1_MODE_WIDTH 2u\000"
 .LASF6323:
@@ -47119,6 +47116,10 @@ g_clockState:
 	.ascii	"FPR_SHIFT))&CMP_C0_FPR_MASK)\000"
 .LASF8258:
 	.ascii	"LPSPI0_CLK\000"
+.LASF2627:
+	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
+	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
+	.ascii	")\000"
 .LASF1254:
 	.ascii	"CAN_ESR1_ERROVR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ERROVR_SHIFT))&CAN_ESR1_ERROVR_MASK)\000"

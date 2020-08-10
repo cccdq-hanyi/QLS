@@ -14423,7 +14423,7 @@ uint8_t spi_comm_Spi_Transfer(void);
 #define DO_HV_STATUS_DIS 10U
 
 
-#define QLS_111 (1)
+
 
 
 

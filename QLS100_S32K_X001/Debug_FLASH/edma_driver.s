@@ -49387,6 +49387,8 @@ s_virtEdmaState:
 	.ascii	"ULE_LPTMR0_ALT0 }\000"
 .LASF1056:
 	.ascii	"CAN_MCR_HALT_MASK 0x10000000u\000"
+.LASF2438:
+	.ascii	"DMA_ERR_ERR10_SHIFT 10u\000"
 .LASF5806:
 	.ascii	"MCM_LMDR_LMSZH(x) (((uint32_t)(((uint32_t)(x))<<MCM"
 	.ascii	"_LMDR_LMSZH_SHIFT))&MCM_LMDR_LMSZH_MASK)\000"
@@ -49891,8 +49893,6 @@ s_virtEdmaState:
 	.ascii	"N_CTRL1_PSEG1_SHIFT))&CAN_CTRL1_PSEG1_MASK)\000"
 .LASF8288:
 	.ascii	"BUS_CLK\000"
-.LASF4816:
-	.ascii	"LPIT_MCR_SW_RST_SHIFT 1u\000"
 .LASF7928:
 	.ascii	"FEATURE_FLS_EE_SIZE_0101 (0x0200u)\000"
 .LASF1825:
@@ -50474,10 +50474,8 @@ s_virtEdmaState:
 	.ascii	"PDB_SC_SWTRIG_MASK 0x10000u\000"
 .LASF3916:
 	.ascii	"FTM_SWOCTRL_CH2OC_WIDTH 1u\000"
-.LASF4930:
-	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
-	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
-	.ascii	"TRG_SEL_MASK)\000"
+.LASF4816:
+	.ascii	"LPIT_MCR_SW_RST_SHIFT 1u\000"
 .LASF6408:
 	.ascii	"PDB_SC_DMAEN_WIDTH 1u\000"
 .LASF4821:
@@ -54321,12 +54319,10 @@ s_virtEdmaState:
 	.ascii	"S_OPACR_TP3_SHIFT))&AIPS_OPACR_TP3_MASK)\000"
 .LASF957:
 	.ascii	"AIPS_OPACR_SP1_MASK 0x4000000u\000"
-.LASF8730:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
+.LASF4930:
+	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
+	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
+	.ascii	"TRG_SEL_MASK)\000"
 .LASF7429:
 	.ascii	"SIM_CHIPCTL_ADC_SUPPLYEN_MASK 0x80000u\000"
 .LASF4876:
@@ -56079,8 +56075,13 @@ s_virtEdmaState:
 	.ascii	"ADC_SC2_TRGPRNUM_MASK 0x6000u\000"
 .LASF634:
 	.ascii	"ADC_CFG1_MODE_MASK 0xCu\000"
-.LASF3526:
-	.ascii	"FTM_COMBINE_MCOMBINE1_MASK 0x8000u\000"
+.LASF8730:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF6670:
 	.ascii	"RCM_PARAM_ELOL(x) (((uint32_t)(((uint32_t)(x))<<RCM"
 	.ascii	"_PARAM_ELOL_SHIFT))&RCM_PARAM_ELOL_MASK)\000"
@@ -57932,8 +57933,6 @@ s_virtEdmaState:
 	.ascii	"PMC_LVDSC1_LVDIE_MASK 0x20u\000"
 .LASF5968:
 	.ascii	"MPU_RGD_WORD2_M0PE_SHIFT 5u\000"
-.LASF2594:
-	.ascii	"DMA_DCHPRI_DPA_SHIFT 6u\000"
 .LASF253:
 	.ascii	"__ULACCUM_FBIT__ 32\000"
 .LASF1190:
@@ -61311,8 +61310,8 @@ s_virtEdmaState:
 	.ascii	"CMP_C0_FILTER_CNT_SHIFT))&CMP_C0_FILTER_CNT_MASK)\000"
 .LASF2893:
 	.ascii	"FLEXIO_SHIFTSTAT_SSF_SHIFT 0u\000"
-.LASF2438:
-	.ascii	"DMA_ERR_ERR10_SHIFT 10u\000"
+.LASF2594:
+	.ascii	"DMA_DCHPRI_DPA_SHIFT 6u\000"
 .LASF1706:
 	.ascii	"CMP_C0_COUT_WIDTH 1u\000"
 .LASF1454:
@@ -64531,6 +64530,8 @@ s_virtEdmaState:
 	.ascii	"MA_EARS_EDREQ_2_SHIFT))&DMA_EARS_EDREQ_2_MASK)\000"
 .LASF7752:
 	.ascii	"TRGMUX_TRGMUXn_LK_SHIFT 31u\000"
+.LASF3526:
+	.ascii	"FTM_COMBINE_MCOMBINE1_MASK 0x8000u\000"
 .LASF2177:
 	.ascii	"DMA_EEI_EEI1_MASK 0x2u\000"
 .LASF1853:

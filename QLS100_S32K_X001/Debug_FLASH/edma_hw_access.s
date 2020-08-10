@@ -35008,10 +35008,13 @@ DMAMUX_Init:
 	.ascii	"ADC_INSTANCE_COUNT (1u)\000"
 .LASF1256:
 	.ascii	"CAN_ESR1_CRCERR_FAST_MASK 0x10000000u\000"
-.LASF2620:
-	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
-	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
-	.ascii	")\000"
+.LASF8295:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF6919:
 	.ascii	"RTC_CR_UM_WIDTH 1u\000"
 .LASF6098:
@@ -37676,12 +37679,10 @@ DMAMUX_Init:
 	.ascii	"S_OPACR_TP3_SHIFT))&AIPS_OPACR_TP3_MASK)\000"
 .LASF957:
 	.ascii	"AIPS_OPACR_SP1_MASK 0x4000000u\000"
-.LASF8295:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
+.LASF4930:
+	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
+	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
+	.ascii	"TRG_SEL_MASK)\000"
 .LASF251:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF4876:
@@ -38141,8 +38142,6 @@ DMAMUX_Init:
 	.ascii	"LPI2C_SCFGR1_ADRSTALL_WIDTH 1u\000"
 .LASF5626:
 	.ascii	"LPUART_MODIR_TXCTSE_SHIFT 0u\000"
-.LASF4526:
-	.ascii	"LPI2C_MFCR_RXWATER_MASK 0x30000u\000"
 .LASF6154:
 	.ascii	"MSCM_CPxCFG1_L2SZ_SHIFT 24u\000"
 .LASF7672:
@@ -39286,6 +39285,9 @@ DMAMUX_Init:
 	.ascii	"ADC_CFG1_ADIV_SHIFT 5u\000"
 .LASF116:
 	.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
+.LASF1889:
+	.ascii	"CMU_FC_SR_RS(x) (((uint32_t)(((uint32_t)(x))<<CMU_F"
+	.ascii	"C_SR_RS_SHIFT))&CMU_FC_SR_RS_MASK)\000"
 .LASF8226:
 	.ascii	"DMA_Type\000"
 .LASF7458:
@@ -42185,10 +42187,6 @@ DMAMUX_Init:
 	.ascii	"CRC_DATAu_DATA_8_HL_DATAHL_WIDTH 8u\000"
 .LASF358:
 	.ascii	"__pa_eabi 6\000"
-.LASF4930:
-	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
-	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
-	.ascii	"TRG_SEL_MASK)\000"
 .LASF6077:
 	.ascii	"MPU_RGDAAC_M4WE_WIDTH 1u\000"
 .LASF539:
@@ -44120,9 +44118,8 @@ DMAMUX_Init:
 	.ascii	"ADC_YOFS_YOFS_SHIFT 0u\000"
 .LASF4479:
 	.ascii	"LPI2C_MCFGR3_PINLOW_SHIFT 8u\000"
-.LASF1889:
-	.ascii	"CMU_FC_SR_RS(x) (((uint32_t)(((uint32_t)(x))<<CMU_F"
-	.ascii	"C_SR_RS_SHIFT))&CMU_FC_SR_RS_MASK)\000"
+.LASF4526:
+	.ascii	"LPI2C_MFCR_RXWATER_MASK 0x30000u\000"
 .LASF3304:
 	.ascii	"FTM_CnV_VAL_WIDTH 16u\000"
 .LASF1225:
@@ -46704,6 +46701,10 @@ DMAMUX_Init:
 .LASF1703:
 	.ascii	"CMP_C0_FPR(x) (((uint32_t)(((uint32_t)(x))<<CMP_C0_"
 	.ascii	"FPR_SHIFT))&CMP_C0_FPR_MASK)\000"
+.LASF2620:
+	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
+	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
+	.ascii	")\000"
 .LASF1247:
 	.ascii	"CAN_ESR1_ERROVR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ERROVR_SHIFT))&CAN_ESR1_ERROVR_MASK)\000"

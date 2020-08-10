@@ -14592,7 +14592,7 @@ uint8_t spi_comm_Spi_Transfer(void);
 #define DO_HV_STATUS_DIS 10U
 
 
-#define QLS_111 (1)
+
 
 
 
@@ -14622,9 +14622,9 @@ qls_results_cal sendresults;
 #define PDLY_TIMEOUT 1000000UL
 
 
-#define ADC_VREFH 4.0f
 
 
+#define ADC_VREFH 3.3f
 
 #define ADC_VREFL 0.0f
 # 43 "D:/s32dsworkspace/QLS/common/adsample.c"
@@ -14704,42 +14704,42 @@ void adsample_ADC_Init(void)
 
 
 }
-# 141 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 151 "D:/s32dsworkspace/QLS/common/adsample.c"
 float adsample_Get_Voltage(void)
 {
-    float Voltage;
+    static float Voltage;
     uint16_t ADCValue = 0;
-    ADC_DRV_GetChanResult(0U, 0, &ADCValue);
-    Voltage = ((float) ADCValue / adcMax) * (4.0f - 0.0f);
+    ADC_DRV_GetChanResult(0U, 1, &ADCValue);
+    Voltage = ((float) ADCValue / adcMax) * (3.3f - 0.0f);
     return Voltage;
 }
-# 158 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 169 "D:/s32dsworkspace/QLS/common/adsample.c"
 float adsample_Get_TmrLevel(void)
 {
-    float Voltage;
-    float rf32_ltmr;
+    static float tmrVoltage;
+    static float rf32_ltmr;
     uint16_t ADCValue = 0;
-    ADC_DRV_GetChanResult(0U, 0, &ADCValue);
-    Voltage = ((float) ADCValue / adcMax) * (4.0f - 0.0f);
+    ADC_DRV_GetChanResult(0U, 1, &ADCValue);
+    tmrVoltage = ((float) ADCValue / adcMax) * (3.3f - 0.0f);
 
 
     return rf32_ltmr;
 }
-# 177 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 188 "D:/s32dsworkspace/QLS/common/adsample.c"
 float adsample_Get_EnvirTemp(void)
 {
  uint16_t ADCValue = 0;
  ADC_DRV_GetChanResult(0U, 2, &ADCValue);
- float rf32_temp;
- rf32_temp = ntc_calibration_cal_temp(ADCValue);
- return rf32_temp;
+ static float rf32_pcb_temp;
+ rf32_pcb_temp = ntc_calibration_cal_temp(ADCValue);
+ return rf32_pcb_temp;
 }
-# 193 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 214 "D:/s32dsworkspace/QLS/common/adsample.c"
 float adsample_Get_NTCTemp(void)
 {
  uint16_t ADCValue = 0;
- ADC_DRV_GetChanResult(0U, 1, &ADCValue);
- float temp;
- temp = ntc_calibration_cal_temp(ADCValue);
- return temp;
+ ADC_DRV_GetChanResult(0U, 0, &ADCValue);
+ static float ntctemp;
+ ntctemp = ntc_calibration_cal_temp(ADCValue);
+ return ntctemp;
 }

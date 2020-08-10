@@ -138,15 +138,25 @@ void adsample_ADC_Init(void)
  * Return: voltage in unit V
  * Note:
  ***************************************************************************************************/
+#ifdef QLS_111
 float adsample_Get_Voltage(void)
 {
-    float Voltage;
+    static float Voltage;
     uint16_t ADCValue = 0;
     ADC_DRV_GetChanResult(INST_ADCONV1, 0, &ADCValue);//PTA0
     Voltage = ((float) ADCValue / adcMax) * (ADC_VREFH - ADC_VREFL);
     return Voltage;
 }
-
+#else
+float adsample_Get_Voltage(void)
+{
+    static float Voltage;
+    uint16_t ADCValue = 0;
+    ADC_DRV_GetChanResult(INST_ADCONV1, 1, &ADCValue);//PTA1
+    Voltage = ((float) ADCValue / adcMax) * (ADC_VREFH - ADC_VREFL);
+    return Voltage;
+}
+#endif
 
 /***************************************************************************************************
  * Function: adsample_Get_TmrLevel
@@ -155,13 +165,14 @@ float adsample_Get_Voltage(void)
  * Return: level in unit m
  * Note:
  ***************************************************************************************************/
+
 float adsample_Get_TmrLevel(void)
 {
-    float Voltage;
-    float rf32_ltmr;
+    static float tmrVoltage;
+    static float rf32_ltmr;
     uint16_t ADCValue = 0;
-    ADC_DRV_GetChanResult(INST_ADCONV1, 0, &ADCValue);//PTA0
-    Voltage = ((float) ADCValue / adcMax) * (ADC_VREFH - ADC_VREFL);
+    ADC_DRV_GetChanResult(INST_ADCONV1, 1, &ADCValue);//PTA1
+    tmrVoltage = ((float) ADCValue / adcMax) * (ADC_VREFH - ADC_VREFL);
 //    rf32_ltmr = tmr_cal_level();
 
     return rf32_ltmr;
@@ -178,9 +189,9 @@ float adsample_Get_EnvirTemp(void)
 {
 	uint16_t ADCValue = 0;
 	ADC_DRV_GetChanResult(INST_ADCONV1, 2, &ADCValue);//PTA7
-	float rf32_temp;
-	rf32_temp = ntc_calibration_cal_temp(ADCValue);
-	return rf32_temp;
+	static float rf32_pcb_temp;
+	rf32_pcb_temp = ntc_calibration_cal_temp(ADCValue);
+	return rf32_pcb_temp;
 }
 
 /***************************************************************************************************
@@ -190,11 +201,22 @@ float adsample_Get_EnvirTemp(void)
  * Return: temperature in unit c
  * Note:
  ***************************************************************************************************/
+#ifdef QLS_111
 float adsample_Get_NTCTemp(void)
 {
 	uint16_t ADCValue = 0;
 	ADC_DRV_GetChanResult(INST_ADCONV1, 1, &ADCValue);//PTA1
-	float temp;
-	temp = ntc_calibration_cal_temp(ADCValue);
-	return temp;
+	static float ntctemp;
+	ntctemp = ntc_calibration_cal_temp(ADCValue);
+	return ntctemp;
 }
+#else
+float adsample_Get_NTCTemp(void)
+{
+	uint16_t ADCValue = 0;
+	ADC_DRV_GetChanResult(INST_ADCONV1, 0, &ADCValue);//PTA0
+	static float ntctemp;
+	ntctemp = ntc_calibration_cal_temp(ADCValue);
+	return ntctemp;
+}
+#endif

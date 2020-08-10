@@ -50601,6 +50601,8 @@ peripheralFeaturesList:
 	.ascii	"SCG_SOSCCSR_SOSCEN_SHIFT 0u\000"
 .LASF5296:
 	.ascii	"LPUART_PARAM_TXFIFO_SHIFT 0u\000"
+.LASF3522:
+	.ascii	"FTM_COMBINE_MCOMBINE1_WIDTH 1u\000"
 .LASF6845:
 	.ascii	"RCM_SRIE_JTAG_MASK 0x100u\000"
 .LASF713:
@@ -51299,9 +51301,6 @@ peripheralFeaturesList:
 .LASF3207:
 	.ascii	"FTM_SC_TOF(x) (((uint32_t)(((uint32_t)(x))<<FTM_SC_"
 	.ascii	"TOF_SHIFT))&FTM_SC_TOF_MASK)\000"
-.LASF4367:
-	.ascii	"LPI2C_MSR_MBF(x) (((uint32_t)(((uint32_t)(x))<<LPI2"
-	.ascii	"C_MSR_MBF_SHIFT))&LPI2C_MSR_MBF_MASK)\000"
 .LASF6954:
 	.ascii	"RTC_LR_CRL(x) (((uint32_t)(((uint32_t)(x))<<RTC_LR_"
 	.ascii	"CRL_SHIFT))&RTC_LR_CRL_MASK)\000"
@@ -52539,8 +52538,9 @@ peripheralFeaturesList:
 	.ascii	"LPI2C_SCFGR1_GCEN_SHIFT))&LPI2C_SCFGR1_GCEN_MASK)\000"
 .LASF5535:
 	.ascii	"LPUART_CTRL_TXINV_MASK 0x10000000u\000"
-.LASF3522:
-	.ascii	"FTM_COMBINE_MCOMBINE1_WIDTH 1u\000"
+.LASF4367:
+	.ascii	"LPI2C_MSR_MBF(x) (((uint32_t)(((uint32_t)(x))<<LPI2"
+	.ascii	"C_MSR_MBF_SHIFT))&LPI2C_MSR_MBF_MASK)\000"
 .LASF7096:
 	.ascii	"S32_SCB_AIRCR_VECTKEY_WIDTH 16u\000"
 .LASF891:
@@ -55164,10 +55164,13 @@ peripheralFeaturesList:
 	.ascii	"ADC_INSTANCE_COUNT (1u)\000"
 .LASF1250:
 	.ascii	"CAN_ESR1_CRCERR_FAST_MASK 0x10000000u\000"
-.LASF2614:
-	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
-	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
-	.ascii	")\000"
+.LASF8902:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF6913:
 	.ascii	"RTC_CR_UM_WIDTH 1u\000"
 .LASF6092:
@@ -67324,12 +67327,6 @@ peripheralFeaturesList:
 	.ascii	"SIRC_CLK\000"
 .LASF3092:
 	.ascii	"FTFC_FSEC_MEEN_WIDTH 2u\000"
-.LASF8902:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
 .LASF630:
 	.ascii	"ADC_CFG1_MODE_WIDTH 2u\000"
 .LASF6310:
@@ -67634,6 +67631,10 @@ peripheralFeaturesList:
 	.ascii	"FPR_SHIFT))&CMP_C0_FPR_MASK)\000"
 .LASF8360:
 	.ascii	"LPSPI0_CLK\000"
+.LASF2614:
+	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
+	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
+	.ascii	")\000"
 .LASF1241:
 	.ascii	"CAN_ESR1_ERROVR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ERROVR_SHIFT))&CAN_ESR1_ERROVR_MASK)\000"

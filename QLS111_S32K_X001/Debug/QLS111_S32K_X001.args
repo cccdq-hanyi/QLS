@@ -61,7 +61,7 @@
 "./FreeMaster_S32xx/src_common/freemaster_bdm.o"
 "./FreeMaster_S32xx/src_common/freemaster_appcmd.o"
 -T
-"D:/s32dsworkspace/QLS/QLS111_S32K_X001/Project_Settings/Linker_Files/S32K116_17_flash.ld"
+"D:/QLS/QLS111_S32K_X001/Project_Settings/Linker_Files/S32K116_17_flash.ld"
 -Wl,-Map,"QLS111_S32K_X001.map"
 -Xlinker
 --gc-sections

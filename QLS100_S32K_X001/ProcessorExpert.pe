@@ -3,7 +3,7 @@
   <Header>
     <Name>lpspi_transfer_slave_s32k116</Name>
     <SavedBy>B50608</SavedBy>
-    <ModificationStamp>112</ModificationStamp>
+    <ModificationStamp>113</ModificationStamp>
     <Date>2016-02-17</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1743-0713</PEversion>
@@ -825,7 +825,7 @@
         <ItemSymbol>ADC0_adc_se_0</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
+        <Value>PTA0</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -839,7 +839,7 @@
         <ItemSymbol>ADC0_adc_se_3</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>&lt;Automatic&gt;</Value>
+        <Value>PTA7</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>

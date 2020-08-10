@@ -14427,7 +14427,7 @@ uint8_t spi_comm_Spi_Transfer(void);
 #define DO_HV_STATUS_DIS 10U
 
 
-#define QLS_111 (1)
+
 
 
 
@@ -14468,7 +14468,7 @@ extern float tof_capture_TofCntToUs(uint32_t tofcnt);
 # 11 "D:/s32dsworkspace/QLS/common/common.h" 2
 # 21 "../Sources/tof_capture.c" 2
 volatile float transLength = 0.030;
-# 142 "../Sources/tof_capture.c"
+# 149 "../Sources/tof_capture.c"
 float tof_capture_Get_AvgVelocity(float us)
 {
  float rf32_velocity = 0.0;
@@ -14476,7 +14476,7 @@ float tof_capture_Get_AvgVelocity(float us)
   rf32_velocity = transLength * 2.0 / us * 1000000;
  return rf32_velocity;
 }
-
+# 165 "../Sources/tof_capture.c"
 float tof_capture_TofCntToUs(uint32_t tofcnt)
 {
  float rf32_us = 0.0;

@@ -2846,12 +2846,6 @@ ntc_liquid:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
 .LASF473:
 	.ascii	"_MISRA_EXCEPTION_STD_TYPE() \000"
-.LASF608:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
 .LASF78:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
 .LASF536:
@@ -3139,6 +3133,13 @@ ntc_liquid:
 	.ascii	"INT_LEAST16_MIN _EWL_SHRT_MIN\000"
 .LASF341:
 	.ascii	"__ARM_EABI__ 1\000"
+.LASF608:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF596:
 	.ascii	"long long unsigned int\000"
 .LASF182:

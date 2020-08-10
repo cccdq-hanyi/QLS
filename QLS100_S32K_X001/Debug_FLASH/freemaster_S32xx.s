@@ -4164,12 +4164,8 @@ pcm_bNextAddrIsEx:
 	.ascii	"_CAST(x)}\000"
 .LASF584:
 	.ascii	"FMSTR_SCICTRL_TIE 0x800000\000"
-.LASF704:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
+.LASF545:
+	.ascii	"FMSTR_SCIC1_OFFSET 2\000"
 .LASF78:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
 .LASF698:
@@ -4299,8 +4295,8 @@ pcm_bNextAddrIsEx:
 	.ascii	"FMSTR_POLL_DRIVEN 1\000"
 .LASF26:
 	.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
-.LASF226:
-	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
+.LASF184:
+	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF707:
 	.ascii	"FMSTR_Isr\000"
 .LASF462:
@@ -4398,6 +4394,9 @@ pcm_bNextAddrIsEx:
 	.ascii	"FMSTR_FCMBIDR2 0x06\000"
 .LASF52:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
+.LASF526:
+	.ascii	"FMSTR_PTR2ADDR(tmpAddr,ptr) ( tmpAddr = (FMSTR_ADDR"
+	.ascii	") (FMSTR_U8*) ptr )\000"
 .LASF187:
 	.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
 	.ascii	"000000001E-6143DL\000"
@@ -4488,6 +4487,8 @@ pcm_bNextAddrIsEx:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
 .LASF559:
 	.ascii	"FMSTR_SCIC2_TIE 0x80\000"
+.LASF457:
+	.ascii	"FMSTR_TSA_UINT16 \"\\xE1\"\000"
 .LASF550:
 	.ascii	"FMSTR_SCIDR_OFFSET 7\000"
 .LASF292:
@@ -4527,9 +4528,13 @@ pcm_bNextAddrIsEx:
 	.ascii	"FMSTR_TSA_SPECIAL \"\\xEC\"\000"
 .LASF269:
 	.ascii	"__QQ_IBIT__ 0\000"
-.LASF526:
-	.ascii	"FMSTR_PTR2ADDR(tmpAddr,ptr) ( tmpAddr = (FMSTR_ADDR"
-	.ascii	") (FMSTR_U8*) ptr )\000"
+.LASF704:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF444:
 	.ascii	"FMSTR_TSATBL_STRPTR_CAST(x) ((FMSTR_TSATBL_STRPTR)("
 	.ascii	"x))\000"
@@ -4555,10 +4560,10 @@ pcm_bNextAddrIsEx:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
 .LASF287:
 	.ascii	"__UTQ_IBIT__ 0\000"
-.LASF457:
-	.ascii	"FMSTR_TSA_UINT16 \"\\xE1\"\000"
-.LASF690:
-	.ascii	"FMSTR_ValueToBuffer16\000"
+.LASF226:
+	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
+.LASF135:
+	.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
 .LASF646:
 	.ascii	"FMSTR_FCAN_PUTBYTE(pctx,dataByte) FMSTR_MACROCODE_B"
 	.ascii	"EGIN() FMSTR_SETREG8(FMSTR_CAN_BASE, (FMSTR_FCANTXF"
@@ -4913,8 +4918,8 @@ pcm_bNextAddrIsEx:
 	.ascii	"__INT16_MAX__ 32767\000"
 .LASF424:
 	.ascii	"FMSTR_TSA_CDECL const\000"
-.LASF184:
-	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
+.LASF690:
+	.ascii	"FMSTR_ValueToBuffer16\000"
 .LASF626:
 	.ascii	"FMSTR_FCANCTRL_STD_RTR 0x10\000"
 .LASF603:
@@ -5116,8 +5121,6 @@ pcm_bNextAddrIsEx:
 	.ascii	"__INT_LEAST64_TYPE__ long long int\000"
 .LASF494:
 	.ascii	"FMSTR_TSA_TABLE_LIST_END() \000"
-.LASF135:
-	.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
 .LASF54:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
 .LASF274:
@@ -5636,8 +5639,6 @@ pcm_bNextAddrIsEx:
 .LASF596:
 	.ascii	"FMSTR_SCI_PUTCHAR(ch) FMSTR_SETREG8(FMSTR_SCI_BASE,"
 	.ascii	" FMSTR_SCIDR_OFFSET, ch)\000"
-.LASF545:
-	.ascii	"FMSTR_SCIC1_OFFSET 2\000"
 .LASF53:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
 .LASF127:

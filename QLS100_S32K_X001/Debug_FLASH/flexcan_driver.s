@@ -47178,8 +47178,6 @@ g_flexcanStatePtr:
 	.ascii	"N_CTRL1_PSEG1_SHIFT))&CAN_CTRL1_PSEG1_MASK)\000"
 .LASF4752:
 	.ascii	"LPI2C_SCFGR2_DATAVD_WIDTH 6u\000"
-.LASF4832:
-	.ascii	"LPIT_MCR_SW_RST_SHIFT 1u\000"
 .LASF7944:
 	.ascii	"FEATURE_FLS_EE_SIZE_0101 (0x0200u)\000"
 .LASF1841:
@@ -47750,10 +47748,8 @@ g_flexcanStatePtr:
 	.ascii	"PDB_SC_SWTRIG_MASK 0x10000u\000"
 .LASF3932:
 	.ascii	"FTM_SWOCTRL_CH2OC_WIDTH 1u\000"
-.LASF4946:
-	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
-	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
-	.ascii	"TRG_SEL_MASK)\000"
+.LASF4832:
+	.ascii	"LPIT_MCR_SW_RST_SHIFT 1u\000"
 .LASF8505:
 	.ascii	"transfer_type\000"
 .LASF6424:
@@ -48787,10 +48783,13 @@ g_flexcanStatePtr:
 	.ascii	"ADC_INSTANCE_COUNT (1u)\000"
 .LASF1272:
 	.ascii	"CAN_ESR1_CRCERR_FAST_MASK 0x10000000u\000"
-.LASF2636:
-	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
-	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
-	.ascii	")\000"
+.LASF8703:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF6935:
 	.ascii	"RTC_CR_UM_WIDTH 1u\000"
 .LASF6114:
@@ -51558,12 +51557,10 @@ g_flexcanStatePtr:
 	.ascii	"S_OPACR_TP3_SHIFT))&AIPS_OPACR_TP3_MASK)\000"
 .LASF973:
 	.ascii	"AIPS_OPACR_SP1_MASK 0x4000000u\000"
-.LASF8703:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
+.LASF4946:
+	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
+	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
+	.ascii	"TRG_SEL_MASK)\000"
 .LASF7445:
 	.ascii	"SIM_CHIPCTL_ADC_SUPPLYEN_MASK 0x80000u\000"
 .LASF4892:
@@ -60980,6 +60977,10 @@ g_flexcanStatePtr:
 .LASF1719:
 	.ascii	"CMP_C0_FPR(x) (((uint32_t)(((uint32_t)(x))<<CMP_C0_"
 	.ascii	"FPR_SHIFT))&CMP_C0_FPR_MASK)\000"
+.LASF2636:
+	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
+	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
+	.ascii	")\000"
 .LASF1263:
 	.ascii	"CAN_ESR1_ERROVR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ERROVR_SHIFT))&CAN_ESR1_ERROVR_MASK)\000"

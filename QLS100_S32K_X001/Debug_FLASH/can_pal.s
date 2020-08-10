@@ -35213,9 +35213,8 @@ userCallbacks:
 	.ascii	"CMU_FC_SR_RS_WIDTH 1u\000"
 .LASF1626:
 	.ascii	"CAN_FDCTRL_TDCFAIL_WIDTH 1u\000"
-.LASF6766:
-	.ascii	"RCM_SRS_LOCKUP(x) (((uint32_t)(((uint32_t)(x))<<RCM"
-	.ascii	"_SRS_LOCKUP_SHIFT))&RCM_SRS_LOCKUP_MASK)\000"
+.LASF7246:
+	.ascii	"SCG_CSR_DIVBUS_WIDTH 4u\000"
 .LASF7038:
 	.ascii	"S32_NVIC_IPR_PRI_1(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<S32_NVIC_IPR_PRI_1_SHIFT))&S32_NVIC_IPR_PRI_1_MASK"
@@ -38545,10 +38544,13 @@ userCallbacks:
 	.ascii	"ADC_INSTANCE_COUNT (1u)\000"
 .LASF1272:
 	.ascii	"CAN_ESR1_CRCERR_FAST_MASK 0x10000000u\000"
-.LASF2636:
-	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
-	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
-	.ascii	")\000"
+.LASF8488:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF6935:
 	.ascii	"RTC_CR_UM_WIDTH 1u\000"
 .LASF6114:
@@ -39136,8 +39138,6 @@ userCallbacks:
 	.ascii	"FTFC_FCSESTAT_BSY_MASK 0x1u\000"
 .LASF7478:
 	.ascii	"SIM_FTMOPT0_FTM1CLKSEL_SHIFT 26u\000"
-.LASF7246:
-	.ascii	"SCG_CSR_DIVBUS_WIDTH 4u\000"
 .LASF1641:
 	.ascii	"CAN_FDCBT_FPSEG2_SHIFT 0u\000"
 .LASF6980:
@@ -41259,12 +41259,10 @@ userCallbacks:
 	.ascii	"S_OPACR_TP3_SHIFT))&AIPS_OPACR_TP3_MASK)\000"
 .LASF973:
 	.ascii	"AIPS_OPACR_SP1_MASK 0x4000000u\000"
-.LASF8488:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections\000"
+.LASF4946:
+	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
+	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
+	.ascii	"TRG_SEL_MASK)\000"
 .LASF7445:
 	.ascii	"SIM_CHIPCTL_ADC_SUPPLYEN_MASK 0x80000u\000"
 .LASF4892:
@@ -45844,10 +45842,9 @@ userCallbacks:
 	.ascii	"CRC_DATAu_DATA_8_HL_DATAHL_WIDTH 8u\000"
 .LASF357:
 	.ascii	"__pa_eabi 6\000"
-.LASF4946:
-	.ascii	"LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)("
-	.ascii	"x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_"
-	.ascii	"TRG_SEL_MASK)\000"
+.LASF6766:
+	.ascii	"RCM_SRS_LOCKUP(x) (((uint32_t)(((uint32_t)(x))<<RCM"
+	.ascii	"_SRS_LOCKUP_SHIFT))&RCM_SRS_LOCKUP_MASK)\000"
 .LASF8182:
 	.ascii	"CALLBACKS_H \000"
 .LASF6093:
@@ -50447,6 +50444,10 @@ userCallbacks:
 .LASF1719:
 	.ascii	"CMP_C0_FPR(x) (((uint32_t)(((uint32_t)(x))<<CMP_C0_"
 	.ascii	"FPR_SHIFT))&CMP_C0_FPR_MASK)\000"
+.LASF2636:
+	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
+	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
+	.ascii	")\000"
 .LASF1263:
 	.ascii	"CAN_ESR1_ERROVR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ERROVR_SHIFT))&CAN_ESR1_ERROVR_MASK)\000"

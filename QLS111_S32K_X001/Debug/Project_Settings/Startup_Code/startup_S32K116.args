@@ -3,9 +3,9 @@
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/arm"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_Runtime/include"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_Runtime/include/arm"
--I"D:/s32dsworkspace/QLS/QLS111_S32K_X001/Generated_Code"
--I"D:/s32dsworkspace/QLS/QLS111_S32K_X001/Sources"
--I"D:/s32dsworkspace/QLS/QLS111_S32K_X001/include"
+-I"D:/QLS/QLS111_S32K_X001/Generated_Code"
+-I"D:/QLS/QLS111_S32K_X001/Sources"
+-I"D:/QLS/QLS111_S32K_X001/include"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/pins"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/rtc"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/lpi2c"
@@ -41,8 +41,8 @@
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/rtos/osif"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/ftm"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/lpit"
--I"D:/s32dsworkspace/QLS/QLS111_S32K_X001/Generated_Code"
--I"D:/s32dsworkspace/QLS/QLS111_S32K_X001/Sources"
+-I"D:/QLS/QLS111_S32K_X001/Generated_Code"
+-I"D:/QLS/QLS111_S32K_X001/Sources"
 -x assembler-with-cpp
 -DSTART_FROM_FLASH
 -O0
