@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 57
+#Progress monitor hint: 58
 first : all
 -include ../makefile.init
 
@@ -86,14 +86,14 @@ all: warning-messages explicit-dependencies lpspi_transfer_slave_s32k116.elf sec
 # Tool invocations
 lpspi_transfer_slave_s32k116.elf: $(OBJS) C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/S32K116/linker/gcc/S32K116_17_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
-	@echo 'Executing target #58 $@'
+	@echo 'Executing target #59 $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "lpspi_transfer_slave_s32k116.elf" "@lpspi_transfer_slave_s32k116.args"  $(USER_OBJS_QUOTED) 
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 lpspi_transfer_slave_s32k116.siz: $(EXECUTABLES)
-	@echo 'Executing target #59 $@'
+	@echo 'Executing target #60 $@'
 	@echo 'Invoking: Standard S32DS Print Size'
 	arm-none-eabi-size --format=berkeley $(EXECUTABLES)
 	@echo 'Finished building: $@'

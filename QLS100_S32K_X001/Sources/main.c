@@ -62,8 +62,8 @@ int main(void)
 	static float rf_us_tof_level;
 	static float rf_us_tof_concentra;
     static float rf_VBat = 0.0;
-    static float rf_ult_temp = 0.0;
-    static float rf_tmr_level = 0.0;
+    static short int rf_ult_temp = 0;
+    static uint16_t rf_tmr_level = 0.0;
     static float rf_Velocity = 0.0,level = 0.0;
     static uint32_t r32u_tofcon = 0,r32u_toflevel = 0;
 
@@ -156,6 +156,7 @@ int main(void)
 			rf_tmr_level = adsample_Get_TmrLevel();
 			rf_ult_temp = adsample_Get_NTCTemp();
 			adsample_Get_EnvirTemp();
+			ultrasonic_cal_concentration(&rf_Velocity,rf_ult_temp);
 		}
     }
 

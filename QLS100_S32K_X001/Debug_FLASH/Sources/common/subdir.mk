@@ -10,6 +10,7 @@ C_SRCS_QUOTED += \
 "D:/s32dsworkspace/QLS/common/adsample.c" \
 "D:/s32dsworkspace/QLS/common/helper_functions.c" \
 "D:/s32dsworkspace/QLS/common/ntc_calibration.c" \
+"D:/s32dsworkspace/QLS/common/tmr_level.c" \
 "D:/s32dsworkspace/QLS/common/ultrasonic.c" \
 
 C_SRCS += \
@@ -17,6 +18,7 @@ D:/s32dsworkspace/QLS/common/Sys_Init.c \
 D:/s32dsworkspace/QLS/common/adsample.c \
 D:/s32dsworkspace/QLS/common/helper_functions.c \
 D:/s32dsworkspace/QLS/common/ntc_calibration.c \
+D:/s32dsworkspace/QLS/common/tmr_level.c \
 D:/s32dsworkspace/QLS/common/ultrasonic.c \
 
 OBJS_OS_FORMAT += \
@@ -24,6 +26,7 @@ OBJS_OS_FORMAT += \
 ./Sources/common/adsample.o \
 ./Sources/common/helper_functions.o \
 ./Sources/common/ntc_calibration.o \
+./Sources/common/tmr_level.o \
 ./Sources/common/ultrasonic.o \
 
 C_DEPS_QUOTED += \
@@ -31,6 +34,7 @@ C_DEPS_QUOTED += \
 "./Sources/common/adsample.d" \
 "./Sources/common/helper_functions.d" \
 "./Sources/common/ntc_calibration.d" \
+"./Sources/common/tmr_level.d" \
 "./Sources/common/ultrasonic.d" \
 
 OBJS += \
@@ -38,6 +42,7 @@ OBJS += \
 ./Sources/common/adsample.o \
 ./Sources/common/helper_functions.o \
 ./Sources/common/ntc_calibration.o \
+./Sources/common/tmr_level.o \
 ./Sources/common/ultrasonic.o \
 
 OBJS_QUOTED += \
@@ -45,6 +50,7 @@ OBJS_QUOTED += \
 "./Sources/common/adsample.o" \
 "./Sources/common/helper_functions.o" \
 "./Sources/common/ntc_calibration.o" \
+"./Sources/common/tmr_level.o" \
 "./Sources/common/ultrasonic.o" \
 
 C_DEPS += \
@@ -52,6 +58,7 @@ C_DEPS += \
 ./Sources/common/adsample.d \
 ./Sources/common/helper_functions.d \
 ./Sources/common/ntc_calibration.d \
+./Sources/common/tmr_level.d \
 ./Sources/common/ultrasonic.d \
 
 
@@ -88,9 +95,17 @@ Sources/common/ntc_calibration.o: D:/s32dsworkspace/QLS/common/ntc_calibration.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/ultrasonic.o: D:/s32dsworkspace/QLS/common/ultrasonic.c
+Sources/common/tmr_level.o: D:/s32dsworkspace/QLS/common/tmr_level.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #57 $<'
+	@echo 'Invoking: Standard S32DS C Compiler'
+	arm-none-eabi-gcc "@Sources/common/tmr_level.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "Sources/common/tmr_level.o" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/common/ultrasonic.o: D:/s32dsworkspace/QLS/common/ultrasonic.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #58 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@Sources/common/ultrasonic.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "Sources/common/ultrasonic.o" "$<"
 	@echo 'Finished building: $<'

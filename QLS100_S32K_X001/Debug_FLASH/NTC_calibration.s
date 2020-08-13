@@ -18,6 +18,8 @@
 	.global	__aeabi_fdiv
 	.global	__aeabi_fmul
 	.global	__aeabi_fadd
+	.global	__aeabi_fcmpge
+	.global	__aeabi_f2iz
 	.section	.text.ntc_calibration_cal_temp,"ax",%progbits
 	.align	2
 	.global	ntc_calibration_cal_temp
@@ -37,198 +39,217 @@ ntc_calibration_cal_temp:
 	.cfi_offset 6, -12
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-	mov	r7, r10
+	mov	r7, r9
 	mov	r6, r8
 	push	{r6, r7}
 	.cfi_def_cfa_offset 28
 	.cfi_offset 8, -28
-	.cfi_offset 10, -24
+	.cfi_offset 9, -24
 	sub	sp, sp, #12
 	.cfi_def_cfa_offset 40
-	mov	r4, r0
 .LVL1:
-	.loc 1 52 0
-	ldr	r3, .L14
+	.loc 1 54 0
+	ldr	r3, .L16
 	ldrh	r3, [r3, #2]
 	cmp	r3, r0
 	bhi	.L2
-	.loc 1 53 0
-	ldr	r3, .L14
+	.loc 1 55 0
+	ldr	r3, .L16
 	ldr	r0, [r3, #88]
 .LVL2:
-	bl	__aeabi_i2f
-.LVL3:
+	uxth	r0, r0
 	b	.L3
-.LVL4:
+.LVL3:
 .L2:
-	.loc 1 54 0
+	.loc 1 56 0
 	mov	r3, #86
-	ldr	r2, .L14
+	ldr	r2, .L16
 	ldrh	r3, [r2, r3]
 	cmp	r3, r0
 	bcs	.L4
-.LVL5:
-	.loc 1 59 0
+.LVL4:
+	.loc 1 61 0
 	ldrh	r6, [r2, #44]
 	cmp	r6, r0
-	beq	.L11
+	beq	.L12
 	mov	r3, #21
-	mov	r5, #21
+	mov	r4, #21
 	mov	r2, #42
 	mov	r1, #0
+	.loc 1 63 0
+	ldr	r5, .L16
 	.loc 1 61 0
-	ldr	r0, .L14
-.LVL6:
-	.loc 1 59 0
 	mov	r7, #255
 	mov	r8, r7
-	mov	ip, r0
+	mov	ip, r5
 	b	.L6
-.LVL7:
+.LVL5:
 .L4:
-	.loc 1 55 0
+	.loc 1 57 0
 	mov	r3, #128
 	lsl	r3, r3, #1
-	ldr	r2, .L14
-	ldr	r0, [r2, r3]
-.LVL8:
-	bl	__aeabi_i2f
-.LVL9:
+	ldr	r2, .L16
+	ldrh	r0, [r2, r3]
+.LVL6:
 	b	.L3
-.LVL10:
+.LVL7:
 .L10:
-	.loc 1 58 0
+	.loc 1 60 0
 	add	r3, r1, r2
-	lsr	r5, r3, #31
-.LVL11:
-	add	r3, r5, r3
+	lsr	r4, r3, #31
+.LVL8:
+	add	r3, r4, r3
 	asr	r3, r3, #1
-	uxtb	r5, r3
-.LVL12:
-	.loc 1 59 0
+	uxtb	r4, r3
+.LVL9:
+	.loc 1 61 0
 	mov	r6, r8
 	and	r3, r6
 	lsl	r6, r3, #1
 	add	r6, r6, ip
 	ldrh	r6, [r6, #2]
-	cmp	r6, r4
+	cmp	r6, r0
 	beq	.L7
-.LVL13:
+.LVL10:
 .L6:
-	.loc 1 61 0
+	.loc 1 63 0
 	add	r3, r3, #1
 	lsl	r3, r3, #1
-	add	r3, r0, r3
+	add	r3, r5, r3
 	ldrh	r3, [r3, #2]
-	cmp	r3, r4
+	cmp	r3, r0
 	bcs	.L8
-	.loc 1 61 0 is_stmt 0 discriminator 1
-	cmp	r4, r6
+	.loc 1 63 0 is_stmt 0 discriminator 1
+	cmp	r0, r6
 	bcc	.L7
-	mov	r2, r5
-.LVL14:
+	mov	r2, r4
+.LVL11:
 	b	.L9
-.LVL15:
+.LVL12:
 .L8:
-	.loc 1 63 0 is_stmt 1
-	cmp	r4, r6
-	bcc	.L12
-	mov	r2, r5
-.LVL16:
+	.loc 1 65 0 is_stmt 1
+	cmp	r0, r6
+	bcc	.L13
+	mov	r2, r4
+.LVL13:
 	b	.L9
-.LVL17:
-.L12:
-	mov	r1, r5
-.LVL18:
+.LVL14:
+.L13:
+	mov	r1, r4
+.LVL15:
 .L9:
-	.loc 1 56 0
+	.loc 1 58 0
 	cmp	r1, r2
 	bcc	.L10
 .L7:
-	.loc 1 68 0
+	.loc 1 70 0
 	cmp	r1, r2
 	bls	.L5
-	b	.L13
-.LVL19:
-.L11:
-	.loc 1 58 0
-	mov	r5, #21
-.LVL20:
+	b	.L14
+.LVL16:
+.L12:
+	.loc 1 60 0
+	mov	r4, #21
+.LVL17:
 .L5:
-	.loc 1 72 0
-	ldr	r7, .L14
-	mov	r3, r5
+	mov	r8, r0
+.LVL18:
+	.loc 1 74 0
+	ldr	r5, .L16
+	mov	r3, r4
 	add	r3, r3, #22
 	lsl	r3, r3, #2
-	ldr	r3, [r3, r7]
-	mov	r8, r3
-	lsl	r3, r5, #1
-	add	r3, r7, r3
-	ldrh	r3, [r3, #2]
-	mov	r10, r3
-	add	r6, r5, #1
-	mov	r0, r8
+	ldr	r7, [r3, r5]
+	lsl	r3, r4, #1
+	add	r3, r5, r3
+	ldrh	r6, [r3, #2]
+	add	r3, r4, #1
+	mov	r9, r3
+	mov	r0, r7
+.LVL19:
 	bl	__aeabi_i2f
-.LVL21:
-	str	r0, [sp, #4]
-	mov	r3, r10
-	sub	r0, r3, r4
+.LVL20:
+	str	r0, [sp]
+	mov	r3, r8
+	sub	r0, r6, r3
 	asr	r3, r0, #31
 	add	r0, r0, r3
 	eor	r0, r3
 	bl	__aeabi_i2f
+.LVL21:
+	str	r0, [sp, #4]
+	mov	r3, r9
+	lsl	r3, r3, #1
+	add	r3, r5, r3
+	ldrh	r0, [r3, #2]
+	sub	r0, r0, r6
+	bl	__aeabi_i2f
 .LVL22:
-	add	r4, r0, #0
-	lsl	r6, r6, #1
-	add	r6, r7, r6
-	ldrh	r0, [r6, #2]
-	mov	r3, r10
-	sub	r0, r0, r3
-	bl	__aeabi_i2f
-.LVL23:
 	add	r1, r0, #0
-	add	r0, r4, #0
+	ldr	r0, [sp, #4]
 	bl	__aeabi_fdiv
+.LVL23:
+	add	r6, r0, #0
+	.loc 1 75 0
+	add	r4, r4, #23
 .LVL24:
-	add	r4, r0, #0
-	.loc 1 73 0
-	add	r5, r5, #23
-.LVL25:
-	lsl	r5, r5, #2
-	ldr	r0, [r5, r7]
-	mov	r3, r8
-	sub	r0, r3, r0
+	lsl	r4, r4, #2
+	ldr	r0, [r4, r5]
+	sub	r0, r7, r0
 	bl	__aeabi_i2f
+.LVL25:
+	add	r1, r0, #0
+	add	r0, r6, #0
+	bl	__aeabi_fmul
 .LVL26:
 	add	r1, r0, #0
-	add	r0, r4, #0
-	bl	__aeabi_fmul
-.LVL27:
-	add	r1, r0, #0
-	.loc 1 72 0
-	ldr	r0, [sp, #4]
-	bl	__aeabi_fadd
-.LVL28:
 	.loc 1 74 0
-	b	.L3
+	ldr	r0, [sp]
+	bl	__aeabi_fadd
+.LVL27:
+	add	r4, r0, #0
+.LVL28:
+	.loc 1 76 0
+	ldr	r1, .L16+4
+	bl	__aeabi_fcmpge
 .LVL29:
-.L13:
-	.loc 1 69 0
-	ldr	r0, .L14+4
+	cmp	r0, #0
+	beq	.L11
+	ldr	r4, .L16+4
 .LVL30:
+.L11:
+	.loc 1 77 0 discriminator 4
+	add	r0, r4, #0
+	mov	r1, #252
+	lsl	r1, r1, #22
+	bl	__aeabi_fadd
+.LVL31:
+	bl	__aeabi_f2iz
+.LVL32:
+	uxth	r0, r0
+.LVL33:
+	.loc 1 78 0 discriminator 4
+	b	.L3
+.LVL34:
+.L14:
+	.loc 1 71 0
+	ldr	r0, .L16+8
+.LVL35:
 .L3:
-	.loc 1 75 0
+	sxth	r0, r0
+	.loc 1 79 0
 	add	sp, sp, #12
 	@ sp needed
 	pop	{r2, r3}
 	mov	r8, r2
-	mov	r10, r3
+	mov	r9, r3
 	pop	{r4, r5, r6, r7, pc}
-.L15:
+.L17:
 	.align	2
-.L14:
+.L16:
 	.word	.LANCHOR0
-	.word	-1027080192
+	.word	1132068864
+	.word	65436
 	.cfi_endproc
 .LFE0:
 	.size	ntc_calibration_cal_temp, .-ntc_calibration_cal_temp
@@ -333,7 +354,7 @@ ntc_liquid:
 	.file 3 "D:/s32dsworkspace/QLS/common/ntc_calibration.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x194
+	.4byte	0x183
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -451,12 +472,12 @@ ntc_liquid:
 	.4byte	.LASF611
 	.byte	0x1
 	.byte	0x2b
-	.4byte	0x17f
+	.4byte	0x33
 	.4byte	.LFB0
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x17f
+	.4byte	0x16e
 	.uleb128 0xa
 	.4byte	.LASF612
 	.byte	0x1
@@ -484,36 +505,28 @@ ntc_liquid:
 	.uleb128 0xc
 	.4byte	.LASF604
 	.byte	0x1
-	.byte	0x2e
-	.4byte	0x17f
+	.byte	0x30
+	.4byte	0x16e
 	.byte	0x4
-	.4byte	0xc25c0000
+	.4byte	0x437a0000
 	.uleb128 0xd
-	.ascii	"end\000"
-	.byte	0x1
-	.byte	0x2f
-	.4byte	0x17f
-	.byte	0x4
-	.4byte	0x431b0000
-	.uleb128 0xc
 	.4byte	.LASF605
 	.byte	0x1
-	.byte	0x30
-	.4byte	0x17f
-	.byte	0x4
-	.4byte	0x40a00000
-	.uleb128 0xe
+	.byte	0x32
+	.4byte	0x16e
+	.4byte	.LLST4
+	.uleb128 0xd
 	.4byte	.LASF606
 	.byte	0x1
-	.byte	0x31
-	.4byte	0x17f
-	.4byte	.LLST4
+	.byte	0x33
+	.4byte	0x33
+	.4byte	.LLST5
 	.byte	0
 	.uleb128 0x3
 	.byte	0x4
 	.byte	0x4
 	.4byte	.LASF607
-	.uleb128 0xf
+	.uleb128 0xe
 	.4byte	.LASF613
 	.byte	0x1
 	.byte	0x16
@@ -702,21 +715,6 @@ ntc_liquid:
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0xe
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
 	.uleb128 0xe
 	.uleb128 0x3a
 	.uleb128 0xb
@@ -728,7 +726,7 @@ ntc_liquid:
 	.uleb128 0x17
 	.byte	0
 	.byte	0
-	.uleb128 0xf
+	.uleb128 0xe
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -754,13 +752,13 @@ ntc_liquid:
 	.2byte	0x1
 	.byte	0x50
 	.4byte	.LVL2
-	.4byte	.LVL4
+	.4byte	.LVL3
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
 	.byte	0x50
 	.byte	0x9f
-	.4byte	.LVL4
+	.4byte	.LVL3
 	.4byte	.LVL6
 	.2byte	0x1
 	.byte	0x50
@@ -772,21 +770,21 @@ ntc_liquid:
 	.byte	0x50
 	.byte	0x9f
 	.4byte	.LVL7
-	.4byte	.LVL8
+	.4byte	.LVL19
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL8
 	.4byte	.LVL19
+	.4byte	.LVL34
 	.2byte	0x4
 	.byte	0xf3
 	.uleb128 0x1
 	.byte	0x50
 	.byte	0x9f
-	.4byte	.LVL19
-	.4byte	.LVL20
+	.4byte	.LVL34
+	.4byte	.LVL35
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL20
+	.4byte	.LVL35
 	.4byte	.LFE0
 	.2byte	0x4
 	.byte	0xf3
@@ -797,83 +795,83 @@ ntc_liquid:
 	.4byte	0
 .LLST1:
 	.4byte	.LVL1
-	.4byte	.LVL10
+	.4byte	.LVL7
 	.2byte	0x2
 	.byte	0x30
 	.byte	0x9f
-	.4byte	.LVL10
-	.4byte	.LVL19
+	.4byte	.LVL7
+	.4byte	.LVL16
 	.2byte	0x1
 	.byte	0x51
-	.4byte	.LVL19
-	.4byte	.LVL20
+	.4byte	.LVL16
+	.4byte	.LVL17
 	.2byte	0x2
 	.byte	0x30
 	.byte	0x9f
-	.4byte	.LVL29
-	.4byte	.LVL30
+	.4byte	.LVL34
+	.4byte	.LVL35
 	.2byte	0x1
 	.byte	0x51
 	.4byte	0
 	.4byte	0
 .LLST2:
 	.4byte	.LVL1
-	.4byte	.LVL10
+	.4byte	.LVL7
 	.2byte	0x3
 	.byte	0x8
 	.byte	0x2a
 	.byte	0x9f
-	.4byte	.LVL10
-	.4byte	.LVL14
+	.4byte	.LVL7
+	.4byte	.LVL11
 	.2byte	0x1
 	.byte	0x52
-	.4byte	.LVL15
+	.4byte	.LVL12
+	.4byte	.LVL13
+	.2byte	0x1
+	.byte	0x52
+	.4byte	.LVL14
 	.4byte	.LVL16
 	.2byte	0x1
 	.byte	0x52
+	.4byte	.LVL16
 	.4byte	.LVL17
-	.4byte	.LVL19
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL19
-	.4byte	.LVL20
 	.2byte	0x3
 	.byte	0x8
 	.byte	0x2a
 	.byte	0x9f
-	.4byte	.LVL29
-	.4byte	.LVL30
+	.4byte	.LVL34
+	.4byte	.LVL35
 	.2byte	0x1
 	.byte	0x52
 	.4byte	0
 	.4byte	0
 .LLST3:
+	.4byte	.LVL4
 	.4byte	.LVL5
+	.2byte	0x2
+	.byte	0x45
+	.byte	0x9f
 	.4byte	.LVL7
+	.4byte	.LVL8
+	.2byte	0x1
+	.byte	0x54
+	.4byte	.LVL9
+	.4byte	.LVL16
+	.2byte	0x1
+	.byte	0x54
+	.4byte	.LVL16
+	.4byte	.LVL17
 	.2byte	0x2
 	.byte	0x45
 	.byte	0x9f
-	.4byte	.LVL10
-	.4byte	.LVL11
+	.4byte	.LVL18
+	.4byte	.LVL24
 	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL12
-	.4byte	.LVL19
+	.byte	0x54
+	.4byte	.LVL34
+	.4byte	.LVL35
 	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL19
-	.4byte	.LVL20
-	.2byte	0x2
-	.byte	0x45
-	.byte	0x9f
-	.4byte	.LVL20
-	.4byte	.LVL25
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL29
-	.4byte	.LVL30
-	.2byte	0x1
-	.byte	0x55
+	.byte	0x54
 	.4byte	0
 	.4byte	0
 .LLST4:
@@ -884,15 +882,32 @@ ntc_liquid:
 	.uleb128 0x4
 	.4byte	0
 	.4byte	.LVL28
-	.4byte	.LVL29
+	.4byte	.LVL29-1
 	.2byte	0x1
 	.byte	0x50
-	.4byte	.LVL29
-	.4byte	.LVL30
+	.4byte	.LVL29-1
+	.4byte	.LVL34
+	.2byte	0x1
+	.byte	0x54
+	.4byte	.LVL34
+	.4byte	.LVL35
 	.2byte	0x6
 	.byte	0x9e
 	.uleb128 0x4
 	.4byte	0
+	.4byte	0
+	.4byte	0
+.LLST5:
+	.4byte	.LVL1
+	.4byte	.LVL33
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
+	.4byte	.LVL34
+	.4byte	.LVL35
+	.2byte	0x2
+	.byte	0x30
+	.byte	0x9f
 	.4byte	0
 	.4byte	0
 	.section	.debug_aranges,"",%progbits
@@ -2842,10 +2857,8 @@ ntc_liquid:
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF242:
-	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
-.LASF473:
-	.ascii	"_MISRA_EXCEPTION_STD_TYPE() \000"
+.LASF490:
+	.ascii	"_EWL_UNSIGNED_CHAR 0\000"
 .LASF78:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
 .LASF536:
@@ -2862,12 +2875,14 @@ ntc_liquid:
 	.ascii	"_NTC_TABLE\000"
 .LASF128:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
+.LASF396:
+	.ascii	"_EWL_THREADSAFE 0\000"
 .LASF404:
 	.ascii	"_EWL_LONGLONG 1\000"
 .LASF179:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
-.LASF94:
-	.ascii	"__INT_LEAST8_MAX__ 127\000"
+.LASF257:
+	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF513:
 	.ascii	"INT64_MIN _EWL_LLONG_MIN\000"
 .LASF86:
@@ -2878,8 +2893,8 @@ ntc_liquid:
 	.ascii	"_EWL_DIV_T_H \000"
 .LASF88:
 	.ascii	"__INT32_MAX__ 2147483647L\000"
-.LASF269:
-	.ascii	"__QQ_IBIT__ 0\000"
+.LASF72:
+	.ascii	"__LONG_MAX__ 2147483647L\000"
 .LASF285:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF446:
@@ -2978,8 +2993,8 @@ ntc_liquid:
 	.ascii	"__LDBL_DIG__ 15\000"
 .LASF13:
 	.ascii	"__OPTIMIZE__ 1\000"
-.LASF461:
-	.ascii	"_EWL_END_EXTERN_C \000"
+.LASF71:
+	.ascii	"__INT_MAX__ 2147483647\000"
 .LASF259:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
 .LASF8:
@@ -2996,8 +3011,6 @@ ntc_liquid:
 	.ascii	"__UINTMAX_C(c) c ## ULL\000"
 .LASF443:
 	.ascii	"_EWL_IMP_EXP \000"
-.LASF356:
-	.ascii	"__win32_os 3\000"
 .LASF28:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF102:
@@ -3018,16 +3031,17 @@ ntc_liquid:
 	.ascii	"INT64_C(value) value ## LL\000"
 .LASF52:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
-.LASF386:
-	.ascii	"_EWL_FILE_CONSOLE_ROUTINES 0\000"
+.LASF119:
+	.ascii	"__UINTPTR_MAX__ 4294967295U\000"
 .LASF467:
 	.ascii	"_EWL_CANT_THROW __attribute__((__nothrow__))\000"
-.LASF339:
-	.ascii	"__ARM_ARCH_6M__ 1\000"
+.LASF187:
+	.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
+	.ascii	"000000001E-6143DL\000"
 .LASF224:
 	.ascii	"__ULLFRACT_IBIT__ 0\000"
-.LASF450:
-	.ascii	"_EWL_WEAK __attribute__((weak))\000"
+.LASF585:
+	.ascii	"EXIT_FAILURE 1\000"
 .LASF7:
 	.ascii	"__ATOMIC_RELAXED 0\000"
 .LASF373:
@@ -3046,8 +3060,6 @@ ntc_liquid:
 	.ascii	"__hc_bare 8\000"
 .LASF332:
 	.ascii	"__ARMEL__ 1\000"
-.LASF490:
-	.ascii	"_EWL_UNSIGNED_CHAR 0\000"
 .LASF114:
 	.ascii	"__UINT_FAST8_MAX__ 4294967295U\000"
 .LASF301:
@@ -3068,8 +3080,8 @@ ntc_liquid:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF410:
 	.ascii	"_EWL_POSIX 0\000"
-.LASF396:
-	.ascii	"_EWL_THREADSAFE 0\000"
+.LASF604:
+	.ascii	"max_temp\000"
 .LASF539:
 	.ascii	"INT_FAST16_MAX _EWL_SHRT_MAX\000"
 .LASF558:
@@ -3090,6 +3102,8 @@ ntc_liquid:
 	.ascii	"__SA_IBIT__ 16\000"
 .LASF221:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
+.LASF541:
+	.ascii	"INT_FAST64_MAX _EWL_LLONG_MAX\000"
 .LASF379:
 	.ascii	"double_is_4_bytes 0\000"
 .LASF607:
@@ -3131,8 +3145,8 @@ ntc_liquid:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
 .LASF523:
 	.ascii	"INT_LEAST16_MIN _EWL_SHRT_MIN\000"
-.LASF341:
-	.ascii	"__ARM_EABI__ 1\000"
+.LASF269:
+	.ascii	"__QQ_IBIT__ 0\000"
 .LASF608:
 	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
 	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
@@ -3214,6 +3228,8 @@ ntc_liquid:
 	.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
 .LASF323:
 	.ascii	"__SIZEOF_PTRDIFF_T__ 4\000"
+.LASF190:
+	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
 .LASF299:
 	.ascii	"__USA_IBIT__ 16\000"
 .LASF564:
@@ -3222,8 +3238,6 @@ ntc_liquid:
 	.ascii	"__DEC128_MANT_DIG__ 34\000"
 .LASF152:
 	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
-.LASF585:
-	.ascii	"EXIT_FAILURE 1\000"
 .LASF601:
 	.ascii	"NTC_TABLE\000"
 .LASF376:
@@ -3286,14 +3300,12 @@ ntc_liquid:
 	.ascii	"_EWL_C99 0\000"
 .LASF45:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
-.LASF372:
-	.ascii	"__option(x) x\000"
 .LASF4:
 	.ascii	"__GNUC_MINOR__ 9\000"
 .LASF309:
 	.ascii	"__GCC_ATOMIC_CHAR_LOCK_FREE 1\000"
-.LASF306:
-	.ascii	"__GNUC_STDC_INLINE__ 1\000"
+.LASF606:
+	.ascii	"ri16_temperature\000"
 .LASF281:
 	.ascii	"__UHQ_IBIT__ 0\000"
 .LASF203:
@@ -3336,6 +3348,8 @@ ntc_liquid:
 	.ascii	"_EWL_CHAR_MAX _EWL_SCHAR_MAX\000"
 .LASF434:
 	.ascii	"_EWL_DOUBLE_SIZE (__SIZEOF_DOUBLE__ * 8)\000"
+.LASF386:
+	.ascii	"_EWL_FILE_CONSOLE_ROUTINES 0\000"
 .LASF244:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF123:
@@ -3366,8 +3380,8 @@ ntc_liquid:
 	.ascii	"_EWL_BUFFERED_CONSOLE 1\000"
 .LASF60:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
-.LASF118:
-	.ascii	"__INTPTR_MAX__ 2147483647\000"
+.LASF450:
+	.ascii	"_EWL_WEAK __attribute__((weak))\000"
 .LASF238:
 	.ascii	"__ACCUM_FBIT__ 15\000"
 .LASF312:
@@ -3390,6 +3404,8 @@ ntc_liquid:
 	.ascii	"_EMBEDDED_WARRIOR_HAS_NO_LOCALE 1\000"
 .LASF433:
 	.ascii	"_AEABI_PORTABILITY_LEVEL 0\000"
+.LASF461:
+	.ascii	"_EWL_END_EXTERN_C \000"
 .LASF592:
 	.ascii	"uint8_t\000"
 .LASF98:
@@ -3410,8 +3426,8 @@ ntc_liquid:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
 .LASF529:
 	.ascii	"INT_LEAST64_MAX _EWL_LLONG_MAX\000"
-.LASF426:
-	.ascii	"_EWL_C99_PRINTF_SCANF 0\000"
+.LASF306:
+	.ascii	"__GNUC_STDC_INLINE__ 1\000"
 .LASF140:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF567:
@@ -3438,8 +3454,8 @@ ntc_liquid:
 	.ascii	"__INT16_MAX__ 32767\000"
 .LASF590:
 	.ascii	"long long int\000"
-.LASF23:
-	.ascii	"__CHAR_BIT__ 8\000"
+.LASF242:
+	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
 .LASF449:
 	.ascii	"_EWL_MATH_CDECL \000"
 .LASF336:
@@ -3486,7 +3502,7 @@ ntc_liquid:
 	.ascii	"__SIZE_TYPE__ unsigned int\000"
 .LASF173:
 	.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
-.LASF606:
+.LASF605:
 	.ascii	"rf32_temperature\000"
 .LASF9:
 	.ascii	"__ATOMIC_ACQUIRE 2\000"
@@ -3510,8 +3526,8 @@ ntc_liquid:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
 .LASF34:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
-.LASF605:
-	.ascii	"step\000"
+.LASF118:
+	.ascii	"__INTPTR_MAX__ 2147483647\000"
 .LASF389:
 	.ascii	"_EWL_C99_TC2_FENV 1\000"
 .LASF213:
@@ -3624,12 +3640,10 @@ ntc_liquid:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
 .LASF274:
 	.ascii	"__DQ_FBIT__ 63\000"
-.LASF190:
-	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
+.LASF297:
+	.ascii	"__UHA_IBIT__ 8\000"
 .LASF391:
 	.ascii	"_EWL_OS_DISK_FILE_SUPPORT 0\000"
-.LASF257:
-	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF90:
 	.ascii	"__UINT8_MAX__ 255\000"
 .LASF387:
@@ -3640,6 +3654,8 @@ ntc_liquid:
 	.ascii	"__pa_eabi 6\000"
 .LASF251:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
+.LASF426:
+	.ascii	"_EWL_C99_PRINTF_SCANF 0\000"
 .LASF27:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
 .LASF273:
@@ -3664,9 +3680,8 @@ ntc_liquid:
 	.ascii	"__WINT_MAX__ 4294967295U\000"
 .LASF278:
 	.ascii	"__UQQ_FBIT__ 8\000"
-.LASF187:
-	.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
-	.ascii	"000000001E-6143DL\000"
+.LASF372:
+	.ascii	"__option(x) x\000"
 .LASF69:
 	.ascii	"__SCHAR_MAX__ 127\000"
 .LASF578:
@@ -3713,6 +3728,8 @@ ntc_liquid:
 	.ascii	"_EWL_C99_MATH_LEAK 1\000"
 .LASF397:
 	.ascii	"_EWL_PTHREADS 0\000"
+.LASF563:
+	.ascii	"UINT8_C(value) value ## U\000"
 .LASF330:
 	.ascii	"__thumb__ 1\000"
 .LASF166:
@@ -3721,8 +3738,8 @@ ntc_liquid:
 	.ascii	"__INT8_TYPE__ signed char\000"
 .LASF305:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
-.LASF419:
-	.ascii	"_EWL_C_LOCALE_ONLY 1\000"
+.LASF94:
+	.ascii	"__INT_LEAST8_MAX__ 127\000"
 .LASF428:
 	.ascii	"_EWL_USES_EXIT_PROCESS 1\000"
 .LASF514:
@@ -3749,8 +3766,6 @@ ntc_liquid:
 	.ascii	"__HQ_FBIT__ 15\000"
 .LASF115:
 	.ascii	"__UINT_FAST16_MAX__ 4294967295U\000"
-.LASF297:
-	.ascii	"__UHA_IBIT__ 8\000"
 .LASF552:
 	.ascii	"PTRDIFF_MIN _EWL_LONG_MIN\000"
 .LASF189:
@@ -3761,8 +3776,8 @@ ntc_liquid:
 	.ascii	"__UQQ_IBIT__ 0\000"
 .LASF44:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
-.LASF66:
-	.ascii	"__has_include(STR) __has_include__(STR)\000"
+.LASF356:
+	.ascii	"__win32_os 3\000"
 .LASF101:
 	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF134:
@@ -3777,16 +3792,16 @@ ntc_liquid:
 	.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
 .LASF534:
 	.ascii	"INT_FAST8_MIN _EWL_SCHAR_MIN\000"
-.LASF604:
-	.ascii	"start\000"
+.LASF473:
+	.ascii	"_MISRA_EXCEPTION_STD_TYPE() \000"
 .LASF501:
 	.ascii	"_EWL_INT_MIN (-_EWL_INT_MAX - 1)\000"
 .LASF30:
 	.ascii	"__SIZEOF_POINTER__ 4\000"
 .LASF335:
 	.ascii	"__VFP_FP__ 1\000"
-.LASF216:
-	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
+.LASF339:
+	.ascii	"__ARM_ARCH_6M__ 1\000"
 .LASF542:
 	.ascii	"UINT_FAST8_MAX _EWL_UCHAR_MAX\000"
 .LASF288:
@@ -3819,8 +3834,8 @@ ntc_liquid:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF595:
 	.ascii	"long unsigned int\000"
-.LASF119:
-	.ascii	"__UINTPTR_MAX__ 4294967295U\000"
+.LASF341:
+	.ascii	"__ARM_EABI__ 1\000"
 .LASF311:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 1\000"
 .LASF574:
@@ -3833,8 +3848,8 @@ ntc_liquid:
 	.ascii	"__UINT16_MAX__ 65535\000"
 .LASF81:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
-.LASF541:
-	.ascii	"INT_FAST64_MAX _EWL_LLONG_MAX\000"
+.LASF23:
+	.ascii	"__CHAR_BIT__ 8\000"
 .LASF82:
 	.ascii	"__UINTMAX_MAX__ 18446744073709551615ULL\000"
 .LASF202:
@@ -3851,8 +3866,8 @@ ntc_liquid:
 	.ascii	"_EWL_CSTDLIB \000"
 .LASF545:
 	.ascii	"UINT_FAST64_MAX _EWL_ULLONG_MAX\000"
-.LASF320:
-	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
+.LASF66:
+	.ascii	"__has_include(STR) __has_include__(STR)\000"
 .LASF334:
 	.ascii	"__SOFTFP__ 1\000"
 .LASF113:
@@ -3926,8 +3941,6 @@ ntc_liquid:
 	.ascii	"_EWL_ERRNO_T \000"
 .LASF494:
 	.ascii	"_EWL_CHAR_MIN _EWL_SCHAR_MIN\000"
-.LASF72:
-	.ascii	"__LONG_MAX__ 2147483647L\000"
 .LASF313:
 	.ascii	"__GCC_ATOMIC_SHORT_LOCK_FREE 1\000"
 .LASF512:
@@ -4018,6 +4031,8 @@ ntc_liquid:
 	.ascii	"__m56800E_os 16\000"
 .LASF613:
 	.ascii	"ntc_liquid\000"
+.LASF419:
+	.ascii	"_EWL_C_LOCALE_ONLY 1\000"
 .LASF32:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
 .LASF150:
@@ -4026,8 +4041,8 @@ ntc_liquid:
 	.ascii	"_EWL_TR1_NAMESPACE 1\000"
 .LASF417:
 	.ascii	"_EWL_ASSERT_DISPLAYS_FUNC 0\000"
-.LASF563:
-	.ascii	"UINT8_C(value) value ## U\000"
+.LASF216:
+	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
 .LASF498:
 	.ascii	"_EWL_SHRT_MIN (-_EWL_SHRT_MAX - 1)\000"
 .LASF303:
@@ -4054,8 +4069,8 @@ ntc_liquid:
 	.ascii	"INT_LEAST32_MAX _EWL_LONG_MAX\000"
 .LASF530:
 	.ascii	"UINT_LEAST8_MAX _EWL_UCHAR_MAX\000"
-.LASF71:
-	.ascii	"__INT_MAX__ 2147483647\000"
+.LASF320:
+	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
 .LASF39:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
 .LASF489:

@@ -1,5 +1,5 @@
 # 1 "../Sources/spi_comm.c"
-# 1 "D:\\s32dsworkspace\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
+# 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -1143,12 +1143,12 @@ extern qls_results results;
 void spi_comm_Spi_Init(void);
 uint8_t spi_comm_Spi_Transfer(void);
 # 20 "../Sources/spi_comm.c" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 1
-# 54 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 1
+# 54 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h"
 #define lpspiCom1_H 
-# 72 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h"
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 1
-# 50 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h"
+# 72 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 1
+# 50 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h"
 #define clockMan1_H 
 
 
@@ -1163,12 +1163,12 @@ uint8_t spi_comm_Spi_Transfer(void);
 
 
 #define false 0
-# 54 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 2
+# 54 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 2
 
 
 
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 1
-# 51 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 1
+# 51 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h"
 #define Cpu_H 
 
 
@@ -11108,7 +11108,7 @@ typedef enum {
 #define DEVASSERT_H 
 
 
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h" 1
+# 1 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h" 1
 # 24 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 2
 # 70 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h"
 static inline void DevAssert(volatile int x)
@@ -11117,7 +11117,7 @@ static inline void DevAssert(volatile int x)
 }
 #define DEV_ASSERT(x) DevAssert(x)
 # 298 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/device_registers.h" 2
-# 59 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 59 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/clock_manager.h" 1
 # 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/clock_manager.h"
@@ -12063,7 +12063,7 @@ clock_manager_callback_user_config_t* CLOCK_SYS_GetErrorCallback(void);
 # 257 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/clock_manager.h"
 status_t CLOCK_SYS_GetFreq(clock_names_t clockName,
                            uint32_t *frequency);
-# 61 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 61 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/interrupt_manager.h" 1
 # 19 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/interrupt_manager.h"
 #define INTERRUPT_MANAGER_H 
@@ -12109,7 +12109,7 @@ void INT_SYS_ClearPending(IRQn_Type irqNumber);
 void INT_SYS_SetPending(IRQn_Type irqNumber);
 # 197 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/interrupt_manager.h"
 uint32_t INT_SYS_GetPending(IRQn_Type irqNumber);
-# 62 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 62 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/edma_driver.h" 1
 # 36 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/edma_driver.h"
 #define EDMA_DRIVER_H 
@@ -12579,7 +12579,7 @@ status_t EDMA_DRV_InstallCallback(uint8_t virtualChannel,
                                   void *parameter);
 # 951 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/edma_driver.h"
 edma_chn_status_t EDMA_DRV_GetChannelStatus(uint8_t virtualChannel);
-# 63 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 63 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_master_driver.h" 1
 # 29 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_master_driver.h"
 #define LPSPI_MASTER_DRIVER_H 
@@ -12935,7 +12935,7 @@ status_t LPSPI_DRV_MasterAbortTransfer(uint32_t instance);
 
 
 void LPSPI_DRV_MasterIRQHandler(uint32_t instance);
-# 64 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 64 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_slave_driver.h" 1
 # 29 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_slave_driver.h"
 #define LPSPI_SLAVE_DRIVER_H 
@@ -12978,13 +12978,13 @@ status_t LPSPI_DRV_SlaveGetTransferStatus(uint32_t instance,
                                             uint32_t * bytesRemained);
 # 211 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_slave_driver.h"
 void LPSPI_DRV_SlaveIRQHandler(uint32_t instance);
-# 65 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 65 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_shared_function.h" 1
-# 66 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/system_S32K116.h" 1
-# 29 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/system_S32K116.h"
+# 66 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h" 1
+# 29 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 #define SYSTEM_S32K116_H_ 
-# 43 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/system_S32K116.h"
+# 43 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 #define DISABLE_WDOG 1
 
 
@@ -13001,11 +13001,11 @@ void LPSPI_DRV_SlaveIRQHandler(uint32_t instance);
 
 
 #define DEFAULT_SYSTEM_CLOCK 48000000u
-# 70 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/system_S32K116.h"
+# 70 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 extern uint32_t SystemCoreClock;
-# 79 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/system_S32K116.h"
+# 79 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 void SystemInit(void);
-# 92 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/system_S32K116.h"
+# 92 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 void SystemCoreClockUpdate(void);
 
 
@@ -13014,11 +13014,11 @@ void SystemCoreClockUpdate(void);
 
 
 void SystemSoftwareReset(void);
-# 67 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 67 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 
 
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h" 1
-# 647 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h" 1
+# 647 "D:/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h"
 #define pin_mux_H 
 
 
@@ -13245,26 +13245,26 @@ void PINS_DRV_TogglePins(GPIO_Type * const base,
                          pins_channel_type_t pins);
 # 1135 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pins_driver.h"
 pins_channel_type_t PINS_DRV_ReadPins(const GPIO_Type * const base);
-# 651 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h" 2
+# 651 "D:/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h" 2
 
 
 #define NUM_OF_CONFIGURED_PINS 28
 
 
 extern pin_settings_config_t g_pin_mux_InitConfigArr[28];
-# 70 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 1
-# 71 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 1
-# 72 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h" 1
-# 80 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h"
+# 70 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 1
+# 71 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 1
+# 72 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h" 1
+# 80 "D:/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h"
 #define dmaController1_H 
 
 
 
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 1
-# 85 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 1
+# 85 "D:/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h" 2
 
 
 #define EDMA_CHN0_NUMBER 0U
@@ -13289,11 +13289,11 @@ extern edma_channel_config_t dmaController1Chn0_Config;
 
 
 extern const edma_channel_config_t * const edmaChnConfigArray[1U];
-# 73 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 1
-# 54 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h"
+# 73 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 1
+# 54 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h"
 #define can_pal1_H 
-# 70 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h"
+# 70 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h"
 # 1 "D:/s32dsworkspace/QLS/common/canheader.h" 1
 # 9 "D:/s32dsworkspace/QLS/common/canheader.h"
 #define CANHEADER_H_ 
@@ -13307,15 +13307,15 @@ typedef enum {
     CAN_INST_TYPE_FLEXCAN = 0u,
 
 } can_inst_type_t;
-# 71 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 2
+# 71 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 2
 # 1 "D:/s32dsworkspace/QLS/common/canheader2.h" 1
 # 9 "D:/s32dsworkspace/QLS/common/canheader2.h"
 #define SOURCES_COMMON_CANHEADER2_H_ 
 
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h" 1
-# 29 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h"
+# 1 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h" 1
+# 29 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h"
 #define CAN_PAL_MAPPING_H 
-# 153 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h"
+# 153 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h"
 typedef enum
 {
     CAN_OVER_FLEXCAN0_INSTANCE = 0U,
@@ -13327,12 +13327,12 @@ typedef enum
 
 #define FLEXCAN_HIGH_INDEX 0U
 # 12 "D:/s32dsworkspace/QLS/common/canheader2.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 1
-# 19 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 1 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 1
+# 19 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 #define CAN_PAL_H 
 
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/can_pal_cfg.h" 1
-# 22 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/can_pal_cfg.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal_cfg.h" 1
+# 22 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal_cfg.h"
 #define CAN_PAL_CFG_H 
 
 
@@ -13340,9 +13340,9 @@ typedef enum
 
 
 #define NO_OF_FLEXCAN_INSTS_FOR_CAN 1U
-# 22 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h" 1
-# 23 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
+# 22 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h" 1
+# 23 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
 
 
 
@@ -13741,8 +13741,8 @@ void FLEXCAN_DRV_InstallEventCallback(uint8_t instance,
 void FLEXCAN_DRV_ConfigPN(uint8_t instance, int enable, const flexcan_pn_config_t *pnConfig);
 # 800 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
 void FLEXCAN_DRV_GetWMB(uint8_t instance, uint8_t wmbIndex, flexcan_msgbuff_t *wmb);
-# 29 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
-# 45 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 29 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
+# 45 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 typedef enum {
     CAN_NORMAL_MODE = 0U,
     CAN_LOOPBACK_MODE = 2U,
@@ -13842,68 +13842,68 @@ typedef struct
     flexcan_rx_fifo_id_element_format_t idFormat;
     flexcan_id_table_t *idFilterTable;
 } extension_flexcan_rx_fifo_t;
-# 160 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 160 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_Init(can_instance_t instance, const can_user_config_t *config);
-# 171 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 171 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_Deinit(can_instance_t instance);
-# 184 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 184 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_SetBitrate(can_instance_t instance,
                         can_bitrate_phase_t phase,
                         const can_time_segment_t *bitTiming);
-# 199 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 199 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_GetBitrate(can_instance_t instance,
                         can_bitrate_phase_t phase,
                         can_time_segment_t *bitTiming);
-# 215 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 215 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_ConfigTxBuff(can_instance_t instance,
                           uint32_t buffIdx,
                           const can_buff_config_t *config);
-# 232 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 232 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_ConfigRxBuff(can_instance_t instance,
                           uint32_t buffIdx,
                           const can_buff_config_t *config,
                           uint32_t acceptedId);
-# 252 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 252 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_Send(can_instance_t instance,
                   uint32_t buffIdx,
                   const can_message_t *message);
-# 272 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 272 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_SendBlocking(can_instance_t instance,
                           uint32_t buffIdx,
                           const can_message_t *message,
                           uint32_t timeoutMs);
-# 292 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 292 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_Receive(can_instance_t instance,
                      uint32_t buffIdx,
                      can_message_t *message);
-# 312 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 312 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_ReceiveBlocking(can_instance_t instance,
                              uint32_t buffIdx,
                              can_message_t *message,
                              uint32_t timeoutMs);
-# 330 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 330 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_SetRxFilter(can_instance_t instance,
                          can_msg_id_type_t idType,
                          uint32_t buffIdx,
                          uint32_t mask);
-# 347 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 347 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_GetTransferStatus(can_instance_t instance, uint32_t buffIdx);
-# 358 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+# 358 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
 status_t CAN_InstallEventCallback(can_instance_t instance,
                                   can_callback_t callback,
                                   void *callbackParam);
 # 13 "D:/s32dsworkspace/QLS/common/canheader2.h" 2
-# 72 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 2
+# 72 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 2
 
 extern const can_instance_t can_pal1_instance;
 
 
 extern const can_user_config_t can_pal1_Config0;
-# 74 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h" 1
-# 63 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h"
+# 74 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h" 1
+# 63 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h"
 #define adConv1_H 
-# 76 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h"
+# 76 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h"
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h" 1
 # 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
 #define ADC_DRIVER_H 
@@ -14179,7 +14179,7 @@ void ADC_DRV_ClearLatchedTriggers(const uint32_t instance,
 void ADC_DRV_ClearTriggerErrors(const uint32_t instance);
 # 769 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
 uint32_t ADC_DRV_GetTriggerErrorFlags(const uint32_t instance);
-# 77 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h" 2
+# 77 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h" 2
 
 
 #define INST_ADCONV1 0U
@@ -14191,11 +14191,11 @@ extern const adc_converter_config_t adConv1_ConvConfig0;
 extern const adc_chan_config_t adConv1_ChnConfig0;
 extern const adc_chan_config_t adConv1_ChnConfig1;
 extern const adc_chan_config_t adConv1_ChnConfig2;
-# 75 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h" 1
-# 59 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h"
+# 75 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h" 1
+# 59 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h"
 #define pdly1_H 
-# 72 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h"
+# 72 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h"
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h" 1
 # 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
 #define PDB_DRIVER_H 
@@ -14342,7 +14342,7 @@ void PDB_DRV_SetCmpPulseOutDelayForHigh(const uint32_t instance,
 void PDB_DRV_SetCmpPulseOutDelayForLow(const uint32_t instance,
                                        const uint32_t pulseChn,
                                        const uint32_t value);
-# 73 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h" 2
+# 73 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h" 2
 
 #define INST_PDLY1 (0U)
 
@@ -14353,9 +14353,9 @@ extern const pdb_adc_pretrigger_config_t pdly1_AdcTrigInitConfig2;
 
 
 extern const pdb_timer_config_t pdly1_InitConfig0;
-# 76 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
-# 58 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 2
-# 80 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h"
+# 76 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 58 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 2
+# 80 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h"
 extern clock_manager_user_config_t clockMan1_InitConfig0;
 
 
@@ -14376,7 +14376,7 @@ extern peripheral_clock_config_t peripheralClockConfig0[];
 
 
 extern clock_manager_callback_user_config_t *g_clockManCallbacksArr[];
-# 73 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 2
+# 73 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 2
 
 
 
@@ -14392,9 +14392,9 @@ extern const lpspi_slave_config_t lpspiCom1_SlaveConfig0;
 # 21 "../Sources/spi_comm.c" 2
 # 1 "D:/s32dsworkspace/QLS/common/common.h" 1
 # 9 "D:/s32dsworkspace/QLS/common/common.h"
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h" 1
+# 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
 # 10 "D:/s32dsworkspace/QLS/common/common.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/Sources/spi_comm.h" 1
+# 1 "D:/QLS/QLS100_S32K_X001/Sources/spi_comm.h" 1
 # 11 "D:/s32dsworkspace/QLS/common/common.h" 2
 
 

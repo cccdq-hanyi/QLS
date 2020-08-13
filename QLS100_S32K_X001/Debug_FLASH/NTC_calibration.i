@@ -1,5 +1,5 @@
 # 1 "D:/s32dsworkspace/QLS/common/ntc_calibration.c"
-# 1 "D:\\s32dsworkspace\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
+# 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -1126,7 +1126,7 @@ typedef struct _NTC_TABLE{
 
 
 
-extern float ntc_calibration_cal_temp(uint16_t addata);
+extern short int ntc_calibration_cal_temp(uint16_t addata);
 # 21 "D:/s32dsworkspace/QLS/common/ntc_calibration.c" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdlib.h" 1
 # 9 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdlib.h"
@@ -1346,13 +1346,15 @@ NTC_TABLE ntc_liquid={0,
  }
 };
 # 43 "D:/s32dsworkspace/QLS/common/ntc_calibration.c"
-float ntc_calibration_cal_temp(uint16_t addata)
+short int ntc_calibration_cal_temp(uint16_t addata)
 {
     uint8_t bg,ed,mid;
-    float start=-55.0;
-    float end=155.0;
-    float step=5.0;
-    float rf32_temperature = 0;
+
+
+    float max_temp=250;
+
+    float rf32_temperature = 0.0;
+    short int ri16_temperature = 0;
     bg = 0 ;
     ed = sizeof(ntc_liquid.ADValue)/2-1 ;
     if (addata >= ntc_liquid.ADValue[bg])
@@ -1377,5 +1379,7 @@ float ntc_calibration_cal_temp(uint16_t addata)
 
     rf32_temperature = ntc_liquid.temp[mid]+((float)(abs(ntc_liquid.ADValue[mid]-addata))/(ntc_liquid.ADValue[mid+1]-ntc_liquid.ADValue[mid]))
        * (ntc_liquid.temp[mid]-ntc_liquid.temp[mid+1]);
-    return rf32_temperature;
+    rf32_temperature = (rf32_temperature >= max_temp) ? max_temp : rf32_temperature;
+    ri16_temperature = rf32_temperature + 0.5 ;
+    return ri16_temperature;
 }
