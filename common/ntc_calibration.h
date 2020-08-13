@@ -17,6 +17,6 @@ typedef struct _NTC_TABLE{
 
 
 
-extern float ntc_calibration_cal_temp(uint16_t addata);
+extern short int ntc_calibration_cal_temp(uint16_t addata);
 
 #endif /* SOURCES_NTC_CALIBRATION_H_ */

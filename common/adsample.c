@@ -22,6 +22,7 @@
 #include "helper_functions.h"
 #include "ntc_calibration.h"
 #include "common.h"
+#include "tmr_level.h"
 /* Timeout for PDB in microseconds */
 #define PDLY_TIMEOUT    1000000UL
 
@@ -166,14 +167,12 @@ float adsample_Get_Voltage(void)
  * Note:
  ***************************************************************************************************/
 
-float adsample_Get_TmrLevel(void)
+uint16_t adsample_Get_TmrLevel(void)
 {
-    static float tmrVoltage;
-    static float rf32_ltmr;
+    static uint16_t rf32_ltmr;
     uint16_t ADCValue = 0;
     ADC_DRV_GetChanResult(INST_ADCONV1, 1, &ADCValue);//PTA1
-    tmrVoltage = ((float) ADCValue / adcMax) * (ADC_VREFH - ADC_VREFL);
-//    rf32_ltmr = tmr_cal_level();
+    rf32_ltmr = tmr_level_cal(ADCValue);
 
     return rf32_ltmr;
 }
@@ -185,11 +184,11 @@ float adsample_Get_TmrLevel(void)
  * Return: temperature in unit c
  * Note:
  ***************************************************************************************************/
-float adsample_Get_EnvirTemp(void)
+short int adsample_Get_EnvirTemp(void)
 {
 	uint16_t ADCValue = 0;
 	ADC_DRV_GetChanResult(INST_ADCONV1, 2, &ADCValue);//PTA7
-	static float rf32_pcb_temp;
+	static uint8_t rf32_pcb_temp;
 	rf32_pcb_temp = ntc_calibration_cal_temp(ADCValue);
 	return rf32_pcb_temp;
 }
@@ -202,20 +201,20 @@ float adsample_Get_EnvirTemp(void)
  * Note:
  ***************************************************************************************************/
 #ifdef QLS_111
-float adsample_Get_NTCTemp(void)
+short int adsample_Get_NTCTemp(void)
 {
 	uint16_t ADCValue = 0;
 	ADC_DRV_GetChanResult(INST_ADCONV1, 1, &ADCValue);//PTA1
-	static float ntctemp;
+	static short int ntctemp;
 	ntctemp = ntc_calibration_cal_temp(ADCValue);
 	return ntctemp;
 }
 #else
-float adsample_Get_NTCTemp(void)
+short int adsample_Get_NTCTemp(void)
 {
 	uint16_t ADCValue = 0;
 	ADC_DRV_GetChanResult(INST_ADCONV1, 0, &ADCValue);//PTA0
-	static float ntctemp;
+	static uint8_t ntctemp;
 	ntctemp = ntc_calibration_cal_temp(ADCValue);
 	return ntctemp;
 }

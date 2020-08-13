@@ -40,13 +40,15 @@ NTC_TABLE ntc_liquid={0,
  * Return: rf32_temperature   unit c
  * Note:data element of  AD table is sorted from large to small
  ***************************************************************************************************/
-float ntc_calibration_cal_temp(uint16_t addata)
+short int ntc_calibration_cal_temp(uint16_t addata)
 {
     uint8_t  bg,ed,mid;
-    float start=-55.0;
-    float end=155.0;
-    float step=5.0;
-    float rf32_temperature = 0;
+
+
+    float max_temp=250;
+
+    float rf32_temperature = 0.0;
+    short int ri16_temperature = 0;
     bg = 0 ;
     ed = sizeof(ntc_liquid.ADValue)/2-1 ;
     if	(addata >= ntc_liquid.ADValue[bg])
@@ -71,7 +73,9 @@ float ntc_calibration_cal_temp(uint16_t addata)
 //    rf32_temperature = ntc_liquid.temp[mid]+((float)(abs(ntc_liquid.ADValue[mid]-addata))/(ntc_liquid.ADValue[mid]-ntc_liquid.ADValue[mid+1]))*step;//精算 AD 越小，温度越高
     rf32_temperature = ntc_liquid.temp[mid]+((float)(abs(ntc_liquid.ADValue[mid]-addata))/(ntc_liquid.ADValue[mid+1]-ntc_liquid.ADValue[mid]))
     		 * (ntc_liquid.temp[mid]-ntc_liquid.temp[mid+1]);//精算 AD 越小，温度越高
-    return rf32_temperature;
+    rf32_temperature = (rf32_temperature >= max_temp) ? max_temp : rf32_temperature;
+    ri16_temperature = rf32_temperature + 0.5 ;
+    return ri16_temperature;
 }
 
 

@@ -10,6 +10,6 @@
 
 void adsample_ADC_Init(void);
 float adsample_Get_Voltage(void);
-float adsample_Get_NTCTemp(void);
-float adsample_Get_EnvirTemp(void);
+short int adsample_Get_NTCTemp(void);
+short int adsample_Get_EnvirTemp(void);
 #endif /* SOURCES_ADSAMPLE_H_ */

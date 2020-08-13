@@ -6,20 +6,20 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS_QUOTED += \
-"D:/s32dsworkspace/QLS/common/Sys_Init.c" \
-"D:/s32dsworkspace/QLS/common/adsample.c" \
-"D:/s32dsworkspace/QLS/common/helper_functions.c" \
-"D:/s32dsworkspace/QLS/common/ntc_calibration.c" \
-"D:/s32dsworkspace/QLS/common/tmr_level.c" \
-"D:/s32dsworkspace/QLS/common/ultrasonic.c" \
+"D:/QLS/common/Sys_Init.c" \
+"D:/QLS/common/adsample.c" \
+"D:/QLS/common/helper_functions.c" \
+"D:/QLS/common/ntc_calibration.c" \
+"D:/QLS/common/tmr_level.c" \
+"D:/QLS/common/ultrasonic.c" \
 
 C_SRCS += \
-D:/s32dsworkspace/QLS/common/Sys_Init.c \
-D:/s32dsworkspace/QLS/common/adsample.c \
-D:/s32dsworkspace/QLS/common/helper_functions.c \
-D:/s32dsworkspace/QLS/common/ntc_calibration.c \
-D:/s32dsworkspace/QLS/common/tmr_level.c \
-D:/s32dsworkspace/QLS/common/ultrasonic.c \
+D:/QLS/common/Sys_Init.c \
+D:/QLS/common/adsample.c \
+D:/QLS/common/helper_functions.c \
+D:/QLS/common/ntc_calibration.c \
+D:/QLS/common/tmr_level.c \
+D:/QLS/common/ultrasonic.c \
 
 OBJS_OS_FORMAT += \
 ./Sources/common/Sys_Init.o \
@@ -63,7 +63,7 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Sources/common/Sys_Init.o: D:/s32dsworkspace/QLS/common/Sys_Init.c
+Sources/common/Sys_Init.o: D:/QLS/common/Sys_Init.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #53 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
@@ -71,7 +71,7 @@ Sources/common/Sys_Init.o: D:/s32dsworkspace/QLS/common/Sys_Init.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/adsample.o: D:/s32dsworkspace/QLS/common/adsample.c
+Sources/common/adsample.o: D:/QLS/common/adsample.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #54 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
@@ -79,7 +79,7 @@ Sources/common/adsample.o: D:/s32dsworkspace/QLS/common/adsample.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/helper_functions.o: D:/s32dsworkspace/QLS/common/helper_functions.c
+Sources/common/helper_functions.o: D:/QLS/common/helper_functions.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #55 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
@@ -87,7 +87,7 @@ Sources/common/helper_functions.o: D:/s32dsworkspace/QLS/common/helper_functions
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/ntc_calibration.o: D:/s32dsworkspace/QLS/common/ntc_calibration.c
+Sources/common/ntc_calibration.o: D:/QLS/common/ntc_calibration.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #56 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
@@ -95,7 +95,7 @@ Sources/common/ntc_calibration.o: D:/s32dsworkspace/QLS/common/ntc_calibration.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/tmr_level.o: D:/s32dsworkspace/QLS/common/tmr_level.c
+Sources/common/tmr_level.o: D:/QLS/common/tmr_level.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #57 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
@@ -103,7 +103,7 @@ Sources/common/tmr_level.o: D:/s32dsworkspace/QLS/common/tmr_level.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/ultrasonic.o: D:/s32dsworkspace/QLS/common/ultrasonic.c
+Sources/common/ultrasonic.o: D:/QLS/common/ultrasonic.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #58 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'

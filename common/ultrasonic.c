@@ -20,13 +20,21 @@
 #include "ultrasonic.h"
 #define TABLEX_ELEMENTS	10
 
-int8_t rs8_x_temp[10] = {-20,-10,-5,0,5,10,15,20,30,45};//从小到大
-float rf32_y_velocity[10] = {1500,1510,1520,1530,1540,1550,1560,1570,1580,1590};//从小到大
+short int C2_CALCON_RU8_XTEMP[10] = {-11,0,10,20,30,40,50,60,70,80};//从小到大
+uint8_t C2_CALCON_RU8_YCON[10] = {0,40,80,100,112,120,128,140,180,220};//  concentration 10,15,20,25,28,30,32,35,45,55,从小到大，0.25%/bit
 uint8_t calibrat_flag;
-uint8_t C2_CALCON_TABLE[10][10]={0,};
+float C2_CALCON_TABLE[10][10]={{1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+							   {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32}};//默认声速随温度升高数值增大
 
 TABLE1_UNION C2_LEVEL_TABLE={0,{0,}};;
-TABLE10_UNION C2_CON_TABLE={0,{0,}};
 
 
 /***************************************************************************************************
@@ -74,84 +82,183 @@ uint16_t ultrasonic_cal_level(uint16_t addata)
  * Return: uint8_t urea concentration   unit %
  * Note:
  ***************************************************************************************************/
-uint8_t ultrasonic_cal_concentration(float v,uint8_t temp)
+uint8_t ultrasonic_cal_concentration(float * velocity,short int temp)
 {
     uint8_t  bg,ed,mid;
     uint8_t start=80; //0.25% unit 20%
     uint8_t end=160;//0.25% unit 40%
 //    uint8_t step=8;//0.25% unit 2%
-    uint8_t  i;
-    uint8_t ru8_concentration;
+    uint8_t calcnt = 0;
+    uint8_t i,con1,con2;
+    static uint8_t ru8_concentration = 0;
     uint8_t p_temp=0,p_v=0;
+    float v = * velocity;
+    if ( v < 5.0)
+    {
+    	ru8_concentration = 255;
+    	return ru8_concentration;
+    }
     //找温度
     bg = 0 ;
     ed = TABLEX_ELEMENTS-1 ;
     mid = 0;
-    if	(temp <= rs8_x_temp[bg])
-    	p_temp = bg ;
-    else if(temp >= rs8_x_temp[ed])
-    	p_temp = ed ;
+    if	(temp <= C2_CALCON_RU8_XTEMP[bg])
+    {
+    	p_temp = bg ;//ru8_concentration = 255;return ru8_concentration;
+    	calcnt = 1;
+    }
+    else if(temp >= C2_CALCON_RU8_XTEMP[ed])
+    {
+    	p_temp = ed ;//ru8_concentration = 255;return ru8_concentration;
+    	calcnt = 1;
+    }
     else
     {
 		while(bg < ed)
 		{
 			mid = (bg+ed)/2 ;
-			if (temp == rs8_x_temp[mid] )
+			if (temp == C2_CALCON_RU8_XTEMP[mid] )
 			{
 				p_temp = mid;
+				calcnt = 1;
 				break ;
 			}
 
-			if (temp <rs8_x_temp[mid+1] && temp > rs8_x_temp[mid])
+			if (temp <C2_CALCON_RU8_XTEMP[mid+1] && temp > C2_CALCON_RU8_XTEMP[mid])
 			{
 				p_temp = mid;
+				calcnt = 2;
 				break ;
 			}
 
-			if	(temp > rs8_x_temp[mid])
+			if	(temp > C2_CALCON_RU8_XTEMP[mid])
 				bg = mid ;
 			else
 				ed = mid ;
 		}
     }
-    if(bg > ed ) p_temp = 0;//what happens？
-
+    if(bg > ed )
+    {
+    	ru8_concentration = 255;
+    	return ru8_concentration;//what happens？
+    }
     //找声速
     bg = 0 ;
     ed = TABLEX_ELEMENTS-1 ;
     mid = 0;
+	if (1 == calcnt)
+	{
+		if	(v <= C2_CALCON_TABLE[p_temp][bg])
+		{
+			ru8_concentration = C2_CALCON_RU8_YCON[bg] ;
+			return ru8_concentration;
+		}
+		else if(v >= C2_CALCON_TABLE[p_temp][ed])
+		{
+			ru8_concentration = C2_CALCON_RU8_YCON[ed] ;
+			return ru8_concentration;
+		}else
+		{
+			while(bg < ed)
+			{
+				mid = (bg+ed)/2 ;
+				if (v == C2_CALCON_TABLE[p_temp][mid] )
+				{
+					p_v = mid;
+					break ;
+				}
 
-    if	(v <= rf32_y_velocity[bg])
-    	p_v = bg ;
-    else if(v >= rf32_y_velocity[ed])
-    	p_v = ed ;
-    else
-    {
+				if (v <C2_CALCON_TABLE[p_temp][mid+1] && v > C2_CALCON_TABLE[p_temp][mid])
+				{
+					p_v = mid;
+					break ;
+				}
+				if	(v > C2_CALCON_TABLE[p_temp][mid])
+					bg = mid ;
+				else
+					ed = mid ;
+			}
+		}
+		if(bg > ed )
+	    {
+	    	ru8_concentration = 255;
+	    	return ru8_concentration;//what happens？
+	    }else
+			ru8_concentration = (((uint8_t )( v - C2_CALCON_TABLE[p_temp][p_v])) * 20);
+
+			//ru8_concentration = C2_CALCON_RU8_YCON[p_v]+ (( v - C2_CALCON_TABLE[p_temp][p_v] ) * (C2_CALCON_RU8_YCON[p_v+1] - C2_CALCON_RU8_YCON[p_v])) / (C2_CALCON_TABLE[p_temp][p_v+1] - C2_CALCON_TABLE[p_temp][p_v]);
+	}else if (2 == calcnt)
+	{
+		bg = 0 ;
+		ed = TABLEX_ELEMENTS-1 ;
+		if	( v <= C2_CALCON_TABLE[p_temp][bg] || v <= C2_CALCON_TABLE[p_temp+1][bg] )
+		{
+			ru8_concentration = C2_CALCON_RU8_YCON[bg] ;
+			return ru8_concentration;
+		}else if( v >= C2_CALCON_TABLE[p_temp][ed] || v >= C2_CALCON_TABLE[p_temp+1][ed] )
+		{
+			ru8_concentration = C2_CALCON_RU8_YCON[ed] ;
+			return ru8_concentration;
+		}else
+		{
+			while(bg < ed)
+			{
+				mid = (bg+ed)/2 ;
+				if (v == C2_CALCON_TABLE[p_temp][mid] )
+				{
+					p_v = mid;
+					break ;
+				}
+
+				if (v <C2_CALCON_TABLE[p_temp][mid+1] && v > C2_CALCON_TABLE[p_temp][mid])
+				{
+					p_v = mid;
+					break ;
+				}
+				if	(v > C2_CALCON_TABLE[p_temp][mid])
+					bg = mid ;
+				else
+					ed = mid ;
+			}
+		}
+		if(bg > ed )
+	    {
+	    	ru8_concentration = 255;
+	    	return ru8_concentration;//what happens？
+	    }else
+			con1 = C2_CALCON_RU8_YCON[p_v]+ \
+					(( v - C2_CALCON_TABLE[p_temp][p_v] ) * (C2_CALCON_RU8_YCON[p_v+1] - C2_CALCON_RU8_YCON[p_v])) / (C2_CALCON_TABLE[p_temp][p_v+1] - C2_CALCON_TABLE[p_temp][p_v]);
+		bg = 0 ;
+		ed = TABLEX_ELEMENTS-1 ;
 		while(bg < ed)
 		{
 			mid = (bg+ed)/2 ;
-			if (v == rf32_y_velocity[mid] )
+			if (v == C2_CALCON_TABLE[p_temp+1][mid] )
 			{
 				p_v = mid;
 				break ;
 			}
 
-			if (v <rf32_y_velocity[mid+1] && v > rf32_y_velocity[mid])
+			if (v <C2_CALCON_TABLE[p_temp+1][mid+1] && v > C2_CALCON_TABLE[p_temp+1][mid])
 			{
 				p_v = mid;
 				break ;
 			}
-			if	(v > rf32_y_velocity[mid])
+			if	(v > C2_CALCON_TABLE[p_temp+1][mid])
 				bg = mid ;
 			else
 				ed = mid ;
 		}
-    }
-    if(bg > ed ) p_v = 0;//what happens？
+		if(bg > ed )
+		{
+			ru8_concentration = 255;
+			return ru8_concentration;//what happens？
+		}else
+			con2 = C2_CALCON_RU8_YCON[p_v]+ \
+					(( v - C2_CALCON_TABLE[p_temp+1][p_v] ) * (C2_CALCON_RU8_YCON[p_v+1] - C2_CALCON_RU8_YCON[p_v])) / (C2_CALCON_TABLE[p_temp+1][p_v+1] - C2_CALCON_TABLE[p_temp+1][p_v]);
+			ru8_concentration = ((temp - C2_CALCON_RU8_XTEMP[p_temp]) * abs(con2 - con1)) / (C2_CALCON_RU8_XTEMP[p_temp+1] - C2_CALCON_RU8_XTEMP[p_temp] );
+	}else
+		ru8_concentration = 255;
 
-//    ru8_concentration = C2_CALCON_TABLE[p_v][p_temp];
-    ru8_concentration = C2_CALCON_TABLE[p_v][p_temp]+ \
-    		( C2_CALCON_TABLE[p_v+1][p_temp+1] - C2_CALCON_TABLE[p_v][p_temp] ) * ( rf32_y_velocity[p_v+1] - rf32_y_velocity[p_v] ) / ( v - rf32_y_velocity[p_v] );////粗算,平面如何计算？
     return ru8_concentration;// 1unit=0.25%
-	return 0;
 }
