@@ -1,5 +1,5 @@
-# 1 "D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.c"
-# 1 "D:\\s32dsworkspace\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
+# 1 "D:/QLS/common/HW_Driver/WatchDog.c"
+# 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -308,6 +307,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
@@ -349,7 +349,7 @@
 #define __USES_INITFINI__ 1
 #define CPU_S32K116 1
 #define DEV_ERROR_DETECT 1
-# 1 "D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.c"
+# 1 "D:/QLS/common/HW_Driver/WatchDog.c"
 
 
 
@@ -357,8 +357,8 @@
 
 
 
-# 1 "D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.h" 1
-# 9 "D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.h"
+# 1 "D:/QLS/common/HW_Driver/WatchDog.h" 1
+# 9 "D:/QLS/common/HW_Driver/WatchDog.h"
 #define WATCHDOG_H_ 
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 1
 # 9 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h"
@@ -1115,11 +1115,11 @@ typedef uint32_t uintptr_t;
 #define INTMAX_C(value) value ## LL
 #define UINTMAX_C(value) value ## ULL
 # 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 2
-# 11 "D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h" 1
-# 47 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 11 "D:/QLS/common/HW_Driver/WatchDog.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h" 1
+# 47 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define CORE_CM0_H 
-# 65 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 65 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define BKPT_ASM __asm ("BKPT #0\n\t")
 
 
@@ -1127,18 +1127,18 @@ typedef uint32_t uintptr_t;
 
 
 #define ENABLE_INTERRUPTS() __asm volatile ("cpsie i" : : : "memory");
-# 82 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 82 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define DISABLE_INTERRUPTS() __asm volatile ("cpsid i" : : : "memory");
-# 94 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 94 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define STANDBY() __asm volatile ("wfi")
-# 105 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 105 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define REV_BYTES_32(a,b) __asm volatile ("rev %0, %1" : "=r" (b) : "r" (a))
-# 114 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 114 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define REV_BYTES_16(a,b) __asm volatile ("rev16 %0, %1" : "=r" (b) : "r" (a))
-# 123 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 123 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define START_FUNCTION_DECLARATION_RAMSECTION 
 #define END_FUNCTION_DECLARATION_RAMSECTION __attribute__((section (".code_ram")));
-# 146 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 146 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define START_FUNCTION_DEFINITION_RAMSECTION 
 #define END_FUNCTION_DEFINITION_RAMSECTION 
 
@@ -1160,11 +1160,11 @@ typedef uint32_t uintptr_t;
 
 
 #define ALIGNED(x) __attribute__((aligned(x)))
-# 178 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+# 178 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define CORE_LITTLE_ENDIAN 
-# 12 "D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h" 1
-# 99 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 12 "D:/QLS/common/HW_Driver/WatchDog.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
+# 99 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32K116_H_ 
 #define MCU_S32K116 
 
@@ -1181,7 +1181,7 @@ typedef uint32_t uintptr_t;
 #define MCU_MEM_MAP_VERSION 0x0100u
 
 #define MCU_MEM_MAP_VERSION_MINOR 0x0003u
-# 130 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 130 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define __I volatile const
 
 #define __O volatile
@@ -1223,9 +1223,9 @@ typedef uint32_t uintptr_t;
 
 
 #define REG_RMW32(address,mask,value) (REG_WRITE32((address), ((REG_READ32(address)& ((uint32_t)~((uint32_t)(mask))))| ((uint32_t)(value)))))
-# 184 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 184 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define NUMBER_OF_INT_VECTORS 48u
-# 193 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 193 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef enum
 {
 
@@ -1271,7 +1271,7 @@ typedef enum
   LPUART1_RxTx_IRQn = 30u,
   LPUART0_RxTx_IRQn = 31u
 } IRQn_Type;
-# 266 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 266 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define ADC_SC1_COUNT 16u
 #define ADC_R_COUNT 16u
 #define ADC_CV_COUNT 2u
@@ -1327,7 +1327,7 @@ typedef struct {
 #define ADC_IRQS_CH_COUNT (1u)
 
 #define ADC_IRQS { ADC0_IRQn }
-# 332 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 332 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define ADC_SC1_ADCH_MASK 0x1Fu
 #define ADC_SC1_ADCH_SHIFT 0u
 #define ADC_SC1_ADCH_WIDTH 5u
@@ -1535,7 +1535,7 @@ typedef struct {
 #define ADC_CLP9_OFS_CLP9_OFS_SHIFT 0u
 #define ADC_CLP9_OFS_CLP9_OFS_WIDTH 12u
 #define ADC_CLP9_OFS_CLP9_OFS(x) (((uint32_t)(((uint32_t)(x))<<ADC_CLP9_OFS_CLP9_OFS_SHIFT))&ADC_CLP9_OFS_CLP9_OFS_MASK)
-# 561 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 561 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define AIPS_PACR_COUNT 4u
 #define AIPS_OPACR_COUNT 12u
 
@@ -1561,7 +1561,7 @@ typedef struct {
 #define AIPS_BASE_ADDRS { AIPS_BASE }
 
 #define AIPS_BASE_PTRS { AIPS }
-# 597 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 597 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define AIPS_MPRA_MPL2_MASK 0x100000u
 #define AIPS_MPRA_MPL2_SHIFT 20u
 #define AIPS_MPRA_MPL2_WIDTH 1u
@@ -1732,7 +1732,7 @@ typedef struct {
 #define AIPS_OPACR_SP0_SHIFT 30u
 #define AIPS_OPACR_SP0_WIDTH 1u
 #define AIPS_OPACR_SP0(x) (((uint32_t)(((uint32_t)(x))<<AIPS_OPACR_SP0_SHIFT))&AIPS_OPACR_SP0_MASK)
-# 789 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 789 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CAN_RAMn_COUNT 128u
 #define CAN_RXIMR_COUNT 32u
 #define CAN_WMB_COUNT 4u
@@ -1824,7 +1824,7 @@ typedef struct {
 #define CAN_Bus_Off_IRQS { CAN0_ORed_Err_Wakeup_IRQn }
 #define CAN_ORed_0_15_MB_IRQS { CAN0_ORed_0_31_MB_IRQn }
 #define CAN_ORed_16_31_MB_IRQS { CAN0_ORed_0_31_MB_IRQn }
-# 891 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 891 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CAN_MCR_MAXMB_MASK 0x7Fu
 #define CAN_MCR_MAXMB_SHIFT 0u
 #define CAN_MCR_MAXMB_WIDTH 7u
@@ -2515,7 +2515,7 @@ typedef struct {
 #define CAN_FDCRC_FD_MBCRC_SHIFT 24u
 #define CAN_FDCRC_FD_MBCRC_WIDTH 7u
 #define CAN_FDCRC_FD_MBCRC(x) (((uint32_t)(((uint32_t)(x))<<CAN_FDCRC_FD_MBCRC_SHIFT))&CAN_FDCRC_FD_MBCRC_MASK)
-# 1605 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 1605 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t C0;
   volatile uint32_t C1;
@@ -2541,7 +2541,7 @@ typedef struct {
 #define CMP_IRQS_CH_COUNT (1u)
 
 #define CMP_IRQS { CMP0_IRQn }
-# 1641 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 1641 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CMP_C0_HYSTCTR_MASK 0x3u
 #define CMP_C0_HYSTCTR_SHIFT 0u
 #define CMP_C0_HYSTCTR_WIDTH 2u
@@ -2732,7 +2732,7 @@ typedef struct {
 #define CMP_C2_RRE_SHIFT 31u
 #define CMP_C2_RRE_WIDTH 1u
 #define CMP_C2_RRE(x) (((uint32_t)(((uint32_t)(x))<<CMP_C2_RRE_SHIFT))&CMP_C2_RRE_MASK)
-# 1855 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 1855 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t GCR;
   volatile uint32_t RCCR;
@@ -2765,7 +2765,7 @@ typedef struct {
 #define CMU_FC_IRQS_CH_COUNT (1u)
 
 #define CMU_FC_IRQS { SCG_CMU_LVD_LVWSCG_IRQn, SCG_CMU_LVD_LVWSCG_IRQn }
-# 1898 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 1898 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CMU_FC_GCR_FCE_MASK 0x1u
 #define CMU_FC_GCR_FCE_SHIFT 0u
 #define CMU_FC_GCR_FCE_WIDTH 1u
@@ -2819,7 +2819,7 @@ typedef struct {
 #define CMU_FC_IER_FHHAEE_SHIFT 3u
 #define CMU_FC_IER_FHHAEE_WIDTH 1u
 #define CMU_FC_IER_FHHAEE(x) (((uint32_t)(((uint32_t)(x))<<CMU_FC_IER_FHHAEE_SHIFT))&CMU_FC_IER_FHHAEE_MASK)
-# 1975 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 1975 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   union {
     volatile uint32_t DATA;
@@ -2851,7 +2851,7 @@ typedef struct {
 #define CRC_BASE_ADDRS { CRC_BASE }
 
 #define CRC_BASE_PTRS { CRC }
-# 2017 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 2017 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CRC_DATAu_DATA_LL_MASK 0xFFu
 #define CRC_DATAu_DATA_LL_SHIFT 0u
 #define CRC_DATAu_DATA_LL_WIDTH 8u
@@ -2928,7 +2928,7 @@ typedef struct {
 #define CRC_CTRL_TOT_SHIFT 30u
 #define CRC_CTRL_TOT_WIDTH 2u
 #define CRC_CTRL_TOT(x) (((uint32_t)(((uint32_t)(x))<<CRC_CTRL_TOT_SHIFT))&CRC_CTRL_TOT_MASK)
-# 2115 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 2115 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CSE_PRAM_RAMn_COUNT 32u
 
 
@@ -2957,7 +2957,7 @@ typedef struct {
 #define CSE_PRAM_BASE_ADDRS { CSE_PRAM_BASE }
 
 #define CSE_PRAM_BASE_PTRS { CSE_PRAM }
-# 2154 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 2154 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CSE_PRAM_RAMn_DATA_32_BYTE_3_MASK 0xFFu
 #define CSE_PRAM_RAMn_DATA_32_BYTE_3_SHIFT 0u
 #define CSE_PRAM_RAMn_DATA_32_BYTE_3_WIDTH 8u
@@ -2994,7 +2994,7 @@ typedef struct {
 #define CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU_SHIFT 0u
 #define CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU_WIDTH 8u
 #define CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU(x) (((uint8_t)(((uint8_t)(x))<<CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU_SHIFT))&CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU_MASK)
-# 2212 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 2212 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define DMA_DCHPRI_COUNT 4u
 #define DMA_TCD_COUNT 4u
 
@@ -3072,7 +3072,7 @@ typedef struct {
 
 #define DMA_CHN_IRQS { DMA0_IRQn, DMA1_IRQn, DMA2_IRQn, DMA3_IRQn }
 #define DMA_ERROR_IRQS { DMA_Error_IRQn }
-# 2300 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 2300 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define DMA_CR_EDBG_MASK 0x2u
 #define DMA_CR_EDBG_SHIFT 1u
 #define DMA_CR_EDBG_WIDTH 1u
@@ -3832,7 +3832,7 @@ typedef struct {
 #define DMA_TCD_BITER_ELINKYES_ELINK_SHIFT 15u
 #define DMA_TCD_BITER_ELINKYES_ELINK_WIDTH 1u
 #define DMA_TCD_BITER_ELINKYES_ELINK(x) (((uint16_t)(((uint16_t)(x))<<DMA_TCD_BITER_ELINKYES_ELINK_SHIFT))&DMA_TCD_BITER_ELINKYES_ELINK_MASK)
-# 3081 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3081 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define DMAMUX_CHCFG_COUNT 4u
 
 
@@ -3853,7 +3853,7 @@ typedef struct {
 #define DMAMUX_BASE_ADDRS { DMAMUX_BASE }
 
 #define DMAMUX_BASE_PTRS { DMAMUX }
-# 3112 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3112 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define DMAMUX_CHCFG_SOURCE_MASK 0x3Fu
 #define DMAMUX_CHCFG_SOURCE_SHIFT 0u
 #define DMAMUX_CHCFG_SOURCE_WIDTH 6u
@@ -3866,7 +3866,7 @@ typedef struct {
 #define DMAMUX_CHCFG_ENBL_SHIFT 7u
 #define DMAMUX_CHCFG_ENBL_WIDTH 1u
 #define DMAMUX_CHCFG_ENBL(x) (((uint8_t)(((uint8_t)(x))<<DMAMUX_CHCFG_ENBL_SHIFT))&DMAMUX_CHCFG_ENBL_MASK)
-# 3146 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3146 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define EIM_EICHDn_COUNT 1u
 
 
@@ -3893,7 +3893,7 @@ typedef struct {
 #define EIM_BASE_ADDRS { EIM_BASE }
 
 #define EIM_BASE_PTRS { EIM }
-# 3183 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3183 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define EIM_EIMCR_GEIEN_MASK 0x1u
 #define EIM_EIMCR_GEIEN_SHIFT 0u
 #define EIM_EIMCR_GEIEN_WIDTH 1u
@@ -3913,7 +3913,7 @@ typedef struct {
 #define EIM_EICHDn_WORD1_B0_3DATA_MASK_SHIFT 0u
 #define EIM_EICHDn_WORD1_B0_3DATA_MASK_WIDTH 32u
 #define EIM_EICHDn_WORD1_B0_3DATA_MASK(x) (((uint32_t)(((uint32_t)(x))<<EIM_EICHDn_WORD1_B0_3DATA_MASK_SHIFT))&EIM_EICHDn_WORD1_B0_3DATA_MASK_MASK)
-# 3224 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3224 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define ERM_EARn_COUNT 1u
 
 
@@ -3947,7 +3947,7 @@ typedef struct {
 
 #define ERM_SINGLE_IRQS { ERM_fault_IRQn }
 #define ERM_DOUBLE_IRQS { ERM_fault_IRQn }
-# 3268 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3268 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define ERM_CR0_ENCIE0_MASK 0x40000000u
 #define ERM_CR0_ENCIE0_SHIFT 30u
 #define ERM_CR0_ENCIE0_WIDTH 1u
@@ -3970,7 +3970,7 @@ typedef struct {
 #define ERM_EARn_EAR_SHIFT 0u
 #define ERM_EARn_EAR_WIDTH 32u
 #define ERM_EARn_EAR(x) (((uint32_t)(((uint32_t)(x))<<ERM_EARn_EAR_SHIFT))&ERM_EARn_EAR_MASK)
-# 3312 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3312 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FLEXIO_SHIFTCTL_COUNT 4u
 #define FLEXIO_SHIFTCFG_COUNT 4u
 #define FLEXIO_SHIFTBUF_COUNT 4u
@@ -4035,7 +4035,7 @@ typedef struct {
 #define FLEXIO_IRQS_CH_COUNT (1u)
 
 #define FLEXIO_IRQS { FLEXIO_IRQn }
-# 3387 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3387 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FLEXIO_VERID_FEATURE_MASK 0xFFFFu
 #define FLEXIO_VERID_FEATURE_SHIFT 0u
 #define FLEXIO_VERID_FEATURE_WIDTH 16u
@@ -4247,7 +4247,7 @@ typedef struct {
 #define FLEXIO_TIMCMP_CMP_SHIFT 0u
 #define FLEXIO_TIMCMP_CMP_WIDTH 16u
 #define FLEXIO_TIMCMP_CMP(x) (((uint32_t)(((uint32_t)(x))<<FLEXIO_TIMCMP_CMP_SHIFT))&FLEXIO_TIMCMP_CMP_MASK)
-# 3620 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3620 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FTFC_FCCOB_COUNT 12u
 #define FTFC_FPROT_COUNT 4u
 
@@ -4291,7 +4291,7 @@ typedef struct {
 
 #define FTFC_COMMAND_COMPLETE_IRQS { FTFC_IRQn }
 #define FTFC_READ_COLLISION_IRQS { FTFC_IRQn }
-# 3674 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3674 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FTFC_FSTAT_MGSTAT0_MASK 0x1u
 #define FTFC_FSTAT_MGSTAT0_SHIFT 0u
 #define FTFC_FSTAT_MGSTAT0_WIDTH 1u
@@ -4426,7 +4426,7 @@ typedef struct {
 #define FTFC_FERCNFG_FDFD_SHIFT 5u
 #define FTFC_FERCNFG_FDFD_WIDTH 1u
 #define FTFC_FERCNFG_FDFD(x) (((uint8_t)(((uint8_t)(x))<<FTFC_FERCNFG_FDFD_SHIFT))&FTFC_FERCNFG_FDFD_MASK)
-# 3830 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3830 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FTM_CONTROLS_COUNT 8u
 #define FTM_CV_MIRROR_COUNT 8u
 
@@ -4505,7 +4505,7 @@ typedef struct {
 #define FTM_Fault_IRQS { FTM0_Fault_IRQn, FTM1_Fault_IRQn }
 #define FTM_Overflow_IRQS { FTM0_Ovf_Reload_IRQn, FTM1_Ovf_Reload_IRQn }
 #define FTM_Reload_IRQS { FTM0_Ovf_Reload_IRQn, FTM1_Ovf_Reload_IRQn }
-# 3919 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 3919 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FTM_SC_PS_MASK 0x7u
 #define FTM_SC_PS_SHIFT 0u
 #define FTM_SC_PS_WIDTH 3u
@@ -5437,7 +5437,7 @@ typedef struct {
 #define FTM_CV_MIRROR_VAL_SHIFT 16u
 #define FTM_CV_MIRROR_VAL_WIDTH 16u
 #define FTM_CV_MIRROR_VAL(x) (((uint32_t)(((uint32_t)(x))<<FTM_CV_MIRROR_VAL_SHIFT))&FTM_CV_MIRROR_VAL_MASK)
-# 4874 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 4874 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t PDOR;
   volatile uint32_t PSOR;
@@ -5477,7 +5477,7 @@ typedef struct {
 #define GPIO_BASE_ADDRS { PTA_BASE, PTB_BASE, PTC_BASE, PTD_BASE, PTE_BASE }
 
 #define GPIO_BASE_PTRS { PTA, PTB, PTC, PTD, PTE }
-# 4924 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 4924 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define GPIO_PDOR_PDO_MASK 0xFFFFFFFFu
 #define GPIO_PDOR_PDO_SHIFT 0u
 #define GPIO_PDOR_PDO_WIDTH 32u
@@ -5512,7 +5512,7 @@ typedef struct {
 #define GPIO_PIDR_PID_SHIFT 0u
 #define GPIO_PIDR_PID_WIDTH 32u
 #define GPIO_PIDR_PID(x) (((uint32_t)(((uint32_t)(x))<<GPIO_PIDR_PID_SHIFT))&GPIO_PIDR_PID_MASK)
-# 4982 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 4982 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t PCCCR;
   volatile uint32_t PCCLCR;
@@ -5535,7 +5535,7 @@ typedef struct {
 #define LMEM_BASE_ADDRS { LMEM_BASE }
 
 #define LMEM_BASE_PTRS { LMEM }
-# 5015 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 5015 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LMEM_PCCCR_ENCACHE_MASK 0x1u
 #define LMEM_PCCCR_ENCACHE_SHIFT 0u
 #define LMEM_PCCCR_ENCACHE_WIDTH 1u
@@ -5688,7 +5688,7 @@ typedef struct {
 #define LMEM_PCCRMR_R0_SHIFT 30u
 #define LMEM_PCCRMR_R0_WIDTH 2u
 #define LMEM_PCCRMR_R0(x) (((uint32_t)(((uint32_t)(x))<<LMEM_PCCRMR_R0_SHIFT))&LMEM_PCCRMR_R0_MASK)
-# 5191 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 5191 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -5754,7 +5754,7 @@ typedef struct {
 
 #define LPI2C_MASTER_IRQS { LPI2C0_Master_Slave_IRQn }
 #define LPI2C_SLAVE_IRQS { LPI2C0_Master_Slave_IRQn }
-# 5267 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 5267 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPI2C_VERID_FEATURE_MASK 0xFFFFu
 #define LPI2C_VERID_FEATURE_SHIFT 0u
 #define LPI2C_VERID_FEATURE_WIDTH 16u
@@ -6282,7 +6282,7 @@ typedef struct {
 #define LPI2C_SRDR_SOF_SHIFT 15u
 #define LPI2C_SRDR_SOF_WIDTH 1u
 #define LPI2C_SRDR_SOF(x) (((uint32_t)(((uint32_t)(x))<<LPI2C_SRDR_SOF_SHIFT))&LPI2C_SRDR_SOF_MASK)
-# 5816 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 5816 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPIT_TMR_COUNT 4u
 
 
@@ -6322,7 +6322,7 @@ typedef struct {
 #define LPIT_IRQS_CH_COUNT (1u)
 
 #define LPIT_IRQS { LPIT0_IRQn, LPIT0_IRQn, LPIT0_IRQn, LPIT0_IRQn }
-# 5866 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 5866 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPIT_VERID_FEATURE_MASK 0xFFFFu
 #define LPIT_VERID_FEATURE_SHIFT 0u
 #define LPIT_VERID_FEATURE_WIDTH 16u
@@ -6472,7 +6472,7 @@ typedef struct {
 #define LPIT_TMR_TCTRL_TRG_SEL_SHIFT 24u
 #define LPIT_TMR_TCTRL_TRG_SEL_WIDTH 4u
 #define LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)(x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_TRG_SEL_MASK)
-# 6039 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 6039 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -6517,7 +6517,7 @@ typedef struct {
 #define LPSPI_IRQS_CH_COUNT (1u)
 
 #define LPSPI_IRQS { LPSPI0_IRQn }
-# 6094 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 6094 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPSPI_VERID_FEATURE_MASK 0xFFFFu
 #define LPSPI_VERID_FEATURE_SHIFT 0u
 #define LPSPI_VERID_FEATURE_WIDTH 16u
@@ -6814,7 +6814,7 @@ typedef struct {
 #define LPSPI_RDR_DATA_SHIFT 0u
 #define LPSPI_RDR_DATA_WIDTH 32u
 #define LPSPI_RDR_DATA(x) (((uint32_t)(((uint32_t)(x))<<LPSPI_RDR_DATA_SHIFT))&LPSPI_RDR_DATA_MASK)
-# 6414 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 6414 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t CSR;
   volatile uint32_t PSR;
@@ -6841,7 +6841,7 @@ typedef struct {
 #define LPTMR_IRQS_CH_COUNT (1u)
 
 #define LPTMR_IRQS { LPTMR0_IRQn }
-# 6451 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 6451 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPTMR_CSR_TEN_MASK 0x1u
 #define LPTMR_CSR_TEN_SHIFT 0u
 #define LPTMR_CSR_TEN_WIDTH 1u
@@ -6897,7 +6897,7 @@ typedef struct {
 #define LPTMR_CNR_COUNTER_SHIFT 0u
 #define LPTMR_CNR_COUNTER_WIDTH 16u
 #define LPTMR_CNR_COUNTER(x) (((uint32_t)(((uint32_t)(x))<<LPTMR_CNR_COUNTER_SHIFT))&LPTMR_CNR_COUNTER_MASK)
-# 6530 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 6530 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -6936,7 +6936,7 @@ typedef struct {
 #define LPUART_RX_TX_IRQS_CH_COUNT (1u)
 
 #define LPUART_RX_TX_IRQS { LPUART0_RxTx_IRQn, LPUART1_RxTx_IRQn }
-# 6579 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 6579 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPUART_VERID_FEATURE_MASK 0xFFFFu
 #define LPUART_VERID_FEATURE_SHIFT 0u
 #define LPUART_VERID_FEATURE_WIDTH 16u
@@ -7388,7 +7388,7 @@ typedef struct {
 #define LPUART_WATER_RXCOUNT_SHIFT 24u
 #define LPUART_WATER_RXCOUNT_WIDTH 3u
 #define LPUART_WATER_RXCOUNT(x) (((uint32_t)(((uint32_t)(x))<<LPUART_WATER_RXCOUNT_SHIFT))&LPUART_WATER_RXCOUNT_MASK)
-# 7052 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 7052 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MCM_LMDR_COUNT 2u
 
 
@@ -7429,7 +7429,7 @@ typedef struct {
 #define MCM_BASE_ADDRS { MCM_BASE }
 
 #define MCM_BASE_PTRS { MCM }
-# 7103 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 7103 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MCM_PLASC_ASC_MASK 0xFFu
 #define MCM_PLASC_ASC_SHIFT 0u
 #define MCM_PLASC_ASC_WIDTH 8u
@@ -7602,7 +7602,7 @@ typedef struct {
 #define MCM_LMFDLR_PEFDL_SHIFT 0u
 #define MCM_LMFDLR_PEFDL_WIDTH 32u
 #define MCM_LMFDLR_PEFDL(x) (((uint32_t)(((uint32_t)(x))<<MCM_LMFDLR_PEFDL_SHIFT))&MCM_LMFDLR_PEFDL_MASK)
-# 7297 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 7297 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MPU_EAR_EDR_COUNT 2u
 #define MPU_RGD_COUNT 8u
 #define MPU_RGDAAC_COUNT 8u
@@ -7645,7 +7645,7 @@ typedef struct {
 #define MPU_BASE_ADDRS { MPU_BASE }
 
 #define MPU_BASE_PTRS { MPU }
-# 7350 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 7350 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MPU_CESR_VLD_MASK 0x1u
 #define MPU_CESR_VLD_SHIFT 0u
 #define MPU_CESR_VLD_WIDTH 1u
@@ -7857,7 +7857,7 @@ typedef struct {
 #define MPU_RGDAAC_M7RE_SHIFT 31u
 #define MPU_RGDAAC_M7RE_WIDTH 1u
 #define MPU_RGDAAC_M7RE(x) (((uint32_t)(((uint32_t)(x))<<MPU_RGDAAC_M7RE_SHIFT))&MPU_RGDAAC_M7RE_MASK)
-# 7583 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 7583 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MSCM_OCMDR_COUNT 3u
 
 
@@ -7895,7 +7895,7 @@ typedef struct {
 #define MSCM_BASE_ADDRS { MSCM_BASE }
 
 #define MSCM_BASE_PTRS { MSCM }
-# 7631 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 7631 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MSCM_CPxTYPE_RYPZ_MASK 0xFFu
 #define MSCM_CPxTYPE_RYPZ_SHIFT 0u
 #define MSCM_CPxTYPE_RYPZ_WIDTH 8u
@@ -8112,7 +8112,7 @@ typedef struct {
 #define MSCM_OCMDR_V_SHIFT 31u
 #define MSCM_OCMDR_V_WIDTH 1u
 #define MSCM_OCMDR_V(x) (((uint32_t)(((uint32_t)(x))<<MSCM_OCMDR_V_SHIFT))&MSCM_OCMDR_V_MASK)
-# 7869 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 7869 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MTB_DWT_CMF_COUNT 2u
 #define MTB_DWT_PERIPHID_COUNT 8u
 #define MTB_DWT_COMPID_COUNT 4u
@@ -8149,7 +8149,7 @@ typedef struct {
 #define MTB_DWT_BASE_ADDRS { MTB_DWT_BASE }
 
 #define MTB_DWT_BASE_PTRS { MTB_DWT }
-# 7916 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 7916 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MTB_DWT_CTRL_DWTCFGCTRL_MASK 0xFFFFFFFu
 #define MTB_DWT_CTRL_DWTCFGCTRL_SHIFT 0u
 #define MTB_DWT_CTRL_DWTCFGCTRL_WIDTH 28u
@@ -8222,7 +8222,7 @@ typedef struct {
 #define MTB_DWT_COMPID_COMPID_SHIFT 0u
 #define MTB_DWT_COMPID_COMPID_WIDTH 32u
 #define MTB_DWT_COMPID_COMPID(x) (((uint32_t)(((uint32_t)(x))<<MTB_DWT_COMPID_COMPID_SHIFT))&MTB_DWT_COMPID_COMPID_MASK)
-# 8010 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8010 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PCC_PCCn_COUNT 116u
 
 
@@ -8269,7 +8269,7 @@ typedef struct {
 #define PCC_LPUART0_INDEX 106
 #define PCC_LPUART1_INDEX 107
 #define PCC_CMP0_INDEX 115
-# 8067 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8067 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PCC_PCCn_PCD_MASK 0xFu
 #define PCC_PCCn_PCD_SHIFT 0u
 #define PCC_PCCn_PCD_WIDTH 4u
@@ -8290,7 +8290,7 @@ typedef struct {
 #define PCC_PCCn_PR_SHIFT 31u
 #define PCC_PCCn_PR_WIDTH 1u
 #define PCC_PCCn_PR(x) (((uint32_t)(((uint32_t)(x))<<PCC_PCCn_PR_SHIFT))&PCC_PCCn_PR_MASK)
-# 8109 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8109 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PDB_CH_COUNT 2u
 #define PDB_DLY_COUNT 8u
 #define PDB_POnDLY_COUNT 1u
@@ -8336,7 +8336,7 @@ typedef struct {
 #define PDB_IRQS_CH_COUNT (1u)
 
 #define PDB_IRQS { PDB0_IRQn }
-# 8165 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8165 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PDB_SC_LDOK_MASK 0x1u
 #define PDB_SC_LDOK_SHIFT 0u
 #define PDB_SC_LDOK_WIDTH 1u
@@ -8451,7 +8451,7 @@ typedef struct {
 #define PDB_POnDLY_ACCESS16BIT_DLY1_DLY1_SHIFT 0u
 #define PDB_POnDLY_ACCESS16BIT_DLY1_DLY1_WIDTH 16u
 #define PDB_POnDLY_ACCESS16BIT_DLY1_DLY1(x) (((uint16_t)(((uint16_t)(x))<<PDB_POnDLY_ACCESS16BIT_DLY1_DLY1_SHIFT))&PDB_POnDLY_ACCESS16BIT_DLY1_DLY1_MASK)
-# 8303 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8303 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint8_t LVDSC1;
   volatile uint8_t LVDSC2;
@@ -8479,7 +8479,7 @@ typedef struct {
 #define PMC_IRQS_CH_COUNT (1u)
 
 #define PMC_IRQS { SCG_CMU_LVD_LVWSCG_IRQn }
-# 8341 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8341 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PMC_LVDSC1_LVDRE_MASK 0x10u
 #define PMC_LVDSC1_LVDRE_SHIFT 4u
 #define PMC_LVDSC1_LVDRE_WIDTH 1u
@@ -8535,7 +8535,7 @@ typedef struct {
 #define PMC_LPOTRIM_LPOTRIM_SHIFT 0u
 #define PMC_LPOTRIM_LPOTRIM_WIDTH 5u
 #define PMC_LPOTRIM_LPOTRIM(x) (((uint8_t)(((uint8_t)(x))<<PMC_LPOTRIM_LPOTRIM_SHIFT))&PMC_LPOTRIM_LPOTRIM_MASK)
-# 8418 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8418 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PORT_PCR_COUNT 32u
 
 
@@ -8588,7 +8588,7 @@ typedef struct {
 #define PORT_IRQS_CH_COUNT (1u)
 
 #define PORT_IRQS { PORT_IRQn, PORT_IRQn, PORT_IRQn, PORT_IRQn, PORT_IRQn }
-# 8481 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8481 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PORT_PCR_PS_MASK 0x1u
 #define PORT_PCR_PS_SHIFT 0u
 #define PORT_PCR_PS_WIDTH 1u
@@ -8677,7 +8677,7 @@ typedef struct {
 #define PORT_DFWR_FILT_SHIFT 0u
 #define PORT_DFWR_FILT_WIDTH 5u
 #define PORT_DFWR_FILT(x) (((uint32_t)(((uint32_t)(x))<<PORT_DFWR_FILT_SHIFT))&PORT_DFWR_FILT_MASK)
-# 8593 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8593 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -8707,7 +8707,7 @@ typedef struct {
 #define RCM_IRQS_CH_COUNT (1u)
 
 #define RCM_IRQS { RCM_IRQn }
-# 8633 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8633 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define RCM_VERID_FEATURE_MASK 0xFFFFu
 #define RCM_VERID_FEATURE_SHIFT 0u
 #define RCM_VERID_FEATURE_WIDTH 16u
@@ -8941,7 +8941,7 @@ typedef struct {
 #define RCM_SRIE_SACKERR_SHIFT 13u
 #define RCM_SRIE_SACKERR_WIDTH 1u
 #define RCM_SRIE_SACKERR(x) (((uint32_t)(((uint32_t)(x))<<RCM_SRIE_SACKERR_SHIFT))&RCM_SRIE_SACKERR_MASK)
-# 8890 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8890 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t TSR;
   volatile uint32_t TPR;
@@ -8975,7 +8975,7 @@ typedef struct {
 
 #define RTC_IRQS { RTC_IRQn }
 #define RTC_SECONDS_IRQS { RTC_Seconds_IRQn }
-# 8934 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 8934 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define RTC_TSR_TSR_MASK 0xFFFFFFFFu
 #define RTC_TSR_TSR_SHIFT 0u
 #define RTC_TSR_TSR_WIDTH 32u
@@ -9091,7 +9091,7 @@ typedef struct {
 #define RTC_IER_TSIC_SHIFT 16u
 #define RTC_IER_TSIC_WIDTH 3u
 #define RTC_IER_TSIC(x) (((uint32_t)(((uint32_t)(x))<<RTC_IER_TSIC_SHIFT))&RTC_IER_TSIC_MASK)
-# 9071 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9071 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32_NVIC_ISER_COUNT 1u
 #define S32_NVIC_ICER_COUNT 1u
 #define S32_NVIC_ISPR_COUNT 1u
@@ -9124,7 +9124,7 @@ typedef struct {
 #define S32_NVIC_BASE_ADDRS { S32_NVIC_BASE }
 
 #define S32_NVIC_BASE_PTRS { S32_NVIC }
-# 9114 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9114 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32_NVIC_ISER_SETENA_MASK 0xFFFFFFFFu
 #define S32_NVIC_ISER_SETENA_SHIFT 0u
 #define S32_NVIC_ISER_SETENA_WIDTH 32u
@@ -9161,7 +9161,7 @@ typedef struct {
 #define S32_NVIC_IPR_PRI_3_SHIFT 24u
 #define S32_NVIC_IPR_PRI_3_WIDTH 8u
 #define S32_NVIC_IPR_PRI_3(x) (((uint32_t)(((uint32_t)(x))<<S32_NVIC_IPR_PRI_3_SHIFT))&S32_NVIC_IPR_PRI_3_MASK)
-# 9174 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9174 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
        uint8_t RESERVED_0[8];
   volatile const uint32_t ACTLR;
@@ -9193,7 +9193,7 @@ typedef struct {
 #define S32_SCB_BASE_ADDRS { S32_SCB_BASE }
 
 #define S32_SCB_BASE_PTRS { S32_SCB }
-# 9216 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9216 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32_SCB_CPUID_REVISION_MASK 0xFu
 #define S32_SCB_CPUID_REVISION_SHIFT 0u
 #define S32_SCB_CPUID_REVISION_WIDTH 4u
@@ -9327,7 +9327,7 @@ typedef struct {
 #define S32_SCB_DFSR_EXTERNAL_SHIFT 4u
 #define S32_SCB_DFSR_EXTERNAL_WIDTH 1u
 #define S32_SCB_DFSR_EXTERNAL(x) (((uint32_t)(((uint32_t)(x))<<S32_SCB_DFSR_EXTERNAL_SHIFT))&S32_SCB_DFSR_EXTERNAL_MASK)
-# 9373 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9373 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t CSR;
   volatile uint32_t RVR;
@@ -9354,7 +9354,7 @@ typedef struct {
 #define S32_SysTick_IRQS_CH_COUNT (1u)
 
 #define S32_SysTick_IRQS { SysTick_IRQn }
-# 9410 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9410 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32_SysTick_CSR_ENABLE_MASK 0x1u
 #define S32_SysTick_CSR_ENABLE_SHIFT 0u
 #define S32_SysTick_CSR_ENABLE_WIDTH 1u
@@ -9394,7 +9394,7 @@ typedef struct {
 #define S32_SysTick_CALIB_NOREF_SHIFT 31u
 #define S32_SysTick_CALIB_NOREF_WIDTH 1u
 #define S32_SysTick_CALIB_NOREF(x) (((uint32_t)(((uint32_t)(x))<<S32_SysTick_CALIB_NOREF_SHIFT))&S32_SysTick_CALIB_NOREF_MASK)
-# 9473 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9473 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -9437,7 +9437,7 @@ typedef struct {
 #define SCG_IRQS_CH_COUNT (1u)
 
 #define SCG_IRQS { SCG_CMU_LVD_LVWSCG_IRQn }
-# 9526 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9526 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define SCG_VERID_VERSION_MASK 0xFFFFFFFFu
 #define SCG_VERID_VERSION_SHIFT 0u
 #define SCG_VERID_VERSION_WIDTH 32u
@@ -9636,7 +9636,7 @@ typedef struct {
 #define SCG_FIRCCFG_RANGE_SHIFT 0u
 #define SCG_FIRCCFG_RANGE_WIDTH 2u
 #define SCG_FIRCCFG_RANGE(x) (((uint32_t)(((uint32_t)(x))<<SCG_FIRCCFG_RANGE_SHIFT))&SCG_FIRCCFG_RANGE_MASK)
-# 9748 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9748 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
        uint8_t RESERVED_0[4];
   volatile uint32_t CHIPCTL;
@@ -9675,7 +9675,7 @@ typedef struct {
 #define SIM_BASE_ADDRS { SIM_BASE }
 
 #define SIM_BASE_PTRS { SIM }
-# 9797 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 9797 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define SIM_CHIPCTL_ADC_INTERLEAVE_EN_MASK 0xFu
 #define SIM_CHIPCTL_ADC_INTERLEAVE_EN_SHIFT 0u
 #define SIM_CHIPCTL_ADC_INTERLEAVE_EN_WIDTH 4u
@@ -9958,7 +9958,7 @@ typedef struct {
 #define SIM_MISCTRL1_SW_TRG_SHIFT 0u
 #define SIM_MISCTRL1_SW_TRG_WIDTH 1u
 #define SIM_MISCTRL1_SW_TRG(x) (((uint32_t)(((uint32_t)(x))<<SIM_MISCTRL1_SW_TRG_SHIFT))&SIM_MISCTRL1_SW_TRG_MASK)
-# 10103 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 10103 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -9981,7 +9981,7 @@ typedef struct {
 #define SMC_BASE_ADDRS { SMC_BASE }
 
 #define SMC_BASE_PTRS { SMC }
-# 10136 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 10136 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define SMC_VERID_FEATURE_MASK 0xFFFFu
 #define SMC_VERID_FEATURE_SHIFT 0u
 #define SMC_VERID_FEATURE_WIDTH 16u
@@ -10039,7 +10039,7 @@ typedef struct {
 #define SMC_PMSTAT_PMSTAT_SHIFT 0u
 #define SMC_PMSTAT_PMSTAT_WIDTH 8u
 #define SMC_PMSTAT_PMSTAT(x) (((uint32_t)(((uint32_t)(x))<<SMC_PMSTAT_PMSTAT_SHIFT))&SMC_PMSTAT_PMSTAT_MASK)
-# 10215 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 10215 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define TRGMUX_TRGMUXn_COUNT 26u
 
 
@@ -10077,7 +10077,7 @@ typedef struct {
 #define TRGMUX_LPI2C0_INDEX 21
 #define TRGMUX_LPSPI0_INDEX 23
 #define TRGMUX_LPTMR0_INDEX 25
-# 10263 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 10263 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define TRGMUX_TRGMUXn_SEL0_MASK 0x3Fu
 #define TRGMUX_TRGMUXn_SEL0_SHIFT 0u
 #define TRGMUX_TRGMUXn_SEL0_WIDTH 6u
@@ -10098,7 +10098,7 @@ typedef struct {
 #define TRGMUX_TRGMUXn_LK_SHIFT 31u
 #define TRGMUX_TRGMUXn_LK_WIDTH 1u
 #define TRGMUX_TRGMUXn_LK(x) (((uint32_t)(((uint32_t)(x))<<TRGMUX_TRGMUXn_LK_SHIFT))&TRGMUX_TRGMUXn_LK_MASK)
-# 10307 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 10307 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t CS;
   volatile uint32_t CNT;
@@ -10125,7 +10125,7 @@ typedef struct {
 #define WDOG_IRQS_CH_COUNT (1u)
 
 #define WDOG_IRQS { WDOG_IRQn }
-# 10344 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/S32K116.h"
+# 10344 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define WDOG_CS_STOP_MASK 0x1u
 #define WDOG_CS_STOP_SHIFT 0u
 #define WDOG_CS_STOP_WIDTH 1u
@@ -10209,14 +10209,14 @@ typedef struct {
 #define WDOG_WIN_WINHIGH_SHIFT 8u
 #define WDOG_WIN_WINHIGH_WIDTH 8u
 #define WDOG_WIN_WINHIGH(x) (((uint32_t)(((uint32_t)(x))<<WDOG_WIN_WINHIGH_SHIFT))&WDOG_WIN_WINHIGH_MASK)
-# 13 "D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.h" 2
+# 13 "D:/QLS/common/HW_Driver/WatchDog.h" 2
 
 
 extern uint8_t u8_wtd_Feed(void);
 extern void v_wtd_DeInit(void);
 extern uint8_t u8_wtd_Init(uint16_t Period);
 extern void v_wtd_SysReset(void);
-# 9 "D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.c" 2
+# 9 "D:/QLS/common/HW_Driver/WatchDog.c" 2
 
 
 uint8_t u8_wtd_Feed(void)

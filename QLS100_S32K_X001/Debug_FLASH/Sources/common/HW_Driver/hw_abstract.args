@@ -21,7 +21,7 @@
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/common"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/pal/inc"
 -I"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/pal/can/inc"
--O1
+-O0
 -funsigned-bitfields 
 -fshort-enums
 -fno-jump-tables

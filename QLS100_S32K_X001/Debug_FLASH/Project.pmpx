@@ -18,7 +18,7 @@
 			<member name="mapfile_pre_select" type="sint32">0</member>
 			<member name="comm_params_saved" type="sint32">0</member>
 			<member name="comm_state_saved" type="sint32">0</member>
-			<member name="comm_state_enabled" type="sint32">0</member>
+			<member name="comm_state_enabled" type="sint32">1</member>
 			<member name="cthread_boosting" type="sint32">0</member>
 			<member name="cthread_prio_base" type="sint32">3</member>
 			<member name="cthread_prio_boost" type="sint32">3</member>
@@ -161,13 +161,14 @@
 			<member name="item124" type="CObject_ptr">ObjId0656</member>
 			<member name="item125" type="CObject_ptr">ObjId0629</member>
 			<member name="item126" type="CObject_ptr">ObjId0647</member>
+			<member name="item127" type="CObject_ptr">ObjId1086</member>
 		</object>
 		<object name="ObjId0002" type="CVariable">
 			<member name="name" type="string">Current Velocity</member>
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">rf_Velocity</member>
-			<member name="last_addr" type="uint32">0x200020E8</member>
+			<member name="last_addr" type="uint32">0x200020F0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -194,7 +195,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">1</member>
+			<member name="modif_mode" type="sint32">0</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -216,7 +217,7 @@
 			<member name="unit" type="string">0.1mm</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">rf32_ltmr</member>
-			<member name="last_addr" type="uint32">0x200020E0</member>
+			<member name="last_addr" type="uint32">0x200020DE</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -265,7 +266,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">rf32_pcb_temp</member>
-			<member name="last_addr" type="uint32">0x200020DD</member>
+			<member name="last_addr" type="uint32">0x200020E0</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -360,13 +361,13 @@
 		<object name="ObjId0065" type="CObList"/>
 		<object name="ObjId0071" type="CVariable">
 			<member name="name" type="string">Current Urea Temperature</member>
-			<member name="unit" type="string">1 .C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">rf_ult_temp</member>
-			<member name="last_addr" type="uint32">0x200020F0</member>
+			<member name="last_addr" type="uint32">0x200020F6</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -412,7 +413,7 @@
 			<member name="unit" type="string">0.1mm</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">rf_tmr_level</member>
-			<member name="last_addr" type="uint32">0x200020F8</member>
+			<member name="last_addr" type="uint32">0x200020F4</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -458,13 +459,13 @@
 		<object name="ObjId0076" type="CObList"/>
 		<object name="ObjId0087" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[0]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[0]</member>
-			<member name="last_addr" type="uint32">0x2000025C</member>
+			<member name="last_addr" type="uint32">0x200000C0</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -507,13 +508,13 @@
 		<object name="ObjId0089" type="CObList"/>
 		<object name="ObjId0090" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[1]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[1]</member>
-			<member name="last_addr" type="uint32">0x2000025E</member>
+			<member name="last_addr" type="uint32">0x200000C2</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -556,13 +557,13 @@
 		<object name="ObjId0092" type="CObList"/>
 		<object name="ObjId0093" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[2]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[2]</member>
-			<member name="last_addr" type="uint32">0x20000260</member>
+			<member name="last_addr" type="uint32">0x200000C4</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -605,13 +606,13 @@
 		<object name="ObjId0095" type="CObList"/>
 		<object name="ObjId0096" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[3]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[3]</member>
-			<member name="last_addr" type="uint32">0x20000262</member>
+			<member name="last_addr" type="uint32">0x200000C6</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -654,13 +655,13 @@
 		<object name="ObjId0098" type="CObList"/>
 		<object name="ObjId0099" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[4]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[4]</member>
-			<member name="last_addr" type="uint32">0x20000264</member>
+			<member name="last_addr" type="uint32">0x200000C8</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -703,13 +704,13 @@
 		<object name="ObjId0101" type="CObList"/>
 		<object name="ObjId0102" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[5]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[5]</member>
-			<member name="last_addr" type="uint32">0x20000266</member>
+			<member name="last_addr" type="uint32">0x200000CA</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -752,13 +753,13 @@
 		<object name="ObjId0104" type="CObList"/>
 		<object name="ObjId0105" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[6]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[6]</member>
-			<member name="last_addr" type="uint32">0x20000268</member>
+			<member name="last_addr" type="uint32">0x200000CC</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -801,13 +802,13 @@
 		<object name="ObjId0107" type="CObList"/>
 		<object name="ObjId0108" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[7]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[7]</member>
-			<member name="last_addr" type="uint32">0x2000026A</member>
+			<member name="last_addr" type="uint32">0x200000CE</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -850,13 +851,13 @@
 		<object name="ObjId0110" type="CObList"/>
 		<object name="ObjId0111" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[8]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[8]</member>
-			<member name="last_addr" type="uint32">0x2000026C</member>
+			<member name="last_addr" type="uint32">0x200000D0</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -899,13 +900,13 @@
 		<object name="ObjId0113" type="CObList"/>
 		<object name="ObjId0114" type="CVariable">
 			<member name="name" type="string">C2_CALCON_RU8_XTEMP[9]</member>
-			<member name="unit" type="string">??&#xa8;&#xba;C</member>
+			<member name="unit" type="string">.C</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[9]</member>
-			<member name="last_addr" type="uint32">0x2000026E</member>
+			<member name="last_addr" type="uint32">0x200000D2</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">1</member>
-			<member name="type_fmt" type="string">Fixed point number</member>
+			<member name="type_fmt" type="string"/>
 			<member name="bit_shift" type="sint32">0</member>
 			<member name="bit_mask" type="string">no mask (-1)</member>
 			<member name="value_trf" type="CObject_ptr">NULL</member>
@@ -951,7 +952,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][0]</member>
-			<member name="last_addr" type="uint32">0x200000CC</member>
+			<member name="last_addr" type="uint32">0x200000E0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -978,7 +979,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1000,7 +1001,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][1]</member>
-			<member name="last_addr" type="uint32">0x200000D0</member>
+			<member name="last_addr" type="uint32">0x200000E4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1027,7 +1028,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1049,7 +1050,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][2]</member>
-			<member name="last_addr" type="uint32">0x200000D4</member>
+			<member name="last_addr" type="uint32">0x200000E8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1076,7 +1077,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1098,7 +1099,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][3]</member>
-			<member name="last_addr" type="uint32">0x200000D8</member>
+			<member name="last_addr" type="uint32">0x200000EC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1125,7 +1126,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1147,7 +1148,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][4]</member>
-			<member name="last_addr" type="uint32">0x200000DC</member>
+			<member name="last_addr" type="uint32">0x200000F0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1174,7 +1175,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1196,7 +1197,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][5]</member>
-			<member name="last_addr" type="uint32">0x200000E0</member>
+			<member name="last_addr" type="uint32">0x200000F4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1223,7 +1224,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1245,7 +1246,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][6]</member>
-			<member name="last_addr" type="uint32">0x200000E4</member>
+			<member name="last_addr" type="uint32">0x200000F8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1272,7 +1273,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1294,7 +1295,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][7]</member>
-			<member name="last_addr" type="uint32">0x200000E8</member>
+			<member name="last_addr" type="uint32">0x200000FC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1321,7 +1322,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1343,7 +1344,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][8]</member>
-			<member name="last_addr" type="uint32">0x200000EC</member>
+			<member name="last_addr" type="uint32">0x20000100</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1370,7 +1371,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1392,7 +1393,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[0][9]</member>
-			<member name="last_addr" type="uint32">0x200000F0</member>
+			<member name="last_addr" type="uint32">0x20000104</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1419,7 +1420,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1441,7 +1442,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][0]</member>
-			<member name="last_addr" type="uint32">0x200000F4</member>
+			<member name="last_addr" type="uint32">0x20000108</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1468,7 +1469,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1490,7 +1491,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][1]</member>
-			<member name="last_addr" type="uint32">0x200000F8</member>
+			<member name="last_addr" type="uint32">0x2000010C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1517,7 +1518,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1539,7 +1540,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][2]</member>
-			<member name="last_addr" type="uint32">0x200000FC</member>
+			<member name="last_addr" type="uint32">0x20000110</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1566,7 +1567,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1588,7 +1589,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][3]</member>
-			<member name="last_addr" type="uint32">0x20000100</member>
+			<member name="last_addr" type="uint32">0x20000114</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1615,7 +1616,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1637,7 +1638,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][4]</member>
-			<member name="last_addr" type="uint32">0x20000104</member>
+			<member name="last_addr" type="uint32">0x20000118</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1664,7 +1665,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1686,7 +1687,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][5]</member>
-			<member name="last_addr" type="uint32">0x20000108</member>
+			<member name="last_addr" type="uint32">0x2000011C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1713,7 +1714,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1735,7 +1736,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][6]</member>
-			<member name="last_addr" type="uint32">0x2000010C</member>
+			<member name="last_addr" type="uint32">0x20000120</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1762,7 +1763,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1784,7 +1785,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][7]</member>
-			<member name="last_addr" type="uint32">0x20000110</member>
+			<member name="last_addr" type="uint32">0x20000124</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1811,7 +1812,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1833,7 +1834,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][8]</member>
-			<member name="last_addr" type="uint32">0x20000114</member>
+			<member name="last_addr" type="uint32">0x20000128</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1860,7 +1861,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1882,7 +1883,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[1][9]</member>
-			<member name="last_addr" type="uint32">0x20000118</member>
+			<member name="last_addr" type="uint32">0x2000012C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1909,7 +1910,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1931,7 +1932,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][0]</member>
-			<member name="last_addr" type="uint32">0x2000011C</member>
+			<member name="last_addr" type="uint32">0x20000130</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -1958,7 +1959,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -1980,7 +1981,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][1]</member>
-			<member name="last_addr" type="uint32">0x20000120</member>
+			<member name="last_addr" type="uint32">0x20000134</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2007,7 +2008,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2029,7 +2030,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][2]</member>
-			<member name="last_addr" type="uint32">0x20000124</member>
+			<member name="last_addr" type="uint32">0x20000138</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2056,7 +2057,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2078,7 +2079,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][3]</member>
-			<member name="last_addr" type="uint32">0x20000128</member>
+			<member name="last_addr" type="uint32">0x2000013C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2105,7 +2106,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2127,7 +2128,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][4]</member>
-			<member name="last_addr" type="uint32">0x2000012C</member>
+			<member name="last_addr" type="uint32">0x20000140</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2154,7 +2155,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2176,7 +2177,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][5]</member>
-			<member name="last_addr" type="uint32">0x20000130</member>
+			<member name="last_addr" type="uint32">0x20000144</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2203,7 +2204,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2225,7 +2226,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][6]</member>
-			<member name="last_addr" type="uint32">0x20000134</member>
+			<member name="last_addr" type="uint32">0x20000148</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2252,7 +2253,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2274,7 +2275,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][7]</member>
-			<member name="last_addr" type="uint32">0x20000138</member>
+			<member name="last_addr" type="uint32">0x2000014C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2301,7 +2302,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2323,7 +2324,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][8]</member>
-			<member name="last_addr" type="uint32">0x2000013C</member>
+			<member name="last_addr" type="uint32">0x20000150</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2350,7 +2351,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2372,7 +2373,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[2][9]</member>
-			<member name="last_addr" type="uint32">0x20000140</member>
+			<member name="last_addr" type="uint32">0x20000154</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2399,7 +2400,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2421,7 +2422,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][0]</member>
-			<member name="last_addr" type="uint32">0x20000144</member>
+			<member name="last_addr" type="uint32">0x20000158</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2448,7 +2449,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2470,7 +2471,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][1]</member>
-			<member name="last_addr" type="uint32">0x20000148</member>
+			<member name="last_addr" type="uint32">0x2000015C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2497,7 +2498,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2519,7 +2520,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][2]</member>
-			<member name="last_addr" type="uint32">0x2000014C</member>
+			<member name="last_addr" type="uint32">0x20000160</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2546,7 +2547,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2568,7 +2569,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][3]</member>
-			<member name="last_addr" type="uint32">0x20000150</member>
+			<member name="last_addr" type="uint32">0x20000164</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2595,7 +2596,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2617,7 +2618,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][4]</member>
-			<member name="last_addr" type="uint32">0x20000154</member>
+			<member name="last_addr" type="uint32">0x20000168</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2644,7 +2645,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2666,7 +2667,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][5]</member>
-			<member name="last_addr" type="uint32">0x20000158</member>
+			<member name="last_addr" type="uint32">0x2000016C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2693,7 +2694,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2715,7 +2716,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][6]</member>
-			<member name="last_addr" type="uint32">0x2000015C</member>
+			<member name="last_addr" type="uint32">0x20000170</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2742,7 +2743,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2764,7 +2765,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][7]</member>
-			<member name="last_addr" type="uint32">0x20000160</member>
+			<member name="last_addr" type="uint32">0x20000174</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2791,7 +2792,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2813,7 +2814,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][8]</member>
-			<member name="last_addr" type="uint32">0x20000164</member>
+			<member name="last_addr" type="uint32">0x20000178</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2840,7 +2841,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2862,7 +2863,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[3][9]</member>
-			<member name="last_addr" type="uint32">0x20000168</member>
+			<member name="last_addr" type="uint32">0x2000017C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2889,7 +2890,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2911,7 +2912,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][0]</member>
-			<member name="last_addr" type="uint32">0x2000016C</member>
+			<member name="last_addr" type="uint32">0x20000180</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2938,7 +2939,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -2960,7 +2961,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][1]</member>
-			<member name="last_addr" type="uint32">0x20000170</member>
+			<member name="last_addr" type="uint32">0x20000184</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -2987,7 +2988,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3009,7 +3010,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][2]</member>
-			<member name="last_addr" type="uint32">0x20000174</member>
+			<member name="last_addr" type="uint32">0x20000188</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3036,7 +3037,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3058,7 +3059,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][3]</member>
-			<member name="last_addr" type="uint32">0x20000178</member>
+			<member name="last_addr" type="uint32">0x2000018C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3085,7 +3086,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3107,7 +3108,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][4]</member>
-			<member name="last_addr" type="uint32">0x2000017C</member>
+			<member name="last_addr" type="uint32">0x20000190</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3134,7 +3135,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3156,7 +3157,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][5]</member>
-			<member name="last_addr" type="uint32">0x20000180</member>
+			<member name="last_addr" type="uint32">0x20000194</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3183,7 +3184,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3205,7 +3206,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][6]</member>
-			<member name="last_addr" type="uint32">0x20000184</member>
+			<member name="last_addr" type="uint32">0x20000198</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3232,7 +3233,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3254,7 +3255,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][7]</member>
-			<member name="last_addr" type="uint32">0x20000188</member>
+			<member name="last_addr" type="uint32">0x2000019C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3281,7 +3282,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3303,7 +3304,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][8]</member>
-			<member name="last_addr" type="uint32">0x2000018C</member>
+			<member name="last_addr" type="uint32">0x200001A0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3330,7 +3331,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3352,7 +3353,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[4][9]</member>
-			<member name="last_addr" type="uint32">0x20000190</member>
+			<member name="last_addr" type="uint32">0x200001A4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3379,7 +3380,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3401,7 +3402,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][0]</member>
-			<member name="last_addr" type="uint32">0x20000194</member>
+			<member name="last_addr" type="uint32">0x200001A8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3428,7 +3429,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3450,7 +3451,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][1]</member>
-			<member name="last_addr" type="uint32">0x20000198</member>
+			<member name="last_addr" type="uint32">0x200001AC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3477,7 +3478,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3499,7 +3500,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][2]</member>
-			<member name="last_addr" type="uint32">0x2000019C</member>
+			<member name="last_addr" type="uint32">0x200001B0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3526,7 +3527,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3548,7 +3549,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][3]</member>
-			<member name="last_addr" type="uint32">0x200001A0</member>
+			<member name="last_addr" type="uint32">0x200001B4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3575,7 +3576,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3597,7 +3598,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][4]</member>
-			<member name="last_addr" type="uint32">0x200001A4</member>
+			<member name="last_addr" type="uint32">0x200001B8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3624,7 +3625,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3646,7 +3647,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][5]</member>
-			<member name="last_addr" type="uint32">0x200001A8</member>
+			<member name="last_addr" type="uint32">0x200001BC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3673,7 +3674,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3695,7 +3696,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][6]</member>
-			<member name="last_addr" type="uint32">0x200001AC</member>
+			<member name="last_addr" type="uint32">0x200001C0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3722,7 +3723,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3744,7 +3745,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][7]</member>
-			<member name="last_addr" type="uint32">0x200001B0</member>
+			<member name="last_addr" type="uint32">0x200001C4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3771,7 +3772,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3793,7 +3794,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][8]</member>
-			<member name="last_addr" type="uint32">0x200001B4</member>
+			<member name="last_addr" type="uint32">0x200001C8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3820,7 +3821,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3842,7 +3843,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[5][9]</member>
-			<member name="last_addr" type="uint32">0x200001B8</member>
+			<member name="last_addr" type="uint32">0x200001CC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3869,7 +3870,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3891,7 +3892,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][0]</member>
-			<member name="last_addr" type="uint32">0x200001BC</member>
+			<member name="last_addr" type="uint32">0x200001D0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3918,7 +3919,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3940,7 +3941,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][1]</member>
-			<member name="last_addr" type="uint32">0x200001C0</member>
+			<member name="last_addr" type="uint32">0x200001D4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -3967,7 +3968,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -3989,7 +3990,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][2]</member>
-			<member name="last_addr" type="uint32">0x200001C4</member>
+			<member name="last_addr" type="uint32">0x200001D8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4016,7 +4017,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4038,7 +4039,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][3]</member>
-			<member name="last_addr" type="uint32">0x200001C8</member>
+			<member name="last_addr" type="uint32">0x200001DC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4065,7 +4066,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4087,7 +4088,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][4]</member>
-			<member name="last_addr" type="uint32">0x200001CC</member>
+			<member name="last_addr" type="uint32">0x200001E0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4114,7 +4115,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4136,7 +4137,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][5]</member>
-			<member name="last_addr" type="uint32">0x200001D0</member>
+			<member name="last_addr" type="uint32">0x200001E4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4163,7 +4164,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4185,7 +4186,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][6]</member>
-			<member name="last_addr" type="uint32">0x200001D4</member>
+			<member name="last_addr" type="uint32">0x200001E8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4212,7 +4213,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4234,7 +4235,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][7]</member>
-			<member name="last_addr" type="uint32">0x200001D8</member>
+			<member name="last_addr" type="uint32">0x200001EC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4261,7 +4262,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4283,7 +4284,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][8]</member>
-			<member name="last_addr" type="uint32">0x200001DC</member>
+			<member name="last_addr" type="uint32">0x200001F0</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4310,7 +4311,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4332,7 +4333,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[6][9]</member>
-			<member name="last_addr" type="uint32">0x200001E0</member>
+			<member name="last_addr" type="uint32">0x200001F4</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4359,7 +4360,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4381,7 +4382,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][0]</member>
-			<member name="last_addr" type="uint32">0x200001E4</member>
+			<member name="last_addr" type="uint32">0x200001F8</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4408,7 +4409,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4430,7 +4431,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][1]</member>
-			<member name="last_addr" type="uint32">0x200001E8</member>
+			<member name="last_addr" type="uint32">0x200001FC</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4457,7 +4458,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4479,7 +4480,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][2]</member>
-			<member name="last_addr" type="uint32">0x200001EC</member>
+			<member name="last_addr" type="uint32">0x20000200</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4506,7 +4507,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4528,7 +4529,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][3]</member>
-			<member name="last_addr" type="uint32">0x200001F0</member>
+			<member name="last_addr" type="uint32">0x20000204</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4555,7 +4556,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4577,7 +4578,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][4]</member>
-			<member name="last_addr" type="uint32">0x200001F4</member>
+			<member name="last_addr" type="uint32">0x20000208</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4604,7 +4605,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4626,7 +4627,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][5]</member>
-			<member name="last_addr" type="uint32">0x200001F8</member>
+			<member name="last_addr" type="uint32">0x2000020C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4653,7 +4654,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4675,7 +4676,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][6]</member>
-			<member name="last_addr" type="uint32">0x200001FC</member>
+			<member name="last_addr" type="uint32">0x20000210</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4702,7 +4703,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4724,7 +4725,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][7]</member>
-			<member name="last_addr" type="uint32">0x20000200</member>
+			<member name="last_addr" type="uint32">0x20000214</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4751,7 +4752,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4773,7 +4774,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][8]</member>
-			<member name="last_addr" type="uint32">0x20000204</member>
+			<member name="last_addr" type="uint32">0x20000218</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4800,7 +4801,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4822,7 +4823,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[7][9]</member>
-			<member name="last_addr" type="uint32">0x20000208</member>
+			<member name="last_addr" type="uint32">0x2000021C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4849,7 +4850,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4871,7 +4872,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][0]</member>
-			<member name="last_addr" type="uint32">0x2000020C</member>
+			<member name="last_addr" type="uint32">0x20000220</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4898,7 +4899,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4920,7 +4921,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][1]</member>
-			<member name="last_addr" type="uint32">0x20000210</member>
+			<member name="last_addr" type="uint32">0x20000224</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4947,7 +4948,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -4969,7 +4970,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][2]</member>
-			<member name="last_addr" type="uint32">0x20000214</member>
+			<member name="last_addr" type="uint32">0x20000228</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -4996,7 +4997,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5018,7 +5019,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][3]</member>
-			<member name="last_addr" type="uint32">0x20000218</member>
+			<member name="last_addr" type="uint32">0x2000022C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5045,7 +5046,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5067,7 +5068,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][4]</member>
-			<member name="last_addr" type="uint32">0x2000021C</member>
+			<member name="last_addr" type="uint32">0x20000230</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5094,7 +5095,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5116,7 +5117,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][5]</member>
-			<member name="last_addr" type="uint32">0x20000220</member>
+			<member name="last_addr" type="uint32">0x20000234</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5143,7 +5144,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5165,7 +5166,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][6]</member>
-			<member name="last_addr" type="uint32">0x20000224</member>
+			<member name="last_addr" type="uint32">0x20000238</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5192,7 +5193,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5214,7 +5215,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][7]</member>
-			<member name="last_addr" type="uint32">0x20000228</member>
+			<member name="last_addr" type="uint32">0x2000023C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5241,7 +5242,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5263,7 +5264,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][8]</member>
-			<member name="last_addr" type="uint32">0x2000022C</member>
+			<member name="last_addr" type="uint32">0x20000240</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5290,7 +5291,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5312,7 +5313,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[8][9]</member>
-			<member name="last_addr" type="uint32">0x20000230</member>
+			<member name="last_addr" type="uint32">0x20000244</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5339,7 +5340,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5361,7 +5362,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][0]</member>
-			<member name="last_addr" type="uint32">0x20000234</member>
+			<member name="last_addr" type="uint32">0x20000248</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5388,7 +5389,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5410,7 +5411,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][1]</member>
-			<member name="last_addr" type="uint32">0x20000238</member>
+			<member name="last_addr" type="uint32">0x2000024C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5437,7 +5438,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5459,7 +5460,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][2]</member>
-			<member name="last_addr" type="uint32">0x2000023C</member>
+			<member name="last_addr" type="uint32">0x20000250</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5486,7 +5487,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5508,7 +5509,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][3]</member>
-			<member name="last_addr" type="uint32">0x20000240</member>
+			<member name="last_addr" type="uint32">0x20000254</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5535,7 +5536,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5557,7 +5558,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][4]</member>
-			<member name="last_addr" type="uint32">0x20000244</member>
+			<member name="last_addr" type="uint32">0x20000258</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5584,7 +5585,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5606,7 +5607,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][5]</member>
-			<member name="last_addr" type="uint32">0x20000248</member>
+			<member name="last_addr" type="uint32">0x2000025C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5633,7 +5634,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5655,7 +5656,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][6]</member>
-			<member name="last_addr" type="uint32">0x2000024C</member>
+			<member name="last_addr" type="uint32">0x20000260</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5682,7 +5683,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5704,7 +5705,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][7]</member>
-			<member name="last_addr" type="uint32">0x20000250</member>
+			<member name="last_addr" type="uint32">0x20000264</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5731,7 +5732,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5753,7 +5754,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][8]</member>
-			<member name="last_addr" type="uint32">0x20000254</member>
+			<member name="last_addr" type="uint32">0x20000268</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5780,7 +5781,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5802,7 +5803,7 @@
 			<member name="unit" type="string">m/s</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_TABLE[9][9]</member>
-			<member name="last_addr" type="uint32">0x20000258</member>
+			<member name="last_addr" type="uint32">0x2000026C</member>
 			<member name="byte_size" type="sint32">4</member>
 			<member name="treat_as" type="sint32">2</member>
 			<member name="type_fmt" type="string">IEEE floating point</member>
@@ -5829,7 +5830,7 @@
 			<member name="filt_enabled" type="sint32">0</member>
 			<member name="filt_reset_onmod" type="sint32">1</member>
 			<member name="filt_time" type="uint32">0x1388</member>
-			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_mode" type="sint32">1</member>
 			<member name="modif_edit_mode" type="sint32">2</member>
 			<member name="modif_set_mode" type="sint32">0</member>
 			<member name="modif_auto_fin" type="sint32">1</member>
@@ -5851,7 +5852,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[0]</member>
-			<member name="last_addr" type="uint32">0x200000C0</member>
+			<member name="last_addr" type="uint32">0x200000D4</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -5900,7 +5901,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[1]</member>
-			<member name="last_addr" type="uint32">0x200000C1</member>
+			<member name="last_addr" type="uint32">0x200000D5</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -5949,7 +5950,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[2]</member>
-			<member name="last_addr" type="uint32">0x200000C2</member>
+			<member name="last_addr" type="uint32">0x200000D6</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -5998,7 +5999,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[3]</member>
-			<member name="last_addr" type="uint32">0x200000C3</member>
+			<member name="last_addr" type="uint32">0x200000D7</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -6047,7 +6048,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[4]</member>
-			<member name="last_addr" type="uint32">0x200000C4</member>
+			<member name="last_addr" type="uint32">0x200000D8</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -6096,7 +6097,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[5]</member>
-			<member name="last_addr" type="uint32">0x200000C5</member>
+			<member name="last_addr" type="uint32">0x200000D9</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -6145,7 +6146,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[6]</member>
-			<member name="last_addr" type="uint32">0x200000C6</member>
+			<member name="last_addr" type="uint32">0x200000DA</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -6194,7 +6195,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[7]</member>
-			<member name="last_addr" type="uint32">0x200000C7</member>
+			<member name="last_addr" type="uint32">0x200000DB</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -6243,7 +6244,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[8]</member>
-			<member name="last_addr" type="uint32">0x200000C8</member>
+			<member name="last_addr" type="uint32">0x200000DC</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -6292,7 +6293,7 @@
 			<member name="unit" type="string">0.25%</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_YCON[9]</member>
-			<member name="last_addr" type="uint32">0x200000C9</member>
+			<member name="last_addr" type="uint32">0x200000DD</member>
 			<member name="byte_size" type="sint32">1</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -6341,7 +6342,7 @@
 			<member name="unit" type="string">unit</member>
 			<member name="period" type="sint32">1000</member>
 			<member name="address" type="string">C2_CALCON_RU8_XTEMP[2]</member>
-			<member name="last_addr" type="uint32">0x20000260</member>
+			<member name="last_addr" type="uint32">0x200000C4</member>
 			<member name="byte_size" type="sint32">2</member>
 			<member name="treat_as" type="sint32">0</member>
 			<member name="type_fmt" type="string">Fixed point number</member>
@@ -6385,6 +6386,55 @@
 			<member name="enum_items" type="CObList">ObjId0843</member>
 		</object>
 		<object name="ObjId0843" type="CObList"/>
+		<object name="ObjId1086" type="CVariable">
+			<member name="name" type="string">Probe Distance</member>
+			<member name="unit" type="string">m</member>
+			<member name="period" type="sint32">1000</member>
+			<member name="address" type="string">transLength</member>
+			<member name="last_addr" type="uint32">0x200003BC</member>
+			<member name="byte_size" type="sint32">4</member>
+			<member name="treat_as" type="sint32">2</member>
+			<member name="type_fmt" type="string">IEEE floating point</member>
+			<member name="bit_shift" type="sint32">0</member>
+			<member name="bit_mask" type="string">no mask (-1)</member>
+			<member name="value_trf" type="CObject_ptr">NULL</member>
+			<member name="enum_enabled" type="sint32">0</member>
+			<member name="enum_num_always" type="sint32">0</member>
+			<member name="enum_default_val" type="string">unknown</member>
+			<member name="enum_num_with_default" type="sint32">1</member>
+			<member name="enum_list" type="CEnumDoubleToString">ObjId1087</member>
+			<member name="show_as" type="sint32">4</member>
+			<member name="show_val" type="sint32">1</member>
+			<member name="show_max" type="sint32">0</member>
+			<member name="show_min" type="sint32">0</member>
+			<member name="show_num_fixed_digs" type="sint32">2147483647</member>
+			<member name="show_num_lzero_fill" type="sint32">0</member>
+			<member name="show_num_afp_digs" type="sint32">2147483647</member>
+			<member name="show_num_exp" type="sint32">0</member>
+			<member name="show_ascii_zterm" type="sint32">0</member>
+			<member name="show_ascii_rev" type="sint32">0</member>
+			<member name="show_ascii_hex" type="sint32">1</member>
+			<member name="show_ascii_chwdt" type="sint32">1</member>
+			<member name="filt_enabled" type="sint32">0</member>
+			<member name="filt_reset_onmod" type="sint32">1</member>
+			<member name="filt_time" type="uint32">0x1388</member>
+			<member name="modif_mode" type="sint32">0</member>
+			<member name="modif_edit_mode" type="sint32">2</member>
+			<member name="modif_set_mode" type="sint32">0</member>
+			<member name="modif_auto_fin" type="sint32">1</member>
+			<member name="modif_auto_hide" type="sint32">1</member>
+			<member name="modif_predefs_modes" type="uint32">0x1</member>
+			<member name="modif_predefs_other" type="string"/>
+			<member name="modif_set_min" type="string"/>
+			<member name="modif_set_max" type="string"/>
+			<member name="modif_set_step" type="string"/>
+			<member name="modif_address" type="string"/>
+			<member name="modif_last_addr" type="uint32">0x0</member>
+		</object>
+		<object name="ObjId1087" type="CEnumDoubleToString">
+			<member name="enum_items" type="CObList">ObjId1088</member>
+		</object>
+		<object name="ObjId1088" type="CObList"/>
 		<object name="ObjId0014" type="CObList"/>
 		<object name="ObjId0015" type="CObList"/>
 		<object name="ObjId0016" type="CMapWordToOb"/>
@@ -6609,11 +6659,15 @@
 			<member name="item1" type="CObject_ptr">ObjId0063</member>
 			<member name="item2" type="CObject_ptr">ObjId0071</member>
 			<member name="item3" type="CObject_ptr">ObjId0074</member>
+			<member name="item4" type="CObject_ptr">ObjId1086</member>
 		</object>
 		<object name="ObjId0037" type="CObList"/>
 		<object name="ObjId0038" type="CObList">
 			<member name="item0" type="CObject_ptr">ObjId0417</member>
 			<member name="item1" type="CObject_ptr">ObjId0972</member>
+			<member name="item2" type="CObject_ptr">ObjId0421</member>
+			<member name="item3" type="CObject_ptr">ObjId0460</member>
+			<member name="item4" type="CObject_ptr">ObjId0664</member>
 		</object>
 		<object name="ObjId0417" type="CPrjItemBlock">
 			<member name="parent_item" type="CObject_ptr">ObjId0035</member>
@@ -6634,51 +6688,26 @@
 			<member name="ena_inplace_params" type="sint32">1</member>
 			<member name="ena_inplace_values" type="sint32">1</member>
 		</object>
-		<object name="ObjId0418" type="CObList"/>
+		<object name="ObjId0418" type="CObList">
+			<member name="item0" type="CObject_ptr">ObjId0063</member>
+			<member name="item1" type="CObject_ptr">ObjId0002</member>
+			<member name="item2" type="CObject_ptr">ObjId0792</member>
+			<member name="item3" type="CObject_ptr">ObjId0650</member>
+			<member name="item4" type="CObject_ptr">ObjId0797</member>
+			<member name="item5" type="CObject_ptr">ObjId0653</member>
+			<member name="item6" type="CObject_ptr">ObjId0635</member>
+			<member name="item7" type="CObject_ptr">ObjId0632</member>
+			<member name="item8" type="CObject_ptr">ObjId0806</member>
+			<member name="item9" type="CObject_ptr">ObjId0809</member>
+			<member name="item10" type="CObject_ptr">ObjId0656</member>
+			<member name="item11" type="CObject_ptr">ObjId0629</member>
+		</object>
 		<object name="ObjId0419" type="CObList"/>
 		<object name="ObjId0420" type="CObList">
-			<member name="item0" type="CObject_ptr">ObjId0660</member>
-			<member name="item1" type="CObject_ptr">ObjId0421</member>
-			<member name="item2" type="CObject_ptr">ObjId0460</member>
+			<member name="item0" type="CObject_ptr">ObjId1040</member>
 		</object>
-		<object name="ObjId0660" type="CPrjItemBlock">
+		<object name="ObjId1040" type="CPrjItemScope">
 			<member name="parent_item" type="CObject_ptr">ObjId0417</member>
-			<member name="tree_expand" type="sint32">1</member>
-			<member name="name" type="string">Urea ConCentration</member>
-			<member name="href" type="string"/>
-			<member name="watch_variables" type="CObListEx">ObjId0661</member>
-			<member name="watch_functions" type="CObListEx">ObjId0662</member>
-			<member name="child_items" type="CObList">ObjId0663</member>
-			<member name="cell_format" type="CPrjItemBlock_CellFormat">ObjId0671</member>
-			<member name="column_info" type="CObArrayEx">ObjId0672</member>
-			<member name="variable_info" type="CMapObToObEx">ObjId0677</member>
-			<member name="show_grid" type="sint32">1</member>
-			<member name="show_bar" type="sint32">1</member>
-			<member name="ena_row_sizing" type="sint32">1</member>
-			<member name="ena_col_sizing" type="sint32">1</member>
-			<member name="ena_col_swapping" type="sint32">1</member>
-			<member name="ena_inplace_params" type="sint32">1</member>
-			<member name="ena_inplace_values" type="sint32">1</member>
-		</object>
-		<object name="ObjId0661" type="CObList">
-			<member name="item0" type="CObject_ptr">ObjId0063</member>
-			<member name="item1" type="CObject_ptr">ObjId0792</member>
-			<member name="item2" type="CObject_ptr">ObjId0650</member>
-			<member name="item3" type="CObject_ptr">ObjId0797</member>
-			<member name="item4" type="CObject_ptr">ObjId0653</member>
-			<member name="item5" type="CObject_ptr">ObjId0635</member>
-			<member name="item6" type="CObject_ptr">ObjId0632</member>
-			<member name="item7" type="CObject_ptr">ObjId0806</member>
-			<member name="item8" type="CObject_ptr">ObjId0809</member>
-			<member name="item9" type="CObject_ptr">ObjId0656</member>
-			<member name="item10" type="CObject_ptr">ObjId0629</member>
-		</object>
-		<object name="ObjId0662" type="CObList"/>
-		<object name="ObjId0663" type="CObList">
-			<member name="item0" type="CObject_ptr">ObjId0664</member>
-		</object>
-		<object name="ObjId0664" type="CPrjItemScope">
-			<member name="parent_item" type="CObject_ptr">ObjId0660</member>
 			<member name="tree_expand" type="sint32">1</member>
 			<member name="name" type="string">Current Urea Concentration (0.25%/bit)</member>
 			<member name="href" type="string"/>
@@ -6698,13 +6727,13 @@
 			<member name="graph_x_max_auto" type="sint32">1</member>
 			<member name="graph_var_count" type="sint32">1</member>
 			<member name="var_count" type="sint32">1</member>
-			<member name="var0_info" type="CPrjItemRS_VarInfo">ObjId0575</member>
-			<member name="yblock0_info" type="CPrjItemRS_YBlockInfo">ObjId0665</member>
-			<member name="yblock1_info" type="CPrjItemRS_YBlockInfo">ObjId0666</member>
-			<member name="yblock2_info" type="CPrjItemRS_YBlockInfo">ObjId0667</member>
-			<member name="yblock3_info" type="CPrjItemRS_YBlockInfo">ObjId0668</member>
-			<member name="yblock4_info" type="CPrjItemRS_YBlockInfo">ObjId0669</member>
-			<member name="yblock5_info" type="CPrjItemRS_YBlockInfo">ObjId0670</member>
+			<member name="var0_info" type="CPrjItemRS_VarInfo">ObjId1041</member>
+			<member name="yblock0_info" type="CPrjItemRS_YBlockInfo">ObjId1042</member>
+			<member name="yblock1_info" type="CPrjItemRS_YBlockInfo">ObjId1043</member>
+			<member name="yblock2_info" type="CPrjItemRS_YBlockInfo">ObjId1044</member>
+			<member name="yblock3_info" type="CPrjItemRS_YBlockInfo">ObjId1045</member>
+			<member name="yblock4_info" type="CPrjItemRS_YBlockInfo">ObjId1046</member>
+			<member name="yblock5_info" type="CPrjItemRS_YBlockInfo">ObjId1047</member>
 			<member name="scope_period" type="real64">1.00000000000000010000e-001</member>
 			<member name="scope_x_autoscale" type="sint32">1</member>
 			<member name="scope_x_width" type="real64">1.00000000000000000000e+001</member>
@@ -6715,13 +6744,13 @@
 			<member name="data_capture_file_type" type="sint32">0</member>
 			<member name="data_capture_dir" type="string">C:\Data</member>
 		</object>
-		<object name="ObjId0575" type="CPrjItemRS_VarInfo">
+		<object name="ObjId1041" type="CPrjItemRS_VarInfo">
 			<member name="variable" type="CObject_ptr">ObjId0063</member>
 			<member name="visible" type="sint32">1</member>
 			<member name="y_block" type="sint32">0</member>
 			<member name="color" type="uint32">0x2E2DED</member>
 		</object>
-		<object name="ObjId0665" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId1042" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">0</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -6737,7 +6766,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0666" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId1043" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">1</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -6753,7 +6782,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0667" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId1044" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">2</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -6769,7 +6798,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0668" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId1045" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">3</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -6785,7 +6814,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0669" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId1046" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">4</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -6801,7 +6830,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0670" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId1047" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">5</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -6817,7 +6846,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0671" type="CPrjItemBlock_CellFormat">
+		<object name="ObjId0589" type="CPrjItemBlock_CellFormat">
 			<member name="font_name" type="string">Tahoma</member>
 			<member name="font_set" type="uint8">0x0</member>
 			<member name="font_size" type="real32">8.00000000e+000</member>
@@ -6828,113 +6857,332 @@
 			<member name="backcolor" type="uint32">0xFFFFFF</member>
 			<member name="forecolor" type="uint32">0x0</member>
 		</object>
-		<object name="ObjId0672" type="CObArray" length="4">
-			<member name="index0" type="CObject_ptr">ObjId1010</member>
-			<member name="index1" type="CObject_ptr">ObjId1011</member>
-			<member name="index2" type="CObject_ptr">ObjId1012</member>
-			<member name="index3" type="CObject_ptr">ObjId1013</member>
+		<object name="ObjId0590" type="CObArray" length="4">
+			<member name="index0" type="CObject_ptr">ObjId1048</member>
+			<member name="index1" type="CObject_ptr">ObjId1049</member>
+			<member name="index2" type="CObject_ptr">ObjId1050</member>
+			<member name="index3" type="CObject_ptr">ObjId1051</member>
 		</object>
-		<object name="ObjId1010" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1048" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">193</member>
+			<member name="column_width" type="sint32">217</member>
 			<member name="column_ix" type="sint32">0</member>
 		</object>
-		<object name="ObjId1011" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1049" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">1</member>
 		</object>
-		<object name="ObjId1012" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1050" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">2</member>
 		</object>
-		<object name="ObjId1013" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1051" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">50</member>
 			<member name="column_ix" type="sint32">3</member>
 		</object>
-		<object name="ObjId0677" type="CMapObToObEx">
-			<member name="key0" type="CObject_ptr">ObjId0063</member>
-			<member name="value0" type="CObject_ptr">ObjId0820</member>
-			<member name="key1" type="CObject_ptr">ObjId0629</member>
-			<member name="value1" type="CObject_ptr">ObjId0822</member>
-			<member name="key2" type="CObject_ptr">ObjId0632</member>
-			<member name="value2" type="CObject_ptr">ObjId0824</member>
-			<member name="key3" type="CObject_ptr">ObjId0635</member>
-			<member name="value3" type="CObject_ptr">ObjId0826</member>
-			<member name="key4" type="CObject_ptr">ObjId0650</member>
-			<member name="value4" type="CObject_ptr">ObjId0828</member>
-			<member name="key5" type="CObject_ptr">ObjId0653</member>
-			<member name="value5" type="CObject_ptr">ObjId0830</member>
-			<member name="key6" type="CObject_ptr">ObjId0656</member>
-			<member name="value6" type="CObject_ptr">ObjId0832</member>
-			<member name="key7" type="CObject_ptr">ObjId0792</member>
-			<member name="value7" type="CObject_ptr">ObjId0834</member>
-			<member name="key8" type="CObject_ptr">ObjId0797</member>
-			<member name="value8" type="CObject_ptr">ObjId0836</member>
-			<member name="key9" type="CObject_ptr">ObjId0806</member>
-			<member name="value9" type="CObject_ptr">ObjId0838</member>
-			<member name="key10" type="CObject_ptr">ObjId0809</member>
-			<member name="value10" type="CObject_ptr">ObjId0840</member>
+		<object name="ObjId0595" type="CMapObToObEx">
+			<member name="key0" type="CObject_ptr">ObjId0002</member>
+			<member name="value0" type="CObject_ptr">ObjId1052</member>
+			<member name="key1" type="CObject_ptr">ObjId0063</member>
+			<member name="value1" type="CObject_ptr">ObjId1054</member>
+			<member name="key2" type="CObject_ptr">ObjId0629</member>
+			<member name="value2" type="CObject_ptr">ObjId1056</member>
+			<member name="key3" type="CObject_ptr">ObjId0632</member>
+			<member name="value3" type="CObject_ptr">ObjId1058</member>
+			<member name="key4" type="CObject_ptr">ObjId0635</member>
+			<member name="value4" type="CObject_ptr">ObjId1060</member>
+			<member name="key5" type="CObject_ptr">ObjId0650</member>
+			<member name="value5" type="CObject_ptr">ObjId1062</member>
+			<member name="key6" type="CObject_ptr">ObjId0653</member>
+			<member name="value6" type="CObject_ptr">ObjId1064</member>
+			<member name="key7" type="CObject_ptr">ObjId0656</member>
+			<member name="value7" type="CObject_ptr">ObjId1066</member>
+			<member name="key8" type="CObject_ptr">ObjId0792</member>
+			<member name="value8" type="CObject_ptr">ObjId1068</member>
+			<member name="key9" type="CObject_ptr">ObjId0797</member>
+			<member name="value9" type="CObject_ptr">ObjId1070</member>
+			<member name="key10" type="CObject_ptr">ObjId0806</member>
+			<member name="value10" type="CObject_ptr">ObjId1072</member>
+			<member name="key11" type="CObject_ptr">ObjId0809</member>
+			<member name="value11" type="CObject_ptr">ObjId1074</member>
 		</object>
-		<object name="ObjId0820" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1052" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0821</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1053</member>
 		</object>
-		<object name="ObjId0821" type="CObArray" length="0"/>
-		<object name="ObjId0822" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1053" type="CObArray" length="0"/>
+		<object name="ObjId1054" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0823</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1055</member>
 		</object>
-		<object name="ObjId0823" type="CObArray" length="0"/>
-		<object name="ObjId0824" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1055" type="CObArray" length="0"/>
+		<object name="ObjId1056" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0825</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1057</member>
 		</object>
-		<object name="ObjId0825" type="CObArray" length="0"/>
-		<object name="ObjId0826" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1057" type="CObArray" length="0"/>
+		<object name="ObjId1058" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0827</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1059</member>
 		</object>
-		<object name="ObjId0827" type="CObArray" length="0"/>
-		<object name="ObjId0828" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1059" type="CObArray" length="0"/>
+		<object name="ObjId1060" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0829</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1061</member>
 		</object>
-		<object name="ObjId0829" type="CObArray" length="0"/>
-		<object name="ObjId0830" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1061" type="CObArray" length="0"/>
+		<object name="ObjId1062" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0831</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1063</member>
 		</object>
-		<object name="ObjId0831" type="CObArray" length="0"/>
-		<object name="ObjId0832" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1063" type="CObArray" length="0"/>
+		<object name="ObjId1064" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0833</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1065</member>
 		</object>
-		<object name="ObjId0833" type="CObArray" length="0"/>
-		<object name="ObjId0834" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1065" type="CObArray" length="0"/>
+		<object name="ObjId1066" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0835</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1067</member>
 		</object>
-		<object name="ObjId0835" type="CObArray" length="0"/>
-		<object name="ObjId0836" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1067" type="CObArray" length="0"/>
+		<object name="ObjId1068" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0837</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1069</member>
 		</object>
-		<object name="ObjId0837" type="CObArray" length="0"/>
-		<object name="ObjId0838" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1069" type="CObArray" length="0"/>
+		<object name="ObjId1070" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0839</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1071</member>
 		</object>
-		<object name="ObjId0839" type="CObArray" length="0"/>
-		<object name="ObjId0840" type="CPrjItemBlock_VarInfo">
+		<object name="ObjId1071" type="CObArray" length="0"/>
+		<object name="ObjId1072" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0841</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1073</member>
 		</object>
-		<object name="ObjId0841" type="CObArray" length="0"/>
+		<object name="ObjId1073" type="CObArray" length="0"/>
+		<object name="ObjId1074" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">15</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1075</member>
+		</object>
+		<object name="ObjId1075" type="CObArray" length="0"/>
+		<object name="ObjId0972" type="CPrjItemBlock">
+			<member name="parent_item" type="CObject_ptr">ObjId0035</member>
+			<member name="tree_expand" type="sint32">1</member>
+			<member name="name" type="string">Urea Level</member>
+			<member name="href" type="string"/>
+			<member name="watch_variables" type="CObListEx">ObjId0973</member>
+			<member name="watch_functions" type="CObListEx">ObjId0974</member>
+			<member name="child_items" type="CObList">ObjId0975</member>
+			<member name="cell_format" type="CPrjItemBlock_CellFormat">ObjId0984</member>
+			<member name="column_info" type="CObArrayEx">ObjId0985</member>
+			<member name="variable_info" type="CMapObToObEx">ObjId0990</member>
+			<member name="show_grid" type="sint32">1</member>
+			<member name="show_bar" type="sint32">1</member>
+			<member name="ena_row_sizing" type="sint32">1</member>
+			<member name="ena_col_sizing" type="sint32">1</member>
+			<member name="ena_col_swapping" type="sint32">1</member>
+			<member name="ena_inplace_params" type="sint32">1</member>
+			<member name="ena_inplace_values" type="sint32">1</member>
+		</object>
+		<object name="ObjId0973" type="CObList">
+			<member name="item0" type="CObject_ptr">ObjId0074</member>
+		</object>
+		<object name="ObjId0974" type="CObList"/>
+		<object name="ObjId0975" type="CObList">
+			<member name="item0" type="CObject_ptr">ObjId0976</member>
+		</object>
+		<object name="ObjId0976" type="CPrjItemScope">
+			<member name="parent_item" type="CObject_ptr">ObjId0972</member>
+			<member name="tree_expand" type="sint32">1</member>
+			<member name="name" type="string">Current Urea Liquid Level(0.1mm/bit)</member>
+			<member name="href" type="string"/>
+			<member name="graph_buffer" type="sint32">10000</member>
+			<member name="graph_type" type="sint32">0</member>
+			<member name="graph_x_units" type="sint32">2</member>
+			<member name="graph_x_label" type="string">Time</member>
+			<member name="graph_x_addunits" type="sint32">1</member>
+			<member name="graph_legend_loc" type="sint32">0</member>
+			<member name="graph_legen_vis" type="sint32">1</member>
+			<member name="graph_legend_inside" type="sint32">1</member>
+			<member name="graph_grid_horz" type="sint32">1</member>
+			<member name="graph_grid_vert" type="sint32">1</member>
+			<member name="graph_x_min" type="real64">0.00000000000000000000e+000</member>
+			<member name="graph_x_max" type="real64">1.00000000000000000000e+002</member>
+			<member name="graph_x_min_auto" type="sint32">1</member>
+			<member name="graph_x_max_auto" type="sint32">1</member>
+			<member name="graph_var_count" type="sint32">1</member>
+			<member name="var_count" type="sint32">1</member>
+			<member name="var0_info" type="CPrjItemRS_VarInfo">ObjId0977</member>
+			<member name="yblock0_info" type="CPrjItemRS_YBlockInfo">ObjId0978</member>
+			<member name="yblock1_info" type="CPrjItemRS_YBlockInfo">ObjId0979</member>
+			<member name="yblock2_info" type="CPrjItemRS_YBlockInfo">ObjId0980</member>
+			<member name="yblock3_info" type="CPrjItemRS_YBlockInfo">ObjId0981</member>
+			<member name="yblock4_info" type="CPrjItemRS_YBlockInfo">ObjId0982</member>
+			<member name="yblock5_info" type="CPrjItemRS_YBlockInfo">ObjId0983</member>
+			<member name="scope_period" type="real64">1.00000000000000010000e-001</member>
+			<member name="scope_x_autoscale" type="sint32">1</member>
+			<member name="scope_x_width" type="real64">1.00000000000000000000e+001</member>
+			<member name="scope_ignore_duplicity" type="sint32">0</member>
+			<sub name="scope_views" length="0"/>
+			<member name="data_capture_mode" type="sint32">0</member>
+			<member name="data_capture_onaction" type="sint32">0</member>
+			<member name="data_capture_file_type" type="sint32">0</member>
+			<member name="data_capture_dir" type="string">C:\Data</member>
+		</object>
+		<object name="ObjId0977" type="CPrjItemRS_VarInfo">
+			<member name="variable" type="CObject_ptr">ObjId0074</member>
+			<member name="visible" type="sint32">1</member>
+			<member name="y_block" type="sint32">0</member>
+			<member name="color" type="uint32">0x2E2DED</member>
+		</object>
+		<object name="ObjId0978" type="CPrjItemRS_YBlockInfo">
+			<member name="join_class" type="sint32">0</member>
+			<member name="laxis_label" type="string">lAxis</member>
+			<member name="laxis_style" type="sint32">0</member>
+			<member name="laxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="laxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="laxis_min_auto" type="sint32">1</member>
+			<member name="laxis_max_auto" type="sint32">1</member>
+			<member name="raxis_label" type="string">rAxis</member>
+			<member name="raxis_style" type="sint32">0</member>
+			<member name="raxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="raxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="raxis_min_auto" type="sint32">1</member>
+			<member name="raxis_max_auto" type="sint32">1</member>
+			<member name="raxis_subsets" type="sint32">0</member>
+		</object>
+		<object name="ObjId0979" type="CPrjItemRS_YBlockInfo">
+			<member name="join_class" type="sint32">1</member>
+			<member name="laxis_label" type="string">lAxis</member>
+			<member name="laxis_style" type="sint32">0</member>
+			<member name="laxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="laxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="laxis_min_auto" type="sint32">1</member>
+			<member name="laxis_max_auto" type="sint32">1</member>
+			<member name="raxis_label" type="string">rAxis</member>
+			<member name="raxis_style" type="sint32">0</member>
+			<member name="raxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="raxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="raxis_min_auto" type="sint32">1</member>
+			<member name="raxis_max_auto" type="sint32">1</member>
+			<member name="raxis_subsets" type="sint32">0</member>
+		</object>
+		<object name="ObjId0980" type="CPrjItemRS_YBlockInfo">
+			<member name="join_class" type="sint32">2</member>
+			<member name="laxis_label" type="string">lAxis</member>
+			<member name="laxis_style" type="sint32">0</member>
+			<member name="laxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="laxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="laxis_min_auto" type="sint32">1</member>
+			<member name="laxis_max_auto" type="sint32">1</member>
+			<member name="raxis_label" type="string">rAxis</member>
+			<member name="raxis_style" type="sint32">0</member>
+			<member name="raxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="raxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="raxis_min_auto" type="sint32">1</member>
+			<member name="raxis_max_auto" type="sint32">1</member>
+			<member name="raxis_subsets" type="sint32">0</member>
+		</object>
+		<object name="ObjId0981" type="CPrjItemRS_YBlockInfo">
+			<member name="join_class" type="sint32">3</member>
+			<member name="laxis_label" type="string">lAxis</member>
+			<member name="laxis_style" type="sint32">0</member>
+			<member name="laxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="laxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="laxis_min_auto" type="sint32">1</member>
+			<member name="laxis_max_auto" type="sint32">1</member>
+			<member name="raxis_label" type="string">rAxis</member>
+			<member name="raxis_style" type="sint32">0</member>
+			<member name="raxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="raxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="raxis_min_auto" type="sint32">1</member>
+			<member name="raxis_max_auto" type="sint32">1</member>
+			<member name="raxis_subsets" type="sint32">0</member>
+		</object>
+		<object name="ObjId0982" type="CPrjItemRS_YBlockInfo">
+			<member name="join_class" type="sint32">4</member>
+			<member name="laxis_label" type="string">lAxis</member>
+			<member name="laxis_style" type="sint32">0</member>
+			<member name="laxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="laxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="laxis_min_auto" type="sint32">1</member>
+			<member name="laxis_max_auto" type="sint32">1</member>
+			<member name="raxis_label" type="string">rAxis</member>
+			<member name="raxis_style" type="sint32">0</member>
+			<member name="raxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="raxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="raxis_min_auto" type="sint32">1</member>
+			<member name="raxis_max_auto" type="sint32">1</member>
+			<member name="raxis_subsets" type="sint32">0</member>
+		</object>
+		<object name="ObjId0983" type="CPrjItemRS_YBlockInfo">
+			<member name="join_class" type="sint32">5</member>
+			<member name="laxis_label" type="string">lAxis</member>
+			<member name="laxis_style" type="sint32">0</member>
+			<member name="laxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="laxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="laxis_min_auto" type="sint32">1</member>
+			<member name="laxis_max_auto" type="sint32">1</member>
+			<member name="raxis_label" type="string">rAxis</member>
+			<member name="raxis_style" type="sint32">0</member>
+			<member name="raxis_min" type="real64">-1.00000000000000000000e+001</member>
+			<member name="raxis_max" type="real64">1.00000000000000000000e+001</member>
+			<member name="raxis_min_auto" type="sint32">1</member>
+			<member name="raxis_max_auto" type="sint32">1</member>
+			<member name="raxis_subsets" type="sint32">0</member>
+		</object>
+		<object name="ObjId0984" type="CPrjItemBlock_CellFormat">
+			<member name="font_name" type="string">Tahoma</member>
+			<member name="font_set" type="uint8">0x0</member>
+			<member name="font_size" type="real32">8.00000000e+000</member>
+			<member name="font_bold" type="sint32">0</member>
+			<member name="font_italic" type="sint32">0</member>
+			<member name="font_underline" type="sint32">0</member>
+			<member name="alignment" type="sint32">33</member>
+			<member name="backcolor" type="uint32">0xFFFFFF</member>
+			<member name="forecolor" type="uint32">0x0</member>
+		</object>
+		<object name="ObjId0985" type="CObArray" length="4">
+			<member name="index0" type="CObject_ptr">ObjId1026</member>
+			<member name="index1" type="CObject_ptr">ObjId1027</member>
+			<member name="index2" type="CObject_ptr">ObjId1028</member>
+			<member name="index3" type="CObject_ptr">ObjId1029</member>
+		</object>
+		<object name="ObjId1026" type="CPrjItemBlock_ColInfo">
+			<member name="column_visible" type="sint32">1</member>
+			<member name="column_width" type="sint32">245</member>
+			<member name="column_ix" type="sint32">0</member>
+		</object>
+		<object name="ObjId1027" type="CPrjItemBlock_ColInfo">
+			<member name="column_visible" type="sint32">1</member>
+			<member name="column_width" type="sint32">120</member>
+			<member name="column_ix" type="sint32">1</member>
+		</object>
+		<object name="ObjId1028" type="CPrjItemBlock_ColInfo">
+			<member name="column_visible" type="sint32">1</member>
+			<member name="column_width" type="sint32">120</member>
+			<member name="column_ix" type="sint32">2</member>
+		</object>
+		<object name="ObjId1029" type="CPrjItemBlock_ColInfo">
+			<member name="column_visible" type="sint32">1</member>
+			<member name="column_width" type="sint32">50</member>
+			<member name="column_ix" type="sint32">3</member>
+		</object>
+		<object name="ObjId0990" type="CMapObToObEx">
+			<member name="key0" type="CObject_ptr">ObjId0074</member>
+			<member name="value0" type="CObject_ptr">ObjId0991</member>
+		</object>
+		<object name="ObjId0991" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">15</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId0992</member>
+		</object>
+		<object name="ObjId0992" type="CObArray" length="0"/>
 		<object name="ObjId0421" type="CPrjItemBlock">
-			<member name="parent_item" type="CObject_ptr">ObjId0417</member>
+			<member name="parent_item" type="CObject_ptr">ObjId0035</member>
 			<member name="tree_expand" type="sint32">1</member>
 			<member name="name" type="string">Urea Temperature</member>
 			<member name="href" type="string"/>
@@ -6953,16 +7201,17 @@
 			<member name="ena_inplace_values" type="sint32">1</member>
 		</object>
 		<object name="ObjId0422" type="CObList">
-			<member name="item0" type="CObject_ptr">ObjId0087</member>
-			<member name="item1" type="CObject_ptr">ObjId0090</member>
-			<member name="item2" type="CObject_ptr">ObjId0093</member>
-			<member name="item3" type="CObject_ptr">ObjId0096</member>
-			<member name="item4" type="CObject_ptr">ObjId0099</member>
-			<member name="item5" type="CObject_ptr">ObjId0102</member>
-			<member name="item6" type="CObject_ptr">ObjId0105</member>
-			<member name="item7" type="CObject_ptr">ObjId0108</member>
-			<member name="item8" type="CObject_ptr">ObjId0111</member>
-			<member name="item9" type="CObject_ptr">ObjId0114</member>
+			<member name="item0" type="CObject_ptr">ObjId0071</member>
+			<member name="item1" type="CObject_ptr">ObjId0087</member>
+			<member name="item2" type="CObject_ptr">ObjId0090</member>
+			<member name="item3" type="CObject_ptr">ObjId0093</member>
+			<member name="item4" type="CObject_ptr">ObjId0096</member>
+			<member name="item5" type="CObject_ptr">ObjId0099</member>
+			<member name="item6" type="CObject_ptr">ObjId0102</member>
+			<member name="item7" type="CObject_ptr">ObjId0105</member>
+			<member name="item8" type="CObject_ptr">ObjId0108</member>
+			<member name="item9" type="CObject_ptr">ObjId0111</member>
+			<member name="item10" type="CObject_ptr">ObjId0114</member>
 		</object>
 		<object name="ObjId0423" type="CObList"/>
 		<object name="ObjId0424" type="CObList">
@@ -7120,53 +7369,60 @@
 			<member name="forecolor" type="uint32">0x0</member>
 		</object>
 		<object name="ObjId0434" type="CObArray" length="4">
-			<member name="index0" type="CObject_ptr">ObjId1014</member>
-			<member name="index1" type="CObject_ptr">ObjId1015</member>
-			<member name="index2" type="CObject_ptr">ObjId1016</member>
-			<member name="index3" type="CObject_ptr">ObjId1017</member>
+			<member name="index0" type="CObject_ptr">ObjId1076</member>
+			<member name="index1" type="CObject_ptr">ObjId1077</member>
+			<member name="index2" type="CObject_ptr">ObjId1078</member>
+			<member name="index3" type="CObject_ptr">ObjId1079</member>
 		</object>
-		<object name="ObjId1014" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1076" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">222</member>
 			<member name="column_ix" type="sint32">0</member>
 		</object>
-		<object name="ObjId1015" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1077" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">1</member>
 		</object>
-		<object name="ObjId1016" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1078" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">2</member>
 		</object>
-		<object name="ObjId1017" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1079" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">50</member>
 			<member name="column_ix" type="sint32">3</member>
 		</object>
 		<object name="ObjId0439" type="CMapObToObEx">
-			<member name="key0" type="CObject_ptr">ObjId0087</member>
-			<member name="value0" type="CObject_ptr">ObjId0440</member>
-			<member name="key1" type="CObject_ptr">ObjId0090</member>
-			<member name="value1" type="CObject_ptr">ObjId0442</member>
-			<member name="key2" type="CObject_ptr">ObjId0093</member>
-			<member name="value2" type="CObject_ptr">ObjId0444</member>
-			<member name="key3" type="CObject_ptr">ObjId0096</member>
-			<member name="value3" type="CObject_ptr">ObjId0446</member>
-			<member name="key4" type="CObject_ptr">ObjId0099</member>
-			<member name="value4" type="CObject_ptr">ObjId0448</member>
-			<member name="key5" type="CObject_ptr">ObjId0102</member>
-			<member name="value5" type="CObject_ptr">ObjId0450</member>
-			<member name="key6" type="CObject_ptr">ObjId0105</member>
-			<member name="value6" type="CObject_ptr">ObjId0452</member>
-			<member name="key7" type="CObject_ptr">ObjId0108</member>
-			<member name="value7" type="CObject_ptr">ObjId0454</member>
-			<member name="key8" type="CObject_ptr">ObjId0111</member>
-			<member name="value8" type="CObject_ptr">ObjId0456</member>
-			<member name="key9" type="CObject_ptr">ObjId0114</member>
-			<member name="value9" type="CObject_ptr">ObjId0458</member>
+			<member name="key0" type="CObject_ptr">ObjId0071</member>
+			<member name="value0" type="CObject_ptr">ObjId1080</member>
+			<member name="key1" type="CObject_ptr">ObjId0087</member>
+			<member name="value1" type="CObject_ptr">ObjId0440</member>
+			<member name="key2" type="CObject_ptr">ObjId0090</member>
+			<member name="value2" type="CObject_ptr">ObjId0442</member>
+			<member name="key3" type="CObject_ptr">ObjId0093</member>
+			<member name="value3" type="CObject_ptr">ObjId0444</member>
+			<member name="key4" type="CObject_ptr">ObjId0096</member>
+			<member name="value4" type="CObject_ptr">ObjId0446</member>
+			<member name="key5" type="CObject_ptr">ObjId0099</member>
+			<member name="value5" type="CObject_ptr">ObjId0448</member>
+			<member name="key6" type="CObject_ptr">ObjId0102</member>
+			<member name="value6" type="CObject_ptr">ObjId0450</member>
+			<member name="key7" type="CObject_ptr">ObjId0105</member>
+			<member name="value7" type="CObject_ptr">ObjId0452</member>
+			<member name="key8" type="CObject_ptr">ObjId0108</member>
+			<member name="value8" type="CObject_ptr">ObjId0454</member>
+			<member name="key9" type="CObject_ptr">ObjId0111</member>
+			<member name="value9" type="CObject_ptr">ObjId0456</member>
+			<member name="key10" type="CObject_ptr">ObjId0114</member>
+			<member name="value10" type="CObject_ptr">ObjId0458</member>
 		</object>
+		<object name="ObjId1080" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">15</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1081</member>
+		</object>
+		<object name="ObjId1081" type="CObArray" length="0"/>
 		<object name="ObjId0440" type="CPrjItemBlock_VarInfo">
 			<member name="row_height" type="sint32">15</member>
 			<member name="row_cell_formats" type="CObArrayEx">ObjId0441</member>
@@ -7218,7 +7474,7 @@
 		</object>
 		<object name="ObjId0459" type="CObArray" length="0"/>
 		<object name="ObjId0460" type="CPrjItemBlock">
-			<member name="parent_item" type="CObject_ptr">ObjId0417</member>
+			<member name="parent_item" type="CObject_ptr">ObjId0035</member>
 			<member name="tree_expand" type="sint32">1</member>
 			<member name="name" type="string">Urea Velocity</member>
 			<member name="href" type="string"/>
@@ -8939,74 +9195,10 @@
 			<member name="row_cell_formats" type="CObArrayEx">ObjId0971</member>
 		</object>
 		<object name="ObjId0971" type="CObArray" length="0"/>
-		<object name="ObjId0589" type="CPrjItemBlock_CellFormat">
-			<member name="font_name" type="string">Tahoma</member>
-			<member name="font_set" type="uint8">0x0</member>
-			<member name="font_size" type="real32">8.00000000e+000</member>
-			<member name="font_bold" type="sint32">0</member>
-			<member name="font_italic" type="sint32">0</member>
-			<member name="font_underline" type="sint32">0</member>
-			<member name="alignment" type="sint32">33</member>
-			<member name="backcolor" type="uint32">0xFFFFFF</member>
-			<member name="forecolor" type="uint32">0x0</member>
-		</object>
-		<object name="ObjId0590" type="CObArray" length="4">
-			<member name="index0" type="CObject_ptr">ObjId1022</member>
-			<member name="index1" type="CObject_ptr">ObjId1023</member>
-			<member name="index2" type="CObject_ptr">ObjId1024</member>
-			<member name="index3" type="CObject_ptr">ObjId1025</member>
-		</object>
-		<object name="ObjId1022" type="CPrjItemBlock_ColInfo">
-			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">120</member>
-			<member name="column_ix" type="sint32">0</member>
-		</object>
-		<object name="ObjId1023" type="CPrjItemBlock_ColInfo">
-			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">120</member>
-			<member name="column_ix" type="sint32">1</member>
-		</object>
-		<object name="ObjId1024" type="CPrjItemBlock_ColInfo">
-			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">120</member>
-			<member name="column_ix" type="sint32">2</member>
-		</object>
-		<object name="ObjId1025" type="CPrjItemBlock_ColInfo">
-			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">50</member>
-			<member name="column_ix" type="sint32">3</member>
-		</object>
-		<object name="ObjId0595" type="CMapObToObEx"/>
-		<object name="ObjId0972" type="CPrjItemBlock">
+		<object name="ObjId0664" type="CPrjItemScope">
 			<member name="parent_item" type="CObject_ptr">ObjId0035</member>
 			<member name="tree_expand" type="sint32">1</member>
-			<member name="name" type="string">Urea Level</member>
-			<member name="href" type="string"/>
-			<member name="watch_variables" type="CObListEx">ObjId0973</member>
-			<member name="watch_functions" type="CObListEx">ObjId0974</member>
-			<member name="child_items" type="CObList">ObjId0975</member>
-			<member name="cell_format" type="CPrjItemBlock_CellFormat">ObjId0984</member>
-			<member name="column_info" type="CObArrayEx">ObjId0985</member>
-			<member name="variable_info" type="CMapObToObEx">ObjId0990</member>
-			<member name="show_grid" type="sint32">1</member>
-			<member name="show_bar" type="sint32">1</member>
-			<member name="ena_row_sizing" type="sint32">1</member>
-			<member name="ena_col_sizing" type="sint32">1</member>
-			<member name="ena_col_swapping" type="sint32">1</member>
-			<member name="ena_inplace_params" type="sint32">1</member>
-			<member name="ena_inplace_values" type="sint32">1</member>
-		</object>
-		<object name="ObjId0973" type="CObList">
-			<member name="item0" type="CObject_ptr">ObjId0074</member>
-		</object>
-		<object name="ObjId0974" type="CObList"/>
-		<object name="ObjId0975" type="CObList">
-			<member name="item0" type="CObject_ptr">ObjId0976</member>
-		</object>
-		<object name="ObjId0976" type="CPrjItemScope">
-			<member name="parent_item" type="CObject_ptr">ObjId0972</member>
-			<member name="tree_expand" type="sint32">1</member>
-			<member name="name" type="string">Current Urea Liquid Level(0.1mm/bit)</member>
+			<member name="name" type="string">Current Urea Concentration (0.25%/bit)</member>
 			<member name="href" type="string"/>
 			<member name="graph_buffer" type="sint32">10000</member>
 			<member name="graph_type" type="sint32">0</member>
@@ -9024,13 +9216,13 @@
 			<member name="graph_x_max_auto" type="sint32">1</member>
 			<member name="graph_var_count" type="sint32">1</member>
 			<member name="var_count" type="sint32">1</member>
-			<member name="var0_info" type="CPrjItemRS_VarInfo">ObjId0977</member>
-			<member name="yblock0_info" type="CPrjItemRS_YBlockInfo">ObjId0978</member>
-			<member name="yblock1_info" type="CPrjItemRS_YBlockInfo">ObjId0979</member>
-			<member name="yblock2_info" type="CPrjItemRS_YBlockInfo">ObjId0980</member>
-			<member name="yblock3_info" type="CPrjItemRS_YBlockInfo">ObjId0981</member>
-			<member name="yblock4_info" type="CPrjItemRS_YBlockInfo">ObjId0982</member>
-			<member name="yblock5_info" type="CPrjItemRS_YBlockInfo">ObjId0983</member>
+			<member name="var0_info" type="CPrjItemRS_VarInfo">ObjId0575</member>
+			<member name="yblock0_info" type="CPrjItemRS_YBlockInfo">ObjId0665</member>
+			<member name="yblock1_info" type="CPrjItemRS_YBlockInfo">ObjId0666</member>
+			<member name="yblock2_info" type="CPrjItemRS_YBlockInfo">ObjId0667</member>
+			<member name="yblock3_info" type="CPrjItemRS_YBlockInfo">ObjId0668</member>
+			<member name="yblock4_info" type="CPrjItemRS_YBlockInfo">ObjId0669</member>
+			<member name="yblock5_info" type="CPrjItemRS_YBlockInfo">ObjId0670</member>
 			<member name="scope_period" type="real64">1.00000000000000010000e-001</member>
 			<member name="scope_x_autoscale" type="sint32">1</member>
 			<member name="scope_x_width" type="real64">1.00000000000000000000e+001</member>
@@ -9041,13 +9233,13 @@
 			<member name="data_capture_file_type" type="sint32">0</member>
 			<member name="data_capture_dir" type="string">C:\Data</member>
 		</object>
-		<object name="ObjId0977" type="CPrjItemRS_VarInfo">
-			<member name="variable" type="CObject_ptr">ObjId0074</member>
+		<object name="ObjId0575" type="CPrjItemRS_VarInfo">
+			<member name="variable" type="CObject_ptr">ObjId0063</member>
 			<member name="visible" type="sint32">1</member>
 			<member name="y_block" type="sint32">0</member>
 			<member name="color" type="uint32">0x2E2DED</member>
 		</object>
-		<object name="ObjId0978" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId0665" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">0</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -9063,7 +9255,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0979" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId0666" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">1</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -9079,7 +9271,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0980" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId0667" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">2</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -9095,7 +9287,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0981" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId0668" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">3</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -9111,7 +9303,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0982" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId0669" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">4</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -9127,7 +9319,7 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0983" type="CPrjItemRS_YBlockInfo">
+		<object name="ObjId0670" type="CPrjItemRS_YBlockInfo">
 			<member name="join_class" type="sint32">5</member>
 			<member name="laxis_label" type="string">lAxis</member>
 			<member name="laxis_style" type="sint32">0</member>
@@ -9143,52 +9335,6 @@
 			<member name="raxis_max_auto" type="sint32">1</member>
 			<member name="raxis_subsets" type="sint32">0</member>
 		</object>
-		<object name="ObjId0984" type="CPrjItemBlock_CellFormat">
-			<member name="font_name" type="string">Tahoma</member>
-			<member name="font_set" type="uint8">0x0</member>
-			<member name="font_size" type="real32">8.00000000e+000</member>
-			<member name="font_bold" type="sint32">0</member>
-			<member name="font_italic" type="sint32">0</member>
-			<member name="font_underline" type="sint32">0</member>
-			<member name="alignment" type="sint32">33</member>
-			<member name="backcolor" type="uint32">0xFFFFFF</member>
-			<member name="forecolor" type="uint32">0x0</member>
-		</object>
-		<object name="ObjId0985" type="CObArray" length="4">
-			<member name="index0" type="CObject_ptr">ObjId1026</member>
-			<member name="index1" type="CObject_ptr">ObjId1027</member>
-			<member name="index2" type="CObject_ptr">ObjId1028</member>
-			<member name="index3" type="CObject_ptr">ObjId1029</member>
-		</object>
-		<object name="ObjId1026" type="CPrjItemBlock_ColInfo">
-			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">245</member>
-			<member name="column_ix" type="sint32">0</member>
-		</object>
-		<object name="ObjId1027" type="CPrjItemBlock_ColInfo">
-			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">120</member>
-			<member name="column_ix" type="sint32">1</member>
-		</object>
-		<object name="ObjId1028" type="CPrjItemBlock_ColInfo">
-			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">120</member>
-			<member name="column_ix" type="sint32">2</member>
-		</object>
-		<object name="ObjId1029" type="CPrjItemBlock_ColInfo">
-			<member name="column_visible" type="sint32">1</member>
-			<member name="column_width" type="sint32">50</member>
-			<member name="column_ix" type="sint32">3</member>
-		</object>
-		<object name="ObjId0990" type="CMapObToObEx">
-			<member name="key0" type="CObject_ptr">ObjId0074</member>
-			<member name="value0" type="CObject_ptr">ObjId0991</member>
-		</object>
-		<object name="ObjId0991" type="CPrjItemBlock_VarInfo">
-			<member name="row_height" type="sint32">15</member>
-			<member name="row_cell_formats" type="CObArrayEx">ObjId0992</member>
-		</object>
-		<object name="ObjId0992" type="CObArray" length="0"/>
 		<object name="ObjId0046" type="CPrjItemBlock_CellFormat">
 			<member name="font_name" type="string">Tahoma</member>
 			<member name="font_set" type="uint8">0x0</member>
@@ -9201,27 +9347,27 @@
 			<member name="forecolor" type="uint32">0x0</member>
 		</object>
 		<object name="ObjId0047" type="CObArray" length="4">
-			<member name="index0" type="CObject_ptr">ObjId1030</member>
-			<member name="index1" type="CObject_ptr">ObjId1031</member>
-			<member name="index2" type="CObject_ptr">ObjId1032</member>
-			<member name="index3" type="CObject_ptr">ObjId1033</member>
+			<member name="index0" type="CObject_ptr">ObjId1082</member>
+			<member name="index1" type="CObject_ptr">ObjId1083</member>
+			<member name="index2" type="CObject_ptr">ObjId1084</member>
+			<member name="index3" type="CObject_ptr">ObjId1085</member>
 		</object>
-		<object name="ObjId1030" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1082" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">264</member>
 			<member name="column_ix" type="sint32">0</member>
 		</object>
-		<object name="ObjId1031" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1083" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">1</member>
 		</object>
-		<object name="ObjId1032" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1084" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">120</member>
 			<member name="column_ix" type="sint32">2</member>
 		</object>
-		<object name="ObjId1033" type="CPrjItemBlock_ColInfo">
+		<object name="ObjId1085" type="CPrjItemBlock_ColInfo">
 			<member name="column_visible" type="sint32">1</member>
 			<member name="column_width" type="sint32">50</member>
 			<member name="column_ix" type="sint32">3</member>
@@ -9235,27 +9381,34 @@
 			<member name="value2" type="CObject_ptr">ObjId0083</member>
 			<member name="key3" type="CObject_ptr">ObjId0074</member>
 			<member name="value3" type="CObject_ptr">ObjId0085</member>
+			<member name="key4" type="CObject_ptr">ObjId1086</member>
+			<member name="value4" type="CObject_ptr">ObjId1089</member>
 		</object>
 		<object name="ObjId0053" type="CPrjItemBlock_VarInfo">
-			<member name="row_height" type="sint32">15</member>
+			<member name="row_height" type="sint32">26</member>
 			<member name="row_cell_formats" type="CObArrayEx">ObjId0054</member>
 		</object>
 		<object name="ObjId0054" type="CObArray" length="0"/>
 		<object name="ObjId0081" type="CPrjItemBlock_VarInfo">
-			<member name="row_height" type="sint32">15</member>
+			<member name="row_height" type="sint32">27</member>
 			<member name="row_cell_formats" type="CObArrayEx">ObjId0082</member>
 		</object>
 		<object name="ObjId0082" type="CObArray" length="0"/>
 		<object name="ObjId0083" type="CPrjItemBlock_VarInfo">
-			<member name="row_height" type="sint32">15</member>
+			<member name="row_height" type="sint32">29</member>
 			<member name="row_cell_formats" type="CObArrayEx">ObjId0084</member>
 		</object>
 		<object name="ObjId0084" type="CObArray" length="0"/>
 		<object name="ObjId0085" type="CPrjItemBlock_VarInfo">
-			<member name="row_height" type="sint32">15</member>
+			<member name="row_height" type="sint32">31</member>
 			<member name="row_cell_formats" type="CObArrayEx">ObjId0086</member>
 		</object>
 		<object name="ObjId0086" type="CObArray" length="0"/>
+		<object name="ObjId1089" type="CPrjItemBlock_VarInfo">
+			<member name="row_height" type="sint32">32</member>
+			<member name="row_cell_formats" type="CObArrayEx">ObjId1090</member>
+		</object>
+		<object name="ObjId1090" type="CObArray" length="0"/>
 		<object name="ObjId0061" type="CFlashProgDlg">
 			<member name="is_default" type="sint32">1</member>
 			<member name="csw_addr" type="string">fprgCSW</member>

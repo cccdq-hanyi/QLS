@@ -7,7 +7,7 @@
 **     Version     : Component 1.0.0, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K116_00
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2020-07-21, 11:52, # CodeGen: 91
+**     Date/Time   : 2020-08-14, 17:02, # CodeGen: 101
 **     Contents    :
 **         LPSPI_DRV_SlaveInit               - status_t LPSPI_DRV_SlaveInit(uint32_t instance,lpspi_state_t *...
 **         LPSPI_DRV_SlaveDeinit             - status_t LPSPI_DRV_SlaveDeinit(uint32_t instance);

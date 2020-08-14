@@ -1,4 +1,4 @@
-# 1 "D:/s32dsworkspace/QLS/common/ntc_calibration.c"
+# 1 "D:/QLS/common/ntc_calibration.c"
 # 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -308,6 +307,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
@@ -349,8 +349,8 @@
 #define __USES_INITFINI__ 1
 #define CPU_S32K116 1
 #define DEV_ERROR_DETECT 1
-# 1 "D:/s32dsworkspace/QLS/common/ntc_calibration.c"
-# 20 "D:/s32dsworkspace/QLS/common/ntc_calibration.c"
+# 1 "D:/QLS/common/ntc_calibration.c"
+# 20 "D:/QLS/common/ntc_calibration.c"
 # 1 "D:/s32dsworkspace/QLS/common/ntc_calibration.h" 1
 
 
@@ -1127,7 +1127,7 @@ typedef struct _NTC_TABLE{
 
 
 extern short int ntc_calibration_cal_temp(uint16_t addata);
-# 21 "D:/s32dsworkspace/QLS/common/ntc_calibration.c" 2
+# 21 "D:/QLS/common/ntc_calibration.c" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdlib.h" 1
 # 9 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdlib.h"
 #define _EWL_STDLIB_H 
@@ -1331,21 +1331,17 @@ typedef int (*_compare_function)(const void*, const void*);
 
 
 # 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdlib.h" 2
-# 22 "D:/s32dsworkspace/QLS/common/ntc_calibration.c" 2
+# 22 "D:/QLS/common/ntc_calibration.c" 2
 NTC_TABLE ntc_liquid={0,
-
-
-
-
-
- {4050,4035,4015,3990,3958,3919,3871,3812,3742,3659,3563,3453 ,3329,3192,3042,2881,2713,2538,2360,2183,
-    2008,1838,1675,1521,1377,1243,1120,1007,905,812,729,655,588,528,475,428,385,348,314,284,
-    257,233,212},
+# 31 "D:/QLS/common/ntc_calibration.c"
+ {4069 ,4060 ,4048 ,4033 ,4014 ,3990 ,3960 ,3924 ,3880 ,3827 ,3765 ,3692 ,3607 ,3511 ,3402 ,3282 ,3151 ,
+  3009 ,2859 ,2703 ,2541 ,2378 ,2214 ,2052 ,1895 ,1743 ,1598 ,1461 ,1332 ,1213 ,1102 ,1001 ,908 ,824 ,
+  747 ,677 ,614 ,558 ,507 ,461 ,419 ,382 ,348},
  {-55,-50,-45,-40,-35,-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,
    100,105,110,115,120,125,130,135,140,145,150,155
  }
 };
-# 43 "D:/s32dsworkspace/QLS/common/ntc_calibration.c"
+# 46 "D:/QLS/common/ntc_calibration.c"
 short int ntc_calibration_cal_temp(uint16_t addata)
 {
     uint8_t bg,ed,mid;

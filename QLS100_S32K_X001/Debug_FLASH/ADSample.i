@@ -1,4 +1,4 @@
-# 1 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 1 "D:/QLS/common/adsample.c"
 # 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -308,6 +307,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
@@ -349,8 +349,8 @@
 #define __USES_INITFINI__ 1
 #define CPU_S32K116 1
 #define DEV_ERROR_DETECT 1
-# 1 "D:/s32dsworkspace/QLS/common/adsample.c"
-# 19 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 1 "D:/QLS/common/adsample.c"
+# 19 "D:/QLS/common/adsample.c"
 # 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
 # 99 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32K116_H_ 
@@ -10152,7 +10152,7 @@ typedef struct {
 #define WDOG_WIN_WINHIGH_SHIFT 8u
 #define WDOG_WIN_WINHIGH_WIDTH 8u
 #define WDOG_WIN_WINHIGH(x) (((uint32_t)(((uint32_t)(x))<<WDOG_WIN_WINHIGH_SHIFT))&WDOG_WIN_WINHIGH_MASK)
-# 20 "D:/s32dsworkspace/QLS/common/adsample.c" 2
+# 20 "D:/QLS/common/adsample.c" 2
 # 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h" 1
 # 63 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h"
 #define adConv1_H 
@@ -14490,13 +14490,13 @@ extern const adc_converter_config_t adConv1_ConvConfig0;
 extern const adc_chan_config_t adConv1_ChnConfig0;
 extern const adc_chan_config_t adConv1_ChnConfig1;
 extern const adc_chan_config_t adConv1_ChnConfig2;
-# 21 "D:/s32dsworkspace/QLS/common/adsample.c" 2
+# 21 "D:/QLS/common/adsample.c" 2
 # 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h" 1
-# 22 "D:/s32dsworkspace/QLS/common/adsample.c" 2
-# 1 "D:/s32dsworkspace/QLS/common/helper_functions.h" 1
-# 20 "D:/s32dsworkspace/QLS/common/helper_functions.h"
+# 22 "D:/QLS/common/adsample.c" 2
+# 1 "D:/QLS/common/helper_functions.h" 1
+# 20 "D:/QLS/common/helper_functions.h"
 #define SOURCES_HELPER_FUNCTIONS_H_ 
-# 36 "D:/s32dsworkspace/QLS/common/helper_functions.h"
+# 36 "D:/QLS/common/helper_functions.h"
 int calculateIntValue(const pdb_timer_config_t *pdbConfig, uint32_t uSec, uint16_t *intValue);
 
 
@@ -14506,9 +14506,9 @@ int calculateIntValue(const pdb_timer_config_t *pdbConfig, uint32_t uSec, uint16
 
 
 void floatToStr(const float *srcValue, char *destStr, uint8_t maxLen);
-# 23 "D:/s32dsworkspace/QLS/common/adsample.c" 2
-# 1 "D:/s32dsworkspace/QLS/common/ntc_calibration.h" 1
-# 9 "D:/s32dsworkspace/QLS/common/ntc_calibration.h"
+# 23 "D:/QLS/common/adsample.c" 2
+# 1 "D:/QLS/common/ntc_calibration.h" 1
+# 9 "D:/QLS/common/ntc_calibration.h"
 #define SOURCES_NTC_CALIBRATION_H_ 
 
 typedef struct _NTC_TABLE{
@@ -14521,8 +14521,8 @@ typedef struct _NTC_TABLE{
 
 
 extern short int ntc_calibration_cal_temp(uint16_t addata);
-# 24 "D:/s32dsworkspace/QLS/common/adsample.c" 2
-# 1 "D:/s32dsworkspace/QLS/common/common.h" 1
+# 24 "D:/QLS/common/adsample.c" 2
+# 1 "D:/QLS/common/common.h" 1
 
 
 
@@ -14531,9 +14531,9 @@ extern short int ntc_calibration_cal_temp(uint16_t addata);
 
 
 # 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 1
-# 9 "D:/s32dsworkspace/QLS/common/common.h" 2
+# 9 "D:/QLS/common/common.h" 2
 # 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
-# 10 "D:/s32dsworkspace/QLS/common/common.h" 2
+# 10 "D:/QLS/common/common.h" 2
 # 1 "D:/QLS/QLS100_S32K_X001/Sources/spi_comm.h" 1
 
 
@@ -14570,7 +14570,7 @@ typedef union QLS_RESULTS {
 extern qls_results results;
 void spi_comm_Spi_Init(void);
 uint8_t spi_comm_Spi_Transfer(void);
-# 11 "D:/s32dsworkspace/QLS/common/common.h" 2
+# 11 "D:/QLS/common/common.h" 2
 
 
 #define COMMON_H_ 
@@ -14617,14 +14617,14 @@ qls_results_cal runion_qls_results;
 
 
 qls_results_cal sendresults;
-# 25 "D:/s32dsworkspace/QLS/common/adsample.c" 2
-# 1 "D:/s32dsworkspace/QLS/common/tmr_level.h" 1
-# 9 "D:/s32dsworkspace/QLS/common/tmr_level.h"
+# 25 "D:/QLS/common/adsample.c" 2
+# 1 "D:/QLS/common/tmr_level.h" 1
+# 9 "D:/QLS/common/tmr_level.h"
 #define SOURCES_COMMON_TMR_LEVEL_H_ 
 
 
 uint16_t tmr_level_cal(uint16_t addata);
-# 26 "D:/s32dsworkspace/QLS/common/adsample.c" 2
+# 26 "D:/QLS/common/adsample.c" 2
 
 #define PDLY_TIMEOUT 1000000UL
 
@@ -14634,12 +14634,12 @@ uint16_t tmr_level_cal(uint16_t addata);
 #define ADC_VREFH 3.3f
 
 #define ADC_VREFL 0.0f
-# 44 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 44 "D:/QLS/common/adsample.c"
 volatile int adcConvDone;
 
 volatile uint16_t adcRawValue;
 volatile uint16_t adcMax;
-# 56 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 56 "D:/QLS/common/adsample.c"
 void adsample_ADC_IRQHandler(void)
 {
 
@@ -14649,7 +14649,7 @@ void adsample_ADC_IRQHandler(void)
     FMSTR_Recorder();
     return;
 }
-# 73 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 73 "D:/QLS/common/adsample.c"
 void adsample_ADC_Init(void)
 {
 
@@ -14711,7 +14711,7 @@ void adsample_ADC_Init(void)
 
 
 }
-# 152 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 152 "D:/QLS/common/adsample.c"
 float adsample_Get_Voltage(void)
 {
     static float Voltage;
@@ -14720,7 +14720,7 @@ float adsample_Get_Voltage(void)
     Voltage = ((float) ADCValue / adcMax) * (3.3f - 0.0f);
     return Voltage;
 }
-# 170 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 170 "D:/QLS/common/adsample.c"
 uint16_t adsample_Get_TmrLevel(void)
 {
     static uint16_t rf32_ltmr;
@@ -14730,7 +14730,7 @@ uint16_t adsample_Get_TmrLevel(void)
 
     return rf32_ltmr;
 }
-# 187 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 187 "D:/QLS/common/adsample.c"
 short int adsample_Get_EnvirTemp(void)
 {
  uint16_t ADCValue = 0;
@@ -14739,7 +14739,7 @@ short int adsample_Get_EnvirTemp(void)
  rf32_pcb_temp = ntc_calibration_cal_temp(ADCValue);
  return rf32_pcb_temp;
 }
-# 213 "D:/s32dsworkspace/QLS/common/adsample.c"
+# 213 "D:/QLS/common/adsample.c"
 short int adsample_Get_NTCTemp(void)
 {
  uint16_t ADCValue = 0;

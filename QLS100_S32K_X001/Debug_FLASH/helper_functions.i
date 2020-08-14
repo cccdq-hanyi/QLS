@@ -1,4 +1,4 @@
-# 1 "D:/s32dsworkspace/QLS/common/helper_functions.c"
+# 1 "D:/QLS/common/helper_functions.c"
 # 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -308,6 +307,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
@@ -349,10 +349,10 @@
 #define __USES_INITFINI__ 1
 #define CPU_S32K116 1
 #define DEV_ERROR_DETECT 1
-# 1 "D:/s32dsworkspace/QLS/common/helper_functions.c"
-# 19 "D:/s32dsworkspace/QLS/common/helper_functions.c"
-# 1 "D:/s32dsworkspace/QLS/common/helper_functions.h" 1
-# 20 "D:/s32dsworkspace/QLS/common/helper_functions.h"
+# 1 "D:/QLS/common/helper_functions.c"
+# 19 "D:/QLS/common/helper_functions.c"
+# 1 "D:/QLS/common/helper_functions.h" 1
+# 20 "D:/QLS/common/helper_functions.h"
 #define SOURCES_HELPER_FUNCTIONS_H_ 
 
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 1
@@ -1110,7 +1110,7 @@ typedef uint32_t uintptr_t;
 #define INTMAX_C(value) value ## LL
 #define UINTMAX_C(value) value ## ULL
 # 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 2
-# 23 "D:/s32dsworkspace/QLS/common/helper_functions.h" 2
+# 23 "D:/QLS/common/helper_functions.h" 2
 # 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h" 1
 # 59 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h"
 #define pdly1_H 
@@ -14356,8 +14356,8 @@ extern const pdb_adc_pretrigger_config_t pdly1_AdcTrigInitConfig2;
 
 
 extern const pdb_timer_config_t pdly1_InitConfig0;
-# 24 "D:/s32dsworkspace/QLS/common/helper_functions.h" 2
-# 36 "D:/s32dsworkspace/QLS/common/helper_functions.h"
+# 24 "D:/QLS/common/helper_functions.h" 2
+# 36 "D:/QLS/common/helper_functions.h"
 int calculateIntValue(const pdb_timer_config_t *pdbConfig, uint32_t uSec, uint16_t *intValue);
 
 
@@ -14367,8 +14367,8 @@ int calculateIntValue(const pdb_timer_config_t *pdbConfig, uint32_t uSec, uint16
 
 
 void floatToStr(const float *srcValue, char *destStr, uint8_t maxLen);
-# 20 "D:/s32dsworkspace/QLS/common/helper_functions.c" 2
-# 30 "D:/s32dsworkspace/QLS/common/helper_functions.c"
+# 20 "D:/QLS/common/helper_functions.c" 2
+# 30 "D:/QLS/common/helper_functions.c"
 void floatToStr (const float *srcValue, char *destStr, uint8_t maxLen)
 {
   uint8_t i, lessThanOne = 0;
@@ -14397,7 +14397,7 @@ void floatToStr (const float *srcValue, char *destStr, uint8_t maxLen)
     }
   *destStr = 0;
 }
-# 71 "D:/s32dsworkspace/QLS/common/helper_functions.c"
+# 71 "D:/QLS/common/helper_functions.c"
 int calculateIntValue(const pdb_timer_config_t *pdbConfig, uint32_t uSec, uint16_t * intVal)
 {
 

@@ -6,7 +6,7 @@
 	.eabi_attribute 24, 1
 	.eabi_attribute 25, 1
 	.eabi_attribute 26, 1
-	.eabi_attribute 30, 1
+	.eabi_attribute 30, 6
 	.eabi_attribute 34, 0
 	.eabi_attribute 18, 4
 	.code	16
@@ -14,6 +14,52 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
+	.section	.text.DevAssert,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	DevAssert, %function
+DevAssert:
+.LFB0:
+	.file 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h"
+	.loc 1 71 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 1 72 0
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	bne	.L1
+	.loc 1 72 0 is_stmt 0 discriminator 1
+@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
+	BKPT #0
+	
+@ 0 "" 2
+	.code	16
+.L3:
+	b	.L3
+.L1:
+	.loc 1 73 0 is_stmt 1
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE0:
+	.size	DevAssert, .-DevAssert
+	.section	.bss.g_clockState,"aw",%nobits
+	.align	2
+	.type	g_clockState, %object
+	.size	g_clockState, 16
+g_clockState:
+	.space	16
 	.section	.text.CLOCK_SYS_Init,"ax",%progbits
 	.align	2
 	.global	CLOCK_SYS_Init
@@ -22,67 +68,81 @@
 	.type	CLOCK_SYS_Init, %function
 CLOCK_SYS_Init:
 .LFB1:
-	.file 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/clock/clock_manager.c"
-	.loc 1 61 0
+	.file 2 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/clock/clock_manager.c"
+	.loc 2 61 0
 	.cfi_startproc
-.LVL0:
-	push	{r4, lr}
+	push	{r7, lr}
 	.cfi_def_cfa_offset 8
-	.cfi_offset 4, -8
+	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-.LVL1:
-.LBB8:
-.LBB9:
-	.file 2 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h"
-	.loc 2 72 0
-	cmp	r0, #0
-	bne	.L2
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L3:
-	b	.L3
-.L2:
-.LVL2:
-.LBE9:
-.LBE8:
-.LBB10:
-.LBB11:
-	cmp	r2, #0
-	bne	.L4
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L5:
-	b	.L5
-.L4:
-.LBE11:
-.LBE10:
-	.loc 1 65 0
-	ldr	r4, .L6
-	str	r0, [r4]
-	.loc 1 66 0
-	strb	r1, [r4, #4]
-	.loc 1 67 0
-	str	r2, [r4, #8]
-	.loc 1 68 0
-	strb	r3, [r4, #12]
-	.loc 1 75 0
-	strb	r3, [r4, #13]
-	.loc 1 78 0
-	mov	r0, #0
-.LVL3:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #12]
+	mov	r0, r1
+	str	r2, [r7, #4]
+	mov	r1, r3
+	mov	r3, #11
+	add	r3, r7, r3
+	add	r2, r0, #0
+	strb	r2, [r3]
+	mov	r3, #10
+	add	r3, r7, r3
+	add	r2, r1, #0
+	strb	r2, [r3]
+	.loc 2 62 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 2 63 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 2 65 0
+	ldr	r3, .L6
+	ldr	r2, [r7, #12]
+	str	r2, [r3]
+	.loc 2 66 0
+	ldr	r3, .L6
+	mov	r2, #11
+	add	r2, r7, r2
+	ldrb	r2, [r2]
+	strb	r2, [r3, #4]
+	.loc 2 67 0
+	ldr	r3, .L6
+	ldr	r2, [r7, #4]
+	str	r2, [r3, #8]
+	.loc 2 68 0
+	ldr	r3, .L6
+	mov	r2, #10
+	add	r2, r7, r2
+	ldrb	r2, [r2]
+	strb	r2, [r3, #12]
+	.loc 2 75 0
+	ldr	r3, .L6
+	mov	r2, #10
+	add	r2, r7, r2
+	ldrb	r2, [r2]
+	strb	r2, [r3, #13]
+	.loc 2 77 0
+	mov	r3, #0
+	.loc 2 78 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-.LVL4:
-	pop	{r4, pc}
+	pop	{r7, pc}
 .L7:
 	.align	2
 .L6:
-	.word	.LANCHOR0
+	.word	g_clockState
 	.cfi_endproc
 .LFE1:
 	.size	CLOCK_SYS_Init, .-CLOCK_SYS_Init
@@ -94,265 +154,342 @@ CLOCK_SYS_Init:
 	.type	CLOCK_SYS_UpdateConfiguration, %function
 CLOCK_SYS_UpdateConfiguration:
 .LFB2:
-	.loc 1 92 0
+	.loc 2 92 0
 	.cfi_startproc
-.LVL5:
-	push	{r4, r5, r6, r7, lr}
-	.cfi_def_cfa_offset 20
-	.cfi_offset 4, -20
-	.cfi_offset 5, -16
-	.cfi_offset 6, -12
+	push	{r4, r7, lr}
+	.cfi_def_cfa_offset 12
+	.cfi_offset 4, -12
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-	mov	r7, r8
-	push	{r7}
-	.cfi_def_cfa_offset 24
-	.cfi_offset 8, -24
-	sub	sp, sp, #8
-	.cfi_def_cfa_offset 32
-	mov	r7, r0
-	mov	r6, r1
-.LVL6:
-	.loc 1 99 0
+	sub	sp, sp, #36
+	.cfi_def_cfa_offset 48
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	mov	r2, r0
+	add	r3, r7, #7
+	strb	r2, [r3]
+	add	r3, r7, #6
+	add	r2, r1, #0
+	strb	r2, [r3]
+	.loc 2 95 0
+	mov	r3, #22
+	add	r3, r7, r3
+	mov	r2, #0
+	strh	r2, [r3]
+	.loc 2 99 0
 	ldr	r3, .L26
 	ldrb	r3, [r3, #4]
-.LVL7:
-.LBB12:
-.LBB13:
-	.loc 2 72 0
-	cmp	r0, r3
-	bcc	.L9
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L10:
-	b	.L10
-.L9:
-.LBE13:
-.LBE12:
-	.loc 1 101 0
-	add	r4, sp, #4
-	strb	r0, [r4]
-	.loc 1 102 0
-	strb	r1, [r4, #1]
-	.loc 1 105 0
+	add	r2, r7, #7
+	ldrb	r2, [r2]
+	cmp	r2, r3
+	sbc	r3, r3, r3
+	neg	r3, r3
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 2 101 0
+	mov	r3, #12
+	add	r3, r7, r3
+	add	r2, r7, #7
+	ldrb	r2, [r2]
+	strb	r2, [r3]
+	.loc 2 102 0
+	mov	r3, #12
+	add	r3, r7, r3
+	add	r2, r7, #6
+	ldrb	r2, [r2]
+	strb	r2, [r3, #1]
+	.loc 2 105 0
 	bl	INT_SYS_DisableIRQGlobal
-.LVL8:
-	.loc 1 107 0
+	.loc 2 107 0
 	ldr	r3, .L26
 	ldrb	r2, [r3, #12]
+	ldr	r3, .L26
 	strb	r2, [r3, #13]
-	.loc 1 110 0
+	.loc 2 110 0
+	mov	r3, #12
+	add	r3, r7, r3
 	mov	r2, #1
-	strb	r2, [r4, #2]
-.LVL9:
-	.loc 1 113 0
-	ldrb	r3, [r3, #12]
-	cmp	r3, #0
-	beq	.L21
-	mov	r5, #0
-	mov	r4, #0
-	.loc 1 115 0
-	ldr	r3, .L26
-	mov	r8, r3
-.LVL10:
-.L14:
-	lsl	r3, r4, #2
-	mov	r2, r8
-	ldr	r2, [r2, #8]
-	ldr	r3, [r3, r2]
-.LVL11:
-	.loc 1 116 0
-	cmp	r3, #0
-	beq	.L12
-	.loc 1 116 0 is_stmt 0 discriminator 1
-	ldrb	r2, [r3, #4]
-	cmp	r2, #2
-	beq	.L12
-	.loc 1 120 0 is_stmt 1
-	ldr	r1, [r3, #8]
-	ldr	r3, [r3]
-.LVL12:
-	add	r0, sp, #4
-	blx	r3
-.LVL13:
-	.loc 1 119 0
-	cmp	r0, #0
-	beq	.L12
-	.loc 1 123 0
-	ldr	r3, .L26
-	strb	r4, [r3, #13]
-.LVL14:
-	.loc 1 127 0
-	cmp	r6, #0
-	beq	.L13
-	.loc 1 125 0
-	mov	r5, #4
-	add	r5, r5, #255
-.LVL15:
-.L12:
-	.loc 1 113 0 discriminator 2
-	add	r4, r4, #1
-.LVL16:
-	uxtb	r4, r4
-.LVL17:
-	ldr	r3, .L26
-	ldrb	r3, [r3, #12]
-	cmp	r3, r4
-	bhi	.L14
-	.loc 1 136 0
-	cmp	r5, #0
-	beq	.L11
-	.loc 1 136 0 is_stmt 0 discriminator 1
-	cmp	r6, #1
-	bne	.L15
-	b	.L11
-.LVL18:
-.L21:
-	.loc 1 113 0 is_stmt 1
-	mov	r4, #0
-.LVL19:
-.L11:
-	.loc 1 140 0
-	ldr	r3, .L26
-	mov	r8, r3
-	lsl	r3, r7, #2
-	mov	r2, r8
-	ldr	r2, [r2]
-	ldr	r0, [r3, r2]
-	bl	CLOCK_SYS_SetConfiguration
-.LVL20:
-	sub	r5, r0, #0
-.LVL21:
-	.loc 1 143 0
-	mov	r3, r8
-	strb	r7, [r3, #5]
-	.loc 1 151 0
-	bne	.L15
-	.loc 1 152 0
-	mov	r2, #2
-	add	r3, sp, #4
 	strb	r2, [r3, #2]
-.LVL22:
-	.loc 1 154 0
-	ldr	r3, .L26
-	ldrb	r3, [r3, #12]
-	cmp	r3, #0
-	beq	.L16
-	mov	r4, #0
-	.loc 1 156 0
-	ldr	r7, .L26
-.LVL23:
-.L18:
-	lsl	r3, r4, #2
-	ldr	r2, [r7, #8]
-	ldr	r3, [r3, r2]
-.LVL24:
-	.loc 1 157 0
-	cmp	r3, #0
-	beq	.L17
-	.loc 1 157 0 is_stmt 0 discriminator 1
-	ldrb	r2, [r3, #4]
-	cmp	r2, #1
-	beq	.L17
-	.loc 1 161 0 is_stmt 1
-	ldr	r1, [r3, #8]
-	ldr	r3, [r3]
-.LVL25:
-	add	r0, sp, #4
-	blx	r3
-.LVL26:
-	.loc 1 160 0
-	cmp	r0, #0
-	beq	.L17
-	.loc 1 164 0
-	ldr	r3, .L26
-	strb	r4, [r3, #13]
-.LVL27:
-	.loc 1 168 0
-	cmp	r6, #0
-	beq	.L22
-	.loc 1 166 0
-	mov	r5, #130
-	lsl	r5, r5, #1
-.LVL28:
-.L17:
-	.loc 1 154 0 discriminator 2
-	add	r4, r4, #1
-.LVL29:
-	uxtb	r4, r4
-.LVL30:
-	ldr	r3, .L26
-	ldrb	r3, [r3, #12]
-	cmp	r3, r4
-	bhi	.L18
-	b	.L16
-.LVL31:
-.L15:
-	.loc 1 178 0
+	.loc 2 113 0
+	mov	r3, #31
+	add	r3, r7, r3
 	mov	r2, #0
-	add	r3, sp, #4
-	strb	r2, [r3, #2]
-	.loc 1 181 0
-	ldr	r6, .L26
-.L20:
-.LVL32:
-	lsl	r3, r4, #2
-	ldr	r2, [r6, #8]
-	ldr	r3, [r3, r2]
-.LVL33:
-	.loc 1 182 0
-	cmp	r3, #0
-	beq	.L19
-	.loc 1 184 0
-	ldr	r1, [r3, #8]
+	strb	r2, [r3]
+	b	.L9
+.L12:
+	.loc 2 115 0
+	ldr	r3, .L26
+	ldr	r2, [r3, #8]
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	lsl	r3, r3, #2
+	add	r3, r2, r3
 	ldr	r3, [r3]
-.LVL34:
-	add	r0, sp, #4
-	blx	r3
-.LVL35:
-.L19:
-	.loc 1 187 0
-	cmp	r4, #0
-	beq	.L16
-	.loc 1 191 0
-	sub	r4, r4, #1
-.LVL36:
-	uxtb	r4, r4
-.LVL37:
-	.loc 1 192 0
-	b	.L20
-.LVL38:
-.L22:
-	.loc 1 166 0
-	mov	r5, #130
-	lsl	r5, r5, #1
-	b	.L16
-.LVL39:
+	str	r3, [r7, #16]
+	.loc 2 116 0
+	ldr	r3, [r7, #16]
+	cmp	r3, #0
+	beq	.L10
+	.loc 2 117 0 discriminator 1
+	ldr	r3, [r7, #16]
+	ldrb	r3, [r3, #4]
+	.loc 2 116 0 discriminator 1
+	cmp	r3, #2
+	beq	.L10
+	.loc 2 120 0
+	ldr	r3, [r7, #16]
+	ldr	r2, [r3]
+	ldr	r3, [r7, #16]
+	ldr	r3, [r3, #8]
+	mov	r1, #12
+	add	r1, r7, r1
+	mov	r0, r1
+	mov	r1, r3
+	blx	r2
+	sub	r3, r0, #0
+	.loc 2 119 0
+	beq	.L10
+	.loc 2 123 0
+	ldr	r3, .L26
+	mov	r2, #31
+	add	r2, r7, r2
+	ldrb	r2, [r2]
+	strb	r2, [r3, #13]
+	.loc 2 125 0
+	mov	r3, #22
+	add	r3, r7, r3
+	mov	r2, #4
+	add	r2, r2, #255
+	strh	r2, [r3]
+	.loc 2 127 0
+	add	r3, r7, #6
+	ldrb	r3, [r3]
+	cmp	r3, #0
+	bne	.L10
+	.loc 2 129 0
+	b	.L11
+.L10:
+	.loc 2 113 0 discriminator 2
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	mov	r3, #31
+	add	r3, r7, r3
+	add	r2, r2, #1
+	strb	r2, [r3]
+.L9:
+	.loc 2 113 0 is_stmt 0 discriminator 1
+	ldr	r3, .L26
+	ldrb	r3, [r3, #12]
+	mov	r2, #31
+	add	r2, r7, r2
+	ldrb	r2, [r2]
+	cmp	r2, r3
+	bcc	.L12
+.L11:
+	.loc 2 136 0 is_stmt 1
+	mov	r3, #22
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	cmp	r3, #0
+	beq	.L13
+	.loc 2 136 0 is_stmt 0 discriminator 1
+	add	r3, r7, #6
+	ldrb	r3, [r3]
+	cmp	r3, #1
+	bne	.L14
 .L13:
-	.loc 1 125 0
-	mov	r5, #4
-	add	r5, r5, #255
+	.loc 2 140 0 is_stmt 1
+	ldr	r3, .L26
+	ldr	r2, [r3]
+	add	r3, r7, #7
+	ldrb	r3, [r3]
+	lsl	r3, r3, #2
+	add	r3, r2, r3
+	ldr	r3, [r3]
+	mov	r2, #22
+	add	r4, r7, r2
+	mov	r0, r3
+	bl	CLOCK_SYS_SetConfiguration
+	mov	r3, r0
+	strh	r3, [r4]
+	.loc 2 141 0
+	mov	r3, #22
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	str	r3, [r7, #24]
+	.loc 2 143 0
+	ldr	r3, .L26
+	add	r2, r7, #7
+	ldrb	r2, [r2]
+	strb	r2, [r3, #5]
 	b	.L15
-.LVL40:
+.L14:
+	.loc 2 148 0
+	mov	r3, #0
+	str	r3, [r7, #24]
+.L15:
+	.loc 2 151 0
+	ldr	r3, [r7, #24]
+	cmp	r3, #0
+	beq	.L16
+	.loc 2 152 0
+	mov	r3, #12
+	add	r3, r7, r3
+	mov	r2, #2
+	strb	r2, [r3, #2]
+	.loc 2 154 0
+	mov	r3, #31
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	b	.L17
+.L20:
+	.loc 2 156 0
+	ldr	r3, .L26
+	ldr	r2, [r3, #8]
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	lsl	r3, r3, #2
+	add	r3, r2, r3
+	ldr	r3, [r3]
+	str	r3, [r7, #16]
+	.loc 2 157 0
+	ldr	r3, [r7, #16]
+	cmp	r3, #0
+	beq	.L18
+	.loc 2 158 0 discriminator 1
+	ldr	r3, [r7, #16]
+	ldrb	r3, [r3, #4]
+	.loc 2 157 0 discriminator 1
+	cmp	r3, #1
+	beq	.L18
+	.loc 2 161 0
+	ldr	r3, [r7, #16]
+	ldr	r2, [r3]
+	ldr	r3, [r7, #16]
+	ldr	r3, [r3, #8]
+	mov	r1, #12
+	add	r1, r7, r1
+	mov	r0, r1
+	mov	r1, r3
+	blx	r2
+	sub	r3, r0, #0
+	.loc 2 160 0
+	beq	.L18
+	.loc 2 164 0
+	ldr	r3, .L26
+	mov	r2, #31
+	add	r2, r7, r2
+	ldrb	r2, [r2]
+	strb	r2, [r3, #13]
+	.loc 2 166 0
+	mov	r3, #22
+	add	r3, r7, r3
+	mov	r2, #130
+	lsl	r2, r2, #1
+	strh	r2, [r3]
+	.loc 2 168 0
+	add	r3, r7, #6
+	ldrb	r3, [r3]
+	cmp	r3, #0
+	bne	.L18
+	.loc 2 170 0
+	mov	r8, r8
+	b	.L21
+.L18:
+	.loc 2 154 0 discriminator 2
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	mov	r3, #31
+	add	r3, r7, r3
+	add	r2, r2, #1
+	strb	r2, [r3]
+.L17:
+	.loc 2 154 0 is_stmt 0 discriminator 1
+	ldr	r3, .L26
+	ldrb	r3, [r3, #12]
+	mov	r2, #31
+	add	r2, r7, r2
+	ldrb	r2, [r2]
+	cmp	r2, r3
+	bcc	.L20
+	b	.L21
 .L16:
-	.loc 1 196 0
+	.loc 2 178 0 is_stmt 1
+	mov	r3, #12
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3, #2]
+.L24:
+	.loc 2 181 0
+	ldr	r3, .L26
+	ldr	r2, [r3, #8]
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	lsl	r3, r3, #2
+	add	r3, r2, r3
+	ldr	r3, [r3]
+	str	r3, [r7, #16]
+	.loc 2 182 0
+	ldr	r3, [r7, #16]
+	cmp	r3, #0
+	beq	.L22
+	.loc 2 184 0
+	ldr	r3, [r7, #16]
+	ldr	r2, [r3]
+	ldr	r3, [r7, #16]
+	ldr	r3, [r3, #8]
+	mov	r1, #12
+	add	r1, r7, r1
+	mov	r0, r1
+	mov	r1, r3
+	blx	r2
+.L22:
+	.loc 2 187 0
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	cmp	r3, #0
+	bne	.L23
+	.loc 2 189 0
+	b	.L21
+.L23:
+	.loc 2 191 0
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	mov	r3, #31
+	add	r3, r7, r3
+	sub	r2, r2, #1
+	strb	r2, [r3]
+	.loc 2 192 0
+	b	.L24
+.L21:
+	.loc 2 196 0
 	bl	INT_SYS_EnableIRQGlobal
-.LVL41:
-	.loc 1 199 0
-	mov	r0, r5
-	add	sp, sp, #8
+	.loc 2 198 0
+	mov	r3, #22
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	.loc 2 199 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #36
 	@ sp needed
-.LVL42:
-	pop	{r2}
-	mov	r8, r2
-	pop	{r4, r5, r6, r7, pc}
+	pop	{r4, r7, pc}
 .L27:
 	.align	2
 .L26:
-	.word	.LANCHOR0
+	.word	g_clockState
 	.cfi_endproc
 .LFE2:
 	.size	CLOCK_SYS_UpdateConfiguration, .-CLOCK_SYS_UpdateConfiguration
@@ -364,18 +501,26 @@ CLOCK_SYS_UpdateConfiguration:
 	.type	CLOCK_SYS_GetCurrentConfiguration, %function
 CLOCK_SYS_GetCurrentConfiguration:
 .LFB3:
-	.loc 1 209 0
+	.loc 2 209 0
 	.cfi_startproc
-	.loc 1 210 0
-	ldr	r3, .L29
-	ldrb	r0, [r3, #5]
-	.loc 1 211 0
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	.loc 2 210 0
+	ldr	r3, .L30
+	ldrb	r3, [r3, #5]
+	.loc 2 211 0
+	mov	r0, r3
+	mov	sp, r7
 	@ sp needed
-	bx	lr
-.L30:
+	pop	{r7, pc}
+.L31:
 	.align	2
-.L29:
-	.word	.LANCHOR0
+.L30:
+	.word	g_clockState
 	.cfi_endproc
 .LFE3:
 	.size	CLOCK_SYS_GetCurrentConfiguration, .-CLOCK_SYS_GetCurrentConfiguration
@@ -387,44 +532,53 @@ CLOCK_SYS_GetCurrentConfiguration:
 	.type	CLOCK_SYS_GetErrorCallback, %function
 CLOCK_SYS_GetErrorCallback:
 .LFB4:
-	.loc 1 221 0
+	.loc 2 221 0
 	.cfi_startproc
-	.loc 1 225 0
-	ldr	r2, .L34
-	ldrb	r3, [r2, #13]
-	ldrb	r2, [r2, #4]
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	.loc 2 225 0
+	ldr	r3, .L36
+	ldrb	r2, [r3, #13]
+	ldr	r3, .L36
+	ldrb	r3, [r3, #4]
 	cmp	r2, r3
-	bls	.L33
-	.loc 1 231 0
-	ldr	r2, .L34
-	ldr	r2, [r2, #8]
-	lsl	r3, r3, #2
-	ldr	r0, [r3, r2]
-.LVL43:
-	b	.L32
-.LVL44:
+	bcc	.L33
+	.loc 2 227 0
+	mov	r3, #0
+	str	r3, [r7, #4]
+	b	.L34
 .L33:
-	.loc 1 227 0
-	mov	r0, #0
-.L32:
-.LVL45:
-	.loc 1 234 0
-	@ sp needed
-	bx	lr
-.L35:
-	.align	2
+	.loc 2 231 0
+	ldr	r3, .L36
+	ldr	r2, [r3, #8]
+	ldr	r3, .L36
+	ldrb	r3, [r3, #13]
+	lsl	r3, r3, #2
+	add	r3, r2, r3
+	ldr	r3, [r3]
+	str	r3, [r7, #4]
 .L34:
-	.word	.LANCHOR0
+	.loc 2 233 0
+	ldr	r3, [r7, #4]
+	.loc 2 234 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+.L37:
+	.align	2
+.L36:
+	.word	g_clockState
 	.cfi_endproc
 .LFE4:
 	.size	CLOCK_SYS_GetErrorCallback, .-CLOCK_SYS_GetErrorCallback
-	.section	.bss.g_clockState,"aw",%nobits
-	.align	2
-	.set	.LANCHOR0,. + 0
-	.type	g_clockState, %object
-	.size	g_clockState, 16
-g_clockState:
-	.space	16
 	.text
 .Letext0:
 	.file 3 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/cstdint"
@@ -432,17 +586,16 @@ g_clockState:
 	.file 5 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/status.h"
 	.file 6 "c:\\nxp\\s32ds_arm_v2018.r1\\s32ds\\s32sdk_s32k116_ear_1.8.7\\platform\\drivers\\src\\clock\\s32k1xx\\clock_s32k1xx.h"
 	.file 7 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/clock_manager.h"
-	.file 8 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/interrupt_manager.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x122b
+	.4byte	0x116f
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF8576
+	.4byte	.LASF8574
 	.byte	0x1
-	.4byte	.LASF8577
+	.4byte	.LASF8575
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -2439,244 +2592,176 @@ g_clockState:
 	.byte	0x96
 	.4byte	0xfab
 	.uleb128 0x15
-	.4byte	.LASF8578
-	.byte	0x2
+	.4byte	.LASF8576
+	.byte	0x1
 	.byte	0x46
-	.byte	0x3
-	.4byte	0x103a
+	.4byte	.LFB0
+	.4byte	.LFE0-.LFB0
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1046
 	.uleb128 0x16
 	.ascii	"x\000"
-	.byte	0x2
+	.byte	0x1
 	.byte	0x46
-	.4byte	0x103a
+	.4byte	0x1046
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
 	.uleb128 0x17
 	.4byte	0x2c
 	.uleb128 0x18
 	.4byte	.LASF8565
-	.byte	0x1
+	.byte	0x2
 	.byte	0x39
 	.4byte	0x463
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x10c7
+	.4byte	0x109d
 	.uleb128 0x19
 	.4byte	.LASF8561
-	.byte	0x1
+	.byte	0x2
 	.byte	0x39
 	.4byte	0xffc
-	.4byte	.LLST0
-	.uleb128 0x1a
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x19
 	.4byte	.LASF8562
-	.byte	0x1
+	.byte	0x2
 	.byte	0x3a
 	.4byte	0x5a
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x1a
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -13
+	.uleb128 0x19
 	.4byte	.LASF8563
-	.byte	0x1
+	.byte	0x2
 	.byte	0x3b
 	.4byte	0x100d
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x1a
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x19
 	.4byte	.LASF8564
-	.byte	0x1
+	.byte	0x2
 	.byte	0x3c
 	.4byte	0x5a
-	.uleb128 0x1
-	.byte	0x53
-	.uleb128 0x1b
-	.4byte	0x1024
-	.4byte	.LBB8
-	.4byte	.LBE8-.LBB8
-	.byte	0x1
-	.byte	0x3e
-	.4byte	0x10ab
-	.uleb128 0x1c
-	.4byte	0x1030
-	.4byte	.LLST1
-	.byte	0
-	.uleb128 0x1d
-	.4byte	0x1024
-	.4byte	.LBB10
-	.4byte	.LBE10-.LBB10
-	.byte	0x1
-	.byte	0x3f
-	.uleb128 0x1e
-	.4byte	0x1030
-	.uleb128 0x5
-	.byte	0x72
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -14
 	.byte	0
 	.uleb128 0x18
 	.4byte	.LASF8566
-	.byte	0x1
+	.byte	0x2
 	.byte	0x5a
 	.4byte	0x463
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x11b1
+	.4byte	0x1119
 	.uleb128 0x19
 	.4byte	.LASF8567
-	.byte	0x1
+	.byte	0x2
 	.byte	0x5a
 	.4byte	0x5a
-	.4byte	.LLST2
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -41
 	.uleb128 0x19
 	.4byte	.LASF8546
-	.byte	0x1
+	.byte	0x2
 	.byte	0x5b
 	.4byte	0xf03
-	.4byte	.LLST3
-	.uleb128 0x1f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -42
+	.uleb128 0x1a
 	.4byte	.LASF8568
-	.byte	0x1
+	.byte	0x2
 	.byte	0x5d
 	.4byte	0x5a
-	.4byte	.LLST4
-	.uleb128 0x1f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -17
+	.uleb128 0x1a
 	.4byte	.LASF8569
-	.byte	0x1
+	.byte	0x2
 	.byte	0x5e
 	.4byte	0x2c
-	.4byte	.LLST5
-	.uleb128 0x20
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1b
 	.ascii	"ret\000"
-	.byte	0x1
+	.byte	0x2
 	.byte	0x5f
 	.4byte	0x463
-	.4byte	.LLST6
-	.uleb128 0x1f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -26
+	.uleb128 0x1a
 	.4byte	.LASF8557
-	.byte	0x1
+	.byte	0x2
 	.byte	0x60
-	.4byte	0x11b1
-	.4byte	.LLST7
-	.uleb128 0x21
+	.4byte	0x1119
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x1a
 	.4byte	.LASF8570
-	.byte	0x1
+	.byte	0x2
 	.byte	0x61
 	.4byte	0xf3b
 	.uleb128 0x2
 	.byte	0x91
-	.sleb128 -28
-	.uleb128 0x1b
-	.4byte	0x1024
-	.4byte	.LBB12
-	.4byte	.LBE12-.LBB12
-	.byte	0x1
-	.byte	0x63
-	.4byte	0x1165
-	.uleb128 0x1c
-	.4byte	0x1030
-	.4byte	.LLST8
-	.byte	0
-	.uleb128 0x22
-	.4byte	.LVL8
-	.4byte	0x120b
-	.uleb128 0x23
-	.4byte	.LVL13
-	.4byte	0x117e
-	.uleb128 0x24
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -28
-	.byte	0
-	.uleb128 0x22
-	.4byte	.LVL20
-	.4byte	0x1212
-	.uleb128 0x23
-	.4byte	.LVL26
-	.4byte	0x1197
-	.uleb128 0x24
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -28
-	.byte	0
-	.uleb128 0x23
-	.4byte	.LVL35
-	.4byte	0x11a7
-	.uleb128 0x24
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -28
-	.byte	0
-	.uleb128 0x22
-	.4byte	.LVL41
-	.4byte	0x1227
+	.sleb128 -36
 	.byte	0
 	.uleb128 0x10
 	.byte	0x4
-	.4byte	0x11b7
+	.4byte	0x111f
 	.uleb128 0x14
 	.4byte	0xfa0
-	.uleb128 0x25
-	.4byte	.LASF8579
-	.byte	0x1
+	.uleb128 0x1c
+	.4byte	.LASF8577
+	.byte	0x2
 	.byte	0xd0
 	.4byte	0x5a
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x18
+	.uleb128 0x1d
 	.4byte	.LASF8571
-	.byte	0x1
+	.byte	0x2
 	.byte	0xdc
 	.4byte	0x1013
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x11fa
-	.uleb128 0x1f
+	.4byte	0x1161
+	.uleb128 0x1a
 	.4byte	.LASF8572
-	.byte	0x1
+	.byte	0x2
 	.byte	0xde
 	.4byte	0x1013
-	.4byte	.LLST9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
-	.uleb128 0x21
+	.uleb128 0x1a
 	.4byte	.LASF8573
-	.byte	0x1
+	.byte	0x2
 	.byte	0x2d
 	.4byte	0x1019
 	.uleb128 0x5
 	.byte	0x3
 	.4byte	g_clockState
-	.uleb128 0x26
-	.4byte	.LASF8574
-	.byte	0x8
-	.byte	0x94
-	.uleb128 0x27
-	.4byte	.LASF8580
-	.byte	0x7
-	.byte	0xd8
-	.4byte	0x463
-	.4byte	0x1227
-	.uleb128 0x12
-	.4byte	0x1002
-	.byte	0
-	.uleb128 0x26
-	.4byte	.LASF8575
-	.byte	0x8
-	.byte	0x8c
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -2923,8 +3008,14 @@ g_clockState:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0x19
-	.uleb128 0x20
-	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
@@ -2940,6 +3031,8 @@ g_clockState:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x17
@@ -2970,7 +3063,7 @@ g_clockState:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2117
+	.uleb128 0x2116
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
@@ -2988,11 +3081,11 @@ g_clockState:
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2
-	.uleb128 0x17
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x1a
-	.uleb128 0x5
+	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0xe
@@ -3007,71 +3100,6 @@ g_clockState:
 	.byte	0
 	.byte	0
 	.uleb128 0x1b
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1c
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x1d
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x1e
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x1f
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x20
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -3083,52 +3111,10 @@ g_clockState:
 	.uleb128 0x49
 	.uleb128 0x13
 	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x21
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x22
-	.uleb128 0x4109
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x23
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x24
-	.uleb128 0x410a
-	.byte	0
-	.uleb128 0x2
-	.uleb128 0x18
-	.uleb128 0x2111
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x25
+	.uleb128 0x1c
 	.uleb128 0x2e
 	.byte	0
 	.uleb128 0x3f
@@ -3153,24 +3139,7 @@ g_clockState:
 	.uleb128 0x19
 	.byte	0
 	.byte	0
-	.uleb128 0x26
-	.uleb128 0x2e
-	.byte	0
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x3c
-	.uleb128 0x19
-	.byte	0
-	.byte	0
-	.uleb128 0x27
+	.uleb128 0x1d
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -3185,299 +3154,29 @@ g_clockState:
 	.uleb128 0x19
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x3c
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.byte	0
-	.section	.debug_loc,"",%progbits
-.Ldebug_loc0:
-.LLST0:
-	.4byte	.LVL0
-	.4byte	.LVL3
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL3
-	.4byte	.LFE1
-	.2byte	0x5
-	.byte	0x3
-	.4byte	g_clockState
-	.4byte	0
-	.4byte	0
-.LLST1:
-	.4byte	.LVL1
-	.4byte	.LVL3
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL3
-	.4byte	.LVL4
-	.2byte	0x9
-	.byte	0x3
-	.4byte	g_clockState
-	.byte	0x6
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL4
-	.4byte	.LFE1
-	.2byte	0x9
-	.byte	0x3
-	.4byte	g_clockState
-	.byte	0x6
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST2:
-	.4byte	.LVL5
-	.4byte	.LVL8-1
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL8-1
-	.4byte	.LFE2
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST3:
-	.4byte	.LVL5
-	.4byte	.LVL8-1
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL8-1
-	.4byte	.LFE2
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST4:
-	.4byte	.LVL9
-	.4byte	.LVL10
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL10
-	.4byte	.LVL16
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL17
-	.4byte	.LVL18
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL18
-	.4byte	.LVL19
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL22
-	.4byte	.LVL23
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL23
-	.4byte	.LVL29
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL30
-	.4byte	.LVL31
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL32
-	.4byte	.LVL36
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL37
-	.4byte	.LVL40
-	.2byte	0x1
-	.byte	0x54
-	.4byte	0
-	.4byte	0
-.LLST5:
-	.4byte	.LVL21
-	.4byte	.LVL23
-	.2byte	0xa
-	.byte	0x70
-	.sleb128 0
-	.byte	0x40
-	.byte	0x24
-	.byte	0x30
-	.byte	0x29
-	.byte	0x8
-	.byte	0xff
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL31
-	.4byte	.LVL38
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL39
-	.4byte	.LVL40
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST6:
-	.4byte	.LVL6
-	.4byte	.LVL10
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL10
-	.4byte	.LVL14
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL14
-	.4byte	.LVL15
-	.2byte	0x4
-	.byte	0xa
-	.2byte	0x103
-	.byte	0x9f
-	.4byte	.LVL15
-	.4byte	.LVL18
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL18
-	.4byte	.LVL19
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL21
-	.4byte	.LVL23
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL23
-	.4byte	.LVL27
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL27
-	.4byte	.LVL28
-	.2byte	0x4
-	.byte	0xa
-	.2byte	0x104
-	.byte	0x9f
-	.4byte	.LVL28
-	.4byte	.LVL38
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL38
-	.4byte	.LVL39
-	.2byte	0x4
-	.byte	0xa
-	.2byte	0x104
-	.byte	0x9f
-	.4byte	.LVL39
-	.4byte	.LVL40
-	.2byte	0x4
-	.byte	0xa
-	.2byte	0x103
-	.byte	0x9f
-	.4byte	.LVL40
-	.4byte	.LVL42
-	.2byte	0x1
-	.byte	0x55
-	.4byte	0
-	.4byte	0
-.LLST7:
-	.4byte	.LVL11
-	.4byte	.LVL12
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL12
-	.4byte	.LVL13-1
-	.2byte	0xb
-	.byte	0x74
-	.sleb128 0
-	.byte	0x32
-	.byte	0x24
-	.byte	0x3
-	.4byte	g_clockState+8
-	.byte	0x6
-	.byte	0x22
-	.4byte	.LVL24
-	.4byte	.LVL25
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL25
-	.4byte	.LVL26-1
-	.2byte	0xb
-	.byte	0x74
-	.sleb128 0
-	.byte	0x32
-	.byte	0x24
-	.byte	0x3
-	.4byte	g_clockState+8
-	.byte	0x6
-	.byte	0x22
-	.4byte	.LVL33
-	.4byte	.LVL34
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL34
-	.4byte	.LVL35-1
-	.2byte	0x7
-	.byte	0x74
-	.sleb128 0
-	.byte	0x32
-	.byte	0x24
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST8:
-	.4byte	.LVL7
-	.4byte	.LVL8-1
-	.2byte	0xe
-	.byte	0x70
-	.sleb128 0
-	.byte	0x40
-	.byte	0x4b
-	.byte	0x24
-	.byte	0x22
-	.byte	0x73
-	.sleb128 0
-	.byte	0x40
-	.byte	0x4b
-	.byte	0x24
-	.byte	0x22
-	.byte	0x2d
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST9:
-	.4byte	.LVL43
-	.4byte	.LVL44
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL45
-	.4byte	.LFE4
-	.2byte	0x1
-	.byte	0x50
-	.4byte	0
-	.4byte	0
 	.section	.debug_aranges,"",%progbits
-	.4byte	0x34
+	.4byte	0x3c
 	.2byte	0x2
 	.4byte	.Ldebug_info0
 	.byte	0x4
 	.byte	0
 	.2byte	0
 	.2byte	0
+	.4byte	.LFB0
+	.4byte	.LFE0-.LFB0
 	.4byte	.LFB1
 	.4byte	.LFE1-.LFB1
 	.4byte	.LFB2
@@ -3490,6 +3189,8 @@ g_clockState:
 	.4byte	0
 	.section	.debug_ranges,"",%progbits
 .Ldebug_ranges0:
+	.4byte	.LFB0
+	.4byte	.LFE0
 	.4byte	.LFB1
 	.4byte	.LFE1
 	.4byte	.LFB2
@@ -3507,7 +3208,7 @@ g_clockState:
 	.4byte	.Ldebug_line0
 	.byte	0x3
 	.uleb128 0
-	.uleb128 0x1
+	.uleb128 0x2
 	.byte	0x5
 	.uleb128 0x1
 	.4byte	.LASF0
@@ -4549,45 +4250,45 @@ g_clockState:
 	.byte	0x5
 	.uleb128 0x3
 	.4byte	.LASF346
-	.file 9 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stddef.h"
+	.file 8 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stddef.h"
 	.byte	0x3
 	.uleb128 0x21
-	.uleb128 0x9
+	.uleb128 0x8
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF347
-	.file 10 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ansi_parms.h"
+	.file 9 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ansi_parms.h"
 	.byte	0x3
 	.uleb128 0xb
-	.uleb128 0xa
+	.uleb128 0x9
 	.byte	0x5
 	.uleb128 0xa
 	.4byte	.LASF348
-	.file 11 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewl_c_version.h"
+	.file 10 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewl_c_version.h"
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0xb
+	.uleb128 0xa
 	.byte	0x7
 	.4byte	.Ldebug_macro1
 	.byte	0x4
-	.file 12 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewlGlobals.h"
+	.file 11 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewlGlobals.h"
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0xc
+	.uleb128 0xb
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF352
-	.file 13 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/arm/ansi_prefix.ARM.h"
+	.file 12 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/arm/ansi_prefix.ARM.h"
 	.byte	0x3
 	.uleb128 0x16
-	.uleb128 0xd
+	.uleb128 0xc
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF353
-	.file 14 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/os_enum.h"
+	.file 13 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/os_enum.h"
 	.byte	0x3
 	.uleb128 0xb
-	.uleb128 0xe
+	.uleb128 0xd
 	.byte	0x7
 	.4byte	.Ldebug_macro2
 	.byte	0x4
@@ -4598,47 +4299,47 @@ g_clockState:
 	.byte	0x7
 	.4byte	.Ldebug_macro4
 	.byte	0x4
-	.file 15 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/cstddef"
+	.file 14 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/cstddef"
 	.byte	0x3
 	.uleb128 0x11
-	.uleb128 0xf
+	.uleb128 0xe
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF482
-	.file 16 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/null.h"
+	.file 15 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/null.h"
 	.byte	0x3
 	.uleb128 0x15
-	.uleb128 0x10
+	.uleb128 0xf
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF483
 	.byte	0x4
-	.file 17 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/size_t.h"
+	.file 16 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/size_t.h"
 	.byte	0x3
 	.uleb128 0x16
-	.uleb128 0x11
+	.uleb128 0x10
 	.byte	0x7
 	.4byte	.Ldebug_macro5
 	.byte	0x4
-	.file 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/wchar_t.h"
+	.file 17 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/wchar_t.h"
 	.byte	0x3
 	.uleb128 0x17
-	.uleb128 0x12
+	.uleb128 0x11
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF487
 	.byte	0x4
-	.file 19 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewl_lib_ext1.h"
+	.file 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewl_lib_ext1.h"
 	.byte	0x3
 	.uleb128 0x18
-	.uleb128 0x13
+	.uleb128 0x12
 	.byte	0x7
 	.4byte	.Ldebug_macro6
 	.byte	0x4
-	.file 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewl_rsize_t.h"
+	.file 19 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/ewl_rsize_t.h"
 	.byte	0x3
 	.uleb128 0x19
-	.uleb128 0x14
+	.uleb128 0x13
 	.byte	0x7
 	.4byte	.Ldebug_macro7
 	.byte	0x4
@@ -4646,29 +4347,29 @@ g_clockState:
 	.4byte	.Ldebug_macro8
 	.byte	0x4
 	.byte	0x4
-	.file 21 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/device_registers.h"
+	.file 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/device_registers.h"
 	.byte	0x3
 	.uleb128 0x22
-	.uleb128 0x15
+	.uleb128 0x14
 	.byte	0x7
 	.4byte	.Ldebug_macro9
-	.file 22 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/common/s32_core_cm0.h"
+	.file 21 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/common/s32_core_cm0.h"
 	.byte	0x3
 	.uleb128 0x6b
-	.uleb128 0x16
+	.uleb128 0x15
 	.byte	0x7
 	.4byte	.Ldebug_macro10
 	.byte	0x4
-	.file 23 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/S32K116/include/S32K116.h"
+	.file 22 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/S32K116/include/S32K116.h"
 	.byte	0x3
 	.uleb128 0x6d
-	.uleb128 0x17
+	.uleb128 0x16
 	.byte	0x7
 	.4byte	.Ldebug_macro11
-	.file 24 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h"
+	.file 23 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h"
 	.byte	0x3
 	.uleb128 0x69
-	.uleb128 0x18
+	.uleb128 0x17
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF517
@@ -4678,16 +4379,16 @@ g_clockState:
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF518
-	.file 25 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
+	.file 24 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
 	.byte	0x3
 	.uleb128 0x15
-	.uleb128 0x19
+	.uleb128 0x18
 	.byte	0x7
 	.4byte	.Ldebug_macro12
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x16
-	.uleb128 0x13
+	.uleb128 0x12
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro13
@@ -4704,21 +4405,21 @@ g_clockState:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x129
-	.uleb128 0x2
+	.uleb128 0x1
 	.byte	0x5
 	.uleb128 0x14
 	.4byte	.LASF8168
-	.file 26 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdbool.h"
+	.file 25 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdbool.h"
 	.byte	0x3
 	.uleb128 0x16
-	.uleb128 0x1a
+	.uleb128 0x19
 	.byte	0x7
 	.4byte	.Ldebug_macro16
 	.byte	0x4
-	.file 27 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+	.file 26 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 	.byte	0x3
 	.uleb128 0x17
-	.uleb128 0x1b
+	.uleb128 0x1a
 	.byte	0x4
 	.byte	0x5
 	.uleb128 0x4a
@@ -4745,9 +4446,10 @@ g_clockState:
 	.4byte	.Ldebug_macro17
 	.byte	0x4
 	.byte	0x4
+	.file 27 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/interrupt_manager.h"
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x8
+	.uleb128 0x1b
 	.byte	0x5
 	.uleb128 0x13
 	.4byte	.LASF8192
@@ -28418,7 +28120,7 @@ g_clockState:
 	.ascii	"T_MASK)\000"
 .LASF3567:
 	.ascii	"FTM_COMBINE_MCOMBINE2_WIDTH 1u\000"
-.LASF262:
+.LASF261:
 	.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
 .LASF4614:
 	.ascii	"LPI2C_SSR_AM1F_SHIFT 13u\000"
@@ -28522,7 +28224,7 @@ g_clockState:
 	.ascii	"callbackType\000"
 .LASF385:
 	.ascii	"_EWL_CONSOLE_FILE_IS_DISK_FILE 0\000"
-.LASF301:
+.LASF300:
 	.ascii	"__UDA_IBIT__ 32\000"
 .LASF637:
 	.ascii	"ADC_CFG1_ADICLK_MASK 0x3u\000"
@@ -28602,7 +28304,7 @@ g_clockState:
 	.ascii	"FTM_PAIR0DEADTIME_DTVALEX_WIDTH 4u\000"
 .LASF5326:
 	.ascii	"LPUART_BAUD_SBR_WIDTH 13u\000"
-.LASF199:
+.LASF198:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF3314:
 	.ascii	"FTM_CNTIN_INIT_SHIFT 0u\000"
@@ -28658,7 +28360,7 @@ g_clockState:
 	.ascii	"SIM_PLATCGC_CGCERM_SHIFT 3u\000"
 .LASF1660:
 	.ascii	"CMP0_BASE (0x40073000u)\000"
-.LASF135:
+.LASF134:
 	.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
 .LASF7359:
 	.ascii	"SCG_SIRCDIV_SIRCDIV2_MASK 0x700u\000"
@@ -28723,7 +28425,7 @@ g_clockState:
 	.ascii	"LPUART_MODIR_TXCTSE_WIDTH 1u\000"
 .LASF6519:
 	.ascii	"PMC_LVDSC2_LVWF_WIDTH 1u\000"
-.LASF279:
+.LASF278:
 	.ascii	"__UQQ_IBIT__ 0\000"
 .LASF4482:
 	.ascii	"LPI2C_MCFGR2_FILTSDA_SHIFT 24u\000"
@@ -28756,7 +28458,7 @@ g_clockState:
 	.ascii	"PORTD ((PORT_Type *)PORTD_BASE)\000"
 .LASF7345:
 	.ascii	"SCG_SIRCCSR_LK_WIDTH 1u\000"
-.LASF183:
+.LASF182:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
 .LASF6098:
 	.ascii	"MPU_RGDAAC_M6WE_MASK 0x10000000u\000"
@@ -28817,7 +28519,7 @@ g_clockState:
 	.ascii	"DMA_ERQ_ERQ1_MASK 0x2u\000"
 .LASF4201:
 	.ascii	"LMEM_PCCLCR_LCMD_WIDTH 2u\000"
-.LASF69:
+.LASF68:
 	.ascii	"__SCHAR_MAX__ 127\000"
 .LASF3727:
 	.ascii	"FTM_FILTER_CH3FVAL_WIDTH 4u\000"
@@ -28858,7 +28560,7 @@ g_clockState:
 	.ascii	"rccrConfig\000"
 .LASF2405:
 	.ascii	"DMA_ERR_ERR0_SHIFT 0u\000"
-.LASF140:
+.LASF139:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF6509:
 	.ascii	"PMC_LVDSC2_LVWIE_MASK 0x20u\000"
@@ -28873,7 +28575,7 @@ g_clockState:
 	.ascii	"CMP_C0_FILTER_CNT_MASK 0x70u\000"
 .LASF4976:
 	.ascii	"LPSPI_CR_DOZEN_WIDTH 1u\000"
-.LASF143:
+.LASF142:
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
 .LASF4402:
 	.ascii	"LPI2C_MIER_NDIE_SHIFT 10u\000"
@@ -28897,7 +28599,7 @@ g_clockState:
 	.ascii	"TMP_SPLL_CLK 3U\000"
 .LASF6002:
 	.ascii	"MPU_RGD_WORD2_M4WE_MASK 0x1000000u\000"
-.LASF123:
+.LASF122:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
 .LASF5757:
 	.ascii	"MCM_CPCR_AXBS_HLT_REQ(x) (((uint32_t)(((uint32_t)(x"
@@ -28996,7 +28698,7 @@ g_clockState:
 	.ascii	"_CH0F_SHIFT))&CMP_C2_CH0F_MASK)\000"
 .LASF3184:
 	.ascii	"FTM_IRQS_ARR_COUNT (4u)\000"
-.LASF203:
+.LASF202:
 	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF2062:
 	.ascii	"DMA_CR_ECX_WIDTH 1u\000"
@@ -29060,7 +28762,7 @@ g_clockState:
 	.ascii	"PLASC_ASC_SHIFT))&MCM_PLASC_ASC_MASK)\000"
 .LASF1992:
 	.ascii	"CSE_PRAM_RAMn_DATA_32_BYTE_3_MASK 0xFFu\000"
-.LASF26:
+.LASF25:
 	.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
 .LASF3419:
 	.ascii	"FTM_OUTINIT_CH2OI_WIDTH 1u\000"
@@ -29069,11 +28771,11 @@ g_clockState:
 .LASF6412:
 	.ascii	"PDB_SC_PRESCALER(x) (((uint32_t)(((uint32_t)(x))<<P"
 	.ascii	"DB_SC_PRESCALER_SHIFT))&PDB_SC_PRESCALER_MASK)\000"
-.LASF245:
+.LASF244:
 	.ascii	"__UACCUM_MIN__ 0.0UK\000"
 .LASF4962:
 	.ascii	"LPSPI_PARAM_RXFIFO_MASK 0xFF00u\000"
-.LASF41:
+.LASF40:
 	.ascii	"__INT16_TYPE__ short int\000"
 .LASF1181:
 	.ascii	"CAN_ESR1_BOFFINT_WIDTH 1u\000"
@@ -29115,13 +28817,13 @@ g_clockState:
 	.ascii	"RT_GPCLR_GPWE_SHIFT))&PORT_GPCLR_GPWE_MASK)\000"
 .LASF3698:
 	.ascii	"FTM_FMS_FAULTF3_SHIFT 3u\000"
-.LASF89:
+.LASF88:
 	.ascii	"__INT64_MAX__ 9223372036854775807LL\000"
 .LASF8416:
 	.ascii	"SCG_SYSTEM_CLOCK_DIV_BY_1\000"
 .LASF8417:
 	.ascii	"SCG_SYSTEM_CLOCK_DIV_BY_2\000"
-.LASF181:
+.LASF180:
 	.ascii	"__DEC128_MANT_DIG__ 34\000"
 .LASF8419:
 	.ascii	"SCG_SYSTEM_CLOCK_DIV_BY_4\000"
@@ -29135,7 +28837,7 @@ g_clockState:
 	.ascii	"MCM_LMDR_COUNT 2u\000"
 .LASF8424:
 	.ascii	"SCG_SYSTEM_CLOCK_DIV_BY_9\000"
-.LASF70:
+.LASF69:
 	.ascii	"__SHRT_MAX__ 32767\000"
 .LASF8004:
 	.ascii	"FEATURE_CRC_DEFAULT_POLYNOMIAL (0x1021U)\000"
@@ -29147,7 +28849,7 @@ g_clockState:
 	.ascii	"DMA_CDNE_CDNE_SHIFT 0u\000"
 .LASF421:
 	.ascii	"_EWL_C99 0\000"
-.LASF220:
+.LASF219:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
 .LASF2845:
 	.ascii	"FLEXIO_IRQS_CH_COUNT (1u)\000"
@@ -29252,7 +28954,7 @@ g_clockState:
 	.ascii	"FEATURE_SOC_PORT_COUNT (5)\000"
 .LASF5167:
 	.ascii	"LPSPI_TCR_WIDTH_SHIFT 16u\000"
-.LASF177:
+.LASF176:
 	.ascii	"__DEC64_MIN__ 1E-383DD\000"
 .LASF6321:
 	.ascii	"PCC_INSTANCE_COUNT (1u)\000"
@@ -29271,7 +28973,7 @@ g_clockState:
 .LASF6861:
 	.ascii	"RCM_SRIE_JTAG(x) (((uint32_t)(((uint32_t)(x))<<RCM_"
 	.ascii	"SRIE_JTAG_SHIFT))&RCM_SRIE_JTAG_MASK)\000"
-.LASF145:
+.LASF144:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
 .LASF2922:
 	.ascii	"FLEXIO_TIMIEN_TEIE(x) (((uint32_t)(((uint32_t)(x))<"
@@ -29451,9 +29153,9 @@ g_clockState:
 	.ascii	"LPI2C_SCFGR1_GCEN_MASK 0x100u\000"
 .LASF2064:
 	.ascii	"DMA_CR_CX_MASK 0x20000u\000"
-.LASF275:
+.LASF274:
 	.ascii	"__DQ_IBIT__ 0\000"
-.LASF109:
+.LASF108:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
 .LASF7881:
 	.ascii	"FEATURE_FLS_DF_START_ADDRESS (0x10000000u)\000"
@@ -29524,7 +29226,7 @@ g_clockState:
 .LASF6460:
 	.ascii	"PDB_S_CF(x) (((uint32_t)(((uint32_t)(x))<<PDB_S_CF_"
 	.ascii	"SHIFT))&PDB_S_CF_MASK)\000"
-.LASF280:
+.LASF279:
 	.ascii	"__UHQ_FBIT__ 16\000"
 .LASF3990:
 	.ascii	"FTM_PWMLOAD_CH3SEL_SHIFT 3u\000"
@@ -29579,7 +29281,7 @@ g_clockState:
 	.ascii	"_CPO_CPOWOI_SHIFT))&MCM_CPO_CPOWOI_MASK)\000"
 .LASF3350:
 	.ascii	"FTM_MODE_FTMEN_SHIFT 0u\000"
-.LASF48:
+.LASF47:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
 .LASF7213:
 	.ascii	"SCG ((SCG_Type *)SCG_BASE)\000"
@@ -29864,7 +29566,7 @@ g_clockState:
 	.ascii	"FEATURE_FLS_DF_BLOCK_CMD_ADDRESS_ALIGMENT (8u)\000"
 .LASF6043:
 	.ascii	"MPU_RGD_WORD3_PID_SHIFT 24u\000"
-.LASF39:
+.LASF38:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
 .LASF1323:
 	.ascii	"CAN_CTRL2_RRS_MASK 0x20000u\000"
@@ -29946,7 +29648,7 @@ g_clockState:
 	.ascii	"FTM_POL_POL2_SHIFT 2u\000"
 .LASF3331:
 	.ascii	"FTM_STATUS_CH3F_WIDTH 1u\000"
-.LASF112:
+.LASF111:
 	.ascii	"__INT_FAST32_MAX__ 2147483647\000"
 .LASF7377:
 	.ascii	"SCG_FIRCCSR_LK_WIDTH 1u\000"
@@ -29964,7 +29666,7 @@ g_clockState:
 	.ascii	"AIPS_OPACR_SP4_WIDTH 1u\000"
 .LASF6914:
 	.ascii	"RTC_TCR_CIC_WIDTH 8u\000"
-.LASF287:
+.LASF286:
 	.ascii	"__UTQ_IBIT__ 0\000"
 .LASF7208:
 	.ascii	"S32_SysTick_CALIB_NOREF_SHIFT 31u\000"
@@ -30007,14 +29709,14 @@ g_clockState:
 	.ascii	"LPUART_DATA_RXEMPT(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<LPUART_DATA_RXEMPT_SHIFT))&LPUART_DATA_RXEMPT_MASK"
 	.ascii	")\000"
-.LASF257:
+.LASF256:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF7378:
 	.ascii	"SCG_FIRCCSR_LK(x) (((uint32_t)(((uint32_t)(x))<<SCG"
 	.ascii	"_FIRCCSR_LK_SHIFT))&SCG_FIRCCSR_LK_MASK)\000"
 .LASF5705:
 	.ascii	"LPUART_FIFO_RXUF_SHIFT 16u\000"
-.LASF226:
+.LASF225:
 	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
 .LASF7995:
 	.ascii	"FEATURE_CSEC_PAGE_3_OFFSET (0x30U)\000"
@@ -30050,6 +29752,8 @@ g_clockState:
 	.ascii	"MPU_RGD_WORD2_M7RE(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<MPU_RGD_WORD2_M7RE_SHIFT))&MPU_RGD_WORD2_M7RE_MASK"
 	.ascii	")\000"
+.LASF4777:
+	.ascii	"LPI2C_SRDR_DATA_MASK 0xFFu\000"
 .LASF2217:
 	.ascii	"DMA_EEI_EEI9_SHIFT 9u\000"
 .LASF2235:
@@ -30062,7 +29766,7 @@ g_clockState:
 	.ascii	"M_PCCRMR_R7_SHIFT))&LMEM_PCCRMR_R7_MASK)\000"
 .LASF8543:
 	.ascii	"CLOCK_MANAGER_POLICY_FORCIBLE\000"
-.LASF217:
+.LASF216:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
 .LASF3082:
 	.ascii	"FTFC_FCNFG_ERSSUSP(x) (((uint8_t)(((uint8_t)(x))<<F"
@@ -30112,7 +29816,7 @@ g_clockState:
 	.ascii	"MPU_CESR_NSP_WIDTH 4u\000"
 .LASF6527:
 	.ascii	"PMC_REGSC_CLKBIASDIS_WIDTH 1u\000"
-.LASF240:
+.LASF239:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF4162:
 	.ascii	"LMEM_PCCCR_INVW1(x) (((uint32_t)(((uint32_t)(x))<<L"
@@ -30139,7 +29843,7 @@ g_clockState:
 .LASF4016:
 	.ascii	"FTM_PWMLOAD_LDOK(x) (((uint32_t)(((uint32_t)(x))<<F"
 	.ascii	"TM_PWMLOAD_LDOK_SHIFT))&FTM_PWMLOAD_LDOK_MASK)\000"
-.LASF241:
+.LASF240:
 	.ascii	"__ACCUM_MAX__ 0X7FFFFFFFP-15K\000"
 .LASF4675:
 	.ascii	"LPI2C_SIER_GCIE_WIDTH 1u\000"
@@ -30286,8 +29990,6 @@ g_clockState:
 	.ascii	"CAN_FDCTRL_FDRATE_SHIFT))&CAN_FDCTRL_FDRATE_MASK)\000"
 .LASF1789:
 	.ascii	"CMP_C1_INNSEL_WIDTH 2u\000"
-.LASF8574:
-	.ascii	"INT_SYS_DisableIRQGlobal\000"
 .LASF724:
 	.ascii	"ADC_BASE_OFS_BA_OFS(x) (((uint32_t)(((uint32_t)(x))"
 	.ascii	"<<ADC_BASE_OFS_BA_OFS_SHIFT))&ADC_BASE_OFS_BA_OFS_M"
@@ -30303,10 +30005,6 @@ g_clockState:
 	.ascii	"DMAMUX_CHCFG_ENBL_SHIFT 7u\000"
 .LASF3943:
 	.ascii	"FTM_SWOCTRL_CH7OC_WIDTH 1u\000"
-.LASF5753:
-	.ascii	"MCM_CPCR_HLT_FSM_ST(x) (((uint32_t)(((uint32_t)(x))"
-	.ascii	"<<MCM_CPCR_HLT_FSM_ST_SHIFT))&MCM_CPCR_HLT_FSM_ST_M"
-	.ascii	"ASK)\000"
 .LASF4432:
 	.ascii	"LPI2C_MCFGR0_HREN(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"LPI2C_MCFGR0_HREN_SHIFT))&LPI2C_MCFGR0_HREN_MASK)\000"
@@ -30335,7 +30033,7 @@ g_clockState:
 	.ascii	"MPU_RGD_WORD2_M4RE_SHIFT 25u\000"
 .LASF6356:
 	.ascii	"PCC_PCCn_FRAC_WIDTH 1u\000"
-.LASF60:
+.LASF59:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
 .LASF570:
 	.ascii	"INT_FAST32_MIN _EWL_LONG_MIN\000"
@@ -30369,7 +30067,7 @@ g_clockState:
 	.ascii	"CSE_PRAM_RAMn_ACCESS8BIT_DATA_8LU_RAM_LU_WIDTH 8u\000"
 .LASF5818:
 	.ascii	"MCM_LMDR2_CF1_MASK 0xF0u\000"
-.LASF93:
+.LASF92:
 	.ascii	"__UINT64_MAX__ 18446744073709551615ULL\000"
 .LASF2443:
 	.ascii	"DMA_ERR_ERR9(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
@@ -30437,7 +30135,7 @@ g_clockState:
 	.ascii	"DMA_BASE_PTRS { DMA }\000"
 .LASF3497:
 	.ascii	"FTM_COMBINE_FAULTEN0_MASK 0x40u\000"
-.LASF272:
+.LASF271:
 	.ascii	"__SQ_FBIT__ 31\000"
 .LASF2829:
 	.ascii	"ERM_EAR0_EAR(x) (((uint32_t)(((uint32_t)(x))<<ERM_E"
@@ -30446,7 +30144,7 @@ g_clockState:
 	.ascii	"S32K11x_SERIES \000"
 .LASF4323:
 	.ascii	"LPI2C_MCR_RST_WIDTH 1u\000"
-.LASF282:
+.LASF281:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF7973:
 	.ascii	"FEATURE_INTERRUPT_MULTICORE_SUPPORT (0u)\000"
@@ -30500,7 +30198,7 @@ g_clockState:
 	.ascii	"WDOG_CS_EN_WIDTH 1u\000"
 .LASF1076:
 	.ascii	"CAN_MCR_MDIS_SHIFT 31u\000"
-.LASF158:
+.LASF157:
 	.ascii	"__LDBL_MAX_10_EXP__ 308\000"
 .LASF6680:
 	.ascii	"RCM_PARAM_ECMU_LOC_WIDTH 1u\000"
@@ -30542,7 +30240,7 @@ g_clockState:
 	.ascii	"LPSPI_CFGR1_SAMPLE(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<LPSPI_CFGR1_SAMPLE_SHIFT))&LPSPI_CFGR1_SAMPLE_MASK"
 	.ascii	")\000"
-.LASF72:
+.LASF71:
 	.ascii	"__LONG_MAX__ 2147483647L\000"
 .LASF960:
 	.ascii	"AIPS_OPACR_WP1_MASK 0x2000000u\000"
@@ -30663,17 +30361,17 @@ g_clockState:
 .LASF3416:
 	.ascii	"FTM_OUTINIT_CH1OI(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"FTM_OUTINIT_CH1OI_SHIFT))&FTM_OUTINIT_CH1OI_MASK)\000"
-.LASF129:
+.LASF128:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
-.LASF929:
-	.ascii	"AIPS_OPACR_SP4_SHIFT 14u\000"
+.LASF306:
+	.ascii	"__NO_INLINE__ 1\000"
 .LASF6736:
 	.ascii	"RCM_SRS_CMU_LOC_WIDTH 1u\000"
 .LASF2384:
 	.ascii	"DMA_INT_INT11_MASK 0x800u\000"
 .LASF5268:
 	.ascii	"LPTMR_PSR_PCS_WIDTH 2u\000"
-.LASF144:
+.LASF143:
 	.ascii	"__DBL_MAX_10_EXP__ 308\000"
 .LASF7795:
 	.ascii	"WDOG_CS_EN_SHIFT 7u\000"
@@ -30710,7 +30408,7 @@ g_clockState:
 	.ascii	"STATUS_ENET_BUFF_NOT_FOUND\000"
 .LASF7620:
 	.ascii	"SIM_PLATCGC_CGCEIM_MASK 0x10u\000"
-.LASF289:
+.LASF288:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF7840:
 	.ascii	"WDOG_TOVAL_TOVALHIGH_WIDTH 8u\000"
@@ -30726,7 +30424,7 @@ g_clockState:
 	.ascii	"LPUART_STAT_RXEDGIF_WIDTH 1u\000"
 .LASF3109:
 	.ascii	"FTFC_FSEC_KEYEN_WIDTH 2u\000"
-.LASF14:
+.LASF13:
 	.ascii	"__FINITE_MATH_ONLY__ 0\000"
 .LASF6256:
 	.ascii	"MSCM_CP0CFG3_FPU_MASK 0x1u\000"
@@ -30978,7 +30676,7 @@ g_clockState:
 	.ascii	"LPI2C_MDMR_MATCH1_SHIFT 16u\000"
 .LASF1376:
 	.ascii	"CAN_CBT_EPSEG2_SHIFT 0u\000"
-.LASF247:
+.LASF246:
 	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
 .LASF2709:
 	.ascii	"DMA_TCD_CSR_INTHALF_SHIFT 2u\000"
@@ -30995,7 +30693,7 @@ g_clockState:
 	.ascii	"FTM_CONF_BDMMODE_MASK 0xC0u\000"
 .LASF3623:
 	.ascii	"FTM_EXTTRIG_CH4TRIG_WIDTH 1u\000"
-.LASF224:
+.LASF223:
 	.ascii	"__ULLFRACT_IBIT__ 0\000"
 .LASF3614:
 	.ascii	"FTM_EXTTRIG_CH2TRIG_SHIFT 0u\000"
@@ -31035,7 +30733,7 @@ g_clockState:
 	.ascii	"AIPS_OPACR_WP0_WIDTH 1u\000"
 .LASF4802:
 	.ascii	"LPIT_VERID_MINOR_MASK 0xFF0000u\000"
-.LASF71:
+.LASF70:
 	.ascii	"__INT_MAX__ 2147483647\000"
 .LASF4700:
 	.ascii	"LPI2C_SCFGR1_RXSTALL(x) (((uint32_t)(((uint32_t)(x)"
@@ -31096,11 +30794,11 @@ g_clockState:
 	.ascii	"FTFC_FCSESTAT_BSY_SHIFT 0u\000"
 .LASF5051:
 	.ascii	"LPSPI_IER_REIE_SHIFT 12u\000"
-.LASF8580:
-	.ascii	"CLOCK_SYS_SetConfiguration\000"
+.LASF7391:
+	.ascii	"SCG_FIRCDIV_FIRCDIV1_MASK 0x7u\000"
 .LASF6650:
 	.ascii	"RCM_VERID_FEATURE_MASK 0xFFFFu\000"
-.LASF260:
+.LASF259:
 	.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
 .LASF4521:
 	.ascii	"LPI2C_MCCR1_SETHOLD_MASK 0x3F0000u\000"
@@ -31142,7 +30840,7 @@ g_clockState:
 	.ascii	"_CHN7_SHIFT))&CMP_C1_CHN7_MASK)\000"
 .LASF7743:
 	.ascii	"TRGMUX_TRGMUXn_SEL0_SHIFT 0u\000"
-.LASF50:
+.LASF49:
 	.ascii	"__INT_LEAST32_TYPE__ long int\000"
 .LASF4382:
 	.ascii	"LPI2C_MSR_BBF_SHIFT 25u\000"
@@ -31233,7 +30931,7 @@ g_clockState:
 	.ascii	"LPUART_CTRL_WAKE_SHIFT 3u\000"
 .LASF7340:
 	.ascii	"SCG_SIRCCSR_SIRCLPEN_SHIFT 2u\000"
-.LASF229:
+.LASF228:
 	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF2131:
 	.ascii	"DMA_ERQ_ERQ3(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
@@ -31321,7 +31019,7 @@ g_clockState:
 	.ascii	"RCM_SRS_PIN_SHIFT 6u\000"
 .LASF820:
 	.ascii	"AIPS_MPRA_MTR2_MASK 0x400000u\000"
-.LASF8577:
+.LASF8575:
 	.ascii	"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_"
 	.ascii	"1.8.7/platform/drivers/src/clock/clock_manager.c\000"
 .LASF6261:
@@ -31355,12 +31053,12 @@ g_clockState:
 .LASF752:
 	.ascii	"ADC_CLPS_CLPS(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"CLPS_CLPS_SHIFT))&ADC_CLPS_CLPS_MASK)\000"
-.LASF122:
+.LASF121:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
 .LASF1756:
 	.ascii	"CMP_C1_CHN0_SHIFT 16u\000"
-.LASF7174:
-	.ascii	"S32_SysTick_IRQS { SysTick_IRQn }\000"
+.LASF7367:
+	.ascii	"SCG_FIRCCSR_FIRCEN_MASK 0x1u\000"
 .LASF6996:
 	.ascii	"S32_NVIC_ISER_COUNT 1u\000"
 .LASF8500:
@@ -31373,7 +31071,7 @@ g_clockState:
 	.ascii	"DMA_INT_INT3_SHIFT 3u\000"
 .LASF5968:
 	.ascii	"MPU_RGD_WORD2_M0UM_WIDTH 3u\000"
-.LASF52:
+.LASF51:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
 .LASF3054:
 	.ascii	"FTFC_FSTAT_MGSTAT0(x) (((uint8_t)(((uint8_t)(x))<<F"
@@ -31409,7 +31107,7 @@ g_clockState:
 	.ascii	"FTFC_FCCOB_CCOBn_WIDTH 8u\000"
 .LASF6610:
 	.ascii	"PORT_GICLR_GIWE_MASK 0xFFFFu\000"
-.LASF208:
+.LASF207:
 	.ascii	"__LFRACT_FBIT__ 31\000"
 .LASF5174:
 	.ascii	"LPSPI_TCR_RXMSK_MASK 0x80000u\000"
@@ -31471,7 +31169,7 @@ g_clockState:
 .LASF7805:
 	.ascii	"WDOG_CS_RCS(x) (((uint32_t)(((uint32_t)(x))<<WDOG_C"
 	.ascii	"S_RCS_SHIFT))&WDOG_CS_RCS_MASK)\000"
-.LASF213:
+.LASF212:
 	.ascii	"__ULFRACT_FBIT__ 32\000"
 .LASF7589:
 	.ascii	"SIM_SDID_RAMSIZE_SHIFT 16u\000"
@@ -31506,8 +31204,6 @@ g_clockState:
 .LASF1614:
 	.ascii	"CAN_FDCTRL_TDCOFF(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"CAN_FDCTRL_TDCOFF_SHIFT))&CAN_FDCTRL_TDCOFF_MASK)\000"
-.LASF8575:
-	.ascii	"INT_SYS_EnableIRQGlobal\000"
 .LASF5795:
 	.ascii	"MCM_LMDR_MT_SHIFT 13u\000"
 .LASF8312:
@@ -31519,7 +31215,7 @@ g_clockState:
 	.ascii	"CMP_C2_CH4F_SHIFT 20u\000"
 .LASF12:
 	.ascii	"__ATOMIC_CONSUME 1\000"
-.LASF215:
+.LASF214:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
 .LASF4692:
 	.ascii	"LPI2C_SDER_AVDE(x) (((uint32_t)(((uint32_t)(x))<<LP"
@@ -31544,7 +31240,7 @@ g_clockState:
 .LASF1454:
 	.ascii	"CAN_WU_MTC_WUMF(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_WU_MTC_WUMF_SHIFT))&CAN_WU_MTC_WUMF_MASK)\000"
-.LASF201:
+.LASF200:
 	.ascii	"__FRACT_MAX__ 0X7FFFP-15R\000"
 .LASF4924:
 	.ascii	"LPIT_TMR_TCTRL_TSOI_WIDTH 1u\000"
@@ -31607,6 +31303,9 @@ g_clockState:
 	.ascii	"FTM_COMBINE_MCOMBINE2_MASK 0x800000u\000"
 .LASF580:
 	.ascii	"INTPTR_MIN _EWL_LONG_MIN\000"
+.LASF1876:
+	.ascii	"CMU_FC_HTCR_HFREF(x) (((uint32_t)(((uint32_t)(x))<<"
+	.ascii	"CMU_FC_HTCR_HFREF_SHIFT))&CMU_FC_HTCR_HFREF_MASK)\000"
 .LASF5930:
 	.ascii	"MPU_CESR_SPERR0_MASK 0x80000000u\000"
 .LASF5318:
@@ -31637,7 +31336,7 @@ g_clockState:
 .LASF3288:
 	.ascii	"FTM_CnSC_MSB(x) (((uint32_t)(((uint32_t)(x))<<FTM_C"
 	.ascii	"nSC_MSB_SHIFT))&FTM_CnSC_MSB_MASK)\000"
-.LASF45:
+.LASF44:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF677:
 	.ascii	"ADC_SC2_ACFGT_MASK 0x10u\000"
@@ -31703,7 +31402,7 @@ g_clockState:
 	.ascii	"CAN_CTRL1_LOM_MASK 0x8u\000"
 .LASF1720:
 	.ascii	"CMP_C0_CFR_SHIFT 26u\000"
-.LASF222:
+.LASF221:
 	.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
 .LASF1650:
 	.ascii	"CAN_FDCBT_FPRESDIV(x) (((uint32_t)(((uint32_t)(x))<"
@@ -31779,7 +31478,7 @@ g_clockState:
 	.ascii	"FTM_FLTCTRL_FFLTR2EN(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_FLTCTRL_FFLTR2EN_SHIFT))&FTM_FLTCTRL_FFLTR2E"
 	.ascii	"N_MASK)\000"
-.LASF298:
+.LASF297:
 	.ascii	"__USA_FBIT__ 16\000"
 .LASF4196:
 	.ascii	"LMEM_PCCLCR_LCWAY_SHIFT 22u\000"
@@ -31820,7 +31519,7 @@ g_clockState:
 	.ascii	"LPUART_BAUD_RESYNCDIS_MASK 0x10000u\000"
 .LASF5362:
 	.ascii	"LPUART_BAUD_TDMAE_WIDTH 1u\000"
-.LASF8579:
+.LASF8577:
 	.ascii	"CLOCK_SYS_GetCurrentConfiguration\000"
 .LASF710:
 	.ascii	"ADC_SC3_AVGE_SHIFT 2u\000"
@@ -31858,7 +31557,7 @@ g_clockState:
 	.ascii	"LPI2C_MDER_TDDE_MASK 0x1u\000"
 .LASF914:
 	.ascii	"AIPS_OPACR_WP5_WIDTH 1u\000"
-.LASF20:
+.LASF19:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
 .LASF5468:
 	.ascii	"LPUART_CTRL_M_MASK 0x10u\000"
@@ -31876,8 +31575,8 @@ g_clockState:
 	.ascii	"FTM_SC_CPWMS_MASK 0x20u\000"
 .LASF8024:
 	.ascii	"FEATURE_LPUART_HAS_MODEM_SUPPORT (1)\000"
-.LASF1589:
-	.ascii	"CAN_WMBn_D03_Data_byte_0_WIDTH 8u\000"
+.LASF5752:
+	.ascii	"MCM_CPCR_HLT_FSM_ST_WIDTH 2u\000"
 .LASF3126:
 	.ascii	"FTFC_FEPROT_EPROT(x) (((uint8_t)(((uint8_t)(x))<<FT"
 	.ascii	"FC_FEPROT_EPROT_SHIFT))&FTFC_FEPROT_EPROT_MASK)\000"
@@ -32031,7 +31730,7 @@ g_clockState:
 	.ascii	"WDOG_CS_DBG_SHIFT 2u\000"
 .LASF7273:
 	.ascii	"SCG_VCCR_DIVCORE_WIDTH 4u\000"
-.LASF261:
+.LASF260:
 	.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
 .LASF4269:
 	.ascii	"LMEM_PCCRMR_R4_WIDTH 2u\000"
@@ -32069,7 +31768,7 @@ g_clockState:
 	.ascii	"FTM_PAIR0DEADTIME_DTVALEX(x) (((uint32_t)(((uint32_"
 	.ascii	"t)(x))<<FTM_PAIR0DEADTIME_DTVALEX_SHIFT))&FTM_PAIR0"
 	.ascii	"DEADTIME_DTVALEX_MASK)\000"
-.LASF35:
+.LASF34:
 	.ascii	"__INTMAX_TYPE__ long long int\000"
 .LASF6671:
 	.ascii	"RCM_PARAM_ELOC_SHIFT 2u\000"
@@ -32285,7 +31984,7 @@ g_clockState:
 	.ascii	"FTM_FLTPOL_FLT1POL(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<FTM_FLTPOL_FLT1POL_SHIFT))&FTM_FLTPOL_FLT1POL_MASK"
 	.ascii	")\000"
-.LASF83:
+.LASF82:
 	.ascii	"__UINTMAX_C(c) c ## ULL\000"
 .LASF6689:
 	.ascii	"RCM_PARAM_EPIN(x) (((uint32_t)(((uint32_t)(x))<<RCM"
@@ -32356,7 +32055,7 @@ g_clockState:
 	.ascii	"LPUART_WATER_RXWATER_MASK 0x30000u\000"
 .LASF3893:
 	.ascii	"FTM_SYNCONF_HWSOC_MASK 0x100000u\000"
-.LASF49:
+.LASF48:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
 .LASF1718:
 	.ascii	"CMP_C0_CFF(x) (((uint32_t)(((uint32_t)(x))<<CMP_C0_"
@@ -32520,7 +32219,7 @@ g_clockState:
 	.ascii	"C_FCCOB_CCOBn_SHIFT))&FTFC_FCCOB_CCOBn_MASK)\000"
 .LASF7380:
 	.ascii	"SCG_FIRCCSR_FIRCVLD_SHIFT 24u\000"
-.LASF170:
+.LASF169:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
 .LASF1881:
 	.ascii	"CMU_FC_SR_FLL_MASK 0x1u\000"
@@ -32619,7 +32318,7 @@ g_clockState:
 .LASF2411:
 	.ascii	"DMA_ERR_ERR1(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
 	.ascii	"RR_ERR1_SHIFT))&DMA_ERR_ERR1_MASK)\000"
-.LASF121:
+.LASF120:
 	.ascii	"__GCC_IEC_559_COMPLEX 0\000"
 .LASF5079:
 	.ascii	"LPSPI_CFGR0_CIRFIFO_SHIFT 8u\000"
@@ -32668,7 +32367,7 @@ g_clockState:
 .LASF6081:
 	.ascii	"MPU_RGDAAC_M3SM(x) (((uint32_t)(((uint32_t)(x))<<MP"
 	.ascii	"U_RGDAAC_M3SM_SHIFT))&MPU_RGDAAC_M3SM_MASK)\000"
-.LASF115:
+.LASF114:
 	.ascii	"__UINT_FAST16_MAX__ 4294967295U\000"
 .LASF1588:
 	.ascii	"CAN_WMBn_D03_Data_byte_0_SHIFT 24u\000"
@@ -32751,7 +32450,7 @@ g_clockState:
 .LASF7898:
 	.ascii	"FEATURE_FLS_HAS_VERIFY_BACKDOOR_ACCESS_KEY_CMD (1u)"
 	.ascii	"\000"
-.LASF296:
+.LASF295:
 	.ascii	"__UHA_FBIT__ 8\000"
 .LASF3702:
 	.ascii	"FTM_FMS_FAULTIN_SHIFT 5u\000"
@@ -32788,7 +32487,7 @@ g_clockState:
 	.ascii	"FTM_FLTCTRL_FFVAL_SHIFT 8u\000"
 .LASF6313:
 	.ascii	"MSCM_OCMDR_OCMSZH_SHIFT 28u\000"
-.LASF142:
+.LASF141:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF8355:
 	.ascii	"SIM_LPO_CLK_SEL_NO_CLOCK\000"
@@ -32913,7 +32612,7 @@ g_clockState:
 	.ascii	"FlexCAN0_CLK\000"
 .LASF3729:
 	.ascii	"FTM_FLTCTRL_FAULT0EN_MASK 0x1u\000"
-.LASF168:
+.LASF167:
 	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
 .LASF5977:
 	.ascii	"MPU_RGD_WORD2_M0PE(x) (((uint32_t)(((uint32_t)(x))<"
@@ -32932,14 +32631,14 @@ g_clockState:
 	.ascii	"2C_SASR_ANV_SHIFT))&LPI2C_SASR_ANV_MASK)\000"
 .LASF3945:
 	.ascii	"FTM_SWOCTRL_CH0OCV_MASK 0x100u\000"
-.LASF171:
+.LASF170:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
 .LASF3062:
 	.ascii	"FTFC_FSTAT_ACCERR(x) (((uint8_t)(((uint8_t)(x))<<FT"
 	.ascii	"FC_FSTAT_ACCERR_SHIFT))&FTFC_FSTAT_ACCERR_MASK)\000"
-.LASF276:
+.LASF275:
 	.ascii	"__TQ_FBIT__ 127\000"
-.LASF152:
+.LASF151:
 	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
 .LASF7659:
 	.ascii	"SIM_CLKDIV4_TRACEDIVEN(x) (((uint32_t)(((uint32_t)("
@@ -33049,7 +32748,7 @@ g_clockState:
 	.ascii	"STATUS_I2C_BUS_BUSY\000"
 .LASF7356:
 	.ascii	"SCG_SIRCDIV_SIRCDIV1_SHIFT 0u\000"
-.LASF151:
+.LASF150:
 	.ascii	"__DBL_HAS_INFINITY__ 1\000"
 .LASF1613:
 	.ascii	"CAN_FDCTRL_TDCOFF_WIDTH 5u\000"
@@ -33068,9 +32767,10 @@ g_clockState:
 	.ascii	"FLEXIO_SHIFTCTL_PINCFG_SHIFT 16u\000"
 .LASF2949:
 	.ascii	"FLEXIO_SHIFTCTL_TIMSEL_WIDTH 2u\000"
-.LASF1876:
-	.ascii	"CMU_FC_HTCR_HFREF(x) (((uint32_t)(((uint32_t)(x))<<"
-	.ascii	"CMU_FC_HTCR_HFREF_SHIFT))&CMU_FC_HTCR_HFREF_MASK)\000"
+.LASF5753:
+	.ascii	"MCM_CPCR_HLT_FSM_ST(x) (((uint32_t)(((uint32_t)(x))"
+	.ascii	"<<MCM_CPCR_HLT_FSM_ST_SHIFT))&MCM_CPCR_HLT_FSM_ST_M"
+	.ascii	"ASK)\000"
 .LASF4445:
 	.ascii	"LPI2C_MCFGR0_RDMO_MASK 0x200u\000"
 .LASF6273:
@@ -33148,7 +32848,7 @@ g_clockState:
 	.ascii	"FLEXIO_TIMSTAT_TSF_SHIFT 0u\000"
 .LASF3489:
 	.ascii	"FTM_COMBINE_DTEN0_MASK 0x10u\000"
-.LASF173:
+.LASF172:
 	.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
 .LASF0:
 	.ascii	"__STDC__ 1\000"
@@ -33280,7 +32980,7 @@ g_clockState:
 .LASF2051:
 	.ascii	"DMA_CR_HALT(x) (((uint32_t)(((uint32_t)(x))<<DMA_CR"
 	.ascii	"_HALT_SHIFT))&DMA_CR_HALT_MASK)\000"
-.LASF283:
+.LASF282:
 	.ascii	"__USQ_IBIT__ 0\000"
 .LASF7974:
 	.ascii	"FEATURE_INTERRUPT_INT_VECTORS {&S32_SCB->VTOR}\000"
@@ -33388,7 +33088,7 @@ g_clockState:
 	.ascii	"LPI2C_MCFGR1_IGNACK_MASK 0x200u\000"
 .LASF866:
 	.ascii	"AIPS_PACR_WP1_WIDTH 1u\000"
-.LASF250:
+.LASF249:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
 .LASF3822:
 	.ascii	"FTM_FLTPOL_FLT0POL_SHIFT 0u\000"
@@ -33427,7 +33127,7 @@ g_clockState:
 	.ascii	"SIM_CHIPCTL_CLKOUTEN_MASK 0x800u\000"
 .LASF5389:
 	.ascii	"LPUART_STAT_PF_SHIFT 16u\000"
-.LASF117:
+.LASF116:
 	.ascii	"__UINT_FAST64_MAX__ 18446744073709551615ULL\000"
 .LASF5528:
 	.ascii	"LPUART_CTRL_TIE_MASK 0x800000u\000"
@@ -33586,7 +33286,7 @@ g_clockState:
 	.ascii	"LMEM_PCCLCR_LGO_MASK 0x1u\000"
 .LASF5289:
 	.ascii	"LPUART1_BASE (0x4006B000u)\000"
-.LASF139:
+.LASF138:
 	.ascii	"__DBL_MANT_DIG__ 53\000"
 .LASF6092:
 	.ascii	"MPU_RGDAAC_M5WE_WIDTH 1u\000"
@@ -33767,7 +33467,7 @@ g_clockState:
 	.ascii	"AIPS_PACR_SP0_WIDTH 1u\000"
 .LASF7948:
 	.ascii	"FEATURE_SCB_VECTKEY (0x05FAU)\000"
-.LASF64:
+.LASF63:
 	.ascii	"__INTPTR_TYPE__ int\000"
 .LASF3175:
 	.ascii	"FTM_CONTROLS_COUNT 8u\000"
@@ -33787,7 +33487,7 @@ g_clockState:
 	.ascii	"LPUART_BAUD_MAEN2_MASK 0x40000000u\000"
 .LASF8113:
 	.ascii	"CLOCK_MAX_FREQUENCY_RUN_PLL 40000000U\000"
-.LASF182:
+.LASF181:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
 .LASF8105:
 	.ascii	"MAX_FREQ_RUN 1U\000"
@@ -33833,7 +33533,7 @@ g_clockState:
 	.ascii	"MPU_RGDAAC_M4RE_SHIFT 25u\000"
 .LASF7707:
 	.ascii	"SMC_PMCTRL_VLPSA_WIDTH 1u\000"
-.LASF68:
+.LASF67:
 	.ascii	"__GXX_ABI_VERSION 1002\000"
 .LASF5349:
 	.ascii	"LPUART_BAUD_MATCFG_SHIFT 18u\000"
@@ -33846,7 +33546,7 @@ g_clockState:
 	.ascii	"LMEM_PCCLCR_TDSEL_WIDTH 1u\000"
 .LASF822:
 	.ascii	"AIPS_MPRA_MTR2_WIDTH 1u\000"
-.LASF200:
+.LASF199:
 	.ascii	"__FRACT_MIN__ (-0.5R-0.5R)\000"
 .LASF6617:
 	.ascii	"PORT_GICLR_GIWD(x) (((uint32_t)(((uint32_t)(x))<<PO"
@@ -33997,7 +33697,7 @@ g_clockState:
 	.ascii	"RS_HRS4_SHIFT))&DMA_HRS_HRS4_MASK)\000"
 .LASF8324:
 	.ascii	"STATUS_FCCU_ERROR_INIT_FCCU\000"
-.LASF27:
+.LASF26:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
 .LASF2218:
 	.ascii	"DMA_EEI_EEI9_WIDTH 1u\000"
@@ -34029,7 +33729,7 @@ g_clockState:
 	.ascii	"DMA_ERQ_ERQ10_SHIFT 10u\000"
 .LASF8307:
 	.ascii	"STATUS_UART_ABORTED\000"
-.LASF108:
+.LASF107:
 	.ascii	"__UINT_LEAST64_MAX__ 18446744073709551615ULL\000"
 .LASF4158:
 	.ascii	"LMEM_PCCCR_PUSHW0(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -34073,7 +33773,7 @@ g_clockState:
 	.ascii	"LPUART_STAT_RXINV_SHIFT))&LPUART_STAT_RXINV_MASK)\000"
 .LASF3925:
 	.ascii	"FTM_SWOCTRL_CH3OC_MASK 0x8u\000"
-.LASF106:
+.LASF105:
 	.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
 .LASF2238:
 	.ascii	"DMA_EEI_EEI14_WIDTH 1u\000"
@@ -34095,14 +33795,14 @@ g_clockState:
 	.ascii	")\000"
 .LASF7456:
 	.ascii	"SIM_FTMOPT0_FTM2FLTxSEL_MASK 0x700u\000"
-.LASF242:
+.LASF241:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
 .LASF5814:
 	.ascii	"MCM_LMDR_V_MASK 0x80000000u\000"
 .LASF831:
 	.ascii	"AIPS_MPRA_MTW1(x) (((uint32_t)(((uint32_t)(x))<<AIP"
 	.ascii	"S_MPRA_MTW1_SHIFT))&AIPS_MPRA_MTW1_MASK)\000"
-.LASF306:
+.LASF305:
 	.ascii	"__GNUC_STDC_INLINE__ 1\000"
 .LASF8052:
 	.ascii	"FEATURE_MPU_MASTER_CORE (0U)\000"
@@ -34130,7 +33830,7 @@ g_clockState:
 	.ascii	"PUID_IMPLEMENTER_MASK)\000"
 .LASF2342:
 	.ascii	"DMA_INT_INT0_WIDTH 1u\000"
-.LASF87:
+.LASF86:
 	.ascii	"__INT16_MAX__ 32767\000"
 .LASF4996:
 	.ascii	"LPSPI_SR_RDF_WIDTH 1u\000"
@@ -34193,7 +33893,7 @@ g_clockState:
 	.ascii	"NDSVSET_MASK)\000"
 .LASF7337:
 	.ascii	"SCG_SIRCCSR_SIRCSTEN_WIDTH 1u\000"
-.LASF88:
+.LASF87:
 	.ascii	"__INT32_MAX__ 2147483647L\000"
 .LASF4396:
 	.ascii	"LPI2C_MIER_EPIE(x) (((uint32_t)(((uint32_t)(x))<<LP"
@@ -34276,7 +33976,7 @@ g_clockState:
 	.ascii	"LPUART_DATA_PARITYE(x) (((uint32_t)(((uint32_t)(x))"
 	.ascii	"<<LPUART_DATA_PARITYE_SHIFT))&LPUART_DATA_PARITYE_M"
 	.ascii	"ASK)\000"
-.LASF15:
+.LASF14:
 	.ascii	"__SIZEOF_INT__ 4\000"
 .LASF3364:
 	.ascii	"FTM_MODE_PWMSYNC(x) (((uint32_t)(((uint32_t)(x))<<F"
@@ -34297,8 +33997,6 @@ g_clockState:
 	.ascii	"FTM_MODE_WPDIS_MASK 0x4u\000"
 .LASF7537:
 	.ascii	"SIM_FTMOPT1_FTM1CH0SEL_SHIFT 4u\000"
-.LASF7391:
-	.ascii	"SCG_FIRCDIV_FIRCDIV1_MASK 0x7u\000"
 .LASF5689:
 	.ascii	"LPUART_FIFO_TXOFE_SHIFT 9u\000"
 .LASF1842:
@@ -34341,7 +34039,7 @@ g_clockState:
 	.ascii	"LMEM_PCCRMR_R3_WIDTH 2u\000"
 .LASF7437:
 	.ascii	"SIM_CHIPCTL_ADC_SUPPLYEN_SHIFT 19u\000"
-.LASF169:
+.LASF168:
 	.ascii	"__DEC32_MAX_EXP__ 97\000"
 .LASF5386:
 	.ascii	"LPUART_STAT_MA1F_WIDTH 1u\000"
@@ -34583,7 +34281,7 @@ g_clockState:
 	.ascii	"FEATURE_FLS_HAS_DETECT_ECC_ERROR (1)\000"
 .LASF2594:
 	.ascii	"DMA_EARS_EDREQ_15_WIDTH 1u\000"
-.LASF202:
+.LASF201:
 	.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
 .LASF1064:
 	.ascii	"CAN_MCR_HALT_SHIFT 28u\000"
@@ -34597,7 +34295,7 @@ g_clockState:
 	.ascii	"FTM_OUTINIT_CH7OI_WIDTH 1u\000"
 .LASF7658:
 	.ascii	"SIM_CLKDIV4_TRACEDIVEN_WIDTH 1u\000"
-.LASF92:
+.LASF91:
 	.ascii	"__UINT32_MAX__ 4294967295UL\000"
 .LASF842:
 	.ascii	"AIPS_MPRA_MTW0_WIDTH 1u\000"
@@ -34646,7 +34344,7 @@ g_clockState:
 	.ascii	"ADC_SC2_ADTRG_WIDTH 1u\000"
 .LASF1425:
 	.ascii	"CAN_CTRL1_PN_IDFS_WIDTH 2u\000"
-.LASF127:
+.LASF126:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
 .LASF2859:
 	.ascii	"FLEXIO_PARAM_SHIFTER_MASK 0xFFu\000"
@@ -34661,7 +34359,7 @@ g_clockState:
 	.ascii	"PTB ((GPIO_Type *)PTB_BASE)\000"
 .LASF7727:
 	.ascii	"TRGMUX_DMAMUX0_INDEX 0\000"
-.LASF232:
+.LASF231:
 	.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
 .LASF2410:
 	.ascii	"DMA_ERR_ERR1_WIDTH 1u\000"
@@ -34702,7 +34400,7 @@ g_clockState:
 	.ascii	"CMU_FC_IER_FHHIE_MASK 0x2u\000"
 .LASF7065:
 	.ascii	"S32_SCB_ICSR_VECTPENDING_WIDTH 6u\000"
-.LASF288:
+.LASF287:
 	.ascii	"__HA_FBIT__ 7\000"
 .LASF3903:
 	.ascii	"FTM_INVCTRL_INV1EN_WIDTH 1u\000"
@@ -34821,7 +34519,7 @@ g_clockState:
 	.ascii	"SCG_SYSTEM_CLOCK_SRC_SIRC\000"
 .LASF860:
 	.ascii	"AIPS_PACR_TP1_MASK 0x1000000u\000"
-.LASF47:
+.LASF46:
 	.ascii	"__UINT64_TYPE__ long long unsigned int\000"
 .LASF3635:
 	.ascii	"FTM_EXTTRIG_CH1TRIG_WIDTH 1u\000"
@@ -34842,8 +34540,6 @@ g_clockState:
 .LASF5781:
 	.ascii	"MCM_CPO_CPOREQ(x) (((uint32_t)(((uint32_t)(x))<<MCM"
 	.ascii	"_CPO_CPOREQ_SHIFT))&MCM_CPO_CPOREQ_MASK)\000"
-.LASF3951:
-	.ascii	"FTM_SWOCTRL_CH1OCV_WIDTH 1u\000"
 .LASF3047:
 	.ascii	"FTFC_COMMAND_COMPLETE_IRQS_CH_COUNT (1u)\000"
 .LASF6406:
@@ -34937,7 +34633,7 @@ g_clockState:
 	.ascii	"MSCM_CP0TYPE_PERSONALITY_WIDTH 24u\000"
 .LASF7464:
 	.ascii	"SIM_FTMOPT0_FTM0CLKSEL_MASK 0x3000000u\000"
-.LASF219:
+.LASF218:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
 .LASF3948:
 	.ascii	"FTM_SWOCTRL_CH0OCV(x) (((uint32_t)(((uint32_t)(x))<"
@@ -34949,13 +34645,13 @@ g_clockState:
 	.ascii	")\000"
 .LASF7169:
 	.ascii	"S32_SysTick ((S32_SysTick_Type *)S32_SysTick_BASE)\000"
-.LASF29:
+.LASF28:
 	.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF3293:
 	.ascii	"FTM_CnSC_CHF_MASK 0x80u\000"
 .LASF4811:
 	.ascii	"LPIT_PARAM_CHANNEL_SHIFT 0u\000"
-.LASF188:
+.LASF187:
 	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF7099:
 	.ascii	"S32_SCB_AIRCR_SYSRESETREQ_MASK 0x4u\000"
@@ -35080,13 +34776,10 @@ g_clockState:
 	.ascii	"ADC_INSTANCE_COUNT (1u)\000"
 .LASF1263:
 	.ascii	"CAN_ESR1_CRCERR_FAST_MASK 0x10000000u\000"
-.LASF8576:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
-	.ascii	"on-constant\000"
+.LASF2627:
+	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
+	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
+	.ascii	")\000"
 .LASF6926:
 	.ascii	"RTC_CR_UM_WIDTH 1u\000"
 .LASF6105:
@@ -35178,7 +34871,7 @@ g_clockState:
 	.ascii	"SIM_UIDML_UID63_32(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<SIM_UIDML_UID63_32_SHIFT))&SIM_UIDML_UID63_32_MASK"
 	.ascii	")\000"
-.LASF273:
+.LASF272:
 	.ascii	"__SQ_IBIT__ 0\000"
 .LASF6019:
 	.ascii	"MPU_RGD_WORD2_M6WE_SHIFT 28u\000"
@@ -35190,7 +34883,7 @@ g_clockState:
 	.ascii	"INE0_MASK)\000"
 .LASF697:
 	.ascii	"ADC_SC2_TRGSTLAT_MASK 0xF0000u\000"
-.LASF205:
+.LASF204:
 	.ascii	"__UFRACT_MIN__ 0.0UR\000"
 .LASF4589:
 	.ascii	"LPI2C_SSR_TAF_MASK 0x8u\000"
@@ -35224,7 +34917,7 @@ g_clockState:
 	.ascii	"DMA_ES_SGE_WIDTH 1u\000"
 .LASF5786:
 	.ascii	"MCM_CPO_CPOWOI_MASK 0x4u\000"
-.LASF156:
+.LASF155:
 	.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
 .LASF2600:
 	.ascii	"DMA_DCHPRI_DPA_MASK 0x40u\000"
@@ -35287,7 +34980,7 @@ g_clockState:
 .LASF4985:
 	.ascii	"LPSPI_CR_RTF(x) (((uint32_t)(((uint32_t)(x))<<LPSPI"
 	.ascii	"_CR_RTF_SHIFT))&LPSPI_CR_RTF_MASK)\000"
-.LASF133:
+.LASF132:
 	.ascii	"__FLT_MIN__ 1.1754943508222875e-38F\000"
 .LASF7412:
 	.ascii	"SIM_CHIPCTL_CLKOUTSEL_MASK 0xF0u\000"
@@ -35502,7 +35195,7 @@ g_clockState:
 .LASF708:
 	.ascii	"ADC_SC3_AVGS(x) (((uint32_t)(((uint32_t)(x))<<ADC_S"
 	.ascii	"C3_AVGS_SHIFT))&ADC_SC3_AVGS_MASK)\000"
-.LASF278:
+.LASF277:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF7985:
 	.ascii	"FEATURE_CSEC_MAC_LENGTH_OFFSET (0x8U)\000"
@@ -35603,7 +35296,7 @@ g_clockState:
 	.ascii	"_EWL_INTEGRAL_MATH \000"
 .LASF4940:
 	.ascii	"LPSPI0 ((LPSPI_Type *)LPSPI0_BASE)\000"
-.LASF198:
+.LASF197:
 	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF6894:
 	.ascii	"RTC_TPR_TPR_WIDTH 16u\000"
@@ -35629,6 +35322,13 @@ g_clockState:
 	.ascii	"FTM_FMS_FAULTF_MASK 0x80u\000"
 .LASF1820:
 	.ascii	"CMP_C2_CH3F_SHIFT 19u\000"
+.LASF8574:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O0 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF5099:
 	.ascii	"LPSPI_CFGR1_NOSTALL_SHIFT 3u\000"
 .LASF5040:
@@ -35789,7 +35489,7 @@ g_clockState:
 	.ascii	"FTM_COMBINE_DECAPEN1(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_COMBINE_DECAPEN1_SHIFT))&FTM_COMBINE_DECAPEN"
 	.ascii	"1_MASK)\000"
-.LASF166:
+.LASF165:
 	.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
 .LASF6485:
 	.ascii	"PMC_INSTANCE_COUNT (1u)\000"
@@ -35822,13 +35522,13 @@ g_clockState:
 	.ascii	"MSCM_OCMDR_OCMW_SHIFT 17u\000"
 .LASF8240:
 	.ascii	"PORTB_CLK\000"
-.LASF110:
+.LASF109:
 	.ascii	"__INT_FAST8_MAX__ 2147483647\000"
 .LASF3507:
 	.ascii	"FTM_COMBINE_COMBINE1_WIDTH 1u\000"
 .LASF5162:
 	.ascii	"LPSPI_TCR_FRAMESZ_MASK 0xFFFu\000"
-.LASF210:
+.LASF209:
 	.ascii	"__LFRACT_MIN__ (-0.5LR-0.5LR)\000"
 .LASF4568:
 	.ascii	"LPI2C_SCR_RST(x) (((uint32_t)(((uint32_t)(x))<<LPI2"
@@ -35851,7 +35551,7 @@ g_clockState:
 	.ascii	"FTM_COMBINE_DECAPEN3(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_COMBINE_DECAPEN3_SHIFT))&FTM_COMBINE_DECAPEN"
 	.ascii	"3_MASK)\000"
-.LASF157:
+.LASF156:
 	.ascii	"__LDBL_MAX_EXP__ 1024\000"
 .LASF7387:
 	.ascii	"SCG_FIRCCSR_FIRCERR_MASK 0x4000000u\000"
@@ -35876,7 +35576,7 @@ g_clockState:
 	.ascii	"RCM_SRIE_SACKERR_SHIFT 13u\000"
 .LASF8408:
 	.ascii	"traceClockConfig\000"
-.LASF124:
+.LASF123:
 	.ascii	"__FLT_RADIX__ 2\000"
 .LASF3519:
 	.ascii	"FTM_COMBINE_DECAP1_WIDTH 1u\000"
@@ -35914,7 +35614,7 @@ g_clockState:
 	.ascii	"DMA_EARS_EDREQ_5_SHIFT 5u\000"
 .LASF7458:
 	.ascii	"SIM_FTMOPT0_FTM2FLTxSEL_WIDTH 3u\000"
-.LASF237:
+.LASF236:
 	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
 .LASF4164:
 	.ascii	"LMEM_PCCCR_PUSHW1_SHIFT 27u\000"
@@ -35929,7 +35629,7 @@ g_clockState:
 	.ascii	"AN_FDCBT_FPSEG2_SHIFT))&CAN_FDCBT_FPSEG2_MASK)\000"
 .LASF4714:
 	.ascii	"LPI2C_SCFGR1_SAEN_SHIFT 9u\000"
-.LASF80:
+.LASF79:
 	.ascii	"__INTMAX_MAX__ 9223372036854775807LL\000"
 .LASF3092:
 	.ascii	"FTFC_FCNFG_CCIE_SHIFT 7u\000"
@@ -36081,7 +35781,7 @@ g_clockState:
 	.ascii	"DMA_CEEI_NOP_SHIFT 7u\000"
 .LASF7888:
 	.ascii	"FEATURE_FLS_HAS_READ_RESOURCE_CMD (0u)\000"
-.LASF274:
+.LASF273:
 	.ascii	"__DQ_FBIT__ 63\000"
 .LASF2494:
 	.ascii	"DMA_HRS_HRS6_WIDTH 1u\000"
@@ -36244,7 +35944,7 @@ g_clockState:
 	.ascii	"FTM_PWMLOAD_CH7SEL_SHIFT 7u\000"
 .LASF3179:
 	.ascii	"FTM0 ((FTM_Type *)FTM0_BASE)\000"
-.LASF146:
+.LASF145:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF3737:
 	.ascii	"FTM_FLTCTRL_FAULT2EN_MASK 0x4u\000"
@@ -36441,7 +36141,7 @@ g_clockState:
 .LASF2075:
 	.ascii	"DMA_ES_SBE(x) (((uint32_t)(((uint32_t)(x))<<DMA_ES_"
 	.ascii	"SBE_SHIFT))&DMA_ES_SBE_MASK)\000"
-.LASF214:
+.LASF213:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
 .LASF8202:
 	.ascii	"uint32_t\000"
@@ -36522,7 +36222,7 @@ g_clockState:
 	.ascii	"DMA_HRS_HRS7_WIDTH 1u\000"
 .LASF5314:
 	.ascii	"LPUART_PARAM_RXFIFO_WIDTH 8u\000"
-.LASF228:
+.LASF227:
 	.ascii	"__SACCUM_FBIT__ 7\000"
 .LASF5381:
 	.ascii	"LPUART_STAT_MA2F_SHIFT 14u\000"
@@ -36537,7 +36237,7 @@ g_clockState:
 	.ascii	"LMEM_PCCCR_PUSHW1_SHIFT))&LMEM_PCCCR_PUSHW1_MASK)\000"
 .LASF6116:
 	.ascii	"MSCM_BASE (0x40001000u)\000"
-.LASF255:
+.LASF254:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
 .LASF2844:
 	.ascii	"FLEXIO_IRQS_ARR_COUNT (1u)\000"
@@ -36545,7 +36245,7 @@ g_clockState:
 	.ascii	"LPI2C_MIER_ALIE_SHIFT 11u\000"
 .LASF1356:
 	.ascii	"CAN_ESR2_LPTM_SHIFT 16u\000"
-.LASF159:
+.LASF158:
 	.ascii	"__DECIMAL_DIG__ 17\000"
 .LASF8233:
 	.ascii	"SIM_MPU_CLK\000"
@@ -36641,7 +36341,7 @@ g_clockState:
 	.ascii	"MCM_LMFDLR_PEFDL_WIDTH 32u\000"
 .LASF1831:
 	.ascii	"CMP_C2_CH6F_MASK 0x400000u\000"
-.LASF236:
+.LASF235:
 	.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
 .LASF5765:
 	.ascii	"MCM_CPCR_FMC_PF_IDLE(x) (((uint32_t)(((uint32_t)(x)"
@@ -36758,7 +36458,7 @@ g_clockState:
 	.ascii	"U_RGDAAC_M0SM_SHIFT))&MPU_RGDAAC_M0SM_MASK)\000"
 .LASF8411:
 	.ascii	"SCG_SYSTEM_CLOCK_SRC_SYS_OSC\000"
-.LASF251:
+.LASF250:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF3048:
 	.ascii	"FTFC_READ_COLLISION_IRQS_CH_COUNT (1u)\000"
@@ -36768,7 +36468,7 @@ g_clockState:
 	.ascii	"CAN_ESR1_RXWRN_SHIFT 8u\000"
 .LASF1755:
 	.ascii	"CMP_C1_CHN0_MASK 0x10000u\000"
-.LASF111:
+.LASF110:
 	.ascii	"__INT_FAST16_MAX__ 2147483647\000"
 .LASF2815:
 	.ascii	"ERM_CR0_ESCIE0_SHIFT 31u\000"
@@ -36809,7 +36509,7 @@ g_clockState:
 	.ascii	"LPI2C_MIER_EPIE_MASK 0x100u\000"
 .LASF618:
 	.ascii	"ADC0_BASE (0x4003B000u)\000"
-.LASF281:
+.LASF280:
 	.ascii	"__UHQ_IBIT__ 0\000"
 .LASF8490:
 	.ascii	"rtcClkInFreq\000"
@@ -36848,7 +36548,7 @@ g_clockState:
 	.ascii	"LPUART_CTRL_R8T9_WIDTH 1u\000"
 .LASF6503:
 	.ascii	"PMC_LVDSC1_LVDACK_WIDTH 1u\000"
-.LASF252:
+.LASF251:
 	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
 .LASF504:
 	.ascii	"REV_BYTES_16(a,b) __asm volatile (\"rev16 %0, %1\" "
@@ -36889,7 +36589,7 @@ g_clockState:
 	.ascii	"MPU_RGDAAC_M3UM_SHIFT 18u\000"
 .LASF4611:
 	.ascii	"LPI2C_SSR_AM0F_WIDTH 1u\000"
-.LASF36:
+.LASF35:
 	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
 .LASF1748:
 	.ascii	"CMP_C1_VRSEL_SHIFT 14u\000"
@@ -36924,8 +36624,6 @@ g_clockState:
 	.ascii	"PDB_SC_PDBEIE_WIDTH 1u\000"
 .LASF4867:
 	.ascii	"LPIT_SETTEN_SET_T_EN_0_SHIFT 0u\000"
-.LASF7367:
-	.ascii	"SCG_FIRCCSR_FIRCEN_MASK 0x1u\000"
 .LASF455:
 	.ascii	"_EWL_LOCALDATA(_a) _a\000"
 .LASF5692:
@@ -37058,7 +36756,7 @@ g_clockState:
 	.ascii	"LPUART_FIFO_RXUFE_WIDTH 1u\000"
 .LASF2533:
 	.ascii	"DMA_EARS_EDREQ_0_SHIFT 0u\000"
-.LASF254:
+.LASF253:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
 .LASF5636:
 	.ascii	"LPUART_MODIR_TXRTSE_MASK 0x2u\000"
@@ -37253,7 +36951,7 @@ g_clockState:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_7_SHIFT 0u\000"
 .LASF5912:
 	.ascii	"MPU_CESR_VLD_WIDTH 1u\000"
-.LASF23:
+.LASF22:
 	.ascii	"__CHAR_BIT__ 8\000"
 .LASF1198:
 	.ascii	"CAN_ESR1_IDLE(x) (((uint32_t)(((uint32_t)(x))<<CAN_"
@@ -37312,7 +37010,7 @@ g_clockState:
 	.ascii	")\000"
 .LASF4770:
 	.ascii	"LPI2C_STAR_TXNACK_SHIFT 0u\000"
-.LASF91:
+.LASF90:
 	.ascii	"__UINT16_MAX__ 65535\000"
 .LASF7236:
 	.ascii	"SCG_CSR_DIVBUS_SHIFT 4u\000"
@@ -37389,7 +37087,7 @@ g_clockState:
 	.ascii	"CD_BITER_ELINKNO_ELINK_MASK)\000"
 .LASF3051:
 	.ascii	"FTFC_FSTAT_MGSTAT0_MASK 0x1u\000"
-.LASF120:
+.LASF119:
 	.ascii	"__GCC_IEC_559 0\000"
 .LASF6228:
 	.ascii	"MSCM_CP0CFG0_DCSZ_MASK 0xFF00u\000"
@@ -37452,9 +37150,9 @@ g_clockState:
 	.ascii	"FTM_COMBINE_FAULTEN2_WIDTH 1u\000"
 .LASF6125:
 	.ascii	"MSCM_CPxTYPE_PERSONALITY_SHIFT 8u\000"
-.LASF292:
+.LASF291:
 	.ascii	"__DA_FBIT__ 31\000"
-.LASF161:
+.LASF160:
 	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
 .LASF7725:
 	.ascii	"TRGMUX_BASE_ADDRS { TRGMUX_BASE }\000"
@@ -37564,7 +37262,7 @@ g_clockState:
 	.ascii	"FLEXIO_SHIFTCTL_PINCFG(x) (((uint32_t)(((uint32_t)("
 	.ascii	"x))<<FLEXIO_SHIFTCTL_PINCFG_SHIFT))&FLEXIO_SHIFTCTL"
 	.ascii	"_PINCFG_MASK)\000"
-.LASF128:
+.LASF127:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF1892:
 	.ascii	"CMU_FC_SR_STATE(x) (((uint32_t)(((uint32_t)(x))<<CM"
@@ -37578,7 +37276,7 @@ g_clockState:
 	.ascii	"H_MASK)\000"
 .LASF2472:
 	.ascii	"DMA_HRS_HRS1_MASK 0x2u\000"
-.LASF268:
+.LASF267:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF4011:
 	.ascii	"FTM_PWMLOAD_HCSEL_WIDTH 1u\000"
@@ -37720,7 +37418,7 @@ g_clockState:
 	.ascii	"S32_NVIC_IPR_PRI_0(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<S32_NVIC_IPR_PRI_0_SHIFT))&S32_NVIC_IPR_PRI_0_MASK"
 	.ascii	")\000"
-.LASF61:
+.LASF60:
 	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
 .LASF5679:
 	.ascii	"LPUART_FIFO_TXFIFOSIZE(x) (((uint32_t)(((uint32_t)("
@@ -37944,7 +37642,7 @@ g_clockState:
 	.ascii	"RTC_TCR_TCV_WIDTH 8u\000"
 .LASF5194:
 	.ascii	"LPSPI_TCR_PCS_MASK 0x3000000u\000"
-.LASF107:
+.LASF106:
 	.ascii	"__UINT32_C(c) c ## UL\000"
 .LASF1625:
 	.ascii	"CAN_FDCTRL_MBDSR0_WIDTH 2u\000"
@@ -38064,7 +37762,7 @@ g_clockState:
 	.ascii	"SMC_PARAM_EHSRUN_MASK 0x1u\000"
 .LASF7970:
 	.ascii	"FEATURE_INTERRUPT_HAS_SOFTWARE_IRQ (0u)\000"
-.LASF34:
+.LASF33:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
 .LASF5176:
 	.ascii	"LPSPI_TCR_RXMSK_WIDTH 1u\000"
@@ -38121,7 +37819,7 @@ g_clockState:
 	.ascii	"DMA_TCD_CSR_START_MASK 0x1u\000"
 .LASF332:
 	.ascii	"__ARMEL__ 1\000"
-.LASF256:
+.LASF255:
 	.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
 .LASF1979:
 	.ascii	"CRC_CTRL_TOTR_SHIFT 28u\000"
@@ -38302,7 +38000,7 @@ g_clockState:
 	.ascii	"LPI2C_MSR_FEF_SHIFT 12u\000"
 .LASF437:
 	.ascii	"_EWL_OS_DIRECT_MALLOC 0\000"
-.LASF37:
+.LASF36:
 	.ascii	"__CHAR16_TYPE__ short unsigned int\000"
 .LASF4377:
 	.ascii	"LPI2C_MSR_MBF_MASK 0x1000000u\000"
@@ -38444,7 +38142,7 @@ g_clockState:
 	.ascii	"MPU_CESR_SPERR1_WIDTH 1u\000"
 .LASF387:
 	.ascii	"_EWL_NULL_CONSOLE_ROUTINES 0\000"
-.LASF103:
+.LASF102:
 	.ascii	"__UINT8_C(c) c\000"
 .LASF954:
 	.ascii	"AIPS_OPACR_SP2_WIDTH 1u\000"
@@ -38522,15 +38220,15 @@ g_clockState:
 	.ascii	"CRC_DATAu_DATA_HU_SHIFT 24u\000"
 .LASF1759:
 	.ascii	"CMP_C1_CHN1_MASK 0x20000u\000"
-.LASF221:
+.LASF220:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
 .LASF4553:
 	.ascii	"LPI2C_MRDR_DATA_MASK 0xFFu\000"
 .LASF4778:
 	.ascii	"LPI2C_SRDR_DATA_SHIFT 0u\000"
-.LASF137:
+.LASF136:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
-.LASF293:
+.LASF292:
 	.ascii	"__DA_IBIT__ 32\000"
 .LASF6536:
 	.ascii	"PMC_REGSC_LPOSTAT(x) (((uint8_t)(((uint8_t)(x))<<PM"
@@ -38608,7 +38306,7 @@ g_clockState:
 	.ascii	"RCM_SRS_LOC_WIDTH 1u\000"
 .LASF416:
 	.ascii	"_EWL_STRERROR_KNOWS_ERROR_NAMES 0\000"
-.LASF266:
+.LASF265:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF6569:
 	.ascii	"PORT_PCR_PE(x) (((uint32_t)(((uint32_t)(x))<<PORT_P"
@@ -38655,7 +38353,7 @@ g_clockState:
 	.ascii	"FTM_SWOCTRL_CH2OC_MASK 0x4u\000"
 .LASF7115:
 	.ascii	"S32_SCB_SCR_SLEEPDEEP_MASK 0x4u\000"
-.LASF19:
+.LASF18:
 	.ascii	"__SIZEOF_FLOAT__ 4\000"
 .LASF5112:
 	.ascii	"LPSPI_CFGR1_PINCFG_WIDTH 2u\000"
@@ -38715,7 +38413,7 @@ g_clockState:
 	.ascii	"CAN_WMBn_D47_Data_byte_5(x) (((uint32_t)(((uint32_t"
 	.ascii	")(x))<<CAN_WMBn_D47_Data_byte_5_SHIFT))&CAN_WMBn_D4"
 	.ascii	"7_Data_byte_5_MASK)\000"
-.LASF238:
+.LASF237:
 	.ascii	"__ACCUM_FBIT__ 15\000"
 .LASF6430:
 	.ascii	"PDB_MOD_MOD_SHIFT 0u\000"
@@ -38784,7 +38482,7 @@ g_clockState:
 	.ascii	"LPSPI_CFGR0_HREN_WIDTH 1u\000"
 .LASF2318:
 	.ascii	"DMA_CERR_CERR_WIDTH 4u\000"
-.LASF295:
+.LASF294:
 	.ascii	"__TA_IBIT__ 64\000"
 .LASF5963:
 	.ascii	"MPU_RGD_WORD1_ENDADDR_SHIFT 5u\000"
@@ -38887,7 +38585,7 @@ g_clockState:
 	.ascii	"2_MASK)\000"
 .LASF6197:
 	.ascii	"MSCM_CPxCFG3_BB_SHIFT 6u\000"
-.LASF271:
+.LASF270:
 	.ascii	"__HQ_IBIT__ 0\000"
 .LASF5764:
 	.ascii	"MCM_CPCR_FMC_PF_IDLE_WIDTH 1u\000"
@@ -39048,9 +38746,9 @@ g_clockState:
 	.ascii	"LPUART_FIFO_RXFLUSH_SHIFT 14u\000"
 .LASF4021:
 	.ascii	"FTM_PWMLOAD_GLDOK_MASK 0x800u\000"
-.LASF189:
+.LASF188:
 	.ascii	"__SFRACT_IBIT__ 0\000"
-.LASF62:
+.LASF61:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
 .LASF7799:
 	.ascii	"WDOG_CS_CLK_SHIFT 8u\000"
@@ -39073,7 +38771,7 @@ g_clockState:
 	.ascii	"CAN_CTRL2_TIMER_SRC_MASK 0x8000u\000"
 .LASF5868:
 	.ascii	"MCM_LMPEIR_V_WIDTH 1u\000"
-.LASF197:
+.LASF196:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
 .LASF6310:
 	.ascii	"MSCM_OCMDR_OCMSZ_WIDTH 4u\000"
@@ -39109,7 +38807,7 @@ g_clockState:
 	.ascii	"MPU_RGD_WORD0_SRTADDR_SHIFT 5u\000"
 .LASF461:
 	.ascii	"_EWL_END_EXTERN_C \000"
-.LASF104:
+.LASF103:
 	.ascii	"__UINT_LEAST16_MAX__ 65535\000"
 .LASF7663:
 	.ascii	"SIM_MISCTRL1_SW_TRG(x) (((uint32_t)(((uint32_t)(x))"
@@ -39150,7 +38848,7 @@ g_clockState:
 	.ascii	"DMA_TCD_ATTR_SMOD_WIDTH 5u\000"
 .LASF7147:
 	.ascii	"S32_SCB_DFSR_HALTED_MASK 0x1u\000"
-.LASF30:
+.LASF29:
 	.ascii	"__SIZEOF_POINTER__ 4\000"
 .LASF5287:
 	.ascii	"LPUART0_BASE (0x4006A000u)\000"
@@ -39221,7 +38919,7 @@ g_clockState:
 	.ascii	"DMA_ERR_ERR7_SHIFT 7u\000"
 .LASF7767:
 	.ascii	"WDOG_IRQS_ARR_COUNT (1u)\000"
-.LASF46:
+.LASF45:
 	.ascii	"__UINT32_TYPE__ long unsigned int\000"
 .LASF1861:
 	.ascii	"CMU_FC_BASE_PTRS { CMU_FC_0, CMU_FC_1 }\000"
@@ -39243,7 +38941,7 @@ g_clockState:
 .LASF3356:
 	.ascii	"FTM_MODE_INIT(x) (((uint32_t)(((uint32_t)(x))<<FTM_"
 	.ascii	"MODE_INIT_SHIFT))&FTM_MODE_INIT_MASK)\000"
-.LASF216:
+.LASF215:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
 .LASF6578:
 	.ascii	"PORT_PCR_MUX_MASK 0x700u\000"
@@ -39403,7 +39101,7 @@ g_clockState:
 	.ascii	"RQ_CAER_SHIFT))&DMA_CERQ_CAER_MASK)\000"
 .LASF6924:
 	.ascii	"RTC_CR_UM_MASK 0x8u\000"
-.LASF57:
+.LASF56:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
 .LASF5103:
 	.ascii	"LPSPI_CFGR1_PCSPOL_SHIFT 8u\000"
@@ -39457,7 +39155,7 @@ g_clockState:
 	.ascii	"INT_FAST16_MAX _EWL_SHRT_MAX\000"
 .LASF3245:
 	.ascii	"FTM_SC_PWMEN6_MASK 0x400000u\000"
-.LASF113:
+.LASF112:
 	.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
 .LASF1178:
 	.ascii	"CAN_ESR1_ERRINT(x) (((uint32_t)(((uint32_t)(x))<<CA"
@@ -39467,7 +39165,7 @@ g_clockState:
 	.ascii	"2C_SRDR_SOF_SHIFT))&LPI2C_SRDR_SOF_MASK)\000"
 .LASF5859:
 	.ascii	"MCM_LMPEIR_E1B_SHIFT 8u\000"
-.LASF81:
+.LASF80:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
 .LASF3417:
 	.ascii	"FTM_OUTINIT_CH2OI_MASK 0x4u\000"
@@ -39480,7 +39178,7 @@ g_clockState:
 .LASF6424:
 	.ascii	"PDB_SC_PDBEIE(x) (((uint32_t)(((uint32_t)(x))<<PDB_"
 	.ascii	"SC_PDBEIE_SHIFT))&PDB_SC_PDBEIE_MASK)\000"
-.LASF149:
+.LASF148:
 	.ascii	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324"
 	.ascii	"L)\000"
 .LASF1899:
@@ -39512,7 +39210,7 @@ g_clockState:
 	.ascii	"SCG_SOSCCSR_SOSCVLD_SHIFT 24u\000"
 .LASF646:
 	.ascii	"ADC_CFG1_ADIV_SHIFT 5u\000"
-.LASF116:
+.LASF115:
 	.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
 .LASF7465:
 	.ascii	"SIM_FTMOPT0_FTM0CLKSEL_SHIFT 24u\000"
@@ -39555,7 +39253,7 @@ g_clockState:
 	.ascii	"LPI2C_MCR_RST_MASK 0x2u\000"
 .LASF8074:
 	.ascii	"FEATURE_CAN_HAS_STFCNTEN_ENABLE (0)\000"
-.LASF167:
+.LASF166:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
 .LASF1897:
 	.ascii	"CMU_FC_IER_FLLIE_MASK 0x1u\000"
@@ -39651,17 +39349,17 @@ g_clockState:
 	.ascii	"FTM_EXTTRIG_CH5TRIG_WIDTH 1u\000"
 .LASF6551:
 	.ascii	"PORTC_BASE (0x4004B000u)\000"
-.LASF234:
+.LASF233:
 	.ascii	"__USACCUM_IBIT__ 8\000"
 .LASF7718:
 	.ascii	"SMC_PMSTAT_PMSTAT_SHIFT 0u\000"
-.LASF73:
+.LASF72:
 	.ascii	"__LONG_LONG_MAX__ 9223372036854775807LL\000"
 .LASF7654:
 	.ascii	"SIM_CLKDIV4_TRACEDIV_WIDTH 3u\000"
 .LASF4863:
 	.ascii	"LPIT_MIER_TIE3_SHIFT 3u\000"
-.LASF299:
+.LASF298:
 	.ascii	"__USA_IBIT__ 16\000"
 .LASF5909:
 	.ascii	"MPU_BASE_PTRS { MPU }\000"
@@ -39669,7 +39367,7 @@ g_clockState:
 	.ascii	"LPUART_MODIR_TXRTSPOL_SHIFT 2u\000"
 .LASF2697:
 	.ascii	"DMA_TCD_DLASTSGA_DLASTSGA_SHIFT 0u\000"
-.LASF270:
+.LASF269:
 	.ascii	"__HQ_FBIT__ 15\000"
 .LASF2345:
 	.ascii	"DMA_INT_INT1_SHIFT 1u\000"
@@ -39732,8 +39430,8 @@ g_clockState:
 	.ascii	"ASK)\000"
 .LASF5794:
 	.ascii	"MCM_LMDR_MT_MASK 0xE000u\000"
-.LASF13:
-	.ascii	"__OPTIMIZE__ 1\000"
+.LASF7174:
+	.ascii	"S32_SysTick_IRQS { SysTick_IRQn }\000"
 .LASF7070:
 	.ascii	"S32_SCB_ICSR_ISRPENDING(x) (((uint32_t)(((uint32_t)"
 	.ascii	"(x))<<S32_SCB_ICSR_ISRPENDING_SHIFT))&S32_SCB_ICSR_"
@@ -39784,7 +39482,7 @@ g_clockState:
 	.ascii	"FTM_SC_PWMEN1_WIDTH 1u\000"
 .LASF4471:
 	.ascii	"LPI2C_MCFGR1_PINCFG_WIDTH 3u\000"
-.LASF192:
+.LASF191:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF3617:
 	.ascii	"FTM_EXTTRIG_CH3TRIG_MASK 0x2u\000"
@@ -39860,7 +39558,7 @@ g_clockState:
 	.ascii	"FLEXIO_CTRL_DOZEN_MASK 0x80000000u\000"
 .LASF4019:
 	.ascii	"FTM_PWMLOAD_GLEN_WIDTH 1u\000"
-.LASF218:
+.LASF217:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
 .LASF8545:
 	.ascii	"targetClockConfigIndex\000"
@@ -39963,7 +39661,7 @@ g_clockState:
 	.ascii	"M_PCCRMR_R5_SHIFT))&LMEM_PCCRMR_R5_MASK)\000"
 .LASF1662:
 	.ascii	"CMP_BASE_ADDRS { CMP0_BASE }\000"
-.LASF212:
+.LASF211:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
 .LASF6346:
 	.ascii	"PCC_LPI2C0_INDEX 102\000"
@@ -39977,7 +39675,7 @@ g_clockState:
 	.ascii	"CAN_CTRL2_MRP_SHIFT 18u\000"
 .LASF7648:
 	.ascii	"SIM_CLKDIV4_TRACEFRAC_MASK 0x1u\000"
-.LASF227:
+.LASF226:
 	.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
 .LASF5002:
 	.ascii	"LPSPI_SR_FCF_MASK 0x200u\000"
@@ -40007,7 +39705,7 @@ g_clockState:
 	.ascii	"CAN_PL2_PLMASK_LO_Data_byte_3_WIDTH 8u\000"
 .LASF8107:
 	.ascii	"MAX_FREQ_SYS_CLK 0U\000"
-.LASF38:
+.LASF37:
 	.ascii	"__CHAR32_TYPE__ long unsigned int\000"
 .LASF2996:
 	.ascii	"FLEXIO_TIMCTL_TRGSRC_SHIFT 22u\000"
@@ -40034,7 +39732,7 @@ g_clockState:
 	.ascii	"CAN_RXIMR_MI_WIDTH 32u\000"
 .LASF6579:
 	.ascii	"PORT_PCR_MUX_SHIFT 8u\000"
-.LASF259:
+.LASF258:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
 .LASF6985:
 	.ascii	"RTC_IER_TAIE_SHIFT 2u\000"
@@ -40135,7 +39833,7 @@ g_clockState:
 	.ascii	"ADC_SC2_TRGPRNUM_SHIFT 13u\000"
 .LASF1511:
 	.ascii	"CAN_FLT_ID2_IDMASK_FLT_ID2_IDMASK_MASK 0x1FFFFFFFu\000"
-.LASF95:
+.LASF94:
 	.ascii	"__INT8_C(c) c\000"
 .LASF6514:
 	.ascii	"PMC_LVDSC2_LVWACK_SHIFT 6u\000"
@@ -40151,7 +39849,7 @@ g_clockState:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_5_MASK 0xFF0000u\000"
 .LASF7765:
 	.ascii	"WDOG_BASE_ADDRS { WDOG_BASE }\000"
-.LASF265:
+.LASF264:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF2579:
 	.ascii	"DMA_EARS_EDREQ_11(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -40185,7 +39883,7 @@ g_clockState:
 	.ascii	"TRGMUX_TRGMUXn_SEL2_SHIFT 16u\000"
 .LASF3509:
 	.ascii	"FTM_COMBINE_COMP1_MASK 0x200u\000"
-.LASF153:
+.LASF152:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
 .LASF4819:
 	.ascii	"LPIT_MCR_M_CEN_SHIFT 0u\000"
@@ -40193,9 +39891,9 @@ g_clockState:
 	.ascii	"FTM_COMBINE_FAULTEN3(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_COMBINE_FAULTEN3_SHIFT))&FTM_COMBINE_FAULTEN"
 	.ascii	"3_MASK)\000"
-.LASF125:
+.LASF124:
 	.ascii	"__FLT_MANT_DIG__ 24\000"
-.LASF77:
+.LASF76:
 	.ascii	"__WINT_MIN__ 0U\000"
 .LASF3487:
 	.ascii	"FTM_COMBINE_DECAP0_WIDTH 1u\000"
@@ -40235,7 +39933,7 @@ g_clockState:
 	.ascii	"EI_CAEE_SHIFT))&DMA_CEEI_CAEE_MASK)\000"
 .LASF4398:
 	.ascii	"LPI2C_MIER_SDIE_SHIFT 9u\000"
-.LASF174:
+.LASF173:
 	.ascii	"__DEC64_MANT_DIG__ 16\000"
 .LASF5582:
 	.ascii	"LPUART_DATA_R4T4_WIDTH 1u\000"
@@ -40438,13 +40136,13 @@ g_clockState:
 	.ascii	"MSCM_OCMDR_OCMPU_WIDTH 1u\000"
 .LASF3116:
 	.ascii	"FTFC_FCCOB_CCOBn_SHIFT 0u\000"
-.LASF186:
+.LASF185:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
-.LASF258:
+.LASF257:
 	.ascii	"__LLACCUM_FBIT__ 31\000"
 .LASF7498:
 	.ascii	"SIM_ADCOPT_ADC0TRGSEL_WIDTH 1u\000"
-.LASF150:
+.LASF149:
 	.ascii	"__DBL_HAS_DENORM__ 1\000"
 .LASF5536:
 	.ascii	"LPUART_CTRL_FEIE_MASK 0x2000000u\000"
@@ -40504,7 +40202,7 @@ g_clockState:
 	.ascii	"SIM_FTMOPT1_FTM1SYNCBIT_MASK 0x2u\000"
 .LASF3555:
 	.ascii	"FTM_COMBINE_DTEN2_WIDTH 1u\000"
-.LASF141:
+.LASF140:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
 .LASF1487:
 	.ascii	"CAN_PL1_LO_Data_byte_1_MASK 0xFF0000u\000"
@@ -40609,7 +40307,7 @@ g_clockState:
 	.ascii	"PORT_IRQS_CH_COUNT (1u)\000"
 .LASF1179:
 	.ascii	"CAN_ESR1_BOFFINT_MASK 0x4u\000"
-.LASF147:
+.LASF146:
 	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
 .LASF1206:
 	.ascii	"CAN_ESR1_TXWRN(x) (((uint32_t)(((uint32_t)(x))<<CAN"
@@ -40628,7 +40326,7 @@ g_clockState:
 	.ascii	"PORT_GPCLR_GPWD_SHIFT 0u\000"
 .LASF8159:
 	.ascii	"FEATURE_DMAMUX_CHN_REG_INDEX(x) (x)\000"
-.LASF179:
+.LASF178:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
 .LASF3972:
 	.ascii	"FTM_SWOCTRL_CH6OCV(x) (((uint32_t)(((uint32_t)(x))<"
@@ -40640,7 +40338,7 @@ g_clockState:
 	.ascii	"CAN_FLT_ID1_FLT_IDE_SHIFT 30u\000"
 .LASF730:
 	.ascii	"ADC_USR_OFS_USR_OFS_SHIFT 0u\000"
-.LASF185:
+.LASF184:
 	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
 	.ascii	"6144DL\000"
 .LASF1152:
@@ -40657,7 +40355,7 @@ g_clockState:
 	.ascii	"LMEM_PCCCR_PUSHW1_MASK 0x8000000u\000"
 .LASF5208:
 	.ascii	"LPSPI_TCR_CPOL_WIDTH 1u\000"
-.LASF85:
+.LASF84:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF1517:
 	.ascii	"CAN_FLT_ID2_IDMASK_RTR_MSK_WIDTH 1u\000"
@@ -40722,7 +40420,7 @@ g_clockState:
 	.ascii	"FEATURE_MSCM_HAS_INTERRUPT_ROUTER (0)\000"
 .LASF2285:
 	.ascii	"DMA_SERQ_SAER_SHIFT 6u\000"
-.LASF207:
+.LASF206:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
 .LASF3590:
 	.ascii	"FTM_COMBINE_SYNCEN3_SHIFT 29u\000"
@@ -40730,7 +40428,7 @@ g_clockState:
 	.ascii	"FTM_EXTTRIG_CH7TRIG_WIDTH 1u\000"
 .LASF1877:
 	.ascii	"CMU_FC_LTCR_LFREF_MASK 0xFFFFFFu\000"
-.LASF98:
+.LASF97:
 	.ascii	"__INT_LEAST32_MAX__ 2147483647L\000"
 .LASF6431:
 	.ascii	"PDB_MOD_MOD_WIDTH 16u\000"
@@ -40863,13 +40561,13 @@ g_clockState:
 	.ascii	"AIPS_OPACR_SP3_MASK 0x40000u\000"
 .LASF6237:
 	.ascii	"MSCM_CP0CFG0_ICSZ_SHIFT 24u\000"
-.LASF58:
+.LASF57:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
 .LASF8267:
 	.ascii	"STATUS_ERROR\000"
 .LASF5919:
 	.ascii	"MPU_CESR_NSP_SHIFT 12u\000"
-.LASF194:
+.LASF193:
 	.ascii	"__USFRACT_IBIT__ 0\000"
 .LASF6055:
 	.ascii	"MPU_RGDAAC_M0PE_SHIFT 5u\000"
@@ -41079,7 +40777,7 @@ g_clockState:
 	.ascii	"CAN_CTRL1_PN_WUMF_MSK_MASK 0x10000u\000"
 .LASF3273:
 	.ascii	"FTM_CnSC_ELSA_MASK 0x4u\000"
-.LASF154:
+.LASF153:
 	.ascii	"__LDBL_DIG__ 15\000"
 .LASF3677:
 	.ascii	"FTM_POL_POL6_MASK 0x40u\000"
@@ -41138,7 +40836,7 @@ g_clockState:
 	.ascii	"CMU_FC_IRQS_ARR_COUNT (1u)\000"
 .LASF7950:
 	.ascii	"FEATURE_SMC_HAS_PSTOPO (0)\000"
-.LASF43:
+.LASF42:
 	.ascii	"__INT64_TYPE__ long long int\000"
 .LASF3825:
 	.ascii	"FTM_FLTPOL_FLT1POL_MASK 0x2u\000"
@@ -41261,7 +40959,7 @@ g_clockState:
 	.ascii	"CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HL_RAM_HL_WIDTH 8u\000"
 .LASF977:
 	.ascii	"AIPS_OPACR_SP0_SHIFT 30u\000"
-.LASF230:
+.LASF229:
 	.ascii	"__SACCUM_MIN__ (-0X1P7HK-0X1P7HK)\000"
 .LASF6826:
 	.ascii	"RCM_SSRS_SSACKERR_MASK 0x2000u\000"
@@ -41381,7 +41079,7 @@ g_clockState:
 	.ascii	"MPU_RGD_WORD2_M0PE_SHIFT 5u\000"
 .LASF2601:
 	.ascii	"DMA_DCHPRI_DPA_SHIFT 6u\000"
-.LASF253:
+.LASF252:
 	.ascii	"__ULACCUM_FBIT__ 32\000"
 .LASF1197:
 	.ascii	"CAN_ESR1_IDLE_WIDTH 1u\000"
@@ -41396,7 +41094,7 @@ g_clockState:
 	.ascii	"SIM_FTMOPT1_FTM1SYNCBIT_WIDTH 1u\000"
 .LASF781:
 	.ascii	"ADC_CLP3_OFS_CLP3_OFS_MASK 0xFu\000"
-.LASF33:
+.LASF32:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF5989:
 	.ascii	"MPU_RGD_WORD2_M2UM(x) (((uint32_t)(((uint32_t)(x))<"
@@ -41437,7 +41135,7 @@ g_clockState:
 .LASF3676:
 	.ascii	"FTM_POL_POL5(x) (((uint32_t)(((uint32_t)(x))<<FTM_P"
 	.ascii	"OL_POL5_SHIFT))&FTM_POL_POL5_MASK)\000"
-.LASF59:
+.LASF58:
 	.ascii	"__INT_FAST64_TYPE__ long long int\000"
 .LASF1456:
 	.ascii	"CAN_WU_MTC_WTOF_SHIFT 17u\000"
@@ -41469,7 +41167,7 @@ g_clockState:
 	.ascii	"G_VCCR_DIVBUS_SHIFT))&SCG_VCCR_DIVBUS_MASK)\000"
 .LASF3084:
 	.ascii	"FTFC_FCNFG_ERSAREQ_SHIFT 5u\000"
-.LASF263:
+.LASF262:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF3686:
 	.ascii	"FTM_FMS_FAULTF0_SHIFT 0u\000"
@@ -41563,7 +41261,7 @@ g_clockState:
 	.ascii	"FTM_OUTMASK_CH0OM_WIDTH 1u\000"
 .LASF6038:
 	.ascii	"MPU_RGD_WORD3_PIDMASK_MASK 0xFF0000u\000"
-.LASF28:
+.LASF27:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF5635:
 	.ascii	"LPUART_MODIR_TXCTSE(x) (((uint32_t)(((uint32_t)(x))"
@@ -41751,7 +41449,7 @@ g_clockState:
 	.ascii	"CAN_CBT_ERJW_SHIFT 16u\000"
 .LASF4333:
 	.ascii	"LPI2C_MCR_RTF_MASK 0x100u\000"
-.LASF160:
+.LASF159:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
 .LASF3300:
 	.ascii	"FTM_CnSC_TRIGMODE(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -41781,7 +41479,7 @@ g_clockState:
 	.ascii	"LPUART_CTRL_TXINV_SHIFT))&LPUART_CTRL_TXINV_MASK)\000"
 .LASF5770:
 	.ascii	"MCM_CPCR_CBRR_MASK 0x200u\000"
-.LASF290:
+.LASF289:
 	.ascii	"__SA_FBIT__ 15\000"
 .LASF2705:
 	.ascii	"DMA_TCD_CSR_INTMAJOR_SHIFT 1u\000"
@@ -41965,7 +41663,7 @@ g_clockState:
 	.ascii	"IFOSIZE_MASK)\000"
 .LASF516:
 	.ascii	"MCU_ACTIVE \000"
-.LASF176:
+.LASF175:
 	.ascii	"__DEC64_MAX_EXP__ 385\000"
 .LASF4371:
 	.ascii	"LPI2C_MSR_PLTF_WIDTH 1u\000"
@@ -42141,7 +41839,7 @@ g_clockState:
 	.ascii	"PDB_SC_TRGSEL_MASK 0xF00u\000"
 .LASF4622:
 	.ascii	"LPI2C_SSR_SARF_SHIFT 15u\000"
-.LASF162:
+.LASF161:
 	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
 .LASF2548:
 	.ascii	"DMA_EARS_EDREQ_4_MASK 0x10u\000"
@@ -42343,7 +42041,7 @@ g_clockState:
 .LASF7797:
 	.ascii	"WDOG_CS_EN(x) (((uint32_t)(((uint32_t)(x))<<WDOG_CS"
 	.ascii	"_EN_SHIFT))&WDOG_CS_EN_MASK)\000"
-.LASF8578:
+.LASF8576:
 	.ascii	"DevAssert\000"
 .LASF4707:
 	.ascii	"LPI2C_SCFGR1_ACKSTALL_WIDTH 1u\000"
@@ -42415,7 +42113,7 @@ g_clockState:
 	.ascii	"PUART_CTRL_NEIE_SHIFT))&LPUART_CTRL_NEIE_MASK)\000"
 .LASF6788:
 	.ascii	"RCM_SSRS_SLOC_WIDTH 1u\000"
-.LASF86:
+.LASF85:
 	.ascii	"__INT8_MAX__ 127\000"
 .LASF5966:
 	.ascii	"MPU_RGD_WORD2_M0UM_MASK 0x7u\000"
@@ -42457,15 +42155,15 @@ g_clockState:
 	.ascii	"LPUART_FIFO_RXFIFOSIZE_MASK 0x7u\000"
 .LASF1407:
 	.ascii	"CAN_RAMn_DATA_BYTE_1_MASK 0xFF0000u\000"
-.LASF264:
+.LASF263:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
-.LASF175:
+.LASF174:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF4237:
 	.ascii	"LMEM_PCCRMR_R12_WIDTH 2u\000"
 .LASF6740:
 	.ascii	"RCM_SRS_WDOG_WIDTH 1u\000"
-.LASF54:
+.LASF53:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
 .LASF1952:
 	.ascii	"CRC_DATAu_DATA_8_HL_DATAHL_WIDTH 8u\000"
@@ -42483,7 +42181,7 @@ g_clockState:
 	.ascii	"LPUART_CTRL_ORIE_WIDTH 1u\000"
 .LASF7283:
 	.ascii	"SCG_SOSCCSR_SOSCEN_MASK 0x1u\000"
-.LASF97:
+.LASF96:
 	.ascii	"__INT16_C(c) c\000"
 .LASF7981:
 	.ascii	"FEATURE_FTM_HAS_SUPPORTED_DITHERING (1U)\000"
@@ -42497,7 +42195,7 @@ g_clockState:
 	.ascii	"FLEXIO_SHIFTSTAT_SSF_WIDTH 4u\000"
 .LASF462:
 	.ascii	"_EWL_BEGIN_NAMESPACE_STD \000"
-.LASF65:
+.LASF64:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
 .LASF495:
 	.ascii	"_EWL_PTRDIFF_T_TYPE __typeof__((char*)0-(char*)0)\000"
@@ -42524,15 +42222,15 @@ g_clockState:
 	.ascii	"FTM_CNTIN_INIT_WIDTH 16u\000"
 .LASF2760:
 	.ascii	"DMAMUX_CHCFG_COUNT 4u\000"
-.LASF22:
+.LASF21:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
-.LASF44:
+.LASF43:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
 .LASF5258:
 	.ascii	"LPTMR_CSR_TCF_MASK 0x80u\000"
 .LASF6324:
 	.ascii	"PCC_BASE_ADDRS { PCC_BASE }\000"
-.LASF76:
+.LASF75:
 	.ascii	"__WINT_MAX__ 4294967295U\000"
 .LASF3810:
 	.ascii	"FTM_CONF_GTBEEN_SHIFT 9u\000"
@@ -42571,7 +42269,7 @@ g_clockState:
 	.ascii	"LPI2C_MSR_EPF_MASK 0x100u\000"
 .LASF6796:
 	.ascii	"RCM_SSRS_SCMU_LOC_WIDTH 1u\000"
-.LASF187:
+.LASF186:
 	.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
 	.ascii	"000000001E-6143DL\000"
 .LASF6223:
@@ -42586,7 +42284,7 @@ g_clockState:
 	.ascii	"LPI2C_MCFGR2_FILTSCL_WIDTH 4u\000"
 .LASF5324:
 	.ascii	"LPUART_BAUD_SBR_MASK 0x1FFFu\000"
-.LASF163:
+.LASF162:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
 .LASF1716:
 	.ascii	"CMP_C0_CFF_SHIFT 25u\000"
@@ -42617,7 +42315,7 @@ g_clockState:
 	.ascii	"SIM_FTMOPT1_FTMGLDOK_MASK 0x8000u\000"
 .LASF5312:
 	.ascii	"LPUART_PARAM_RXFIFO_MASK 0xFF00u\000"
-.LASF134:
+.LASF133:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
 .LASF8481:
 	.ascii	"regulator\000"
@@ -42738,7 +42436,7 @@ g_clockState:
 .LASF4825:
 	.ascii	"LPIT_MCR_SW_RST(x) (((uint32_t)(((uint32_t)(x))<<LP"
 	.ascii	"IT_MCR_SW_RST_SHIFT))&LPIT_MCR_SW_RST_MASK)\000"
-.LASF291:
+.LASF290:
 	.ascii	"__SA_IBIT__ 16\000"
 .LASF1847:
 	.ascii	"CMP_C2_RRIE_MASK 0x40000000u\000"
@@ -42756,7 +42454,7 @@ g_clockState:
 	.ascii	"LPIT_SETTEN_SET_T_EN_1_WIDTH 1u\000"
 .LASF5026:
 	.ascii	"LPSPI_IER_TDIE_MASK 0x1u\000"
-.LASF101:
+.LASF100:
 	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF7580:
 	.ascii	"SIM_SDID_PACKAGE_MASK 0xF00u\000"
@@ -42778,7 +42476,7 @@ g_clockState:
 	.ascii	"FTM_COMBINE_COMP2_SHIFT))&FTM_COMBINE_COMP2_MASK)\000"
 .LASF6457:
 	.ascii	"PDB_S_CF_MASK 0xFF0000u\000"
-.LASF119:
+.LASF118:
 	.ascii	"__UINTPTR_MAX__ 4294967295U\000"
 .LASF496:
 	.ascii	"DEVICE_REGISTERS_H \000"
@@ -42855,9 +42553,9 @@ g_clockState:
 	.ascii	"FTM_INVCTRL_INV2EN_SHIFT 2u\000"
 .LASF4820:
 	.ascii	"LPIT_MCR_M_CEN_WIDTH 1u\000"
-.LASF235:
+.LASF234:
 	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
-.LASF302:
+.LASF301:
 	.ascii	"__UTA_FBIT__ 64\000"
 .LASF1370:
 	.ascii	"CAN_RXFGMASK_FGM(x) (((uint32_t)(((uint32_t)(x))<<C"
@@ -43107,7 +42805,7 @@ g_clockState:
 	.ascii	"LPSPI_DMR1_MATCH1_SHIFT 0u\000"
 .LASF4001:
 	.ascii	"FTM_PWMLOAD_CH6SEL_MASK 0x40u\000"
-.LASF40:
+.LASF39:
 	.ascii	"__INT8_TYPE__ signed char\000"
 .LASF2589:
 	.ascii	"DMA_EARS_EDREQ_14_SHIFT 14u\000"
@@ -43125,7 +42823,7 @@ g_clockState:
 	.ascii	"FEATURE_RCM_HAS_STICKY_CMU_LOSS_OF_CLOCK (1)\000"
 .LASF7628:
 	.ascii	"SIM_FCFG1_EEERAMSIZE_MASK 0xF0000u\000"
-.LASF75:
+.LASF74:
 	.ascii	"__WCHAR_MIN__ 0U\000"
 .LASF4705:
 	.ascii	"LPI2C_SCFGR1_ACKSTALL_MASK 0x8u\000"
@@ -43192,7 +42890,7 @@ g_clockState:
 	.ascii	"SCG_SOSCDIV_SOSCDIV1_WIDTH 3u\000"
 .LASF7705:
 	.ascii	"SMC_PMCTRL_VLPSA_MASK 0x8u\000"
-.LASF90:
+.LASF89:
 	.ascii	"__UINT8_MAX__ 255\000"
 .LASF7696:
 	.ascii	"SMC_PARAM_EVLLS0(x) (((uint32_t)(((uint32_t)(x))<<S"
@@ -43203,7 +42901,7 @@ g_clockState:
 	.ascii	"RTC_IER_TAIE_MASK 0x4u\000"
 .LASF833:
 	.ascii	"AIPS_MPRA_MTR1_SHIFT 26u\000"
-.LASF190:
+.LASF189:
 	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
 .LASF2400:
 	.ascii	"DMA_INT_INT15_MASK 0x8000u\000"
@@ -43219,7 +42917,7 @@ g_clockState:
 	.ascii	"DMA_ERQ_ERQ12_WIDTH 1u\000"
 .LASF1213:
 	.ascii	"CAN_ESR1_FRMERR_WIDTH 1u\000"
-.LASF78:
+.LASF77:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
 .LASF1656:
 	.ascii	"CAN_FDCRC_FD_MBCRC_SHIFT 24u\000"
@@ -43258,13 +42956,13 @@ g_clockState:
 	.ascii	"CAN_ECR_RXERRCNT_FAST_SHIFT 24u\000"
 .LASF3269:
 	.ascii	"FTM_CnSC_ICRST_MASK 0x2u\000"
-.LASF94:
+.LASF93:
 	.ascii	"__INT_LEAST8_MAX__ 127\000"
 .LASF6453:
 	.ascii	"PDB_S_ERR_MASK 0xFFu\000"
 .LASF7279:
 	.ascii	"SCG_CLKOUTCNFG_CLKOUTSEL_MASK 0xF000000u\000"
-.LASF204:
+.LASF203:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF5976:
 	.ascii	"MPU_RGD_WORD2_M0PE_WIDTH 1u\000"
@@ -43292,7 +42990,7 @@ g_clockState:
 	.ascii	"CSE_PRAM_INSTANCE_COUNT (1u)\000"
 .LASF4172:
 	.ascii	"LMEM_PCCLCR_LGO_SHIFT 0u\000"
-.LASF269:
+.LASF268:
 	.ascii	"__QQ_IBIT__ 0\000"
 .LASF2429:
 	.ascii	"DMA_ERR_ERR6_SHIFT 6u\000"
@@ -43448,7 +43146,7 @@ g_clockState:
 	.ascii	"CAN_WMBn_D47_Data_byte_6_WIDTH 8u\000"
 .LASF1395:
 	.ascii	"CAN_CBT_BTF_MASK 0x80000000u\000"
-.LASF223:
+.LASF222:
 	.ascii	"__ULLFRACT_FBIT__ 64\000"
 .LASF1635:
 	.ascii	"CAN_FDCBT_FPSEG1_MASK 0xE0u\000"
@@ -43462,8 +43160,8 @@ g_clockState:
 	.ascii	"LPI2C_VERID_MAJOR_SHIFT 24u\000"
 .LASF1156:
 	.ascii	"CAN_RX15MASK_RX15M_SHIFT 0u\000"
-.LASF4777:
-	.ascii	"LPI2C_SRDR_DATA_MASK 0xFFu\000"
+.LASF3951:
+	.ascii	"FTM_SWOCTRL_CH1OCV_WIDTH 1u\000"
 .LASF6110:
 	.ascii	"MPU_RGDAAC_M7RE_MASK 0x80000000u\000"
 .LASF434:
@@ -43650,7 +43348,7 @@ g_clockState:
 	.ascii	"PDB_POEN_POEN_SHIFT 0u\000"
 .LASF3187:
 	.ascii	"FTM_Overflow_IRQS_CH_COUNT (1u)\000"
-.LASF165:
+.LASF164:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
 .LASF2155:
 	.ascii	"DMA_ERQ_ERQ9(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
@@ -43792,7 +43490,7 @@ g_clockState:
 	.ascii	"STATUS_EMIOS_WRONG_CNT_BUS\000"
 .LASF8066:
 	.ascii	"FEATURE_CAN_RXFIFO_OVERFLOW (7U)\000"
-.LASF100:
+.LASF99:
 	.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
 .LASF3193:
 	.ascii	"FTM_SC_PS_MASK 0x7u\000"
@@ -43842,7 +43540,7 @@ g_clockState:
 	.ascii	"LPI2C_SCR_RST_WIDTH 1u\000"
 .LASF6074:
 	.ascii	"MPU_RGDAAC_M3UM_MASK 0x1C0000u\000"
-.LASF102:
+.LASF101:
 	.ascii	"__UINT_LEAST8_MAX__ 255\000"
 .LASF2945:
 	.ascii	"FLEXIO_SHIFTCTL_TIMPOL_WIDTH 1u\000"
@@ -43859,7 +43557,7 @@ g_clockState:
 	.ascii	"FTM_COMBINE_COMP2_MASK 0x20000u\000"
 .LASF5481:
 	.ascii	"LPUART_CTRL_LOOPS_SHIFT 7u\000"
-.LASF303:
+.LASF302:
 	.ascii	"__UTA_IBIT__ 64\000"
 .LASF4339:
 	.ascii	"LPI2C_MCR_RRF_WIDTH 1u\000"
@@ -43909,7 +43607,7 @@ g_clockState:
 	.ascii	"LPI2C_MSR_SDF_MASK 0x200u\000"
 .LASF4601:
 	.ascii	"LPI2C_SSR_BEF_MASK 0x400u\000"
-.LASF74:
+.LASF73:
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
 .LASF4752:
 	.ascii	"LPI2C_SCFGR2_FILTSDA(x) (((uint32_t)(((uint32_t)(x)"
@@ -44000,7 +43698,7 @@ g_clockState:
 	.ascii	"FTM_SC_TOIE_WIDTH 1u\000"
 .LASF8265:
 	.ascii	"clock_names_t\000"
-.LASF126:
+.LASF125:
 	.ascii	"__FLT_DIG__ 6\000"
 .LASF1130:
 	.ascii	"CAN_CTRL1_PSEG2(x) (((uint32_t)(((uint32_t)(x))<<CA"
@@ -44035,7 +43733,7 @@ g_clockState:
 	.ascii	"_SSTART_MASK)\000"
 .LASF2879:
 	.ascii	"FLEXIO_CTRL_SWRST_MASK 0x2u\000"
-.LASF42:
+.LASF41:
 	.ascii	"__INT32_TYPE__ long int\000"
 .LASF6639:
 	.ascii	"PORT_DFWR_FILT_SHIFT 0u\000"
@@ -44090,8 +43788,6 @@ g_clockState:
 	.ascii	"FEATURE_CAN_HAS_PRETENDED_NETWORKING (1)\000"
 .LASF429:
 	.ascii	"_EWL_FLT_EVAL_METHOD 0\000"
-.LASF5752:
-	.ascii	"MCM_CPCR_HLT_FSM_ST_WIDTH 2u\000"
 .LASF3369:
 	.ascii	"FTM_MODE_FAULTM_MASK 0x60u\000"
 .LASF3775:
@@ -44234,7 +43930,7 @@ g_clockState:
 	.ascii	"LPI2C_SAMR_ADDR0_MASK 0x7FEu\000"
 .LASF3954:
 	.ascii	"FTM_SWOCTRL_CH2OCV_SHIFT 10u\000"
-.LASF231:
+.LASF230:
 	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
 .LASF4799:
 	.ascii	"LPIT_VERID_FEATURE_SHIFT 0u\000"
@@ -44248,7 +43944,7 @@ g_clockState:
 	.ascii	"DMA_EARS_EDREQ_3_SHIFT 3u\000"
 .LASF1093:
 	.ascii	"CAN_CTRL1_TSYN_WIDTH 1u\000"
-.LASF25:
+.LASF24:
 	.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
 .LASF7447:
 	.ascii	"SIM_CHIPCTL_SRAML_RETEN(x) (((uint32_t)(((uint32_t)"
@@ -44282,7 +43978,7 @@ g_clockState:
 	.ascii	"MSCM_CP0MASTER_PPMN(x) (((uint32_t)(((uint32_t)(x))"
 	.ascii	"<<MSCM_CP0MASTER_PPMN_SHIFT))&MSCM_CP0MASTER_PPMN_M"
 	.ascii	"ASK)\000"
-.LASF51:
+.LASF50:
 	.ascii	"__INT_LEAST64_TYPE__ long long int\000"
 .LASF4747:
 	.ascii	"LPI2C_SCFGR2_FILTSCL_WIDTH 4u\000"
@@ -44334,7 +44030,7 @@ g_clockState:
 	.ascii	"LPSPI_CFGR1_MATCFG(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<LPSPI_CFGR1_MATCFG_SHIFT))&LPSPI_CFGR1_MATCFG_MASK"
 	.ascii	")\000"
-.LASF82:
+.LASF81:
 	.ascii	"__UINTMAX_MAX__ 18446744073709551615ULL\000"
 .LASF3253:
 	.ascii	"FTM_SC_FLTPS_MASK 0xF000000u\000"
@@ -44373,7 +44069,7 @@ g_clockState:
 	.ascii	"LPI2C_MCFGR0_HRPOL_SHIFT 1u\000"
 .LASF6790:
 	.ascii	"RCM_SSRS_SLOL_MASK 0x8u\000"
-.LASF130:
+.LASF129:
 	.ascii	"__FLT_MAX_10_EXP__ 38\000"
 .LASF2409:
 	.ascii	"DMA_ERR_ERR1_SHIFT 1u\000"
@@ -44417,7 +44113,7 @@ g_clockState:
 	.ascii	"CAN_ORed_16_31_MB_IRQS_CH_COUNT (1u)\000"
 .LASF3890:
 	.ascii	"FTM_SYNCONF_HWINVC_SHIFT 19u\000"
-.LASF99:
+.LASF98:
 	.ascii	"__INT32_C(c) c ## L\000"
 .LASF5958:
 	.ascii	"MPU_RGD_WORD0_SRTADDR_MASK 0xFFFFFFE0u\000"
@@ -44562,7 +44258,7 @@ g_clockState:
 	.ascii	"PUART_DATA_R1T1_SHIFT))&LPUART_DATA_R1T1_MASK)\000"
 .LASF5542:
 	.ascii	"LPUART_CTRL_NEIE_WIDTH 1u\000"
-.LASF84:
+.LASF83:
 	.ascii	"__SIG_ATOMIC_MAX__ 2147483647\000"
 .LASF2486:
 	.ascii	"DMA_HRS_HRS4_WIDTH 1u\000"
@@ -44732,7 +44428,7 @@ g_clockState:
 	.ascii	"SIM_CHIPCTL_ADC_SUPPLY_MASK 0x70000u\000"
 .LASF8479:
 	.ascii	"SCG_FIRC_RANGE_48M\000"
-.LASF239:
+.LASF238:
 	.ascii	"__ACCUM_IBIT__ 16\000"
 .LASF1907:
 	.ascii	"CMU_FC_IER_FLLAEE_WIDTH 1u\000"
@@ -44877,7 +44573,7 @@ g_clockState:
 	.ascii	"SIM_LPO_CLK\000"
 .LASF1007:
 	.ascii	"CAN_MCR_IDAM_MASK 0x300u\000"
-.LASF178:
+.LASF177:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
 .LASF8285:
 	.ascii	"STATUS_SEC_KEY_NOT_AVAILABLE\000"
@@ -44895,7 +44591,7 @@ g_clockState:
 	.ascii	"ONE\000"
 .LASF790:
 	.ascii	"ADC_CLP1_OFS_CLP1_OFS_SHIFT 0u\000"
-.LASF209:
+.LASF208:
 	.ascii	"__LFRACT_IBIT__ 0\000"
 .LASF4944:
 	.ascii	"LPSPI_IRQS_CH_COUNT (1u)\000"
@@ -44975,7 +44671,7 @@ g_clockState:
 	.ascii	"STOP_MASK)\000"
 .LASF7998:
 	.ascii	"FEATURE_CSEC_PAGE_6_OFFSET (0x60U)\000"
-.LASF66:
+.LASF65:
 	.ascii	"__has_include(STR) __has_include__(STR)\000"
 .LASF505:
 	.ascii	"START_FUNCTION_DECLARATION_RAMSECTION \000"
@@ -45016,7 +44712,7 @@ g_clockState:
 	.ascii	"LPI2C_SSR_AM0F_MASK 0x1000u\000"
 .LASF5589:
 	.ascii	"LPUART_DATA_R6T6_SHIFT 6u\000"
-.LASF32:
+.LASF31:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
 .LASF7690:
 	.ascii	"SMC_PARAM_ELLS2_SHIFT 5u\000"
@@ -45088,7 +44784,7 @@ g_clockState:
 	.ascii	"DMA_ERR_ERR7_MASK 0x80u\000"
 .LASF2010:
 	.ascii	"CSE_PRAM_RAMn_ACCESS8BIT_DATA_8LL_RAM_LL_WIDTH 8u\000"
-.LASF191:
+.LASF190:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
 .LASF2060:
 	.ascii	"DMA_CR_ECX_MASK 0x10000u\000"
@@ -45175,7 +44871,7 @@ g_clockState:
 	.ascii	"MPU_CESR_SPERR0_SHIFT 31u\000"
 .LASF510:
 	.ascii	"ENABLE_CHECK_RAMSECTION_FUNCTION_CALL \000"
-.LASF131:
+.LASF130:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF1086:
 	.ascii	"CAN_CTRL1_LOM(x) (((uint32_t)(((uint32_t)(x))<<CAN_"
@@ -45209,7 +44905,7 @@ g_clockState:
 	.ascii	"C_PDBIF_SHIFT))&PDB_SC_PDBIF_MASK)\000"
 .LASF7926:
 	.ascii	"FEATURE_FLS_DF_SIZE_1100 (0xFFFFFFFFu)\000"
-.LASF56:
+.LASF55:
 	.ascii	"__INT_FAST8_TYPE__ int\000"
 .LASF2733:
 	.ascii	"DMA_TCD_CSR_MAJORLINKCH_SHIFT 8u\000"
@@ -45372,7 +45068,7 @@ g_clockState:
 	.ascii	"TM_SYNCONF_SWOC_SHIFT))&FTM_SYNCONF_SWOC_MASK)\000"
 .LASF1268:
 	.ascii	"CAN_ESR1_BIT0ERR_FAST_SHIFT 30u\000"
-.LASF248:
+.LASF247:
 	.ascii	"__LACCUM_FBIT__ 31\000"
 .LASF4437:
 	.ascii	"LPI2C_MCFGR0_HRSEL_MASK 0x4u\000"
@@ -45407,7 +45103,7 @@ g_clockState:
 	.ascii	"MCM_LMDR_LMSZH_WIDTH 1u\000"
 .LASF6604:
 	.ascii	"PORT_GPCHR_GPWD_WIDTH 16u\000"
-.LASF196:
+.LASF195:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
 .LASF4793:
 	.ascii	"LPIT_BASE_ADDRS { LPIT0_BASE }\000"
@@ -45415,7 +45111,7 @@ g_clockState:
 	.ascii	"ADC_CLP1_CLP1_SHIFT 0u\000"
 .LASF6433:
 	.ascii	"PDB_CNT_CNT_MASK 0xFFFFu\000"
-.LASF63:
+.LASF62:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
 .LASF8367:
 	.ascii	"SIM_CLKOUT_SEL_SYSTEM_LPO_CLK\000"
@@ -45433,7 +45129,7 @@ g_clockState:
 .LASF5085:
 	.ascii	"LPSPI_CFGR0_RDMO(x) (((uint32_t)(((uint32_t)(x))<<L"
 	.ascii	"PSPI_CFGR0_RDMO_SHIFT))&LPSPI_CFGR0_RDMO_MASK)\000"
-.LASF297:
+.LASF296:
 	.ascii	"__UHA_IBIT__ 8\000"
 .LASF4034:
 	.ascii	"FTM_PAIR0DEADTIME_DTPS_SHIFT 6u\000"
@@ -45484,7 +45180,7 @@ g_clockState:
 	.ascii	"LPI2C_VERID_FEATURE_SHIFT 0u\000"
 .LASF5120:
 	.ascii	"LPSPI_CFGR1_PCSCFG_WIDTH 1u\000"
-.LASF206:
+.LASF205:
 	.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
 .LASF368:
 	.ascii	"__s12z_bare 23\000"
@@ -45538,7 +45234,7 @@ g_clockState:
 	.ascii	"LPIT_PARAM_CHANNEL_WIDTH 8u\000"
 .LASF3597:
 	.ascii	"FTM_COMBINE_MCOMBINE3_MASK 0x80000000u\000"
-.LASF79:
+.LASF78:
 	.ascii	"__SIZE_MAX__ 4294967295U\000"
 .LASF1207:
 	.ascii	"CAN_ESR1_STFERR_MASK 0x400u\000"
@@ -45589,7 +45285,7 @@ g_clockState:
 	.ascii	"CAN_FDCBT_FPROPSEG_SHIFT 10u\000"
 .LASF8284:
 	.ascii	"STATUS_SEC_SEQUENCE_ERROR\000"
-.LASF105:
+.LASF104:
 	.ascii	"__UINT16_C(c) c\000"
 .LASF7625:
 	.ascii	"SIM_FCFG1_DEPART_SHIFT 12u\000"
@@ -45613,9 +45309,9 @@ g_clockState:
 .LASF2207:
 	.ascii	"DMA_EEI_EEI6(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
 	.ascii	"EI_EEI6_SHIFT))&DMA_EEI_EEI6_MASK)\000"
-.LASF53:
+.LASF52:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
-.LASF17:
+.LASF16:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
 .LASF4355:
 	.ascii	"LPI2C_MSR_SDF_WIDTH 1u\000"
@@ -45747,13 +45443,13 @@ g_clockState:
 .LASF3280:
 	.ascii	"FTM_CnSC_ELSB(x) (((uint32_t)(((uint32_t)(x))<<FTM_"
 	.ascii	"CnSC_ELSB_SHIFT))&FTM_CnSC_ELSB_MASK)\000"
-.LASF155:
+.LASF154:
 	.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
 .LASF4737:
 	.ascii	"LPI2C_SCFGR2_CLKHOLD_MASK 0xFu\000"
 .LASF4991:
 	.ascii	"LPSPI_SR_TDF_SHIFT 0u\000"
-.LASF284:
+.LASF283:
 	.ascii	"__UDQ_FBIT__ 64\000"
 .LASF4808:
 	.ascii	"LPIT_VERID_MAJOR_WIDTH 8u\000"
@@ -45841,7 +45537,7 @@ g_clockState:
 	.ascii	"LPI2C_MCCR0_CLKHI_MASK 0x3F00u\000"
 .LASF3313:
 	.ascii	"FTM_CNTIN_INIT_MASK 0xFFFFu\000"
-.LASF225:
+.LASF224:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
 .LASF4732:
 	.ascii	"LPI2C_SCFGR1_HSMEN(x) (((uint32_t)(((uint32_t)(x))<"
@@ -45900,7 +45596,7 @@ g_clockState:
 	.ascii	"M_PCCRMR_R1_SHIFT))&LMEM_PCCRMR_R1_MASK)\000"
 .LASF1988:
 	.ascii	"CSE_PRAM_BASE (0x14000800u)\000"
-.LASF16:
+.LASF15:
 	.ascii	"__SIZEOF_LONG__ 4\000"
 .LASF1474:
 	.ascii	"CAN_FLT_DLC_FLT_DLC_HI(x) (((uint32_t)(((uint32_t)("
@@ -45908,8 +45604,10 @@ g_clockState:
 	.ascii	"_DLC_HI_MASK)\000"
 .LASF1633:
 	.ascii	"CAN_FDCBT_FPSEG2_WIDTH 3u\000"
-.LASF195:
+.LASF194:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
+.LASF1589:
+	.ascii	"CAN_WMBn_D03_Data_byte_0_WIDTH 8u\000"
 .LASF1165:
 	.ascii	"CAN_ECR_RXERRCNT_WIDTH 8u\000"
 .LASF1626:
@@ -46160,7 +45858,7 @@ g_clockState:
 	.ascii	"FTM_FILTER_CH2FVAL_MASK 0xF00u\000"
 .LASF6288:
 	.ascii	"MSCM_OCMDR_OCM1_MASK 0x30u\000"
-.LASF305:
+.LASF304:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
 .LASF1498:
 	.ascii	"CAN_PL1_HI_Data_byte_7(x) (((uint32_t)(((uint32_t)("
@@ -46205,7 +45903,7 @@ g_clockState:
 	.ascii	"LPIT_TMR_TCTRL_TSOT_WIDTH 1u\000"
 .LASF4691:
 	.ascii	"LPI2C_SDER_AVDE_WIDTH 1u\000"
-.LASF55:
+.LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
 .LASF6758:
 	.ascii	"RCM_SRS_SW_MASK 0x400u\000"
@@ -46218,7 +45916,7 @@ g_clockState:
 .LASF2199:
 	.ascii	"DMA_EEI_EEI4(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
 	.ascii	"EI_EEI4_SHIFT))&DMA_EEI_EEI4_MASK)\000"
-.LASF300:
+.LASF299:
 	.ascii	"__UDA_FBIT__ 32\000"
 .LASF2525:
 	.ascii	"DMA_HRS_HRS14_SHIFT 14u\000"
@@ -46393,7 +46091,7 @@ g_clockState:
 .LASF7720:
 	.ascii	"SMC_PMSTAT_PMSTAT(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"SMC_PMSTAT_PMSTAT_SHIFT))&SMC_PMSTAT_PMSTAT_MASK)\000"
-.LASF249:
+.LASF248:
 	.ascii	"__LACCUM_IBIT__ 32\000"
 .LASF4616:
 	.ascii	"LPI2C_SSR_AM1F(x) (((uint32_t)(((uint32_t)(x))<<LPI"
@@ -46423,7 +46121,7 @@ g_clockState:
 	.ascii	"CAN_ESR1_RWRNINT_WIDTH 1u\000"
 .LASF814:
 	.ascii	"AIPS_MPRA_MPL2_WIDTH 1u\000"
-.LASF267:
+.LASF266:
 	.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
 .LASF2143:
 	.ascii	"DMA_ERQ_ERQ6(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
@@ -46587,7 +46285,7 @@ g_clockState:
 	.ascii	"FTM_SYNC_CNTMAX_WIDTH 1u\000"
 .LASF4220:
 	.ascii	"LMEM_PCCCVR_DATA_SHIFT 0u\000"
-.LASF18:
+.LASF17:
 	.ascii	"__SIZEOF_SHORT__ 2\000"
 .LASF2201:
 	.ascii	"DMA_EEI_EEI5_SHIFT 5u\000"
@@ -46699,7 +46397,7 @@ g_clockState:
 .LASF1222:
 	.ascii	"CAN_ESR1_ACKERR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ACKERR_SHIFT))&CAN_ESR1_ACKERR_MASK)\000"
-.LASF138:
+.LASF137:
 	.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
 .LASF3291:
 	.ascii	"FTM_CnSC_CHIE_WIDTH 1u\000"
@@ -46712,6 +46410,8 @@ g_clockState:
 .LASF7234:
 	.ascii	"SCG_CSR_DIVSLOW(x) (((uint32_t)(((uint32_t)(x))<<SC"
 	.ascii	"G_CSR_DIVSLOW_SHIFT))&SCG_CSR_DIVSLOW_MASK)\000"
+.LASF929:
+	.ascii	"AIPS_OPACR_SP4_SHIFT 14u\000"
 .LASF4209:
 	.ascii	"LMEM_PCCLCR_LACC_WIDTH 1u\000"
 .LASF4018:
@@ -46733,9 +46433,9 @@ g_clockState:
 	.ascii	"LMEM_PCCSAR_PHYADDR_MASK 0xFFFFFFFCu\000"
 .LASF4219:
 	.ascii	"LMEM_PCCCVR_DATA_MASK 0xFFFFFFFFu\000"
-.LASF294:
+.LASF293:
 	.ascii	"__TA_FBIT__ 63\000"
-.LASF233:
+.LASF232:
 	.ascii	"__USACCUM_FBIT__ 8\000"
 .LASF635:
 	.ascii	"ADC_SC1_COCO_WIDTH 1u\000"
@@ -46806,11 +46506,11 @@ g_clockState:
 	.ascii	"DMA_TCD_CSR_ACTIVE_SHIFT 6u\000"
 .LASF978:
 	.ascii	"AIPS_OPACR_SP0_WIDTH 1u\000"
-.LASF243:
+.LASF242:
 	.ascii	"__UACCUM_FBIT__ 16\000"
 .LASF483:
 	.ascii	"NULL 0L\000"
-.LASF172:
+.LASF171:
 	.ascii	"__DEC32_EPSILON__ 1E-6DF\000"
 .LASF6710:
 	.ascii	"RCM_PARAM_ESACKERR_MASK 0x2000u\000"
@@ -46937,9 +46637,9 @@ g_clockState:
 	.ascii	"SIM_CLKOUT_DIV_BY_7\000"
 .LASF8377:
 	.ascii	"SIM_CLKOUT_DIV_BY_8\000"
-.LASF118:
+.LASF117:
 	.ascii	"__INTPTR_MAX__ 2147483647\000"
-.LASF180:
+.LASF179:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
 .LASF1016:
 	.ascii	"CAN_MCR_AEN_SHIFT 12u\000"
@@ -46965,7 +46665,7 @@ g_clockState:
 	.ascii	"LPI2C_MCFGR1_AUTOSTOP_SHIFT 8u\000"
 .LASF3502:
 	.ascii	"FTM_COMBINE_MCOMBINE0_SHIFT 7u\000"
-.LASF246:
+.LASF245:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
 .LASF8541:
 	.ascii	"clock_manager_callback_type_t\000"
@@ -47048,7 +46748,7 @@ g_clockState:
 	.ascii	"CM_LMPECR_ER1BR_SHIFT))&MCM_LMPECR_ER1BR_MASK)\000"
 .LASF8272:
 	.ascii	"STATUS_MCU_TRANSITION_FAILED\000"
-.LASF285:
+.LASF284:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF2936:
 	.ascii	"FLEXIO_SHIFTCTL_PINSEL_SHIFT 8u\000"
@@ -47116,10 +46816,6 @@ g_clockState:
 	.ascii	"FPR_SHIFT))&CMP_C0_FPR_MASK)\000"
 .LASF8258:
 	.ascii	"LPSPI0_CLK\000"
-.LASF2627:
-	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
-	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
-	.ascii	")\000"
 .LASF1254:
 	.ascii	"CAN_ESR1_ERROVR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ERROVR_SHIFT))&CAN_ESR1_ERROVR_MASK)\000"
@@ -47151,7 +46847,7 @@ g_clockState:
 	.ascii	"EI_EEI1_SHIFT))&DMA_EEI_EEI1_MASK)\000"
 .LASF2617:
 	.ascii	"DMA_TCD_ATTR_DSIZE_SHIFT 0u\000"
-.LASF31:
+.LASF30:
 	.ascii	"__SIZE_TYPE__ unsigned int\000"
 .LASF8234:
 	.ascii	"SIM_MSCM_CLK\000"
@@ -47197,7 +46893,7 @@ g_clockState:
 	.ascii	"FEATURE_MPU_SLAVE_COUNT (2U)\000"
 .LASF3937:
 	.ascii	"FTM_SWOCTRL_CH6OC_MASK 0x40u\000"
-.LASF136:
+.LASF135:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
 .LASF7232:
 	.ascii	"SCG_CSR_DIVSLOW_SHIFT 0u\000"
@@ -47257,7 +46953,7 @@ g_clockState:
 	.ascii	"PI_CR_DBGEN_SHIFT))&LPSPI_CR_DBGEN_MASK)\000"
 .LASF6811:
 	.ascii	"RCM_SSRS_SJTAG_SHIFT 8u\000"
-.LASF148:
+.LASF147:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
 .LASF2059:
 	.ascii	"DMA_CR_EMLM(x) (((uint32_t)(((uint32_t)(x))<<DMA_CR"
@@ -47272,7 +46968,7 @@ g_clockState:
 	.ascii	"STATUS_SEC_TRNG_ERROR\000"
 .LASF5408:
 	.ascii	"LPUART_STAT_RDRF_MASK 0x200000u\000"
-.LASF286:
+.LASF285:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF642:
 	.ascii	"ADC_CFG1_MODE_SHIFT 2u\000"
@@ -47381,7 +47077,7 @@ g_clockState:
 	.ascii	")\000"
 .LASF4815:
 	.ascii	"LPIT_PARAM_EXT_TRIG_SHIFT 8u\000"
-.LASF132:
+.LASF131:
 	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
 .LASF8440:
 	.ascii	"SCG_CLOCKOUT_SRC_FIRC\000"
@@ -47395,7 +47091,7 @@ g_clockState:
 	.ascii	"FTM_PAIR2DEADTIME_DTVAL(x) (((uint32_t)(((uint32_t)"
 	.ascii	"(x))<<FTM_PAIR2DEADTIME_DTVAL_SHIFT))&FTM_PAIR2DEAD"
 	.ascii	"TIME_DTVAL_MASK)\000"
-.LASF96:
+.LASF95:
 	.ascii	"__INT_LEAST16_MAX__ 32767\000"
 .LASF7145:
 	.ascii	"S32_SCB_SHCSR_SVCALLPENDED_WIDTH 1u\000"
@@ -47466,13 +47162,13 @@ g_clockState:
 	.ascii	"LPI2C_MCFGR1_MATCFG_WIDTH 3u\000"
 .LASF7802:
 	.ascii	"WDOG_CS_RCS_MASK 0x400u\000"
-.LASF24:
+.LASF23:
 	.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
 .LASF4192:
 	.ascii	"LMEM_PCCLCR_LCIMB_SHIFT 21u\000"
 .LASF6422:
 	.ascii	"PDB_SC_PDBEIE_SHIFT 17u\000"
-.LASF211:
+.LASF210:
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
 .LASF4084:
 	.ascii	"FTM_MOD_MIRROR_MOD(x) (((uint32_t)(((uint32_t)(x))<"
@@ -47485,7 +47181,7 @@ g_clockState:
 .LASF4242:
 	.ascii	"LMEM_PCCRMR_R11(x) (((uint32_t)(((uint32_t)(x))<<LM"
 	.ascii	"EM_PCCRMR_R11_SHIFT))&LMEM_PCCRMR_R11_MASK)\000"
-.LASF164:
+.LASF163:
 	.ascii	"__LDBL_HAS_DENORM__ 1\000"
 .LASF8561:
 	.ascii	"clockConfigsPtr\000"
@@ -47498,7 +47194,7 @@ g_clockState:
 	.ascii	"EI_EEI0_SHIFT))&DMA_EEI_EEI0_MASK)\000"
 .LASF3278:
 	.ascii	"FTM_CnSC_ELSB_SHIFT 3u\000"
-.LASF21:
+.LASF20:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
 .LASF7977:
 	.ascii	"FTM_FEATURE_COMBINE_CHAN_CTRL_WIDTH (8U)\000"
@@ -47544,7 +47240,7 @@ g_clockState:
 	.ascii	"N_MASK)\000"
 .LASF3643:
 	.ascii	"FTM_EXTTRIG_TRIGF_WIDTH 1u\000"
-.LASF277:
+.LASF276:
 	.ascii	"__TQ_IBIT__ 0\000"
 .LASF5440:
 	.ascii	"LPUART_STAT_MSBF_MASK 0x20000000u\000"
@@ -47576,7 +47272,7 @@ g_clockState:
 	.ascii	"LPUART_PINCFG_TRGSEL_MASK 0x3u\000"
 .LASF912:
 	.ascii	"AIPS_OPACR_WP5_MASK 0x200u\000"
-.LASF114:
+.LASF113:
 	.ascii	"__UINT_FAST8_MAX__ 4294967295U\000"
 .LASF3708:
 	.ascii	"FTM_FMS_WPEN(x) (((uint32_t)(((uint32_t)(x))<<FTM_F"
@@ -47602,7 +47298,7 @@ g_clockState:
 	.ascii	"_ENABLE_MASK)\000"
 .LASF2181:
 	.ascii	"DMA_EEI_EEI0_SHIFT 0u\000"
-.LASF304:
+.LASF303:
 	.ascii	"__REGISTER_PREFIX__ \000"
 .LASF2718:
 	.ascii	"DMA_TCD_CSR_ESG_WIDTH 1u\000"
@@ -47833,7 +47529,7 @@ g_clockState:
 .LASF5949:
 	.ascii	"MPU_EDR_EMN(x) (((uint32_t)(((uint32_t)(x))<<MPU_ED"
 	.ascii	"R_EMN_SHIFT))&MPU_EDR_EMN_MASK)\000"
-.LASF67:
+.LASF66:
 	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
 .LASF1066:
 	.ascii	"CAN_MCR_HALT(x) (((uint32_t)(((uint32_t)(x))<<CAN_M"
@@ -47874,7 +47570,7 @@ g_clockState:
 	.ascii	"RCM_SSRS_SSW_MASK 0x400u\000"
 .LASF533:
 	.ascii	"_EWL_USHRT_MAX 0xffff\000"
-.LASF244:
+.LASF243:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF1404:
 	.ascii	"CAN_RAMn_DATA_BYTE_2_SHIFT 8u\000"
@@ -47947,13 +47643,13 @@ g_clockState:
 	.ascii	"LPI2C_MCR_RTF_WIDTH 1u\000"
 .LASF8124:
 	.ascii	"FEATURE_LPSPI_STATE_STRUCTURES_NULL {NULL}\000"
-.LASF193:
+.LASF192:
 	.ascii	"__USFRACT_FBIT__ 8\000"
 .LASF1337:
 	.ascii	"CAN_CTRL2_RFFN_WIDTH 4u\000"
 .LASF1747:
 	.ascii	"CMP_C1_VRSEL_MASK 0x4000u\000"
-.LASF184:
+.LASF183:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF1541:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_7_WIDTH 8u\000"

@@ -7,7 +7,7 @@
 **     Version     : Component SDK_S32K116_00, Driver 01.00, CPU db: 3.00.000
 **     Repository  : SDK_S32K116_00
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2020-07-21, 11:52, # CodeGen: 91
+**     Date/Time   : 2020-08-14, 17:02, # CodeGen: 101
 **     Contents    :
 **         PDB_DRV_Init                          - void PDB_DRV_Init(const uint32_t instance, const pdb_timer_config_t *...
 **         PDB_DRV_Deinit                        - void PDB_DRV_Deinit(const uint32_t instance);

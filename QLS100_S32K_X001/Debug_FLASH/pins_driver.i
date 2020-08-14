@@ -1,5 +1,5 @@
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/pins/pins_driver.c"
-# 1 "D:\\s32dsworkspace\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
+# 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -308,6 +307,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
@@ -11049,7 +11049,7 @@ typedef enum {
 
 #define false 0
 # 23 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 2
-# 1 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h" 1
+# 1 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h" 1
 # 24 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 2
 # 70 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h"
 static inline void DevAssert(volatile int x)

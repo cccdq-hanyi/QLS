@@ -1,4 +1,4 @@
-# 1 "D:/s32dsworkspace/QLS/common/ultrasonic.c"
+# 1 "D:/QLS/common/ultrasonic.c"
 # 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
@@ -14,7 +14,6 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
-#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -308,6 +307,7 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
+#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
@@ -349,9 +349,9 @@
 #define __USES_INITFINI__ 1
 #define CPU_S32K116 1
 #define DEV_ERROR_DETECT 1
-# 1 "D:/s32dsworkspace/QLS/common/ultrasonic.c"
-# 19 "D:/s32dsworkspace/QLS/common/ultrasonic.c"
-# 1 "D:/s32dsworkspace/QLS/common/common.h" 1
+# 1 "D:/QLS/common/ultrasonic.c"
+# 19 "D:/QLS/common/ultrasonic.c"
+# 1 "D:/QLS/common/common.h" 1
 
 
 
@@ -14362,9 +14362,9 @@ extern lpspi_state_t lpspiCom1State;
 
 
 extern const lpspi_slave_config_t lpspiCom1_SlaveConfig0;
-# 9 "D:/s32dsworkspace/QLS/common/common.h" 2
+# 9 "D:/QLS/common/common.h" 2
 # 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
-# 10 "D:/s32dsworkspace/QLS/common/common.h" 2
+# 10 "D:/QLS/common/common.h" 2
 # 1 "D:/QLS/QLS100_S32K_X001/Sources/spi_comm.h" 1
 
 
@@ -14401,7 +14401,7 @@ typedef union QLS_RESULTS {
 extern qls_results results;
 void spi_comm_Spi_Init(void);
 uint8_t spi_comm_Spi_Transfer(void);
-# 11 "D:/s32dsworkspace/QLS/common/common.h" 2
+# 11 "D:/QLS/common/common.h" 2
 
 
 #define COMMON_H_ 
@@ -14448,9 +14448,9 @@ qls_results_cal runion_qls_results;
 
 
 qls_results_cal sendresults;
-# 20 "D:/s32dsworkspace/QLS/common/ultrasonic.c" 2
-# 1 "D:/s32dsworkspace/QLS/common/ultrasonic.h" 1
-# 9 "D:/s32dsworkspace/QLS/common/ultrasonic.h"
+# 20 "D:/QLS/common/ultrasonic.c" 2
+# 1 "D:/QLS/common/ultrasonic.h" 1
+# 9 "D:/QLS/common/ultrasonic.h"
 #define SOURCES_ULTRASONIC_H_ 
 #define TABLEX_ELEMENTS 10
 
@@ -14490,25 +14490,27 @@ typedef union _TABLE10_UNION{
  TABLE10_CACUL members;
  uint8_t databytes[sizeof(TABLE10_CACUL)];
 }TABLE10_UNION;
-# 21 "D:/s32dsworkspace/QLS/common/ultrasonic.c" 2
+# 21 "D:/QLS/common/ultrasonic.c" 2
 #define TABLEX_ELEMENTS 10
 
 short int C2_CALCON_RU8_XTEMP[10] = {-11,0,10,20,30,40,50,60,70,80};
 uint8_t C2_CALCON_RU8_YCON[10] = {0,40,80,100,112,120,128,140,180,220};
-uint8_t calibrat_flag;
-float C2_CALCON_TABLE[10][10]={{1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
-          {1400.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32}};
 
-TABLE1_UNION C2_LEVEL_TABLE={0,{0,}};;
-# 47 "D:/s32dsworkspace/QLS/common/ultrasonic.c"
+
+uint8_t calibrat_flag;
+float C2_CALCON_TABLE[10][10]={{1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32},
+          {1407.0,1440.43,1480.51,1499.69,1511.91,1518.92,1525.9,1535.28,1576.07,1613.32}};
+# 58 "D:/QLS/common/ultrasonic.c"
+TABLE1_UNION C2_LEVEL_TABLE={0,{0,}};
+# 68 "D:/QLS/common/ultrasonic.c"
 uint16_t ultrasonic_cal_level(uint16_t addata)
 {
     uint8_t bg,ed,mid;
@@ -14539,7 +14541,7 @@ uint16_t ultrasonic_cal_level(uint16_t addata)
     i16_level=start+((addata-C2_LEVEL_TABLE.members.table.ADValue[mid])/(C2_LEVEL_TABLE.members.table.ADValue[mid+1]-C2_LEVEL_TABLE.members.table.ADValue[mid]))*step;
     return i16_level;
 }
-# 85 "D:/s32dsworkspace/QLS/common/ultrasonic.c"
+# 106 "D:/QLS/common/ultrasonic.c"
 uint8_t ultrasonic_cal_concentration(float * velocity,short int temp)
 {
     uint8_t bg,ed,mid;
@@ -14642,9 +14644,9 @@ uint8_t ultrasonic_cal_concentration(float * velocity,short int temp)
       ru8_concentration = 255;
       return ru8_concentration;
      }else
-   ru8_concentration = (((uint8_t )( v - C2_CALCON_TABLE[p_temp][p_v])) * 20);
 
 
+   ru8_concentration = C2_CALCON_RU8_YCON[p_v]+ (( v - C2_CALCON_TABLE[p_temp][p_v] ) * (C2_CALCON_RU8_YCON[p_v+1] - C2_CALCON_RU8_YCON[p_v])) / (C2_CALCON_TABLE[p_temp][p_v+1] - C2_CALCON_TABLE[p_temp][p_v]);
  }else if (2 == calcnt)
  {
   bg = 0 ;
@@ -14714,7 +14716,7 @@ uint8_t ultrasonic_cal_concentration(float * velocity,short int temp)
   }else
    con2 = C2_CALCON_RU8_YCON[p_v]+
      (( v - C2_CALCON_TABLE[p_temp+1][p_v] ) * (C2_CALCON_RU8_YCON[p_v+1] - C2_CALCON_RU8_YCON[p_v])) / (C2_CALCON_TABLE[p_temp+1][p_v+1] - C2_CALCON_TABLE[p_temp+1][p_v]);
-   ru8_concentration = ((temp - C2_CALCON_RU8_XTEMP[p_temp]) * abs(con2 - con1)) / (C2_CALCON_RU8_XTEMP[p_temp+1] - C2_CALCON_RU8_XTEMP[p_temp] );
+   ru8_concentration = con1 + ((temp - C2_CALCON_RU8_XTEMP[p_temp]) * abs(con2 - con1)) / (C2_CALCON_RU8_XTEMP[p_temp+1] - C2_CALCON_RU8_XTEMP[p_temp] );
  }else
   ru8_concentration = 255;
 

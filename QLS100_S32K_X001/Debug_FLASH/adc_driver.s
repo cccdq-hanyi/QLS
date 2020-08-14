@@ -6,7 +6,7 @@
 	.eabi_attribute 24, 1
 	.eabi_attribute 25, 1
 	.eabi_attribute 26, 1
-	.eabi_attribute 30, 1
+	.eabi_attribute 30, 6
 	.eabi_attribute 34, 0
 	.eabi_attribute 18, 4
 	.code	16
@@ -14,6 +14,602 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
+	.section	.text.DevAssert,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	DevAssert, %function
+DevAssert:
+.LFB0:
+	.file 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h"
+	.loc 1 71 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 1 72 0
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	bne	.L1
+	.loc 1 72 0 is_stmt 0 discriminator 1
+@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
+	BKPT #0
+	
+@ 0 "" 2
+	.code	16
+.L3:
+	b	.L3
+.L1:
+	.loc 1 73 0 is_stmt 1
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE0:
+	.size	DevAssert, .-DevAssert
+	.section	.text.ADC_GetConvActiveFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetConvActiveFlag, %function
+ADC_GetConvActiveFlag:
+.LFB1:
+	.file 2 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/adc/adc_hw_access.h"
+	.loc 2 81 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 82 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 83 0
+	ldr	r3, [r7, #12]
+	mov	r2, #128
+	and	r3, r2
+	lsr	r3, r3, #7
+	str	r3, [r7, #12]
+	.loc 2 85 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 86 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE1:
+	.size	ADC_GetConvActiveFlag, .-ADC_GetConvActiveFlag
+	.section	.text.ADC_GetClockDivide,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetClockDivide, %function
+ADC_GetClockDivide:
+.LFB2:
+	.loc 2 102 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 103 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #64]
+	str	r3, [r7, #12]
+	.loc 2 104 0
+	ldr	r3, [r7, #12]
+	mov	r2, #96
+	and	r3, r2
+	lsr	r3, r3, #5
+	str	r3, [r7, #12]
+	.loc 2 107 0
+	ldr	r3, [r7, #12]
+	uxtb	r3, r3
+	.loc 2 108 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE2:
+	.size	ADC_GetClockDivide, .-ADC_GetClockDivide
+	.section	.text.ADC_SetClockDivide,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetClockDivide, %function
+ADC_SetClockDivide:
+.LFB3:
+	.loc 2 124 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 125 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #64]
+	str	r3, [r7, #12]
+	.loc 2 126 0
+	ldr	r3, [r7, #12]
+	mov	r2, #96
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 127 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	lsl	r3, r3, #5
+	mov	r2, #96
+	and	r3, r2
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 128 0
+	ldr	r3, [r7, #4]
+	ldr	r2, [r7, #12]
+	str	r2, [r3, #64]
+	.loc 2 129 0
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE3:
+	.size	ADC_SetClockDivide, .-ADC_SetClockDivide
+	.section	.text.ADC_GetSampleTime,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetSampleTime, %function
+ADC_GetSampleTime:
+.LFB4:
+	.loc 2 143 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 144 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #68]
+	str	r3, [r7, #12]
+	.loc 2 145 0
+	ldr	r3, [r7, #12]
+	mov	r2, #255
+	and	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 147 0
+	ldr	r3, [r7, #12]
+	uxtb	r3, r3
+	.loc 2 148 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE4:
+	.size	ADC_GetSampleTime, .-ADC_GetSampleTime
+	.section	.text.ADC_SetSampleTime,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetSampleTime, %function
+ADC_SetSampleTime:
+.LFB5:
+	.loc 2 164 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 166 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	cmp	r3, #0
+	beq	.L12
+	.loc 2 166 0 is_stmt 0 discriminator 1
+	add	r3, r7, #3
+	ldrb	r2, [r3]
+	b	.L13
+.L12:
+	.loc 2 166 0 discriminator 2
+	mov	r2, #1
+.L13:
+	.loc 2 166 0 discriminator 4
+	mov	r3, #15
+	add	r3, r7, r3
+	strb	r2, [r3]
+	.loc 2 167 0 is_stmt 1 discriminator 4
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #68]
+	str	r3, [r7, #8]
+	.loc 2 168 0 discriminator 4
+	ldr	r3, [r7, #8]
+	mov	r2, #255
+	bic	r3, r2
+	str	r3, [r7, #8]
+	.loc 2 169 0 discriminator 4
+	mov	r3, #15
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	ldr	r2, [r7, #8]
+	orr	r3, r2
+	str	r3, [r7, #8]
+	.loc 2 170 0 discriminator 4
+	ldr	r3, [r7, #4]
+	ldr	r2, [r7, #8]
+	str	r2, [r3, #68]
+	.loc 2 171 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE5:
+	.size	ADC_SetSampleTime, .-ADC_SetSampleTime
+	.section	.text.ADC_GetResolution,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetResolution, %function
+ADC_GetResolution:
+.LFB6:
+	.loc 2 186 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 187 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #64]
+	str	r3, [r7, #8]
+	.loc 2 188 0
+	ldr	r3, [r7, #8]
+	mov	r2, #12
+	and	r3, r2
+	lsr	r3, r3, #2
+	str	r3, [r7, #8]
+	.loc 2 191 0
+	ldr	r3, [r7, #8]
+	cmp	r3, #1
+	beq	.L16
+	bcc	.L17
+	cmp	r3, #2
+	beq	.L18
+	b	.L21
+.L17:
+	.loc 2 194 0
+	mov	r3, #15
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	.loc 2 195 0
+	b	.L19
+.L16:
+	.loc 2 197 0
+	mov	r3, #15
+	add	r3, r7, r3
+	mov	r2, #1
+	strb	r2, [r3]
+	.loc 2 198 0
+	b	.L19
+.L18:
+	.loc 2 200 0
+	mov	r3, #15
+	add	r3, r7, r3
+	mov	r2, #2
+	strb	r2, [r3]
+	.loc 2 201 0
+	b	.L19
+.L21:
+	.loc 2 203 0
+	mov	r3, #15
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	.loc 2 204 0
+	mov	r8, r8
+.L19:
+	.loc 2 207 0
+	mov	r3, #15
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	.loc 2 208 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE6:
+	.size	ADC_GetResolution, .-ADC_GetResolution
+	.section	.text.ADC_SetResolution,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetResolution, %function
+ADC_SetResolution:
+.LFB7:
+	.loc 2 223 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 224 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #64]
+	str	r3, [r7, #12]
+	.loc 2 225 0
+	ldr	r3, [r7, #12]
+	mov	r2, #12
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 226 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	lsl	r3, r3, #2
+	mov	r2, #12
+	and	r3, r2
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 227 0
+	ldr	r3, [r7, #4]
+	ldr	r2, [r7, #12]
+	str	r2, [r3, #64]
+	.loc 2 228 0
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE7:
+	.size	ADC_SetResolution, .-ADC_SetResolution
+	.section	.text.ADC_GetInputClock,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetInputClock, %function
+ADC_GetInputClock:
+.LFB8:
+	.loc 2 244 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 245 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #64]
+	str	r3, [r7, #12]
+	.loc 2 246 0
+	ldr	r3, [r7, #12]
+	mov	r2, #3
+	and	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 249 0
+	ldr	r3, [r7, #12]
+	uxtb	r3, r3
+	.loc 2 250 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE8:
+	.size	ADC_GetInputClock, .-ADC_GetInputClock
+	.section	.text.ADC_SetInputClock,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetInputClock, %function
+ADC_SetInputClock:
+.LFB9:
+	.loc 2 267 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 268 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #64]
+	str	r3, [r7, #12]
+	.loc 2 269 0
+	ldr	r3, [r7, #12]
+	mov	r2, #3
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 270 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	mov	r2, #3
+	and	r3, r2
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 271 0
+	ldr	r3, [r7, #4]
+	ldr	r2, [r7, #12]
+	str	r2, [r3, #64]
+	.loc 2 272 0
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE9:
+	.size	ADC_SetInputClock, .-ADC_SetInputClock
+	.section	.text.ADC_GetTriggerMode,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetTriggerMode, %function
+ADC_GetTriggerMode:
+.LFB10:
+	.loc 2 290 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 291 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 292 0
+	ldr	r3, [r7, #12]
+	mov	r2, #64
+	and	r3, r2
+	lsr	r3, r3, #6
+	str	r3, [r7, #12]
+	.loc 2 295 0
+	ldr	r3, [r7, #12]
+	uxtb	r3, r3
+	.loc 2 296 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE10:
+	.size	ADC_GetTriggerMode, .-ADC_GetTriggerMode
+	.section	.text.ADC_SetTriggerMode,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetTriggerMode, %function
+ADC_SetTriggerMode:
+.LFB11:
+	.loc 2 314 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 315 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 316 0
+	ldr	r3, [r7, #12]
+	mov	r2, #64
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 317 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	lsl	r3, r3, #6
+	mov	r2, #64
+	and	r3, r2
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 318 0
+	ldr	r3, [r7, #4]
+	mov	r1, #144
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 319 0
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE11:
+	.size	ADC_SetTriggerMode, .-ADC_SetTriggerMode
 	.section	.text.ADC_GetPretriggerSelect,"ax",%progbits
 	.align	2
 	.code	16
@@ -21,66 +617,2053 @@
 	.type	ADC_GetPretriggerSelect, %function
 ADC_GetPretriggerSelect:
 .LFB12:
-	.file 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/adc/adc_hw_access.h"
-	.loc 1 335 0
+	.loc 2 335 0
 	.cfi_startproc
-.LVL0:
-	.loc 1 346 0
-	ldr	r3, .L10
-	ldr	r3, [r3, #24]
-.LVL1:
-	lsl	r3, r3, #26
-.LVL2:
-	lsr	r3, r3, #30
-	.loc 1 347 0
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 40
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 336 0
+	ldr	r3, .L37
+	str	r3, [r7, #24]
+	.loc 2 337 0
+	mov	r3, #0
+	str	r3, [r7, #20]
+	.loc 2 338 0
+	mov	r3, #31
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	.loc 2 340 0
+	mov	r3, #48
+	str	r3, [r7, #16]
+	.loc 2 341 0
+	mov	r3, #4
+	str	r3, [r7, #12]
+	.loc 2 346 0
+	ldr	r3, [r7, #24]
+	ldr	r2, [r3, #24]
+	ldr	r3, [r7, #4]
+	lsl	r3, r3, #2
+	mov	r1, #32
+	mov	ip, r1
+	add	ip, ip, r7
+	add	r3, r3, ip
+	sub	r3, r3, #16
+	ldr	r3, [r3]
+	and	r2, r3
+	ldr	r3, [r7, #4]
+	lsl	r3, r3, #2
+	mov	r1, #32
+	mov	ip, r1
+	add	ip, ip, r7
+	add	r3, r3, ip
+	sub	r3, r3, #20
+	ldr	r3, [r3]
+	lsr	r2, r2, r3
+	mov	r3, r2
+	str	r3, [r7, #20]
+	.loc 2 347 0
+	ldr	r3, [r7, #20]
 	cmp	r3, #1
-	beq	.L3
-	cmp	r3, #0
-	beq	.L4
+	beq	.L31
+	bcc	.L32
 	cmp	r3, #2
-	beq	.L7
-	b	.L9
-.L3:
-	.loc 1 352 0
-	mov	r0, #1
-.LVL3:
-	b	.L5
-.LVL4:
-.L9:
-.LBB213:
-.LBB214:
-	.file 2 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h"
-	.loc 2 72 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L6:
-	b	.L6
-.L4:
-.LBE214:
-.LBE213:
-	.loc 1 350 0
+	beq	.L33
+	b	.L36
+.L32:
+	.loc 2 350 0
+	mov	r3, #31
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	b	.L34
+.L31:
+	.loc 2 352 0
+	mov	r3, #31
+	add	r3, r7, r3
+	mov	r2, #1
+	strb	r2, [r3]
+	b	.L34
+.L33:
+	.loc 2 354 0
+	mov	r3, #31
+	add	r3, r7, r3
+	mov	r2, #2
+	strb	r2, [r3]
+	b	.L34
+.L36:
+	.loc 2 356 0
 	mov	r0, #0
-.LVL5:
-	b	.L5
-.LVL6:
-.L7:
-	.loc 1 354 0
-	mov	r0, #2
-.LVL7:
-.L5:
-	.loc 1 360 0
+	bl	DevAssert
+.L34:
+	.loc 2 359 0
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	.loc 2 360 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #32
 	@ sp needed
-	bx	lr
-.L11:
+	pop	{r7, pc}
+.L38:
 	.align	2
-.L10:
+.L37:
 	.word	1074036736
 	.cfi_endproc
 .LFE12:
 	.size	ADC_GetPretriggerSelect, .-ADC_GetPretriggerSelect
+	.section	.text.ADC_SetPretriggerSelect,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetPretriggerSelect, %function
+ADC_SetPretriggerSelect:
+.LFB13:
+	.loc 2 377 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #24
+	.cfi_def_cfa_offset 32
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 378 0
+	ldr	r3, .L45
+	str	r3, [r7, #16]
+	.loc 2 380 0
+	mov	r3, #48
+	str	r3, [r7, #12]
+	.loc 2 384 0
+	mov	r3, #0
+	str	r3, [r7, #20]
+	.loc 2 386 0
+	ldr	r3, [r7, #16]
+	ldr	r2, [r3, #24]
+	ldr	r3, [r7, #4]
+	lsl	r3, r3, #2
+	mov	r1, #24
+	mov	ip, r1
+	add	ip, ip, r7
+	add	r3, r3, ip
+	sub	r3, r3, #12
+	ldr	r3, [r3]
+	mvn	r3, r3
+	and	r3, r2
+	str	r3, [r7, #20]
+	.loc 2 388 0
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	beq	.L41
+	cmp	r3, #1
+	beq	.L42
+	b	.L44
+.L41:
+	.loc 2 391 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	lsl	r3, r3, #4
+	mov	r2, #48
+	and	r3, r2
+	ldr	r2, [r7, #20]
+	orr	r3, r2
+	str	r3, [r7, #20]
+	.loc 2 392 0
+	b	.L43
+.L42:
+	.loc 2 394 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	lsl	r2, r3, #12
+	mov	r3, #192
+	lsl	r3, r3, #6
+	and	r3, r2
+	ldr	r2, [r7, #20]
+	orr	r3, r2
+	str	r3, [r7, #20]
+	.loc 2 395 0
+	b	.L43
+.L44:
+	.loc 2 397 0
+	mov	r0, #0
+	bl	DevAssert
+	.loc 2 398 0
+	mov	r8, r8
+.L43:
+	.loc 2 401 0
+	ldr	r3, [r7, #16]
+	ldr	r2, [r7, #20]
+	str	r2, [r3, #24]
+	.loc 2 402 0
+	mov	sp, r7
+	add	sp, sp, #24
+	@ sp needed
+	pop	{r7, pc}
+.L46:
+	.align	2
+.L45:
+	.word	1074036736
+	.cfi_endproc
+.LFE13:
+	.size	ADC_SetPretriggerSelect, .-ADC_SetPretriggerSelect
+	.section	.text.ADC_GetTriggerSelect,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetTriggerSelect, %function
+ADC_GetTriggerSelect:
+.LFB14:
+	.loc 2 416 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 40
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 417 0
+	ldr	r3, .L54
+	str	r3, [r7, #24]
+	.loc 2 418 0
+	mov	r3, #0
+	str	r3, [r7, #20]
+	.loc 2 419 0
+	mov	r3, #31
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	.loc 2 421 0
+	mov	r3, #1
+	str	r3, [r7, #16]
+	.loc 2 422 0
+	mov	r3, #0
+	str	r3, [r7, #12]
+	.loc 2 427 0
+	ldr	r3, [r7, #24]
+	ldr	r2, [r3, #24]
+	ldr	r3, [r7, #4]
+	lsl	r3, r3, #2
+	mov	r1, #32
+	mov	ip, r1
+	add	ip, ip, r7
+	add	r3, r3, ip
+	sub	r3, r3, #16
+	ldr	r3, [r3]
+	and	r2, r3
+	ldr	r3, [r7, #4]
+	lsl	r3, r3, #2
+	mov	r1, #32
+	mov	ip, r1
+	add	ip, ip, r7
+	add	r3, r3, ip
+	sub	r3, r3, #20
+	ldr	r3, [r3]
+	lsr	r2, r2, r3
+	mov	r3, r2
+	str	r3, [r7, #20]
+	.loc 2 428 0
+	ldr	r3, [r7, #20]
+	cmp	r3, #0
+	beq	.L49
+	cmp	r3, #1
+	beq	.L50
+	b	.L53
+.L49:
+	.loc 2 431 0
+	mov	r3, #31
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	b	.L51
+.L50:
+	.loc 2 433 0
+	mov	r3, #31
+	add	r3, r7, r3
+	mov	r2, #1
+	strb	r2, [r3]
+	b	.L51
+.L53:
+	.loc 2 435 0
+	mov	r0, #0
+	bl	DevAssert
+.L51:
+	.loc 2 438 0
+	mov	r3, #31
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	.loc 2 439 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #32
+	@ sp needed
+	pop	{r7, pc}
+.L55:
+	.align	2
+.L54:
+	.word	1074036736
+	.cfi_endproc
+.LFE14:
+	.size	ADC_GetTriggerSelect, .-ADC_GetTriggerSelect
+	.section	.text.ADC_SetTriggerSelect,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetTriggerSelect, %function
+ADC_SetTriggerSelect:
+.LFB15:
+	.loc 2 454 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #24
+	.cfi_def_cfa_offset 32
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 455 0
+	ldr	r3, .L62
+	str	r3, [r7, #16]
+	.loc 2 457 0
+	mov	r3, #1
+	str	r3, [r7, #12]
+	.loc 2 461 0
+	mov	r3, #0
+	str	r3, [r7, #20]
+	.loc 2 463 0
+	ldr	r3, [r7, #16]
+	ldr	r2, [r3, #24]
+	ldr	r3, [r7, #4]
+	lsl	r3, r3, #2
+	mov	r1, #24
+	mov	ip, r1
+	add	ip, ip, r7
+	add	r3, r3, ip
+	sub	r3, r3, #12
+	ldr	r3, [r3]
+	mvn	r3, r3
+	and	r3, r2
+	str	r3, [r7, #20]
+	.loc 2 465 0
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	beq	.L58
+	cmp	r3, #1
+	beq	.L59
+	b	.L61
+.L58:
+	.loc 2 468 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	mov	r2, #1
+	and	r3, r2
+	ldr	r2, [r7, #20]
+	orr	r3, r2
+	str	r3, [r7, #20]
+	.loc 2 469 0
+	b	.L60
+.L59:
+	.loc 2 471 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	lsl	r2, r3, #8
+	mov	r3, #128
+	lsl	r3, r3, #1
+	and	r3, r2
+	ldr	r2, [r7, #20]
+	orr	r3, r2
+	str	r3, [r7, #20]
+	.loc 2 472 0
+	b	.L60
+.L61:
+	.loc 2 474 0
+	mov	r0, #0
+	bl	DevAssert
+	.loc 2 475 0
+	mov	r8, r8
+.L60:
+	.loc 2 478 0
+	ldr	r3, [r7, #16]
+	ldr	r2, [r7, #20]
+	str	r2, [r3, #24]
+	.loc 2 479 0
+	mov	sp, r7
+	add	sp, sp, #24
+	@ sp needed
+	pop	{r7, pc}
+.L63:
+	.align	2
+.L62:
+	.word	1074036736
+	.cfi_endproc
+.LFE15:
+	.size	ADC_SetTriggerSelect, .-ADC_SetTriggerSelect
+	.section	.text.ADC_GetDMAEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetDMAEnableFlag, %function
+ADC_GetDMAEnableFlag:
+.LFB16:
+	.loc 2 492 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 493 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 494 0
+	ldr	r3, [r7, #12]
+	mov	r2, #4
+	and	r3, r2
+	lsr	r3, r3, #2
+	str	r3, [r7, #12]
+	.loc 2 496 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 497 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE16:
+	.size	ADC_GetDMAEnableFlag, .-ADC_GetDMAEnableFlag
+	.section	.text.ADC_SetDMAEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetDMAEnableFlag, %function
+ADC_SetDMAEnableFlag:
+.LFB17:
+	.loc 2 511 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 2 512 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 513 0
+	ldr	r3, [r7, #12]
+	mov	r2, #4
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 514 0
+	ldr	r3, [r7]
+	cmp	r3, #0
+	beq	.L67
+	.loc 2 514 0 is_stmt 0 discriminator 1
+	mov	r3, #4
+	b	.L68
+.L67:
+	.loc 2 514 0 discriminator 2
+	mov	r3, #0
+.L68:
+	.loc 2 514 0 discriminator 4
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 515 0 is_stmt 1 discriminator 4
+	ldr	r3, [r7, #4]
+	mov	r1, #144
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 516 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE17:
+	.size	ADC_SetDMAEnableFlag, .-ADC_SetDMAEnableFlag
+	.section	.text.ADC_GetVoltageReference,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetVoltageReference, %function
+ADC_GetVoltageReference:
+.LFB18:
+	.loc 2 531 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 532 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 533 0
+	ldr	r3, [r7, #12]
+	mov	r2, #3
+	and	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 536 0
+	ldr	r3, [r7, #12]
+	uxtb	r3, r3
+	.loc 2 537 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE18:
+	.size	ADC_GetVoltageReference, .-ADC_GetVoltageReference
+	.section	.text.ADC_SetVoltageReference,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetVoltageReference, %function
+ADC_SetVoltageReference:
+.LFB19:
+	.loc 2 553 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 554 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 555 0
+	ldr	r3, [r7, #12]
+	mov	r2, #3
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 556 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	mov	r2, #3
+	and	r3, r2
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 557 0
+	ldr	r3, [r7, #4]
+	mov	r1, #144
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 558 0
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE19:
+	.size	ADC_SetVoltageReference, .-ADC_SetVoltageReference
+	.section	.text.ADC_GetContinuousConvFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetContinuousConvFlag, %function
+ADC_GetContinuousConvFlag:
+.LFB20:
+	.loc 2 573 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 574 0
+	ldr	r3, [r7, #4]
+	mov	r2, #148
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 575 0
+	ldr	r3, [r7, #12]
+	mov	r2, #8
+	and	r3, r2
+	lsr	r3, r3, #3
+	str	r3, [r7, #12]
+	.loc 2 577 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 578 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE20:
+	.size	ADC_GetContinuousConvFlag, .-ADC_GetContinuousConvFlag
+	.section	.text.ADC_SetContinuousConvFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetContinuousConvFlag, %function
+ADC_SetContinuousConvFlag:
+.LFB21:
+	.loc 2 594 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 2 595 0
+	ldr	r3, [r7, #4]
+	mov	r2, #148
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 597 0
+	ldr	r3, [r7, #12]
+	mov	r2, #8
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 598 0
+	ldr	r3, [r7]
+	cmp	r3, #0
+	beq	.L75
+	.loc 2 598 0 is_stmt 0 discriminator 1
+	mov	r3, #8
+	b	.L76
+.L75:
+	.loc 2 598 0 discriminator 2
+	mov	r3, #0
+.L76:
+	.loc 2 598 0 discriminator 4
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 599 0 is_stmt 1 discriminator 4
+	ldr	r3, [r7, #4]
+	mov	r1, #148
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 600 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE21:
+	.size	ADC_SetContinuousConvFlag, .-ADC_SetContinuousConvFlag
+	.section	.text.ADC_SetSupplyMonitoringEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetSupplyMonitoringEnableFlag, %function
+ADC_SetSupplyMonitoringEnableFlag:
+.LFB22:
+	.loc 2 614 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 2 615 0
+	ldr	r3, [r7]
+	cmp	r3, #1
+	bne	.L78
+	.loc 2 617 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #4]
+	mov	r2, #128
+	lsl	r2, r2, #12
+	orr	r2, r3
+	ldr	r3, [r7, #4]
+	str	r2, [r3, #4]
+	b	.L77
+.L78:
+	.loc 2 621 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #4]
+	ldr	r2, .L80
+	and	r2, r3
+	ldr	r3, [r7, #4]
+	str	r2, [r3, #4]
+.L77:
+	.loc 2 623 0
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+.L81:
+	.align	2
+.L80:
+	.word	-524289
+	.cfi_endproc
+.LFE22:
+	.size	ADC_SetSupplyMonitoringEnableFlag, .-ADC_SetSupplyMonitoringEnableFlag
+	.section	.text.ADC_GetHwCompareEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetHwCompareEnableFlag, %function
+ADC_GetHwCompareEnableFlag:
+.LFB23:
+	.loc 2 644 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 645 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 646 0
+	ldr	r3, [r7, #12]
+	mov	r2, #32
+	and	r3, r2
+	lsr	r3, r3, #5
+	str	r3, [r7, #12]
+	.loc 2 648 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 649 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE23:
+	.size	ADC_GetHwCompareEnableFlag, .-ADC_GetHwCompareEnableFlag
+	.section	.text.ADC_SetHwCompareEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetHwCompareEnableFlag, %function
+ADC_SetHwCompareEnableFlag:
+.LFB24:
+	.loc 2 663 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 2 664 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 665 0
+	ldr	r3, [r7, #12]
+	mov	r2, #32
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 666 0
+	ldr	r3, [r7]
+	cmp	r3, #0
+	beq	.L85
+	.loc 2 666 0 is_stmt 0 discriminator 1
+	mov	r3, #32
+	b	.L86
+.L85:
+	.loc 2 666 0 discriminator 2
+	mov	r3, #0
+.L86:
+	.loc 2 666 0 discriminator 4
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 667 0 is_stmt 1 discriminator 4
+	ldr	r3, [r7, #4]
+	mov	r1, #144
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 668 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE24:
+	.size	ADC_SetHwCompareEnableFlag, .-ADC_SetHwCompareEnableFlag
+	.section	.text.ADC_GetHwCompareGtEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetHwCompareGtEnableFlag, %function
+ADC_GetHwCompareGtEnableFlag:
+.LFB25:
+	.loc 2 682 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 683 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 684 0
+	ldr	r3, [r7, #12]
+	mov	r2, #16
+	and	r3, r2
+	lsr	r3, r3, #4
+	str	r3, [r7, #12]
+	.loc 2 686 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 687 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE25:
+	.size	ADC_GetHwCompareGtEnableFlag, .-ADC_GetHwCompareGtEnableFlag
+	.section	.text.ADC_SetHwCompareGtEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetHwCompareGtEnableFlag, %function
+ADC_SetHwCompareGtEnableFlag:
+.LFB26:
+	.loc 2 702 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 2 703 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 704 0
+	ldr	r3, [r7, #12]
+	mov	r2, #16
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 705 0
+	ldr	r3, [r7]
+	cmp	r3, #0
+	beq	.L90
+	.loc 2 705 0 is_stmt 0 discriminator 1
+	mov	r3, #16
+	b	.L91
+.L90:
+	.loc 2 705 0 discriminator 2
+	mov	r3, #0
+.L91:
+	.loc 2 705 0 discriminator 4
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 706 0 is_stmt 1 discriminator 4
+	ldr	r3, [r7, #4]
+	mov	r1, #144
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 707 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE26:
+	.size	ADC_SetHwCompareGtEnableFlag, .-ADC_SetHwCompareGtEnableFlag
+	.section	.text.ADC_GetHwCompareRangeEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetHwCompareRangeEnableFlag, %function
+ADC_GetHwCompareRangeEnableFlag:
+.LFB27:
+	.loc 2 721 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 722 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 723 0
+	ldr	r3, [r7, #12]
+	mov	r2, #8
+	and	r3, r2
+	lsr	r3, r3, #3
+	str	r3, [r7, #12]
+	.loc 2 725 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 726 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE27:
+	.size	ADC_GetHwCompareRangeEnableFlag, .-ADC_GetHwCompareRangeEnableFlag
+	.section	.text.ADC_SetHwCompareRangeEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetHwCompareRangeEnableFlag, %function
+ADC_SetHwCompareRangeEnableFlag:
+.LFB28:
+	.loc 2 741 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 2 742 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 743 0
+	ldr	r3, [r7, #12]
+	mov	r2, #8
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 744 0
+	ldr	r3, [r7]
+	cmp	r3, #0
+	beq	.L95
+	.loc 2 744 0 is_stmt 0 discriminator 1
+	mov	r3, #8
+	b	.L96
+.L95:
+	.loc 2 744 0 discriminator 2
+	mov	r3, #0
+.L96:
+	.loc 2 744 0 discriminator 4
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 745 0 is_stmt 1 discriminator 4
+	ldr	r3, [r7, #4]
+	mov	r1, #144
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 746 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE28:
+	.size	ADC_SetHwCompareRangeEnableFlag, .-ADC_SetHwCompareRangeEnableFlag
+	.section	.text.ADC_GetHwCompareComp1Value,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetHwCompareComp1Value, %function
+ADC_GetHwCompareComp1Value:
+.LFB29:
+	.loc 2 761 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 762 0
+	ldr	r3, [r7, #4]
+	mov	r2, #136
+	ldr	r3, [r3, r2]
+	uxth	r3, r3
+	.loc 2 763 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE29:
+	.size	ADC_GetHwCompareComp1Value, .-ADC_GetHwCompareComp1Value
+	.section	.text.ADC_SetHwCompareComp1Value,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetHwCompareComp1Value, %function
+ADC_SetHwCompareComp1Value:
+.LFB30:
+	.loc 2 779 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #2
+	strh	r2, [r3]
+	.loc 2 780 0
+	add	r3, r7, #2
+	ldrh	r2, [r3]
+	ldr	r3, [r7, #4]
+	mov	r1, #136
+	str	r2, [r3, r1]
+	.loc 2 781 0
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE30:
+	.size	ADC_SetHwCompareComp1Value, .-ADC_SetHwCompareComp1Value
+	.section	.text.ADC_GetHwCompareComp2Value,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetHwCompareComp2Value, %function
+ADC_GetHwCompareComp2Value:
+.LFB31:
+	.loc 2 796 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 797 0
+	ldr	r3, [r7, #4]
+	mov	r2, #140
+	ldr	r3, [r3, r2]
+	uxth	r3, r3
+	.loc 2 798 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE31:
+	.size	ADC_GetHwCompareComp2Value, .-ADC_GetHwCompareComp2Value
+	.section	.text.ADC_SetHwCompareComp2Value,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetHwCompareComp2Value, %function
+ADC_SetHwCompareComp2Value:
+.LFB32:
+	.loc 2 814 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #2
+	strh	r2, [r3]
+	.loc 2 815 0
+	add	r3, r7, #2
+	ldrh	r2, [r3]
+	ldr	r3, [r7, #4]
+	mov	r1, #140
+	str	r2, [r3, r1]
+	.loc 2 816 0
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE32:
+	.size	ADC_SetHwCompareComp2Value, .-ADC_SetHwCompareComp2Value
+	.section	.text.ADC_GetHwAverageEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetHwAverageEnableFlag, %function
+ADC_GetHwAverageEnableFlag:
+.LFB33:
+	.loc 2 838 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 839 0
+	ldr	r3, [r7, #4]
+	mov	r2, #148
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 840 0
+	ldr	r3, [r7, #12]
+	mov	r2, #4
+	and	r3, r2
+	lsr	r3, r3, #2
+	str	r3, [r7, #12]
+	.loc 2 842 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 843 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE33:
+	.size	ADC_GetHwAverageEnableFlag, .-ADC_GetHwAverageEnableFlag
+	.section	.text.ADC_SetHwAverageEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetHwAverageEnableFlag, %function
+ADC_SetHwAverageEnableFlag:
+.LFB34:
+	.loc 2 857 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 2 858 0
+	ldr	r3, [r7, #4]
+	mov	r2, #148
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 860 0
+	ldr	r3, [r7, #12]
+	mov	r2, #4
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 861 0
+	ldr	r3, [r7]
+	cmp	r3, #0
+	beq	.L106
+	.loc 2 861 0 is_stmt 0 discriminator 1
+	mov	r3, #4
+	b	.L107
+.L106:
+	.loc 2 861 0 discriminator 2
+	mov	r3, #0
+.L107:
+	.loc 2 861 0 discriminator 4
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 862 0 is_stmt 1 discriminator 4
+	ldr	r3, [r7, #4]
+	mov	r1, #148
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 863 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE34:
+	.size	ADC_SetHwAverageEnableFlag, .-ADC_SetHwAverageEnableFlag
+	.section	.text.ADC_GetHwAverageMode,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetHwAverageMode, %function
+ADC_GetHwAverageMode:
+.LFB35:
+	.loc 2 880 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 881 0
+	ldr	r3, [r7, #4]
+	mov	r2, #148
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 882 0
+	ldr	r3, [r7, #12]
+	mov	r2, #3
+	and	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 885 0
+	ldr	r3, [r7, #12]
+	uxtb	r3, r3
+	.loc 2 886 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE35:
+	.size	ADC_GetHwAverageMode, .-ADC_GetHwAverageMode
+	.section	.text.ADC_SetHwAverageMode,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetHwAverageMode, %function
+ADC_SetHwAverageMode:
+.LFB36:
+	.loc 2 904 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 905 0
+	ldr	r3, [r7, #4]
+	mov	r2, #148
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 907 0
+	ldr	r3, [r7, #12]
+	mov	r2, #3
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 908 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	mov	r2, #3
+	and	r3, r2
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 909 0
+	ldr	r3, [r7, #4]
+	mov	r1, #148
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 910 0
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE36:
+	.size	ADC_SetHwAverageMode, .-ADC_SetHwAverageMode
+	.section	.text.ADC_GetCalibrationActiveFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetCalibrationActiveFlag, %function
+ADC_GetCalibrationActiveFlag:
+.LFB37:
+	.loc 2 931 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 932 0
+	ldr	r3, [r7, #4]
+	mov	r2, #148
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 933 0
+	ldr	r3, [r7, #12]
+	mov	r2, #128
+	and	r3, r2
+	lsr	r3, r3, #7
+	str	r3, [r7, #12]
+	.loc 2 935 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 936 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE37:
+	.size	ADC_GetCalibrationActiveFlag, .-ADC_GetCalibrationActiveFlag
+	.section	.text.ADC_SetCalibrationActiveFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetCalibrationActiveFlag, %function
+ADC_SetCalibrationActiveFlag:
+.LFB38:
+	.loc 2 950 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 2 951 0
+	ldr	r3, [r7, #4]
+	mov	r2, #148
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 952 0
+	ldr	r3, [r7, #12]
+	mov	r2, #128
+	bic	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 953 0
+	ldr	r3, [r7]
+	cmp	r3, #0
+	beq	.L114
+	.loc 2 953 0 is_stmt 0 discriminator 1
+	mov	r3, #128
+	b	.L115
+.L114:
+	.loc 2 953 0 discriminator 2
+	mov	r3, #0
+.L115:
+	.loc 2 953 0 discriminator 4
+	ldr	r2, [r7, #12]
+	orr	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 954 0 is_stmt 1 discriminator 4
+	ldr	r3, [r7, #4]
+	mov	r1, #148
+	ldr	r2, [r7, #12]
+	str	r2, [r3, r1]
+	.loc 2 955 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE38:
+	.size	ADC_SetCalibrationActiveFlag, .-ADC_SetCalibrationActiveFlag
+	.section	.text.ADC_GetUserGainValue,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetUserGainValue, %function
+ADC_GetUserGainValue:
+.LFB39:
+	.loc 2 969 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 970 0
+	ldr	r3, [r7, #4]
+	mov	r2, #176
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 971 0
+	ldr	r3, [r7, #12]
+	lsl	r3, r3, #22
+	lsr	r3, r3, #22
+	str	r3, [r7, #12]
+	.loc 2 973 0
+	ldr	r3, [r7, #12]
+	uxth	r3, r3
+	.loc 2 974 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE39:
+	.size	ADC_GetUserGainValue, .-ADC_GetUserGainValue
+	.section	.text.ADC_SetUserGainValue,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetUserGainValue, %function
+ADC_SetUserGainValue:
+.LFB40:
+	.loc 2 988 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #24
+	.cfi_def_cfa_offset 32
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #2
+	strh	r2, [r3]
+	.loc 2 989 0
+	ldr	r3, [r7, #4]
+	mov	r2, #196
+	ldr	r2, [r3, r2]
+	mov	r3, #20
+	add	r3, r7, r3
+	strh	r2, [r3]
+	.loc 2 990 0
+	ldr	r3, [r7, #4]
+	mov	r2, #192
+	ldr	r2, [r3, r2]
+	mov	r3, #18
+	add	r3, r7, r3
+	strh	r2, [r3]
+	.loc 2 991 0
+	ldr	r3, [r7, #4]
+	mov	r2, #188
+	ldr	r2, [r3, r2]
+	mov	r3, #16
+	add	r3, r7, r3
+	strh	r2, [r3]
+	.loc 2 992 0
+	ldr	r3, [r7, #4]
+	mov	r2, #184
+	ldr	r2, [r3, r2]
+	mov	r3, #14
+	add	r3, r7, r3
+	strh	r2, [r3]
+	.loc 2 993 0
+	ldr	r3, [r7, #4]
+	mov	r2, #180
+	ldr	r2, [r3, r2]
+	mov	r3, #12
+	add	r3, r7, r3
+	strh	r2, [r3]
+	.loc 2 995 0
+	add	r2, r7, #2
+	mov	r3, #20
+	add	r3, r7, r3
+	ldrh	r2, [r2]
+	ldrh	r3, [r3]
+	add	r3, r2, r3
+	uxth	r2, r3
+	mov	r3, #18
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	add	r3, r2, r3
+	uxth	r2, r3
+	mov	r3, #16
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	add	r3, r2, r3
+	uxth	r2, r3
+	mov	r3, #14
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	add	r3, r2, r3
+	uxth	r1, r3
+	mov	r3, #10
+	add	r3, r7, r3
+	mov	r2, #12
+	add	r2, r7, r2
+	ldrh	r2, [r2]
+	add	r2, r1, r2
+	strh	r2, [r3]
+	.loc 2 997 0
+	mov	r3, #22
+	add	r3, r7, r3
+	mov	r2, #10
+	add	r2, r7, r2
+	ldrh	r2, [r2]
+	lsr	r2, r2, #11
+	lsl	r2, r2, #11
+	strh	r2, [r3]
+	.loc 2 998 0
+	mov	r3, #22
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	cmp	r3, #0
+	beq	.L119
+	.loc 2 1000 0
+	mov	r3, #22
+	add	r3, r7, r3
+	mov	r2, #1
+	neg	r2, r2
+	strh	r2, [r3]
+.L119:
+	.loc 2 1003 0
+	add	r3, r7, #2
+	ldrh	r2, [r3]
+	ldr	r3, [r7, #4]
+	mov	r1, #176
+	str	r2, [r3, r1]
+	.loc 2 1004 0
+	mov	r3, #22
+	add	r3, r7, r3
+	ldrh	r2, [r3]
+	ldr	r3, [r7, #4]
+	mov	r1, #172
+	str	r2, [r3, r1]
+	.loc 2 1005 0
+	mov	sp, r7
+	add	sp, sp, #24
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE40:
+	.size	ADC_SetUserGainValue, .-ADC_SetUserGainValue
+	.section	.text.ADC_GetUserOffsetValue,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetUserOffsetValue, %function
+ADC_GetUserOffsetValue:
+.LFB41:
+	.loc 2 1020 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 1021 0
+	ldr	r3, [r7, #4]
+	mov	r2, #160
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 1022 0
+	ldr	r3, [r7, #12]
+	mov	r2, #255
+	and	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 1024 0
+	ldr	r3, [r7, #12]
+	uxth	r3, r3
+	.loc 2 1025 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE41:
+	.size	ADC_GetUserOffsetValue, .-ADC_GetUserOffsetValue
+	.section	.text.ADC_SetUserOffsetValue,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetUserOffsetValue, %function
+ADC_SetUserOffsetValue:
+.LFB42:
+	.loc 2 1041 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #2
+	strh	r2, [r3]
+	.loc 2 1042 0
+	add	r3, r7, #2
+	ldrh	r3, [r3]
+	mov	r2, #255
+	and	r2, r3
+	ldr	r3, [r7, #4]
+	mov	r1, #160
+	str	r2, [r3, r1]
+	.loc 2 1043 0
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE42:
+	.size	ADC_SetUserOffsetValue, .-ADC_SetUserOffsetValue
+	.section	.text.ADC_GetChanInterruptEnableFlag,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetChanInterruptEnableFlag, %function
+ADC_GetChanInterruptEnableFlag:
+.LFB43:
+	.loc 2 1066 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 1074 0
+	add	r3, r7, #3
+	ldrb	r2, [r3]
+	ldr	r3, [r7, #4]
+	lsl	r2, r2, #2
+	ldr	r3, [r2, r3]
+	str	r3, [r7, #12]
+	.loc 2 1075 0
+	ldr	r3, [r7, #12]
+	mov	r2, #64
+	and	r3, r2
+	lsr	r3, r3, #6
+	str	r3, [r7, #12]
+	.loc 2 1078 0
+	ldr	r3, [r7, #12]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	.loc 2 1079 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE43:
+	.size	ADC_GetChanInterruptEnableFlag, .-ADC_GetChanInterruptEnableFlag
+	.section	.text.ADC_GetInputChannel,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetInputChannel, %function
+ADC_GetInputChannel:
+.LFB44:
+	.loc 2 1093 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 2 1098 0
+	add	r3, r7, #3
+	ldrb	r2, [r3]
+	ldr	r3, [r7, #4]
+	lsl	r2, r2, #2
+	ldr	r3, [r2, r3]
+	str	r3, [r7, #12]
+	.loc 2 1099 0
+	ldr	r3, [r7, #12]
+	mov	r2, #31
+	and	r3, r2
+	str	r3, [r7, #12]
+	.loc 2 1103 0
+	ldr	r3, [r7, #12]
+	uxth	r3, r3
+	.loc 2 1104 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE44:
+	.size	ADC_GetInputChannel, .-ADC_GetInputChannel
+	.section	.text.ADC_SetInputChannel,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_SetInputChannel, %function
+ADC_SetInputChannel:
+.LFB45:
+	.loc 2 1124 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #32
+	.cfi_def_cfa_offset 40
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #12]
+	mov	r0, r1
+	mov	r1, r2
+	str	r3, [r7, #4]
+	mov	r3, #11
+	add	r3, r7, r3
+	add	r2, r0, #0
+	strb	r2, [r3]
+	mov	r3, #8
+	add	r3, r7, r3
+	add	r2, r1, #0
+	strh	r2, [r3]
+	.loc 2 1128 0
+	mov	r3, #8
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	ldr	r2, .L132
+	cmp	r3, r2
+	bls	.L128
+	.loc 2 1128 0 is_stmt 0 discriminator 1
+	mov	r3, #8
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	ldr	r2, .L132+4
+	cmp	r3, r2
+	bhi	.L128
+.LBB2:
+	.loc 2 1130 0 is_stmt 1
+	mov	r3, #8
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	ldr	r2, .L132+8
+	mov	ip, r2
+	add	r3, r3, ip
+	str	r3, [r7, #24]
+	.loc 2 1132 0
+	ldr	r3, .L132+12
+	str	r3, [r7, #20]
+	.loc 2 1133 0
+	ldr	r3, [r7, #20]
+	ldr	r3, [r3, #4]
+	ldr	r2, .L132+16
+	and	r2, r3
+	ldr	r3, [r7, #20]
+	str	r2, [r3, #4]
+	.loc 2 1134 0
+	ldr	r3, [r7, #20]
+	ldr	r2, [r3, #4]
+	ldr	r3, [r7, #24]
+	lsl	r1, r3, #16
+	mov	r3, #224
+	lsl	r3, r3, #11
+	and	r3, r1
+	orr	r2, r3
+	ldr	r3, [r7, #20]
+	str	r2, [r3, #4]
+	.loc 2 1136 0
+	mov	r3, #30
+	add	r3, r7, r3
+	mov	r2, #21
+	strh	r2, [r3]
+.LBE2:
+	.loc 2 1129 0
+	b	.L129
+.L128:
+	.loc 2 1140 0
+	mov	r3, #30
+	add	r3, r7, r3
+	mov	r2, #8
+	add	r2, r7, r2
+	ldrh	r2, [r2]
+	strh	r2, [r3]
+.L129:
+	.loc 2 1151 0
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	ldr	r3, [r7, #12]
+	lsl	r2, r2, #2
+	ldr	r3, [r2, r3]
+	str	r3, [r7, #16]
+	.loc 2 1152 0
+	ldr	r3, [r7, #16]
+	mov	r2, #31
+	bic	r3, r2
+	str	r3, [r7, #16]
+	.loc 2 1153 0
+	mov	r3, #30
+	add	r3, r7, r3
+	ldrh	r3, [r3]
+	mov	r2, #31
+	and	r3, r2
+	ldr	r2, [r7, #16]
+	orr	r3, r2
+	str	r3, [r7, #16]
+	.loc 2 1154 0
+	ldr	r3, [r7, #16]
+	mov	r2, #64
+	bic	r3, r2
+	str	r3, [r7, #16]
+	.loc 2 1155 0
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	beq	.L130
+	.loc 2 1155 0 is_stmt 0 discriminator 1
+	mov	r3, #64
+	b	.L131
+.L130:
+	.loc 2 1155 0 discriminator 2
+	mov	r3, #0
+.L131:
+	.loc 2 1155 0 discriminator 4
+	ldr	r2, [r7, #16]
+	orr	r3, r2
+	str	r3, [r7, #16]
+	.loc 2 1156 0 is_stmt 1 discriminator 4
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	ldr	r3, [r7, #12]
+	lsl	r2, r2, #2
+	ldr	r1, [r7, #16]
+	str	r1, [r2, r3]
+	.loc 2 1159 0 discriminator 4
+	mov	sp, r7
+	add	sp, sp, #32
+	@ sp needed
+	pop	{r7, pc}
+.L133:
+	.align	2
+.L132:
+	.word	3839
+	.word	3845
+	.word	-3840
+	.word	1074036736
+	.word	-458753
+	.cfi_endproc
+.LFE45:
+	.size	ADC_SetInputChannel, .-ADC_SetInputChannel
+	.section	.text.ADC_ClearLatchTriggers,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_ClearLatchTriggers, %function
+ADC_ClearLatchTriggers:
+.LFB46:
+	.loc 2 1178 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 1179 0
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #64]
+	mov	r2, #128
+	lsl	r2, r2, #1
+	orr	r2, r3
+	ldr	r3, [r7, #4]
+	str	r2, [r3, #64]
+	.loc 2 1180 0
+	mov	sp, r7
+	add	sp, sp, #8
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE46:
+	.size	ADC_ClearLatchTriggers, .-ADC_ClearLatchTriggers
+	.section	.text.ADC_GetTriggerLatchFlags,"ax",%progbits
+	.align	2
+	.code	16
+	.thumb_func
+	.type	ADC_GetTriggerLatchFlags, %function
+ADC_GetTriggerLatchFlags:
+.LFB47:
+	.loc 2 1191 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 2 1192 0
+	ldr	r3, [r7, #4]
+	mov	r2, #144
+	ldr	r3, [r3, r2]
+	str	r3, [r7, #12]
+	.loc 2 1193 0
+	ldr	r2, [r7, #12]
+	mov	r3, #240
+	lsl	r3, r3, #12
+	and	r3, r2
+	lsr	r3, r3, #16
+	str	r3, [r7, #12]
+	.loc 2 1195 0
+	ldr	r3, [r7, #12]
+	.loc 2 1196 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+	.cfi_endproc
+.LFE47:
+	.size	ADC_GetTriggerLatchFlags, .-ADC_GetTriggerLatchFlags
+	.section	.rodata.s_adcBase,"a",%progbits
+	.align	2
+	.type	s_adcBase, %object
+	.size	s_adcBase, 4
+s_adcBase:
+	.word	1073983488
 	.section	.text.ADC_DRV_InitConverterStruct,"ax",%progbits
 	.align	2
 	.global	ADC_DRV_InitConverterStruct
@@ -92,49 +2675,71 @@ ADC_DRV_InitConverterStruct:
 	.file 3 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/adc/adc_driver.c"
 	.loc 3 60 0
 	.cfi_startproc
-.LVL8:
-.LBB215:
-.LBB216:
-	.loc 2 72 0
-	cmp	r0, #0
-	bne	.L13
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L14:
-	b	.L14
-.L13:
-.LBE216:
-.LBE215:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 61 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 63 0
-	mov	r3, #0
-	strb	r3, [r0]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strb	r2, [r3]
 	.loc 3 64 0
+	ldr	r3, [r7, #4]
 	mov	r2, #12
-	strb	r2, [r0, #1]
+	strb	r2, [r3, #1]
 	.loc 3 65 0
-	strb	r3, [r0, #2]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strb	r2, [r3, #2]
 	.loc 3 66 0
-	strb	r3, [r0, #3]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strb	r2, [r3, #3]
 	.loc 3 67 0
-	strb	r3, [r0, #4]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strb	r2, [r3, #4]
 	.loc 3 68 0
-	strb	r3, [r0, #5]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strb	r2, [r3, #5]
 	.loc 3 69 0
-	strb	r3, [r0, #6]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strb	r2, [r3, #6]
 	.loc 3 70 0
-	str	r3, [r0, #8]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	str	r2, [r3, #8]
 	.loc 3 71 0
-	strb	r3, [r0, #12]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strb	r2, [r3, #12]
 	.loc 3 72 0
-	str	r3, [r0, #16]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	str	r2, [r3, #16]
 	.loc 3 73 0
-	str	r3, [r0, #20]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	str	r2, [r3, #20]
 	.loc 3 74 0
+	mov	sp, r7
+	add	sp, sp, #8
 	@ sp needed
-	bx	lr
+	pop	{r7, pc}
 	.cfi_endproc
 .LFE48:
 	.size	ADC_DRV_InitConverterStruct, .-ADC_DRV_InitConverterStruct
@@ -148,466 +2753,158 @@ ADC_DRV_ConfigConverter:
 .LFB49:
 	.loc 3 86 0
 	.cfi_startproc
-.LVL9:
-	push	{r4, r5, r6, r7, lr}
-	.cfi_def_cfa_offset 20
-	.cfi_offset 4, -20
-	.cfi_offset 5, -16
-	.cfi_offset 6, -12
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
 	.loc 3 87 0
-	neg	r4, r0
-	adc	r4, r4, r0
-	uxtb	r4, r4
-.LVL10:
-.LBB252:
-.LBB253:
-	.loc 2 72 0
-	cmp	r4, #0
-	bne	.L16
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L17:
-	b	.L17
-.L16:
-.LVL11:
-.LBE253:
-.LBE252:
-.LBB254:
-.LBB255:
-	cmp	r1, #0
-	bne	.L18
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L19:
-	b	.L19
-.L18:
-.LBE255:
-.LBE254:
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 88 0
+	ldr	r3, [r7]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 90 0
-	ldrb	r3, [r1, #3]
-.LVL12:
-.LBB256:
-.LBB257:
-	.loc 2 72 0
-	cmp	r3, #0
-	beq	.L20
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L21:
-	b	.L21
-.L20:
-.LVL13:
-.LBE257:
-.LBE256:
-.LBB258:
-.LBB259:
-	.loc 1 125 0
-	ldr	r5, .L45
-	ldr	r3, [r5, #64]
-.LVL14:
-	.loc 1 126 0
-	mov	r6, #96
-	bic	r3, r6
-.LVL15:
-	mov	r2, r3
-.LVL16:
-	.loc 1 127 0
-	ldrb	r3, [r1]
-	lsl	r3, r3, #5
-	and	r3, r6
-	orr	r3, r2
-.LVL17:
-	.loc 1 128 0
-	str	r3, [r5, #64]
-.LVL18:
-.LBE259:
-.LBE258:
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #3]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 92 0
+	ldr	r3, .L143
+	str	r3, [r7, #12]
+	.loc 3 93 0
+	ldr	r3, [r7]
+	ldrb	r3, [r3]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetClockDivide
 	.loc 3 94 0
-	ldrb	r5, [r1, #1]
-.LVL19:
-.LBB260:
-.LBB261:
-	.loc 1 166 0
-	cmp	r5, #0
-	bne	.L22
-	add	r5, r5, #1
-.LVL20:
-.L22:
-	.loc 1 167 0
-	ldr	r3, .L45
-.LVL21:
-	ldr	r2, [r3, #68]
-.LVL22:
-	.loc 1 168 0
-	mov	r6, #255
-	bic	r2, r6
-.LVL23:
-	.loc 1 169 0
-	orr	r2, r5
-.LVL24:
-	.loc 1 170 0
-	str	r2, [r3, #68]
-.LVL25:
-.LBE261:
-.LBE260:
-.LBB262:
-.LBB263:
-	.loc 1 224 0
-	ldr	r2, [r3, #64]
-.LVL26:
-	.loc 1 225 0
-	sub	r6, r6, #243
-	bic	r2, r6
-.LVL27:
-	mov	r5, r2
-.LVL28:
-	.loc 1 226 0
-	ldrb	r2, [r1, #2]
-.LVL29:
-	lsl	r2, r2, #2
-	and	r2, r6
-	orr	r2, r5
-.LVL30:
-	.loc 1 227 0
-	str	r2, [r3, #64]
-.LVL31:
-.LBE263:
-.LBE262:
-.LBB264:
-.LBB265:
-	.loc 1 268 0
-	ldr	r2, [r3, #64]
-.LVL32:
-	.loc 1 269 0
-	mov	r5, #3
-	bic	r2, r5
-.LVL33:
-	mov	r5, r2
-.LVL34:
-	.loc 1 270 0
-	ldrb	r2, [r1, #3]
-.LVL35:
-	sub	r6, r6, #9
-	and	r2, r6
-	orr	r2, r5
-.LVL36:
-	.loc 1 271 0
-	str	r2, [r3, #64]
-.LVL37:
-.LBE265:
-.LBE264:
-.LBB266:
-.LBB267:
-	.loc 1 315 0
-	add	r6, r6, #141
-	ldr	r2, [r3, r6]
-.LVL38:
-	.loc 1 316 0
-	mov	r7, #64
-	bic	r2, r7
-.LVL39:
-	mov	r5, r2
-.LVL40:
-	.loc 1 317 0
-	ldrb	r2, [r1, #4]
-.LVL41:
-	lsl	r2, r2, #6
-	and	r2, r7
-	orr	r2, r5
-.LVL42:
-	.loc 1 318 0
-	str	r2, [r3, r6]
-.LVL43:
-.LBE267:
-.LBE266:
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #1]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetSampleTime
+	.loc 3 95 0
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #2]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetResolution
+	.loc 3 96 0
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #3]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetInputClock
+	.loc 3 97 0
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #4]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetTriggerMode
 	.loc 3 98 0
-	ldrb	r2, [r1, #5]
-.LVL44:
-.LBB268:
-.LBB269:
-	.loc 1 386 0
-	ldr	r3, .L45+4
-.LVL45:
-	ldr	r3, [r3, #24]
-	mov	r5, #48
-	bic	r3, r5
-.LVL46:
-	.loc 1 388 0
-	cmp	r0, #0
-	beq	.L24
-	cmp	r0, #1
-	beq	.L25
-	b	.L44
-.L24:
-	.loc 1 391 0
-	lsl	r2, r2, #4
-.LVL47:
-	mov	r0, #48
-.LVL48:
-	and	r2, r0
-	orr	r3, r2
-.LVL49:
-	.loc 1 401 0
-	ldr	r0, .L45+4
-	str	r3, [r0, #24]
-.LVL50:
-.LBE269:
-.LBE268:
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #5]
+	ldr	r2, [r7, #4]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetPretriggerSelect
 	.loc 3 99 0
-	ldrb	r2, [r1, #6]
-.LVL51:
-.LBB274:
-.LBB275:
-	.loc 1 463 0
-	ldr	r3, [r0, #24]
-.LVL52:
-	mov	r0, #1
-.LVL53:
-	bic	r3, r0
-.LVL54:
-	.loc 1 468 0
-	and	r2, r0
-.LVL55:
-	orr	r3, r2
-.LVL56:
-	b	.L31
-.LVL57:
-.L25:
-.LBE275:
-.LBE274:
-.LBB278:
-.LBB272:
-	.loc 1 394 0
-	lsl	r2, r2, #12
-.LVL58:
-	mov	r0, #192
-.LVL59:
-	lsl	r0, r0, #6
-	and	r2, r0
-	orr	r3, r2
-.LVL60:
-	.loc 1 401 0
-	ldr	r0, .L45+4
-	str	r3, [r0, #24]
-.LVL61:
-.LBE272:
-.LBE278:
-	.loc 3 99 0
-	ldrb	r2, [r1, #6]
-.LVL62:
-.LBB279:
-.LBB276:
-	.loc 1 463 0
-	ldr	r3, [r0, #24]
-.LVL63:
-	mov	r0, #1
-.LVL64:
-	bic	r3, r0
-.LVL65:
-	.loc 1 471 0
-	lsl	r2, r2, #8
-.LVL66:
-	add	r0, r0, #255
-	and	r2, r0
-	orr	r3, r2
-.LVL67:
-	b	.L31
-.LVL68:
-.L44:
-.LBE276:
-.LBE279:
-.LBB280:
-.LBB273:
-.LBB270:
-.LBB271:
-	.loc 2 72 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L29:
-	b	.L29
-.LVL69:
-.L31:
-.LBE271:
-.LBE270:
-.LBE273:
-.LBE280:
-.LBB281:
-.LBB277:
-	.loc 1 478 0
-	ldr	r2, .L45+4
-	str	r3, [r2, #24]
-.LVL70:
-.LBE277:
-.LBE281:
-.LBB282:
-.LBB283:
-	.loc 1 512 0
-	mov	r3, #144
-.LVL71:
-	ldr	r2, .L45
-.LVL72:
-	ldr	r3, [r2, r3]
-.LVL73:
-	.loc 1 513 0
-	mov	r2, #4
-	bic	r3, r2
-.LVL74:
-	mov	r2, r3
-.LVL75:
-	.loc 1 514 0
-	ldr	r3, [r1, #8]
-	sub	r0, r3, #1
-	sbc	r3, r3, r0
-	lsl	r3, r3, #2
-	orr	r3, r2
-.LVL76:
-	.loc 1 515 0
-	ldr	r0, .L45
-	mov	r5, #144
-	str	r3, [r0, r5]
-.LVL77:
-.LBE283:
-.LBE282:
-.LBB284:
-.LBB285:
-	.loc 1 554 0
-	ldr	r3, [r0, r5]
-.LVL78:
-	.loc 1 555 0
-	mov	r2, #3
-	bic	r3, r2
-.LVL79:
-	mov	r2, r3
-.LVL80:
-	.loc 1 556 0
-	ldrb	r3, [r1, #12]
-	mov	r6, #3
-	and	r3, r6
-	orr	r3, r2
-.LVL81:
-	.loc 1 557 0
-	str	r3, [r0, r5]
-.LVL82:
-.LBE285:
-.LBE284:
-.LBB286:
-.LBB287:
-	.loc 1 595 0
-	mov	r3, #148
-.LVL83:
-	ldr	r3, [r0, r3]
-.LVL84:
-	.loc 1 597 0
-	mov	r2, #8
-	bic	r3, r2
-.LVL85:
-	mov	r2, r3
-.LVL86:
-	.loc 1 598 0
-	ldr	r3, [r1, #16]
-	sub	r0, r3, #1
-	sbc	r3, r3, r0
-.LVL87:
-	lsl	r3, r3, #3
-	orr	r3, r2
-.LVL88:
-	.loc 1 599 0
-	mov	r2, #148
-	ldr	r0, .L45
-.LVL89:
-	str	r3, [r0, r2]
-.LVL90:
-.LBE287:
-.LBE286:
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #6]
+	ldr	r2, [r7, #4]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetTriggerSelect
+	.loc 3 100 0
+	ldr	r3, [r7]
+	ldr	r3, [r3, #8]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetDMAEnableFlag
+	.loc 3 101 0
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #12]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetVoltageReference
+	.loc 3 102 0
+	ldr	r3, [r7]
+	ldr	r3, [r3, #16]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetContinuousConvFlag
 	.loc 3 105 0
-	ldr	r3, [r1, #20]
-.LVL91:
-	sub	r2, r2, #147
-.LVL92:
+	ldr	r3, [r7]
+	ldr	r3, [r3, #20]
 	cmp	r3, #0
-	beq	.L35
+	beq	.L139
 	.loc 3 105 0 is_stmt 0 discriminator 2
-	mov	r2, r4
-.L35:
-.LVL93:
-.LBB288:
-.LBB289:
-	.loc 2 72 0 is_stmt 1 discriminator 6
-	cmp	r2, #0
-	bne	.L36
-	.loc 2 72 0 is_stmt 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L37:
-	b	.L37
-.L36:
-.LBE289:
-.LBE288:
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	bne	.L140
+.L139:
+	.loc 3 105 0 discriminator 3
+	mov	r3, #1
+	b	.L141
+.L140:
+	.loc 3 105 0 discriminator 4
+	mov	r3, #0
+.L141:
+	.loc 3 105 0 discriminator 6
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 106 0 is_stmt 1 discriminator 6
-	cmp	r4, #0
-	beq	.L15
-.LVL94:
-.LBB290:
-.LBB291:
-.LBB292:
-	.loc 1 615 0
-	cmp	r3, #1
-	bne	.L39
-	.loc 1 617 0
-	ldr	r2, .L45+4
-.LVL95:
-	ldr	r3, [r2, #4]
-.LVL96:
-	mov	r1, #128
-.LVL97:
-	lsl	r1, r1, #12
-	orr	r3, r1
-	str	r3, [r2, #4]
-.LVL98:
-	b	.L15
-.LVL99:
-.L39:
-	.loc 1 621 0
-	ldr	r2, .L45+4
-.LVL100:
-	ldr	r1, [r2, #4]
-.LVL101:
-	ldr	r3, .L45+8
-.LVL102:
-	and	r3, r1
-	str	r3, [r2, #4]
-.LVL103:
-.L15:
-.LBE292:
-.LBE291:
-.LBE290:
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	bne	.L138
+.LBB3:
+	.loc 3 108 0
+	ldr	r3, .L143+4
+	str	r3, [r7, #8]
+	.loc 3 109 0
+	ldr	r3, [r7]
+	ldr	r3, [r3, #20]
+	ldr	r2, [r7, #8]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetSupplyMonitoringEnableFlag
+.L138:
+.LBE3:
 	.loc 3 111 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-.LVL104:
-	pop	{r4, r5, r6, r7, pc}
-.L46:
+	pop	{r7, pc}
+.L144:
 	.align	2
-.L45:
+.L143:
 	.word	1073983488
 	.word	1074036736
-	.word	-524289
 	.cfi_endproc
 .LFE49:
 	.size	ADC_DRV_ConfigConverter, .-ADC_DRV_ConfigConverter
@@ -621,252 +2918,326 @@ ADC_DRV_GetConverterConfig:
 .LFB50:
 	.loc 3 123 0
 	.cfi_startproc
-.LVL105:
-	push	{r3, r4, r5, lr}
-	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
-	.cfi_offset 4, -12
-	.cfi_offset 5, -8
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
 	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
 	.loc 3 124 0
-	neg	r5, r0
-	adc	r5, r5, r0
-	uxtb	r5, r5
-.LVL106:
-.LBB293:
-.LBB294:
-	.loc 2 72 0
-	cmp	r5, #0
-	bne	.L48
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L49:
-	b	.L49
-.L48:
-.LVL107:
-.LBE294:
-.LBE293:
-.LBB295:
-.LBB296:
-	cmp	r1, #0
-	bne	.L50
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L51:
-	b	.L51
-.L50:
-.LVL108:
-.LBE296:
-.LBE295:
-.LBB297:
-.LBB298:
-	.loc 1 103 0
-	ldr	r2, .L65
-	ldr	r3, [r2, #64]
-.LVL109:
-	.loc 1 104 0
-	lsl	r3, r3, #25
-.LVL110:
-	lsr	r3, r3, #30
-.LBE298:
-.LBE297:
-	.loc 3 128 0
-	strb	r3, [r1]
-.LVL111:
-.LBB299:
-.LBB300:
-	.loc 1 144 0
-	ldr	r3, [r2, #68]
-.LVL112:
-.LBE300:
-.LBE299:
-	.loc 3 129 0
-	strb	r3, [r1, #1]
-.LVL113:
-.LBB301:
-.LBB302:
-	.loc 1 187 0
-	ldr	r3, [r2, #64]
-.LVL114:
-	.loc 1 188 0
-	lsl	r3, r3, #28
-.LVL115:
-	lsr	r3, r3, #30
-	.loc 1 191 0
-	cmp	r3, #1
-	beq	.L53
-	.loc 1 194 0
-	sub	r3, r3, #2
+	ldr	r3, [r7, #4]
 	neg	r2, r3
 	adc	r3, r3, r2
-	lsl	r3, r3, #1
-	b	.L52
-.L53:
-	.loc 1 197 0
-	mov	r3, #1
-.L52:
-.LVL116:
-.LBE302:
-.LBE301:
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 125 0
+	ldr	r3, [r7]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 127 0
+	ldr	r3, .L148
+	str	r3, [r7, #12]
+	.loc 3 128 0
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetClockDivide
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3]
+	.loc 3 129 0
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetSampleTime
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3, #1]
 	.loc 3 130 0
-	strb	r3, [r1, #2]
-.LVL117:
-.LBB303:
-.LBB304:
-	.loc 1 245 0
-	ldr	r2, .L65
-	ldr	r3, [r2, #64]
-.LVL118:
-	.loc 1 246 0
-	mov	r4, #3
-	and	r3, r4
-.LVL119:
-.LBE304:
-.LBE303:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetResolution
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3, #2]
 	.loc 3 131 0
-	strb	r3, [r1, #3]
-.LVL120:
-.LBB305:
-.LBB306:
-	.loc 1 291 0
-	mov	r3, #144
-.LVL121:
-	ldr	r3, [r2, r3]
-.LVL122:
-	.loc 1 292 0
-	lsl	r3, r3, #25
-.LVL123:
-	lsr	r3, r3, #31
-.LBE306:
-.LBE305:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetInputClock
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3, #3]
 	.loc 3 132 0
-	strb	r3, [r1, #4]
-.LVL124:
-.LBB307:
-.LBB308:
-	.loc 1 427 0
-	ldr	r3, .L65+4
-	ldr	r3, [r3, #24]
-.LVL125:
-	mov	r2, #1
-	and	r3, r2
-.LVL126:
-	.loc 1 428 0
-	beq	.L62
-	cmp	r3, #1
-	beq	.L56
-.LBB309:
-.LBB310:
-	.loc 2 72 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L58:
-	b	.L58
-.L62:
-.LBE310:
-.LBE309:
-	.loc 1 431 0
-	mov	r3, #0
-.LVL127:
-.L56:
-	mov	r4, r1
-.LVL128:
-.LBE308:
-.LBE307:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetTriggerMode
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3, #4]
 	.loc 3 133 0
-	strb	r3, [r1, #6]
+	ldr	r3, [r7, #4]
+	mov	r0, r3
+	bl	ADC_GetTriggerSelect
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3, #6]
 	.loc 3 134 0
+	ldr	r3, [r7, #4]
+	mov	r0, r3
 	bl	ADC_GetPretriggerSelect
-.LVL129:
-	strb	r0, [r4, #5]
-.LVL130:
-.LBB311:
-.LBB312:
-	.loc 1 493 0
-	ldr	r2, .L65
-	mov	r1, #144
-	ldr	r3, [r2, r1]
-.LVL131:
-	.loc 1 494 0
-	lsl	r3, r3, #29
-.LVL132:
-	.loc 1 496 0
-	lsr	r3, r3, #31
-.LBE312:
-.LBE311:
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3, #5]
 	.loc 3 135 0
-	str	r3, [r4, #8]
-.LVL133:
-.LBB313:
-.LBB314:
-	.loc 1 532 0
-	ldr	r3, [r2, r1]
-.LVL134:
-	.loc 1 533 0
-	sub	r1, r1, #141
-	and	r3, r1
-.LVL135:
-.LBE314:
-.LBE313:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetDMAEnableFlag
+	mov	r2, r0
+	ldr	r3, [r7]
+	str	r2, [r3, #8]
 	.loc 3 136 0
-	strb	r3, [r4, #12]
-.LVL136:
-.LBB315:
-.LBB316:
-	.loc 1 574 0
-	mov	r3, #148
-	ldr	r3, [r2, r3]
-.LVL137:
-	.loc 1 575 0
-	lsl	r3, r3, #28
-.LVL138:
-	.loc 1 577 0
-	lsr	r3, r3, #31
-.LBE316:
-.LBE315:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetVoltageReference
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3, #12]
 	.loc 3 137 0
-	str	r3, [r4, #16]
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetContinuousConvFlag
+	mov	r2, r0
+	ldr	r3, [r7]
+	str	r2, [r3, #16]
 	.loc 3 140 0
-	cmp	r5, #0
-	beq	.L59
-.LVL139:
-.LBB317:
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	bne	.L146
+.LBB4:
+	.loc 3 142 0
+	ldr	r3, .L148+4
+	str	r3, [r7, #8]
 	.loc 3 143 0
-	ldr	r3, .L65+4
-	ldr	r3, [r3, #4]
+	ldr	r3, [r7, #8]
+	ldr	r2, [r3, #4]
+	mov	r3, #128
 	lsl	r3, r3, #12
-	lsr	r3, r3, #31
-	str	r3, [r4, #20]
-.LBE317:
-	b	.L47
-.LVL140:
-.L59:
+	and	r3, r2
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r2, r3
+	ldr	r3, [r7]
+	str	r2, [r3, #20]
+.LBE4:
+	b	.L145
+.L146:
 	.loc 3 147 0
-	mov	r3, #0
-	str	r3, [r4, #20]
-.L47:
+	ldr	r3, [r7]
+	mov	r2, #0
+	str	r2, [r3, #20]
+.L145:
 	.loc 3 149 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-.LVL141:
-.LVL142:
-	pop	{r3, r4, r5, pc}
-.L66:
+	pop	{r7, pc}
+.L149:
 	.align	2
-.L65:
+.L148:
 	.word	1073983488
 	.word	1074036736
 	.cfi_endproc
 .LFE50:
 	.size	ADC_DRV_GetConverterConfig, .-ADC_DRV_GetConverterConfig
+	.section	.text.ADC_DRV_Reset,"ax",%progbits
+	.align	2
+	.global	ADC_DRV_Reset
+	.code	16
+	.thumb_func
+	.type	ADC_DRV_Reset, %function
+ADC_DRV_Reset:
+.LFB51:
+	.loc 3 160 0
+	.cfi_startproc
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #24
+	.cfi_def_cfa_offset 32
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 161 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 163 0
+	ldr	r3, .L156
+	str	r3, [r7, #16]
+	.loc 3 164 0
+	mov	r3, #23
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	.loc 3 166 0
+	mov	r3, #23
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	b	.L151
+.L152:
+	.loc 3 168 0 discriminator 3
+	mov	r3, #23
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	ldr	r3, [r7, #16]
+	lsl	r2, r2, #2
+	mov	r1, #31
+	str	r1, [r2, r3]
+	.loc 3 166 0 discriminator 3
+	mov	r3, #23
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	mov	r3, #23
+	add	r3, r7, r3
+	add	r2, r2, #1
+	strb	r2, [r3]
+.L151:
+	.loc 3 166 0 is_stmt 0 discriminator 1
+	mov	r3, #23
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	cmp	r3, #15
+	bls	.L152
+	.loc 3 171 0 is_stmt 1
+	ldr	r3, [r7, #16]
+	mov	r2, #0
+	str	r2, [r3, #64]
+	.loc 3 172 0
+	ldr	r3, [r7, #16]
+	mov	r2, #12
+	str	r2, [r3, #68]
+	.loc 3 174 0
+	mov	r3, #23
+	add	r3, r7, r3
+	mov	r2, #0
+	strb	r2, [r3]
+	b	.L153
+.L154:
+	.loc 3 176 0 discriminator 3
+	mov	r3, #23
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	ldr	r3, [r7, #16]
+	add	r2, r2, #34
+	lsl	r2, r2, #2
+	mov	r1, #0
+	str	r1, [r2, r3]
+	.loc 3 174 0 discriminator 3
+	mov	r3, #23
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	mov	r3, #23
+	add	r3, r7, r3
+	add	r2, r2, #1
+	strb	r2, [r3]
+.L153:
+	.loc 3 174 0 is_stmt 0 discriminator 1
+	mov	r3, #23
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	cmp	r3, #1
+	bls	.L154
+	.loc 3 179 0 is_stmt 1
+	ldr	r3, [r7, #16]
+	mov	r2, #144
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 181 0
+	ldr	r3, [r7, #16]
+	mov	r2, #148
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 182 0
+	ldr	r3, [r7, #16]
+	mov	r2, #160
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 183 0
+	ldr	r3, [r7, #16]
+	mov	r2, #176
+	mov	r1, #4
+	str	r1, [r3, r2]
+	.loc 3 192 0
+	ldr	r3, [r7, #4]
+	mov	r0, r3
+	mov	r1, #0
+	bl	ADC_SetPretriggerSelect
+	.loc 3 193 0
+	ldr	r3, [r7, #4]
+	mov	r0, r3
+	mov	r1, #0
+	bl	ADC_SetTriggerSelect
+	.loc 3 194 0
+	ldr	r3, [r7, #4]
+	mov	r0, r3
+	mov	r1, #0
+	bl	ADC_DRV_SetSwPretrigger
+	.loc 3 197 0
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	bne	.L150
+.LBB5:
+	.loc 3 199 0
+	ldr	r3, .L156+4
+	str	r3, [r7, #12]
+	.loc 3 200 0
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	mov	r1, #0
+	bl	ADC_SetSupplyMonitoringEnableFlag
+	.loc 3 202 0
+	ldr	r3, [r7, #12]
+	ldr	r3, [r3, #4]
+	ldr	r2, .L156+8
+	and	r2, r3
+	ldr	r3, [r7, #12]
+	str	r2, [r3, #4]
+.L150:
+.LBE5:
+	.loc 3 204 0
+	mov	sp, r7
+	add	sp, sp, #24
+	@ sp needed
+	pop	{r7, pc}
+.L157:
+	.align	2
+.L156:
+	.word	1073983488
+	.word	1074036736
+	.word	-458753
+	.cfi_endproc
+.LFE51:
+	.size	ADC_DRV_Reset, .-ADC_DRV_Reset
 	.section	.text.ADC_DRV_InitHwCompareStruct,"ax",%progbits
 	.align	2
 	.global	ADC_DRV_InitHwCompareStruct
@@ -877,36 +3248,47 @@ ADC_DRV_InitHwCompareStruct:
 .LFB52:
 	.loc 3 218 0
 	.cfi_startproc
-.LVL143:
-.LBB318:
-.LBB319:
-	.loc 2 72 0
-	cmp	r0, #0
-	bne	.L68
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L69:
-	b	.L69
-.L68:
-.LBE319:
-.LBE318:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 219 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 221 0
-	mov	r3, #0
-	str	r3, [r0]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	str	r2, [r3]
 	.loc 3 222 0
-	str	r3, [r0, #4]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	str	r2, [r3, #4]
 	.loc 3 223 0
-	str	r3, [r0, #8]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	str	r2, [r3, #8]
 	.loc 3 224 0
-	strh	r3, [r0, #12]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strh	r2, [r3, #12]
 	.loc 3 225 0
-	strh	r3, [r0, #14]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strh	r2, [r3, #14]
 	.loc 3 226 0
+	mov	sp, r7
+	add	sp, sp, #8
 	@ sp needed
-	bx	lr
+	pop	{r7, pc}
 	.cfi_endproc
 .LFE52:
 	.size	ADC_DRV_InitHwCompareStruct, .-ADC_DRV_InitHwCompareStruct
@@ -920,149 +3302,76 @@ ADC_DRV_ConfigHwCompare:
 .LFB53:
 	.loc 3 238 0
 	.cfi_startproc
-.LVL144:
-.LBB320:
-.LBB321:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L71
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L72:
-	b	.L72
-.L71:
-.LVL145:
-.LBE321:
-.LBE320:
-.LBB322:
-.LBB323:
-	cmp	r1, #0
-	bne	.L73
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L74:
-	b	.L74
-.L73:
-.LVL146:
-.LBE323:
-.LBE322:
-.LBB324:
-.LBB325:
-	.loc 1 664 0
-	mov	r3, #144
-	ldr	r2, .L81
-	ldr	r3, [r2, r3]
-.LVL147:
-	.loc 1 665 0
-	mov	r2, #32
-	bic	r3, r2
-.LVL148:
-	mov	r2, r3
-.LVL149:
-	.loc 1 666 0
-	ldr	r3, [r1]
-	sub	r0, r3, #1
-	sbc	r3, r3, r0
-.LVL150:
-	lsl	r3, r3, #5
-	orr	r3, r2
-.LVL151:
-	.loc 1 667 0
-	ldr	r0, .L81
-	mov	r2, #144
-	str	r3, [r0, r2]
-.LVL152:
-.LBE325:
-.LBE324:
-.LBB326:
-.LBB327:
-	.loc 1 703 0
-	ldr	r3, [r0, r2]
-.LVL153:
-	.loc 1 704 0
-	sub	r2, r2, #128
-.LVL154:
-	bic	r3, r2
-.LVL155:
-	mov	r2, r3
-.LVL156:
-	.loc 1 705 0
-	ldr	r3, [r1, #4]
-	sub	r0, r3, #1
-	sbc	r3, r3, r0
-.LVL157:
-	lsl	r3, r3, #4
-	orr	r3, r2
-.LVL158:
-	.loc 1 706 0
-	ldr	r0, .L81
-.LVL159:
-	mov	r2, #144
-.LVL160:
-	str	r3, [r0, r2]
-.LVL161:
-.LBE327:
-.LBE326:
-.LBB328:
-.LBB329:
-	.loc 1 742 0
-	ldr	r3, [r0, r2]
-.LVL162:
-	.loc 1 743 0
-	sub	r2, r2, #136
-.LVL163:
-	bic	r3, r2
-.LVL164:
-	mov	r2, r3
-.LVL165:
-	.loc 1 744 0
-	ldr	r3, [r1, #8]
-	sub	r0, r3, #1
-	sbc	r3, r3, r0
-.LVL166:
-	lsl	r3, r3, #3
-	orr	r3, r2
-.LVL167:
-	.loc 1 745 0
-	ldr	r2, .L81
-.LVL168:
-	mov	r0, #144
-.LVL169:
-	str	r3, [r2, r0]
-.LVL170:
-.LBE329:
-.LBE328:
-.LBB330:
-.LBB331:
-	.loc 1 780 0
-	ldrh	r0, [r1, #12]
-	mov	r3, #136
-.LVL171:
-	str	r0, [r2, r3]
-.LVL172:
-.LBE331:
-.LBE330:
-.LBB332:
-.LBB333:
-	.loc 1 815 0
-	ldrh	r1, [r1, #14]
-.LVL173:
-	add	r3, r3, #4
-	str	r1, [r2, r3]
-.LBE333:
-.LBE332:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 3 239 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 240 0
+	ldr	r3, [r7]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 242 0
+	ldr	r3, .L160
+	str	r3, [r7, #12]
+	.loc 3 243 0
+	ldr	r3, [r7]
+	ldr	r3, [r3]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwCompareEnableFlag
+	.loc 3 244 0
+	ldr	r3, [r7]
+	ldr	r3, [r3, #4]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwCompareGtEnableFlag
+	.loc 3 245 0
+	ldr	r3, [r7]
+	ldr	r3, [r3, #8]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwCompareRangeEnableFlag
+	.loc 3 246 0
+	ldr	r3, [r7]
+	ldrh	r3, [r3, #12]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwCompareComp1Value
+	.loc 3 247 0
+	ldr	r3, [r7]
+	ldrh	r3, [r3, #14]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwCompareComp2Value
 	.loc 3 248 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L82:
+	pop	{r7, pc}
+.L161:
 	.align	2
-.L81:
+.L160:
 	.word	1073983488
 	.cfi_endproc
 .LFE53:
@@ -1077,111 +3386,78 @@ ADC_DRV_GetHwCompareConfig:
 .LFB54:
 	.loc 3 260 0
 	.cfi_startproc
-.LVL174:
-.LBB334:
-.LBB335:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L84
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L85:
-	b	.L85
-.L84:
-.LVL175:
-.LBE335:
-.LBE334:
-.LBB336:
-.LBB337:
-	cmp	r1, #0
-	bne	.L86
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L87:
-	b	.L87
-.L86:
-.LVL176:
-.LBE337:
-.LBE336:
-.LBB338:
-.LBB339:
-	.loc 1 645 0
-	ldr	r3, .L88
-	mov	r0, #144
-.LVL177:
-	ldr	r2, [r3, r0]
-.LVL178:
-	.loc 1 646 0
-	lsl	r2, r2, #26
-.LVL179:
-	.loc 1 648 0
-	lsr	r2, r2, #31
-.LBE339:
-.LBE338:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 3 261 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 262 0
+	ldr	r3, [r7]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 264 0
+	ldr	r3, .L163
+	str	r3, [r7, #12]
 	.loc 3 265 0
-	str	r2, [r1]
-.LVL180:
-.LBB340:
-.LBB341:
-	.loc 1 683 0
-	ldr	r2, [r3, r0]
-.LVL181:
-	.loc 1 684 0
-	lsl	r2, r2, #27
-.LVL182:
-	.loc 1 686 0
-	lsr	r2, r2, #31
-.LBE341:
-.LBE340:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetHwCompareEnableFlag
+	mov	r2, r0
+	ldr	r3, [r7]
+	str	r2, [r3]
 	.loc 3 266 0
-	str	r2, [r1, #4]
-.LVL183:
-.LBB342:
-.LBB343:
-	.loc 1 722 0
-	ldr	r2, [r3, r0]
-.LVL184:
-	.loc 1 723 0
-	lsl	r2, r2, #28
-.LVL185:
-	.loc 1 725 0
-	lsr	r2, r2, #31
-.LBE343:
-.LBE342:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetHwCompareGtEnableFlag
+	mov	r2, r0
+	ldr	r3, [r7]
+	str	r2, [r3, #4]
 	.loc 3 267 0
-	str	r2, [r1, #8]
-.LVL186:
-.LBB344:
-.LBB345:
-	.loc 1 762 0
-	mov	r2, #136
-	ldr	r2, [r3, r2]
-.LBE345:
-.LBE344:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetHwCompareRangeEnableFlag
+	mov	r2, r0
+	ldr	r3, [r7]
+	str	r2, [r3, #8]
 	.loc 3 268 0
-	strh	r2, [r1, #12]
-.LVL187:
-.LBB346:
-.LBB347:
-	.loc 1 797 0
-	mov	r2, #140
-	ldr	r3, [r3, r2]
-.LBE347:
-.LBE346:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetHwCompareComp1Value
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strh	r2, [r3, #12]
 	.loc 3 269 0
-	strh	r3, [r1, #14]
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetHwCompareComp2Value
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strh	r2, [r3, #14]
 	.loc 3 270 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L89:
+	pop	{r7, pc}
+.L164:
 	.align	2
-.L88:
+.L163:
 	.word	1073983488
 	.cfi_endproc
 .LFE54:
@@ -1196,30 +3472,35 @@ ADC_DRV_InitHwAverageStruct:
 .LFB55:
 	.loc 3 284 0
 	.cfi_startproc
-.LVL188:
-.LBB348:
-.LBB349:
-	.loc 2 72 0
-	cmp	r0, #0
-	bne	.L91
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L92:
-	b	.L92
-.L91:
-.LBE349:
-.LBE348:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 285 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 287 0
-	mov	r3, #0
-	str	r3, [r0]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	str	r2, [r3]
 	.loc 3 288 0
-	strb	r3, [r0, #4]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strb	r2, [r3, #4]
 	.loc 3 289 0
+	mov	sp, r7
+	add	sp, sp, #8
 	@ sp needed
-	bx	lr
+	pop	{r7, pc}
 	.cfi_endproc
 .LFE55:
 	.size	ADC_DRV_InitHwAverageStruct, .-ADC_DRV_InitHwAverageStruct
@@ -1233,101 +3514,55 @@ ADC_DRV_ConfigHwAverage:
 .LFB56:
 	.loc 3 301 0
 	.cfi_startproc
-.LVL189:
-	push	{r4, lr}
+	push	{r7, lr}
 	.cfi_def_cfa_offset 8
-	.cfi_offset 4, -8
+	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-.LVL190:
-.LBB350:
-.LBB351:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L94
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L95:
-	b	.L95
-.L94:
-.LVL191:
-.LBE351:
-.LBE350:
-.LBB352:
-.LBB353:
-	cmp	r1, #0
-	bne	.L96
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L97:
-	b	.L97
-.L96:
-.LVL192:
-.LBE353:
-.LBE352:
-.LBB354:
-.LBB355:
-	.loc 1 858 0
-	mov	r3, #148
-	ldr	r2, .L100
-	ldr	r3, [r2, r3]
-.LVL193:
-	.loc 1 860 0
-	mov	r2, #4
-	bic	r3, r2
-.LVL194:
-	mov	r2, r3
-.LVL195:
-	.loc 1 861 0
-	ldr	r3, [r1]
-	sub	r0, r3, #1
-	sbc	r3, r3, r0
-.LVL196:
-	lsl	r3, r3, #2
-	orr	r3, r2
-.LVL197:
-	.loc 1 862 0
-	ldr	r4, .L100
-	mov	r0, #148
-	str	r3, [r4, r0]
-.LVL198:
-.LBE355:
-.LBE354:
-.LBB356:
-.LBB357:
-	.loc 1 905 0
-	ldr	r3, [r4, r0]
-.LVL199:
-	.loc 1 907 0
-	mov	r2, #3
-	bic	r3, r2
-.LVL200:
-	mov	r2, r3
-.LVL201:
-	.loc 1 908 0
-	ldrb	r3, [r1, #4]
-	mov	r1, #3
-.LVL202:
-	and	r3, r1
-.LVL203:
-	orr	r3, r2
-.LVL204:
-	.loc 1 909 0
-	str	r3, [r4, r0]
-.LVL205:
-.LBE357:
-.LBE356:
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 3 302 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 303 0
+	ldr	r3, [r7]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 305 0
+	ldr	r3, .L167
+	str	r3, [r7, #12]
+	.loc 3 306 0
+	ldr	r3, [r7]
+	ldr	r3, [r3]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwAverageEnableFlag
+	.loc 3 307 0
+	ldr	r3, [r7]
+	ldrb	r3, [r3, #4]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwAverageMode
 	.loc 3 308 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	pop	{r4, pc}
-.L101:
+	pop	{r7, pc}
+.L168:
 	.align	2
-.L100:
+.L167:
 	.word	1073983488
 	.cfi_endproc
 .LFE56:
@@ -1342,75 +3577,56 @@ ADC_DRV_GetHwAverageConfig:
 .LFB57:
 	.loc 3 320 0
 	.cfi_startproc
-.LVL206:
-.LBB358:
-.LBB359:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L103
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L104:
-	b	.L104
-.L103:
-.LVL207:
-.LBE359:
-.LBE358:
-.LBB360:
-.LBB361:
-	cmp	r1, #0
-	bne	.L105
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L106:
-	b	.L106
-.L105:
-.LVL208:
-.LBE361:
-.LBE360:
-.LBB362:
-.LBB363:
-	.loc 1 839 0
-	ldr	r0, .L107
-.LVL209:
-	mov	r2, #148
-	ldr	r3, [r0, r2]
-.LVL210:
-	.loc 1 840 0
-	lsl	r3, r3, #29
-.LVL211:
-	.loc 1 842 0
-	lsr	r3, r3, #31
-.LBE363:
-.LBE362:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 3 321 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 322 0
+	ldr	r3, [r7]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 324 0
+	ldr	r3, .L170
+	str	r3, [r7, #12]
 	.loc 3 325 0
-	str	r3, [r1]
-.LVL212:
-.LBB364:
-.LBB365:
-	.loc 1 881 0
-	ldr	r3, [r0, r2]
-.LVL213:
-	.loc 1 882 0
-	sub	r2, r2, #145
-	and	r3, r2
-.LVL214:
-.LBE365:
-.LBE364:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetHwAverageEnableFlag
+	mov	r2, r0
+	ldr	r3, [r7]
+	str	r2, [r3]
 	.loc 3 326 0
-	strb	r3, [r1, #4]
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetHwAverageMode
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strb	r2, [r3, #4]
 	.loc 3 327 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L108:
+	pop	{r7, pc}
+.L171:
 	.align	2
-.L107:
+.L170:
 	.word	1073983488
 	.cfi_endproc
 .LFE57:
@@ -1425,31 +3641,35 @@ ADC_DRV_InitChanStruct:
 .LFB58:
 	.loc 3 341 0
 	.cfi_startproc
-.LVL215:
-.LBB366:
-.LBB367:
-	.loc 2 72 0
-	cmp	r0, #0
-	bne	.L110
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L111:
-	b	.L111
-.L110:
-.LBE367:
-.LBE366:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 342 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 344 0
-	mov	r3, #0
-	str	r3, [r0]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	str	r2, [r3]
 	.loc 3 345 0
-	add	r3, r3, #31
-	strh	r3, [r0, #4]
+	ldr	r3, [r7, #4]
+	mov	r2, #31
+	strh	r2, [r3, #4]
 	.loc 3 346 0
+	mov	sp, r7
+	add	sp, sp, #8
 	@ sp needed
-	bx	lr
+	pop	{r7, pc}
 	.cfi_endproc
 .LFE58:
 	.size	ADC_DRV_InitChanStruct, .-ADC_DRV_InitChanStruct
@@ -1463,190 +3683,100 @@ ADC_DRV_ConfigChan:
 .LFB59:
 	.loc 3 365 0
 	.cfi_startproc
-.LVL216:
-	push	{r4, r5, lr}
+	push	{r4, r7, lr}
 	.cfi_def_cfa_offset 12
 	.cfi_offset 4, -12
-	.cfi_offset 5, -8
+	.cfi_offset 7, -8
 	.cfi_offset 14, -4
+	sub	sp, sp, #28
+	.cfi_def_cfa_offset 40
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #12]
+	str	r2, [r7, #4]
+	mov	r3, #11
+	add	r3, r7, r3
+	add	r2, r1, #0
+	strb	r2, [r3]
 	.loc 3 366 0
-	neg	r3, r0
-	adc	r0, r0, r3
-.LVL217:
-	uxtb	r0, r0
-.LVL218:
-.LBB379:
-.LBB380:
-	.loc 2 72 0
-	cmp	r0, #0
-	bne	.L113
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L114:
-	b	.L114
-.L113:
-.LBE380:
-.LBE379:
-.LBB381:
-.LBB382:
-	cmp	r1, #15
-	bls	.L115
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L116:
-	b	.L116
-.L115:
-.LVL219:
-.LBE382:
-.LBE381:
-.LBB383:
-.LBB384:
-	cmp	r2, #0
-	bne	.L117
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L118:
-	b	.L118
-.L117:
-.LVL220:
-.LBE384:
-.LBE383:
+	ldr	r3, [r7, #12]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 367 0
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	mov	r1, #15
+	mov	r3, #0
+	cmp	r1, r2
+	adc	r3, r3, r3
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 368 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 370 0
+	ldr	r3, .L177
+	str	r3, [r7, #20]
 	.loc 3 374 0
-	mov	r3, #1
-	cmp	r0, #0
-	bne	.L119
-	.loc 3 374 0 is_stmt 0 discriminator 2
-	ldrh	r3, [r2, #4]
-	ldr	r0, .L127
-.LVL221:
-	mov	ip, r0
-	add	r3, r3, ip
-	uxth	r0, r3
-	mov	r3, #5
-	cmp	r3, r0
-	sbc	r3, r3, r3
-	neg	r3, r3
-.L119:
-.LVL222:
-.LBB385:
-.LBB386:
-	.loc 2 72 0 is_stmt 1 discriminator 8
+	ldr	r3, [r7, #12]
 	cmp	r3, #0
-	bne	.L120
-	.loc 2 72 0 is_stmt 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L121:
-	b	.L121
-.L120:
-.LBE386:
-.LBE385:
+	beq	.L174
+	.loc 3 374 0 is_stmt 0 discriminator 2
+	ldr	r3, [r7, #4]
+	ldrh	r3, [r3, #4]
+	ldr	r2, .L177+4
+	cmp	r3, r2
+	bls	.L174
+	.loc 3 374 0 discriminator 4
+	ldr	r3, [r7, #4]
+	ldrh	r3, [r3, #4]
+	ldr	r2, .L177+8
+	cmp	r3, r2
+	bls	.L175
+.L174:
+	.loc 3 374 0 discriminator 5
+	mov	r3, #1
+	b	.L176
+.L175:
+	.loc 3 374 0 discriminator 6
+	mov	r3, #0
+.L176:
+	.loc 3 374 0 discriminator 8
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 376 0 is_stmt 1 discriminator 8
-	ldrh	r0, [r2, #4]
-	ldr	r4, [r2]
-.LVL223:
-.LBB387:
-.LBB388:
-	.loc 1 1128 0 discriminator 8
-	ldr	r3, .L127
-.LVL224:
-	add	r3, r0, r3
-	uxth	r3, r3
-	.loc 1 1140 0 discriminator 8
-	mov	r2, r0
-.LVL225:
-	.loc 1 1128 0 discriminator 8
-	cmp	r3, #5
-	bhi	.L122
-.LVL226:
-.LBB389:
-	.loc 1 1133 0
-	ldr	r3, .L127+4
-	ldr	r5, [r3, #4]
-	ldr	r2, .L127+8
-	and	r2, r5
-	str	r2, [r3, #4]
-	.loc 1 1134 0
-	ldr	r2, [r3, #4]
-	.loc 1 1130 0
-	ldr	r5, .L127
-	mov	ip, r5
-	add	r0, r0, ip
-.LVL227:
-	.loc 1 1134 0
-	lsl	r0, r0, #16
-.LVL228:
-	mov	r5, #224
-	lsl	r5, r5, #11
-	and	r0, r5
-	orr	r0, r2
-	str	r0, [r3, #4]
-.LVL229:
-	.loc 1 1136 0
-	mov	r2, #21
-.LVL230:
-.L122:
-	lsl	r1, r1, #2
-.LVL231:
-	ldr	r3, .L127+12
-	add	r0, r1, r3
-.LBE389:
-	.loc 1 1151 0
-	ldr	r3, [r0]
-.LVL232:
-	.loc 1 1152 0
-	mov	r1, #31
-	bic	r3, r1
-.LVL233:
+	ldr	r3, [r7, #4]
+	ldrh	r2, [r3, #4]
+	ldr	r3, [r7, #4]
+	ldr	r4, [r3]
+	ldr	r1, [r7, #20]
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	mov	r0, r1
 	mov	r1, r3
-.LVL234:
-	.loc 1 1153 0
-	mov	r3, #31
-	and	r2, r3
-.LVL235:
-	mov	r3, r2
-	orr	r3, r1
-.LVL236:
-	.loc 1 1154 0
-	mov	r2, #64
-	bic	r3, r2
-.LVL237:
-	mov	r2, r3
-.LVL238:
-	.loc 1 1155 0
 	mov	r3, r4
-	sub	r4, r3, #1
-	sbc	r3, r3, r4
-.LVL239:
-	lsl	r3, r3, #6
-	orr	r3, r2
-.LVL240:
-	.loc 1 1156 0
-	str	r3, [r0]
-.LBE388:
-.LBE387:
-	.loc 3 377 0
+	bl	ADC_SetInputChannel
+	.loc 3 377 0 discriminator 8
+	mov	sp, r7
+	add	sp, sp, #28
 	@ sp needed
-	pop	{r4, r5, pc}
-.L128:
+	pop	{r4, r7, pc}
+.L178:
 	.align	2
-.L127:
-	.word	-3840
-	.word	1074036736
-	.word	-458753
+.L177:
 	.word	1073983488
+	.word	3839
+	.word	3845
 	.cfi_endproc
 .LFE59:
 	.size	ADC_DRV_ConfigChan, .-ADC_DRV_ConfigChan
@@ -1660,91 +3790,79 @@ ADC_DRV_GetChanConfig:
 .LFB60:
 	.loc 3 390 0
 	.cfi_startproc
-.LVL241:
-.LBB390:
-.LBB391:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L130
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L131:
-	b	.L131
-.L130:
-.LBE391:
-.LBE390:
-.LBB392:
-.LBB393:
-	cmp	r1, #15
-	bls	.L132
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L133:
-	b	.L133
-.L132:
-.LVL242:
-.LBE393:
-.LBE392:
-.LBB394:
-.LBB395:
-	cmp	r2, #0
-	bne	.L134
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L135:
-	b	.L135
-.L134:
-.LVL243:
-	lsl	r1, r1, #2
-.LVL244:
-	ldr	r3, .L136
-	mov	ip, r3
-	add	r1, r1, ip
-.LBE395:
-.LBE394:
-.LBB396:
-.LBB397:
-	.loc 1 1074 0
-	ldr	r3, [r1]
-.LVL245:
-	.loc 1 1075 0
-	lsl	r3, r3, #25
-.LVL246:
-	.loc 1 1078 0
-	lsr	r3, r3, #31
-.LBE397:
-.LBE396:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #24
+	.cfi_def_cfa_offset 32
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #12]
+	str	r2, [r7, #4]
+	mov	r3, #11
+	add	r3, r7, r3
+	add	r2, r1, #0
+	strb	r2, [r3]
+	.loc 3 391 0
+	ldr	r3, [r7, #12]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 392 0
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	mov	r1, #15
+	mov	r3, #0
+	cmp	r1, r2
+	adc	r3, r3, r3
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 393 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 395 0
+	ldr	r3, .L180
+	str	r3, [r7, #20]
 	.loc 3 396 0
-	str	r3, [r2]
-.LVL247:
-.LBB398:
-.LBB399:
-	.loc 1 1098 0
-	ldr	r3, [r1]
-.LVL248:
-	.loc 1 1099 0
-	mov	r1, #31
-	and	r3, r1
-.LVL249:
-.LBE399:
-.LBE398:
+	ldr	r2, [r7, #20]
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_GetChanInterruptEnableFlag
+	mov	r2, r0
+	ldr	r3, [r7, #4]
+	str	r2, [r3]
 	.loc 3 397 0
-	strh	r3, [r2, #4]
+	ldr	r2, [r7, #20]
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_GetInputChannel
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7, #4]
+	strh	r2, [r3, #4]
 	.loc 3 398 0
+	mov	sp, r7
+	add	sp, sp, #24
 	@ sp needed
-	bx	lr
-.L137:
+	pop	{r7, pc}
+.L181:
 	.align	2
-.L136:
+.L180:
 	.word	1073983488
 	.cfi_endproc
 .LFE60:
@@ -1759,312 +3877,127 @@ ADC_DRV_SetSwPretrigger:
 .LFB61:
 	.loc 3 409 0
 	.cfi_startproc
-.LVL250:
-	push	{r3, r4, r5, lr}
-	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
-	.cfi_offset 4, -12
-	.cfi_offset 5, -8
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-.LVL251:
-.LBB400:
-.LBB401:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L139
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L140:
-	b	.L140
-.L139:
-	mov	r4, r1
-	mov	r5, r0
-.LVL252:
-.LBE401:
-.LBE400:
+	sub	sp, sp, #24
+	.cfi_def_cfa_offset 32
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 3 410 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 411 0
+	ldr	r3, .L191
+	str	r3, [r7, #16]
+	.loc 3 412 0
+	mov	r3, #0
+	str	r3, [r7, #20]
+	.loc 3 414 0
+	mov	r3, #14
+	str	r3, [r7, #12]
 	.loc 3 419 0
+	ldr	r3, [r7, #4]
+	mov	r0, r3
 	bl	ADC_GetPretriggerSelect
-.LVL253:
-	cmp	r0, #2
-	beq	.L149
+	sub	r3, r0, #0
+	cmp	r3, #2
+	beq	.L183
 	.loc 3 419 0 is_stmt 0 discriminator 2
-	neg	r3, r4
-	adc	r3, r3, r4
-	b	.L141
-.L149:
-	.loc 3 419 0
-	mov	r3, #1
-.L141:
-.LVL254:
-.LBB402:
-.LBB403:
-	.loc 2 72 0 is_stmt 1 discriminator 6
+	add	r3, r7, #3
+	ldrb	r3, [r3]
 	cmp	r3, #0
-	bne	.L142
-	.loc 2 72 0 is_stmt 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L143:
-	b	.L143
-.L142:
-.LBE403:
-.LBE402:
+	bne	.L184
+.L183:
+	.loc 3 419 0 discriminator 3
+	mov	r3, #1
+	b	.L185
+.L184:
+	.loc 3 419 0 discriminator 4
+	mov	r3, #0
+.L185:
+	.loc 3 419 0 discriminator 6
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 422 0 is_stmt 1 discriminator 6
-	ldr	r3, .L151
-.LVL255:
-	ldr	r3, [r3, #24]
-	mov	r2, #14
-	bic	r3, r2
-.LVL256:
+	ldr	r3, [r7, #16]
+	ldr	r2, [r3, #24]
+	ldr	r3, [r7, #4]
+	lsl	r3, r3, #2
+	mov	r1, #24
+	mov	ip, r1
+	add	ip, ip, r7
+	add	r3, r3, ip
+	sub	r3, r3, #12
+	ldr	r3, [r3]
+	mvn	r3, r3
+	and	r3, r2
+	str	r3, [r7, #20]
 	.loc 3 423 0 discriminator 6
-	cmp	r5, #0
-	beq	.L145
-	cmp	r5, #1
-	beq	.L146
-	b	.L150
-.L145:
-	.loc 3 426 0
-	lsl	r4, r4, #1
+	ldr	r3, [r7, #4]
+	cmp	r3, #0
+	beq	.L187
+	cmp	r3, #1
+	beq	.L188
+	.loc 3 423 0 is_stmt 0
+	b	.L190
+.L187:
+	.loc 3 426 0 is_stmt 1
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	lsl	r3, r3, #1
 	mov	r2, #14
-	and	r4, r2
-	orr	r3, r4
-.LVL257:
+	and	r3, r2
+	ldr	r2, [r7, #20]
+	orr	r3, r2
+	str	r3, [r7, #20]
 	.loc 3 427 0
-	b	.L147
-.L146:
+	b	.L189
+.L188:
 	.loc 3 429 0
-	lsl	r4, r4, #9
-	mov	r2, #224
-	lsl	r2, r2, #4
-	and	r4, r2
-	orr	r3, r4
-.LVL258:
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	lsl	r2, r3, #9
+	mov	r3, #224
+	lsl	r3, r3, #4
+	and	r3, r2
+	ldr	r2, [r7, #20]
+	orr	r3, r2
+	str	r3, [r7, #20]
 	.loc 3 430 0
-	b	.L147
-.L150:
-.LVL259:
-.LBB404:
-.LBB405:
-	.loc 2 72 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L148:
-	b	.L148
-.LVL260:
-.L147:
-.LBE405:
-.LBE404:
+	b	.L189
+.L190:
+	.loc 3 432 0
+	mov	r0, #0
+	bl	DevAssert
+	.loc 3 433 0
+	mov	r8, r8
+.L189:
 	.loc 3 436 0
-	ldr	r2, .L151
-	str	r3, [r2, #24]
+	ldr	r3, [r7, #16]
+	ldr	r2, [r7, #20]
+	str	r2, [r3, #24]
 	.loc 3 437 0
+	mov	sp, r7
+	add	sp, sp, #24
 	@ sp needed
-.LVL261:
-	pop	{r3, r4, r5, pc}
-.L152:
+	pop	{r7, pc}
+.L192:
 	.align	2
-.L151:
+.L191:
 	.word	1074036736
 	.cfi_endproc
 .LFE61:
 	.size	ADC_DRV_SetSwPretrigger, .-ADC_DRV_SetSwPretrigger
-	.section	.text.ADC_DRV_Reset,"ax",%progbits
-	.align	2
-	.global	ADC_DRV_Reset
-	.code	16
-	.thumb_func
-	.type	ADC_DRV_Reset, %function
-ADC_DRV_Reset:
-.LFB51:
-	.loc 3 160 0
-	.cfi_startproc
-.LVL262:
-	push	{r3, r4, r5, lr}
-	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
-	.cfi_offset 4, -12
-	.cfi_offset 5, -8
-	.cfi_offset 14, -4
-	.loc 3 161 0
-	neg	r4, r0
-	adc	r4, r4, r0
-	uxtb	r4, r4
-.LVL263:
-.LBB419:
-.LBB420:
-	.loc 2 72 0
-	cmp	r4, #0
-	bne	.L163
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L155:
-	b	.L155
-.L163:
-	mov	r3, #0
-.LBE420:
-.LBE419:
-	.loc 3 168 0
-	ldr	r1, .L167
-	mov	r2, #31
-.L154:
-.LVL264:
-	.loc 3 168 0 is_stmt 0 discriminator 3
-	lsl	r5, r3, #2
-	str	r2, [r5, r1]
-.LVL265:
-	add	r3, r3, #1
-.LVL266:
-	.loc 3 166 0 is_stmt 1 discriminator 3
-	cmp	r3, #16
-	bne	.L154
-	.loc 3 171 0
-	ldr	r3, .L167
-	mov	r2, #0
-	str	r2, [r3, #64]
-	.loc 3 172 0
-	mov	r1, #12
-	str	r1, [r3, #68]
-.LVL267:
-	.loc 3 176 0
-	add	r1, r1, #124
-	str	r2, [r3, r1]
-.LVL268:
-	add	r1, r1, #4
-	str	r2, [r3, r1]
-.LVL269:
-	.loc 3 179 0
-	add	r1, r1, #4
-	str	r2, [r3, r1]
-	.loc 3 181 0
-	add	r1, r1, #4
-	str	r2, [r3, r1]
-	.loc 3 182 0
-	add	r1, r1, #12
-	str	r2, [r3, r1]
-	.loc 3 183 0
-	sub	r1, r1, #156
-	add	r2, r2, #176
-	str	r1, [r3, r2]
-.LVL270:
-.LBB421:
-.LBB422:
-	.loc 1 386 0
-	ldr	r3, .L167+4
-	ldr	r3, [r3, #24]
-	sub	r2, r2, #128
-	bic	r3, r2
-.LVL271:
-	.loc 1 388 0
-	cmp	r0, #1
-	bls	.L165
-.LVL272:
-.LBB423:
-.LBB424:
-	.loc 2 72 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L158:
-	b	.L158
-.LVL273:
-.L165:
-.LBE424:
-.LBE423:
-	.loc 1 401 0
-	ldr	r2, .L167+4
-	str	r3, [r2, #24]
-.LVL274:
-.LBE422:
-.LBE421:
-.LBB425:
-.LBB426:
-	.loc 1 463 0
-	ldr	r3, [r2, #24]
-.LVL275:
-	mov	r2, #1
-.LVL276:
-	bic	r3, r2
-.LVL277:
-	.loc 1 465 0
-	cmp	r0, #1
-	bls	.L166
-.LVL278:
-.LBB427:
-.LBB428:
-	.loc 2 72 0
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L161:
-	b	.L161
-.LVL279:
-.L166:
-.LBE428:
-.LBE427:
-	.loc 1 478 0
-	ldr	r2, .L167+4
-.LVL280:
-	str	r3, [r2, #24]
-.LVL281:
-.LBE426:
-.LBE425:
-	.loc 3 194 0
-	mov	r1, #0
-	bl	ADC_DRV_SetSwPretrigger
-.LVL282:
-	.loc 3 197 0
-	cmp	r4, #0
-	beq	.L153
-.LVL283:
-.LBB429:
-.LBB430:
-.LBB431:
-	.loc 1 621 0
-	ldr	r3, .L167+4
-	ldr	r1, [r3, #4]
-	ldr	r2, .L167+8
-	and	r2, r1
-	str	r2, [r3, #4]
-.LBE431:
-.LBE430:
-	.loc 3 202 0
-	ldr	r1, [r3, #4]
-	ldr	r2, .L167+12
-	and	r2, r1
-	str	r2, [r3, #4]
-.LVL284:
-.L153:
-.LBE429:
-	.loc 3 204 0
-	@ sp needed
-.LVL285:
-	pop	{r3, r4, r5, pc}
-.L168:
-	.align	2
-.L167:
-	.word	1073983488
-	.word	1074036736
-	.word	-524289
-	.word	-458753
-	.cfi_endproc
-.LFE51:
-	.size	ADC_DRV_Reset, .-ADC_DRV_Reset
 	.section	.text.ADC_DRV_WaitConvDone,"ax",%progbits
 	.align	2
 	.global	ADC_DRV_WaitConvDone
@@ -2075,45 +4008,43 @@ ADC_DRV_WaitConvDone:
 .LFB62:
 	.loc 3 448 0
 	.cfi_startproc
-.LVL286:
-.LBB432:
-.LBB433:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L170
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L171:
-	b	.L171
-.L170:
-.LBE433:
-.LBE432:
-.LBB434:
-.LBB435:
-	.loc 1 82 0 discriminator 1
-	ldr	r1, .L174
-	mov	r2, #144
-	.loc 1 83 0 discriminator 1
-	mov	r3, #128
-.LVL287:
-.L172:
-	.loc 1 82 0 discriminator 1
-	ldr	r0, [r1, r2]
-.LVL288:
-.LBE435:
-.LBE434:
-	.loc 3 452 0 discriminator 1
-	tst	r3, r0
-	bne	.L172
-	.loc 3 456 0
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 449 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 451 0
+	ldr	r3, .L195
+	str	r3, [r7, #12]
+	.loc 3 452 0
+	mov	r8, r8
+.L194:
+	.loc 3 452 0 is_stmt 0 discriminator 1
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetConvActiveFlag
+	sub	r3, r0, #0
+	cmp	r3, #1
+	beq	.L194
+	.loc 3 456 0 is_stmt 1
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L175:
+	pop	{r7, pc}
+.L196:
 	.align	2
-.L174:
+.L195:
 	.word	1073983488
 	.cfi_endproc
 .LFE62:
@@ -2128,54 +4059,65 @@ ADC_DRV_GetConvCompleteFlag:
 .LFB63:
 	.loc 3 469 0
 	.cfi_startproc
-.LVL289:
-.LBB436:
-.LBB437:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L177
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L178:
-	b	.L178
-.L177:
-.LBE437:
-.LBE436:
-.LBB438:
-.LBB439:
-	cmp	r1, #15
-	bls	.L179
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L180:
-	b	.L180
-.L179:
-.LVL290:
-.LBE439:
-.LBE438:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 3 470 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 471 0
+	add	r3, r7, #3
+	ldrb	r2, [r3]
+	mov	r1, #15
+	mov	r3, #0
+	cmp	r1, r2
+	adc	r3, r3, r3
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 473 0
+	ldr	r3, .L199
+	str	r3, [r7, #12]
 	.loc 3 479 0
-	lsl	r1, r1, #2
-.LVL291:
-	ldr	r3, .L181
-	ldr	r0, [r1, r3]
-.LVL292:
+	add	r3, r7, #3
+	ldrb	r2, [r3]
+	ldr	r3, [r7, #12]
+	lsl	r2, r2, #2
+	ldr	r3, [r2, r3]
+	str	r3, [r7, #8]
 	.loc 3 480 0
-	lsl	r0, r0, #24
-.LVL293:
+	ldr	r3, [r7, #8]
+	mov	r2, #128
+	and	r3, r2
+	lsr	r3, r3, #7
+	str	r3, [r7, #8]
 	.loc 3 483 0
-	lsr	r0, r0, #31
+	ldr	r3, [r7, #8]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
 	.loc 3 484 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L182:
+	pop	{r7, pc}
+.L200:
 	.align	2
-.L181:
+.L199:
 	.word	1073983488
 	.cfi_endproc
 .LFE63:
@@ -2190,71 +4132,75 @@ ADC_DRV_GetChanResult:
 .LFB64:
 	.loc 3 497 0
 	.cfi_startproc
-.LVL294:
-.LBB440:
-.LBB441:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L184
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L185:
-	b	.L185
-.L184:
-.LVL295:
-.LBE441:
-.LBE440:
-.LBB442:
-.LBB443:
-	cmp	r2, #0
-	bne	.L186
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L187:
-	b	.L187
-.L186:
-.LVL296:
-.LBE443:
-.LBE442:
-.LBB444:
-.LBB445:
-	cmp	r1, #15
-	bls	.L188
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L189:
-	b	.L189
-.L188:
-.LBE445:
-.LBE444:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #24
+	.cfi_def_cfa_offset 32
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #12]
+	str	r2, [r7, #4]
+	mov	r3, #11
+	add	r3, r7, r3
+	add	r2, r1, #0
+	strb	r2, [r3]
+	.loc 3 498 0
+	ldr	r3, [r7, #12]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 499 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 501 0
+	ldr	r3, .L202
+	str	r3, [r7, #20]
+	.loc 3 511 0
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	mov	r1, #15
+	mov	r3, #0
+	cmp	r1, r2
+	adc	r3, r3, r3
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 513 0
-	add	r1, r1, #18
-.LVL297:
-	lsl	r1, r1, #2
-	ldr	r3, .L190
-	ldr	r3, [r1, r3]
-.LVL298:
+	mov	r3, #11
+	add	r3, r7, r3
+	ldrb	r2, [r3]
+	ldr	r3, [r7, #20]
+	add	r2, r2, #18
+	lsl	r2, r2, #2
+	ldr	r3, [r2, r3]
+	str	r3, [r7, #16]
 	.loc 3 514 0
+	ldr	r3, [r7, #16]
 	lsl	r3, r3, #20
-.LVL299:
 	lsr	r3, r3, #20
+	str	r3, [r7, #16]
 	.loc 3 517 0
-	strh	r3, [r2]
+	ldr	r3, [r7, #16]
+	uxth	r2, r3
+	ldr	r3, [r7, #4]
+	strh	r2, [r3]
 	.loc 3 518 0
+	mov	sp, r7
+	add	sp, sp, #24
 	@ sp needed
-	bx	lr
-.L191:
+	pop	{r7, pc}
+.L203:
 	.align	2
-.L190:
+.L202:
 	.word	1073983488
 	.cfi_endproc
 .LFE64:
@@ -2269,270 +4215,142 @@ ADC_DRV_AutoCalibration:
 .LFB65:
 	.loc 3 529 0
 	.cfi_startproc
-.LVL300:
-	push	{r4, r5, r6, r7, lr}
-	.cfi_def_cfa_offset 20
-	.cfi_offset 4, -20
-	.cfi_offset 5, -16
-	.cfi_offset 6, -12
+	push	{r4, r7, lr}
+	.cfi_def_cfa_offset 12
+	.cfi_offset 4, -12
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-	mov	r7, r9
-	mov	r6, r8
-	push	{r6, r7}
-	.cfi_def_cfa_offset 28
-	.cfi_offset 8, -28
-	.cfi_offset 9, -24
-.LVL301:
-.LBB446:
-.LBB447:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L193
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L194:
-	b	.L194
-.L193:
-.LVL302:
-.LBE447:
-.LBE446:
-.LBB448:
-.LBB449:
-	.loc 1 839 0
-	ldr	r3, .L199
-	mov	r2, #148
-	ldr	r0, [r3, r2]
-.LVL303:
-	.loc 1 840 0
-	mov	r6, #4
-	and	r0, r6
-.LVL304:
-	lsr	r5, r0, #2
-.LVL305:
-.LBE449:
-.LBE448:
-.LBB450:
-.LBB451:
-	.loc 1 881 0
-	ldr	r4, [r3, r2]
-.LVL306:
-	.loc 1 882 0
-	mov	r0, #3
-	.loc 1 885 0
-	and	r4, r0
-.LVL307:
-	mov	r9, r4
-.LVL308:
-.LBE451:
-.LBE450:
-.LBB452:
-.LBB453:
-	.loc 1 291 0
-	mov	r7, #144
-	ldr	r1, [r3, r7]
-.LVL309:
-	.loc 1 292 0
-	mov	r4, #64
-.LVL310:
-	mov	ip, r4
-	and	r1, r4
-.LVL311:
-	lsr	r1, r1, #6
-.LVL312:
-.LBE453:
-.LBE452:
-.LBB454:
-.LBB455:
-	.loc 1 905 0
-	ldr	r4, [r3, r2]
-.LVL313:
-	.loc 1 907 0
-	bic	r4, r0
-.LVL314:
-	.loc 1 908 0
-	orr	r0, r4
-.LVL315:
-	.loc 1 909 0
-	str	r0, [r3, r2]
-.LVL316:
-.LBE455:
-.LBE454:
-.LBB456:
-.LBB457:
-	.loc 1 858 0
-	ldr	r0, [r3, r2]
-.LVL317:
-	.loc 1 860 0
-	bic	r0, r6
-.LVL318:
-	.loc 1 861 0
-	orr	r6, r0
-.LVL319:
-	.loc 1 862 0
-	str	r6, [r3, r2]
-.LVL320:
-.LBE457:
-.LBE456:
-.LBB458:
-.LBB459:
-	.loc 1 315 0
-	ldr	r0, [r3, r7]
-.LVL321:
-	.loc 1 316 0
-	mov	r4, ip
-.LVL322:
-	bic	r0, r4
-.LVL323:
-	.loc 1 318 0
-	str	r0, [r3, r7]
-.LBE459:
-.LBE458:
-	.loc 3 541 0
-	mov	r0, #0
-.LVL324:
-	mov	r6, #180
-.LVL325:
-	str	r0, [r3, r6]
-.LVL326:
-	.loc 3 542 0
-	add	r6, r6, #4
-	str	r0, [r3, r6]
-	.loc 3 543 0
-	add	r6, r6, #4
-	str	r0, [r3, r6]
-	.loc 3 544 0
-	add	r6, r6, #4
-	str	r0, [r3, r6]
-	.loc 3 545 0
-	add	r6, r6, #4
-	str	r0, [r3, r6]
-	.loc 3 546 0
-	add	r6, r6, #4
-	str	r0, [r3, r6]
-	.loc 3 547 0
-	add	r6, r6, #4
-	str	r0, [r3, r6]
-.LVL327:
-.LBB460:
-.LBB461:
-	.loc 1 951 0
-	ldr	r6, [r3, r2]
-.LVL328:
-	.loc 1 952 0
-	add	r0, r0, #128
-.LVL329:
-	.loc 1 953 0
-	orr	r0, r6
-.LVL330:
-	.loc 1 954 0
-	str	r0, [r3, r2]
-.LBE461:
-.LBE460:
-.LBB462:
-.LBB463:
-	.loc 1 932 0
+	sub	sp, sp, #28
+	.cfi_def_cfa_offset 40
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 530 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
 	mov	r0, r3
-.LVL331:
-	.loc 1 933 0
-	mov	r3, #128
-.LVL332:
-.L195:
-	.loc 1 932 0 discriminator 1
-	ldr	r6, [r0, r2]
-.LVL333:
-.LBE463:
-.LBE462:
-	.loc 3 551 0 discriminator 1
-	tst	r3, r6
-	bne	.L195
-.LVL334:
-.LBB464:
-.LBB465:
-	.loc 1 858 0
-	mov	r3, #148
-.LVL335:
-	ldr	r2, .L199
-.LVL336:
-	ldr	r0, [r2, r3]
-.LVL337:
-	.loc 1 860 0
-	sub	r3, r3, #144
-.LVL338:
-	bic	r0, r3
-.LVL339:
+	bl	DevAssert
+	.loc 3 532 0
+	ldr	r3, .L206
+	str	r3, [r7, #20]
+	.loc 3 534 0
+	ldr	r3, [r7, #20]
+	mov	r0, r3
+	bl	ADC_GetHwAverageEnableFlag
 	mov	r3, r0
-.LVL340:
-	.loc 1 861 0
-	mov	r0, r5
-.LVL341:
-	sub	r5, r0, #1
-	sbc	r0, r0, r5
-.LVL342:
-	lsl	r0, r0, #2
-	orr	r0, r3
-.LVL343:
-	.loc 1 862 0
-	mov	r3, r2
-	mov	r5, #148
-.LVL344:
-	str	r0, [r2, r5]
-.LVL345:
-.LBE465:
-.LBE464:
-.LBB466:
-.LBB467:
-	.loc 1 905 0
-	ldr	r2, [r2, r5]
-.LVL346:
-	.loc 1 907 0
-	mov	r0, #3
-.LVL347:
-	bic	r2, r0
-.LVL348:
-	.loc 1 908 0
-	mov	r0, r9
-	orr	r2, r0
-.LVL349:
-	.loc 1 909 0
-	str	r2, [r3, r5]
-.LVL350:
-.LBE467:
-.LBE466:
-.LBB468:
-.LBB469:
-	.loc 1 315 0
-	mov	r0, #144
-	ldr	r2, [r3, r0]
-.LVL351:
-	.loc 1 316 0
-	mov	r4, #64
-	bic	r2, r4
-.LVL352:
-	.loc 1 317 0
-	lsl	r1, r1, #6
-.LVL353:
-	orr	r1, r2
-.LVL354:
-	.loc 1 318 0
-	str	r1, [r3, r0]
-.LVL355:
-.LBE469:
-.LBE468:
+	str	r3, [r7, #16]
+	.loc 3 535 0
+	mov	r3, #15
+	add	r4, r7, r3
+	ldr	r3, [r7, #20]
+	mov	r0, r3
+	bl	ADC_GetHwAverageMode
+	mov	r3, r0
+	strb	r3, [r4]
+	.loc 3 536 0
+	mov	r3, #14
+	add	r4, r7, r3
+	ldr	r3, [r7, #20]
+	mov	r0, r3
+	bl	ADC_GetTriggerMode
+	mov	r3, r0
+	strb	r3, [r4]
+	.loc 3 537 0
+	ldr	r3, [r7, #20]
+	mov	r0, r3
+	mov	r1, #3
+	bl	ADC_SetHwAverageMode
+	.loc 3 538 0
+	ldr	r3, [r7, #20]
+	mov	r0, r3
+	mov	r1, #1
+	bl	ADC_SetHwAverageEnableFlag
+	.loc 3 539 0
+	ldr	r3, [r7, #20]
+	mov	r0, r3
+	mov	r1, #0
+	bl	ADC_SetTriggerMode
+	.loc 3 541 0
+	ldr	r3, [r7, #20]
+	mov	r2, #180
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 542 0
+	ldr	r3, [r7, #20]
+	mov	r2, #184
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 543 0
+	ldr	r3, [r7, #20]
+	mov	r2, #188
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 544 0
+	ldr	r3, [r7, #20]
+	mov	r2, #192
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 545 0
+	ldr	r3, [r7, #20]
+	mov	r2, #196
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 546 0
+	ldr	r3, [r7, #20]
+	mov	r2, #200
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 547 0
+	ldr	r3, [r7, #20]
+	mov	r2, #204
+	mov	r1, #0
+	str	r1, [r3, r2]
+	.loc 3 550 0
+	ldr	r3, [r7, #20]
+	mov	r0, r3
+	mov	r1, #1
+	bl	ADC_SetCalibrationActiveFlag
+	.loc 3 551 0
+	mov	r8, r8
+.L205:
+	.loc 3 551 0 is_stmt 0 discriminator 1
+	ldr	r3, [r7, #20]
+	mov	r0, r3
+	bl	ADC_GetCalibrationActiveFlag
+	sub	r3, r0, #0
+	bne	.L205
+	.loc 3 557 0 is_stmt 1
+	ldr	r2, [r7, #20]
+	ldr	r3, [r7, #16]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwAverageEnableFlag
+	.loc 3 558 0
+	ldr	r2, [r7, #20]
+	mov	r3, #15
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetHwAverageMode
+	.loc 3 559 0
+	ldr	r2, [r7, #20]
+	mov	r3, #14
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetTriggerMode
 	.loc 3 560 0
+	mov	sp, r7
+	add	sp, sp, #28
 	@ sp needed
-.LVL356:
-.LVL357:
-	pop	{r2, r3}
-	mov	r8, r2
-	mov	r9, r3
-	pop	{r4, r5, r6, r7, pc}
-.L200:
+	pop	{r4, r7, pc}
+.L207:
 	.align	2
-.L199:
+.L206:
 	.word	1073983488
 	.cfi_endproc
 .LFE65:
@@ -2547,31 +4365,35 @@ ADC_DRV_InitUserCalibrationStruct:
 .LFB66:
 	.loc 3 574 0
 	.cfi_startproc
-.LVL358:
-.LBB470:
-.LBB471:
-	.loc 2 72 0
-	cmp	r0, #0
-	bne	.L202
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L203:
-	b	.L203
-.L202:
-.LBE471:
-.LBE470:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #8
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 575 0
+	ldr	r3, [r7, #4]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
 	.loc 3 577 0
-	mov	r3, #4
-	strh	r3, [r0]
+	ldr	r3, [r7, #4]
+	mov	r2, #4
+	strh	r2, [r3]
 	.loc 3 578 0
-	mov	r3, #0
-	strh	r3, [r0, #2]
+	ldr	r3, [r7, #4]
+	mov	r2, #0
+	strh	r2, [r3, #2]
 	.loc 3 579 0
+	mov	sp, r7
+	add	sp, sp, #8
 	@ sp needed
-	bx	lr
+	pop	{r7, pc}
 	.cfi_endproc
 .LFE66:
 	.size	ADC_DRV_InitUserCalibrationStruct, .-ADC_DRV_InitUserCalibrationStruct
@@ -2585,125 +4407,55 @@ ADC_DRV_ConfigUserCalibration:
 .LFB67:
 	.loc 3 591 0
 	.cfi_startproc
-.LVL359:
-	push	{r4, r5, r6, r7, lr}
-	.cfi_def_cfa_offset 20
-	.cfi_offset 4, -20
-	.cfi_offset 5, -16
-	.cfi_offset 6, -12
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
-	mov	r7, r8
-	push	{r7}
+	sub	sp, sp, #16
 	.cfi_def_cfa_offset 24
-	.cfi_offset 8, -24
-.LVL360:
-.LBB472:
-.LBB473:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L205
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L206:
-	b	.L206
-.L205:
-.LVL361:
-.LBE473:
-.LBE472:
-.LBB474:
-.LBB475:
-	cmp	r1, #0
-	bne	.L207
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L208:
-	b	.L208
-.L207:
-.LVL362:
-.LBE475:
-.LBE474:
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 3 592 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 593 0
+	ldr	r3, [r7]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 595 0
+	ldr	r3, .L210
+	str	r3, [r7, #12]
 	.loc 3 596 0
-	ldrh	r7, [r1]
-.LVL363:
-.LBB476:
-.LBB477:
-	.loc 1 989 0
-	ldr	r2, .L209
-	mov	r3, #196
-	ldr	r0, [r2, r3]
-.LVL364:
-	.loc 1 990 0
-	sub	r3, r3, #4
-	ldr	r4, [r2, r3]
-.LVL365:
-	.loc 1 991 0
-	sub	r3, r3, #4
-	ldr	r3, [r2, r3]
-	mov	r8, r3
-.LVL366:
-	.loc 1 992 0
-	mov	r5, #184
-	ldr	r6, [r2, r5]
-.LVL367:
-	.loc 1 993 0
-	sub	r5, r5, #4
-	ldr	r5, [r2, r5]
-.LVL368:
-	.loc 1 1003 0
-	mov	r3, #176
-	str	r7, [r2, r3]
-	add	r4, r0, r4
-.LVL369:
-	.loc 1 995 0
-	add	r0, r7, r4
-.LVL370:
-	add	r0, r0, r8
-	add	r3, r0, r6
-	add	r0, r3, r5
-	.loc 1 997 0
-	mov	r3, #248
-	lsl	r3, r3, #8
-	.loc 1 998 0
-	and	r3, r0
-	sub	r0, r3, #1
-	sbc	r3, r3, r0
-	neg	r3, r3
-	.loc 1 1004 0
-	uxth	r3, r3
-	mov	r0, #172
-	str	r3, [r2, r0]
-.LVL371:
-.LBE477:
-.LBE476:
-.LBB478:
-.LBB479:
-	.loc 1 1042 0
-	ldrb	r1, [r1, #2]
-.LVL372:
-	mov	r3, #160
-	str	r1, [r2, r3]
-.LVL373:
-.LBE479:
-.LBE478:
+	ldr	r3, [r7]
+	ldrh	r3, [r3]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetUserGainValue
+	.loc 3 597 0
+	ldr	r3, [r7]
+	ldrh	r3, [r3, #2]
+	ldr	r2, [r7, #12]
+	mov	r0, r2
+	mov	r1, r3
+	bl	ADC_SetUserOffsetValue
 	.loc 3 598 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-.LVL374:
-.LVL375:
-.LVL376:
-.LVL377:
-	pop	{r2}
-	mov	r8, r2
-	pop	{r4, r5, r6, r7, pc}
-.L210:
+	pop	{r7, pc}
+.L211:
 	.align	2
-.L209:
+.L210:
 	.word	1073983488
 	.cfi_endproc
 .LFE67:
@@ -2718,74 +4470,57 @@ ADC_DRV_GetUserCalibration:
 .LFB68:
 	.loc 3 610 0
 	.cfi_startproc
-.LVL378:
-.LBB480:
-.LBB481:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L212
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L213:
-	b	.L213
-.L212:
-.LVL379:
-.LBE481:
-.LBE480:
-.LBB482:
-.LBB483:
-	cmp	r1, #0
-	bne	.L214
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L215:
-	b	.L215
-.L214:
-.LVL380:
-.LBE483:
-.LBE482:
-.LBB484:
-.LBB485:
-	.loc 1 970 0
-	ldr	r2, .L216
-	mov	r3, #176
-	ldr	r3, [r2, r3]
-.LVL381:
-	.loc 1 971 0
-	lsl	r3, r3, #22
-.LVL382:
-	lsr	r3, r3, #22
-.LBE485:
-.LBE484:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	.loc 3 611 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 612 0
+	ldr	r3, [r7]
+	sub	r2, r3, #1
+	sbc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 614 0
+	ldr	r3, .L213
+	str	r3, [r7, #12]
 	.loc 3 615 0
-	strh	r3, [r1]
-.LVL383:
-.LBB486:
-.LBB487:
-	.loc 1 1021 0
-	mov	r3, #160
-	ldr	r3, [r2, r3]
-.LVL384:
-	.loc 1 1022 0
-	mov	r2, #255
-	and	r3, r2
-.LVL385:
-.LBE487:
-.LBE486:
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetUserGainValue
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strh	r2, [r3]
 	.loc 3 616 0
-	strh	r3, [r1, #2]
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetUserOffsetValue
+	mov	r3, r0
+	mov	r2, r3
+	ldr	r3, [r7]
+	strh	r2, [r3, #2]
 	.loc 3 617 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L217:
+	pop	{r7, pc}
+.L214:
 	.align	2
-.L216:
+.L213:
 	.word	1073983488
 	.cfi_endproc
 .LFE68:
@@ -2800,28 +4535,38 @@ ADC_DRV_GetInterruptNumber:
 .LFB69:
 	.loc 3 627 0
 	.cfi_startproc
-.LVL386:
-.LBB488:
-.LBB489:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L219
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L220:
-	b	.L220
-.L219:
-.LVL387:
-.LBE489:
-.LBE488:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 628 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 631 0
+	mov	r3, #15
+	add	r3, r7, r3
+	mov	r2, #28
+	strb	r2, [r3]
+	.loc 3 633 0
+	mov	r3, #15
+	add	r3, r7, r3
+	ldrb	r3, [r3]
+	sxtb	r3, r3
 	.loc 3 634 0
-	mov	r0, #28
-.LVL388:
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
+	pop	{r7, pc}
 	.cfi_endproc
 .LFE69:
 	.size	ADC_DRV_GetInterruptNumber, .-ADC_DRV_GetInterruptNumber
@@ -2835,78 +4580,76 @@ ADC_DRV_ClearLatchedTriggers:
 .LFB70:
 	.loc 3 645 0
 	.cfi_startproc
-.LVL389:
-.LBB490:
-.LBB491:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L222
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L223:
-	b	.L223
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r2, r1
+	add	r3, r7, #3
+	strb	r2, [r3]
+	.loc 3 646 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 647 0
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	cmp	r3, #0
+	beq	.L218
+	.loc 3 647 0 is_stmt 0 discriminator 2
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	cmp	r3, #1
+	bne	.L219
+.L218:
+	.loc 3 647 0 discriminator 3
+	mov	r3, #1
+	b	.L220
+.L219:
+	.loc 3 647 0 discriminator 4
+	mov	r3, #0
+.L220:
+	.loc 3 647 0 discriminator 6
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 649 0 is_stmt 1 discriminator 6
+	ldr	r3, .L223
+	str	r3, [r7, #12]
+	.loc 3 650 0 discriminator 6
+	add	r3, r7, #3
+	ldrb	r3, [r3]
+	cmp	r3, #1
+	bne	.L221
+	.loc 3 652 0
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_ClearLatchTriggers
+.L221:
+	.loc 3 655 0
+	mov	r8, r8
 .L222:
-.LBE491:
-.LBE490:
-.LBB492:
-.LBB493:
-	cmp	r1, #1
-	bls	.L224
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L225:
-	b	.L225
-.L224:
-.LVL390:
-.LBE493:
-.LBE492:
-	.loc 3 650 0
-	cmp	r1, #1
-	bne	.L226
-.LVL391:
-.LBB494:
-.LBB495:
-	.loc 1 1179 0
-	ldr	r2, .L229
-	ldr	r3, [r2, #64]
-	add	r1, r1, #255
-.LVL392:
-	orr	r3, r1
-	str	r3, [r2, #64]
-.LVL393:
-.L226:
-.LBE495:
-.LBE494:
-.LBB496:
-.LBB497:
-	.loc 1 1192 0 discriminator 1
-	ldr	r1, .L229
-	mov	r2, #144
-	.loc 1 1193 0 discriminator 1
-	mov	r3, #240
-	lsl	r3, r3, #12
-.LVL394:
-.L227:
-	.loc 1 1192 0 discriminator 1
-	ldr	r0, [r1, r2]
-.LVL395:
-.LBE497:
-.LBE496:
-	.loc 3 655 0 discriminator 1
-	tst	r0, r3
-	bne	.L227
-	.loc 3 659 0
+	.loc 3 655 0 is_stmt 0 discriminator 1
+	ldr	r3, [r7, #12]
+	mov	r0, r3
+	bl	ADC_GetTriggerLatchFlags
+	sub	r3, r0, #0
+	bne	.L222
+	.loc 3 659 0 is_stmt 1
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L230:
+	pop	{r7, pc}
+.L224:
 	.align	2
-.L229:
+.L223:
 	.word	1073983488
 	.cfi_endproc
 .LFE70:
@@ -2921,38 +4664,43 @@ ADC_DRV_ClearTriggerErrors:
 .LFB71:
 	.loc 3 669 0
 	.cfi_startproc
-.LVL396:
-.LBB498:
-.LBB499:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L232
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L233:
-	b	.L233
-.L232:
-.LVL397:
-.LBE499:
-.LBE498:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 670 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 672 0
+	ldr	r3, .L226
+	str	r3, [r7, #12]
 	.loc 3 674 0
-	ldr	r1, .L234
+	ldr	r3, [r7, #12]
 	mov	r2, #144
-	ldr	r3, [r1, r2]
-	mov	r0, #240
-.LVL398:
-	lsl	r0, r0, #20
-	orr	r3, r0
-	str	r3, [r1, r2]
+	ldr	r3, [r3, r2]
+	mov	r2, #240
+	lsl	r2, r2, #20
+	orr	r2, r3
+	ldr	r3, [r7, #12]
+	mov	r1, #144
+	str	r2, [r3, r1]
 	.loc 3 675 0
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L235:
+	pop	{r7, pc}
+.L227:
 	.align	2
-.L234:
+.L226:
 	.word	1073983488
 	.cfi_endproc
 .LFE71:
@@ -2967,41 +4715,55 @@ ADC_DRV_GetTriggerErrorFlags:
 .LFB72:
 	.loc 3 685 0
 	.cfi_startproc
-.LVL399:
-.LBB500:
-.LBB501:
-	.loc 2 72 0
-	cmp	r0, #0
-	beq	.L237
-@ 72 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
-	BKPT #0
-	
-@ 0 "" 2
-	.code	16
-.L238:
-	b	.L238
-.L237:
-.LVL400:
-.LBE501:
-.LBE500:
+	push	{r7, lr}
+	.cfi_def_cfa_offset 8
+	.cfi_offset 7, -8
+	.cfi_offset 14, -4
+	sub	sp, sp, #16
+	.cfi_def_cfa_offset 24
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	.loc 3 686 0
+	ldr	r3, [r7, #4]
+	neg	r2, r3
+	adc	r3, r3, r2
+	uxtb	r3, r3
+	mov	r0, r3
+	bl	DevAssert
+	.loc 3 688 0
+	ldr	r3, .L230
+	str	r3, [r7, #12]
 	.loc 3 690 0
-	mov	r3, #144
-	ldr	r2, .L239
-	ldr	r0, [r2, r3]
-.LVL401:
-	lsl	r0, r0, #4
-.LVL402:
-	lsr	r0, r0, #28
+	ldr	r3, [r7, #12]
+	mov	r2, #144
+	ldr	r2, [r3, r2]
+	mov	r3, #240
+	lsl	r3, r3, #20
+	and	r3, r2
+	lsr	r3, r3, #24
+	str	r3, [r7, #8]
+	.loc 3 692 0
+	ldr	r3, [r7, #8]
 	.loc 3 693 0
+	mov	r0, r3
+	mov	sp, r7
+	add	sp, sp, #16
 	@ sp needed
-	bx	lr
-.L240:
+	pop	{r7, pc}
+.L231:
 	.align	2
-.L239:
+.L230:
 	.word	1073983488
 	.cfi_endproc
 .LFE72:
 	.size	ADC_DRV_GetTriggerErrorFlags, .-ADC_DRV_GetTriggerErrorFlags
+	.section	.rodata.adcIrqId.5415,"a",%progbits
+	.align	2
+	.type	adcIrqId.5415, %object
+	.size	adcIrqId.5415, 1
+adcIrqId.5415:
+	.byte	28
 	.text
 .Letext0:
 	.file 4 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/cstdint"
@@ -3009,15 +4771,15 @@ ADC_DRV_GetTriggerErrorFlags:
 	.file 6 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x2c1d
+	.4byte	0x1d50
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF8478
-	.byte	0x1
 	.4byte	.LASF8479
-	.4byte	.Ldebug_ranges0+0x40
+	.byte	0x1
+	.4byte	.LASF8480
+	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
 	.4byte	.Ldebug_macro0
@@ -4064,2856 +5826,2233 @@ ADC_DRV_GetTriggerErrorFlags:
 	.2byte	0x14e
 	.4byte	0x861
 	.uleb128 0x12
-	.4byte	.LASF8368
-	.byte	0x2
+	.4byte	.LASF8371
+	.byte	0x1
 	.byte	0x46
-	.byte	0x3
-	.4byte	0x899
+	.4byte	.LFB0
+	.4byte	.LFE0-.LFB0
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x8a5
 	.uleb128 0x13
 	.ascii	"x\000"
-	.byte	0x2
+	.byte	0x1
 	.byte	0x46
-	.4byte	0x899
+	.4byte	0x8a5
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
 	.uleb128 0xc
 	.4byte	0x2c
-	.uleb128 0x12
+	.uleb128 0x14
 	.4byte	.LASF8369
-	.byte	0x1
-	.byte	0x7a
-	.byte	0x3
-	.4byte	0x8cc
-	.uleb128 0x14
-	.4byte	.LASF8370
-	.byte	0x1
-	.byte	0x7a
-	.4byte	0x8cc
-	.uleb128 0x14
-	.4byte	.LASF8338
-	.byte	0x1
-	.byte	0x7b
-	.4byte	0x8d7
+	.byte	0x2
+	.byte	0x50
+	.4byte	0x2c
+	.4byte	.LFB1
+	.4byte	.LFE1-.LFB1
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x8e0
 	.uleb128 0x15
+	.4byte	.LASF8368
+	.byte	0x2
+	.byte	0x50
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x16
 	.ascii	"tmp\000"
-	.byte	0x1
-	.byte	0x7d
+	.byte	0x2
+	.byte	0x52
 	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
 	.uleb128 0xd
-	.4byte	0x8d1
+	.4byte	0x8e5
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0x8eb
+	.uleb128 0xd
+	.4byte	0x32f
+	.uleb128 0x14
+	.4byte	.LASF8370
+	.byte	0x2
+	.byte	0x65
+	.4byte	0x4d5
+	.4byte	.LFB2
+	.4byte	.LFE2-.LFB2
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x926
+	.uleb128 0x15
+	.4byte	.LASF8368
+	.byte	0x2
+	.byte	0x65
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
 	.uleb128 0x16
+	.ascii	"tmp\000"
+	.byte	0x2
+	.byte	0x67
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x12
+	.4byte	.LASF8372
+	.byte	0x2
+	.byte	0x7a
+	.4byte	.LFB3
+	.4byte	.LFE3-.LFB3
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x966
+	.uleb128 0x15
+	.4byte	.LASF8368
+	.byte	0x2
+	.byte	0x7a
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x15
+	.4byte	.LASF8338
+	.byte	0x2
+	.byte	0x7b
+	.4byte	0x971
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x16
+	.ascii	"tmp\000"
+	.byte	0x2
+	.byte	0x7d
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x96b
+	.uleb128 0x17
 	.byte	0x4
 	.4byte	0x32f
 	.uleb128 0xd
 	.4byte	0x4d5
-	.uleb128 0x12
-	.4byte	.LASF8371
-	.byte	0x1
-	.byte	0xa2
-	.byte	0x3
-	.4byte	0x915
 	.uleb128 0x14
-	.4byte	.LASF8370
-	.byte	0x1
-	.byte	0xa2
-	.4byte	0x8cc
-	.uleb128 0x14
-	.4byte	.LASF8372
-	.byte	0x1
-	.byte	0xa3
-	.4byte	0x4f
-	.uleb128 0x17
 	.4byte	.LASF8373
-	.byte	0x1
-	.byte	0xa6
+	.byte	0x2
+	.byte	0x8e
 	.4byte	0x4f
+	.4byte	.LFB4
+	.4byte	.LFE4-.LFB4
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x9ac
 	.uleb128 0x15
+	.4byte	.LASF8368
+	.byte	0x2
+	.byte	0x8e
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x16
 	.ascii	"tmp\000"
-	.byte	0x1
-	.byte	0xa7
+	.byte	0x2
+	.byte	0x90
 	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
 	.uleb128 0x12
 	.4byte	.LASF8374
-	.byte	0x1
-	.byte	0xdd
-	.byte	0x3
-	.4byte	0x943
-	.uleb128 0x14
-	.4byte	.LASF8370
-	.byte	0x1
-	.byte	0xdd
-	.4byte	0x8cc
-	.uleb128 0x14
-	.4byte	.LASF8340
-	.byte	0x1
-	.byte	0xde
-	.4byte	0x943
+	.byte	0x2
+	.byte	0xa2
+	.4byte	.LFB5
+	.4byte	.LFE5-.LFB5
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x9fa
 	.uleb128 0x15
-	.ascii	"tmp\000"
-	.byte	0x1
-	.byte	0xe0
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x4fb
-	.uleb128 0x18
+	.4byte	.LASF8368
+	.byte	0x2
+	.byte	0xa2
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x15
 	.4byte	.LASF8375
-	.byte	0x1
-	.2byte	0x109
-	.byte	0x3
-	.4byte	0x97a
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x109
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8341
-	.byte	0x1
-	.2byte	0x10a
-	.4byte	0x97a
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x10c
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x527
+	.byte	0x2
+	.byte	0xa3
+	.4byte	0x4f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
 	.uleb128 0x18
 	.4byte	.LASF8376
-	.byte	0x1
-	.2byte	0x138
-	.byte	0x3
-	.4byte	0x9b1
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x138
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8342
-	.byte	0x1
-	.2byte	0x139
-	.4byte	0x9b1
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x13b
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x547
-	.uleb128 0x18
-	.4byte	.LASF8377
-	.byte	0x1
-	.2byte	0x1fd
-	.byte	0x3
-	.4byte	0x9e8
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x1fd
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x1fe
-	.4byte	0x9e8
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x200
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x2c
-	.uleb128 0x18
-	.4byte	.LASF8379
-	.byte	0x1
-	.2byte	0x227
-	.byte	0x3
-	.4byte	0xa1f
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x227
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8346
-	.byte	0x1
-	.2byte	0x228
-	.4byte	0xa1f
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x22a
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x5df
-	.uleb128 0x18
-	.4byte	.LASF8380
-	.byte	0x1
-	.2byte	0x250
-	.byte	0x3
-	.4byte	0xa56
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x250
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x251
-	.4byte	0x9e8
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x253
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8381
-	.byte	0x1
-	.2byte	0x264
-	.byte	0x3
-	.4byte	0xa7c
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x264
-	.4byte	0xa7c
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x265
-	.4byte	0x9e8
-	.byte	0
-	.uleb128 0xd
-	.4byte	0xa81
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0x4a8
-	.uleb128 0x1b
-	.4byte	.LASF8382
-	.byte	0x1
-	.byte	0x65
-	.4byte	0x4d5
-	.byte	0x3
-	.4byte	0xaae
-	.uleb128 0x14
-	.4byte	.LASF8370
-	.byte	0x1
-	.byte	0x65
-	.4byte	0xaae
-	.uleb128 0x15
-	.ascii	"tmp\000"
-	.byte	0x1
-	.byte	0x67
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0xab3
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0xab9
-	.uleb128 0xd
-	.4byte	0x32f
-	.uleb128 0x1b
-	.4byte	.LASF8383
-	.byte	0x1
-	.byte	0x8e
+	.byte	0x2
+	.byte	0xa6
 	.4byte	0x4f
-	.byte	0x3
-	.4byte	0xae5
-	.uleb128 0x14
-	.4byte	.LASF8370
-	.byte	0x1
-	.byte	0x8e
-	.4byte	0xaae
-	.uleb128 0x15
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -9
+	.uleb128 0x16
 	.ascii	"tmp\000"
-	.byte	0x1
-	.byte	0x90
+	.byte	0x2
+	.byte	0xa7
 	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
 	.byte	0
-	.uleb128 0x1b
-	.4byte	.LASF8384
-	.byte	0x1
+	.uleb128 0x14
+	.4byte	.LASF8377
+	.byte	0x2
 	.byte	0xb9
 	.4byte	0x4fb
-	.byte	0x3
-	.4byte	0xb17
-	.uleb128 0x14
-	.4byte	.LASF8370
-	.byte	0x1
-	.byte	0xb9
-	.4byte	0xaae
+	.4byte	.LFB6
+	.4byte	.LFE6-.LFB6
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xa3e
 	.uleb128 0x15
+	.4byte	.LASF8368
+	.byte	0x2
+	.byte	0xb9
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x16
 	.ascii	"tmp\000"
-	.byte	0x1
+	.byte	0x2
 	.byte	0xbb
 	.4byte	0x73
-	.uleb128 0x17
-	.4byte	.LASF8385
-	.byte	0x1
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x18
+	.4byte	.LASF8378
+	.byte	0x2
 	.byte	0xbd
 	.4byte	0x4fb
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -9
 	.byte	0
-	.uleb128 0x1b
-	.4byte	.LASF8386
-	.byte	0x1
+	.uleb128 0x12
+	.4byte	.LASF8379
+	.byte	0x2
+	.byte	0xdd
+	.4byte	.LFB7
+	.4byte	.LFE7-.LFB7
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xa7e
+	.uleb128 0x15
+	.4byte	.LASF8368
+	.byte	0x2
+	.byte	0xdd
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x15
+	.4byte	.LASF8340
+	.byte	0x2
+	.byte	0xde
+	.4byte	0xa7e
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x16
+	.ascii	"tmp\000"
+	.byte	0x2
+	.byte	0xe0
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x4fb
+	.uleb128 0x14
+	.4byte	.LASF8380
+	.byte	0x2
 	.byte	0xf3
 	.4byte	0x527
-	.byte	0x3
-	.4byte	0xb3e
-	.uleb128 0x14
-	.4byte	.LASF8370
-	.byte	0x1
-	.byte	0xf3
-	.4byte	0xaae
+	.4byte	.LFB8
+	.4byte	.LFE8-.LFB8
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xab9
 	.uleb128 0x15
+	.4byte	.LASF8368
+	.byte	0x2
+	.byte	0xf3
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x16
 	.ascii	"tmp\000"
-	.byte	0x1
+	.byte	0x2
 	.byte	0xf5
 	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8381
+	.byte	0x2
+	.2byte	0x109
+	.4byte	.LFB9
+	.4byte	.LFE9-.LFB9
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xafd
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x109
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8341
+	.byte	0x2
+	.2byte	0x10a
+	.4byte	0xafd
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x10c
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x527
 	.uleb128 0x1c
-	.4byte	.LASF8387
-	.byte	0x1
+	.4byte	.LASF8382
+	.byte	0x2
 	.2byte	0x121
 	.4byte	0x547
-	.byte	0x3
-	.4byte	0xb68
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x121
-	.4byte	0xaae
+	.4byte	.LFB10
+	.4byte	.LFE10-.LFB10
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xb3b
 	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x121
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
 	.ascii	"tmp\000"
-	.byte	0x1
+	.byte	0x2
 	.2byte	0x123
 	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8388
-	.byte	0x1
-	.2byte	0x19f
-	.4byte	0x58d
-	.byte	0x3
-	.4byte	0xbc2
 	.uleb128 0x19
-	.4byte	.LASF8389
-	.byte	0x1
-	.2byte	0x19f
-	.4byte	0xbc2
-	.uleb128 0x1d
-	.4byte	.LASF8390
-	.byte	0x1
-	.2byte	0x1a1
-	.4byte	0xbc7
-	.uleb128 0x1d
-	.4byte	.LASF8391
-	.byte	0x1
-	.2byte	0x1a2
-	.4byte	0x73
-	.uleb128 0x1d
-	.4byte	.LASF8392
-	.byte	0x1
-	.2byte	0x1a3
-	.4byte	0x58d
-	.uleb128 0x1d
-	.4byte	.LASF8393
-	.byte	0x1
-	.2byte	0x1a5
-	.4byte	0xbd7
-	.uleb128 0x1d
-	.4byte	.LASF8394
-	.byte	0x1
-	.2byte	0x1a6
-	.4byte	0xbdc
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x73
-	.uleb128 0xd
-	.4byte	0xbcc
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0xbd2
-	.uleb128 0xd
-	.4byte	0x4a8
-	.uleb128 0xd
-	.4byte	0x370
-	.uleb128 0xd
-	.4byte	0x370
-	.uleb128 0x1c
-	.4byte	.LASF8395
-	.byte	0x1
-	.2byte	0x1eb
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xc0b
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x1eb
-	.4byte	0xaae
+	.4byte	.LASF8383
+	.byte	0x2
+	.2byte	0x138
+	.4byte	.LFB11
+	.4byte	.LFE11-.LFB11
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xb7f
 	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x1ed
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8396
-	.byte	0x1
-	.2byte	0x212
-	.4byte	0x5df
-	.byte	0x3
-	.4byte	0xc35
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x212
-	.4byte	0xaae
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x138
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
 	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x214
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8397
-	.byte	0x1
-	.2byte	0x23c
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xc5f
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x23c
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x23e
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8398
-	.byte	0x1
-	.2byte	0x295
-	.byte	0x3
-	.4byte	0xc91
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x295
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x296
-	.4byte	0x9e8
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x298
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8399
-	.byte	0x1
-	.2byte	0x2bc
-	.byte	0x3
-	.4byte	0xcc3
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x2bc
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x2bd
-	.4byte	0x9e8
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x2bf
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8400
-	.byte	0x1
-	.2byte	0x2e3
-	.byte	0x3
-	.4byte	0xcf5
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x2e3
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x2e4
-	.4byte	0x9e8
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x2e6
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8401
-	.byte	0x1
-	.2byte	0x309
-	.byte	0x3
-	.4byte	0xd1b
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x309
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8402
-	.byte	0x1
-	.2byte	0x30a
-	.4byte	0xd1b
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x61
-	.uleb128 0x18
-	.4byte	.LASF8403
-	.byte	0x1
-	.2byte	0x32c
-	.byte	0x3
-	.4byte	0xd46
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x32c
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8402
-	.byte	0x1
-	.2byte	0x32d
-	.4byte	0xd1b
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8404
-	.byte	0x1
-	.2byte	0x283
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xd70
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x283
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x285
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8405
-	.byte	0x1
-	.2byte	0x2a9
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xd9a
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x2a9
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x2ab
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8406
-	.byte	0x1
-	.2byte	0x2d0
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xdc4
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x2d0
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x2d2
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8407
-	.byte	0x1
-	.2byte	0x2f8
-	.4byte	0x61
-	.byte	0x3
-	.4byte	0xde2
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x2f8
-	.4byte	0xaae
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8408
-	.byte	0x1
-	.2byte	0x31b
-	.4byte	0x61
-	.byte	0x3
-	.4byte	0xe00
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x31b
-	.4byte	0xaae
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8409
-	.byte	0x1
-	.2byte	0x357
-	.byte	0x3
-	.4byte	0xe32
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x357
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x358
-	.4byte	0x9e8
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x35a
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8410
-	.byte	0x1
-	.2byte	0x386
-	.byte	0x3
-	.4byte	0xe64
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x386
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8411
-	.byte	0x1
-	.2byte	0x387
-	.4byte	0xe64
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x389
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x60b
-	.uleb128 0x1c
-	.4byte	.LASF8412
-	.byte	0x1
-	.2byte	0x345
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xe93
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x345
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x347
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8413
-	.byte	0x1
-	.2byte	0x36f
-	.4byte	0x60b
-	.byte	0x3
-	.4byte	0xebd
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x36f
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x371
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8414
-	.byte	0x1
-	.2byte	0x428
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xef3
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x428
-	.4byte	0xaae
-	.uleb128 0x19
-	.4byte	.LASF8415
-	.byte	0x1
-	.2byte	0x429
-	.4byte	0xef3
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x432
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x4f
-	.uleb128 0x1c
-	.4byte	.LASF8416
-	.byte	0x1
-	.2byte	0x443
-	.4byte	0x6cd
-	.byte	0x3
-	.4byte	0xf2e
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x443
-	.4byte	0xaae
-	.uleb128 0x19
-	.4byte	.LASF8415
-	.byte	0x1
-	.2byte	0x444
-	.4byte	0xef3
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x44a
-	.4byte	0x73
-	.byte	0
+	.4byte	.LASF8342
+	.byte	0x2
+	.2byte	0x139
+	.4byte	0xb7f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
 	.uleb128 0x1b
-	.4byte	.LASF8417
-	.byte	0x1
-	.byte	0x50
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xf55
-	.uleb128 0x14
-	.4byte	.LASF8370
-	.byte	0x1
-	.byte	0x50
-	.4byte	0xaae
-	.uleb128 0x15
 	.ascii	"tmp\000"
-	.byte	0x1
-	.byte	0x52
+	.byte	0x2
+	.2byte	0x13b
 	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8418
-	.byte	0x1
-	.2byte	0x3b4
-	.byte	0x3
-	.4byte	0xf87
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x3b4
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x3b5
-	.4byte	0x9e8
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x3b7
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8419
-	.byte	0x1
-	.2byte	0x3a2
-	.4byte	0x2c
-	.byte	0x3
-	.4byte	0xfb1
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x3a2
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x3a4
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8420
-	.byte	0x1
-	.2byte	0x3da
-	.byte	0x3
-	.4byte	0x102b
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x3da
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8402
-	.byte	0x1
-	.2byte	0x3db
-	.4byte	0xd1b
+	.uleb128 0xd
+	.4byte	0x547
 	.uleb128 0x1d
-	.4byte	.LASF8421
-	.byte	0x1
-	.2byte	0x3dd
-	.4byte	0x61
-	.uleb128 0x1d
-	.4byte	.LASF8422
-	.byte	0x1
-	.2byte	0x3de
-	.4byte	0x61
-	.uleb128 0x1d
-	.4byte	.LASF8423
-	.byte	0x1
-	.2byte	0x3df
-	.4byte	0x61
-	.uleb128 0x1d
-	.4byte	.LASF8424
-	.byte	0x1
-	.2byte	0x3e0
-	.4byte	0x61
-	.uleb128 0x1d
-	.4byte	.LASF8425
-	.byte	0x1
-	.2byte	0x3e1
-	.4byte	0x61
-	.uleb128 0x1a
-	.ascii	"sum\000"
-	.byte	0x1
-	.2byte	0x3e3
-	.4byte	0x61
-	.uleb128 0x1d
-	.4byte	.LASF8426
-	.byte	0x1
-	.2byte	0x3e5
-	.4byte	0x61
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8427
-	.byte	0x1
-	.2byte	0x40f
-	.byte	0x3
-	.4byte	0x1051
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x40f
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8402
-	.byte	0x1
-	.2byte	0x410
-	.4byte	0xd1b
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8428
-	.byte	0x1
-	.2byte	0x3c8
-	.4byte	0x61
-	.byte	0x3
-	.4byte	0x107b
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x3c8
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x3ca
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8429
-	.byte	0x1
-	.2byte	0x3fb
-	.4byte	0x61
-	.byte	0x3
-	.4byte	0x10a5
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x3fb
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x3fd
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x18
-	.4byte	.LASF8430
-	.byte	0x1
-	.2byte	0x499
-	.byte	0x3
-	.4byte	0x10bf
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x499
-	.4byte	0x8cc
-	.byte	0
-	.uleb128 0x1c
-	.4byte	.LASF8431
-	.byte	0x1
-	.2byte	0x4a6
-	.4byte	0x73
-	.byte	0x3
-	.4byte	0x10e9
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x4a6
-	.4byte	0xaae
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x4a8
-	.4byte	0x73
-	.byte	0
-	.uleb128 0x1e
-	.4byte	.LASF8480
-	.byte	0x1
+	.4byte	.LASF8384
+	.byte	0x2
 	.2byte	0x14e
 	.4byte	0x56d
 	.4byte	.LFB12
 	.4byte	.LFE12-.LFB12
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1172
-	.uleb128 0x1f
-	.4byte	.LASF8389
-	.byte	0x1
+	.4byte	0xbf9
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x2
 	.2byte	0x14e
-	.4byte	0xbc2
-	.4byte	.LLST0
-	.uleb128 0x20
-	.4byte	.LASF8390
-	.byte	0x1
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -36
+	.uleb128 0x1e
+	.4byte	.LASF8386
+	.byte	0x2
 	.2byte	0x150
-	.4byte	0xbc7
-	.4byte	0x40048000
-	.uleb128 0x21
-	.4byte	.LASF8391
-	.byte	0x1
+	.4byte	0xbfe
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x1e
+	.4byte	.LASF8387
+	.byte	0x2
 	.2byte	0x151
 	.4byte	0x73
-	.4byte	.LLST1
-	.uleb128 0x21
-	.4byte	.LASF8392
-	.byte	0x1
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8388
+	.byte	0x2
 	.2byte	0x152
 	.4byte	0x56d
-	.4byte	.LLST2
-	.uleb128 0x1d
-	.4byte	.LASF8393
-	.byte	0x1
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -9
+	.uleb128 0x1e
+	.4byte	.LASF8389
+	.byte	0x2
 	.2byte	0x154
-	.4byte	0x1172
+	.4byte	0xc0e
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1e
+	.4byte	.LASF8390
+	.byte	0x2
+	.2byte	0x155
+	.4byte	0xc13
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x73
+	.uleb128 0xd
+	.4byte	0xc03
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0xc09
+	.uleb128 0xd
+	.4byte	0x4a8
+	.uleb128 0xd
+	.4byte	0x370
+	.uleb128 0xd
+	.4byte	0x370
+	.uleb128 0x1f
+	.4byte	.LASF8391
+	.byte	0x2
+	.2byte	0x177
+	.4byte	.LFB13
+	.4byte	.LFE13-.LFB13
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xc7a
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x2
+	.2byte	0x177
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x1a
+	.4byte	.LASF8343
+	.byte	0x2
+	.2byte	0x178
+	.4byte	0xc7a
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -29
+	.uleb128 0x1e
+	.4byte	.LASF8392
+	.byte	0x2
+	.2byte	0x17a
+	.4byte	0xc7f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x1e
+	.4byte	.LASF8389
+	.byte	0x2
+	.2byte	0x17c
+	.4byte	0xc8a
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8393
+	.byte	0x2
+	.2byte	0x180
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x56d
+	.uleb128 0xd
+	.4byte	0xc84
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0x4a8
+	.uleb128 0xd
+	.4byte	0x370
 	.uleb128 0x1d
 	.4byte	.LASF8394
-	.byte	0x1
-	.2byte	0x155
-	.4byte	0x1177
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB213
-	.4byte	.LBE213-.LBB213
-	.byte	0x1
-	.2byte	0x164
-	.uleb128 0x23
-	.4byte	0x88f
-	.byte	0
+	.byte	0x2
+	.2byte	0x19f
+	.4byte	0x58d
+	.4byte	.LFB14
+	.4byte	.LFE14-.LFB14
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xd04
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x2
+	.2byte	0x19f
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -36
+	.uleb128 0x1e
+	.4byte	.LASF8386
+	.byte	0x2
+	.2byte	0x1a1
+	.4byte	0xbfe
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x1e
+	.4byte	.LASF8387
+	.byte	0x2
+	.2byte	0x1a2
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8388
+	.byte	0x2
+	.2byte	0x1a3
+	.4byte	0x58d
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -9
+	.uleb128 0x1e
+	.4byte	.LASF8389
+	.byte	0x2
+	.2byte	0x1a5
+	.4byte	0xd04
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1e
+	.4byte	.LASF8390
+	.byte	0x2
+	.2byte	0x1a6
+	.4byte	0xd09
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
 	.byte	0
 	.uleb128 0xd
 	.4byte	0x370
 	.uleb128 0xd
 	.4byte	0x370
-	.uleb128 0x24
+	.uleb128 0x1f
+	.4byte	.LASF8395
+	.byte	0x2
+	.2byte	0x1c4
+	.4byte	.LFB15
+	.4byte	.LFE15-.LFB15
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xd70
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x2
+	.2byte	0x1c4
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x1a
+	.4byte	.LASF8344
+	.byte	0x2
+	.2byte	0x1c5
+	.4byte	0xd70
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -29
+	.uleb128 0x1e
+	.4byte	.LASF8392
+	.byte	0x2
+	.2byte	0x1c7
+	.4byte	0xc7f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x1e
+	.4byte	.LASF8389
+	.byte	0x2
+	.2byte	0x1c9
+	.4byte	0xd75
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8393
+	.byte	0x2
+	.2byte	0x1cd
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x58d
+	.uleb128 0xd
+	.4byte	0x370
+	.uleb128 0x1c
+	.4byte	.LASF8396
+	.byte	0x2
+	.2byte	0x1eb
+	.4byte	0x2c
+	.4byte	.LFB16
+	.4byte	.LFE16-.LFB16
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xdb3
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x1eb
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x1ed
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8397
+	.byte	0x2
+	.2byte	0x1fd
+	.4byte	.LFB17
+	.4byte	.LFE17-.LFB17
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xdf7
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x1fd
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x1fe
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x200
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x2c
+	.uleb128 0x1c
+	.4byte	.LASF8399
+	.byte	0x2
+	.2byte	0x212
+	.4byte	0x5df
+	.4byte	.LFB18
+	.4byte	.LFE18-.LFB18
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xe35
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x212
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x214
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8400
+	.byte	0x2
+	.2byte	0x227
+	.4byte	.LFB19
+	.4byte	.LFE19-.LFB19
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xe79
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x227
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8346
+	.byte	0x2
+	.2byte	0x228
+	.4byte	0xe79
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x22a
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x5df
+	.uleb128 0x1c
+	.4byte	.LASF8401
+	.byte	0x2
+	.2byte	0x23c
+	.4byte	0x2c
+	.4byte	.LFB20
+	.4byte	.LFE20-.LFB20
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xeb7
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x23c
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x23e
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8402
+	.byte	0x2
+	.2byte	0x250
+	.4byte	.LFB21
+	.4byte	.LFE21-.LFB21
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xefb
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x250
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x251
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x253
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8403
+	.byte	0x2
+	.2byte	0x264
+	.4byte	.LFB22
+	.4byte	.LFE22-.LFB22
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xf30
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x264
+	.4byte	0xc7f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x265
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8404
+	.byte	0x2
+	.2byte	0x283
+	.4byte	0x2c
+	.4byte	.LFB23
+	.4byte	.LFE23-.LFB23
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xf69
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x283
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x285
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8405
+	.byte	0x2
+	.2byte	0x295
+	.4byte	.LFB24
+	.4byte	.LFE24-.LFB24
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xfad
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x295
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x296
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x298
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8406
+	.byte	0x2
+	.2byte	0x2a9
+	.4byte	0x2c
+	.4byte	.LFB25
+	.4byte	.LFE25-.LFB25
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0xfe6
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x2a9
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x2ab
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8407
+	.byte	0x2
+	.2byte	0x2bc
+	.4byte	.LFB26
+	.4byte	.LFE26-.LFB26
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x102a
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x2bc
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x2bd
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x2bf
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8408
+	.byte	0x2
+	.2byte	0x2d0
+	.4byte	0x2c
+	.4byte	.LFB27
+	.4byte	.LFE27-.LFB27
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1063
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x2d0
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x2d2
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8409
+	.byte	0x2
+	.2byte	0x2e3
+	.4byte	.LFB28
+	.4byte	.LFE28-.LFB28
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x10a7
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x2e3
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x2e4
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x2e6
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8410
+	.byte	0x2
+	.2byte	0x2f8
+	.4byte	0x61
+	.4byte	.LFB29
+	.4byte	.LFE29-.LFB29
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x10d1
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x2f8
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8411
+	.byte	0x2
+	.2byte	0x309
+	.4byte	.LFB30
+	.4byte	.LFE30-.LFB30
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1106
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x309
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1a
+	.4byte	.LASF8412
+	.byte	0x2
+	.2byte	0x30a
+	.4byte	0x1106
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -14
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x61
+	.uleb128 0x1c
+	.4byte	.LASF8413
+	.byte	0x2
+	.2byte	0x31b
+	.4byte	0x61
+	.4byte	.LFB31
+	.4byte	.LFE31-.LFB31
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1135
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x31b
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8414
+	.byte	0x2
+	.2byte	0x32c
+	.4byte	.LFB32
+	.4byte	.LFE32-.LFB32
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x116a
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x32c
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1a
+	.4byte	.LASF8412
+	.byte	0x2
+	.2byte	0x32d
+	.4byte	0x1106
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -14
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8415
+	.byte	0x2
+	.2byte	0x345
+	.4byte	0x2c
+	.4byte	.LFB33
+	.4byte	.LFE33-.LFB33
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x11a3
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x345
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x347
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8416
+	.byte	0x2
+	.2byte	0x357
+	.4byte	.LFB34
+	.4byte	.LFE34-.LFB34
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x11e7
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x357
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x358
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x35a
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8417
+	.byte	0x2
+	.2byte	0x36f
+	.4byte	0x60b
+	.4byte	.LFB35
+	.4byte	.LFE35-.LFB35
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1220
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x36f
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x371
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8418
+	.byte	0x2
+	.2byte	0x386
+	.4byte	.LFB36
+	.4byte	.LFE36-.LFB36
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1264
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x386
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8419
+	.byte	0x2
+	.2byte	0x387
+	.4byte	0x1264
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x389
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x60b
+	.uleb128 0x1c
+	.4byte	.LASF8420
+	.byte	0x2
+	.2byte	0x3a2
+	.4byte	0x2c
+	.4byte	.LFB37
+	.4byte	.LFE37-.LFB37
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x12a2
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x3a2
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x3a4
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8421
+	.byte	0x2
+	.2byte	0x3b4
+	.4byte	.LFB38
+	.4byte	.LFE38-.LFB38
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x12e6
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x3b4
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x3b5
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x3b7
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8422
+	.byte	0x2
+	.2byte	0x3c8
+	.4byte	0x61
+	.4byte	.LFB39
+	.4byte	.LFE39-.LFB39
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x131f
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x3c8
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x3ca
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8423
+	.byte	0x2
+	.2byte	0x3da
+	.4byte	.LFB40
+	.4byte	.LFE40-.LFB40
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x13bd
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x3da
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x1a
+	.4byte	.LASF8412
+	.byte	0x2
+	.2byte	0x3db
+	.4byte	0x1106
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -30
+	.uleb128 0x1e
+	.4byte	.LASF8424
+	.byte	0x2
+	.2byte	0x3dd
+	.4byte	0x61
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1e
+	.4byte	.LASF8425
+	.byte	0x2
+	.2byte	0x3de
+	.4byte	0x61
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -14
+	.uleb128 0x1e
+	.4byte	.LASF8426
+	.byte	0x2
+	.2byte	0x3df
+	.4byte	0x61
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x1e
+	.4byte	.LASF8427
+	.byte	0x2
+	.2byte	0x3e0
+	.4byte	0x61
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -18
+	.uleb128 0x1e
+	.4byte	.LASF8428
+	.byte	0x2
+	.2byte	0x3e1
+	.4byte	0x61
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"sum\000"
+	.byte	0x2
+	.2byte	0x3e3
+	.4byte	0x61
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -22
+	.uleb128 0x1e
+	.4byte	.LASF8429
+	.byte	0x2
+	.2byte	0x3e5
+	.4byte	0x61
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -10
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8430
+	.byte	0x2
+	.2byte	0x3fb
+	.4byte	0x61
+	.4byte	.LFB41
+	.4byte	.LFE41-.LFB41
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x13f6
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x3fb
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x3fd
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8431
+	.byte	0x2
+	.2byte	0x40f
+	.4byte	.LFB42
+	.4byte	.LFE42-.LFB42
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x142b
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x40f
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1a
+	.4byte	.LASF8412
+	.byte	0x2
+	.2byte	0x410
+	.4byte	0x1106
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -14
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8432
+	.byte	0x2
+	.2byte	0x428
+	.4byte	0x2c
+	.4byte	.LFB43
+	.4byte	.LFE43-.LFB43
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1473
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x428
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8433
+	.byte	0x2
+	.2byte	0x429
+	.4byte	0x1473
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x432
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x4f
+	.uleb128 0x1c
+	.4byte	.LASF8434
+	.byte	0x2
+	.2byte	0x443
+	.4byte	0x6cd
+	.4byte	.LFB44
+	.4byte	.LFE44-.LFB44
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x14c0
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x443
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8433
+	.byte	0x2
+	.2byte	0x444
+	.4byte	0x1473
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x44a
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x19
+	.4byte	.LASF8435
+	.byte	0x2
+	.2byte	0x460
+	.4byte	.LFB45
+	.4byte	.LFE45-.LFB45
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1559
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x460
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x1a
+	.4byte	.LASF8433
+	.byte	0x2
+	.2byte	0x461
+	.4byte	0x1473
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -29
+	.uleb128 0x1a
+	.4byte	.LASF8436
+	.byte	0x2
+	.2byte	0x462
+	.4byte	0x1559
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -32
+	.uleb128 0x1a
+	.4byte	.LASF8398
+	.byte	0x2
+	.2byte	0x463
+	.4byte	0xdf7
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -36
+	.uleb128 0x1e
 	.4byte	.LASF8437
+	.byte	0x2
+	.2byte	0x465
+	.4byte	0x6cd
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -10
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x47f
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x20
+	.4byte	.LBB2
+	.4byte	.LBE2-.LBB2
+	.uleb128 0x1e
+	.4byte	.LASF8438
+	.byte	0x2
+	.2byte	0x46a
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x1e
+	.4byte	.LASF8392
+	.byte	0x2
+	.2byte	0x46c
+	.4byte	0xc7f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.byte	0
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x6cd
+	.uleb128 0x19
+	.4byte	.LASF8439
+	.byte	0x2
+	.2byte	0x499
+	.4byte	.LFB46
+	.4byte	.LFE46-.LFB46
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1584
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x499
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x1c
+	.4byte	.LASF8440
+	.byte	0x2
+	.2byte	0x4a6
+	.4byte	0x73
+	.4byte	.LFB47
+	.4byte	.LFE47-.LFB47
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x15bd
+	.uleb128 0x1a
+	.4byte	.LASF8368
+	.byte	0x2
+	.2byte	0x4a6
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1b
+	.ascii	"tmp\000"
+	.byte	0x2
+	.2byte	0x4a8
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x21
+	.4byte	.LASF8442
 	.byte	0x3
 	.byte	0x3b
 	.4byte	.LFB48
 	.4byte	.LFE48-.LFB48
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x11ba
-	.uleb128 0x25
-	.4byte	.LASF8432
+	.4byte	0x15e1
+	.uleb128 0x15
+	.4byte	.LASF8441
 	.byte	0x3
 	.byte	0x3b
-	.4byte	0x11ba
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x26
-	.4byte	0x883
-	.4byte	.LBB215
-	.4byte	.LBE215-.LBB215
-	.byte	0x3
-	.byte	0x3d
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
+	.4byte	0x15e1
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
 	.uleb128 0xd
-	.4byte	0x11bf
-	.uleb128 0x16
+	.4byte	0x15e6
+	.uleb128 0x17
 	.byte	0x4
 	.4byte	0x76e
-	.uleb128 0x18
-	.4byte	.LASF8433
-	.byte	0x1
-	.2byte	0x177
-	.byte	0x3
-	.4byte	0x120f
-	.uleb128 0x19
-	.4byte	.LASF8389
-	.byte	0x1
-	.2byte	0x177
-	.4byte	0xbc2
-	.uleb128 0x19
-	.4byte	.LASF8343
-	.byte	0x1
-	.2byte	0x178
-	.4byte	0x120f
-	.uleb128 0x1d
-	.4byte	.LASF8434
-	.byte	0x1
-	.2byte	0x17a
-	.4byte	0xa7c
-	.uleb128 0x1d
-	.4byte	.LASF8393
-	.byte	0x1
-	.2byte	0x17c
-	.4byte	0x1214
-	.uleb128 0x1d
-	.4byte	.LASF8435
-	.byte	0x1
-	.2byte	0x180
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x56d
-	.uleb128 0xd
-	.4byte	0x370
-	.uleb128 0x18
-	.4byte	.LASF8436
-	.byte	0x1
-	.2byte	0x1c4
-	.byte	0x3
-	.4byte	0x1263
-	.uleb128 0x19
-	.4byte	.LASF8389
-	.byte	0x1
-	.2byte	0x1c4
-	.4byte	0xbc2
-	.uleb128 0x19
-	.4byte	.LASF8344
-	.byte	0x1
-	.2byte	0x1c5
-	.4byte	0x1263
-	.uleb128 0x1d
-	.4byte	.LASF8434
-	.byte	0x1
-	.2byte	0x1c7
-	.4byte	0xa7c
-	.uleb128 0x1d
-	.4byte	.LASF8393
-	.byte	0x1
-	.2byte	0x1c9
-	.4byte	0x1268
-	.uleb128 0x1d
-	.4byte	.LASF8435
-	.byte	0x1
-	.2byte	0x1cd
-	.4byte	0x73
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x58d
-	.uleb128 0xd
-	.4byte	0x370
-	.uleb128 0x24
-	.4byte	.LASF8438
+	.uleb128 0x21
+	.4byte	.LASF8443
 	.byte	0x3
 	.byte	0x54
 	.4byte	.LFB49
 	.4byte	.LFE49-.LFB49
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x15cc
-	.uleb128 0x28
-	.4byte	.LASF8389
+	.4byte	0x1644
+	.uleb128 0x15
+	.4byte	.LASF8385
 	.byte	0x3
 	.byte	0x54
-	.4byte	0xbc2
-	.4byte	.LLST3
-	.uleb128 0x28
-	.4byte	.LASF8432
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x15
+	.4byte	.LASF8441
 	.byte	0x3
 	.byte	0x55
-	.4byte	0x15cc
-	.4byte	.LLST4
-	.uleb128 0x29
-	.4byte	.LASF8439
+	.4byte	0x1644
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x18
+	.4byte	.LASF8444
 	.byte	0x3
 	.byte	0x5c
-	.4byte	0x8cc
-	.4byte	0x4003b000
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB252
-	.4byte	.LBE252-.LBB252
-	.byte	0x3
-	.byte	0x57
-	.4byte	0x12cc
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST5
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB254
-	.4byte	.LBE254-.LBB254
-	.byte	0x3
-	.byte	0x58
-	.4byte	0x12e9
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST6
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB256
-	.4byte	.LBE256-.LBB256
-	.byte	0x3
-	.byte	0x5a
-	.4byte	0x1306
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST7
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x89e
-	.4byte	.LBB258
-	.4byte	.LBE258-.LBB258
-	.byte	0x3
-	.byte	0x5d
-	.4byte	0x133f
-	.uleb128 0x2b
-	.4byte	0x8b5
-	.4byte	.LLST8
-	.uleb128 0x2c
-	.4byte	0x8aa
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB259
-	.4byte	.LBE259-.LBB259
-	.uleb128 0x2e
-	.4byte	0x8c0
-	.4byte	.LLST9
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x8dc
-	.4byte	.LBB260
-	.4byte	.LBE260-.LBB260
-	.byte	0x3
-	.byte	0x5e
-	.4byte	0x1381
-	.uleb128 0x2b
-	.4byte	0x8f3
-	.4byte	.LLST10
-	.uleb128 0x2c
-	.4byte	0x8e8
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB261
-	.4byte	.LBE261-.LBB261
-	.uleb128 0x2e
-	.4byte	0x8fe
-	.4byte	.LLST11
-	.uleb128 0x2e
-	.4byte	0x909
-	.4byte	.LLST12
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x915
-	.4byte	.LBB262
-	.4byte	.LBE262-.LBB262
-	.byte	0x3
-	.byte	0x5f
-	.4byte	0x13ba
-	.uleb128 0x2b
-	.4byte	0x92c
-	.4byte	.LLST13
-	.uleb128 0x2c
-	.4byte	0x921
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB263
-	.4byte	.LBE263-.LBB263
-	.uleb128 0x2e
-	.4byte	0x937
-	.4byte	.LLST14
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x948
-	.4byte	.LBB264
-	.4byte	.LBE264-.LBB264
-	.byte	0x3
-	.byte	0x60
-	.4byte	0x13f3
-	.uleb128 0x2b
-	.4byte	0x961
-	.4byte	.LLST15
-	.uleb128 0x2c
-	.4byte	0x955
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB265
-	.4byte	.LBE265-.LBB265
-	.uleb128 0x2e
-	.4byte	0x96d
-	.4byte	.LLST16
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x97f
-	.4byte	.LBB266
-	.4byte	.LBE266-.LBB266
-	.byte	0x3
-	.byte	0x61
-	.4byte	0x142c
-	.uleb128 0x2b
-	.4byte	0x998
-	.4byte	.LLST17
-	.uleb128 0x2c
-	.4byte	0x98c
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB267
-	.4byte	.LBE267-.LBB267
-	.uleb128 0x2e
-	.4byte	0x9a4
-	.4byte	.LLST18
-	.byte	0
-	.byte	0
-	.uleb128 0x2f
-	.4byte	0x11c5
-	.4byte	.LBB268
-	.4byte	.Ldebug_ranges0+0
-	.byte	0x3
-	.byte	0x62
-	.4byte	0x1485
-	.uleb128 0x2b
-	.4byte	0x11de
-	.4byte	.LLST19
-	.uleb128 0x2b
-	.4byte	0x11d2
-	.4byte	.LLST20
-	.uleb128 0x30
-	.4byte	.Ldebug_ranges0+0
-	.uleb128 0x31
-	.4byte	0x11ea
-	.4byte	0x40048000
-	.uleb128 0x32
-	.4byte	0x11f6
-	.uleb128 0x2e
-	.4byte	0x1202
-	.4byte	.LLST21
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB270
-	.4byte	.LBE270-.LBB270
-	.byte	0x1
-	.2byte	0x18d
-	.uleb128 0x23
-	.4byte	0x88f
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x2f
-	.4byte	0x1219
-	.4byte	.LBB274
-	.4byte	.Ldebug_ranges0+0x20
-	.byte	0x3
-	.byte	0x63
-	.4byte	0x14c8
-	.uleb128 0x2b
-	.4byte	0x1232
-	.4byte	.LLST22
-	.uleb128 0x2b
-	.4byte	0x1226
-	.4byte	.LLST23
-	.uleb128 0x30
-	.4byte	.Ldebug_ranges0+0x20
-	.uleb128 0x2e
-	.4byte	0x123e
-	.4byte	.LLST24
-	.uleb128 0x32
-	.4byte	0x124a
-	.uleb128 0x2e
-	.4byte	0x1256
-	.4byte	.LLST25
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x9b6
-	.4byte	.LBB282
-	.4byte	.LBE282-.LBB282
-	.byte	0x3
-	.byte	0x64
-	.4byte	0x1501
-	.uleb128 0x2b
-	.4byte	0x9cf
-	.4byte	.LLST26
-	.uleb128 0x2c
-	.4byte	0x9c3
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB283
-	.4byte	.LBE283-.LBB283
-	.uleb128 0x2e
-	.4byte	0x9db
-	.4byte	.LLST27
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x9ed
-	.4byte	.LBB284
-	.4byte	.LBE284-.LBB284
-	.byte	0x3
-	.byte	0x65
-	.4byte	0x153a
-	.uleb128 0x2b
-	.4byte	0xa06
-	.4byte	.LLST28
-	.uleb128 0x2c
-	.4byte	0x9fa
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB285
-	.4byte	.LBE285-.LBB285
-	.uleb128 0x2e
-	.4byte	0xa12
-	.4byte	.LLST29
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xa24
-	.4byte	.LBB286
-	.4byte	.LBE286-.LBB286
-	.byte	0x3
-	.byte	0x66
-	.4byte	0x1573
-	.uleb128 0x2b
-	.4byte	0xa3d
-	.4byte	.LLST30
-	.uleb128 0x2c
-	.4byte	0xa31
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB287
-	.4byte	.LBE287-.LBB287
-	.uleb128 0x2e
-	.4byte	0xa49
-	.4byte	.LLST31
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB288
-	.4byte	.LBE288-.LBB288
-	.byte	0x3
-	.byte	0x69
-	.4byte	0x1590
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST32
-	.byte	0
-	.uleb128 0x2d
-	.4byte	.LBB290
-	.4byte	.LBE290-.LBB290
-	.uleb128 0x33
-	.4byte	.LASF8434
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x20
+	.4byte	.LBB3
+	.4byte	.LBE3-.LBB3
+	.uleb128 0x18
+	.4byte	.LASF8392
 	.byte	0x3
 	.byte	0x6c
-	.4byte	0xa7c
-	.4byte	.LLST33
-	.uleb128 0x26
-	.4byte	0xa56
-	.4byte	.LBB291
-	.4byte	.LBE291-.LBB291
-	.byte	0x3
-	.byte	0x6d
-	.uleb128 0x2b
-	.4byte	0xa6f
-	.4byte	.LLST34
-	.uleb128 0x2b
-	.4byte	0xa63
-	.4byte	.LLST33
-	.byte	0
+	.4byte	0xc7f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
 	.byte	0
 	.byte	0
 	.uleb128 0xd
-	.4byte	0x15d1
-	.uleb128 0x16
+	.4byte	0x1649
+	.uleb128 0x17
 	.byte	0x4
-	.4byte	0x15d7
+	.4byte	0x164f
 	.uleb128 0xd
 	.4byte	0x76e
-	.uleb128 0x24
-	.4byte	.LASF8440
+	.uleb128 0x21
+	.4byte	.LASF8445
 	.byte	0x3
 	.byte	0x79
 	.4byte	.LFB50
 	.4byte	.LFE50-.LFB50
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x186a
-	.uleb128 0x28
-	.4byte	.LASF8389
+	.4byte	0x16ac
+	.uleb128 0x15
+	.4byte	.LASF8385
 	.byte	0x3
 	.byte	0x79
-	.4byte	0xbc2
-	.4byte	.LLST36
-	.uleb128 0x28
-	.4byte	.LASF8432
-	.byte	0x3
-	.byte	0x7a
-	.4byte	0x11ba
-	.4byte	.LLST37
-	.uleb128 0x29
-	.4byte	.LASF8439
-	.byte	0x3
-	.byte	0x7f
-	.4byte	0xaae
-	.4byte	0x4003b000
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB293
-	.4byte	.LBE293-.LBB293
-	.byte	0x3
-	.byte	0x7c
-	.4byte	0x163b
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST38
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB295
-	.4byte	.LBE295-.LBB295
-	.byte	0x3
-	.byte	0x7d
-	.4byte	0x1658
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST39
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xa87
-	.4byte	.LBB297
-	.4byte	.LBE297-.LBB297
-	.byte	0x3
-	.byte	0x80
-	.4byte	0x1688
-	.uleb128 0x2c
-	.4byte	0xa97
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB298
-	.4byte	.LBE298-.LBB298
-	.uleb128 0x2e
-	.4byte	0xaa2
-	.4byte	.LLST40
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xabe
-	.4byte	.LBB299
-	.4byte	.LBE299-.LBB299
-	.byte	0x3
-	.byte	0x81
-	.4byte	0x16b8
-	.uleb128 0x2c
-	.4byte	0xace
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB300
-	.4byte	.LBE300-.LBB300
-	.uleb128 0x2e
-	.4byte	0xad9
-	.4byte	.LLST41
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xae5
-	.4byte	.LBB301
-	.4byte	.LBE301-.LBB301
-	.byte	0x3
-	.byte	0x82
-	.4byte	0x16f1
-	.uleb128 0x2c
-	.4byte	0xaf5
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB302
-	.4byte	.LBE302-.LBB302
-	.uleb128 0x2e
-	.4byte	0xb00
-	.4byte	.LLST42
-	.uleb128 0x2e
-	.4byte	0xb0b
-	.4byte	.LLST43
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xb17
-	.4byte	.LBB303
-	.4byte	.LBE303-.LBB303
-	.byte	0x3
-	.byte	0x83
-	.4byte	0x1721
-	.uleb128 0x2c
-	.4byte	0xb27
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB304
-	.4byte	.LBE304-.LBB304
-	.uleb128 0x2e
-	.4byte	0xb32
-	.4byte	.LLST44
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xb3e
-	.4byte	.LBB305
-	.4byte	.LBE305-.LBB305
-	.byte	0x3
-	.byte	0x84
-	.4byte	0x1751
-	.uleb128 0x2c
-	.4byte	0xb4f
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB306
-	.4byte	.LBE306-.LBB306
-	.uleb128 0x2e
-	.4byte	0xb5b
-	.4byte	.LLST45
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xb68
-	.4byte	.LBB307
-	.4byte	.LBE307-.LBB307
-	.byte	0x3
-	.byte	0x85
-	.4byte	0x17b3
-	.uleb128 0x2b
-	.4byte	0xb79
-	.4byte	.LLST46
-	.uleb128 0x2d
-	.4byte	.LBB308
-	.4byte	.LBE308-.LBB308
-	.uleb128 0x31
-	.4byte	0xb85
-	.4byte	0x40048000
-	.uleb128 0x2e
-	.4byte	0xb91
-	.4byte	.LLST47
-	.uleb128 0x2e
-	.4byte	0xb9d
-	.4byte	.LLST48
-	.uleb128 0x32
-	.4byte	0xba9
-	.uleb128 0x32
-	.4byte	0xbb5
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB309
-	.4byte	.LBE309-.LBB309
-	.byte	0x1
-	.2byte	0x1b3
-	.uleb128 0x23
-	.4byte	0x88f
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xbe1
-	.4byte	.LBB311
-	.4byte	.LBE311-.LBB311
-	.byte	0x3
-	.byte	0x87
-	.4byte	0x17e3
-	.uleb128 0x2c
-	.4byte	0xbf2
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB312
-	.4byte	.LBE312-.LBB312
-	.uleb128 0x2e
-	.4byte	0xbfe
-	.4byte	.LLST49
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xc0b
-	.4byte	.LBB313
-	.4byte	.LBE313-.LBB313
-	.byte	0x3
-	.byte	0x88
-	.4byte	0x1813
-	.uleb128 0x2c
-	.4byte	0xc1c
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB314
-	.4byte	.LBE314-.LBB314
-	.uleb128 0x2e
-	.4byte	0xc28
-	.4byte	.LLST50
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xc35
-	.4byte	.LBB315
-	.4byte	.LBE315-.LBB315
-	.byte	0x3
-	.byte	0x89
-	.4byte	0x1843
-	.uleb128 0x2c
-	.4byte	0xc46
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB316
-	.4byte	.LBE316-.LBB316
-	.uleb128 0x2e
-	.4byte	0xc52
-	.4byte	.LLST51
-	.byte	0
-	.byte	0
-	.uleb128 0x34
-	.4byte	.LBB317
-	.4byte	.LBE317-.LBB317
-	.4byte	0x1860
-	.uleb128 0x33
-	.4byte	.LASF8434
-	.byte	0x3
-	.byte	0x8e
-	.4byte	0xbc7
-	.4byte	.LLST52
-	.byte	0
-	.uleb128 0x35
-	.4byte	.LVL129
-	.4byte	0x10e9
-	.byte	0
-	.uleb128 0x24
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x15
 	.4byte	.LASF8441
 	.byte	0x3
-	.byte	0xd9
-	.4byte	.LFB52
-	.4byte	.LFE52-.LFB52
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x18a8
-	.uleb128 0x25
-	.4byte	.LASF8432
-	.byte	0x3
-	.byte	0xd9
-	.4byte	0x18a8
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x26
-	.4byte	0x883
-	.4byte	.LBB318
-	.4byte	.LBE318-.LBB318
-	.byte	0x3
-	.byte	0xdb
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x18ad
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0x7c5
-	.uleb128 0x24
-	.4byte	.LASF8442
-	.byte	0x3
-	.byte	0xec
-	.4byte	.LFB53
-	.4byte	.LFE53-.LFB53
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1a23
-	.uleb128 0x28
-	.4byte	.LASF8389
-	.byte	0x3
-	.byte	0xec
-	.4byte	0xbc2
-	.4byte	.LLST53
-	.uleb128 0x28
-	.4byte	.LASF8432
-	.byte	0x3
-	.byte	0xed
-	.4byte	0x1a23
-	.4byte	.LLST54
-	.uleb128 0x29
-	.4byte	.LASF8439
-	.byte	0x3
-	.byte	0xf2
-	.4byte	0x8cc
-	.4byte	0x4003b000
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB320
-	.4byte	.LBE320-.LBB320
-	.byte	0x3
-	.byte	0xef
-	.4byte	0x1912
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST55
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB322
-	.4byte	.LBE322-.LBB322
-	.byte	0x3
-	.byte	0xf0
-	.4byte	0x192f
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST56
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xc5f
-	.4byte	.LBB324
-	.4byte	.LBE324-.LBB324
-	.byte	0x3
-	.byte	0xf3
-	.4byte	0x1968
-	.uleb128 0x2b
-	.4byte	0xc78
-	.4byte	.LLST57
-	.uleb128 0x2c
-	.4byte	0xc6c
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB325
-	.4byte	.LBE325-.LBB325
-	.uleb128 0x2e
-	.4byte	0xc84
-	.4byte	.LLST58
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xc91
-	.4byte	.LBB326
-	.4byte	.LBE326-.LBB326
-	.byte	0x3
-	.byte	0xf4
-	.4byte	0x19a1
-	.uleb128 0x2b
-	.4byte	0xcaa
-	.4byte	.LLST59
-	.uleb128 0x2c
-	.4byte	0xc9e
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB327
-	.4byte	.LBE327-.LBB327
-	.uleb128 0x2e
-	.4byte	0xcb6
-	.4byte	.LLST60
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xcc3
-	.4byte	.LBB328
-	.4byte	.LBE328-.LBB328
-	.byte	0x3
-	.byte	0xf5
-	.4byte	0x19da
-	.uleb128 0x2b
-	.4byte	0xcdc
-	.4byte	.LLST61
-	.uleb128 0x2c
-	.4byte	0xcd0
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB329
-	.4byte	.LBE329-.LBB329
-	.uleb128 0x2e
-	.4byte	0xce8
-	.4byte	.LLST62
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0xcf5
-	.4byte	.LBB330
-	.4byte	.LBE330-.LBB330
-	.byte	0x3
-	.byte	0xf6
-	.4byte	0x1a00
-	.uleb128 0x2b
-	.4byte	0xd0e
-	.4byte	.LLST63
-	.uleb128 0x2c
-	.4byte	0xd02
-	.4byte	0x4003b000
-	.byte	0
-	.uleb128 0x26
-	.4byte	0xd20
-	.4byte	.LBB332
-	.4byte	.LBE332-.LBB332
-	.byte	0x3
-	.byte	0xf7
-	.uleb128 0x2b
-	.4byte	0xd39
-	.4byte	.LLST64
-	.uleb128 0x2c
-	.4byte	0xd2d
-	.4byte	0x4003b000
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x1a28
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0x1a2e
-	.uleb128 0xd
-	.4byte	0x7c5
-	.uleb128 0x36
-	.4byte	.LASF8443
-	.byte	0x3
-	.2byte	0x102
-	.4byte	.LFB54
-	.4byte	.LFE54-.LFB54
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1b81
-	.uleb128 0x1f
-	.4byte	.LASF8389
-	.byte	0x3
-	.2byte	0x102
-	.4byte	0xbc2
-	.4byte	.LLST65
-	.uleb128 0x37
-	.4byte	.LASF8432
-	.byte	0x3
-	.2byte	0x103
-	.4byte	0x18a8
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x20
-	.4byte	.LASF8439
-	.byte	0x3
-	.2byte	0x108
-	.4byte	0xaae
-	.4byte	0x4003b000
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB334
-	.4byte	.LBE334-.LBB334
-	.byte	0x3
-	.2byte	0x105
-	.4byte	0x1a95
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST66
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB336
-	.4byte	.LBE336-.LBB336
-	.byte	0x3
-	.2byte	0x106
-	.4byte	0x1ab5
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xd46
-	.4byte	.LBB338
-	.4byte	.LBE338-.LBB338
-	.byte	0x3
-	.2byte	0x109
-	.4byte	0x1ae6
-	.uleb128 0x2c
-	.4byte	0xd57
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB339
-	.4byte	.LBE339-.LBB339
-	.uleb128 0x2e
-	.4byte	0xd63
-	.4byte	.LLST67
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xd70
-	.4byte	.LBB340
-	.4byte	.LBE340-.LBB340
-	.byte	0x3
-	.2byte	0x10a
-	.4byte	0x1b17
-	.uleb128 0x2c
-	.4byte	0xd81
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB341
-	.4byte	.LBE341-.LBB341
-	.uleb128 0x2e
-	.4byte	0xd8d
-	.4byte	.LLST68
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xd9a
-	.4byte	.LBB342
-	.4byte	.LBE342-.LBB342
-	.byte	0x3
-	.2byte	0x10b
-	.4byte	0x1b48
-	.uleb128 0x2c
-	.4byte	0xdab
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB343
-	.4byte	.LBE343-.LBB343
-	.uleb128 0x2e
-	.4byte	0xdb7
-	.4byte	.LLST69
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xdc4
-	.4byte	.LBB344
-	.4byte	.LBE344-.LBB344
-	.byte	0x3
-	.2byte	0x10c
-	.4byte	0x1b66
-	.uleb128 0x2c
-	.4byte	0xdd5
-	.4byte	0x4003b000
-	.byte	0
-	.uleb128 0x22
-	.4byte	0xde2
-	.4byte	.LBB346
-	.4byte	.LBE346-.LBB346
-	.byte	0x3
-	.2byte	0x10d
-	.uleb128 0x2c
-	.4byte	0xdf3
-	.4byte	0x4003b000
-	.byte	0
-	.byte	0
-	.uleb128 0x36
+	.byte	0x7a
+	.4byte	0x15e1
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x18
 	.4byte	.LASF8444
 	.byte	0x3
-	.2byte	0x11b
-	.4byte	.LFB55
-	.4byte	.LFE55-.LFB55
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1bc2
-	.uleb128 0x37
-	.4byte	.LASF8432
-	.byte	0x3
-	.2byte	0x11b
-	.4byte	0x1bc2
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB348
-	.4byte	.LBE348-.LBB348
-	.byte	0x3
-	.2byte	0x11d
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x1bc7
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0x7f5
-	.uleb128 0x36
-	.4byte	.LASF8445
-	.byte	0x3
-	.2byte	0x12b
-	.4byte	.LFB56
-	.4byte	.LFE56-.LFB56
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1cc0
-	.uleb128 0x1f
-	.4byte	.LASF8389
-	.byte	0x3
-	.2byte	0x12b
-	.4byte	0xbc2
-	.4byte	.LLST70
-	.uleb128 0x1f
-	.4byte	.LASF8432
-	.byte	0x3
-	.2byte	0x12c
-	.4byte	0x1cc0
-	.4byte	.LLST71
-	.uleb128 0x20
-	.4byte	.LASF8439
-	.byte	0x3
-	.2byte	0x131
-	.4byte	0x8cc
-	.4byte	0x4003b000
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB350
-	.4byte	.LBE350-.LBB350
-	.byte	0x3
-	.2byte	0x12e
-	.4byte	0x1c31
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST72
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB352
-	.4byte	.LBE352-.LBB352
-	.byte	0x3
-	.2byte	0x12f
-	.4byte	0x1c4f
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST73
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe00
-	.4byte	.LBB354
-	.4byte	.LBE354-.LBB354
-	.byte	0x3
-	.2byte	0x132
-	.4byte	0x1c89
-	.uleb128 0x2b
-	.4byte	0xe19
-	.4byte	.LLST74
-	.uleb128 0x2c
-	.4byte	0xe0d
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB355
-	.4byte	.LBE355-.LBB355
-	.uleb128 0x2e
-	.4byte	0xe25
-	.4byte	.LLST75
-	.byte	0
-	.byte	0
-	.uleb128 0x22
-	.4byte	0xe32
-	.4byte	.LBB356
-	.4byte	.LBE356-.LBB356
-	.byte	0x3
-	.2byte	0x133
-	.uleb128 0x2b
-	.4byte	0xe4b
-	.4byte	.LLST76
-	.uleb128 0x2c
-	.4byte	0xe3f
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB357
-	.4byte	.LBE357-.LBB357
-	.uleb128 0x2e
-	.4byte	0xe57
-	.4byte	.LLST77
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x1cc5
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0x1ccb
-	.uleb128 0xd
-	.4byte	0x7f5
-	.uleb128 0x36
-	.4byte	.LASF8446
-	.byte	0x3
-	.2byte	0x13e
-	.4byte	.LFB57
-	.4byte	.LFE57-.LFB57
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1db1
-	.uleb128 0x1f
-	.4byte	.LASF8389
-	.byte	0x3
-	.2byte	0x13e
-	.4byte	0xbc2
-	.4byte	.LLST78
-	.uleb128 0x37
-	.4byte	.LASF8432
-	.byte	0x3
-	.2byte	0x13f
-	.4byte	0x1bc2
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x20
-	.4byte	.LASF8439
-	.byte	0x3
-	.2byte	0x144
-	.4byte	0xaae
-	.4byte	0x4003b000
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB358
-	.4byte	.LBE358-.LBB358
-	.byte	0x3
-	.2byte	0x141
-	.4byte	0x1d32
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST79
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB360
-	.4byte	.LBE360-.LBB360
-	.byte	0x3
-	.2byte	0x142
-	.4byte	0x1d52
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe69
-	.4byte	.LBB362
-	.4byte	.LBE362-.LBB362
-	.byte	0x3
-	.2byte	0x145
-	.4byte	0x1d83
-	.uleb128 0x2c
-	.4byte	0xe7a
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB363
-	.4byte	.LBE363-.LBB363
-	.uleb128 0x2e
-	.4byte	0xe86
-	.4byte	.LLST80
-	.byte	0
-	.byte	0
-	.uleb128 0x22
-	.4byte	0xe93
-	.4byte	.LBB364
-	.4byte	.LBE364-.LBB364
-	.byte	0x3
-	.2byte	0x146
-	.uleb128 0x2c
-	.4byte	0xea4
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB365
-	.4byte	.LBE365-.LBB365
-	.uleb128 0x2e
-	.4byte	0xeb0
-	.4byte	.LLST81
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x36
-	.4byte	.LASF8447
-	.byte	0x3
-	.2byte	0x154
-	.4byte	.LFB58
-	.4byte	.LFE58-.LFB58
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1df2
-	.uleb128 0x37
-	.4byte	.LASF8432
-	.byte	0x3
-	.2byte	0x154
-	.4byte	0x1df2
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB366
-	.4byte	.LBE366-.LBB366
-	.byte	0x3
-	.2byte	0x156
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x1df7
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0x825
-	.uleb128 0x18
-	.4byte	.LASF8448
-	.byte	0x1
-	.2byte	0x460
-	.byte	0x3
-	.4byte	0x1e6d
-	.uleb128 0x19
-	.4byte	.LASF8370
-	.byte	0x1
-	.2byte	0x460
-	.4byte	0x8cc
-	.uleb128 0x19
-	.4byte	.LASF8415
-	.byte	0x1
-	.2byte	0x461
-	.4byte	0xef3
-	.uleb128 0x19
-	.4byte	.LASF8449
-	.byte	0x1
-	.2byte	0x462
-	.4byte	0x1e6d
-	.uleb128 0x19
-	.4byte	.LASF8378
-	.byte	0x1
-	.2byte	0x463
-	.4byte	0x9e8
-	.uleb128 0x1d
-	.4byte	.LASF8450
-	.byte	0x1
-	.2byte	0x465
-	.4byte	0x6cd
-	.uleb128 0x1a
-	.ascii	"tmp\000"
-	.byte	0x1
-	.2byte	0x47f
-	.4byte	0x73
-	.uleb128 0x39
-	.uleb128 0x1d
-	.4byte	.LASF8451
-	.byte	0x1
-	.2byte	0x46a
-	.4byte	0xbc2
-	.uleb128 0x1d
-	.4byte	.LASF8434
-	.byte	0x1
-	.2byte	0x46c
-	.4byte	0xa7c
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x6cd
-	.uleb128 0x36
-	.4byte	.LASF8452
-	.byte	0x3
-	.2byte	0x16a
-	.4byte	.LFB59
-	.4byte	.LFE59-.LFB59
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x1faa
-	.uleb128 0x1f
-	.4byte	.LASF8389
-	.byte	0x3
-	.2byte	0x16a
-	.4byte	0xbc2
-	.4byte	.LLST82
-	.uleb128 0x1f
-	.4byte	.LASF8415
-	.byte	0x3
-	.2byte	0x16b
-	.4byte	0xef3
-	.4byte	.LLST83
-	.uleb128 0x1f
-	.4byte	.LASF8432
-	.byte	0x3
-	.2byte	0x16c
-	.4byte	0x1faa
-	.4byte	.LLST84
-	.uleb128 0x20
-	.4byte	.LASF8439
-	.byte	0x3
-	.2byte	0x172
-	.4byte	0x8cc
-	.4byte	0x4003b000
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB379
-	.4byte	.LBE379-.LBB379
-	.byte	0x3
-	.2byte	0x16e
-	.4byte	0x1ee6
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST85
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB381
-	.4byte	.LBE381-.LBB381
-	.byte	0x3
-	.2byte	0x16f
-	.4byte	0x1f00
-	.uleb128 0x23
-	.4byte	0x88f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB383
-	.4byte	.LBE383-.LBB383
-	.byte	0x3
-	.2byte	0x170
-	.4byte	0x1f1e
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST86
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB385
-	.4byte	.LBE385-.LBB385
-	.byte	0x3
-	.2byte	0x176
-	.4byte	0x1f3c
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST87
-	.byte	0
-	.uleb128 0x22
-	.4byte	0x1dfd
-	.4byte	.LBB387
-	.4byte	.LBE387-.LBB387
-	.byte	0x3
-	.2byte	0x178
-	.uleb128 0x2b
-	.4byte	0x1e2e
-	.4byte	.LLST88
-	.uleb128 0x2b
-	.4byte	0x1e22
-	.4byte	.LLST89
-	.uleb128 0x2b
-	.4byte	0x1e16
-	.4byte	.LLST90
-	.uleb128 0x2c
-	.4byte	0x1e0a
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB388
-	.4byte	.LBE388-.LBB388
-	.uleb128 0x2e
-	.4byte	0x1e3a
-	.4byte	.LLST91
-	.uleb128 0x2e
-	.4byte	0x1e46
-	.4byte	.LLST92
-	.uleb128 0x2d
-	.4byte	.LBB389
-	.4byte	.LBE389-.LBB389
-	.uleb128 0x2e
-	.4byte	0x1e53
-	.4byte	.LLST93
-	.uleb128 0x2e
-	.4byte	0x1e5f
-	.4byte	.LLST94
-	.byte	0
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0xd
-	.4byte	0x1faf
-	.uleb128 0x16
-	.byte	0x4
-	.4byte	0x1fb5
-	.uleb128 0xd
-	.4byte	0x825
-	.uleb128 0x36
-	.4byte	.LASF8453
-	.byte	0x3
-	.2byte	0x183
-	.4byte	.LFB60
-	.4byte	.LFE60-.LFB60
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x20d3
-	.uleb128 0x37
-	.4byte	.LASF8389
-	.byte	0x3
-	.2byte	0x183
-	.4byte	0xbc2
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x1f
-	.4byte	.LASF8415
-	.byte	0x3
-	.2byte	0x184
-	.4byte	0xef3
-	.4byte	.LLST95
-	.uleb128 0x37
-	.4byte	.LASF8432
-	.byte	0x3
-	.2byte	0x185
-	.4byte	0x1df2
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x20
-	.4byte	.LASF8439
-	.byte	0x3
-	.2byte	0x18b
-	.4byte	0xaae
-	.4byte	0x4003b000
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB390
-	.4byte	.LBE390-.LBB390
-	.byte	0x3
-	.2byte	0x187
-	.4byte	0x202c
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB392
-	.4byte	.LBE392-.LBB392
-	.byte	0x3
-	.2byte	0x188
-	.4byte	0x2046
-	.uleb128 0x23
-	.4byte	0x88f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB394
-	.4byte	.LBE394-.LBB394
-	.byte	0x3
-	.2byte	0x189
-	.4byte	0x2066
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x72
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xebd
-	.4byte	.LBB396
-	.4byte	.LBE396-.LBB396
-	.byte	0x3
-	.2byte	0x18c
-	.4byte	0x20a0
-	.uleb128 0x2b
-	.4byte	0xeda
-	.4byte	.LLST96
-	.uleb128 0x2c
-	.4byte	0xece
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB397
-	.4byte	.LBE397-.LBB397
-	.uleb128 0x2e
-	.4byte	0xee6
-	.4byte	.LLST97
-	.byte	0
-	.byte	0
-	.uleb128 0x22
-	.4byte	0xef8
-	.4byte	.LBB398
-	.4byte	.LBE398-.LBB398
-	.byte	0x3
-	.2byte	0x18d
-	.uleb128 0x23
-	.4byte	0xf15
-	.uleb128 0x2c
-	.4byte	0xf09
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB399
-	.4byte	.LBE399-.LBB399
-	.uleb128 0x2e
-	.4byte	0xf21
-	.4byte	.LLST98
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x36
-	.4byte	.LASF8454
-	.byte	0x3
-	.2byte	0x197
-	.4byte	.LFB61
-	.4byte	.LFE61-.LFB61
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x21a0
-	.uleb128 0x1f
-	.4byte	.LASF8389
-	.byte	0x3
-	.2byte	0x197
-	.4byte	0xbc2
-	.4byte	.LLST99
-	.uleb128 0x1f
-	.4byte	.LASF8455
-	.byte	0x3
-	.2byte	0x198
-	.4byte	0x21a0
-	.4byte	.LLST100
-	.uleb128 0x20
-	.4byte	.LASF8434
-	.byte	0x3
-	.2byte	0x19b
-	.4byte	0xa7c
-	.4byte	0x40048000
-	.uleb128 0x21
-	.4byte	.LASF8456
-	.byte	0x3
-	.2byte	0x19c
-	.4byte	0x73
-	.4byte	.LLST101
-	.uleb128 0x1d
-	.4byte	.LASF8393
-	.byte	0x3
-	.2byte	0x19e
-	.4byte	0x21a5
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB400
-	.4byte	.LBE400-.LBB400
-	.byte	0x3
-	.2byte	0x19a
-	.4byte	0x2153
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST102
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB402
-	.4byte	.LBE402-.LBB402
-	.byte	0x3
-	.2byte	0x1a3
-	.4byte	0x2171
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST103
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB404
-	.4byte	.LBE404-.LBB404
-	.byte	0x3
-	.2byte	0x1b0
-	.4byte	0x218f
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST104
-	.byte	0
-	.uleb128 0x3a
-	.4byte	.LVL253
-	.4byte	0x10e9
-	.uleb128 0x3b
-	.uleb128 0x1
-	.byte	0x50
+	.byte	0x7f
+	.4byte	0x8e0
 	.uleb128 0x2
-	.byte	0x75
-	.sleb128 0
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x20
+	.4byte	.LBB4
+	.4byte	.LBE4-.LBB4
+	.uleb128 0x18
+	.4byte	.LASF8392
+	.byte	0x3
+	.byte	0x8e
+	.4byte	0xbfe
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
 	.byte	0
 	.byte	0
-	.uleb128 0xd
-	.4byte	0x5bf
-	.uleb128 0xd
-	.4byte	0x370
-	.uleb128 0x24
-	.4byte	.LASF8457
+	.uleb128 0x21
+	.4byte	.LASF8446
 	.byte	0x3
 	.byte	0x9f
 	.4byte	.LFB51
 	.4byte	.LFE51-.LFB51
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x2310
-	.uleb128 0x28
-	.4byte	.LASF8389
+	.4byte	0x1704
+	.uleb128 0x15
+	.4byte	.LASF8385
 	.byte	0x3
 	.byte	0x9f
-	.4byte	0xbc2
-	.4byte	.LLST105
-	.uleb128 0x17
-	.4byte	.LASF8370
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x18
+	.4byte	.LASF8368
 	.byte	0x3
 	.byte	0xa3
-	.4byte	0x8cc
-	.uleb128 0x3c
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x16
 	.ascii	"idx\000"
 	.byte	0x3
 	.byte	0xa4
 	.4byte	0x4f
-	.4byte	.LLST106
-	.uleb128 0x2a
-	.4byte	0x883
-	.4byte	.LBB419
-	.4byte	.LBE419-.LBB419
-	.byte	0x3
-	.byte	0xa1
-	.4byte	0x2205
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST107
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x11c5
-	.4byte	.LBB421
-	.4byte	.LBE421-.LBB421
-	.byte	0x3
-	.byte	0xc0
-	.4byte	0x2263
-	.uleb128 0x3d
-	.4byte	0x11de
-	.byte	0
-	.uleb128 0x2b
-	.4byte	0x11d2
-	.4byte	.LLST108
-	.uleb128 0x2d
-	.4byte	.LBB422
-	.4byte	.LBE422-.LBB422
-	.uleb128 0x31
-	.4byte	0x11ea
-	.4byte	0x40048000
-	.uleb128 0x32
-	.4byte	0x11f6
-	.uleb128 0x2e
-	.4byte	0x1202
-	.4byte	.LLST109
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB423
-	.4byte	.LBE423-.LBB423
-	.byte	0x1
-	.2byte	0x18d
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST110
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.4byte	0x1219
-	.4byte	.LBB425
-	.4byte	.LBE425-.LBB425
-	.byte	0x3
-	.byte	0xc1
-	.4byte	0x22c1
-	.uleb128 0x3d
-	.4byte	0x1232
-	.byte	0
-	.uleb128 0x2b
-	.4byte	0x1226
-	.4byte	.LLST111
-	.uleb128 0x2d
-	.4byte	.LBB426
-	.4byte	.LBE426-.LBB426
-	.uleb128 0x31
-	.4byte	0x123e
-	.4byte	0x40048000
-	.uleb128 0x32
-	.4byte	0x124a
-	.uleb128 0x2e
-	.4byte	0x1256
-	.4byte	.LLST112
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB427
-	.4byte	.LBE427-.LBB427
-	.byte	0x1
-	.2byte	0x1da
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST113
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x34
-	.4byte	.LBB429
-	.4byte	.LBE429-.LBB429
-	.4byte	0x2300
-	.uleb128 0x33
-	.4byte	.LASF8434
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -9
+	.uleb128 0x20
+	.4byte	.LBB5
+	.4byte	.LBE5-.LBB5
+	.uleb128 0x18
+	.4byte	.LASF8392
 	.byte	0x3
 	.byte	0xc7
-	.4byte	0xa7c
-	.4byte	.LLST114
-	.uleb128 0x26
-	.4byte	0xa56
-	.4byte	.LBB430
-	.4byte	.LBE430-.LBB430
+	.4byte	0xc7f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.byte	0
+	.byte	0
+	.uleb128 0x21
+	.4byte	.LASF8447
 	.byte	0x3
-	.byte	0xc8
-	.uleb128 0x2b
-	.4byte	0xa6f
-	.4byte	.LLST115
-	.uleb128 0x2b
-	.4byte	0xa63
-	.4byte	.LLST114
-	.byte	0
-	.byte	0
-	.uleb128 0x3a
-	.4byte	.LVL282
-	.4byte	0x20d3
-	.uleb128 0x3b
+	.byte	0xd9
+	.4byte	.LFB52
+	.4byte	.LFE52-.LFB52
 	.uleb128 0x1
-	.byte	0x51
+	.byte	0x9c
+	.4byte	0x1728
+	.uleb128 0x15
+	.4byte	.LASF8441
+	.byte	0x3
+	.byte	0xd9
+	.4byte	0x1728
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x172d
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0x7c5
+	.uleb128 0x21
+	.4byte	.LASF8448
+	.byte	0x3
+	.byte	0xec
+	.4byte	.LFB53
+	.4byte	.LFE53-.LFB53
 	.uleb128 0x1
-	.byte	0x30
+	.byte	0x9c
+	.4byte	0x1773
+	.uleb128 0x15
+	.4byte	.LASF8385
+	.byte	0x3
+	.byte	0xec
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x15
+	.4byte	.LASF8441
+	.byte	0x3
+	.byte	0xed
+	.4byte	0x1773
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x18
+	.4byte	.LASF8444
+	.byte	0x3
+	.byte	0xf2
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
+	.uleb128 0xd
+	.4byte	0x1778
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0x177e
+	.uleb128 0xd
+	.4byte	0x7c5
+	.uleb128 0x22
+	.4byte	.LASF8449
+	.byte	0x3
+	.2byte	0x102
+	.4byte	.LFB54
+	.4byte	.LFE54-.LFB54
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x17c7
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x3
+	.2byte	0x102
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8441
+	.byte	0x3
+	.2byte	0x103
+	.4byte	0x1728
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1e
+	.4byte	.LASF8444
+	.byte	0x3
+	.2byte	0x108
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
-	.uleb128 0x36
+	.uleb128 0x22
+	.4byte	.LASF8450
+	.byte	0x3
+	.2byte	0x11b
+	.4byte	.LFB55
+	.4byte	.LFE55-.LFB55
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x17ed
+	.uleb128 0x1a
+	.4byte	.LASF8441
+	.byte	0x3
+	.2byte	0x11b
+	.4byte	0x17ed
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x17f2
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0x7f5
+	.uleb128 0x22
+	.4byte	.LASF8451
+	.byte	0x3
+	.2byte	0x12b
+	.4byte	.LFB56
+	.4byte	.LFE56-.LFB56
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x183c
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x3
+	.2byte	0x12b
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8441
+	.byte	0x3
+	.2byte	0x12c
+	.4byte	0x183c
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1e
+	.4byte	.LASF8444
+	.byte	0x3
+	.2byte	0x131
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x1841
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0x1847
+	.uleb128 0xd
+	.4byte	0x7f5
+	.uleb128 0x22
+	.4byte	.LASF8452
+	.byte	0x3
+	.2byte	0x13e
+	.4byte	.LFB57
+	.4byte	.LFE57-.LFB57
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1890
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x3
+	.2byte	0x13e
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8441
+	.byte	0x3
+	.2byte	0x13f
+	.4byte	0x17ed
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1e
+	.4byte	.LASF8444
+	.byte	0x3
+	.2byte	0x144
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x22
+	.4byte	.LASF8453
+	.byte	0x3
+	.2byte	0x154
+	.4byte	.LFB58
+	.4byte	.LFE58-.LFB58
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x18b6
+	.uleb128 0x1a
+	.4byte	.LASF8441
+	.byte	0x3
+	.2byte	0x154
+	.4byte	0x18b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x18bb
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0x825
+	.uleb128 0x22
+	.4byte	.LASF8454
+	.byte	0x3
+	.2byte	0x16a
+	.4byte	.LFB59
+	.4byte	.LFE59-.LFB59
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1914
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x3
+	.2byte	0x16a
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x1a
+	.4byte	.LASF8433
+	.byte	0x3
+	.2byte	0x16b
+	.4byte	0x1473
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -29
+	.uleb128 0x1a
+	.4byte	.LASF8441
+	.byte	0x3
+	.2byte	0x16c
+	.4byte	0x1914
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -36
+	.uleb128 0x1e
+	.4byte	.LASF8444
+	.byte	0x3
+	.2byte	0x172
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x1919
+	.uleb128 0x17
+	.byte	0x4
+	.4byte	0x191f
+	.uleb128 0xd
+	.4byte	0x825
+	.uleb128 0x22
+	.4byte	.LASF8455
+	.byte	0x3
+	.2byte	0x183
+	.4byte	.LFB60
+	.4byte	.LFE60-.LFB60
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x1977
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x3
+	.2byte	0x183
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8433
+	.byte	0x3
+	.2byte	0x184
+	.4byte	0x1473
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1a
+	.4byte	.LASF8441
+	.byte	0x3
+	.2byte	0x185
+	.4byte	0x18b6
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x1e
+	.4byte	.LASF8444
+	.byte	0x3
+	.2byte	0x18b
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.byte	0
+	.uleb128 0x22
+	.4byte	.LASF8456
+	.byte	0x3
+	.2byte	0x197
+	.4byte	.LFB61
+	.4byte	.LFE61-.LFB61
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x19d9
+	.uleb128 0x1a
+	.4byte	.LASF8385
+	.byte	0x3
+	.2byte	0x197
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x1a
+	.4byte	.LASF8457
+	.byte	0x3
+	.2byte	0x198
+	.4byte	0x19d9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -29
+	.uleb128 0x1e
+	.4byte	.LASF8392
+	.byte	0x3
+	.2byte	0x19b
+	.4byte	0xc7f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
+	.uleb128 0x1e
 	.4byte	.LASF8458
+	.byte	0x3
+	.2byte	0x19c
+	.4byte	0x73
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1e
+	.4byte	.LASF8389
+	.byte	0x3
+	.2byte	0x19e
+	.4byte	0x19de
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.byte	0
+	.uleb128 0xd
+	.4byte	0x5bf
+	.uleb128 0xd
+	.4byte	0x370
+	.uleb128 0x22
+	.4byte	.LASF8459
 	.byte	0x3
 	.2byte	0x1bf
 	.4byte	.LFB62
 	.4byte	.LFE62-.LFB62
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x2393
-	.uleb128 0x1f
-	.4byte	.LASF8389
+	.4byte	0x1a18
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x1bf
-	.4byte	0xbc2
-	.4byte	.LLST117
-	.uleb128 0x1d
-	.4byte	.LASF8439
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x1c3
-	.4byte	0xaae
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB432
-	.4byte	.LBE432-.LBB432
-	.byte	0x3
-	.2byte	0x1c1
-	.4byte	0x2360
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST118
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
-	.uleb128 0x22
-	.4byte	0xf2e
-	.4byte	.LBB434
-	.4byte	.LBE434-.LBB434
-	.byte	0x3
-	.2byte	0x1c4
-	.uleb128 0x2c
-	.4byte	0xf3e
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB435
-	.4byte	.LBE435-.LBB435
-	.uleb128 0x3e
-	.4byte	0xf49
-	.uleb128 0x8
-	.byte	0x73
-	.sleb128 0
-	.byte	0x70
-	.sleb128 0
-	.byte	0x1a
-	.byte	0x37
-	.byte	0x25
-	.byte	0x9f
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x3f
-	.4byte	.LASF8468
+	.uleb128 0x23
+	.4byte	.LASF8469
 	.byte	0x3
 	.2byte	0x1d3
 	.4byte	0x2c
@@ -6921,651 +8060,245 @@ ADC_DRV_GetTriggerErrorFlags:
 	.4byte	.LFE63-.LFB63
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x2422
-	.uleb128 0x1f
-	.4byte	.LASF8389
+	.4byte	0x1a6f
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x1d3
-	.4byte	0xbc2
-	.4byte	.LLST119
-	.uleb128 0x1f
-	.4byte	.LASF8415
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8433
 	.byte	0x3
 	.2byte	0x1d4
-	.4byte	0xef3
-	.4byte	.LLST120
-	.uleb128 0x20
-	.4byte	.LASF8439
+	.4byte	0x1473
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x1d9
-	.4byte	0xaae
-	.4byte	0x4003b000
-	.uleb128 0x40
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1b
 	.ascii	"tmp\000"
 	.byte	0x3
 	.2byte	0x1df
 	.4byte	0x73
-	.4byte	.LLST121
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB436
-	.4byte	.LBE436-.LBB436
-	.byte	0x3
-	.2byte	0x1d6
-	.4byte	0x240b
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST122
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
 	.byte	0
 	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB438
-	.4byte	.LBE438-.LBB438
-	.byte	0x3
-	.2byte	0x1d7
-	.uleb128 0x23
-	.4byte	0x88f
-	.byte	0
-	.byte	0
-	.uleb128 0x36
-	.4byte	.LASF8459
+	.4byte	.LASF8460
 	.byte	0x3
 	.2byte	0x1ee
 	.4byte	.LFB64
 	.4byte	.LFE64-.LFB64
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x24db
-	.uleb128 0x37
-	.4byte	.LASF8389
+	.4byte	0x1ad1
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x1ee
-	.4byte	0xbc2
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x1f
-	.4byte	.LASF8415
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8433
 	.byte	0x3
 	.2byte	0x1ef
-	.4byte	0xef3
-	.4byte	.LLST123
-	.uleb128 0x37
-	.4byte	.LASF8460
+	.4byte	0x1473
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1a
+	.4byte	.LASF8461
 	.byte	0x3
 	.2byte	0x1f0
-	.4byte	0x24db
-	.uleb128 0x1
-	.byte	0x52
-	.uleb128 0x20
-	.4byte	.LASF8439
+	.4byte	0x1ad1
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -28
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x1f5
-	.4byte	0xaae
-	.4byte	0x4003b000
-	.uleb128 0x40
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1b
 	.ascii	"tmp\000"
 	.byte	0x3
 	.2byte	0x201
 	.4byte	0x73
-	.4byte	.LLST124
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB440
-	.4byte	.LBE440-.LBB440
-	.byte	0x3
-	.2byte	0x1f2
-	.4byte	0x24a4
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB442
-	.4byte	.LBE442-.LBB442
-	.byte	0x3
-	.2byte	0x1f3
-	.4byte	0x24c4
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x72
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB444
-	.4byte	.LBE444-.LBB444
-	.byte	0x3
-	.2byte	0x1ff
-	.uleb128 0x23
-	.4byte	0x88f
-	.byte	0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
 	.byte	0
 	.uleb128 0xd
-	.4byte	0x24e0
-	.uleb128 0x16
+	.4byte	0x1ad6
+	.uleb128 0x17
 	.byte	0x4
 	.4byte	0x61
-	.uleb128 0x36
-	.4byte	.LASF8461
+	.uleb128 0x22
+	.4byte	.LASF8462
 	.byte	0x3
 	.2byte	0x210
 	.4byte	.LFB65
 	.4byte	.LFE65-.LFB65
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x27a9
-	.uleb128 0x1f
-	.4byte	.LASF8389
+	.4byte	0x1b3e
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x210
-	.4byte	0xbc2
-	.4byte	.LLST125
-	.uleb128 0x20
-	.4byte	.LASF8439
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -36
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x214
-	.4byte	0x8cc
-	.4byte	0x4003b000
-	.uleb128 0x1d
-	.4byte	.LASF8462
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8463
 	.byte	0x3
 	.2byte	0x216
 	.4byte	0x2c
-	.uleb128 0x1d
-	.4byte	.LASF8463
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1e
+	.4byte	.LASF8464
 	.byte	0x3
 	.2byte	0x217
 	.4byte	0x60b
-	.uleb128 0x1d
-	.4byte	.LASF8464
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -25
+	.uleb128 0x1e
+	.4byte	.LASF8465
 	.byte	0x3
 	.2byte	0x218
 	.4byte	0x547
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB446
-	.4byte	.LBE446-.LBB446
-	.byte	0x3
-	.2byte	0x212
-	.4byte	0x255e
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST126
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe69
-	.4byte	.LBB448
-	.4byte	.LBE448-.LBB448
-	.byte	0x3
-	.2byte	0x216
-	.4byte	0x258f
-	.uleb128 0x2c
-	.4byte	0xe7a
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB449
-	.4byte	.LBE449-.LBB449
-	.uleb128 0x2e
-	.4byte	0xe86
-	.4byte	.LLST127
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe93
-	.4byte	.LBB450
-	.4byte	.LBE450-.LBB450
-	.byte	0x3
-	.2byte	0x217
-	.4byte	0x25c0
-	.uleb128 0x2c
-	.4byte	0xea4
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB451
-	.4byte	.LBE451-.LBB451
-	.uleb128 0x2e
-	.4byte	0xeb0
-	.4byte	.LLST128
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xb3e
-	.4byte	.LBB452
-	.4byte	.LBE452-.LBB452
-	.byte	0x3
-	.2byte	0x218
-	.4byte	0x25f1
-	.uleb128 0x2c
-	.4byte	0xb4f
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB453
-	.4byte	.LBE453-.LBB453
-	.uleb128 0x2e
-	.4byte	0xb5b
-	.4byte	.LLST129
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe32
-	.4byte	.LBB454
-	.4byte	.LBE454-.LBB454
-	.byte	0x3
-	.2byte	0x219
-	.4byte	0x2628
-	.uleb128 0x3d
-	.4byte	0xe4b
-	.byte	0x3
-	.uleb128 0x2c
-	.4byte	0xe3f
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB455
-	.4byte	.LBE455-.LBB455
-	.uleb128 0x2e
-	.4byte	0xe57
-	.4byte	.LLST130
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe00
-	.4byte	.LBB456
-	.4byte	.LBE456-.LBB456
-	.byte	0x3
-	.2byte	0x21a
-	.4byte	0x265f
-	.uleb128 0x3d
-	.4byte	0xe19
-	.byte	0x1
-	.uleb128 0x2c
-	.4byte	0xe0d
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB457
-	.4byte	.LBE457-.LBB457
-	.uleb128 0x2e
-	.4byte	0xe25
-	.4byte	.LLST131
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x97f
-	.4byte	.LBB458
-	.4byte	.LBE458-.LBB458
-	.byte	0x3
-	.2byte	0x21b
-	.4byte	0x2696
-	.uleb128 0x3d
-	.4byte	0x998
-	.byte	0
-	.uleb128 0x2c
-	.4byte	0x98c
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB459
-	.4byte	.LBE459-.LBB459
-	.uleb128 0x2e
-	.4byte	0x9a4
-	.4byte	.LLST132
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xf55
-	.4byte	.LBB460
-	.4byte	.LBE460-.LBB460
-	.byte	0x3
-	.2byte	0x226
-	.4byte	0x26cd
-	.uleb128 0x3d
-	.4byte	0xf6e
-	.byte	0x1
-	.uleb128 0x2c
-	.4byte	0xf62
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB461
-	.4byte	.LBE461-.LBB461
-	.uleb128 0x2e
-	.4byte	0xf7a
-	.4byte	.LLST133
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xf87
-	.4byte	.LBB462
-	.4byte	.LBE462-.LBB462
-	.byte	0x3
-	.2byte	0x227
-	.4byte	0x26fe
-	.uleb128 0x2c
-	.4byte	0xf98
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB463
-	.4byte	.LBE463-.LBB463
-	.uleb128 0x2e
-	.4byte	0xfa4
-	.4byte	.LLST134
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe00
-	.4byte	.LBB464
-	.4byte	.LBE464-.LBB464
-	.byte	0x3
-	.2byte	0x22d
-	.4byte	0x2738
-	.uleb128 0x2b
-	.4byte	0xe19
-	.4byte	.LLST135
-	.uleb128 0x2c
-	.4byte	0xe0d
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB465
-	.4byte	.LBE465-.LBB465
-	.uleb128 0x2e
-	.4byte	0xe25
-	.4byte	.LLST136
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xe32
-	.4byte	.LBB466
-	.4byte	.LBE466-.LBB466
-	.byte	0x3
-	.2byte	0x22e
-	.4byte	0x2772
-	.uleb128 0x2b
-	.4byte	0xe4b
-	.4byte	.LLST137
-	.uleb128 0x2c
-	.4byte	0xe3f
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB467
-	.4byte	.LBE467-.LBB467
-	.uleb128 0x2e
-	.4byte	0xe57
-	.4byte	.LLST138
-	.byte	0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -26
 	.byte	0
 	.uleb128 0x22
-	.4byte	0x97f
-	.4byte	.LBB468
-	.4byte	.LBE468-.LBB468
-	.byte	0x3
-	.2byte	0x22f
-	.uleb128 0x2b
-	.4byte	0x998
-	.4byte	.LLST139
-	.uleb128 0x2c
-	.4byte	0x98c
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB469
-	.4byte	.LBE469-.LBB469
-	.uleb128 0x2e
-	.4byte	0x9a4
-	.4byte	.LLST140
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x36
-	.4byte	.LASF8465
+	.4byte	.LASF8466
 	.byte	0x3
 	.2byte	0x23d
 	.4byte	.LFB66
 	.4byte	.LFE66-.LFB66
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x27ea
-	.uleb128 0x37
-	.4byte	.LASF8432
+	.4byte	0x1b64
+	.uleb128 0x1a
+	.4byte	.LASF8441
 	.byte	0x3
 	.2byte	0x23d
-	.4byte	0x27ea
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB470
-	.4byte	.LBE470-.LBB470
-	.byte	0x3
-	.2byte	0x23f
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
+	.4byte	0x1b64
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
 	.uleb128 0xd
-	.4byte	0x27ef
-	.uleb128 0x16
+	.4byte	0x1b69
+	.uleb128 0x17
 	.byte	0x4
 	.4byte	0x855
-	.uleb128 0x36
-	.4byte	.LASF8466
+	.uleb128 0x22
+	.4byte	.LASF8467
 	.byte	0x3
 	.2byte	0x24d
 	.4byte	.LFB67
 	.4byte	.LFE67-.LFB67
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x290b
-	.uleb128 0x1f
-	.4byte	.LASF8389
+	.4byte	0x1bb3
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x24d
-	.4byte	0xbc2
-	.4byte	.LLST141
-	.uleb128 0x1f
-	.4byte	.LASF8432
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8441
 	.byte	0x3
 	.2byte	0x24e
-	.4byte	0x290b
-	.4byte	.LLST142
-	.uleb128 0x20
-	.4byte	.LASF8439
+	.4byte	0x1bb3
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x253
-	.4byte	0x8cc
-	.4byte	0x4003b000
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB472
-	.4byte	.LBE472-.LBB472
-	.byte	0x3
-	.2byte	0x250
-	.4byte	0x2859
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST143
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB474
-	.4byte	.LBE474-.LBB474
-	.byte	0x3
-	.2byte	0x251
-	.4byte	0x2877
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST144
-	.byte	0
-	.uleb128 0x38
-	.4byte	0xfb1
-	.4byte	.LBB476
-	.4byte	.LBE476-.LBB476
-	.byte	0x3
-	.2byte	0x254
-	.4byte	0x28e7
-	.uleb128 0x2b
-	.4byte	0xfca
-	.4byte	.LLST145
-	.uleb128 0x2c
-	.4byte	0xfbe
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB477
-	.4byte	.LBE477-.LBB477
-	.uleb128 0x2e
-	.4byte	0xfd6
-	.4byte	.LLST146
-	.uleb128 0x2e
-	.4byte	0xfe2
-	.4byte	.LLST147
-	.uleb128 0x2e
-	.4byte	0xfee
-	.4byte	.LLST148
-	.uleb128 0x2e
-	.4byte	0xffa
-	.4byte	.LLST149
-	.uleb128 0x2e
-	.4byte	0x1006
-	.4byte	.LLST150
-	.uleb128 0x2e
-	.4byte	0x1012
-	.4byte	.LLST151
-	.uleb128 0x2e
-	.4byte	0x101e
-	.4byte	.LLST152
-	.byte	0
-	.byte	0
-	.uleb128 0x22
-	.4byte	0x102b
-	.4byte	.LBB478
-	.4byte	.LBE478-.LBB478
-	.byte	0x3
-	.2byte	0x255
-	.uleb128 0x2b
-	.4byte	0x1044
-	.4byte	.LLST153
-	.uleb128 0x2c
-	.4byte	0x1038
-	.4byte	0x4003b000
-	.byte	0
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
 	.uleb128 0xd
-	.4byte	0x2910
-	.uleb128 0x16
+	.4byte	0x1bb8
+	.uleb128 0x17
 	.byte	0x4
-	.4byte	0x2916
+	.4byte	0x1bbe
 	.uleb128 0xd
 	.4byte	0x855
-	.uleb128 0x36
-	.4byte	.LASF8467
+	.uleb128 0x22
+	.4byte	.LASF8468
 	.byte	0x3
 	.2byte	0x260
 	.4byte	.LFB68
 	.4byte	.LFE68-.LFB68
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x29fc
-	.uleb128 0x37
-	.4byte	.LASF8389
+	.4byte	0x1c07
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x260
-	.4byte	0xbc2
-	.uleb128 0x1
-	.byte	0x50
-	.uleb128 0x37
-	.4byte	.LASF8432
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8441
 	.byte	0x3
 	.2byte	0x261
-	.4byte	0x27ea
-	.uleb128 0x1
-	.byte	0x51
-	.uleb128 0x20
-	.4byte	.LASF8439
+	.4byte	0x1b64
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -24
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x266
-	.4byte	0xaae
-	.4byte	0x4003b000
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB480
-	.4byte	.LBE480-.LBB480
-	.byte	0x3
-	.2byte	0x263
-	.4byte	0x297d
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB482
-	.4byte	.LBE482-.LBB482
-	.byte	0x3
-	.2byte	0x264
-	.4byte	0x299d
-	.uleb128 0x27
-	.4byte	0x88f
-	.uleb128 0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x1051
-	.4byte	.LBB484
-	.4byte	.LBE484-.LBB484
-	.byte	0x3
-	.2byte	0x267
-	.4byte	0x29ce
-	.uleb128 0x2c
-	.4byte	0x1062
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB485
-	.4byte	.LBE485-.LBB485
-	.uleb128 0x2e
-	.4byte	0x106e
-	.4byte	.LLST154
-	.byte	0
-	.byte	0
-	.uleb128 0x22
-	.4byte	0x107b
-	.4byte	.LBB486
-	.4byte	.LBE486-.LBB486
-	.byte	0x3
-	.2byte	0x268
-	.uleb128 0x2c
-	.4byte	0x108c
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB487
-	.4byte	.LBE487-.LBB487
-	.uleb128 0x2e
-	.4byte	0x1098
-	.4byte	.LLST155
-	.byte	0
-	.byte	0
-	.byte	0
-	.uleb128 0x3f
-	.4byte	.LASF8469
+	.uleb128 0x23
+	.4byte	.LASF8470
 	.byte	0x3
 	.2byte	0x272
 	.4byte	0x174
@@ -7573,167 +8306,105 @@ ADC_DRV_GetTriggerErrorFlags:
 	.4byte	.LFE69-.LFB69
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x2a5c
-	.uleb128 0x1f
-	.4byte	.LASF8389
+	.4byte	0x1c52
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x272
-	.4byte	0xbc2
-	.4byte	.LLST156
-	.uleb128 0x41
-	.4byte	.LASF8470
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8471
 	.byte	0x3
 	.2byte	0x276
-	.4byte	0x2a6c
-	.byte	0x1
-	.byte	0x1c
-	.uleb128 0x42
-	.4byte	.LASF8471
+	.4byte	0x1c62
+	.uleb128 0x5
+	.byte	0x3
+	.4byte	adcIrqId.5415
+	.uleb128 0x1e
+	.4byte	.LASF8472
 	.byte	0x3
 	.2byte	0x277
 	.4byte	0x174
-	.byte	0x1c
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB488
-	.4byte	.LBE488-.LBB488
-	.byte	0x3
-	.2byte	0x274
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST157
-	.byte	0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -9
 	.byte	0
 	.uleb128 0xa
 	.4byte	0x174
-	.4byte	0x2a6c
+	.4byte	0x1c62
 	.uleb128 0xb
 	.4byte	0x2ff
 	.byte	0
 	.byte	0
 	.uleb128 0xd
-	.4byte	0x2a5c
-	.uleb128 0x36
-	.4byte	.LASF8472
+	.4byte	0x1c52
+	.uleb128 0x22
+	.4byte	.LASF8473
 	.byte	0x3
 	.2byte	0x283
 	.4byte	.LFB70
 	.4byte	.LFE70-.LFB70
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x2b40
-	.uleb128 0x1f
-	.4byte	.LASF8389
+	.4byte	0x1cab
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x283
-	.4byte	0xbc2
-	.4byte	.LLST158
-	.uleb128 0x1f
-	.4byte	.LASF8473
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1a
+	.4byte	.LASF8474
 	.byte	0x3
 	.2byte	0x284
-	.4byte	0x2b40
-	.4byte	.LLST159
-	.uleb128 0x20
-	.4byte	.LASF8439
+	.4byte	0x1cab
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -21
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x289
-	.4byte	0x8cc
-	.4byte	0x4003b000
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB490
-	.4byte	.LBE490-.LBB490
-	.byte	0x3
-	.2byte	0x286
-	.4byte	0x2ad5
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST160
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x883
-	.4byte	.LBB492
-	.4byte	.LBE492-.LBB492
-	.byte	0x3
-	.2byte	0x287
-	.4byte	0x2aef
-	.uleb128 0x23
-	.4byte	0x88f
-	.byte	0
-	.uleb128 0x38
-	.4byte	0x10a5
-	.4byte	.LBB494
-	.4byte	.LBE494-.LBB494
-	.byte	0x3
-	.2byte	0x28c
-	.4byte	0x2b0d
-	.uleb128 0x2b
-	.4byte	0x10b2
-	.4byte	.LLST161
-	.byte	0
-	.uleb128 0x22
-	.4byte	0x10bf
-	.4byte	.LBB496
-	.4byte	.LBE496-.LBB496
-	.byte	0x3
-	.2byte	0x28f
-	.uleb128 0x2c
-	.4byte	0x10d0
-	.4byte	0x4003b000
-	.uleb128 0x2d
-	.4byte	.LBB497
-	.4byte	.LBE497-.LBB497
-	.uleb128 0x3e
-	.4byte	0x10dc
-	.uleb128 0x8
-	.byte	0x70
-	.sleb128 0
-	.byte	0x73
-	.sleb128 0
-	.byte	0x1a
-	.byte	0x40
-	.byte	0x25
-	.byte	0x9f
-	.byte	0
-	.byte	0
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
 	.uleb128 0xd
 	.4byte	0x877
-	.uleb128 0x36
-	.4byte	.LASF8474
+	.uleb128 0x22
+	.4byte	.LASF8475
 	.byte	0x3
 	.2byte	0x29c
 	.4byte	.LFB71
 	.4byte	.LFE71-.LFB71
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x2b96
-	.uleb128 0x1f
-	.4byte	.LASF8389
+	.4byte	0x1ce5
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x29c
-	.4byte	0xbc2
-	.4byte	.LLST162
-	.uleb128 0x20
-	.4byte	.LASF8439
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x2a0
-	.4byte	0x8cc
-	.4byte	0x4003b000
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB498
-	.4byte	.LBE498-.LBB498
-	.byte	0x3
-	.2byte	0x29e
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST163
+	.4byte	0x966
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
 	.byte	0
-	.byte	0
-	.uleb128 0x3f
-	.4byte	.LASF8475
+	.uleb128 0x23
+	.4byte	.LASF8476
 	.byte	0x3
 	.2byte	0x2ac
 	.4byte	0x73
@@ -7741,55 +8412,49 @@ ADC_DRV_GetTriggerErrorFlags:
 	.4byte	.LFE72-.LFB72
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x2bfb
-	.uleb128 0x1f
-	.4byte	.LASF8389
+	.4byte	0x1d2d
+	.uleb128 0x1a
+	.4byte	.LASF8385
 	.byte	0x3
 	.2byte	0x2ac
-	.4byte	0xbc2
-	.4byte	.LLST164
-	.uleb128 0x20
-	.4byte	.LASF8439
+	.4byte	0xbf9
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.uleb128 0x1e
+	.4byte	.LASF8444
 	.byte	0x3
 	.2byte	0x2b0
-	.4byte	0xaae
-	.4byte	0x4003b000
-	.uleb128 0x21
-	.4byte	.LASF8476
+	.4byte	0x8e0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0x1e
+	.4byte	.LASF8477
 	.byte	0x3
 	.2byte	0x2b2
 	.4byte	0x73
-	.4byte	.LLST165
-	.uleb128 0x22
-	.4byte	0x883
-	.4byte	.LBB500
-	.4byte	.LBE500-.LBB500
-	.byte	0x3
-	.2byte	0x2ae
-	.uleb128 0x2b
-	.4byte	0x88f
-	.4byte	.LLST166
-	.byte	0
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -16
 	.byte	0
 	.uleb128 0xa
-	.4byte	0x8d1
-	.4byte	0x2c0b
+	.4byte	0x96b
+	.4byte	0x1d3d
 	.uleb128 0xb
 	.4byte	0x2ff
 	.byte	0
 	.byte	0
-	.uleb128 0x43
-	.4byte	.LASF8477
+	.uleb128 0x18
+	.4byte	.LASF8478
 	.byte	0x3
 	.byte	0x2e
-	.4byte	0x2c1b
-	.byte	0x4
-	.byte	0
-	.byte	0xb0
+	.4byte	0x1d4e
+	.uleb128 0x5
 	.byte	0x3
-	.byte	0x40
+	.4byte	s_adcBase
 	.uleb128 0xd
-	.4byte	0x2bfb
+	.4byte	0x1d2d
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -8009,8 +8674,14 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0x19
-	.uleb128 0x20
-	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
@@ -8026,9 +8697,36 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x14
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x15
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x3
@@ -8039,9 +8737,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x16
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -8052,9 +8752,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x17
 	.uleb128 0xf
 	.byte	0
 	.uleb128 0xb
@@ -8063,7 +8765,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x17
+	.uleb128 0x18
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -8074,9 +8776,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
-	.byte	0
-	.byte	0
+	.uleb128 0x2
 	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x19
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3
@@ -8087,26 +8791,34 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0x5
 	.uleb128 0x27
 	.uleb128 0x19
-	.uleb128 0x20
-	.uleb128 0xb
+	.uleb128 0x11
 	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
 	.uleb128 0x19
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
+	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x1a
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0x5
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x1b
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -8117,25 +8829,8 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0x5
 	.uleb128 0x49
 	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1b
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x20
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
 	.byte	0
 	.byte	0
 	.uleb128 0x1c
@@ -8151,66 +8846,44 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0x19
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x20
-	.uleb128 0xb
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x1d
-	.uleb128 0x34
-	.byte	0
+	.uleb128 0x2e
+	.byte	0x1
 	.uleb128 0x3
 	.uleb128 0xe
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
 	.uleb128 0x5
+	.uleb128 0x27
+	.uleb128 0x19
 	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2116
+	.uleb128 0x19
+	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x1e
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x1f
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x20
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -8221,383 +8894,93 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0x5
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x1c
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x1f
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0x5
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2116
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x20
+	.uleb128 0xb
+	.byte	0x1
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
 	.uleb128 0x6
 	.byte	0
 	.byte	0
 	.uleb128 0x21
-	.uleb128 0x34
-	.byte	0
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
 	.uleb128 0x3
 	.uleb128 0xe
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2116
+	.uleb128 0x19
+	.uleb128 0x1
 	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
 	.byte	0
 	.byte	0
 	.uleb128 0x22
-	.uleb128 0x1d
+	.uleb128 0x2e
 	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0x5
+	.uleb128 0x27
+	.uleb128 0x19
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
 	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0x5
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2116
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
 	.byte	0
 	.byte	0
 	.uleb128 0x23
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x24
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x25
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x26
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x27
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x28
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x29
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x2a
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x2b
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x2c
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x2d
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x2e
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x2f
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x52
-	.uleb128 0x1
-	.uleb128 0x55
-	.uleb128 0x17
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0xb
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x30
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x55
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0x6
-	.byte	0
-	.byte	0
-	.uleb128 0x32
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x33
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x34
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x35
-	.uleb128 0x4109
-	.byte	0
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x36
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x40
-	.uleb128 0x18
-	.uleb128 0x2117
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x37
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x38
-	.uleb128 0x1d
-	.byte	0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x6
-	.uleb128 0x58
-	.uleb128 0xb
-	.uleb128 0x59
-	.uleb128 0x5
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x39
-	.uleb128 0xb
-	.byte	0x1
-	.byte	0
-	.byte	0
-	.uleb128 0x3a
-	.uleb128 0x4109
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x31
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x3b
-	.uleb128 0x410a
-	.byte	0
-	.uleb128 0x2
-	.uleb128 0x18
-	.uleb128 0x2111
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x3c
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x3d
-	.uleb128 0x5
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x3e
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x31
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x18
-	.byte	0
-	.byte	0
-	.uleb128 0x3f
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -8618,2843 +9001,125 @@ ADC_DRV_GetTriggerErrorFlags:
 	.uleb128 0x6
 	.uleb128 0x40
 	.uleb128 0x18
-	.uleb128 0x2117
+	.uleb128 0x2116
 	.uleb128 0x19
 	.uleb128 0x1
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x40
-	.uleb128 0x34
 	.byte	0
-	.uleb128 0x3
-	.uleb128 0x8
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
-	.byte	0
-	.byte	0
-	.uleb128 0x41
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.uleb128 0x42
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0x5
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xb
-	.byte	0
-	.byte	0
-	.uleb128 0x43
-	.uleb128 0x34
-	.byte	0
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x1c
-	.uleb128 0xa
-	.byte	0
-	.byte	0
-	.byte	0
-	.section	.debug_loc,"",%progbits
-.Ldebug_loc0:
-.LLST0:
-	.4byte	.LVL0
-	.4byte	.LVL3
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL3
-	.4byte	.LVL4
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	.LVL4
-	.4byte	.LVL5
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL5
-	.4byte	.LVL6
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	.LVL6
-	.4byte	.LVL7
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL7
-	.4byte	.LFE12
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST1:
-	.4byte	.LVL0
-	.4byte	.LVL1
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL1
-	.4byte	.LVL2
-	.2byte	0x8
-	.byte	0x73
-	.sleb128 0
-	.byte	0x8
-	.byte	0x30
-	.byte	0x1a
-	.byte	0x34
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST2:
-	.4byte	.LVL0
-	.4byte	.LVL7
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL7
-	.4byte	.LFE12
-	.2byte	0x1
-	.byte	0x50
-	.4byte	0
-	.4byte	0
-.LLST3:
-	.4byte	.LVL9
-	.4byte	.LVL48
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL48
-	.4byte	.LVL57
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	.LVL57
-	.4byte	.LVL59
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL59
-	.4byte	.LVL68
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	.LVL68
-	.4byte	.LVL69
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL69
-	.4byte	.LFE49
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST4:
-	.4byte	.LVL9
-	.4byte	.LVL97
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL97
-	.4byte	.LVL99
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	.LVL99
-	.4byte	.LVL101
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL101
-	.4byte	.LFE49
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST5:
-	.4byte	.LVL10
-	.4byte	.LVL104
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL104
-	.4byte	.LFE49
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST6:
-	.4byte	.LVL11
-	.4byte	.LVL97
-	.2byte	0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL97
-	.4byte	.LVL99
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL99
-	.4byte	.LVL101
-	.2byte	0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL101
-	.4byte	.LFE49
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST7:
-	.4byte	.LVL12
-	.4byte	.LVL14
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL14
-	.4byte	.LVL18
-	.2byte	0xa
-	.byte	0x71
-	.sleb128 3
-	.byte	0x94
-	.byte	0x1
-	.byte	0x8
-	.byte	0xff
-	.byte	0x1a
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST8:
-	.4byte	.LVL13
-	.4byte	.LVL18
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 0
-	.4byte	0
-	.4byte	0
-.LLST9:
-	.4byte	.LVL14
-	.4byte	.LVL15
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL16
-	.4byte	.LVL17
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL17
-	.4byte	.LVL21
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL21
-	.4byte	.LVL25
-	.2byte	0x3
-	.byte	0x73
-	.sleb128 64
-	.4byte	0
-	.4byte	0
-.LLST10:
-	.4byte	.LVL19
-	.4byte	.LVL20
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL20
-	.4byte	.LVL25
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 1
-	.4byte	0
-	.4byte	0
-.LLST11:
-	.4byte	.LVL20
-	.4byte	.LVL28
-	.2byte	0x1
-	.byte	0x55
-	.4byte	0
-	.4byte	0
-.LLST12:
-	.4byte	.LVL22
-	.4byte	.LVL26
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL26
-	.4byte	.LVL31
-	.2byte	0x3
-	.byte	0x73
-	.sleb128 68
-	.4byte	0
-	.4byte	0
-.LLST13:
-	.4byte	.LVL25
-	.4byte	.LVL31
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 2
-	.4byte	0
-	.4byte	0
-.LLST14:
-	.4byte	.LVL26
-	.4byte	.LVL27
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL28
-	.4byte	.LVL29
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL29
-	.4byte	.LVL30
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL30
-	.4byte	.LVL32
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL32
-	.4byte	.LVL37
-	.2byte	0x3
-	.byte	0x73
-	.sleb128 64
-	.4byte	0
-	.4byte	0
-.LLST15:
-	.4byte	.LVL31
-	.4byte	.LVL37
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 3
-	.4byte	0
-	.4byte	0
-.LLST16:
-	.4byte	.LVL32
-	.4byte	.LVL33
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL34
-	.4byte	.LVL35
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL35
-	.4byte	.LVL36
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL36
-	.4byte	.LVL38
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL38
-	.4byte	.LVL43
-	.2byte	0x3
-	.byte	0x73
-	.sleb128 64
-	.4byte	0
-	.4byte	0
-.LLST17:
-	.4byte	.LVL37
-	.4byte	.LVL43
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 4
-	.4byte	0
-	.4byte	0
-.LLST18:
-	.4byte	.LVL38
-	.4byte	.LVL39
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL40
-	.4byte	.LVL41
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL41
-	.4byte	.LVL42
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL42
-	.4byte	.LVL44
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL44
-	.4byte	.LVL45
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x76
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL45
-	.4byte	.LVL50
-	.2byte	0x6
-	.byte	0x76
-	.sleb128 1073983488
-	.4byte	.LVL57
-	.4byte	.LVL61
-	.2byte	0x6
-	.byte	0x76
-	.sleb128 1073983488
-	.4byte	.LVL68
-	.4byte	.LVL69
-	.2byte	0x6
-	.byte	0x76
-	.sleb128 1073983488
-	.4byte	0
-	.4byte	0
-.LLST19:
-	.4byte	.LVL44
-	.4byte	.LVL47
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL47
-	.4byte	.LVL50
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 5
-	.4byte	.LVL57
-	.4byte	.LVL58
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL58
-	.4byte	.LVL61
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 5
-	.4byte	.LVL68
-	.4byte	.LVL69
-	.2byte	0x1
-	.byte	0x52
-	.4byte	0
-	.4byte	0
-.LLST20:
-	.4byte	.LVL44
-	.4byte	.LVL48
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL48
-	.4byte	.LVL57
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	.LVL57
-	.4byte	.LVL59
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL59
-	.4byte	.LVL68
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	.LVL68
-	.4byte	.LVL69
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL69
-	.4byte	.LFE49
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST21:
-	.4byte	.LVL44
-	.4byte	.LVL46
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL46
-	.4byte	.LVL52
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL52
-	.4byte	.LVL53
-	.2byte	0x2
-	.byte	0x70
-	.sleb128 24
-	.4byte	.LVL53
-	.4byte	.LVL54
-	.2byte	0x5
-	.byte	0xc
-	.4byte	0x40048018
-	.4byte	.LVL57
-	.4byte	.LVL63
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL63
-	.4byte	.LVL64
-	.2byte	0x2
-	.byte	0x70
-	.sleb128 24
-	.4byte	.LVL64
-	.4byte	.LVL65
-	.2byte	0x5
-	.byte	0xc
-	.4byte	0x40048018
-	.4byte	.LVL68
-	.4byte	.LVL69
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST22:
-	.4byte	.LVL51
-	.4byte	.LVL55
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL55
-	.4byte	.LVL57
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 6
-	.4byte	.LVL62
-	.4byte	.LVL66
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL66
-	.4byte	.LVL68
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 6
-	.4byte	0
-	.4byte	0
-.LLST23:
-	.4byte	.LVL51
-	.4byte	.LVL57
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL62
-	.4byte	.LVL68
-	.2byte	0x2
-	.byte	0x31
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST24:
-	.4byte	.LVL51
-	.4byte	.LVL57
-	.2byte	0x6
-	.byte	0xc
-	.4byte	0x40048000
-	.byte	0x9f
-	.4byte	.LVL62
-	.4byte	.LVL68
-	.2byte	0x6
-	.byte	0xc
-	.4byte	0x40048000
-	.byte	0x9f
-	.4byte	.LVL69
-	.4byte	.LFE49
-	.2byte	0x6
-	.byte	0xc
-	.4byte	0x40048000
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST25:
-	.4byte	.LVL51
-	.4byte	.LVL54
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL54
-	.4byte	.LVL57
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL62
-	.4byte	.LVL65
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL65
-	.4byte	.LVL68
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL69
-	.4byte	.LVL71
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL71
-	.4byte	.LVL72
-	.2byte	0x2
-	.byte	0x72
-	.sleb128 24
-	.4byte	.LVL72
-	.4byte	.LVL77
-	.2byte	0x5
-	.byte	0xc
-	.4byte	0x40048018
-	.4byte	0
-	.4byte	0
-.LLST26:
-	.4byte	.LVL70
-	.4byte	.LVL77
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 8
-	.4byte	0
-	.4byte	0
-.LLST27:
-	.4byte	.LVL73
-	.4byte	.LVL74
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL75
-	.4byte	.LVL76
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL76
-	.4byte	.LVL78
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL78
-	.4byte	.LVL82
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x75
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST28:
-	.4byte	.LVL77
-	.4byte	.LVL82
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 12
-	.4byte	0
-	.4byte	0
-.LLST29:
-	.4byte	.LVL78
-	.4byte	.LVL79
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL80
-	.4byte	.LVL81
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL81
-	.4byte	.LVL83
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL83
-	.4byte	.LVL87
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x75
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL87
-	.4byte	.LVL89
-	.2byte	0x6
-	.byte	0x75
-	.sleb128 1073983488
-	.4byte	.LVL89
-	.4byte	.LVL90
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x75
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST30:
-	.4byte	.LVL82
-	.4byte	.LVL90
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 16
-	.4byte	0
-	.4byte	0
-.LLST31:
-	.4byte	.LVL84
-	.4byte	.LVL85
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL86
-	.4byte	.LVL88
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL88
-	.4byte	.LVL91
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL91
-	.4byte	.LVL92
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL92
-	.4byte	.LVL98
-	.2byte	0x3
-	.byte	0x70
-	.sleb128 148
-	.4byte	.LVL99
-	.4byte	.LVL103
-	.2byte	0x3
-	.byte	0x70
-	.sleb128 148
-	.4byte	0
-	.4byte	0
-.LLST32:
-	.4byte	.LVL93
-	.4byte	.LVL95
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL99
-	.4byte	.LVL100
-	.2byte	0x1
-	.byte	0x52
-	.4byte	0
-	.4byte	0
-.LLST33:
-	.4byte	.LVL94
-	.4byte	.LVL103
-	.2byte	0x6
-	.byte	0xc
-	.4byte	0x40048000
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST34:
-	.4byte	.LVL94
-	.4byte	.LVL96
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL96
-	.4byte	.LVL97
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 20
-	.4byte	.LVL97
-	.4byte	.LVL98
-	.2byte	0x5
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x23
-	.uleb128 0x14
-	.4byte	.LVL99
-	.4byte	.LVL102
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL102
-	.4byte	.LVL103
-	.2byte	0x5
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x23
-	.uleb128 0x14
-	.4byte	0
-	.4byte	0
-.LLST36:
-	.4byte	.LVL105
-	.4byte	.LVL129-1
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL129-1
-	.4byte	.LFE50
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST37:
-	.4byte	.LVL105
-	.4byte	.LVL129-1
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL129-1
-	.4byte	.LVL141
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL141
-	.4byte	.LFE50
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST38:
-	.4byte	.LVL106
-	.4byte	.LVL142
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL142
-	.4byte	.LFE50
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST39:
-	.4byte	.LVL107
-	.4byte	.LVL129-1
-	.2byte	0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL129-1
-	.4byte	.LVL141
-	.2byte	0x5
-	.byte	0x74
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL141
-	.4byte	.LFE50
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST40:
-	.4byte	.LVL109
-	.4byte	.LVL110
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST41:
-	.4byte	.LVL112
-	.4byte	.LVL114
-	.2byte	0x6
-	.byte	0x73
-	.sleb128 0
-	.byte	0x8
-	.byte	0xff
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST42:
-	.4byte	.LVL114
-	.4byte	.LVL115
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST43:
-	.4byte	.LVL116
-	.4byte	.LVL118
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL118
-	.4byte	.LVL129-1
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 2
-	.4byte	0
-	.4byte	0
-.LLST44:
-	.4byte	.LVL118
-	.4byte	.LVL119
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x33
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL119
-	.4byte	.LVL121
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST45:
-	.4byte	.LVL122
-	.4byte	.LVL123
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST46:
-	.4byte	.LVL124
-	.4byte	.LVL129-1
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL129-1
-	.4byte	.LFE50
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST47:
-	.4byte	.LVL124
-	.4byte	.LVL125
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL125
-	.4byte	.LVL126
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x31
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL126
-	.4byte	.LVL127
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST48:
-	.4byte	.LVL124
-	.4byte	.LVL128
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL128
-	.4byte	.LVL129-1
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST49:
-	.4byte	.LVL131
-	.4byte	.LVL132
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0x34
-	.byte	0x1a
-	.byte	0x32
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST50:
-	.4byte	.LVL134
-	.4byte	.LVL135
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x33
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST51:
-	.4byte	.LVL137
-	.4byte	.LVL138
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0x38
-	.byte	0x1a
-	.byte	0x33
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST52:
-	.4byte	.LVL139
-	.4byte	.LVL140
-	.2byte	0x6
-	.byte	0xc
-	.4byte	0x40048000
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST53:
-	.4byte	.LVL144
-	.4byte	.LVL150
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL150
-	.4byte	.LFE53
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST54:
-	.4byte	.LVL144
-	.4byte	.LVL173
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL173
-	.4byte	.LFE53
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST55:
-	.4byte	.LVL144
-	.4byte	.LVL150
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL150
-	.4byte	.LFE53
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST56:
-	.4byte	.LVL145
-	.4byte	.LVL173
-	.2byte	0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL173
-	.4byte	.LFE53
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST57:
-	.4byte	.LVL146
-	.4byte	.LVL152
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 0
-	.4byte	0
-	.4byte	0
-.LLST58:
-	.4byte	.LVL147
-	.4byte	.LVL148
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL149
-	.4byte	.LVL151
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL151
-	.4byte	.LVL153
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL153
-	.4byte	.LVL154
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL154
-	.4byte	.LVL157
-	.2byte	0x3
-	.byte	0x70
-	.sleb128 144
-	.4byte	.LVL157
-	.4byte	.LVL159
-	.2byte	0x5
-	.byte	0xc
-	.4byte	0x4003b090
-	.4byte	.LVL159
-	.4byte	.LVL160
-	.2byte	0x3
-	.byte	0x70
-	.sleb128 144
-	.4byte	.LVL160
-	.4byte	.LVL161
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST59:
-	.4byte	.LVL152
-	.4byte	.LVL161
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 4
-	.4byte	0
-	.4byte	0
-.LLST60:
-	.4byte	.LVL153
-	.4byte	.LVL155
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL156
-	.4byte	.LVL158
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL158
-	.4byte	.LVL162
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL162
-	.4byte	.LVL163
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL163
-	.4byte	.LVL166
-	.2byte	0x3
-	.byte	0x70
-	.sleb128 144
-	.4byte	.LVL166
-	.4byte	.LVL168
-	.2byte	0x5
-	.byte	0xc
-	.4byte	0x4003b090
-	.4byte	.LVL168
-	.4byte	.LVL169
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 144
-	.4byte	.LVL169
-	.4byte	.LVL170
-	.2byte	0x5
-	.byte	0x72
-	.sleb128 0
-	.byte	0x70
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST61:
-	.4byte	.LVL161
-	.4byte	.LVL170
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 8
-	.4byte	0
-	.4byte	0
-.LLST62:
-	.4byte	.LVL162
-	.4byte	.LVL164
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL165
-	.4byte	.LVL167
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL167
-	.4byte	.LVL171
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL171
-	.4byte	.LVL172
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 144
-	.4byte	0
-	.4byte	0
-.LLST63:
-	.4byte	.LVL170
-	.4byte	.LVL172
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 12
-	.4byte	.LVL172
-	.4byte	.LFE53
-	.2byte	0x1
-	.byte	0x50
-	.4byte	0
-	.4byte	0
-.LLST64:
-	.4byte	.LVL172
-	.4byte	.LVL173
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 14
-	.4byte	.LVL173
-	.4byte	.LFE53
-	.2byte	0x1
-	.byte	0x51
-	.4byte	0
-	.4byte	0
-.LLST65:
-	.4byte	.LVL174
-	.4byte	.LVL177
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL177
-	.4byte	.LFE54
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST66:
-	.4byte	.LVL174
-	.4byte	.LVL177
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL177
-	.4byte	.LFE54
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST67:
-	.4byte	.LVL178
-	.4byte	.LVL179
-	.2byte	0x8
-	.byte	0x72
-	.sleb128 0
-	.byte	0x8
-	.byte	0x20
-	.byte	0x1a
-	.byte	0x35
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST68:
-	.4byte	.LVL181
-	.4byte	.LVL182
-	.2byte	0x7
-	.byte	0x72
-	.sleb128 0
-	.byte	0x40
-	.byte	0x1a
-	.byte	0x34
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST69:
-	.4byte	.LVL184
-	.4byte	.LVL185
-	.2byte	0x7
-	.byte	0x72
-	.sleb128 0
-	.byte	0x38
-	.byte	0x1a
-	.byte	0x33
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST70:
-	.4byte	.LVL189
-	.4byte	.LVL196
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL196
-	.4byte	.LFE56
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST71:
-	.4byte	.LVL189
-	.4byte	.LVL202
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL202
-	.4byte	.LFE56
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST72:
-	.4byte	.LVL190
-	.4byte	.LVL196
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL196
-	.4byte	.LFE56
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST73:
-	.4byte	.LVL191
-	.4byte	.LVL202
-	.2byte	0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL202
-	.4byte	.LFE56
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST74:
-	.4byte	.LVL192
-	.4byte	.LVL198
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 0
-	.4byte	0
-	.4byte	0
-.LLST75:
-	.4byte	.LVL193
-	.4byte	.LVL194
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL195
-	.4byte	.LVL197
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL197
-	.4byte	.LVL199
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL199
-	.4byte	.LVL205
-	.2byte	0x5
-	.byte	0x74
-	.sleb128 0
-	.byte	0x70
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST76:
-	.4byte	.LVL198
-	.4byte	.LVL202
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 4
-	.4byte	.LVL202
-	.4byte	.LVL203
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL203
-	.4byte	.LVL205
-	.2byte	0x5
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x23
-	.uleb128 0x4
-	.4byte	0
-	.4byte	0
-.LLST77:
-	.4byte	.LVL199
-	.4byte	.LVL200
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL201
-	.4byte	.LVL204
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL204
-	.4byte	.LFE56
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST78:
-	.4byte	.LVL206
-	.4byte	.LVL209
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL209
-	.4byte	.LFE57
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST79:
-	.4byte	.LVL206
-	.4byte	.LVL209
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL209
-	.4byte	.LFE57
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST80:
-	.4byte	.LVL210
-	.4byte	.LVL211
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0x34
-	.byte	0x1a
-	.byte	0x32
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST81:
-	.4byte	.LVL213
-	.4byte	.LVL214
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x33
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST82:
-	.4byte	.LVL216
-	.4byte	.LVL217
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL217
-	.4byte	.LFE59
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST83:
-	.4byte	.LVL216
-	.4byte	.LVL231
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL231
-	.4byte	.LFE59
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST84:
-	.4byte	.LVL216
-	.4byte	.LVL225
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL225
-	.4byte	.LFE59
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST85:
-	.4byte	.LVL218
-	.4byte	.LVL221
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL221
-	.4byte	.LFE59
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST86:
-	.4byte	.LVL219
-	.4byte	.LVL225
-	.2byte	0x5
-	.byte	0x72
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL225
-	.4byte	.LFE59
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x52
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST87:
-	.4byte	.LVL222
-	.4byte	.LVL224
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST88:
-	.4byte	.LVL223
-	.4byte	.LVL239
-	.2byte	0x1
-	.byte	0x54
-	.4byte	0
-	.4byte	0
-.LLST89:
-	.4byte	.LVL223
-	.4byte	.LVL227
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL227
-	.4byte	.LVL228
-	.2byte	0x4
-	.byte	0x70
-	.sleb128 3840
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST90:
-	.4byte	.LVL223
-	.4byte	.LVL231
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL231
-	.4byte	.LFE59
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST91:
-	.4byte	.LVL229
-	.4byte	.LVL230
-	.2byte	0x2
-	.byte	0x45
-	.byte	0x9f
-	.4byte	.LVL230
-	.4byte	.LVL235
-	.2byte	0x1
-	.byte	0x52
-	.4byte	0
-	.4byte	0
-.LLST92:
-	.4byte	.LVL232
-	.4byte	.LVL233
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL234
-	.4byte	.LVL236
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL236
-	.4byte	.LVL237
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL238
-	.4byte	.LVL240
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL240
-	.4byte	.LFE59
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST93:
-	.4byte	.LVL226
-	.4byte	.LVL227
-	.2byte	0xb
-	.byte	0x70
-	.sleb128 0
-	.byte	0xa
-	.2byte	0xffff
-	.byte	0x1a
-	.byte	0xa
-	.2byte	0xf00
-	.byte	0x1c
-	.byte	0x9f
-	.4byte	.LVL227
-	.4byte	.LVL228
-	.2byte	0xc
-	.byte	0x70
-	.sleb128 3840
-	.byte	0xa
-	.2byte	0xffff
-	.byte	0x1a
-	.byte	0xa
-	.2byte	0xf00
-	.byte	0x1c
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST94:
-	.4byte	.LVL226
-	.4byte	.LVL230
-	.2byte	0x6
-	.byte	0xc
-	.4byte	0x40048000
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST95:
-	.4byte	.LVL241
-	.4byte	.LVL244
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL244
-	.4byte	.LFE60
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST96:
-	.4byte	.LVL243
-	.4byte	.LVL244
-	.2byte	0x1
-	.byte	0x51
-	.4byte	0
-	.4byte	0
-.LLST97:
-	.4byte	.LVL245
-	.4byte	.LVL246
-	.2byte	0x8
-	.byte	0x73
-	.sleb128 0
-	.byte	0x8
-	.byte	0x40
-	.byte	0x1a
-	.byte	0x36
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST98:
-	.4byte	.LVL248
-	.4byte	.LVL249
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x4f
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL249
-	.4byte	.LFE60
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST99:
-	.4byte	.LVL250
-	.4byte	.LVL253-1
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL253-1
-	.4byte	.LVL261
-	.2byte	0x1
-	.byte	0x55
-	.4byte	.LVL261
-	.4byte	.LFE61
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST100:
-	.4byte	.LVL250
-	.4byte	.LVL253-1
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL253-1
-	.4byte	.LFE61
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST101:
-	.4byte	.LVL252
-	.4byte	.LVL256
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL256
-	.4byte	.LFE61
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST102:
-	.4byte	.LVL251
-	.4byte	.LVL253-1
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL253-1
-	.4byte	.LVL261
-	.2byte	0x5
-	.byte	0x75
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL261
-	.4byte	.LFE61
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST103:
-	.4byte	.LVL254
-	.4byte	.LVL255
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST104:
-	.4byte	.LVL259
-	.4byte	.LVL260
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST105:
-	.4byte	.LVL262
-	.4byte	.LVL282-1
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL282-1
-	.4byte	.LFE51
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST106:
-	.4byte	.LVL264
-	.4byte	.LVL265
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL265
-	.4byte	.LVL266
-	.2byte	0x3
-	.byte	0x73
-	.sleb128 1
-	.byte	0x9f
-	.4byte	.LVL267
-	.4byte	.LVL268
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL268
-	.4byte	.LVL269
-	.2byte	0x2
-	.byte	0x31
-	.byte	0x9f
-	.4byte	.LVL269
-	.4byte	.LFE51
-	.2byte	0x2
-	.byte	0x32
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST107:
-	.4byte	.LVL263
-	.4byte	.LVL285
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL285
-	.4byte	.LFE51
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST108:
-	.4byte	.LVL270
-	.4byte	.LVL282-1
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL282-1
-	.4byte	.LFE51
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST109:
-	.4byte	.LVL270
-	.4byte	.LVL271
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL271
-	.4byte	.LVL275
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL275
-	.4byte	.LVL276
-	.2byte	0x2
-	.byte	0x72
-	.sleb128 24
-	.4byte	.LVL276
-	.4byte	.LVL280
-	.2byte	0x5
-	.byte	0xc
-	.4byte	0x40048018
-	.4byte	.LVL280
-	.4byte	.LVL281
-	.2byte	0x2
-	.byte	0x72
-	.sleb128 24
-	.4byte	0
-	.4byte	0
-.LLST110:
-	.4byte	.LVL272
-	.4byte	.LVL273
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST111:
-	.4byte	.LVL274
-	.4byte	.LVL282-1
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL282-1
-	.4byte	.LFE51
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST112:
-	.4byte	.LVL274
-	.4byte	.LVL277
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	.LVL277
-	.4byte	.LVL282-1
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST113:
-	.4byte	.LVL278
-	.4byte	.LVL279
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST114:
-	.4byte	.LVL283
-	.4byte	.LVL284
-	.2byte	0x6
-	.byte	0xc
-	.4byte	0x40048000
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST115:
-	.4byte	.LVL283
-	.4byte	.LVL284
-	.2byte	0x2
-	.byte	0x30
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST117:
-	.4byte	.LVL286
-	.4byte	.LVL287
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL287
-	.4byte	.LFE62
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST118:
-	.4byte	.LVL286
-	.4byte	.LVL287
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL287
-	.4byte	.LFE62
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST119:
-	.4byte	.LVL289
-	.4byte	.LVL292
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL292
-	.4byte	.LFE63
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST120:
-	.4byte	.LVL289
-	.4byte	.LVL291
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL291
-	.4byte	.LFE63
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST121:
-	.4byte	.LVL292
-	.4byte	.LVL293
-	.2byte	0x8
-	.byte	0x70
-	.sleb128 0
-	.byte	0x8
-	.byte	0x80
-	.byte	0x1a
-	.byte	0x37
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST122:
-	.4byte	.LVL289
-	.4byte	.LVL292
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL292
-	.4byte	.LFE63
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST123:
-	.4byte	.LVL294
-	.4byte	.LVL297
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL297
-	.4byte	.LFE64
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST124:
-	.4byte	.LVL298
-	.4byte	.LVL299
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0xa
-	.2byte	0xfff
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST125:
-	.4byte	.LVL300
-	.4byte	.LVL303
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL303
-	.4byte	.LFE65
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST126:
-	.4byte	.LVL301
-	.4byte	.LVL303
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL303
-	.4byte	.LFE65
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST127:
-	.4byte	.LVL303
-	.4byte	.LVL304
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL305
-	.4byte	.LVL342
-	.2byte	0x1
-	.byte	0x55
-	.4byte	0
-	.4byte	0
-.LLST128:
-	.4byte	.LVL306
-	.4byte	.LVL307
-	.2byte	0x5
-	.byte	0x74
-	.sleb128 0
-	.byte	0x33
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL307
-	.4byte	.LVL310
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL310
-	.4byte	.LVL357
-	.2byte	0x1
-	.byte	0x59
-	.4byte	0
-	.4byte	0
-.LLST129:
-	.4byte	.LVL309
-	.4byte	.LVL311
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL312
-	.4byte	.LVL353
-	.2byte	0x1
-	.byte	0x51
-	.4byte	0
-	.4byte	0
-.LLST130:
-	.4byte	.LVL313
-	.4byte	.LVL315
-	.2byte	0x1
-	.byte	0x54
-	.4byte	.LVL315
-	.4byte	.LVL317
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL317
-	.4byte	.LVL320
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL320
-	.4byte	.LVL322
-	.2byte	0x5
-	.byte	0x74
-	.sleb128 0
-	.byte	0x33
-	.byte	0x21
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST131:
-	.4byte	.LVL317
-	.4byte	.LVL319
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL319
-	.4byte	.LVL325
-	.2byte	0x1
-	.byte	0x56
-	.4byte	0
-	.4byte	0
-.LLST132:
-	.4byte	.LVL321
-	.4byte	.LVL324
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL324
-	.4byte	.LVL326
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x77
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST133:
-	.4byte	.LVL328
-	.4byte	.LVL329
-	.2byte	0x1
-	.byte	0x56
-	.4byte	.LVL329
-	.4byte	.LVL330
-	.2byte	0x7
-	.byte	0x76
-	.sleb128 0
-	.byte	0xb
-	.2byte	0xff7f
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL330
-	.4byte	.LVL331
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL331
-	.4byte	.LVL332
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL332
-	.4byte	.LVL336
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x72
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL336
-	.4byte	.LVL337
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x73
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL337
-	.4byte	.LVL338
-	.2byte	0x5
-	.byte	0x72
-	.sleb128 0
-	.byte	0x73
-	.sleb128 0
-	.byte	0x22
-	.4byte	.LVL338
-	.4byte	.LVL344
-	.2byte	0x3
-	.byte	0x72
-	.sleb128 148
-	.4byte	.LVL344
-	.4byte	.LVL345
-	.2byte	0x5
-	.byte	0x72
-	.sleb128 0
-	.byte	0x75
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST134:
-	.4byte	.LVL333
-	.4byte	.LVL335
-	.2byte	0x8
-	.byte	0x73
-	.sleb128 0
-	.byte	0x76
-	.sleb128 0
-	.byte	0x1a
-	.byte	0x37
-	.byte	0x25
-	.byte	0x9f
-	.4byte	.LVL335
-	.4byte	.LVL356
-	.2byte	0x8
-	.byte	0x76
-	.sleb128 0
-	.byte	0x8
-	.byte	0x80
-	.byte	0x1a
-	.byte	0x37
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST135:
-	.4byte	.LVL334
-	.4byte	.LVL342
-	.2byte	0x8
-	.byte	0x75
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x8
-	.byte	0xff
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST136:
-	.4byte	.LVL337
-	.4byte	.LVL339
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL340
-	.4byte	.LVL341
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL341
-	.4byte	.LVL343
-	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL343
-	.4byte	.LVL347
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL347
-	.4byte	.LVL350
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x75
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST137:
-	.4byte	.LVL345
-	.4byte	.LVL357
-	.2byte	0x1
-	.byte	0x59
-	.4byte	0
-	.4byte	0
-.LLST138:
-	.4byte	.LVL346
-	.4byte	.LVL351
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL351
-	.4byte	.LVL355
-	.2byte	0x5
-	.byte	0x73
-	.sleb128 0
-	.byte	0x75
-	.sleb128 0
-	.byte	0x22
-	.4byte	0
-	.4byte	0
-.LLST139:
-	.4byte	.LVL350
-	.4byte	.LVL353
-	.2byte	0x1
-	.byte	0x51
-	.4byte	0
-	.4byte	0
-.LLST140:
-	.4byte	.LVL351
-	.4byte	.LVL354
-	.2byte	0x1
-	.byte	0x52
-	.4byte	.LVL354
-	.4byte	.LFE65
-	.2byte	0x1
-	.byte	0x51
-	.4byte	0
-	.4byte	0
-.LLST141:
-	.4byte	.LVL359
-	.4byte	.LVL364
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL364
-	.4byte	.LFE67
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST142:
-	.4byte	.LVL359
-	.4byte	.LVL372
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL372
-	.4byte	.LFE67
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST143:
-	.4byte	.LVL360
-	.4byte	.LVL364
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL364
-	.4byte	.LFE67
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST144:
-	.4byte	.LVL361
-	.4byte	.LVL372
-	.2byte	0x5
-	.byte	0x71
-	.sleb128 0
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	.LVL372
-	.4byte	.LFE67
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST145:
-	.4byte	.LVL363
-	.4byte	.LVL376
-	.2byte	0x1
-	.byte	0x57
-	.4byte	0
-	.4byte	0
-.LLST146:
-	.4byte	.LVL364
-	.4byte	.LVL370
-	.2byte	0x1
-	.byte	0x50
-	.4byte	0
-	.4byte	0
-.LLST147:
-	.4byte	.LVL365
-	.4byte	.LVL369
-	.2byte	0x1
-	.byte	0x54
-	.4byte	0
-	.4byte	0
-.LLST148:
-	.4byte	.LVL366
-	.4byte	.LVL377
-	.2byte	0x1
-	.byte	0x58
-	.4byte	0
-	.4byte	0
-.LLST149:
-	.4byte	.LVL367
-	.4byte	.LVL375
-	.2byte	0x1
-	.byte	0x56
-	.4byte	0
-	.4byte	0
-.LLST150:
-	.4byte	.LVL368
-	.4byte	.LVL374
-	.2byte	0x1
-	.byte	0x55
-	.4byte	0
-	.4byte	0
-.LLST151:
-	.4byte	.LVL368
-	.4byte	.LVL369
-	.2byte	0x12
-	.byte	0x70
-	.sleb128 0
-	.byte	0x74
-	.sleb128 0
-	.byte	0x22
-	.byte	0x75
-	.sleb128 0
-	.byte	0x22
-	.byte	0x76
-	.sleb128 0
-	.byte	0x22
-	.byte	0x77
-	.sleb128 0
-	.byte	0x22
-	.byte	0x78
-	.sleb128 0
-	.byte	0x22
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST152:
-	.4byte	.LVL368
-	.4byte	.LVL369
-	.2byte	0x1e
-	.byte	0x70
-	.sleb128 0
-	.byte	0x74
-	.sleb128 0
-	.byte	0x22
-	.byte	0x75
-	.sleb128 0
-	.byte	0x22
-	.byte	0x76
-	.sleb128 0
-	.byte	0x22
-	.byte	0x77
-	.sleb128 0
-	.byte	0x22
-	.byte	0x78
-	.sleb128 0
-	.byte	0x22
-	.byte	0xb
-	.2byte	0xf800
-	.byte	0x1a
-	.byte	0x40
-	.byte	0x24
-	.byte	0x30
-	.byte	0x2e
-	.byte	0x8
-	.byte	0xff
-	.byte	0x1a
-	.byte	0x1f
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST153:
-	.4byte	.LVL371
-	.4byte	.LVL372
-	.2byte	0x2
-	.byte	0x71
-	.sleb128 2
-	.4byte	.LVL372
-	.4byte	.LVL373
-	.2byte	0x5
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x23
-	.uleb128 0x2
-	.4byte	0
-	.4byte	0
-.LLST154:
-	.4byte	.LVL381
-	.4byte	.LVL382
-	.2byte	0x7
-	.byte	0x73
-	.sleb128 0
-	.byte	0xa
-	.2byte	0x3ff
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST155:
-	.4byte	.LVL384
-	.4byte	.LVL385
-	.2byte	0x6
-	.byte	0x73
-	.sleb128 0
-	.byte	0x8
-	.byte	0xff
-	.byte	0x1a
-	.byte	0x9f
-	.4byte	.LVL385
-	.4byte	.LFE68
-	.2byte	0x1
-	.byte	0x53
-	.4byte	0
-	.4byte	0
-.LLST156:
-	.4byte	.LVL386
-	.4byte	.LVL388
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL388
-	.4byte	.LFE69
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST157:
-	.4byte	.LVL386
-	.4byte	.LVL388
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL388
-	.4byte	.LFE69
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST158:
-	.4byte	.LVL389
-	.4byte	.LVL394
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL394
-	.4byte	.LFE70
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST159:
-	.4byte	.LVL389
-	.4byte	.LVL392
-	.2byte	0x1
-	.byte	0x51
-	.4byte	.LVL392
-	.4byte	.LFE70
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x51
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST160:
-	.4byte	.LVL389
-	.4byte	.LVL394
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL394
-	.4byte	.LFE70
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST161:
-	.4byte	.LVL391
-	.4byte	.LVL393
-	.2byte	0x6
-	.byte	0xc
-	.4byte	0x4003b000
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST162:
-	.4byte	.LVL396
-	.4byte	.LVL398
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL398
-	.4byte	.LFE71
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST163:
-	.4byte	.LVL396
-	.4byte	.LVL398
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL398
-	.4byte	.LFE71
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST164:
-	.4byte	.LVL399
-	.4byte	.LVL401
-	.2byte	0x1
-	.byte	0x50
-	.4byte	.LVL401
-	.4byte	.LFE72
-	.2byte	0x4
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST165:
-	.4byte	.LVL401
-	.4byte	.LVL402
-	.2byte	0x9
-	.byte	0x70
-	.sleb128 0
-	.byte	0x4e
-	.byte	0x47
-	.byte	0x24
-	.byte	0x1a
-	.byte	0x48
-	.byte	0x25
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
-.LLST166:
-	.4byte	.LVL399
-	.4byte	.LVL401
-	.2byte	0x5
-	.byte	0x70
-	.sleb128 0
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	.LVL401
-	.4byte	.LFE72
-	.2byte	0x6
-	.byte	0xf3
-	.uleb128 0x1
-	.byte	0x50
-	.byte	0x30
-	.byte	0x29
-	.byte	0x9f
-	.4byte	0
-	.4byte	0
 	.section	.debug_aranges,"",%progbits
-	.4byte	0xe4
+	.4byte	0x25c
 	.2byte	0x2
 	.4byte	.Ldebug_info0
 	.byte	0x4
 	.byte	0
 	.2byte	0
 	.2byte	0
+	.4byte	.LFB0
+	.4byte	.LFE0-.LFB0
+	.4byte	.LFB1
+	.4byte	.LFE1-.LFB1
+	.4byte	.LFB2
+	.4byte	.LFE2-.LFB2
+	.4byte	.LFB3
+	.4byte	.LFE3-.LFB3
+	.4byte	.LFB4
+	.4byte	.LFE4-.LFB4
+	.4byte	.LFB5
+	.4byte	.LFE5-.LFB5
+	.4byte	.LFB6
+	.4byte	.LFE6-.LFB6
+	.4byte	.LFB7
+	.4byte	.LFE7-.LFB7
+	.4byte	.LFB8
+	.4byte	.LFE8-.LFB8
+	.4byte	.LFB9
+	.4byte	.LFE9-.LFB9
+	.4byte	.LFB10
+	.4byte	.LFE10-.LFB10
+	.4byte	.LFB11
+	.4byte	.LFE11-.LFB11
 	.4byte	.LFB12
 	.4byte	.LFE12-.LFB12
+	.4byte	.LFB13
+	.4byte	.LFE13-.LFB13
+	.4byte	.LFB14
+	.4byte	.LFE14-.LFB14
+	.4byte	.LFB15
+	.4byte	.LFE15-.LFB15
+	.4byte	.LFB16
+	.4byte	.LFE16-.LFB16
+	.4byte	.LFB17
+	.4byte	.LFE17-.LFB17
+	.4byte	.LFB18
+	.4byte	.LFE18-.LFB18
+	.4byte	.LFB19
+	.4byte	.LFE19-.LFB19
+	.4byte	.LFB20
+	.4byte	.LFE20-.LFB20
+	.4byte	.LFB21
+	.4byte	.LFE21-.LFB21
+	.4byte	.LFB22
+	.4byte	.LFE22-.LFB22
+	.4byte	.LFB23
+	.4byte	.LFE23-.LFB23
+	.4byte	.LFB24
+	.4byte	.LFE24-.LFB24
+	.4byte	.LFB25
+	.4byte	.LFE25-.LFB25
+	.4byte	.LFB26
+	.4byte	.LFE26-.LFB26
+	.4byte	.LFB27
+	.4byte	.LFE27-.LFB27
+	.4byte	.LFB28
+	.4byte	.LFE28-.LFB28
+	.4byte	.LFB29
+	.4byte	.LFE29-.LFB29
+	.4byte	.LFB30
+	.4byte	.LFE30-.LFB30
+	.4byte	.LFB31
+	.4byte	.LFE31-.LFB31
+	.4byte	.LFB32
+	.4byte	.LFE32-.LFB32
+	.4byte	.LFB33
+	.4byte	.LFE33-.LFB33
+	.4byte	.LFB34
+	.4byte	.LFE34-.LFB34
+	.4byte	.LFB35
+	.4byte	.LFE35-.LFB35
+	.4byte	.LFB36
+	.4byte	.LFE36-.LFB36
+	.4byte	.LFB37
+	.4byte	.LFE37-.LFB37
+	.4byte	.LFB38
+	.4byte	.LFE38-.LFB38
+	.4byte	.LFB39
+	.4byte	.LFE39-.LFB39
+	.4byte	.LFB40
+	.4byte	.LFE40-.LFB40
+	.4byte	.LFB41
+	.4byte	.LFE41-.LFB41
+	.4byte	.LFB42
+	.4byte	.LFE42-.LFB42
+	.4byte	.LFB43
+	.4byte	.LFE43-.LFB43
+	.4byte	.LFB44
+	.4byte	.LFE44-.LFB44
+	.4byte	.LFB45
+	.4byte	.LFE45-.LFB45
+	.4byte	.LFB46
+	.4byte	.LFE46-.LFB46
+	.4byte	.LFB47
+	.4byte	.LFE47-.LFB47
 	.4byte	.LFB48
 	.4byte	.LFE48-.LFB48
 	.4byte	.LFB49
 	.4byte	.LFE49-.LFB49
 	.4byte	.LFB50
 	.4byte	.LFE50-.LFB50
+	.4byte	.LFB51
+	.4byte	.LFE51-.LFB51
 	.4byte	.LFB52
 	.4byte	.LFE52-.LFB52
 	.4byte	.LFB53
@@ -11475,8 +9140,6 @@ ADC_DRV_GetTriggerErrorFlags:
 	.4byte	.LFE60-.LFB60
 	.4byte	.LFB61
 	.4byte	.LFE61-.LFB61
-	.4byte	.LFB51
-	.4byte	.LFE51-.LFB51
 	.4byte	.LFB62
 	.4byte	.LFE62-.LFB62
 	.4byte	.LFB63
@@ -11503,30 +9166,110 @@ ADC_DRV_GetTriggerErrorFlags:
 	.4byte	0
 	.section	.debug_ranges,"",%progbits
 .Ldebug_ranges0:
-	.4byte	.LBB268
-	.4byte	.LBE268
-	.4byte	.LBB278
-	.4byte	.LBE278
-	.4byte	.LBB280
-	.4byte	.LBE280
-	.4byte	0
-	.4byte	0
-	.4byte	.LBB274
-	.4byte	.LBE274
-	.4byte	.LBB279
-	.4byte	.LBE279
-	.4byte	.LBB281
-	.4byte	.LBE281
-	.4byte	0
-	.4byte	0
+	.4byte	.LFB0
+	.4byte	.LFE0
+	.4byte	.LFB1
+	.4byte	.LFE1
+	.4byte	.LFB2
+	.4byte	.LFE2
+	.4byte	.LFB3
+	.4byte	.LFE3
+	.4byte	.LFB4
+	.4byte	.LFE4
+	.4byte	.LFB5
+	.4byte	.LFE5
+	.4byte	.LFB6
+	.4byte	.LFE6
+	.4byte	.LFB7
+	.4byte	.LFE7
+	.4byte	.LFB8
+	.4byte	.LFE8
+	.4byte	.LFB9
+	.4byte	.LFE9
+	.4byte	.LFB10
+	.4byte	.LFE10
+	.4byte	.LFB11
+	.4byte	.LFE11
 	.4byte	.LFB12
 	.4byte	.LFE12
+	.4byte	.LFB13
+	.4byte	.LFE13
+	.4byte	.LFB14
+	.4byte	.LFE14
+	.4byte	.LFB15
+	.4byte	.LFE15
+	.4byte	.LFB16
+	.4byte	.LFE16
+	.4byte	.LFB17
+	.4byte	.LFE17
+	.4byte	.LFB18
+	.4byte	.LFE18
+	.4byte	.LFB19
+	.4byte	.LFE19
+	.4byte	.LFB20
+	.4byte	.LFE20
+	.4byte	.LFB21
+	.4byte	.LFE21
+	.4byte	.LFB22
+	.4byte	.LFE22
+	.4byte	.LFB23
+	.4byte	.LFE23
+	.4byte	.LFB24
+	.4byte	.LFE24
+	.4byte	.LFB25
+	.4byte	.LFE25
+	.4byte	.LFB26
+	.4byte	.LFE26
+	.4byte	.LFB27
+	.4byte	.LFE27
+	.4byte	.LFB28
+	.4byte	.LFE28
+	.4byte	.LFB29
+	.4byte	.LFE29
+	.4byte	.LFB30
+	.4byte	.LFE30
+	.4byte	.LFB31
+	.4byte	.LFE31
+	.4byte	.LFB32
+	.4byte	.LFE32
+	.4byte	.LFB33
+	.4byte	.LFE33
+	.4byte	.LFB34
+	.4byte	.LFE34
+	.4byte	.LFB35
+	.4byte	.LFE35
+	.4byte	.LFB36
+	.4byte	.LFE36
+	.4byte	.LFB37
+	.4byte	.LFE37
+	.4byte	.LFB38
+	.4byte	.LFE38
+	.4byte	.LFB39
+	.4byte	.LFE39
+	.4byte	.LFB40
+	.4byte	.LFE40
+	.4byte	.LFB41
+	.4byte	.LFE41
+	.4byte	.LFB42
+	.4byte	.LFE42
+	.4byte	.LFB43
+	.4byte	.LFE43
+	.4byte	.LFB44
+	.4byte	.LFE44
+	.4byte	.LFB45
+	.4byte	.LFE45
+	.4byte	.LFB46
+	.4byte	.LFE46
+	.4byte	.LFB47
+	.4byte	.LFE47
 	.4byte	.LFB48
 	.4byte	.LFE48
 	.4byte	.LFB49
 	.4byte	.LFE49
 	.4byte	.LFB50
 	.4byte	.LFE50
+	.4byte	.LFB51
+	.4byte	.LFE51
 	.4byte	.LFB52
 	.4byte	.LFE52
 	.4byte	.LFB53
@@ -11547,8 +9290,6 @@ ADC_DRV_GetTriggerErrorFlags:
 	.4byte	.LFE60
 	.4byte	.LFB61
 	.4byte	.LFE61
-	.4byte	.LFB51
-	.4byte	.LFE51
 	.4byte	.LFB62
 	.4byte	.LFE62
 	.4byte	.LFB63
@@ -12788,11 +10529,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x129
-	.uleb128 0x2
+	.uleb128 0x1
 	.byte	0x5
 	.uleb128 0x14
 	.4byte	.LASF8173
-	.file 25 "D:/s32dsworkspace/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
+	.file 25 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 	.byte	0x3
 	.uleb128 0x17
 	.uleb128 0x19
@@ -12805,7 +10546,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x27
-	.uleb128 0x1
+	.uleb128 0x2
 	.byte	0x5
 	.uleb128 0x14
 	.4byte	.LASF8175
@@ -36414,7 +34155,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"T_MASK)\000"
 .LASF8203:
 	.ascii	"PORT_IRQn\000"
-.LASF262:
+.LASF261:
 	.ascii	"__LLACCUM_EPSILON__ 0x1P-31LLK\000"
 .LASF4619:
 	.ascii	"LPI2C_SSR_AM1F_SHIFT 13u\000"
@@ -36516,7 +34257,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_FLS_DF_BLOCK_WRITE_UNIT_SIZE (8u)\000"
 .LASF385:
 	.ascii	"_EWL_CONSOLE_FILE_IS_DISK_FILE 0\000"
-.LASF301:
+.LASF300:
 	.ascii	"__UDA_IBIT__ 32\000"
 .LASF642:
 	.ascii	"ADC_CFG1_ADICLK_MASK 0x3u\000"
@@ -36560,7 +34301,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF5050:
 	.ascii	"LPSPI_IER_TCIE(x) (((uint32_t)(((uint32_t)(x))<<LPS"
 	.ascii	"PI_IER_TCIE_SHIFT))&LPSPI_IER_TCIE_MASK)\000"
-.LASF8473:
+.LASF8474:
 	.ascii	"clearMode\000"
 .LASF6933:
 	.ascii	"RTC_CR_CPS_MASK 0x20u\000"
@@ -36588,7 +34329,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF6854:
 	.ascii	"RCM_SRIE_WDOG(x) (((uint32_t)(((uint32_t)(x))<<RCM_"
 	.ascii	"SRIE_WDOG_SHIFT))&RCM_SRIE_WDOG_MASK)\000"
-.LASF8382:
+.LASF8370:
 	.ascii	"ADC_GetClockDivide\000"
 .LASF4041:
 	.ascii	"FTM_PAIR0DEADTIME_DTPS(x) (((uint32_t)(((uint32_t)("
@@ -36606,7 +34347,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_BAUD_SBR_WIDTH 13u\000"
 .LASF1400:
 	.ascii	"CAN_CBT_BTF_MASK 0x80000000u\000"
-.LASF8416:
+.LASF8434:
 	.ascii	"ADC_GetInputChannel\000"
 .LASF3319:
 	.ascii	"FTM_CNTIN_INIT_SHIFT 0u\000"
@@ -36629,7 +34370,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MCCR0_CLKLO_SHIFT 0u\000"
 .LASF7523:
 	.ascii	"SIM_ADCOPT_ADC1PRETRGSEL_WIDTH 2u\000"
-.LASF8458:
+.LASF8459:
 	.ascii	"ADC_DRV_WaitConvDone\000"
 .LASF537:
 	.ascii	"INT_LEAST16_MIN _EWL_SHRT_MIN\000"
@@ -36667,7 +34408,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SCG_SIRCDIV_SIRCDIV2_MASK 0x700u\000"
 .LASF1156:
 	.ascii	"CAN_RX14MASK_RX14M_MASK 0xFFFFFFFFu\000"
-.LASF8414:
+.LASF8432:
 	.ascii	"ADC_GetChanInterruptEnableFlag\000"
 .LASF1653:
 	.ascii	"CAN_FDCBT_FPRESDIV_SHIFT 20u\000"
@@ -36725,7 +34466,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_MODIR_TXCTSE_WIDTH 1u\000"
 .LASF6524:
 	.ascii	"PMC_LVDSC2_LVWF_WIDTH 1u\000"
-.LASF279:
+.LASF278:
 	.ascii	"__UQQ_IBIT__ 0\000"
 .LASF4487:
 	.ascii	"LPI2C_MCFGR2_FILTSDA_SHIFT 24u\000"
@@ -36758,7 +34499,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PORTD ((PORT_Type *)PORTD_BASE)\000"
 .LASF7350:
 	.ascii	"SCG_SIRCCSR_LK_WIDTH 1u\000"
-.LASF183:
+.LASF182:
 	.ascii	"__DEC128_MAX_EXP__ 6145\000"
 .LASF6103:
 	.ascii	"MPU_RGDAAC_M6WE_MASK 0x10000000u\000"
@@ -36814,7 +34555,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_ERQ_ERQ1_MASK 0x2u\000"
 .LASF4206:
 	.ascii	"LMEM_PCCLCR_LCMD_WIDTH 2u\000"
-.LASF69:
+.LASF68:
 	.ascii	"__SCHAR_MAX__ 127\000"
 .LASF3732:
 	.ascii	"FTM_FILTER_CH3FVAL_WIDTH 4u\000"
@@ -36851,7 +34592,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RCM_PARAM_EWDOG_WIDTH 1u\000"
 .LASF2410:
 	.ascii	"DMA_ERR_ERR0_SHIFT 0u\000"
-.LASF140:
+.LASF139:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF6514:
 	.ascii	"PMC_LVDSC2_LVWIE_MASK 0x20u\000"
@@ -36866,7 +34607,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CMP_C0_FILTER_CNT_MASK 0x70u\000"
 .LASF4981:
 	.ascii	"LPSPI_CR_DOZEN_WIDTH 1u\000"
-.LASF143:
+.LASF142:
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
 .LASF4407:
 	.ascii	"LPI2C_MIER_NDIE_SHIFT 10u\000"
@@ -36890,7 +34631,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"TMP_SPLL_CLK 3U\000"
 .LASF6007:
 	.ascii	"MPU_RGD_WORD2_M4WE_MASK 0x1000000u\000"
-.LASF123:
+.LASF122:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
 .LASF5762:
 	.ascii	"MCM_CPCR_AXBS_HLT_REQ(x) (((uint32_t)(((uint32_t)(x"
@@ -36927,7 +34668,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"AN_CBT_EPRESDIV_SHIFT))&CAN_CBT_EPRESDIV_MASK)\000"
 .LASF6117:
 	.ascii	"MPU_RGDAAC_M7RE_WIDTH 1u\000"
-.LASF8383:
+.LASF8373:
 	.ascii	"ADC_GetSampleTime\000"
 .LASF5107:
 	.ascii	"LPSPI_CFGR1_PCSPOL_MASK 0xF00u\000"
@@ -36972,7 +34713,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"AN_IFLAG1_BUF7I_SHIFT))&CAN_IFLAG1_BUF7I_MASK)\000"
 .LASF885:
 	.ascii	"AIPS_PACR_SP0_MASK 0x40000000u\000"
-.LASF170:
+.LASF169:
 	.ascii	"__DEC32_MIN__ 1E-95DF\000"
 .LASF3074:
 	.ascii	"FTFC_FSTAT_CCIF_WIDTH 1u\000"
@@ -36987,7 +34728,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_CH0F_SHIFT))&CMP_C2_CH0F_MASK)\000"
 .LASF3189:
 	.ascii	"FTM_IRQS_ARR_COUNT (4u)\000"
-.LASF203:
+.LASF202:
 	.ascii	"__UFRACT_FBIT__ 16\000"
 .LASF2067:
 	.ascii	"DMA_CR_ECX_WIDTH 1u\000"
@@ -37046,7 +34787,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PLASC_ASC_SHIFT))&MCM_PLASC_ASC_MASK)\000"
 .LASF1997:
 	.ascii	"CSE_PRAM_RAMn_DATA_32_BYTE_3_MASK 0xFFu\000"
-.LASF26:
+.LASF25:
 	.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
 .LASF3424:
 	.ascii	"FTM_OUTINIT_CH2OI_WIDTH 1u\000"
@@ -37056,15 +34797,15 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FLEXIO_VERID_MINOR(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<FLEXIO_VERID_MINOR_SHIFT))&FLEXIO_VERID_MINOR_MASK"
 	.ascii	")\000"
-.LASF245:
+.LASF244:
 	.ascii	"__UACCUM_MIN__ 0.0UK\000"
 .LASF4967:
 	.ascii	"LPSPI_PARAM_RXFIFO_MASK 0xFF00u\000"
-.LASF41:
+.LASF40:
 	.ascii	"__INT16_TYPE__ short int\000"
 .LASF1186:
 	.ascii	"CAN_ESR1_BOFFINT_WIDTH 1u\000"
-.LASF8470:
+.LASF8471:
 	.ascii	"adcIrqId\000"
 .LASF1596:
 	.ascii	"CAN_WMBn_D47_Data_byte_7_MASK 0xFFu\000"
@@ -37099,19 +34840,19 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_PL1_LO_Data_byte_1(x) (((uint32_t)(((uint32_t)("
 	.ascii	"x))<<CAN_PL1_LO_Data_byte_1_SHIFT))&CAN_PL1_LO_Data"
 	.ascii	"_byte_1_MASK)\000"
-.LASF8411:
+.LASF8419:
 	.ascii	"averageMode\000"
 .LASF6606:
 	.ascii	"PORT_GPCLR_GPWE(x) (((uint32_t)(((uint32_t)(x))<<PO"
 	.ascii	"RT_GPCLR_GPWE_SHIFT))&PORT_GPCLR_GPWE_MASK)\000"
 .LASF3703:
 	.ascii	"FTM_FMS_FAULTF3_SHIFT 3u\000"
-.LASF89:
+.LASF88:
 	.ascii	"__INT64_MAX__ 9223372036854775807LL\000"
 .LASF4239:
 	.ascii	"LMEM_PCCRMR_R13(x) (((uint32_t)(((uint32_t)(x))<<LM"
 	.ascii	"EM_PCCRMR_R13_SHIFT))&LMEM_PCCRMR_R13_MASK)\000"
-.LASF181:
+.LASF180:
 	.ascii	"__DEC128_MANT_DIG__ 34\000"
 .LASF5327:
 	.ascii	"LPUART_PINCFG_TRGSEL_WIDTH 2u\000"
@@ -37121,7 +34862,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_HAS_HIGH_SPEED_MODE (0U)\000"
 .LASF4897:
 	.ascii	"LPIT_CLRTEN_CLR_T_EN_2_WIDTH 1u\000"
-.LASF70:
+.LASF69:
 	.ascii	"__SHRT_MAX__ 32767\000"
 .LASF3603:
 	.ascii	"FTM_COMBINE_MCOMBINE3_SHIFT 31u\000"
@@ -37129,7 +34870,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_CDNE_CDNE_SHIFT 0u\000"
 .LASF421:
 	.ascii	"_EWL_C99 0\000"
-.LASF220:
+.LASF219:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
 .LASF2850:
 	.ascii	"FLEXIO_IRQS_CH_COUNT (1u)\000"
@@ -37158,9 +34899,9 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_4_SHIFT 24u\000"
 .LASF6579:
 	.ascii	"PORT_PCR_DSE_MASK 0x40u\000"
-.LASF135:
+.LASF134:
 	.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
-.LASF8371:
+.LASF8374:
 	.ascii	"ADC_SetSampleTime\000"
 .LASF8341:
 	.ascii	"inputClock\000"
@@ -37238,7 +34979,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_SOC_PORT_COUNT (5)\000"
 .LASF5172:
 	.ascii	"LPSPI_TCR_WIDTH_SHIFT 16u\000"
-.LASF177:
+.LASF176:
 	.ascii	"__DEC64_MIN__ 1E-383DD\000"
 .LASF6326:
 	.ascii	"PCC_INSTANCE_COUNT (1u)\000"
@@ -37280,11 +35021,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_FILTER_CH2FVAL(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<FTM_FILTER_CH2FVAL_SHIFT))&FTM_FILTER_CH2FVAL_MASK"
 	.ascii	")\000"
-.LASF8388:
+.LASF8394:
 	.ascii	"ADC_GetTriggerSelect\000"
 .LASF1149:
 	.ascii	"CAN_TIMER_TIMER_SHIFT 0u\000"
-.LASF8407:
+.LASF8410:
 	.ascii	"ADC_GetHwCompareComp1Value\000"
 .LASF4952:
 	.ascii	"LPSPI_VERID_FEATURE_SHIFT 0u\000"
@@ -37376,7 +35117,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1627:
 	.ascii	"CAN_FDCTRL_TDCEN(x) (((uint32_t)(((uint32_t)(x))<<C"
 	.ascii	"AN_FDCTRL_TDCEN_SHIFT))&CAN_FDCTRL_TDCEN_MASK)\000"
-.LASF8469:
+.LASF8470:
 	.ascii	"ADC_DRV_GetInterruptNumber\000"
 .LASF5623:
 	.ascii	"LPUART_DATA_PARITYE_WIDTH 1u\000"
@@ -37427,9 +35168,9 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_SCFGR1_GCEN_MASK 0x100u\000"
 .LASF2069:
 	.ascii	"DMA_CR_CX_MASK 0x20000u\000"
-.LASF275:
+.LASF274:
 	.ascii	"__DQ_IBIT__ 0\000"
-.LASF109:
+.LASF108:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
 .LASF7886:
 	.ascii	"FEATURE_FLS_DF_START_ADDRESS (0x10000000u)\000"
@@ -37501,7 +35242,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CMP_C0_EN_MASK 0x100u\000"
 .LASF4772:
 	.ascii	"LPI2C_SASR_ANV_WIDTH 1u\000"
-.LASF280:
+.LASF279:
 	.ascii	"__UHQ_FBIT__ 16\000"
 .LASF3995:
 	.ascii	"FTM_PWMLOAD_CH3SEL_SHIFT 3u\000"
@@ -37558,7 +35299,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_CPO_CPOWOI_SHIFT))&MCM_CPO_CPOWOI_MASK)\000"
 .LASF3355:
 	.ascii	"FTM_MODE_FTMEN_SHIFT 0u\000"
-.LASF48:
+.LASF47:
 	.ascii	"__INT_LEAST8_TYPE__ signed char\000"
 .LASF7218:
 	.ascii	"SCG ((SCG_Type *)SCG_BASE)\000"
@@ -37813,7 +35554,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF6882:
 	.ascii	"RCM_SRIE_SACKERR(x) (((uint32_t)(((uint32_t)(x))<<R"
 	.ascii	"CM_SRIE_SACKERR_SHIFT))&RCM_SRIE_SACKERR_MASK)\000"
-.LASF8401:
+.LASF8411:
 	.ascii	"ADC_SetHwCompareComp1Value\000"
 .LASF3736:
 	.ascii	"FTM_FLTCTRL_FAULT0EN_WIDTH 1u\000"
@@ -37844,13 +35585,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FLEXIO_CTRL_FASTACC_SHIFT 2u\000"
 .LASF1822:
 	.ascii	"CMP_C2_CH2F_WIDTH 1u\000"
-.LASF106:
+.LASF105:
 	.ascii	"__UINT_LEAST32_MAX__ 4294967295UL\000"
 .LASF7914:
 	.ascii	"FEATURE_FLS_DF_BLOCK_CMD_ADDRESS_ALIGMENT (8u)\000"
 .LASF8197:
 	.ascii	"DMA3_IRQn\000"
-.LASF39:
+.LASF38:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
 .LASF1328:
 	.ascii	"CAN_CTRL2_RRS_MASK 0x20000u\000"
@@ -37870,7 +35611,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_SYNCONF_SWRSTCNT(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_SYNCONF_SWRSTCNT_SHIFT))&FTM_SYNCONF_SWRSTCN"
 	.ascii	"T_MASK)\000"
-.LASF111:
+.LASF110:
 	.ascii	"__INT_FAST16_MAX__ 2147483647\000"
 .LASF1154:
 	.ascii	"CAN_RXMGMASK_MG_WIDTH 32u\000"
@@ -37903,7 +35644,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_CLOCK_NAMES {LPUART0_CLK, LPUART1_CLK}\000"
 .LASF5872:
 	.ascii	"MCM_LMPEIR_V_SHIFT 31u\000"
-.LASF8419:
+.LASF8420:
 	.ascii	"ADC_GetCalibrationActiveFlag\000"
 .LASF4786:
 	.ascii	"LPI2C_SRDR_RXEMPTY_MASK 0x4000u\000"
@@ -38002,7 +35743,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_DATA_RXEMPT(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<LPUART_DATA_RXEMPT_SHIFT))&LPUART_DATA_RXEMPT_MASK"
 	.ascii	")\000"
-.LASF257:
+.LASF256:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
 .LASF7383:
 	.ascii	"SCG_FIRCCSR_LK(x) (((uint32_t)(((uint32_t)(x))<<SCG"
@@ -38011,7 +35752,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_SCFGR1_TXDSTALL_SHIFT 2u\000"
 .LASF5710:
 	.ascii	"LPUART_FIFO_RXUF_SHIFT 16u\000"
-.LASF226:
+.LASF225:
 	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
 .LASF8000:
 	.ascii	"FEATURE_CSEC_PAGE_3_OFFSET (0x30U)\000"
@@ -38054,7 +35795,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF4263:
 	.ascii	"LMEM_PCCRMR_R7(x) (((uint32_t)(((uint32_t)(x))<<LME"
 	.ascii	"M_PCCRMR_R7_SHIFT))&LMEM_PCCRMR_R7_MASK)\000"
-.LASF217:
+.LASF216:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
 .LASF3087:
 	.ascii	"FTFC_FCNFG_ERSSUSP(x) (((uint8_t)(((uint8_t)(x))<<F"
@@ -38107,7 +35848,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_CESR_NSP_WIDTH 4u\000"
 .LASF6532:
 	.ascii	"PMC_REGSC_CLKBIASDIS_WIDTH 1u\000"
-.LASF240:
+.LASF239:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
 .LASF4167:
 	.ascii	"LMEM_PCCCR_INVW1(x) (((uint32_t)(((uint32_t)(x))<<L"
@@ -38136,7 +35877,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF4021:
 	.ascii	"FTM_PWMLOAD_LDOK(x) (((uint32_t)(((uint32_t)(x))<<F"
 	.ascii	"TM_PWMLOAD_LDOK_SHIFT))&FTM_PWMLOAD_LDOK_MASK)\000"
-.LASF241:
+.LASF240:
 	.ascii	"__ACCUM_MAX__ 0X7FFFFFFFP-15K\000"
 .LASF4680:
 	.ascii	"LPI2C_SIER_GCIE_WIDTH 1u\000"
@@ -38262,7 +36003,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1359:
 	.ascii	"CAN_ESR2_VPS(x) (((uint32_t)(((uint32_t)(x))<<CAN_E"
 	.ascii	"SR2_VPS_SHIFT))&CAN_ESR2_VPS_MASK)\000"
-.LASF8457:
+.LASF8446:
 	.ascii	"ADC_DRV_Reset\000"
 .LASF6001:
 	.ascii	"MPU_RGD_WORD2_M3UM_WIDTH 3u\000"
@@ -38327,7 +36068,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_RGD_WORD2_M4RE_SHIFT 25u\000"
 .LASF6361:
 	.ascii	"PCC_PCCn_FRAC_WIDTH 1u\000"
-.LASF60:
+.LASF59:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
 .LASF550:
 	.ascii	"INT_FAST32_MIN _EWL_LONG_MIN\000"
@@ -38420,7 +36161,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_BASE_PTRS { DMA }\000"
 .LASF3502:
 	.ascii	"FTM_COMBINE_FAULTEN0_MASK 0x40u\000"
-.LASF272:
+.LASF271:
 	.ascii	"__SQ_FBIT__ 31\000"
 .LASF2834:
 	.ascii	"ERM_EAR0_EAR(x) (((uint32_t)(((uint32_t)(x))<<ERM_E"
@@ -38429,7 +36170,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"S32K11x_SERIES \000"
 .LASF4328:
 	.ascii	"LPI2C_MCR_RST_WIDTH 1u\000"
-.LASF282:
+.LASF281:
 	.ascii	"__USQ_FBIT__ 32\000"
 .LASF7978:
 	.ascii	"FEATURE_INTERRUPT_MULTICORE_SUPPORT (0u)\000"
@@ -38479,7 +36220,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"WDOG_CS_EN_WIDTH 1u\000"
 .LASF1081:
 	.ascii	"CAN_MCR_MDIS_SHIFT 31u\000"
-.LASF158:
+.LASF157:
 	.ascii	"__LDBL_MAX_10_EXP__ 308\000"
 .LASF6685:
 	.ascii	"RCM_PARAM_ECMU_LOC_WIDTH 1u\000"
@@ -38513,7 +36254,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_EAR_EDR_COUNT 2u\000"
 .LASF5357:
 	.ascii	"LPUART_BAUD_RIDMAE_MASK 0x100000u\000"
-.LASF8438:
+.LASF8443:
 	.ascii	"ADC_DRV_ConfigConverter\000"
 .LASF3733:
 	.ascii	"FTM_FILTER_CH3FVAL(x) (((uint32_t)(((uint32_t)(x))<"
@@ -38523,7 +36264,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_EWL_INT_MAX 0x7fffffff\000"
 .LASF2896:
 	.ascii	"FLEXIO_CTRL_DOZEN_MASK 0x80000000u\000"
-.LASF72:
+.LASF71:
 	.ascii	"__LONG_MAX__ 2147483647L\000"
 .LASF965:
 	.ascii	"AIPS_OPACR_WP1_MASK 0x2000000u\000"
@@ -38622,7 +36363,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"S32K116_FEATURES_H \000"
 .LASF7289:
 	.ascii	"SCG_SOSCCSR_SOSCEN_SHIFT 0u\000"
-.LASF269:
+.LASF268:
 	.ascii	"__QQ_IBIT__ 0\000"
 .LASF3540:
 	.ascii	"FTM_COMBINE_MCOMBINE1_WIDTH 1u\000"
@@ -38644,17 +36385,17 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF3421:
 	.ascii	"FTM_OUTINIT_CH1OI(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"FTM_OUTINIT_CH1OI_SHIFT))&FTM_OUTINIT_CH1OI_MASK)\000"
-.LASF129:
+.LASF128:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
-.LASF934:
-	.ascii	"AIPS_OPACR_SP4_SHIFT 14u\000"
+.LASF306:
+	.ascii	"__NO_INLINE__ 1\000"
 .LASF6741:
 	.ascii	"RCM_SRS_CMU_LOC_WIDTH 1u\000"
 .LASF2389:
 	.ascii	"DMA_INT_INT11_MASK 0x800u\000"
 .LASF5273:
 	.ascii	"LPTMR_PSR_PCS_WIDTH 2u\000"
-.LASF144:
+.LASF143:
 	.ascii	"__DBL_MAX_10_EXP__ 308\000"
 .LASF7800:
 	.ascii	"WDOG_CS_EN_SHIFT 7u\000"
@@ -38691,7 +36432,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF6586:
 	.ascii	"PORT_PCR_MUX(x) (((uint32_t)(((uint32_t)(x))<<PORT_"
 	.ascii	"PCR_MUX_SHIFT))&PORT_PCR_MUX_MASK)\000"
-.LASF289:
+.LASF288:
 	.ascii	"__HA_IBIT__ 8\000"
 .LASF7845:
 	.ascii	"WDOG_TOVAL_TOVALHIGH_WIDTH 8u\000"
@@ -38707,7 +36448,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_STAT_RXEDGIF_WIDTH 1u\000"
 .LASF3114:
 	.ascii	"FTFC_FSEC_KEYEN_WIDTH 2u\000"
-.LASF14:
+.LASF13:
 	.ascii	"__FINITE_MATH_ONLY__ 0\000"
 .LASF6261:
 	.ascii	"MSCM_CP0CFG3_FPU_MASK 0x1u\000"
@@ -38757,7 +36498,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_SC_PWMEN1_MASK 0x20000u\000"
 .LASF7771:
 	.ascii	"WDOG_BASE_PTRS { WDOG }\000"
-.LASF8415:
+.LASF8433:
 	.ascii	"chanIndex\000"
 .LASF6544:
 	.ascii	"PMC_REGSC_LPODIS_WIDTH 1u\000"
@@ -38784,6 +36525,8 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MA_EARS_EDREQ_0_SHIFT))&DMA_EARS_EDREQ_0_MASK)\000"
 .LASF3294:
 	.ascii	"FTM_CnSC_CHIE_MASK 0x40u\000"
+.LASF2181:
+	.ascii	"DMA_ERQ_ERQ15_MASK 0x8000u\000"
 .LASF7181:
 	.ascii	"S32_SysTick_CSR_ENABLE_SHIFT 0u\000"
 .LASF523:
@@ -38850,7 +36593,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_SERQ_NOP_SHIFT 7u\000"
 .LASF7788:
 	.ascii	"WDOG_CS_TST_SHIFT 3u\000"
-.LASF8372:
+.LASF8375:
 	.ascii	"sampletime\000"
 .LASF1694:
 	.ascii	"CMP_C0_COS_WIDTH 1u\000"
@@ -38964,7 +36707,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF4231:
 	.ascii	"LMEM_PCCRMR_R15(x) (((uint32_t)(((uint32_t)(x))<<LM"
 	.ascii	"EM_PCCRMR_R15_SHIFT))&LMEM_PCCRMR_R15_MASK)\000"
-.LASF247:
+.LASF246:
 	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
 .LASF2714:
 	.ascii	"DMA_TCD_CSR_INTHALF_SHIFT 2u\000"
@@ -38982,7 +36725,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_CONF_BDMMODE_MASK 0xC0u\000"
 .LASF3628:
 	.ascii	"FTM_EXTTRIG_CH4TRIG_WIDTH 1u\000"
-.LASF224:
+.LASF223:
 	.ascii	"__ULLFRACT_IBIT__ 0\000"
 .LASF3619:
 	.ascii	"FTM_EXTTRIG_CH2TRIG_SHIFT 0u\000"
@@ -39025,7 +36768,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"AIPS_OPACR_WP0_WIDTH 1u\000"
 .LASF4807:
 	.ascii	"LPIT_VERID_MINOR_MASK 0xFF0000u\000"
-.LASF71:
+.LASF70:
 	.ascii	"__INT_MAX__ 2147483647\000"
 .LASF4705:
 	.ascii	"LPI2C_SCFGR1_RXSTALL(x) (((uint32_t)(((uint32_t)(x)"
@@ -39134,7 +36877,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_CHN7_SHIFT))&CMP_C1_CHN7_MASK)\000"
 .LASF7748:
 	.ascii	"TRGMUX_TRGMUXn_SEL0_SHIFT 0u\000"
-.LASF50:
+.LASF49:
 	.ascii	"__INT_LEAST32_TYPE__ long int\000"
 .LASF4387:
 	.ascii	"LPI2C_MSR_BBF_SHIFT 25u\000"
@@ -39229,7 +36972,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_CTRL_WAKE_SHIFT 3u\000"
 .LASF7345:
 	.ascii	"SCG_SIRCCSR_SIRCLPEN_SHIFT 2u\000"
-.LASF229:
+.LASF228:
 	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF8232:
 	.ascii	"CLPS\000"
@@ -39254,7 +36997,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PCC_CMP0_INDEX 115\000"
 .LASF7577:
 	.ascii	"SIM_MISCTRL0_FTM3_OBE_CTRL_MASK 0x80000u\000"
-.LASF8379:
+.LASF8400:
 	.ascii	"ADC_SetVoltageReference\000"
 .LASF1048:
 	.ascii	"CAN_MCR_WRNEN_MASK 0x200000u\000"
@@ -39270,7 +37013,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_CBT_EPSEG1_SHIFT))&CAN_CBT_EPSEG1_MASK)\000"
 .LASF7994:
 	.ascii	"FEATURE_CSEC_VERIFICATION_STATUS_OFFSET (0x14U)\000"
-.LASF8421:
+.LASF8424:
 	.ascii	"clp0\000"
 .LASF1444:
 	.ascii	"CAN_CTRL1_PN_WTOF_MSK_MASK 0x20000u\000"
@@ -39350,12 +37093,12 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF757:
 	.ascii	"ADC_CLPS_CLPS(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"CLPS_CLPS_SHIFT))&ADC_CLPS_CLPS_MASK)\000"
-.LASF122:
+.LASF121:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
 .LASF1761:
 	.ascii	"CMP_C1_CHN0_SHIFT 16u\000"
-.LASF7179:
-	.ascii	"S32_SysTick_IRQS { SysTick_IRQn }\000"
+.LASF7372:
+	.ascii	"SCG_FIRCCSR_FIRCEN_MASK 0x1u\000"
 .LASF7001:
 	.ascii	"S32_NVIC_ISER_COUNT 1u\000"
 .LASF4875:
@@ -39366,7 +37109,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_INT_INT3_SHIFT 3u\000"
 .LASF5973:
 	.ascii	"MPU_RGD_WORD2_M0UM_WIDTH 3u\000"
-.LASF52:
+.LASF51:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
 .LASF3059:
 	.ascii	"FTFC_FSTAT_MGSTAT0(x) (((uint8_t)(((uint8_t)(x))<<F"
@@ -39402,7 +37145,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTFC_FCCOB_CCOBn_WIDTH 8u\000"
 .LASF6615:
 	.ascii	"PORT_GICLR_GIWE_MASK 0xFFFFu\000"
-.LASF208:
+.LASF207:
 	.ascii	"__LFRACT_FBIT__ 31\000"
 .LASF5179:
 	.ascii	"LPSPI_TCR_RXMSK_MASK 0x80000u\000"
@@ -39426,7 +37169,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_SWOCTRL_CH1OCV_MASK 0x200u\000"
 .LASF6195:
 	.ascii	"MSCM_CPxCFG3_TZ_WIDTH 1u\000"
-.LASF8460:
+.LASF8461:
 	.ascii	"result\000"
 .LASF2087:
 	.ascii	"DMA_ES_NCE_WIDTH 1u\000"
@@ -39467,7 +37210,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF7810:
 	.ascii	"WDOG_CS_RCS(x) (((uint32_t)(((uint32_t)(x))<<WDOG_C"
 	.ascii	"S_RCS_SHIFT))&WDOG_CS_RCS_MASK)\000"
-.LASF213:
+.LASF212:
 	.ascii	"__ULFRACT_FBIT__ 32\000"
 .LASF7594:
 	.ascii	"SIM_SDID_RAMSIZE_SHIFT 16u\000"
@@ -39512,7 +37255,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CMP_C2_CH4F_SHIFT 20u\000"
 .LASF12:
 	.ascii	"__ATOMIC_CONSUME 1\000"
-.LASF215:
+.LASF214:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
 .LASF4697:
 	.ascii	"LPI2C_SDER_AVDE(x) (((uint32_t)(((uint32_t)(x))<<LP"
@@ -39533,7 +37276,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1459:
 	.ascii	"CAN_WU_MTC_WUMF(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_WU_MTC_WUMF_SHIFT))&CAN_WU_MTC_WUMF_MASK)\000"
-.LASF201:
+.LASF200:
 	.ascii	"__FRACT_MAX__ 0X7FFFP-15R\000"
 .LASF4929:
 	.ascii	"LPIT_TMR_TCTRL_TSOI_WIDTH 1u\000"
@@ -39620,7 +37363,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF3293:
 	.ascii	"FTM_CnSC_MSB(x) (((uint32_t)(((uint32_t)(x))<<FTM_C"
 	.ascii	"nSC_MSB_SHIFT))&FTM_CnSC_MSB_MASK)\000"
-.LASF45:
+.LASF44:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF682:
 	.ascii	"ADC_SC2_ACFGT_MASK 0x10u\000"
@@ -39685,7 +37428,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_CTRL1_LOM_MASK 0x8u\000"
 .LASF1725:
 	.ascii	"CMP_C0_CFR_SHIFT 26u\000"
-.LASF222:
+.LASF221:
 	.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
 .LASF1655:
 	.ascii	"CAN_FDCBT_FPRESDIV(x) (((uint32_t)(((uint32_t)(x))<"
@@ -39713,7 +37456,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CMU_FC_SR_RS_WIDTH 1u\000"
 .LASF1622:
 	.ascii	"CAN_FDCTRL_TDCFAIL_WIDTH 1u\000"
-.LASF8428:
+.LASF8422:
 	.ascii	"ADC_GetUserGainValue\000"
 .LASF7242:
 	.ascii	"SCG_CSR_DIVBUS_WIDTH 4u\000"
@@ -39762,7 +37505,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_FLTCTRL_FFLTR2EN(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_FLTCTRL_FFLTR2EN_SHIFT))&FTM_FLTCTRL_FFLTR2E"
 	.ascii	"N_MASK)\000"
-.LASF298:
+.LASF297:
 	.ascii	"__USA_FBIT__ 16\000"
 .LASF4201:
 	.ascii	"LMEM_PCCLCR_LCWAY_SHIFT 22u\000"
@@ -39834,7 +37577,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MDER_TDDE_MASK 0x1u\000"
 .LASF919:
 	.ascii	"AIPS_OPACR_WP5_WIDTH 1u\000"
-.LASF20:
+.LASF19:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
 .LASF5473:
 	.ascii	"LPUART_CTRL_M_MASK 0x10u\000"
@@ -39942,7 +37685,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1371:
 	.ascii	"CAN_CRCR_MBCRC(x) (((uint32_t)(((uint32_t)(x))<<CAN"
 	.ascii	"_CRCR_MBCRC_SHIFT))&CAN_CRCR_MBCRC_MASK)\000"
-.LASF8472:
+.LASF8473:
 	.ascii	"ADC_DRV_ClearLatchedTriggers\000"
 .LASF841:
 	.ascii	"AIPS_MPRA_MPL0_MASK 0x10000000u\000"
@@ -39969,7 +37712,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_TCD_CITER_ELINKNO_CITER_SHIFT 0u\000"
 .LASF3276:
 	.ascii	"FTM_CnSC_ICRST_WIDTH 1u\000"
-.LASF8393:
+.LASF8389:
 	.ascii	"mask\000"
 .LASF3548:
 	.ascii	"FTM_COMBINE_COMP2_WIDTH 1u\000"
@@ -40013,7 +37756,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"WDOG_CS_DBG_SHIFT 2u\000"
 .LASF7278:
 	.ascii	"SCG_VCCR_DIVCORE_WIDTH 4u\000"
-.LASF261:
+.LASF260:
 	.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
 .LASF4274:
 	.ascii	"LMEM_PCCRMR_R4_WIDTH 2u\000"
@@ -40041,7 +37784,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RR_ERR3_SHIFT))&DMA_ERR_ERR3_MASK)\000"
 .LASF1344:
 	.ascii	"CAN_CTRL2_BOFFDONEMSK_MASK 0x40000000u\000"
-.LASF117:
+.LASF116:
 	.ascii	"__UINT_FAST64_MAX__ 18446744073709551615ULL\000"
 .LASF1708:
 	.ascii	"CMP_C0_SE_MASK 0x8000u\000"
@@ -40049,7 +37792,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_PAIR0DEADTIME_DTVALEX(x) (((uint32_t)(((uint32_"
 	.ascii	"t)(x))<<FTM_PAIR0DEADTIME_DTVALEX_SHIFT))&FTM_PAIR0"
 	.ascii	"DEADTIME_DTVALEX_MASK)\000"
-.LASF35:
+.LASF34:
 	.ascii	"__INTMAX_TYPE__ long long int\000"
 .LASF6676:
 	.ascii	"RCM_PARAM_ELOC_SHIFT 2u\000"
@@ -40130,7 +37873,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_SIER_GCIE_SHIFT 14u\000"
 .LASF5837:
 	.ascii	"MCM_LMDR2_WY_WIDTH 4u\000"
-.LASF8386:
+.LASF8380:
 	.ascii	"ADC_GetInputClock\000"
 .LASF6197:
 	.ascii	"MSCM_CPxCFG3_CMP_MASK 0x20u\000"
@@ -40254,7 +37997,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_FLTPOL_FLT1POL(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<FTM_FLTPOL_FLT1POL_SHIFT))&FTM_FLTPOL_FLT1POL_MASK"
 	.ascii	")\000"
-.LASF83:
+.LASF82:
 	.ascii	"__UINTMAX_C(c) c ## ULL\000"
 .LASF6694:
 	.ascii	"RCM_PARAM_EPIN(x) (((uint32_t)(((uint32_t)(x))<<RCM"
@@ -40318,7 +38061,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"NotAvail_IRQn\000"
 .LASF7487:
 	.ascii	"SIM_LPOCLKS_LPO1KCLKEN_WIDTH 1u\000"
-.LASF8461:
+.LASF8462:
 	.ascii	"ADC_DRV_AutoCalibration\000"
 .LASF3353:
 	.ascii	"FTM_STATUS_CH7F(x) (((uint32_t)(((uint32_t)(x))<<FT"
@@ -40331,7 +38074,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_WATER_RXWATER_MASK 0x30000u\000"
 .LASF3898:
 	.ascii	"FTM_SYNCONF_HWSOC_MASK 0x100000u\000"
-.LASF49:
+.LASF48:
 	.ascii	"__INT_LEAST16_TYPE__ short int\000"
 .LASF1723:
 	.ascii	"CMP_C0_CFF(x) (((uint32_t)(((uint32_t)(x))<<CMP_C0_"
@@ -40493,7 +38236,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SCG_FIRCCSR_FIRCVLD_SHIFT 24u\000"
 .LASF1886:
 	.ascii	"CMU_FC_SR_FLL_MASK 0x1u\000"
-.LASF271:
+.LASF270:
 	.ascii	"__HQ_IBIT__ 0\000"
 .LASF5441:
 	.ascii	"LPUART_STAT_RXINV_MASK 0x10000000u\000"
@@ -40577,11 +38320,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_DATA_FRETSC_SHIFT 13u\000"
 .LASF7880:
 	.ascii	"FEATURE_FLS_HAS_PF_BLOCK_SWAP (0u)\000"
-.LASF8413:
+.LASF8417:
 	.ascii	"ADC_GetHwAverageMode\000"
 .LASF7841:
 	.ascii	"WDOG_TOVAL_TOVALLOW_WIDTH 8u\000"
-.LASF8439:
+.LASF8444:
 	.ascii	"base\000"
 .LASF5097:
 	.ascii	"LPSPI_CFGR1_SAMPLE_WIDTH 1u\000"
@@ -40590,7 +38333,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2416:
 	.ascii	"DMA_ERR_ERR1(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
 	.ascii	"RR_ERR1_SHIFT))&DMA_ERR_ERR1_MASK)\000"
-.LASF121:
+.LASF120:
 	.ascii	"__GCC_IEC_559_COMPLEX 0\000"
 .LASF5084:
 	.ascii	"LPSPI_CFGR0_CIRFIFO_SHIFT 8u\000"
@@ -40638,7 +38381,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF685:
 	.ascii	"ADC_SC2_ACFGT(x) (((uint32_t)(((uint32_t)(x))<<ADC_"
 	.ascii	"SC2_ACFGT_SHIFT))&ADC_SC2_ACFGT_MASK)\000"
-.LASF115:
+.LASF114:
 	.ascii	"__UINT_FAST16_MAX__ 4294967295U\000"
 .LASF1593:
 	.ascii	"CAN_WMBn_D03_Data_byte_0_SHIFT 24u\000"
@@ -40652,7 +38395,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_FLS_EE_SIZE_0001 (0xFFFFu)\000"
 .LASF1776:
 	.ascii	"CMP_C1_CHN4_MASK 0x100000u\000"
-.LASF8452:
+.LASF8454:
 	.ascii	"ADC_DRV_ConfigChan\000"
 .LASF426:
 	.ascii	"_EWL_C99_PRINTF_SCANF 0\000"
@@ -40668,7 +38411,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"INT_FAST16_MIN _EWL_SHRT_MIN\000"
 .LASF1780:
 	.ascii	"CMP_C1_CHN5_MASK 0x200000u\000"
-.LASF8408:
+.LASF8413:
 	.ascii	"ADC_GetHwCompareComp2Value\000"
 .LASF851:
 	.ascii	"AIPS_MPRA_MTR0_WIDTH 1u\000"
@@ -40713,7 +38456,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"D_MOD_SHIFT))&PDB_MOD_MOD_MASK)\000"
 .LASF1544:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_7_MASK 0xFFu\000"
-.LASF8435:
+.LASF8393:
 	.ascii	"intermVal\000"
 .LASF7407:
 	.ascii	"SCG_FIRCCFG_RANGE(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -40725,7 +38468,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF7903:
 	.ascii	"FEATURE_FLS_HAS_VERIFY_BACKDOOR_ACCESS_KEY_CMD (1u)"
 	.ascii	"\000"
-.LASF296:
+.LASF295:
 	.ascii	"__UHA_FBIT__ 8\000"
 .LASF3707:
 	.ascii	"FTM_FMS_FAULTIN_SHIFT 5u\000"
@@ -40762,7 +38505,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_FLTCTRL_FFVAL_SHIFT 8u\000"
 .LASF6318:
 	.ascii	"MSCM_OCMDR_OCMSZH_SHIFT 28u\000"
-.LASF142:
+.LASF141:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF352:
 	.ascii	"_EWL_GLOBALS_H \000"
@@ -40881,7 +38624,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LMDR_LMSZ_SHIFT))&MCM_LMDR_LMSZ_MASK)\000"
 .LASF3734:
 	.ascii	"FTM_FLTCTRL_FAULT0EN_MASK 0x1u\000"
-.LASF168:
+.LASF167:
 	.ascii	"__DEC32_MIN_EXP__ (-94)\000"
 .LASF5982:
 	.ascii	"MPU_RGD_WORD2_M0PE(x) (((uint32_t)(((uint32_t)(x))<"
@@ -40900,14 +38643,14 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"2C_SASR_ANV_SHIFT))&LPI2C_SASR_ANV_MASK)\000"
 .LASF3950:
 	.ascii	"FTM_SWOCTRL_CH0OCV_MASK 0x100u\000"
-.LASF171:
+.LASF170:
 	.ascii	"__DEC32_MAX__ 9.999999E96DF\000"
 .LASF3067:
 	.ascii	"FTFC_FSTAT_ACCERR(x) (((uint8_t)(((uint8_t)(x))<<FT"
 	.ascii	"FC_FSTAT_ACCERR_SHIFT))&FTFC_FSTAT_ACCERR_MASK)\000"
-.LASF276:
+.LASF275:
 	.ascii	"__TQ_FBIT__ 127\000"
-.LASF152:
+.LASF151:
 	.ascii	"__DBL_HAS_QUIET_NAN__ 1\000"
 .LASF7664:
 	.ascii	"SIM_CLKDIV4_TRACEDIVEN(x) (((uint32_t)(((uint32_t)("
@@ -41013,7 +38756,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	")\000"
 .LASF7361:
 	.ascii	"SCG_SIRCDIV_SIRCDIV1_SHIFT 0u\000"
-.LASF151:
+.LASF150:
 	.ascii	"__DBL_HAS_INFINITY__ 1\000"
 .LASF1618:
 	.ascii	"CAN_FDCTRL_TDCOFF_WIDTH 5u\000"
@@ -41117,7 +38860,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FLEXIO_TIMSTAT_TSF_SHIFT 0u\000"
 .LASF3494:
 	.ascii	"FTM_COMBINE_DTEN0_MASK 0x10u\000"
-.LASF173:
+.LASF172:
 	.ascii	"__DEC32_SUBNORMAL_MIN__ 0.000001E-95DF\000"
 .LASF0:
 	.ascii	"__STDC__ 1\000"
@@ -41237,13 +38980,13 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2056:
 	.ascii	"DMA_CR_HALT(x) (((uint32_t)(((uint32_t)(x))<<DMA_CR"
 	.ascii	"_HALT_SHIFT))&DMA_CR_HALT_MASK)\000"
-.LASF283:
+.LASF282:
 	.ascii	"__USQ_IBIT__ 0\000"
 .LASF7979:
 	.ascii	"FEATURE_INTERRUPT_INT_VECTORS {&S32_SCB->VTOR}\000"
 .LASF6560:
 	.ascii	"PORTE_BASE (0x4004D000u)\000"
-.LASF294:
+.LASF293:
 	.ascii	"__TA_FBIT__ 63\000"
 .LASF896:
 	.ascii	"AIPS_OPACR_WP7(x) (((uint32_t)(((uint32_t)(x))<<AIP"
@@ -41349,7 +39092,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MCFGR1_IGNACK_MASK 0x200u\000"
 .LASF871:
 	.ascii	"AIPS_PACR_WP1_WIDTH 1u\000"
-.LASF250:
+.LASF249:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
 .LASF3827:
 	.ascii	"FTM_FLTPOL_FLT0POL_SHIFT 0u\000"
@@ -41382,7 +39125,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PDB_C1_TOS_MASK 0xFF00u\000"
 .LASF2373:
 	.ascii	"DMA_INT_INT7_MASK 0x80u\000"
-.LASF8403:
+.LASF8414:
 	.ascii	"ADC_SetHwCompareComp2Value\000"
 .LASF7425:
 	.ascii	"SIM_CHIPCTL_CLKOUTEN_MASK 0x800u\000"
@@ -41545,7 +39288,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_MISRA_QUIET_DO_WHILE_0() \000"
 .LASF5294:
 	.ascii	"LPUART1_BASE (0x4006B000u)\000"
-.LASF139:
+.LASF138:
 	.ascii	"__DBL_MANT_DIG__ 53\000"
 .LASF6097:
 	.ascii	"MPU_RGDAAC_M5WE_WIDTH 1u\000"
@@ -41724,7 +39467,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"AIPS_PACR_SP0_WIDTH 1u\000"
 .LASF7953:
 	.ascii	"FEATURE_SCB_VECTKEY (0x05FAU)\000"
-.LASF64:
+.LASF63:
 	.ascii	"__INTPTR_TYPE__ int\000"
 .LASF3180:
 	.ascii	"FTM_CONTROLS_COUNT 8u\000"
@@ -41744,7 +39487,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPSPI_RSR_SOF_MASK 0x1u\000"
 .LASF8118:
 	.ascii	"CLOCK_MAX_FREQUENCY_RUN_PLL 40000000U\000"
-.LASF182:
+.LASF181:
 	.ascii	"__DEC128_MIN_EXP__ (-6142)\000"
 .LASF8110:
 	.ascii	"MAX_FREQ_RUN 1U\000"
@@ -41790,7 +39533,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_RGDAAC_M4RE_SHIFT 25u\000"
 .LASF7712:
 	.ascii	"SMC_PMCTRL_VLPSA_WIDTH 1u\000"
-.LASF68:
+.LASF67:
 	.ascii	"__GXX_ABI_VERSION 1002\000"
 .LASF5354:
 	.ascii	"LPUART_BAUD_MATCFG_SHIFT 18u\000"
@@ -41803,7 +39546,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LMEM_PCCLCR_TDSEL_WIDTH 1u\000"
 .LASF827:
 	.ascii	"AIPS_MPRA_MTR2_WIDTH 1u\000"
-.LASF200:
+.LASF199:
 	.ascii	"__FRACT_MIN__ (-0.5R-0.5R)\000"
 .LASF6622:
 	.ascii	"PORT_GICLR_GIWD(x) (((uint32_t)(((uint32_t)(x))<<PO"
@@ -41940,7 +39683,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2492:
 	.ascii	"DMA_HRS_HRS4(x) (((uint32_t)(((uint32_t)(x))<<DMA_H"
 	.ascii	"RS_HRS4_SHIFT))&DMA_HRS_HRS4_MASK)\000"
-.LASF27:
+.LASF26:
 	.ascii	"__ORDER_PDP_ENDIAN__ 3412\000"
 .LASF2223:
 	.ascii	"DMA_EEI_EEI9_WIDTH 1u\000"
@@ -41973,7 +39716,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_ERQ_ERQ10_SHIFT 10u\000"
 .LASF7863:
 	.ascii	"FEATURE_SCG_SIRC_HIGH_RANGE_FREQ (8000000U)\000"
-.LASF108:
+.LASF107:
 	.ascii	"__UINT_LEAST64_MAX__ 18446744073709551615ULL\000"
 .LASF4163:
 	.ascii	"LMEM_PCCCR_PUSHW0(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -42041,14 +39784,14 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	")\000"
 .LASF7461:
 	.ascii	"SIM_FTMOPT0_FTM2FLTxSEL_MASK 0x700u\000"
-.LASF242:
+.LASF241:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
 .LASF5819:
 	.ascii	"MCM_LMDR_V_MASK 0x80000000u\000"
 .LASF836:
 	.ascii	"AIPS_MPRA_MTW1(x) (((uint32_t)(((uint32_t)(x))<<AIP"
 	.ascii	"S_MPRA_MTW1_SHIFT))&AIPS_MPRA_MTW1_MASK)\000"
-.LASF306:
+.LASF305:
 	.ascii	"__GNUC_STDC_INLINE__ 1\000"
 .LASF8057:
 	.ascii	"FEATURE_MPU_MASTER_CORE (0U)\000"
@@ -42076,7 +39819,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PUID_IMPLEMENTER_MASK)\000"
 .LASF2347:
 	.ascii	"DMA_INT_INT0_WIDTH 1u\000"
-.LASF87:
+.LASF86:
 	.ascii	"__INT16_MAX__ 32767\000"
 .LASF5001:
 	.ascii	"LPSPI_SR_RDF_WIDTH 1u\000"
@@ -42139,7 +39882,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"NDSVSET_MASK)\000"
 .LASF7342:
 	.ascii	"SCG_SIRCCSR_SIRCSTEN_WIDTH 1u\000"
-.LASF88:
+.LASF87:
 	.ascii	"__INT32_MAX__ 2147483647L\000"
 .LASF4401:
 	.ascii	"LPI2C_MIER_EPIE(x) (((uint32_t)(((uint32_t)(x))<<LP"
@@ -42181,7 +39924,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"3_CAL_SHIFT))&ADC_SC3_CAL_MASK)\000"
 .LASF6295:
 	.ascii	"MSCM_OCMDR_OCM1_WIDTH 2u\000"
-.LASF8390:
+.LASF8386:
 	.ascii	"sim_base\000"
 .LASF3002:
 	.ascii	"FLEXIO_TIMCTL_TRGSRC_WIDTH 1u\000"
@@ -42215,7 +39958,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_DATA_PARITYE(x) (((uint32_t)(((uint32_t)(x))"
 	.ascii	"<<LPUART_DATA_PARITYE_SHIFT))&LPUART_DATA_PARITYE_M"
 	.ascii	"ASK)\000"
-.LASF15:
+.LASF14:
 	.ascii	"__SIZEOF_INT__ 4\000"
 .LASF3369:
 	.ascii	"FTM_MODE_PWMSYNC(x) (((uint32_t)(((uint32_t)(x))<<F"
@@ -42245,7 +39988,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"C2_FXMXCH_SHIFT))&CMP_C2_FXMXCH_MASK)\000"
 .LASF7453:
 	.ascii	"SIM_FTMOPT0_FTM0FLTxSEL_MASK 0x7u\000"
-.LASF8406:
+.LASF8408:
 	.ascii	"ADC_GetHwCompareRangeEnableFlag\000"
 .LASF7022:
 	.ascii	"S32_NVIC_ISPR_SETPEND(x) (((uint32_t)(((uint32_t)(x"
@@ -42288,7 +40031,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LMEM_PCCRMR_R3_WIDTH 2u\000"
 .LASF7442:
 	.ascii	"SIM_CHIPCTL_ADC_SUPPLYEN_SHIFT 19u\000"
-.LASF169:
+.LASF168:
 	.ascii	"__DEC32_MAX_EXP__ 97\000"
 .LASF6453:
 	.ascii	"PDB_C1_TOS(x) (((uint32_t)(((uint32_t)(x))<<PDB_C1_"
@@ -42438,7 +40181,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MSCM_OCMDR_OCMSZH_MASK 0x10000000u\000"
 .LASF423:
 	.ascii	"__EWL_ROUND_DECIMAL_ANSI_FP__ 1\000"
-.LASF8450:
+.LASF8437:
 	.ascii	"inputChanDemapped\000"
 .LASF4388:
 	.ascii	"LPI2C_MSR_BBF_WIDTH 1u\000"
@@ -42463,7 +40206,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPIT_SETTEN_SET_T_EN_2_WIDTH 1u\000"
 .LASF2014:
 	.ascii	"CSE_PRAM_RAMn_ACCESS8BIT_DATA_8LL_RAM_LL_SHIFT 0u\000"
-.LASF8464:
+.LASF8465:
 	.ascii	"trig\000"
 .LASF6122:
 	.ascii	"MSCM ((MSCM_Type *)MSCM_BASE)\000"
@@ -42517,7 +40260,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_FLS_HAS_DETECT_ECC_ERROR (1)\000"
 .LASF2599:
 	.ascii	"DMA_EARS_EDREQ_15_WIDTH 1u\000"
-.LASF202:
+.LASF201:
 	.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
 .LASF1069:
 	.ascii	"CAN_MCR_HALT_SHIFT 28u\000"
@@ -42531,7 +40274,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_OUTINIT_CH7OI_WIDTH 1u\000"
 .LASF7663:
 	.ascii	"SIM_CLKDIV4_TRACEDIVEN_WIDTH 1u\000"
-.LASF92:
+.LASF91:
 	.ascii	"__UINT32_MAX__ 4294967295UL\000"
 .LASF5492:
 	.ascii	"LPUART_CTRL_IDLECFG(x) (((uint32_t)(((uint32_t)(x))"
@@ -42550,7 +40293,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_TCD_NBYTES_MLOFFYES_MLOFF_WIDTH 20u\000"
 .LASF7744:
 	.ascii	"TRGMUX_LPI2C0_INDEX 21\000"
-.LASF8377:
+.LASF8397:
 	.ascii	"ADC_SetDMAEnableFlag\000"
 .LASF2303:
 	.ascii	"DMA_CDNE_CADN_WIDTH 1u\000"
@@ -42560,7 +40303,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FLEXIO_CTRL_SWRST_SHIFT 1u\000"
 .LASF1482:
 	.ascii	"CAN_FLT_DLC_FLT_DLC_LO_WIDTH 4u\000"
-.LASF8443:
+.LASF8449:
 	.ascii	"ADC_DRV_GetHwCompareConfig\000"
 .LASF4895:
 	.ascii	"LPIT_CLRTEN_CLR_T_EN_2_MASK 0x4u\000"
@@ -42582,7 +40325,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_SC2_ADTRG_WIDTH 1u\000"
 .LASF1430:
 	.ascii	"CAN_CTRL1_PN_IDFS_WIDTH 2u\000"
-.LASF127:
+.LASF126:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
 .LASF4530:
 	.ascii	"LPI2C_MCCR1_DATAVD_MASK 0x3F000000u\000"
@@ -42603,7 +40346,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_MODIR_TXCTSE_SHIFT 0u\000"
 .LASF533:
 	.ascii	"UINT16_MAX _EWL_USHRT_MAX\000"
-.LASF232:
+.LASF231:
 	.ascii	"__SACCUM_EPSILON__ 0x1P-7HK\000"
 .LASF2415:
 	.ascii	"DMA_ERR_ERR1_WIDTH 1u\000"
@@ -42645,7 +40388,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CMU_FC_IER_FHHIE_MASK 0x2u\000"
 .LASF7070:
 	.ascii	"S32_SCB_ICSR_VECTPENDING_WIDTH 6u\000"
-.LASF288:
+.LASF287:
 	.ascii	"__HA_FBIT__ 7\000"
 .LASF3908:
 	.ascii	"FTM_INVCTRL_INV1EN_WIDTH 1u\000"
@@ -42765,7 +40508,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"GPIO_PDIR_PDI_SHIFT 0u\000"
 .LASF865:
 	.ascii	"AIPS_PACR_TP1_MASK 0x1000000u\000"
-.LASF47:
+.LASF46:
 	.ascii	"__UINT64_TYPE__ long long unsigned int\000"
 .LASF3640:
 	.ascii	"FTM_EXTTRIG_CH1TRIG_WIDTH 1u\000"
@@ -42822,7 +40565,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2536:
 	.ascii	"DMA_HRS_HRS15(x) (((uint32_t)(((uint32_t)(x))<<DMA_"
 	.ascii	"HRS_HRS15_SHIFT))&DMA_HRS_HRS15_MASK)\000"
-.LASF8453:
+.LASF8455:
 	.ascii	"ADC_DRV_GetChanConfig\000"
 .LASF6185:
 	.ascii	"MSCM_CPxCFG3_JAZ_MASK 0x4u\000"
@@ -42869,7 +40612,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_INPUTCHAN_SUPPLY_VDD_LV\000"
 .LASF7469:
 	.ascii	"SIM_FTMOPT0_FTM0CLKSEL_MASK 0x3000000u\000"
-.LASF219:
+.LASF218:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
 .LASF3953:
 	.ascii	"FTM_SWOCTRL_CH0OCV(x) (((uint32_t)(((uint32_t)(x))<"
@@ -42881,13 +40624,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	")\000"
 .LASF7174:
 	.ascii	"S32_SysTick ((S32_SysTick_Type *)S32_SysTick_BASE)\000"
-.LASF29:
+.LASF28:
 	.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF3298:
 	.ascii	"FTM_CnSC_CHF_MASK 0x80u\000"
 .LASF4816:
 	.ascii	"LPIT_PARAM_CHANNEL_SHIFT 0u\000"
-.LASF188:
+.LASF187:
 	.ascii	"__SFRACT_FBIT__ 7\000"
 .LASF7104:
 	.ascii	"S32_SCB_AIRCR_SYSRESETREQ_MASK 0x4u\000"
@@ -43002,13 +40745,10 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"dmaEnable\000"
 .LASF1268:
 	.ascii	"CAN_ESR1_CRCERR_FAST_MASK 0x10000000u\000"
-.LASF8478:
-	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
-	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
-	.ascii	"g3 -O1 -std=c99 -funsigned-bitfields -fshort-enums "
-	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
-	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
-	.ascii	"on-constant\000"
+.LASF2632:
+	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
+	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
+	.ascii	")\000"
 .LASF6931:
 	.ascii	"RTC_CR_UM_WIDTH 1u\000"
 .LASF6110:
@@ -43098,7 +40838,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SIM_UIDML_UID63_32(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<SIM_UIDML_UID63_32_SHIFT))&SIM_UIDML_UID63_32_MASK"
 	.ascii	")\000"
-.LASF273:
+.LASF272:
 	.ascii	"__SQ_IBIT__ 0\000"
 .LASF6024:
 	.ascii	"MPU_RGD_WORD2_M6WE_SHIFT 28u\000"
@@ -43110,7 +40850,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"INE0_MASK)\000"
 .LASF702:
 	.ascii	"ADC_SC2_TRGSTLAT_MASK 0xF0000u\000"
-.LASF205:
+.LASF204:
 	.ascii	"__UFRACT_MIN__ 0.0UR\000"
 .LASF4594:
 	.ascii	"LPI2C_SSR_TAF_MASK 0x8u\000"
@@ -43140,13 +40880,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_FLS_HAS_DATA_FLS_REGION_PROTECTION (1u)\000"
 .LASF5061:
 	.ascii	"LPSPI_IER_DMIE_WIDTH 1u\000"
-.LASF145:
+.LASF144:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
 .LASF2083:
 	.ascii	"DMA_ES_SGE_WIDTH 1u\000"
 .LASF5791:
 	.ascii	"MCM_CPO_CPOWOI_MASK 0x4u\000"
-.LASF156:
+.LASF155:
 	.ascii	"__LDBL_MIN_10_EXP__ (-307)\000"
 .LASF2605:
 	.ascii	"DMA_DCHPRI_DPA_MASK 0x40u\000"
@@ -43207,7 +40947,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF4990:
 	.ascii	"LPSPI_CR_RTF(x) (((uint32_t)(((uint32_t)(x))<<LPSPI"
 	.ascii	"_CR_RTF_SHIFT))&LPSPI_CR_RTF_MASK)\000"
-.LASF133:
+.LASF132:
 	.ascii	"__FLT_MIN__ 1.1754943508222875e-38F\000"
 .LASF7417:
 	.ascii	"SIM_CHIPCTL_CLKOUTSEL_MASK 0xF0u\000"
@@ -43294,7 +41034,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_SC1_ADCH_SHIFT 0u\000"
 .LASF5559:
 	.ascii	"LPUART_CTRL_TXDIR_WIDTH 1u\000"
-.LASF8370:
+.LASF8368:
 	.ascii	"baseAddr\000"
 .LASF1464:
 	.ascii	"CAN_FLT_ID1_FLT_ID1_MASK 0x1FFFFFFFu\000"
@@ -43425,7 +41165,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF713:
 	.ascii	"ADC_SC3_AVGS(x) (((uint32_t)(((uint32_t)(x))<<ADC_S"
 	.ascii	"C3_AVGS_SHIFT))&ADC_SC3_AVGS_MASK)\000"
-.LASF278:
+.LASF277:
 	.ascii	"__UQQ_FBIT__ 8\000"
 .LASF7990:
 	.ascii	"FEATURE_CSEC_MAC_LENGTH_OFFSET (0x8U)\000"
@@ -43516,7 +41256,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"2CH1SEL_MASK)\000"
 .LASF2725:
 	.ascii	"DMA_TCD_CSR_MAJORELINK_MASK 0x20u\000"
-.LASF297:
+.LASF296:
 	.ascii	"__UHA_IBIT__ 8\000"
 .LASF3159:
 	.ascii	"FTFC_FCSESTAT_RIN(x) (((uint8_t)(((uint8_t)(x))<<FT"
@@ -43532,7 +41272,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_EWL_INTEGRAL_MATH \000"
 .LASF5746:
 	.ascii	"MCM_BASE_PTRS { MCM }\000"
-.LASF198:
+.LASF197:
 	.ascii	"__FRACT_FBIT__ 15\000"
 .LASF6899:
 	.ascii	"RTC_TPR_TPR_WIDTH 16u\000"
@@ -43558,8 +41298,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_FMS_FAULTF_MASK 0x80u\000"
 .LASF1825:
 	.ascii	"CMP_C2_CH3F_SHIFT 19u\000"
-.LASF2181:
-	.ascii	"DMA_ERQ_ERQ15_MASK 0x8000u\000"
+.LASF8479:
+	.ascii	"GNU C 4.9.3 20150529 (release) [ARM/embedded-4_9-br"
+	.ascii	"anch revision 227977] -mcpu=cortex-m0plus -mthumb -"
+	.ascii	"g3 -O0 -std=c99 -funsigned-bitfields -fshort-enums "
+	.ascii	"-fno-jump-tables -fmessage-length=0 -fsigned-char -"
+	.ascii	"ffunction-sections -fdata-sections -fsingle-precisi"
+	.ascii	"on-constant\000"
 .LASF5104:
 	.ascii	"LPSPI_CFGR1_NOSTALL_SHIFT 3u\000"
 .LASF5045:
@@ -43728,7 +41473,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_COMBINE_DECAPEN1(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_COMBINE_DECAPEN1_SHIFT))&FTM_COMBINE_DECAPEN"
 	.ascii	"1_MASK)\000"
-.LASF166:
+.LASF165:
 	.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
 .LASF6490:
 	.ascii	"PMC_INSTANCE_COUNT (1u)\000"
@@ -43763,7 +41508,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MSCM_OCMDR_OCMW_SHIFT 17u\000"
 .LASF1416:
 	.ascii	"CAN_RAMn_DATA_BYTE_0_MASK 0xFF000000u\000"
-.LASF110:
+.LASF109:
 	.ascii	"__INT_FAST8_MAX__ 2147483647\000"
 .LASF3512:
 	.ascii	"FTM_COMBINE_COMBINE1_WIDTH 1u\000"
@@ -43771,7 +41516,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPSPI_TCR_FRAMESZ_MASK 0xFFFu\000"
 .LASF8229:
 	.ascii	"USR_OFS\000"
-.LASF210:
+.LASF209:
 	.ascii	"__LFRACT_MIN__ (-0.5LR-0.5LR)\000"
 .LASF4573:
 	.ascii	"LPI2C_SCR_RST(x) (((uint32_t)(((uint32_t)(x))<<LPI2"
@@ -43794,7 +41539,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_COMBINE_DECAPEN3(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_COMBINE_DECAPEN3_SHIFT))&FTM_COMBINE_DECAPEN"
 	.ascii	"3_MASK)\000"
-.LASF157:
+.LASF156:
 	.ascii	"__LDBL_MAX_EXP__ 1024\000"
 .LASF7392:
 	.ascii	"SCG_FIRCCSR_FIRCERR_MASK 0x4000000u\000"
@@ -43802,7 +41547,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_MPU_HARDWARE_REVISION_LEVEL (1U)\000"
 .LASF6346:
 	.ascii	"PCC_PORTB_INDEX 74\000"
-.LASF190:
+.LASF189:
 	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
 .LASF5047:
 	.ascii	"LPSPI_IER_TCIE_MASK 0x400u\000"
@@ -43821,7 +41566,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"L_MASK)\000"
 .LASF6880:
 	.ascii	"RCM_SRIE_SACKERR_SHIFT 13u\000"
-.LASF124:
+.LASF123:
 	.ascii	"__FLT_RADIX__ 2\000"
 .LASF3524:
 	.ascii	"FTM_COMBINE_DECAP1_WIDTH 1u\000"
@@ -43854,7 +41599,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_EARS_EDREQ_5_SHIFT 5u\000"
 .LASF7463:
 	.ascii	"SIM_FTMOPT0_FTM2FLTxSEL_WIDTH 3u\000"
-.LASF237:
+.LASF236:
 	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
 .LASF4169:
 	.ascii	"LMEM_PCCCR_PUSHW1_SHIFT 27u\000"
@@ -43866,7 +41611,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPIT_TMR_TVAL_TMR_VAL_WIDTH 32u\000"
 .LASF4719:
 	.ascii	"LPI2C_SCFGR1_SAEN_SHIFT 9u\000"
-.LASF80:
+.LASF79:
 	.ascii	"__INTMAX_MAX__ 9223372036854775807LL\000"
 .LASF3097:
 	.ascii	"FTFC_FCNFG_CCIE_SHIFT 7u\000"
@@ -43937,7 +41682,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RCM_PARAM_ETAMPER_SHIFT))&RCM_PARAM_ETAMPER_MASK)\000"
 .LASF1553:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_5_SHIFT 16u\000"
-.LASF43:
+.LASF42:
 	.ascii	"__INT64_TYPE__ long long int\000"
 .LASF6154:
 	.ascii	"MSCM_CPxCFG0_ICWY_SHIFT 16u\000"
@@ -44019,7 +41764,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_CEEI_NOP_SHIFT 7u\000"
 .LASF7893:
 	.ascii	"FEATURE_FLS_HAS_READ_RESOURCE_CMD (0u)\000"
-.LASF274:
+.LASF273:
 	.ascii	"__DQ_FBIT__ 63\000"
 .LASF2499:
 	.ascii	"DMA_HRS_HRS6_WIDTH 1u\000"
@@ -44179,7 +41924,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_PWMLOAD_CH7SEL_SHIFT 7u\000"
 .LASF3184:
 	.ascii	"FTM0 ((FTM_Type *)FTM0_BASE)\000"
-.LASF146:
+.LASF145:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF3742:
 	.ascii	"FTM_FLTCTRL_FAULT2EN_MASK 0x4u\000"
@@ -44368,7 +42113,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2080:
 	.ascii	"DMA_ES_SBE(x) (((uint32_t)(((uint32_t)(x))<<DMA_ES_"
 	.ascii	"SBE_SHIFT))&DMA_ES_SBE_MASK)\000"
-.LASF214:
+.LASF213:
 	.ascii	"__ULFRACT_IBIT__ 0\000"
 .LASF8185:
 	.ascii	"uint32_t\000"
@@ -44447,7 +42192,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_HRS_HRS7_WIDTH 1u\000"
 .LASF5319:
 	.ascii	"LPUART_PARAM_RXFIFO_WIDTH 8u\000"
-.LASF228:
+.LASF227:
 	.ascii	"__SACCUM_FBIT__ 7\000"
 .LASF562:
 	.ascii	"UINTPTR_MAX _EWL_ULONG_MAX\000"
@@ -44462,7 +42207,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LMEM_PCCCR_PUSHW1_SHIFT))&LMEM_PCCCR_PUSHW1_MASK)\000"
 .LASF6121:
 	.ascii	"MSCM_BASE (0x40001000u)\000"
-.LASF255:
+.LASF254:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
 .LASF2849:
 	.ascii	"FLEXIO_IRQS_ARR_COUNT (1u)\000"
@@ -44470,7 +42215,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MIER_ALIE_SHIFT 11u\000"
 .LASF1361:
 	.ascii	"CAN_ESR2_LPTM_SHIFT 16u\000"
-.LASF159:
+.LASF158:
 	.ascii	"__DECIMAL_DIG__ 17\000"
 .LASF4883:
 	.ascii	"LPIT_SETTEN_SET_T_EN_3_MASK 0x8u\000"
@@ -44561,7 +42306,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MCM_LMFDLR_PEFDL_WIDTH 32u\000"
 .LASF1836:
 	.ascii	"CMP_C2_CH6F_MASK 0x400000u\000"
-.LASF236:
+.LASF235:
 	.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
 .LASF3165:
 	.ascii	"FTFC_FCSESTAT_IDB_SHIFT 7u\000"
@@ -44634,7 +42379,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF6936:
 	.ascii	"RTC_CR_CPS(x) (((uint32_t)(((uint32_t)(x))<<RTC_CR_"
 	.ascii	"CPS_SHIFT))&RTC_CR_CPS_MASK)\000"
-.LASF8446:
+.LASF8452:
 	.ascii	"ADC_DRV_GetHwAverageConfig\000"
 .LASF5036:
 	.ascii	"LPSPI_IER_RDIE_SHIFT 1u\000"
@@ -44670,7 +42415,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"U_RGDAAC_M0SM_SHIFT))&MPU_RGDAAC_M0SM_MASK)\000"
 .LASF5844:
 	.ascii	"MCM_LMDR2_LMSZH_SHIFT 28u\000"
-.LASF251:
+.LASF250:
 	.ascii	"__LACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LK\000"
 .LASF3053:
 	.ascii	"FTFC_READ_COLLISION_IRQS_CH_COUNT (1u)\000"
@@ -44688,7 +42433,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ERM_CR0_ESCIE0_SHIFT 31u\000"
 .LASF2403:
 	.ascii	"DMA_INT_INT14_WIDTH 1u\000"
-.LASF8463:
+.LASF8464:
 	.ascii	"hwavg\000"
 .LASF3034:
 	.ascii	"FLEXIO_TIMCFG_TIMDEC_WIDTH 2u\000"
@@ -44722,7 +42467,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MIER_EPIE_MASK 0x100u\000"
 .LASF623:
 	.ascii	"ADC0_BASE (0x4003B000u)\000"
-.LASF281:
+.LASF280:
 	.ascii	"__UHQ_IBIT__ 0\000"
 .LASF3078:
 	.ascii	"FTFC_FCNFG_EEERDY_WIDTH 1u\000"
@@ -44762,7 +42507,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_CTRL_R8T9_WIDTH 1u\000"
 .LASF7627:
 	.ascii	"SIM_PLATCGC_CGCEIM_WIDTH 1u\000"
-.LASF252:
+.LASF251:
 	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
 .LASF595:
 	.ascii	"REV_BYTES_16(a,b) __asm volatile (\"rev16 %0, %1\" "
@@ -44801,7 +42546,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_RGDAAC_M3UM_SHIFT 18u\000"
 .LASF4616:
 	.ascii	"LPI2C_SSR_AM0F_WIDTH 1u\000"
-.LASF36:
+.LASF35:
 	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
 .LASF1753:
 	.ascii	"CMP_C1_VRSEL_SHIFT 14u\000"
@@ -44838,8 +42583,6 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PDB_SC_PDBEIE_WIDTH 1u\000"
 .LASF4872:
 	.ascii	"LPIT_SETTEN_SET_T_EN_0_SHIFT 0u\000"
-.LASF7372:
-	.ascii	"SCG_FIRCCSR_FIRCEN_MASK 0x1u\000"
 .LASF455:
 	.ascii	"_EWL_LOCALDATA(_a) _a\000"
 .LASF5697:
@@ -44924,7 +42667,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_SWOCTRL_CH2OCV_MASK 0x400u\000"
 .LASF5655:
 	.ascii	"LPUART_MODIR_TXCTSC_WIDTH 1u\000"
-.LASF8412:
+.LASF8415:
 	.ascii	"ADC_GetHwAverageEnableFlag\000"
 .LASF6785:
 	.ascii	"RCM_RPC_RSTFLTSEL_WIDTH 5u\000"
@@ -44978,7 +42721,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_EARS_EDREQ_0_SHIFT 0u\000"
 .LASF8222:
 	.ascii	"CMP0_IRQn\000"
-.LASF254:
+.LASF253:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
 .LASF5641:
 	.ascii	"LPUART_MODIR_TXRTSE_MASK 0x2u\000"
@@ -45134,7 +42877,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF6445:
 	.ascii	"PDB_IDLY_IDLY(x) (((uint32_t)(((uint32_t)(x))<<PDB_"
 	.ascii	"IDLY_IDLY_SHIFT))&PDB_IDLY_IDLY_MASK)\000"
-.LASF8380:
+.LASF8402:
 	.ascii	"ADC_SetContinuousConvFlag\000"
 .LASF5842:
 	.ascii	"MCM_LMDR2_LMSZ(x) (((uint32_t)(((uint32_t)(x))<<MCM"
@@ -45166,7 +42909,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_7_SHIFT 0u\000"
 .LASF5917:
 	.ascii	"MPU_CESR_VLD_WIDTH 1u\000"
-.LASF23:
+.LASF22:
 	.ascii	"__CHAR_BIT__ 8\000"
 .LASF1203:
 	.ascii	"CAN_ESR1_IDLE(x) (((uint32_t)(((uint32_t)(x))<<CAN_"
@@ -45222,7 +42965,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	")\000"
 .LASF4775:
 	.ascii	"LPI2C_STAR_TXNACK_SHIFT 0u\000"
-.LASF91:
+.LASF90:
 	.ascii	"__UINT16_MAX__ 65535\000"
 .LASF7241:
 	.ascii	"SCG_CSR_DIVBUS_SHIFT 4u\000"
@@ -45283,7 +43026,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_SSR_SARF_WIDTH 1u\000"
 .LASF6174:
 	.ascii	"MSCM_CPxCFG2_TMLSZ_SHIFT 24u\000"
-.LASF82:
+.LASF81:
 	.ascii	"__UINTMAX_MAX__ 18446744073709551615ULL\000"
 .LASF2020:
 	.ascii	"CSE_PRAM_RAMn_ACCESS8BIT_DATA_8LU_RAM_LU(x) (((uint"
@@ -45298,7 +43041,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTFC_FCSESTAT_BOK_WIDTH 1u\000"
 .LASF3056:
 	.ascii	"FTFC_FSTAT_MGSTAT0_MASK 0x1u\000"
-.LASF120:
+.LASF119:
 	.ascii	"__GCC_IEC_559 0\000"
 .LASF6233:
 	.ascii	"MSCM_CP0CFG0_DCSZ_MASK 0xFF00u\000"
@@ -45363,9 +43106,9 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_COMBINE_FAULTEN2_WIDTH 1u\000"
 .LASF6130:
 	.ascii	"MSCM_CPxTYPE_PERSONALITY_SHIFT 8u\000"
-.LASF292:
+.LASF291:
 	.ascii	"__DA_FBIT__ 31\000"
-.LASF161:
+.LASF160:
 	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
 .LASF7730:
 	.ascii	"TRGMUX_BASE_ADDRS { TRGMUX_BASE }\000"
@@ -45472,7 +43215,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FLEXIO_SHIFTCTL_PINCFG(x) (((uint32_t)(((uint32_t)("
 	.ascii	"x))<<FLEXIO_SHIFTCTL_PINCFG_SHIFT))&FLEXIO_SHIFTCTL"
 	.ascii	"_PINCFG_MASK)\000"
-.LASF128:
+.LASF127:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF1897:
 	.ascii	"CMU_FC_SR_STATE(x) (((uint32_t)(((uint32_t)(x))<<CM"
@@ -45488,11 +43231,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"H_MASK)\000"
 .LASF2477:
 	.ascii	"DMA_HRS_HRS1_MASK 0x2u\000"
-.LASF268:
+.LASF267:
 	.ascii	"__QQ_FBIT__ 7\000"
 .LASF4016:
 	.ascii	"FTM_PWMLOAD_HCSEL_WIDTH 1u\000"
-.LASF8434:
+.LASF8392:
 	.ascii	"simBase\000"
 .LASF525:
 	.ascii	"INT16_MIN _EWL_SHRT_MIN\000"
@@ -45548,11 +43291,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_EWL_STDINT_H \000"
 .LASF7141:
 	.ascii	"S32_SCB_SHPR3_PRI_14_SHIFT 16u\000"
-.LASF8400:
+.LASF8409:
 	.ascii	"ADC_SetHwCompareRangeEnableFlag\000"
 .LASF883:
 	.ascii	"AIPS_PACR_WP0_WIDTH 1u\000"
-.LASF8409:
+.LASF8416:
 	.ascii	"ADC_SetHwAverageEnableFlag\000"
 .LASF4091:
 	.ascii	"FTM_CV_MIRROR_FRACVAL_SHIFT 11u\000"
@@ -45628,7 +43371,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"S32_NVIC_IPR_PRI_0(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<S32_NVIC_IPR_PRI_0_SHIFT))&S32_NVIC_IPR_PRI_0_MASK"
 	.ascii	")\000"
-.LASF61:
+.LASF60:
 	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
 .LASF5684:
 	.ascii	"LPUART_FIFO_TXFIFOSIZE(x) (((uint32_t)(((uint32_t)("
@@ -45843,13 +43586,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RTC_TCR_TCV_WIDTH 8u\000"
 .LASF5199:
 	.ascii	"LPSPI_TCR_PCS_MASK 0x3000000u\000"
-.LASF107:
+.LASF106:
 	.ascii	"__UINT32_C(c) c ## UL\000"
 .LASF1630:
 	.ascii	"CAN_FDCTRL_MBDSR0_WIDTH 2u\000"
 .LASF2187:
 	.ascii	"DMA_EEI_EEI0_WIDTH 1u\000"
-.LASF8375:
+.LASF8381:
 	.ascii	"ADC_SetInputClock\000"
 .LASF975:
 	.ascii	"AIPS_OPACR_TP0_WIDTH 1u\000"
@@ -45956,7 +43699,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SMC_PARAM_EHSRUN_MASK 0x1u\000"
 .LASF7975:
 	.ascii	"FEATURE_INTERRUPT_HAS_SOFTWARE_IRQ (0u)\000"
-.LASF34:
+.LASF33:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
 .LASF5181:
 	.ascii	"LPSPI_TCR_RXMSK_WIDTH 1u\000"
@@ -46014,7 +43757,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_TCD_CSR_START_MASK 0x1u\000"
 .LASF332:
 	.ascii	"__ARMEL__ 1\000"
-.LASF256:
+.LASF255:
 	.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
 .LASF1984:
 	.ascii	"CRC_CTRL_TOTR_SHIFT 28u\000"
@@ -46185,7 +43928,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MSR_FEF_SHIFT 12u\000"
 .LASF437:
 	.ascii	"_EWL_OS_DIRECT_MALLOC 0\000"
-.LASF37:
+.LASF36:
 	.ascii	"__CHAR16_TYPE__ short unsigned int\000"
 .LASF4382:
 	.ascii	"LPI2C_MSR_MBF_MASK 0x1000000u\000"
@@ -46303,7 +44046,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MSCM_CP0CFG3_SIMD_SHIFT))&MSCM_CP0CFG3_SIMD_MASK)\000"
 .LASF5835:
 	.ascii	"MCM_LMDR2_WY_MASK 0xF00000u\000"
-.LASF8476:
+.LASF8477:
 	.ascii	"trig_errors\000"
 .LASF3934:
 	.ascii	"FTM_SWOCTRL_CH4OC_MASK 0x10u\000"
@@ -46330,7 +44073,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_CESR_SPERR1_WIDTH 1u\000"
 .LASF387:
 	.ascii	"_EWL_NULL_CONSOLE_ROUTINES 0\000"
-.LASF103:
+.LASF102:
 	.ascii	"__UINT8_C(c) c\000"
 .LASF959:
 	.ascii	"AIPS_OPACR_SP2_WIDTH 1u\000"
@@ -46409,15 +44152,15 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CRC_DATAu_DATA_HU_SHIFT 24u\000"
 .LASF1764:
 	.ascii	"CMP_C1_CHN1_MASK 0x20000u\000"
-.LASF221:
+.LASF220:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
 .LASF4558:
 	.ascii	"LPI2C_MRDR_DATA_MASK 0xFFu\000"
 .LASF4783:
 	.ascii	"LPI2C_SRDR_DATA_SHIFT 0u\000"
-.LASF137:
+.LASF136:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
-.LASF293:
+.LASF292:
 	.ascii	"__DA_IBIT__ 32\000"
 .LASF6541:
 	.ascii	"PMC_REGSC_LPOSTAT(x) (((uint8_t)(((uint8_t)(x))<<PM"
@@ -46440,7 +44183,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_CTRL1_PRESDIV_WIDTH 8u\000"
 .LASF8194:
 	.ascii	"DMA0_IRQn\000"
-.LASF31:
+.LASF30:
 	.ascii	"__SIZE_TYPE__ unsigned int\000"
 .LASF4549:
 	.ascii	"LPI2C_MFSR_RXCOUNT(x) (((uint32_t)(((uint32_t)(x))<"
@@ -46498,7 +44241,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2460:
 	.ascii	"DMA_ERR_ERR12(x) (((uint32_t)(((uint32_t)(x))<<DMA_"
 	.ascii	"ERR_ERR12_SHIFT))&DMA_ERR_ERR12_MASK)\000"
-.LASF266:
+.LASF265:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
 .LASF6574:
 	.ascii	"PORT_PCR_PE(x) (((uint32_t)(((uint32_t)(x))<<PORT_P"
@@ -46545,7 +44288,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_SWOCTRL_CH2OC_MASK 0x4u\000"
 .LASF7120:
 	.ascii	"S32_SCB_SCR_SLEEPDEEP_MASK 0x4u\000"
-.LASF19:
+.LASF18:
 	.ascii	"__SIZEOF_FLOAT__ 4\000"
 .LASF5117:
 	.ascii	"LPSPI_CFGR1_PINCFG_WIDTH 2u\000"
@@ -46596,7 +44339,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"HIFT))&CAN_FLT_ID2_IDMASK_FLT_ID2_IDMASK_MASK)\000"
 .LASF2557:
 	.ascii	"DMA_EARS_EDREQ_5_MASK 0x20u\000"
-.LASF8459:
+.LASF8460:
 	.ascii	"ADC_DRV_GetChanResult\000"
 .LASF2744:
 	.ascii	"DMA_TCD_CSR_BWC(x) (((uint16_t)(((uint16_t)(x))<<DM"
@@ -46607,7 +44350,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_WMBn_D47_Data_byte_5(x) (((uint32_t)(((uint32_t"
 	.ascii	")(x))<<CAN_WMBn_D47_Data_byte_5_SHIFT))&CAN_WMBn_D4"
 	.ascii	"7_Data_byte_5_MASK)\000"
-.LASF238:
+.LASF237:
 	.ascii	"__ACCUM_FBIT__ 15\000"
 .LASF6435:
 	.ascii	"PDB_MOD_MOD_SHIFT 0u\000"
@@ -46675,7 +44418,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"S_OPACR_WP0_SHIFT))&AIPS_OPACR_WP0_MASK)\000"
 .LASF5073:
 	.ascii	"LPSPI_CFGR0_HREN_WIDTH 1u\000"
-.LASF295:
+.LASF294:
 	.ascii	"__TA_IBIT__ 64\000"
 .LASF5968:
 	.ascii	"MPU_RGD_WORD1_ENDADDR_SHIFT 5u\000"
@@ -46933,9 +44676,9 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_FIFO_RXFLUSH_SHIFT 14u\000"
 .LASF4026:
 	.ascii	"FTM_PWMLOAD_GLDOK_MASK 0x800u\000"
-.LASF189:
+.LASF188:
 	.ascii	"__SFRACT_IBIT__ 0\000"
-.LASF62:
+.LASF61:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
 .LASF7804:
 	.ascii	"WDOG_CS_CLK_SHIFT 8u\000"
@@ -46958,7 +44701,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_CTRL2_TIMER_SRC_MASK 0x8000u\000"
 .LASF5873:
 	.ascii	"MCM_LMPEIR_V_WIDTH 1u\000"
-.LASF197:
+.LASF196:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
 .LASF6315:
 	.ascii	"MSCM_OCMDR_OCMSZ_WIDTH 4u\000"
@@ -46989,7 +44732,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"S32_SCB_AIRCR_ENDIANNESS_WIDTH 1u\000"
 .LASF5964:
 	.ascii	"MPU_RGD_WORD0_SRTADDR_SHIFT 5u\000"
-.LASF104:
+.LASF103:
 	.ascii	"__UINT_LEAST16_MAX__ 65535\000"
 .LASF7668:
 	.ascii	"SIM_MISCTRL1_SW_TRG(x) (((uint32_t)(((uint32_t)(x))"
@@ -47034,7 +44777,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_TCD_ATTR_SMOD_WIDTH 5u\000"
 .LASF7152:
 	.ascii	"S32_SCB_DFSR_HALTED_MASK 0x1u\000"
-.LASF30:
+.LASF29:
 	.ascii	"__SIZEOF_POINTER__ 4\000"
 .LASF5292:
 	.ascii	"LPUART0_BASE (0x4006A000u)\000"
@@ -47066,7 +44809,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_SEEI_NOP_WIDTH 1u\000"
 .LASF6552:
 	.ascii	"PORTA_BASE (0x40049000u)\000"
-.LASF8454:
+.LASF8456:
 	.ascii	"ADC_DRV_SetSwPretrigger\000"
 .LASF3555:
 	.ascii	"FTM_COMBINE_DECAP2_SHIFT 19u\000"
@@ -47107,7 +44850,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_ERR_ERR7_SHIFT 7u\000"
 .LASF7772:
 	.ascii	"WDOG_IRQS_ARR_COUNT (1u)\000"
-.LASF46:
+.LASF45:
 	.ascii	"__UINT32_TYPE__ long unsigned int\000"
 .LASF1866:
 	.ascii	"CMU_FC_BASE_PTRS { CMU_FC_0, CMU_FC_1 }\000"
@@ -47129,7 +44872,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF3361:
 	.ascii	"FTM_MODE_INIT(x) (((uint32_t)(((uint32_t)(x))<<FTM_"
 	.ascii	"MODE_INIT_SHIFT))&FTM_MODE_INIT_MASK)\000"
-.LASF216:
+.LASF215:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
 .LASF6583:
 	.ascii	"PORT_PCR_MUX_MASK 0x700u\000"
@@ -47273,7 +45016,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RQ_CAER_SHIFT))&DMA_CERQ_CAER_MASK)\000"
 .LASF6929:
 	.ascii	"RTC_CR_UM_MASK 0x8u\000"
-.LASF57:
+.LASF56:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
 .LASF5108:
 	.ascii	"LPSPI_CFGR1_PCSPOL_SHIFT 8u\000"
@@ -47327,7 +45070,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"INT_FAST16_MAX _EWL_SHRT_MAX\000"
 .LASF3250:
 	.ascii	"FTM_SC_PWMEN6_MASK 0x400000u\000"
-.LASF113:
+.LASF112:
 	.ascii	"__INT_FAST64_MAX__ 9223372036854775807LL\000"
 .LASF5321:
 	.ascii	"LPUART_GLOBAL_RST_MASK 0x2u\000"
@@ -47336,7 +45079,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"2C_SRDR_SOF_SHIFT))&LPI2C_SRDR_SOF_MASK)\000"
 .LASF5864:
 	.ascii	"MCM_LMPEIR_E1B_SHIFT 8u\000"
-.LASF81:
+.LASF80:
 	.ascii	"__INTMAX_C(c) c ## LL\000"
 .LASF393:
 	.ascii	"_EWL_OS_TIME_SUPPORT 1\000"
@@ -47347,7 +45090,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF6429:
 	.ascii	"PDB_SC_PDBEIE(x) (((uint32_t)(((uint32_t)(x))<<PDB_"
 	.ascii	"SC_PDBEIE_SHIFT))&PDB_SC_PDBEIE_MASK)\000"
-.LASF149:
+.LASF148:
 	.ascii	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324"
 	.ascii	"L)\000"
 .LASF1904:
@@ -47380,7 +45123,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"C_MSR_NDF_SHIFT))&LPI2C_MSR_NDF_MASK)\000"
 .LASF651:
 	.ascii	"ADC_CFG1_ADIV_SHIFT 5u\000"
-.LASF116:
+.LASF115:
 	.ascii	"__UINT_FAST32_MAX__ 4294967295U\000"
 .LASF7470:
 	.ascii	"SIM_FTMOPT0_FTM0CLKSEL_SHIFT 24u\000"
@@ -47418,7 +45161,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MCR_RST_MASK 0x2u\000"
 .LASF8079:
 	.ascii	"FEATURE_CAN_HAS_STFCNTEN_ENABLE (0)\000"
-.LASF167:
+.LASF166:
 	.ascii	"__DEC32_MANT_DIG__ 7\000"
 .LASF4953:
 	.ascii	"LPSPI_VERID_FEATURE_WIDTH 16u\000"
@@ -47486,7 +45229,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LMEM_BASE_PTRS { LMEM }\000"
 .LASF1940:
 	.ascii	"CRC_DATAu_DATA_16_L_DATAL_SHIFT 0u\000"
-.LASF8449:
+.LASF8436:
 	.ascii	"inputChan\000"
 .LASF2759:
 	.ascii	"DMA_TCD_BITER_ELINKYES_LINKCH_WIDTH 4u\000"
@@ -47513,17 +45256,17 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_EXTTRIG_CH5TRIG_WIDTH 1u\000"
 .LASF6556:
 	.ascii	"PORTC_BASE (0x4004B000u)\000"
-.LASF234:
+.LASF233:
 	.ascii	"__USACCUM_IBIT__ 8\000"
 .LASF7723:
 	.ascii	"SMC_PMSTAT_PMSTAT_SHIFT 0u\000"
-.LASF73:
+.LASF72:
 	.ascii	"__LONG_LONG_MAX__ 9223372036854775807LL\000"
 .LASF7659:
 	.ascii	"SIM_CLKDIV4_TRACEDIV_WIDTH 3u\000"
 .LASF4868:
 	.ascii	"LPIT_MIER_TIE3_SHIFT 3u\000"
-.LASF299:
+.LASF298:
 	.ascii	"__USA_IBIT__ 16\000"
 .LASF5914:
 	.ascii	"MPU_BASE_PTRS { MPU }\000"
@@ -47531,7 +45274,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_MODIR_TXRTSPOL_SHIFT 2u\000"
 .LASF2702:
 	.ascii	"DMA_TCD_DLASTSGA_DLASTSGA_SHIFT 0u\000"
-.LASF270:
+.LASF269:
 	.ascii	"__HQ_FBIT__ 15\000"
 .LASF2350:
 	.ascii	"DMA_INT_INT1_SHIFT 1u\000"
@@ -47591,8 +45334,8 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ASK)\000"
 .LASF5799:
 	.ascii	"MCM_LMDR_MT_MASK 0xE000u\000"
-.LASF13:
-	.ascii	"__OPTIMIZE__ 1\000"
+.LASF7179:
+	.ascii	"S32_SysTick_IRQS { SysTick_IRQn }\000"
 .LASF7075:
 	.ascii	"S32_SCB_ICSR_ISRPENDING(x) (((uint32_t)(((uint32_t)"
 	.ascii	"(x))<<S32_SCB_ICSR_ISRPENDING_SHIFT))&S32_SCB_ICSR_"
@@ -47623,11 +45366,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"M_PCCRMR_R9_SHIFT))&LMEM_PCCRMR_R9_MASK)\000"
 .LASF509:
 	.ascii	"_EWL_SCHAR_MIN (-_EWL_SCHAR_MAX - 1)\000"
-.LASF8422:
+.LASF8425:
 	.ascii	"clp1\000"
-.LASF8423:
+.LASF8426:
 	.ascii	"clp2\000"
-.LASF8424:
+.LASF8427:
 	.ascii	"clp3\000"
 .LASF5801:
 	.ascii	"MCM_LMDR_MT_WIDTH 3u\000"
@@ -47642,7 +45385,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_SC_PWMEN1_WIDTH 1u\000"
 .LASF4476:
 	.ascii	"LPI2C_MCFGR1_PINCFG_WIDTH 3u\000"
-.LASF192:
+.LASF191:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF3622:
 	.ascii	"FTM_EXTTRIG_CH3TRIG_MASK 0x2u\000"
@@ -47686,7 +45429,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_RGDAAC_M3SM_SHIFT 21u\000"
 .LASF3899:
 	.ascii	"FTM_SYNCONF_HWSOC_SHIFT 20u\000"
-.LASF8385:
+.LASF8378:
 	.ascii	"retValue\000"
 .LASF7681:
 	.ascii	"SMC_VERID_MINOR(x) (((uint32_t)(((uint32_t)(x))<<SM"
@@ -47695,7 +45438,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RCM_SSRS_SSACKERR_WIDTH 1u\000"
 .LASF7583:
 	.ascii	"SIM_SDID_FEATURES_WIDTH 8u\000"
-.LASF8425:
+.LASF8428:
 	.ascii	"clps\000"
 .LASF8172:
 	.ascii	"LPI2C_HAS_ULTRA_FAST_MODE (0U)\000"
@@ -47720,7 +45463,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"D_PID_SHIFT))&MCM_PID_PID_MASK)\000"
 .LASF4024:
 	.ascii	"FTM_PWMLOAD_GLEN_WIDTH 1u\000"
-.LASF218:
+.LASF217:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
 .LASF1576:
 	.ascii	"CAN_WMBn_ID_ID_MASK 0x1FFFFFFFu\000"
@@ -47829,7 +45572,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_IFLAG1_BUF5I_WIDTH 1u\000"
 .LASF1654:
 	.ascii	"CAN_FDCBT_FPRESDIV_WIDTH 10u\000"
-.LASF8389:
+.LASF8385:
 	.ascii	"instance\000"
 .LASF5279:
 	.ascii	"LPTMR_PSR_PRESCALE_MASK 0x78u\000"
@@ -47838,7 +45581,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"M_PCCRMR_R5_SHIFT))&LMEM_PCCRMR_R5_MASK)\000"
 .LASF1667:
 	.ascii	"CMP_BASE_ADDRS { CMP0_BASE }\000"
-.LASF212:
+.LASF211:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
 .LASF6351:
 	.ascii	"PCC_LPI2C0_INDEX 102\000"
@@ -47848,13 +45591,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_CTRL2_MRP_SHIFT 18u\000"
 .LASF7653:
 	.ascii	"SIM_CLKDIV4_TRACEFRAC_MASK 0x1u\000"
-.LASF227:
+.LASF226:
 	.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
 .LASF5007:
 	.ascii	"LPSPI_SR_FCF_MASK 0x200u\000"
 .LASF3971:
 	.ascii	"FTM_SWOCTRL_CH5OCV_SHIFT 13u\000"
-.LASF65:
+.LASF64:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
 .LASF5816:
 	.ascii	"MCM_LMDR_LMSZH_SHIFT 28u\000"
@@ -47876,7 +45619,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_PL2_PLMASK_LO_Data_byte_3_WIDTH 8u\000"
 .LASF8112:
 	.ascii	"MAX_FREQ_SYS_CLK 0U\000"
-.LASF38:
+.LASF37:
 	.ascii	"__CHAR32_TYPE__ long unsigned int\000"
 .LASF3001:
 	.ascii	"FLEXIO_TIMCTL_TRGSRC_SHIFT 22u\000"
@@ -47903,7 +45646,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_RXIMR_MI_WIDTH 32u\000"
 .LASF8279:
 	.ascii	"adc_resolution_t\000"
-.LASF259:
+.LASF258:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
 .LASF6990:
 	.ascii	"RTC_IER_TAIE_SHIFT 2u\000"
@@ -47999,7 +45742,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_SC2_TRGPRNUM_SHIFT 13u\000"
 .LASF1516:
 	.ascii	"CAN_FLT_ID2_IDMASK_FLT_ID2_IDMASK_MASK 0x1FFFFFFFu\000"
-.LASF95:
+.LASF94:
 	.ascii	"__INT8_C(c) c\000"
 .LASF6519:
 	.ascii	"PMC_LVDSC2_LVWACK_SHIFT 6u\000"
@@ -48015,7 +45758,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_5_MASK 0xFF0000u\000"
 .LASF7770:
 	.ascii	"WDOG_BASE_ADDRS { WDOG_BASE }\000"
-.LASF265:
+.LASF264:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF8009:
 	.ascii	"FEATURE_CRC_DEFAULT_POLYNOMIAL (0x1021U)\000"
@@ -48052,7 +45795,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_COMBINE_COMP1_MASK 0x200u\000"
 .LASF8287:
 	.ascii	"adc_trigger_t\000"
-.LASF153:
+.LASF152:
 	.ascii	"__LDBL_MANT_DIG__ 53\000"
 .LASF7796:
 	.ascii	"WDOG_CS_INT_SHIFT 6u\000"
@@ -48060,9 +45803,9 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_COMBINE_FAULTEN3(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<FTM_COMBINE_FAULTEN3_SHIFT))&FTM_COMBINE_FAULTEN"
 	.ascii	"3_MASK)\000"
-.LASF125:
+.LASF124:
 	.ascii	"__FLT_MANT_DIG__ 24\000"
-.LASF77:
+.LASF76:
 	.ascii	"__WINT_MIN__ 0U\000"
 .LASF3492:
 	.ascii	"FTM_COMBINE_DECAP0_WIDTH 1u\000"
@@ -48106,7 +45849,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"EI_CAEE_SHIFT))&DMA_CEEI_CAEE_MASK)\000"
 .LASF4403:
 	.ascii	"LPI2C_MIER_SDIE_SHIFT 9u\000"
-.LASF174:
+.LASF173:
 	.ascii	"__DEC64_MANT_DIG__ 16\000"
 .LASF5587:
 	.ascii	"LPUART_DATA_R4T4_WIDTH 1u\000"
@@ -48126,7 +45869,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF5688:
 	.ascii	"LPUART_FIFO_TXFE(x) (((uint32_t)(((uint32_t)(x))<<L"
 	.ascii	"PUART_FIFO_TXFE_SHIFT))&LPUART_FIFO_TXFE_MASK)\000"
-.LASF8480:
+.LASF8384:
 	.ascii	"ADC_GetPretriggerSelect\000"
 .LASF1998:
 	.ascii	"CSE_PRAM_RAMn_DATA_32_BYTE_3_SHIFT 0u\000"
@@ -48244,7 +45987,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_CnSC_ELSB_MASK 0x8u\000"
 .LASF6028:
 	.ascii	"MPU_RGD_WORD2_M6RE_SHIFT 29u\000"
-.LASF8479:
+.LASF8480:
 	.ascii	"C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_"
 	.ascii	"1.8.7/platform/drivers/src/adc/adc_driver.c\000"
 .LASF4597:
@@ -48309,13 +46052,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_PACR_WP0_SHIFT))&AIPS_PACR_WP0_MASK)\000"
 .LASF3121:
 	.ascii	"FTFC_FCCOB_CCOBn_SHIFT 0u\000"
-.LASF186:
+.LASF185:
 	.ascii	"__DEC128_EPSILON__ 1E-33DL\000"
-.LASF258:
+.LASF257:
 	.ascii	"__LLACCUM_FBIT__ 31\000"
 .LASF7503:
 	.ascii	"SIM_ADCOPT_ADC0TRGSEL_WIDTH 1u\000"
-.LASF150:
+.LASF149:
 	.ascii	"__DBL_HAS_DENORM__ 1\000"
 .LASF5541:
 	.ascii	"LPUART_CTRL_FEIE_MASK 0x2000000u\000"
@@ -48373,7 +46116,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SIM_FTMOPT1_FTM1SYNCBIT_MASK 0x2u\000"
 .LASF3560:
 	.ascii	"FTM_COMBINE_DTEN2_WIDTH 1u\000"
-.LASF141:
+.LASF140:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
 .LASF1492:
 	.ascii	"CAN_PL1_LO_Data_byte_1_MASK 0xFF0000u\000"
@@ -48488,7 +46231,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PORT_IRQS_CH_COUNT (1u)\000"
 .LASF1184:
 	.ascii	"CAN_ESR1_BOFFINT_MASK 0x4u\000"
-.LASF147:
+.LASF146:
 	.ascii	"__DBL_MIN__ ((double)2.2250738585072014e-308L)\000"
 .LASF1211:
 	.ascii	"CAN_ESR1_TXWRN(x) (((uint32_t)(((uint32_t)(x))<<CAN"
@@ -48509,15 +46252,15 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PORT_GPCLR_GPWD_SHIFT 0u\000"
 .LASF8164:
 	.ascii	"FEATURE_DMAMUX_CHN_REG_INDEX(x) (x)\000"
-.LASF179:
+.LASF178:
 	.ascii	"__DEC64_EPSILON__ 1E-15DD\000"
-.LASF8466:
+.LASF8467:
 	.ascii	"ADC_DRV_ConfigUserCalibration\000"
 .LASF1473:
 	.ascii	"CAN_FLT_ID1_FLT_IDE_SHIFT 30u\000"
 .LASF735:
 	.ascii	"ADC_USR_OFS_USR_OFS_SHIFT 0u\000"
-.LASF185:
+.LASF184:
 	.ascii	"__DEC128_MAX__ 9.999999999999999999999999999999999E"
 	.ascii	"6144DL\000"
 .LASF1157:
@@ -48535,7 +46278,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LMEM_PCCCR_PUSHW1_MASK 0x8000000u\000"
 .LASF5213:
 	.ascii	"LPSPI_TCR_CPOL_WIDTH 1u\000"
-.LASF85:
+.LASF84:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF1522:
 	.ascii	"CAN_FLT_ID2_IDMASK_RTR_MSK_WIDTH 1u\000"
@@ -48561,7 +46304,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_PWMLOAD_CH7SEL(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<FTM_PWMLOAD_CH7SEL_SHIFT))&FTM_PWMLOAD_CH7SEL_MASK"
 	.ascii	")\000"
-.LASF8456:
+.LASF8458:
 	.ascii	"intermValue\000"
 .LASF6308:
 	.ascii	"MSCM_OCMDR_RO(x) (((uint32_t)(((uint32_t)(x))<<MSCM"
@@ -48608,7 +46351,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_MSCM_HAS_INTERRUPT_ROUTER (0)\000"
 .LASF2290:
 	.ascii	"DMA_SERQ_SAER_SHIFT 6u\000"
-.LASF207:
+.LASF206:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
 .LASF3595:
 	.ascii	"FTM_COMBINE_SYNCEN3_SHIFT 29u\000"
@@ -48616,7 +46359,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_EXTTRIG_CH7TRIG_WIDTH 1u\000"
 .LASF1882:
 	.ascii	"CMU_FC_LTCR_LFREF_MASK 0xFFFFFFu\000"
-.LASF98:
+.LASF97:
 	.ascii	"__INT_LEAST32_MAX__ 2147483647L\000"
 .LASF6436:
 	.ascii	"PDB_MOD_MOD_WIDTH 16u\000"
@@ -48647,7 +46390,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LMEM_PCCRMR_R11_WIDTH 2u\000"
 .LASF5879:
 	.ascii	"MCM_LMFATR_PEFPRT_MASK 0xFu\000"
-.LASF8402:
+.LASF8412:
 	.ascii	"value\000"
 .LASF3722:
 	.ascii	"FTM_FILTER_CH1FVAL_MASK 0xF0u\000"
@@ -48696,7 +46439,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LMEM_PCCCR_ENCACHE_SHIFT 0u\000"
 .LASF5629:
 	.ascii	"LPUART_MATCH_MA1_MASK 0x3FFu\000"
-.LASF8398:
+.LASF8405:
 	.ascii	"ADC_SetHwCompareEnableFlag\000"
 .LASF3372:
 	.ascii	"FTM_MODE_CAPTEST_WIDTH 1u\000"
@@ -48732,7 +46475,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF3689:
 	.ascii	"FTM_POL_POL7(x) (((uint32_t)(((uint32_t)(x))<<FTM_P"
 	.ascii	"OL_POL7_SHIFT))&FTM_POL_POL7_MASK)\000"
-.LASF8431:
+.LASF8440:
 	.ascii	"ADC_GetTriggerLatchFlags\000"
 .LASF5713:
 	.ascii	"LPUART_FIFO_TXOF_MASK 0x20000u\000"
@@ -48744,13 +46487,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"AIPS_OPACR_SP3_MASK 0x40000u\000"
 .LASF6242:
 	.ascii	"MSCM_CP0CFG0_ICSZ_SHIFT 24u\000"
-.LASF58:
+.LASF57:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
-.LASF8397:
+.LASF8401:
 	.ascii	"ADC_GetContinuousConvFlag\000"
 .LASF5924:
 	.ascii	"MPU_CESR_NSP_SHIFT 12u\000"
-.LASF194:
+.LASF193:
 	.ascii	"__USFRACT_IBIT__ 0\000"
 .LASF6060:
 	.ascii	"MPU_RGDAAC_M0PE_SHIFT 5u\000"
@@ -48890,7 +46633,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_SAMR_ADDR1_SHIFT 17u\000"
 .LASF6729:
 	.ascii	"RCM_SRS_LVD_WIDTH 1u\000"
-.LASF8378:
+.LASF8398:
 	.ascii	"state\000"
 .LASF6305:
 	.ascii	"MSCM_OCMDR_RO_MASK 0x10000u\000"
@@ -48955,7 +46698,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_CTRL1_PN_WUMF_MSK_MASK 0x10000u\000"
 .LASF3278:
 	.ascii	"FTM_CnSC_ELSA_MASK 0x4u\000"
-.LASF154:
+.LASF153:
 	.ascii	"__LDBL_DIG__ 15\000"
 .LASF3785:
 	.ascii	"FTM_QDCTRL_QUADIR(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -49132,7 +46875,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_ES_CPE_SHIFT 14u\000"
 .LASF7889:
 	.ascii	"FEATURE_FLS_FLEX_RAM_START_ADDRESS (0x14000000u)\000"
-.LASF8391:
+.LASF8387:
 	.ascii	"currentVal\000"
 .LASF5322:
 	.ascii	"LPUART_GLOBAL_RST_SHIFT 1u\000"
@@ -49143,7 +46886,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HL_RAM_HL_WIDTH 8u\000"
 .LASF982:
 	.ascii	"AIPS_OPACR_SP0_SHIFT 30u\000"
-.LASF230:
+.LASF229:
 	.ascii	"__SACCUM_MIN__ (-0X1P7HK-0X1P7HK)\000"
 .LASF8301:
 	.ascii	"ADC_VOLTAGEREF_VREF\000"
@@ -49263,7 +47006,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PLAMC_AMC_SHIFT))&MCM_PLAMC_AMC_MASK)\000"
 .LASF2606:
 	.ascii	"DMA_DCHPRI_DPA_SHIFT 6u\000"
-.LASF253:
+.LASF252:
 	.ascii	"__ULACCUM_FBIT__ 32\000"
 .LASF1202:
 	.ascii	"CAN_ESR1_IDLE_WIDTH 1u\000"
@@ -49275,7 +47018,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SIM_FTMOPT1_FTM1SYNCBIT_WIDTH 1u\000"
 .LASF786:
 	.ascii	"ADC_CLP3_OFS_CLP3_OFS_MASK 0xFu\000"
-.LASF33:
+.LASF32:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF5994:
 	.ascii	"MPU_RGD_WORD2_M2UM(x) (((uint32_t)(((uint32_t)(x))<"
@@ -49314,7 +47057,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF3681:
 	.ascii	"FTM_POL_POL5(x) (((uint32_t)(((uint32_t)(x))<<FTM_P"
 	.ascii	"OL_POL5_SHIFT))&FTM_POL_POL5_MASK)\000"
-.LASF59:
+.LASF58:
 	.ascii	"__INT_FAST64_TYPE__ long long int\000"
 .LASF1461:
 	.ascii	"CAN_WU_MTC_WTOF_SHIFT 17u\000"
@@ -49349,7 +47092,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"G_VCCR_DIVBUS_SHIFT))&SCG_VCCR_DIVBUS_MASK)\000"
 .LASF3089:
 	.ascii	"FTFC_FCNFG_ERSAREQ_SHIFT 5u\000"
-.LASF263:
+.LASF262:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF3691:
 	.ascii	"FTM_FMS_FAULTF0_SHIFT 0u\000"
@@ -49382,7 +47125,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_CLPX_OFS_CLPX_OFS(x) (((uint32_t)(((uint32_t)(x"
 	.ascii	"))<<ADC_CLPX_OFS_CLPX_OFS_SHIFT))&ADC_CLPX_OFS_CLPX"
 	.ascii	"_OFS_MASK)\000"
-.LASF239:
+.LASF238:
 	.ascii	"__ACCUM_IBIT__ 16\000"
 .LASF7749:
 	.ascii	"TRGMUX_TRGMUXn_SEL0_WIDTH 6u\000"
@@ -49440,7 +47183,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_OUTMASK_CH0OM_WIDTH 1u\000"
 .LASF6043:
 	.ascii	"MPU_RGD_WORD3_PIDMASK_MASK 0xFF0000u\000"
-.LASF28:
+.LASF27:
 	.ascii	"__BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF5640:
 	.ascii	"LPUART_MODIR_TXCTSE(x) (((uint32_t)(((uint32_t)(x))"
@@ -49614,7 +47357,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_CBT_ERJW_SHIFT 16u\000"
 .LASF4338:
 	.ascii	"LPI2C_MCR_RTF_MASK 0x100u\000"
-.LASF160:
+.LASF159:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
 .LASF3305:
 	.ascii	"FTM_CnSC_TRIGMODE(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -49643,7 +47386,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_CTRL_TXINV_SHIFT))&LPUART_CTRL_TXINV_MASK)\000"
 .LASF5775:
 	.ascii	"MCM_CPCR_CBRR_MASK 0x200u\000"
-.LASF290:
+.LASF289:
 	.ascii	"__SA_FBIT__ 15\000"
 .LASF2710:
 	.ascii	"DMA_TCD_CSR_INTMAJOR_SHIFT 1u\000"
@@ -49734,7 +47477,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_QDCTRL_QUADMODE(x) (((uint32_t)(((uint32_t)(x))"
 	.ascii	"<<FTM_QDCTRL_QUADMODE_SHIFT))&FTM_QDCTRL_QUADMODE_M"
 	.ascii	"ASK)\000"
-.LASF8376:
+.LASF8383:
 	.ascii	"ADC_SetTriggerMode\000"
 .LASF1913:
 	.ascii	"CMU_FC_IER_FLLAEE(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -49819,7 +47562,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_FIFO_RXFIFOSIZE(x) (((uint32_t)(((uint32_t)("
 	.ascii	"x))<<LPUART_FIFO_RXFIFOSIZE_SHIFT))&LPUART_FIFO_RXF"
 	.ascii	"IFOSIZE_MASK)\000"
-.LASF176:
+.LASF175:
 	.ascii	"__DEC64_MAX_EXP__ 385\000"
 .LASF4376:
 	.ascii	"LPI2C_MSR_PLTF_WIDTH 1u\000"
@@ -49985,7 +47728,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PDB_SC_TRGSEL_MASK 0xF00u\000"
 .LASF4627:
 	.ascii	"LPI2C_SSR_SARF_SHIFT 15u\000"
-.LASF162:
+.LASF161:
 	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
 .LASF2553:
 	.ascii	"DMA_EARS_EDREQ_4_MASK 0x10u\000"
@@ -50044,7 +47787,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"EIM_BASE (0x40019000u)\000"
 .LASF1514:
 	.ascii	"CAN_PL1_HI_Data_byte_4_WIDTH 8u\000"
-.LASF8475:
+.LASF8476:
 	.ascii	"ADC_DRV_GetTriggerErrorFlags\000"
 .LASF4080:
 	.ascii	"FTM_PAIR3DEADTIME_DTVALEX_WIDTH 4u\000"
@@ -50066,7 +47809,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RCM_PARAM_ECORE1_WIDTH 1u\000"
 .LASF4514:
 	.ascii	"LPI2C_MCCR0_DATAVD_MASK 0x3F000000u\000"
-.LASF8448:
+.LASF8435:
 	.ascii	"ADC_SetInputChannel\000"
 .LASF422:
 	.ascii	"_EWL_ACCURATE_BUT_LARGE_ANSI_FP 0\000"
@@ -50180,9 +47923,9 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF7802:
 	.ascii	"WDOG_CS_EN(x) (((uint32_t)(((uint32_t)(x))<<WDOG_CS"
 	.ascii	"_EN_SHIFT))&WDOG_CS_EN_MASK)\000"
-.LASF8451:
+.LASF8438:
 	.ascii	"supplyMonitorIdx\000"
-.LASF8368:
+.LASF8371:
 	.ascii	"DevAssert\000"
 .LASF4712:
 	.ascii	"LPI2C_SCFGR1_ACKSTALL_WIDTH 1u\000"
@@ -50254,7 +47997,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PUART_CTRL_NEIE_SHIFT))&LPUART_CTRL_NEIE_MASK)\000"
 .LASF6793:
 	.ascii	"RCM_SSRS_SLOC_WIDTH 1u\000"
-.LASF86:
+.LASF85:
 	.ascii	"__INT8_MAX__ 127\000"
 .LASF5971:
 	.ascii	"MPU_RGD_WORD2_M0UM_MASK 0x7u\000"
@@ -50294,17 +48037,17 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_FIFO_RXFIFOSIZE_MASK 0x7u\000"
 .LASF1412:
 	.ascii	"CAN_RAMn_DATA_BYTE_1_MASK 0xFF0000u\000"
-.LASF264:
+.LASF263:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
-.LASF175:
+.LASF174:
 	.ascii	"__DEC64_MIN_EXP__ (-382)\000"
 .LASF4242:
 	.ascii	"LMEM_PCCRMR_R12_WIDTH 2u\000"
 .LASF6745:
 	.ascii	"RCM_SRS_WDOG_WIDTH 1u\000"
-.LASF8381:
+.LASF8403:
 	.ascii	"ADC_SetSupplyMonitoringEnableFlag\000"
-.LASF54:
+.LASF53:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
 .LASF1957:
 	.ascii	"CRC_DATAu_DATA_8_HL_DATAHL_WIDTH 8u\000"
@@ -50316,13 +48059,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"INT_FAST8_MAX _EWL_SCHAR_MAX\000"
 .LASF381:
 	.ascii	"__thumb __thumb__\000"
-.LASF93:
+.LASF92:
 	.ascii	"__UINT64_MAX__ 18446744073709551615ULL\000"
 .LASF5551:
 	.ascii	"LPUART_CTRL_ORIE_WIDTH 1u\000"
 .LASF7288:
 	.ascii	"SCG_SOSCCSR_SOSCEN_MASK 0x1u\000"
-.LASF97:
+.LASF96:
 	.ascii	"__INT16_C(c) c\000"
 .LASF7986:
 	.ascii	"FEATURE_FTM_HAS_SUPPORTED_DITHERING (1U)\000"
@@ -50336,7 +48079,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FLEXIO_SHIFTSTAT_SSF_WIDTH 4u\000"
 .LASF5398:
 	.ascii	"LPUART_STAT_FE_SHIFT 17u\000"
-.LASF112:
+.LASF111:
 	.ascii	"__INT_FAST32_MAX__ 2147483647\000"
 .LASF495:
 	.ascii	"_EWL_PTRDIFF_T_TYPE __typeof__((char*)0-(char*)0)\000"
@@ -50345,7 +48088,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_REGSC_LPODIS_SHIFT))&PMC_REGSC_LPODIS_MASK)\000"
 .LASF5136:
 	.ascii	"LPSPI_CCR_SCKDIV_SHIFT 0u\000"
-.LASF8462:
+.LASF8463:
 	.ascii	"hwavgen\000"
 .LASF2235:
 	.ascii	"DMA_EEI_EEI12_WIDTH 1u\000"
@@ -50359,15 +48102,15 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_CNTIN_INIT_WIDTH 16u\000"
 .LASF2765:
 	.ascii	"DMAMUX_CHCFG_COUNT 4u\000"
-.LASF22:
+.LASF21:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
-.LASF44:
+.LASF43:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
 .LASF5263:
 	.ascii	"LPTMR_CSR_TCF_MASK 0x80u\000"
 .LASF6329:
 	.ascii	"PCC_BASE_ADDRS { PCC_BASE }\000"
-.LASF76:
+.LASF75:
 	.ascii	"__WINT_MAX__ 4294967295U\000"
 .LASF3815:
 	.ascii	"FTM_CONF_GTBEEN_SHIFT 9u\000"
@@ -50402,7 +48145,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MSR_EPF_MASK 0x100u\000"
 .LASF6801:
 	.ascii	"RCM_SSRS_SCMU_LOC_WIDTH 1u\000"
-.LASF187:
+.LASF186:
 	.ascii	"__DEC128_SUBNORMAL_MIN__ 0.000000000000000000000000"
 	.ascii	"000000001E-6143DL\000"
 .LASF6228:
@@ -50417,7 +48160,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MCFGR2_FILTSCL_WIDTH 4u\000"
 .LASF5329:
 	.ascii	"LPUART_BAUD_SBR_MASK 0x1FFFu\000"
-.LASF163:
+.LASF162:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
 .LASF1721:
 	.ascii	"CMP_C0_CFF_SHIFT 25u\000"
@@ -50448,7 +48191,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SIM_FTMOPT1_FTMGLDOK_MASK 0x8000u\000"
 .LASF5317:
 	.ascii	"LPUART_PARAM_RXFIFO_MASK 0xFF00u\000"
-.LASF134:
+.LASF133:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
 .LASF604:
 	.ascii	"CORE_LITTLE_ENDIAN \000"
@@ -50568,7 +48311,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF4830:
 	.ascii	"LPIT_MCR_SW_RST(x) (((uint32_t)(((uint32_t)(x))<<LP"
 	.ascii	"IT_MCR_SW_RST_SHIFT))&LPIT_MCR_SW_RST_MASK)\000"
-.LASF291:
+.LASF290:
 	.ascii	"__SA_IBIT__ 16\000"
 .LASF1852:
 	.ascii	"CMP_C2_RRIE_MASK 0x40000000u\000"
@@ -50589,7 +48332,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPIT_SETTEN_SET_T_EN_1_WIDTH 1u\000"
 .LASF5031:
 	.ascii	"LPSPI_IER_TDIE_MASK 0x1u\000"
-.LASF101:
+.LASF100:
 	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF7585:
 	.ascii	"SIM_SDID_PACKAGE_MASK 0xF00u\000"
@@ -50611,7 +48354,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_COMBINE_COMP2_SHIFT))&FTM_COMBINE_COMP2_MASK)\000"
 .LASF6462:
 	.ascii	"PDB_S_CF_MASK 0xFF0000u\000"
-.LASF119:
+.LASF118:
 	.ascii	"__UINTPTR_MAX__ 4294967295U\000"
 .LASF8283:
 	.ascii	"ADC_CLK_ALT_4\000"
@@ -50692,9 +48435,9 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_INVCTRL_INV2EN_SHIFT 2u\000"
 .LASF4825:
 	.ascii	"LPIT_MCR_M_CEN_WIDTH 1u\000"
-.LASF235:
+.LASF234:
 	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
-.LASF302:
+.LASF301:
 	.ascii	"__UTA_FBIT__ 64\000"
 .LASF1375:
 	.ascii	"CAN_RXFGMASK_FGM(x) (((uint32_t)(((uint32_t)(x))<<C"
@@ -50754,7 +48497,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_TCD_BITER_ELINKYES_BITER(x) (((uint16_t)(((uint"
 	.ascii	"16_t)(x))<<DMA_TCD_BITER_ELINKYES_BITER_SHIFT))&DMA"
 	.ascii	"_TCD_BITER_ELINKYES_BITER_MASK)\000"
-.LASF8474:
+.LASF8475:
 	.ascii	"ADC_DRV_ClearTriggerErrors\000"
 .LASF6003:
 	.ascii	"MPU_RGD_WORD2_M3SM_MASK 0x600000u\000"
@@ -50806,7 +48549,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1835:
 	.ascii	"CMP_C2_CH5F(x) (((uint32_t)(((uint32_t)(x))<<CMP_C2"
 	.ascii	"_CH5F_SHIFT))&CMP_C2_CH5F_MASK)\000"
-.LASF8444:
+.LASF8450:
 	.ascii	"ADC_DRV_InitHwAverageStruct\000"
 .LASF1364:
 	.ascii	"CAN_CRCR_TXCRC_MASK 0x7FFFu\000"
@@ -50848,7 +48591,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPTMR_CNR_COUNTER_SHIFT 0u\000"
 .LASF2402:
 	.ascii	"DMA_INT_INT14_SHIFT 14u\000"
-.LASF8429:
+.LASF8430:
 	.ascii	"ADC_GetUserOffsetValue\000"
 .LASF5404:
 	.ascii	"LPUART_STAT_NF(x) (((uint32_t)(((uint32_t)(x))<<LPU"
@@ -50872,7 +48615,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RCM_VERID_MAJOR_SHIFT 24u\000"
 .LASF1586:
 	.ascii	"CAN_WMBn_D03_Data_byte_2_WIDTH 8u\000"
-.LASF8373:
+.LASF8376:
 	.ascii	"rsampletime\000"
 .LASF6299:
 	.ascii	"MSCM_OCMDR_OCMPU_WIDTH 1u\000"
@@ -50937,11 +48680,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPSPI_CR_RRF_WIDTH 1u\000"
 .LASF8005:
 	.ascii	"FEATURE_CRC_DRIVER_SOFT_POLYNOMIAL \000"
-.LASF8436:
+.LASF8395:
 	.ascii	"ADC_SetTriggerSelect\000"
 .LASF5132:
 	.ascii	"LPSPI_DMR1_MATCH1_SHIFT 0u\000"
-.LASF40:
+.LASF39:
 	.ascii	"__INT8_TYPE__ signed char\000"
 .LASF2594:
 	.ascii	"DMA_EARS_EDREQ_14_SHIFT 14u\000"
@@ -50960,11 +48703,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTMOPT1\000"
 .LASF7633:
 	.ascii	"SIM_FCFG1_EEERAMSIZE_MASK 0xF0000u\000"
-.LASF75:
+.LASF74:
 	.ascii	"__WCHAR_MIN__ 0U\000"
 .LASF4710:
 	.ascii	"LPI2C_SCFGR1_ACKSTALL_MASK 0x8u\000"
-.LASF8369:
+.LASF8372:
 	.ascii	"ADC_SetClockDivide\000"
 .LASF948:
 	.ascii	"AIPS_OPACR_SP3(x) (((uint32_t)(((uint32_t)(x))<<AIP"
@@ -51032,7 +48775,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF7255:
 	.ascii	"SCG_RCCR_DIVSLOW(x) (((uint32_t)(((uint32_t)(x))<<S"
 	.ascii	"CG_RCCR_DIVSLOW_SHIFT))&SCG_RCCR_DIVSLOW_MASK)\000"
-.LASF90:
+.LASF89:
 	.ascii	"__UINT8_MAX__ 255\000"
 .LASF7701:
 	.ascii	"SMC_PARAM_EVLLS0(x) (((uint32_t)(((uint32_t)(x))<<S"
@@ -51041,7 +48784,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_STATUS_CH1F_MASK 0x2u\000"
 .LASF838:
 	.ascii	"AIPS_MPRA_MTR1_SHIFT 26u\000"
-.LASF25:
+.LASF24:
 	.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
 .LASF2405:
 	.ascii	"DMA_INT_INT15_MASK 0x8000u\000"
@@ -51055,7 +48798,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_ERQ_ERQ12_WIDTH 1u\000"
 .LASF1218:
 	.ascii	"CAN_ESR1_FRMERR_WIDTH 1u\000"
-.LASF78:
+.LASF77:
 	.ascii	"__PTRDIFF_MAX__ 2147483647\000"
 .LASF1661:
 	.ascii	"CAN_FDCRC_FD_MBCRC_SHIFT 24u\000"
@@ -51094,13 +48837,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_ECR_RXERRCNT_FAST_SHIFT 24u\000"
 .LASF3274:
 	.ascii	"FTM_CnSC_ICRST_MASK 0x2u\000"
-.LASF94:
+.LASF93:
 	.ascii	"__INT_LEAST8_MAX__ 127\000"
 .LASF6458:
 	.ascii	"PDB_S_ERR_MASK 0xFFu\000"
 .LASF7284:
 	.ascii	"SCG_CLKOUTCNFG_CLKOUTSEL_MASK 0xF000000u\000"
-.LASF204:
+.LASF203:
 	.ascii	"__UFRACT_IBIT__ 0\000"
 .LASF5981:
 	.ascii	"MPU_RGD_WORD2_M0PE_WIDTH 1u\000"
@@ -51133,7 +48876,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CSE_PRAM_INSTANCE_COUNT (1u)\000"
 .LASF4177:
 	.ascii	"LMEM_PCCLCR_LGO_SHIFT 0u\000"
-.LASF8433:
+.LASF8391:
 	.ascii	"ADC_SetPretriggerSelect\000"
 .LASF2434:
 	.ascii	"DMA_ERR_ERR6_SHIFT 6u\000"
@@ -51211,7 +48954,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2100:
 	.ascii	"DMA_ES_SOE(x) (((uint32_t)(((uint32_t)(x))<<DMA_ES_"
 	.ascii	"SOE_SHIFT))&DMA_ES_SOE_MASK)\000"
-.LASF260:
+.LASF259:
 	.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
 .LASF3349:
 	.ascii	"FTM_STATUS_CH6F(x) (((uint32_t)(((uint32_t)(x))<<FT"
@@ -51277,7 +49020,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_EDR_EATTR_MASK 0xEu\000"
 .LASF1602:
 	.ascii	"CAN_WMBn_D47_Data_byte_6_WIDTH 8u\000"
-.LASF223:
+.LASF222:
 	.ascii	"__ULLFRACT_FBIT__ 64\000"
 .LASF1640:
 	.ascii	"CAN_FDCBT_FPSEG1_MASK 0xE0u\000"
@@ -51304,7 +49047,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF7231:
 	.ascii	"SCG_PARAM_CLKPRES(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"SCG_PARAM_CLKPRES_SHIFT))&SCG_PARAM_CLKPRES_MASK)\000"
-.LASF8426:
+.LASF8429:
 	.ascii	"temp\000"
 .LASF7328:
 	.ascii	"SCG_SOSCCFG_HGO_MASK 0x8u\000"
@@ -51409,7 +49152,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_TCD_NBYTES_MLOFFNO_DMLOE_SHIFT 30u\000"
 .LASF6591:
 	.ascii	"PORT_PCR_IRQC_MASK 0xF0000u\000"
-.LASF155:
+.LASF154:
 	.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
 .LASF3818:
 	.ascii	"FTM_CONF_GTBEOUT_MASK 0x400u\000"
@@ -51473,7 +49216,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_WATER_RXCOUNT(x) (((uint32_t)(((uint32_t)(x)"
 	.ascii	")<<LPUART_WATER_RXCOUNT_SHIFT))&LPUART_WATER_RXCOUN"
 	.ascii	"T_MASK)\000"
-.LASF8392:
+.LASF8388:
 	.ascii	"returnVal\000"
 .LASF3791:
 	.ascii	"FTM_QDCTRL_PHBPOL_SHIFT 4u\000"
@@ -51481,7 +49224,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PDB_POEN_POEN_SHIFT 0u\000"
 .LASF3192:
 	.ascii	"FTM_Overflow_IRQS_CH_COUNT (1u)\000"
-.LASF165:
+.LASF164:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
 .LASF2160:
 	.ascii	"DMA_ERQ_ERQ9(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
@@ -51622,7 +49365,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"AIPS_OPACR_WP1_SHIFT 25u\000"
 .LASF8071:
 	.ascii	"FEATURE_CAN_RXFIFO_OVERFLOW (7U)\000"
-.LASF100:
+.LASF99:
 	.ascii	"__INT_LEAST64_MAX__ 9223372036854775807LL\000"
 .LASF3198:
 	.ascii	"FTM_SC_PS_MASK 0x7u\000"
@@ -51672,7 +49415,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_SCR_RST_WIDTH 1u\000"
 .LASF6079:
 	.ascii	"MPU_RGDAAC_M3UM_MASK 0x1C0000u\000"
-.LASF102:
+.LASF101:
 	.ascii	"__UINT_LEAST8_MAX__ 255\000"
 .LASF2950:
 	.ascii	"FLEXIO_SHIFTCTL_TIMPOL_WIDTH 1u\000"
@@ -51685,7 +49428,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_COMBINE_COMP2_MASK 0x20000u\000"
 .LASF5486:
 	.ascii	"LPUART_CTRL_LOOPS_SHIFT 7u\000"
-.LASF303:
+.LASF302:
 	.ascii	"__UTA_IBIT__ 64\000"
 .LASF4344:
 	.ascii	"LPI2C_MCR_RRF_WIDTH 1u\000"
@@ -51722,7 +49465,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1015:
 	.ascii	"CAN_MCR_IDAM(x) (((uint32_t)(((uint32_t)(x))<<CAN_M"
 	.ascii	"CR_IDAM_SHIFT))&CAN_MCR_IDAM_MASK)\000"
-.LASF8384:
+.LASF8377:
 	.ascii	"ADC_GetResolution\000"
 .LASF3389:
 	.ascii	"FTM_SYNC_CNTMAX(x) (((uint32_t)(((uint32_t)(x))<<FT"
@@ -51735,7 +49478,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MSR_SDF_MASK 0x200u\000"
 .LASF4606:
 	.ascii	"LPI2C_SSR_BEF_MASK 0x400u\000"
-.LASF74:
+.LASF73:
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
 .LASF4757:
 	.ascii	"LPI2C_SCFGR2_FILTSDA(x) (((uint32_t)(((uint32_t)(x)"
@@ -51829,7 +49572,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_CLP9_CLP9_WIDTH 7u\000"
 .LASF3220:
 	.ascii	"FTM_SC_TOIE_WIDTH 1u\000"
-.LASF126:
+.LASF125:
 	.ascii	"__FLT_DIG__ 6\000"
 .LASF1135:
 	.ascii	"CAN_CTRL1_PSEG2(x) (((uint32_t)(((uint32_t)(x))<<CA"
@@ -51862,7 +49605,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_SSTART_MASK)\000"
 .LASF2884:
 	.ascii	"FLEXIO_CTRL_SWRST_MASK 0x2u\000"
-.LASF42:
+.LASF41:
 	.ascii	"__INT32_TYPE__ long int\000"
 .LASF6644:
 	.ascii	"PORT_DFWR_FILT_SHIFT 0u\000"
@@ -51943,7 +49686,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"S32_SCB_ICSR_PENDSVSET_MASK 0x10000000u\000"
 .LASF4008:
 	.ascii	"FTM_PWMLOAD_CH6SEL_WIDTH 1u\000"
-.LASF8374:
+.LASF8379:
 	.ascii	"ADC_SetResolution\000"
 .LASF2029:
 	.ascii	"DMA_DCHPRI_COUNT 4u\000"
@@ -52042,7 +49785,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"G_MASK)\000"
 .LASF4584:
 	.ascii	"LPI2C_SSR_TDF_WIDTH 1u\000"
-.LASF8465:
+.LASF8466:
 	.ascii	"ADC_DRV_InitUserCalibrationStruct\000"
 .LASF5609:
 	.ascii	"LPUART_DATA_IDLINE_MASK 0x800u\000"
@@ -52056,7 +49799,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_SAMR_ADDR0_MASK 0x7FEu\000"
 .LASF3959:
 	.ascii	"FTM_SWOCTRL_CH2OCV_SHIFT 10u\000"
-.LASF231:
+.LASF230:
 	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
 .LASF4804:
 	.ascii	"LPIT_VERID_FEATURE_SHIFT 0u\000"
@@ -52068,7 +49811,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FLEXIO_BASE_ADDRS { FLEXIO_BASE }\000"
 .LASF2550:
 	.ascii	"DMA_EARS_EDREQ_3_SHIFT 3u\000"
-.LASF8441:
+.LASF8447:
 	.ascii	"ADC_DRV_InitHwCompareStruct\000"
 .LASF8277:
 	.ascii	"ADC_RESOLUTION_12BIT\000"
@@ -52100,7 +49843,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MSCM_CP0MASTER_PPMN(x) (((uint32_t)(((uint32_t)(x))"
 	.ascii	"<<MSCM_CP0MASTER_PPMN_SHIFT))&MSCM_CP0MASTER_PPMN_M"
 	.ascii	"ASK)\000"
-.LASF51:
+.LASF50:
 	.ascii	"__INT_LEAST64_TYPE__ long long int\000"
 .LASF4752:
 	.ascii	"LPI2C_SCFGR2_FILTSCL_WIDTH 4u\000"
@@ -52191,7 +49934,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MCFGR0_HRPOL_SHIFT 1u\000"
 .LASF6795:
 	.ascii	"RCM_SSRS_SLOL_MASK 0x8u\000"
-.LASF130:
+.LASF129:
 	.ascii	"__FLT_MAX_10_EXP__ 38\000"
 .LASF2414:
 	.ascii	"DMA_ERR_ERR1_SHIFT 1u\000"
@@ -52233,7 +49976,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_ORed_16_31_MB_IRQS_CH_COUNT (1u)\000"
 .LASF3895:
 	.ascii	"FTM_SYNCONF_HWINVC_SHIFT 19u\000"
-.LASF99:
+.LASF98:
 	.ascii	"__INT32_C(c) c ## L\000"
 .LASF5125:
 	.ascii	"LPSPI_CFGR1_PCSCFG_WIDTH 1u\000"
@@ -52361,7 +50104,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_CTRL1_PN_WTOF_MSK(x) (((uint32_t)(((uint32_t)(x"
 	.ascii	"))<<CAN_CTRL1_PN_WTOF_MSK_SHIFT))&CAN_CTRL1_PN_WTOF"
 	.ascii	"_MSK_MASK)\000"
-.LASF8399:
+.LASF8407:
 	.ascii	"ADC_SetHwCompareGtEnableFlag\000"
 .LASF307:
 	.ascii	"__STRICT_ANSI__ 1\000"
@@ -52372,7 +50115,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PUART_DATA_R1T1_SHIFT))&LPUART_DATA_R1T1_MASK)\000"
 .LASF5547:
 	.ascii	"LPUART_CTRL_NEIE_WIDTH 1u\000"
-.LASF84:
+.LASF83:
 	.ascii	"__SIG_ATOMIC_MAX__ 2147483647\000"
 .LASF3550:
 	.ascii	"FTM_COMBINE_DECAPEN2_MASK 0x40000u\000"
@@ -52671,7 +50414,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_CLP2_OFS_CLP2_OFS_SHIFT 0u\000"
 .LASF1012:
 	.ascii	"CAN_MCR_IDAM_MASK 0x300u\000"
-.LASF178:
+.LASF177:
 	.ascii	"__DEC64_MAX__ 9.999999999999999E384DD\000"
 .LASF8214:
 	.ascii	"LPIT0_IRQn\000"
@@ -52687,7 +50430,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ONE\000"
 .LASF795:
 	.ascii	"ADC_CLP1_OFS_CLP1_OFS_SHIFT 0u\000"
-.LASF209:
+.LASF208:
 	.ascii	"__LFRACT_IBIT__ 0\000"
 .LASF4949:
 	.ascii	"LPSPI_IRQS_CH_COUNT (1u)\000"
@@ -52766,7 +50509,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"STOP_MASK)\000"
 .LASF8003:
 	.ascii	"FEATURE_CSEC_PAGE_6_OFFSET (0x60U)\000"
-.LASF66:
+.LASF65:
 	.ascii	"__has_include(STR) __has_include__(STR)\000"
 .LASF596:
 	.ascii	"START_FUNCTION_DECLARATION_RAMSECTION \000"
@@ -52807,9 +50550,9 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_ES_SGE_SHIFT 2u\000"
 .LASF4614:
 	.ascii	"LPI2C_SSR_AM0F_MASK 0x1000u\000"
-.LASF8467:
+.LASF8468:
 	.ascii	"ADC_DRV_GetUserCalibration\000"
-.LASF32:
+.LASF31:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
 .LASF7695:
 	.ascii	"SMC_PARAM_ELLS2_SHIFT 5u\000"
@@ -52878,7 +50621,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_ERR_ERR7_MASK 0x80u\000"
 .LASF2015:
 	.ascii	"CSE_PRAM_RAMn_ACCESS8BIT_DATA_8LL_RAM_LL_WIDTH 8u\000"
-.LASF191:
+.LASF190:
 	.ascii	"__SFRACT_MAX__ 0X7FP-7HR\000"
 .LASF2065:
 	.ascii	"DMA_CR_ECX_MASK 0x10000u\000"
@@ -52966,7 +50709,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"MPU_CESR_SPERR0_SHIFT 31u\000"
 .LASF601:
 	.ascii	"ENABLE_CHECK_RAMSECTION_FUNCTION_CALL \000"
-.LASF131:
+.LASF130:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF1091:
 	.ascii	"CAN_CTRL1_LOM(x) (((uint32_t)(((uint32_t)(x))<<CAN_"
@@ -53000,7 +50743,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF6405:
 	.ascii	"PDB_SC_PDBIF(x) (((uint32_t)(((uint32_t)(x))<<PDB_S"
 	.ascii	"C_PDBIF_SHIFT))&PDB_SC_PDBIF_MASK)\000"
-.LASF56:
+.LASF55:
 	.ascii	"__INT_FAST8_TYPE__ int\000"
 .LASF2738:
 	.ascii	"DMA_TCD_CSR_MAJORLINKCH_SHIFT 8u\000"
@@ -53013,7 +50756,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_INPUTCHAN_DISABLED\000"
 .LASF4436:
 	.ascii	"LPI2C_MCFGR0_HREN_WIDTH 1u\000"
-.LASF8445:
+.LASF8451:
 	.ascii	"ADC_DRV_ConfigHwAverage\000"
 .LASF4098:
 	.ascii	"GPIO_INSTANCE_COUNT (5u)\000"
@@ -53158,7 +50901,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"TM_SYNCONF_SWOC_SHIFT))&FTM_SYNCONF_SWOC_MASK)\000"
 .LASF1273:
 	.ascii	"CAN_ESR1_BIT0ERR_FAST_SHIFT 30u\000"
-.LASF248:
+.LASF247:
 	.ascii	"__LACCUM_FBIT__ 31\000"
 .LASF4442:
 	.ascii	"LPI2C_MCFGR0_HRSEL_MASK 0x4u\000"
@@ -53189,7 +50932,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"RCM_SSRS_SSACKERR_MASK 0x2000u\000"
 .LASF6609:
 	.ascii	"PORT_GPCHR_GPWD_WIDTH 16u\000"
-.LASF196:
+.LASF195:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
 .LASF4798:
 	.ascii	"LPIT_BASE_ADDRS { LPIT0_BASE }\000"
@@ -53197,7 +50940,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"ADC_CLP1_CLP1_SHIFT 0u\000"
 .LASF6438:
 	.ascii	"PDB_CNT_CNT_MASK 0xFFFFu\000"
-.LASF63:
+.LASF62:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
 .LASF8288:
 	.ascii	"ADC_PRETRIGGER_SEL_PDB\000"
@@ -53254,7 +50997,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SCM_CP0CFG3_SBP_SHIFT))&MSCM_CP0CFG3_SBP_MASK)\000"
 .LASF5287:
 	.ascii	"LPTMR_CNR_COUNTER_MASK 0xFFFFu\000"
-.LASF287:
+.LASF286:
 	.ascii	"__UTQ_IBIT__ 0\000"
 .LASF3406:
 	.ascii	"FTM_SYNC_TRIG2_MASK 0x40u\000"
@@ -53266,7 +51009,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_VERID_FEATURE_SHIFT 0u\000"
 .LASF2059:
 	.ascii	"DMA_CR_CLM_WIDTH 1u\000"
-.LASF206:
+.LASF205:
 	.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
 .LASF368:
 	.ascii	"__s12z_bare 23\000"
@@ -53316,7 +51059,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPIT_PARAM_CHANNEL_WIDTH 8u\000"
 .LASF3602:
 	.ascii	"FTM_COMBINE_MCOMBINE3_MASK 0x80000000u\000"
-.LASF79:
+.LASF78:
 	.ascii	"__SIZE_MAX__ 4294967295U\000"
 .LASF1212:
 	.ascii	"CAN_ESR1_STFERR_MASK 0x400u\000"
@@ -53369,7 +51112,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SIM_FTMOPT1_FTM0SYNCBIT(x) (((uint32_t)(((uint32_t)"
 	.ascii	"(x))<<SIM_FTMOPT1_FTM0SYNCBIT_SHIFT))&SIM_FTMOPT1_F"
 	.ascii	"TM0SYNCBIT_MASK)\000"
-.LASF105:
+.LASF104:
 	.ascii	"__UINT16_C(c) c\000"
 .LASF7630:
 	.ascii	"SIM_FCFG1_DEPART_SHIFT 12u\000"
@@ -53391,9 +51134,9 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2212:
 	.ascii	"DMA_EEI_EEI6(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
 	.ascii	"EI_EEI6_SHIFT))&DMA_EEI_EEI6_MASK)\000"
-.LASF53:
+.LASF52:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
-.LASF17:
+.LASF16:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
 .LASF4360:
 	.ascii	"LPI2C_MSR_SDF_WIDTH 1u\000"
@@ -53515,7 +51258,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF5846:
 	.ascii	"MCM_LMDR2_LMSZH(x) (((uint32_t)(((uint32_t)(x))<<MC"
 	.ascii	"M_LMDR2_LMSZH_SHIFT))&MCM_LMDR2_LMSZH_MASK)\000"
-.LASF8427:
+.LASF8431:
 	.ascii	"ADC_SetUserOffsetValue\000"
 .LASF2760:
 	.ascii	"DMA_TCD_BITER_ELINKYES_LINKCH(x) (((uint16_t)(((uin"
@@ -53532,7 +51275,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_SCFGR2_CLKHOLD_MASK 0xFu\000"
 .LASF4996:
 	.ascii	"LPSPI_SR_TDF_SHIFT 0u\000"
-.LASF284:
+.LASF283:
 	.ascii	"__UDQ_FBIT__ 64\000"
 .LASF4813:
 	.ascii	"LPIT_VERID_MAJOR_WIDTH 8u\000"
@@ -53616,7 +51359,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FLEXIO_TIMCFG_TIMRST_SHIFT 16u\000"
 .LASF3318:
 	.ascii	"FTM_CNTIN_INIT_MASK 0xFFFFu\000"
-.LASF225:
+.LASF224:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
 .LASF8196:
 	.ascii	"DMA2_IRQn\000"
@@ -53635,7 +51378,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"S32_NVIC_IPR_COUNT 8u\000"
 .LASF4671:
 	.ascii	"LPI2C_SIER_AM0IE_SHIFT 12u\000"
-.LASF8395:
+.LASF8396:
 	.ascii	"ADC_GetDMAEnableFlag\000"
 .LASF3190:
 	.ascii	"FTM_IRQS_CH_COUNT (8u)\000"
@@ -53669,7 +51412,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"M_PCCRMR_R1_SHIFT))&LMEM_PCCRMR_R1_MASK)\000"
 .LASF1993:
 	.ascii	"CSE_PRAM_BASE (0x14000800u)\000"
-.LASF16:
+.LASF15:
 	.ascii	"__SIZEOF_LONG__ 4\000"
 .LASF1479:
 	.ascii	"CAN_FLT_DLC_FLT_DLC_HI(x) (((uint32_t)(((uint32_t)("
@@ -53677,7 +51420,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_DLC_HI_MASK)\000"
 .LASF1638:
 	.ascii	"CAN_FDCBT_FPSEG2_WIDTH 3u\000"
-.LASF195:
+.LASF194:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
 .LASF1594:
 	.ascii	"CAN_WMBn_D03_Data_byte_0_WIDTH 8u\000"
@@ -53737,7 +51480,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_FDCTRL_TDCEN_WIDTH 1u\000"
 .LASF2593:
 	.ascii	"DMA_EARS_EDREQ_14_MASK 0x4000u\000"
-.LASF8447:
+.LASF8453:
 	.ascii	"ADC_DRV_InitChanStruct\000"
 .LASF5002:
 	.ascii	"LPSPI_SR_RDF(x) (((uint32_t)(((uint32_t)(x))<<LPSPI"
@@ -53800,7 +51543,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"SCG_FIRCCSR_FIRCREGOFF(x) (((uint32_t)(((uint32_t)("
 	.ascii	"x))<<SCG_FIRCCSR_FIRCREGOFF_SHIFT))&SCG_FIRCCSR_FIR"
 	.ascii	"CREGOFF_MASK)\000"
-.LASF8477:
+.LASF8478:
 	.ascii	"s_adcBase\000"
 .LASF3977:
 	.ascii	"FTM_SWOCTRL_CH6OCV(x) (((uint32_t)(((uint32_t)(x))<"
@@ -53906,7 +51649,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPSPI_IER_WCIE_SHIFT 8u\000"
 .LASF2166:
 	.ascii	"DMA_ERQ_ERQ11_SHIFT 11u\000"
-.LASF8468:
+.LASF8469:
 	.ascii	"ADC_DRV_GetConvCompleteFlag\000"
 .LASF6051:
 	.ascii	"MPU_RGDAAC_M0UM_MASK 0x7u\000"
@@ -53929,7 +51672,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_EWL_RSIZE_T_TYPE size_t\000"
 .LASF3932:
 	.ascii	"FTM_SWOCTRL_CH3OC_WIDTH 1u\000"
-.LASF8437:
+.LASF8442:
 	.ascii	"ADC_DRV_InitConverterStruct\000"
 .LASF6152:
 	.ascii	"MSCM_CPxCFG0_DCSZ(x) (((uint32_t)(((uint32_t)(x))<<"
@@ -53938,7 +51681,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_FILTER_CH2FVAL_MASK 0xF00u\000"
 .LASF6293:
 	.ascii	"MSCM_OCMDR_OCM1_MASK 0x30u\000"
-.LASF305:
+.LASF304:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
 .LASF1503:
 	.ascii	"CAN_PL1_HI_Data_byte_7(x) (((uint32_t)(((uint32_t)("
@@ -53946,14 +51689,14 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_byte_7_MASK)\000"
 .LASF2893:
 	.ascii	"FLEXIO_CTRL_DBGE_SHIFT 30u\000"
-.LASF8455:
+.LASF8457:
 	.ascii	"swPretrigger\000"
 .LASF1206:
 	.ascii	"CAN_ESR1_RXWRN_WIDTH 1u\000"
 .LASF1383:
 	.ascii	"CAN_CBT_EPSEG2(x) (((uint32_t)(((uint32_t)(x))<<CAN"
 	.ascii	"_CBT_EPSEG2_SHIFT))&CAN_CBT_EPSEG2_MASK)\000"
-.LASF8430:
+.LASF8439:
 	.ascii	"ADC_ClearLatchTriggers\000"
 .LASF6071:
 	.ascii	"MPU_RGDAAC_M2UM_MASK 0x7000u\000"
@@ -53973,7 +51716,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CM_CP0CFG3_TZ_SHIFT))&MSCM_CP0CFG3_TZ_MASK)\000"
 .LASF8208:
 	.ascii	"FTM0_Ovf_Reload_IRQn\000"
-.LASF8440:
+.LASF8445:
 	.ascii	"ADC_DRV_GetConverterConfig\000"
 .LASF627:
 	.ascii	"ADC_IRQS_ARR_COUNT (1u)\000"
@@ -53990,7 +51733,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPIT_TMR_TCTRL_TSOT_WIDTH 1u\000"
 .LASF4696:
 	.ascii	"LPI2C_SDER_AVDE_WIDTH 1u\000"
-.LASF55:
+.LASF54:
 	.ascii	"__UINT_LEAST64_TYPE__ long long unsigned int\000"
 .LASF6219:
 	.ascii	"MSCM_CP0NUM_CPN_WIDTH 1u\000"
@@ -54003,7 +51746,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2204:
 	.ascii	"DMA_EEI_EEI4(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
 	.ascii	"EI_EEI4_SHIFT))&DMA_EEI_EEI4_MASK)\000"
-.LASF300:
+.LASF299:
 	.ascii	"__UDA_FBIT__ 32\000"
 .LASF2530:
 	.ascii	"DMA_HRS_HRS14_SHIFT 14u\000"
@@ -54045,7 +51788,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_FLS_EE_SIZE_1000 (0x0040u)\000"
 .LASF459:
 	.ascii	"_EWL_TR1_NAMESPACE 1\000"
-.LASF199:
+.LASF198:
 	.ascii	"__FRACT_IBIT__ 0\000"
 .LASF348:
 	.ascii	"_EWL_ANSI_PARMS_H \000"
@@ -54182,7 +51925,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF6678:
 	.ascii	"RCM_PARAM_ELOC(x) (((uint32_t)(((uint32_t)(x))<<RCM"
 	.ascii	"_PARAM_ELOC_SHIFT))&RCM_PARAM_ELOC_MASK)\000"
-.LASF249:
+.LASF248:
 	.ascii	"__LACCUM_IBIT__ 32\000"
 .LASF8192:
 	.ascii	"PendSV_IRQn\000"
@@ -54195,7 +51938,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1771:
 	.ascii	"CMP_C1_CHN2(x) (((uint32_t)(((uint32_t)(x))<<CMP_C1"
 	.ascii	"_CHN2_SHIFT))&CMP_C1_CHN2_MASK)\000"
-.LASF8394:
+.LASF8390:
 	.ascii	"shift\000"
 .LASF967:
 	.ascii	"AIPS_OPACR_WP1_WIDTH 1u\000"
@@ -54212,7 +51955,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"CAN_PL1_HI_Data_byte_5_MASK 0xFF0000u\000"
 .LASF1238:
 	.ascii	"CAN_ESR1_RWRNINT_WIDTH 1u\000"
-.LASF267:
+.LASF266:
 	.ascii	"__ULLACCUM_EPSILON__ 0x1P-32ULLK\000"
 .LASF2148:
 	.ascii	"DMA_ERQ_ERQ6(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
@@ -54386,7 +52129,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FTM_SYNC_CNTMAX_WIDTH 1u\000"
 .LASF4225:
 	.ascii	"LMEM_PCCCVR_DATA_SHIFT 0u\000"
-.LASF18:
+.LASF17:
 	.ascii	"__SIZEOF_SHORT__ 2\000"
 .LASF2206:
 	.ascii	"DMA_EEI_EEI5_SHIFT 5u\000"
@@ -54496,7 +52239,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1227:
 	.ascii	"CAN_ESR1_ACKERR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ACKERR_SHIFT))&CAN_ESR1_ACKERR_MASK)\000"
-.LASF138:
+.LASF137:
 	.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
 .LASF4165:
 	.ascii	"LMEM_PCCCR_INVW1_SHIFT 26u\000"
@@ -54513,13 +52256,15 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF7239:
 	.ascii	"SCG_CSR_DIVSLOW(x) (((uint32_t)(((uint32_t)(x))<<SC"
 	.ascii	"G_CSR_DIVSLOW_SHIFT))&SCG_CSR_DIVSLOW_MASK)\000"
+.LASF934:
+	.ascii	"AIPS_OPACR_SP4_SHIFT 14u\000"
 .LASF4214:
 	.ascii	"LMEM_PCCLCR_LACC_WIDTH 1u\000"
 .LASF4023:
 	.ascii	"FTM_PWMLOAD_GLEN_SHIFT 10u\000"
 .LASF7418:
 	.ascii	"SIM_CHIPCTL_CLKOUTSEL_SHIFT 4u\000"
-.LASF8418:
+.LASF8421:
 	.ascii	"ADC_SetCalibrationActiveFlag\000"
 .LASF5151:
 	.ascii	"LPSPI_FCR_TXWATER_MASK 0x3u\000"
@@ -54530,7 +52275,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF4203:
 	.ascii	"LMEM_PCCLCR_LCWAY(x) (((uint32_t)(((uint32_t)(x))<<"
 	.ascii	"LMEM_PCCLCR_LCWAY_SHIFT))&LMEM_PCCLCR_LCWAY_MASK)\000"
-.LASF8420:
+.LASF8423:
 	.ascii	"ADC_SetUserGainValue\000"
 .LASF4220:
 	.ascii	"LMEM_PCCSAR_PHYADDR_MASK 0xFFFFFFFCu\000"
@@ -54539,7 +52284,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF2268:
 	.ascii	"DMA_SEEI_SAEE(x) (((uint8_t)(((uint8_t)(x))<<DMA_SE"
 	.ascii	"EI_SAEE_SHIFT))&DMA_SEEI_SAEE_MASK)\000"
-.LASF233:
+.LASF232:
 	.ascii	"__USACCUM_FBIT__ 8\000"
 .LASF640:
 	.ascii	"ADC_SC1_COCO_WIDTH 1u\000"
@@ -54616,11 +52361,11 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"DMA_TCD_CSR_ACTIVE_SHIFT 6u\000"
 .LASF983:
 	.ascii	"AIPS_OPACR_SP0_WIDTH 1u\000"
-.LASF243:
+.LASF242:
 	.ascii	"__UACCUM_FBIT__ 16\000"
 .LASF483:
 	.ascii	"NULL 0L\000"
-.LASF172:
+.LASF171:
 	.ascii	"__DEC32_EPSILON__ 1E-6DF\000"
 .LASF6715:
 	.ascii	"RCM_PARAM_ESACKERR_MASK 0x2000u\000"
@@ -54740,13 +52485,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPUART_DATA_R5T5_WIDTH 1u\000"
 .LASF8068:
 	.ascii	"ERM_EARn_COUNT 1u\000"
-.LASF8410:
+.LASF8418:
 	.ascii	"ADC_SetHwAverageMode\000"
 .LASF3055:
 	.ascii	"FTFC_READ_COLLISION_IRQS { FTFC_IRQn }\000"
-.LASF118:
+.LASF117:
 	.ascii	"__INTPTR_MAX__ 2147483647\000"
-.LASF180:
+.LASF179:
 	.ascii	"__DEC64_SUBNORMAL_MIN__ 0.000000000000001E-383DD\000"
 .LASF1021:
 	.ascii	"CAN_MCR_AEN_SHIFT 12u\000"
@@ -54770,7 +52515,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MCFGR1_AUTOSTOP_SHIFT 8u\000"
 .LASF3507:
 	.ascii	"FTM_COMBINE_MCOMBINE0_SHIFT 7u\000"
-.LASF246:
+.LASF245:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
 .LASF1450:
 	.ascii	"CAN_CTRL2_PN_MATCHTO_WIDTH 16u\000"
@@ -54825,13 +52570,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"UART_CTRL_RWU_SHIFT))&LPUART_CTRL_RWU_MASK)\000"
 .LASF4835:
 	.ascii	"LPIT_MCR_DBG_EN_MASK 0x8u\000"
-.LASF8417:
+.LASF8369:
 	.ascii	"ADC_GetConvActiveFlag\000"
 .LASF7540:
 	.ascii	"SIM_FTMOPT1_FTM3SYNCBIT(x) (((uint32_t)(((uint32_t)"
 	.ascii	"(x))<<SIM_FTMOPT1_FTM3SYNCBIT_SHIFT))&SIM_FTMOPT1_F"
 	.ascii	"TM3SYNCBIT_MASK)\000"
-.LASF8387:
+.LASF8382:
 	.ascii	"ADC_GetTriggerMode\000"
 .LASF2140:
 	.ascii	"DMA_ERQ_ERQ4(x) (((uint32_t)(((uint32_t)(x))<<DMA_E"
@@ -54849,7 +52594,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF5858:
 	.ascii	"MCM_LMPECR_ER1BR(x) (((uint32_t)(((uint32_t)(x))<<M"
 	.ascii	"CM_LMPECR_ER1BR_SHIFT))&MCM_LMPECR_ER1BR_MASK)\000"
-.LASF285:
+.LASF284:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF2941:
 	.ascii	"FLEXIO_SHIFTCTL_PINSEL_SHIFT 8u\000"
@@ -54924,10 +52669,6 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF1715:
 	.ascii	"CMP_C0_FPR(x) (((uint32_t)(((uint32_t)(x))<<CMP_C0_"
 	.ascii	"FPR_SHIFT))&CMP_C0_FPR_MASK)\000"
-.LASF2632:
-	.ascii	"DMA_TCD_ATTR_SSIZE(x) (((uint16_t)(((uint16_t)(x))<"
-	.ascii	"<DMA_TCD_ATTR_SSIZE_SHIFT))&DMA_TCD_ATTR_SSIZE_MASK"
-	.ascii	")\000"
 .LASF1259:
 	.ascii	"CAN_ESR1_ERROVR(x) (((uint32_t)(((uint32_t)(x))<<CA"
 	.ascii	"N_ESR1_ERROVR_SHIFT))&CAN_ESR1_ERROVR_MASK)\000"
@@ -55000,7 +52741,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_MPU_SLAVE_COUNT (2U)\000"
 .LASF3942:
 	.ascii	"FTM_SWOCTRL_CH6OC_MASK 0x40u\000"
-.LASF136:
+.LASF135:
 	.ascii	"__FLT_HAS_DENORM__ 1\000"
 .LASF7237:
 	.ascii	"SCG_CSR_DIVSLOW_SHIFT 0u\000"
@@ -55065,7 +52806,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"PI_CR_DBGEN_SHIFT))&LPSPI_CR_DBGEN_MASK)\000"
 .LASF6816:
 	.ascii	"RCM_SSRS_SJTAG_SHIFT 8u\000"
-.LASF148:
+.LASF147:
 	.ascii	"__DBL_EPSILON__ ((double)2.2204460492503131e-16L)\000"
 .LASF2064:
 	.ascii	"DMA_CR_EMLM(x) (((uint32_t)(((uint32_t)(x))<<DMA_CR"
@@ -55080,7 +52821,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPIT_CLRTEN_CLR_T_EN_3_MASK 0x8u\000"
 .LASF5413:
 	.ascii	"LPUART_STAT_RDRF_MASK 0x200000u\000"
-.LASF286:
+.LASF285:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF647:
 	.ascii	"ADC_CFG1_MODE_SHIFT 2u\000"
@@ -55184,7 +52925,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	")\000"
 .LASF4820:
 	.ascii	"LPIT_PARAM_EXT_TRIG_SHIFT 8u\000"
-.LASF132:
+.LASF131:
 	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
 .LASF6432:
 	.ascii	"PDB_SC_LDMOD_WIDTH 2u\000"
@@ -55192,13 +52933,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"FEATURE_RCM_HAS_EXISTENCE_CMU_LOSS_OF_CLOCK (1)\000"
 .LASF2395:
 	.ascii	"DMA_INT_INT12_WIDTH 1u\000"
-.LASF8432:
+.LASF8441:
 	.ascii	"config\000"
 .LASF4061:
 	.ascii	"FTM_PAIR2DEADTIME_DTVAL(x) (((uint32_t)(((uint32_t)"
 	.ascii	"(x))<<FTM_PAIR2DEADTIME_DTVAL_SHIFT))&FTM_PAIR2DEAD"
 	.ascii	"TIME_DTVAL_MASK)\000"
-.LASF96:
+.LASF95:
 	.ascii	"__INT_LEAST16_MAX__ 32767\000"
 .LASF7150:
 	.ascii	"S32_SCB_SHCSR_SVCALLPENDED_WIDTH 1u\000"
@@ -55231,7 +52972,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"1_MASK)\000"
 .LASF3153:
 	.ascii	"FTFC_FCSESTAT_BOK_SHIFT 4u\000"
-.LASF8405:
+.LASF8406:
 	.ascii	"ADC_GetHwCompareGtEnableFlag\000"
 .LASF2466:
 	.ascii	"DMA_ERR_ERR14_SHIFT 14u\000"
@@ -55275,13 +53016,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MCFGR1_MATCFG_WIDTH 3u\000"
 .LASF7807:
 	.ascii	"WDOG_CS_RCS_MASK 0x400u\000"
-.LASF24:
+.LASF23:
 	.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
 .LASF4197:
 	.ascii	"LMEM_PCCLCR_LCIMB_SHIFT 21u\000"
 .LASF6427:
 	.ascii	"PDB_SC_PDBEIE_SHIFT 17u\000"
-.LASF211:
+.LASF210:
 	.ascii	"__LFRACT_MAX__ 0X7FFFFFFFP-31LR\000"
 .LASF4089:
 	.ascii	"FTM_MOD_MIRROR_MOD(x) (((uint32_t)(((uint32_t)(x))<"
@@ -55292,7 +53033,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF4247:
 	.ascii	"LMEM_PCCRMR_R11(x) (((uint32_t)(((uint32_t)(x))<<LM"
 	.ascii	"EM_PCCRMR_R11_SHIFT))&LMEM_PCCRMR_R11_MASK)\000"
-.LASF164:
+.LASF163:
 	.ascii	"__LDBL_HAS_DENORM__ 1\000"
 .LASF2305:
 	.ascii	"DMA_CDNE_NOP_MASK 0x80u\000"
@@ -55303,7 +53044,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"EI_EEI0_SHIFT))&DMA_EEI_EEI0_MASK)\000"
 .LASF3283:
 	.ascii	"FTM_CnSC_ELSB_SHIFT 3u\000"
-.LASF21:
+.LASF20:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
 .LASF7982:
 	.ascii	"FTM_FEATURE_COMBINE_CHAN_CTRL_WIDTH (8U)\000"
@@ -55349,7 +53090,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"N_MASK)\000"
 .LASF3648:
 	.ascii	"FTM_EXTTRIG_TRIGF_WIDTH 1u\000"
-.LASF277:
+.LASF276:
 	.ascii	"__TQ_IBIT__ 0\000"
 .LASF5445:
 	.ascii	"LPUART_STAT_MSBF_MASK 0x20000000u\000"
@@ -55380,7 +53121,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"S32_SCB_ICSR_PENDSVCLR_WIDTH 1u\000"
 .LASF917:
 	.ascii	"AIPS_OPACR_WP5_MASK 0x200u\000"
-.LASF114:
+.LASF113:
 	.ascii	"__UINT_FAST8_MAX__ 4294967295U\000"
 .LASF3713:
 	.ascii	"FTM_FMS_WPEN(x) (((uint32_t)(((uint32_t)(x))<<FTM_F"
@@ -55406,7 +53147,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_ENABLE_MASK)\000"
 .LASF2186:
 	.ascii	"DMA_EEI_EEI0_SHIFT 0u\000"
-.LASF304:
+.LASF303:
 	.ascii	"__REGISTER_PREFIX__ \000"
 .LASF2723:
 	.ascii	"DMA_TCD_CSR_ESG_WIDTH 1u\000"
@@ -55528,7 +53269,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_byte_4_MASK)\000"
 .LASF1857:
 	.ascii	"CMP_C2_RRE_SHIFT 31u\000"
-.LASF8471:
+.LASF8472:
 	.ascii	"irqId\000"
 .LASF2816:
 	.ascii	"ERM_CR0_ENCIE0_SHIFT 30u\000"
@@ -55541,7 +53282,7 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_PARAM_EPOR_SHIFT))&RCM_PARAM_EPOR_MASK)\000"
 .LASF3671:
 	.ascii	"FTM_POL_POL3_SHIFT 3u\000"
-.LASF8442:
+.LASF8448:
 	.ascii	"ADC_DRV_ConfigHwCompare\000"
 .LASF4554:
 	.ascii	"LPI2C_MTDR_CMD_MASK 0x700u\000"
@@ -55636,7 +53377,7 @@ ADC_DRV_GetTriggerErrorFlags:
 .LASF5954:
 	.ascii	"MPU_EDR_EMN(x) (((uint32_t)(((uint32_t)(x))<<MPU_ED"
 	.ascii	"R_EMN_SHIFT))&MPU_EDR_EMN_MASK)\000"
-.LASF67:
+.LASF66:
 	.ascii	"__has_include_next(STR) __has_include_next__(STR)\000"
 .LASF1071:
 	.ascii	"CAN_MCR_HALT(x) (((uint32_t)(((uint32_t)(x))<<CAN_M"
@@ -55672,9 +53413,9 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"_EWL_USHRT_MAX 0xffff\000"
 .LASF2639:
 	.ascii	"DMA_TCD_NBYTES_MLNO_NBYTES_WIDTH 32u\000"
-.LASF244:
+.LASF243:
 	.ascii	"__UACCUM_IBIT__ 16\000"
-.LASF8396:
+.LASF8399:
 	.ascii	"ADC_GetVoltageReference\000"
 .LASF1409:
 	.ascii	"CAN_RAMn_DATA_BYTE_2_SHIFT 8u\000"
@@ -55747,13 +53488,13 @@ ADC_DRV_GetTriggerErrorFlags:
 	.ascii	"LPI2C_MCR_RTF_WIDTH 1u\000"
 .LASF8129:
 	.ascii	"FEATURE_LPSPI_STATE_STRUCTURES_NULL {NULL}\000"
-.LASF193:
+.LASF192:
 	.ascii	"__USFRACT_FBIT__ 8\000"
 .LASF1342:
 	.ascii	"CAN_CTRL2_RFFN_WIDTH 4u\000"
 .LASF1752:
 	.ascii	"CMP_C1_VRSEL_MASK 0x4000u\000"
-.LASF184:
+.LASF183:
 	.ascii	"__DEC128_MIN__ 1E-6143DL\000"
 .LASF1546:
 	.ascii	"CAN_PL2_PLMASK_HI_Data_byte_7_WIDTH 8u\000"
