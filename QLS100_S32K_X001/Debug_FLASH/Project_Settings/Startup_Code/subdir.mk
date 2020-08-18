@@ -24,7 +24,7 @@ OBJS_QUOTED += \
 # Each subdirectory must supply rules for building sources it contributes
 Project_Settings/Startup_Code/startup_S32K116.o: C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/S32K116/startup/gcc/startup_S32K116.S
 	@echo 'Building file: $<'
-	@echo 'Executing target #21 $<'
+	@echo 'Executing target #8 $<'
 	@echo 'Invoking: Standard S32DS Assembler'
 	arm-none-eabi-gcc "@Project_Settings/Startup_Code/Startup_S32K116.args" -o "Project_Settings/Startup_Code/startup_S32K116.o" "$<"
 	@echo 'Finished building: $<'

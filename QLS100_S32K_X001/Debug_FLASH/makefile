@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 58
+#Progress monitor hint: 51
 first : all
 -include ../makefile.init
 
@@ -14,8 +14,6 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
--include FreeMaster_S32xx/src_common/subdir.mk
--include FreeMaster_S32xx/src_platforms/S32xx/subdir.mk
 -include Generated_Code/subdir.mk
 -include Project_Settings/Linker_Files/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
@@ -25,16 +23,20 @@ RM := rm -rf
 -include SDK/platform/drivers/src/clock/S32K1xx/subdir.mk
 -include SDK/platform/drivers/src/clock/subdir.mk
 -include SDK/platform/drivers/src/edma/subdir.mk
--include SDK/platform/drivers/src/flexcan/subdir.mk
 -include SDK/platform/drivers/src/interrupt/subdir.mk
 -include SDK/platform/drivers/src/lpspi/subdir.mk
 -include SDK/platform/drivers/src/pdb/subdir.mk
 -include SDK/platform/drivers/src/pins/subdir.mk
 -include SDK/platform/pal/can/src/subdir.mk
 -include SDK/rtos/osif/subdir.mk
--include Sources/subdir.mk
+-include Sources/common/APP/task/subdir.mk
+-include Sources/common/Comm_Mgt/Can_Com/subdir.mk
+-include Sources/common/Comm_Mgt/Int_Mgt/subdir.mk
+-include Sources/common/Comm_Mgt/subdir.mk
 -include Sources/common/HW_Driver/subdir.mk
+-include Sources/common/Node_Mgt/subdir.mk
 -include Sources/common/subdir.mk
+-include Sources/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -86,14 +88,14 @@ all: warning-messages explicit-dependencies lpspi_transfer_slave_s32k116.elf sec
 # Tool invocations
 lpspi_transfer_slave_s32k116.elf: $(OBJS) C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/S32K116/linker/gcc/S32K116_17_flash.ld $(USER_OBJS)
 	@echo 'Building target: $@'
-	@echo 'Executing target #59 $@'
+	@echo 'Executing target #52 $@'
 	@echo 'Invoking: Standard S32DS C Linker'
 	arm-none-eabi-gcc -o "lpspi_transfer_slave_s32k116.elf" "@lpspi_transfer_slave_s32k116.args"  $(USER_OBJS_QUOTED) 
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 lpspi_transfer_slave_s32k116.siz: $(EXECUTABLES)
-	@echo 'Executing target #60 $@'
+	@echo 'Executing target #53 $@'
 	@echo 'Invoking: Standard S32DS Print Size'
 	arm-none-eabi-size --format=berkeley $(EXECUTABLES)
 	@echo 'Finished building: $@'
@@ -101,7 +103,7 @@ lpspi_transfer_slave_s32k116.siz: $(EXECUTABLES)
 
 # Other Targets
 clean:
-	-$(RM) ./*/*/*.d ./*/*/*/*.d ./*/*.d ./*/*/*/*/*/*.d ./*/*/*/*/*/*/*.d  ./*/*/*.o ./*/*/*/*.o ./*/*.o ./*/*/*/*/*/*.o ./*/*/*/*/*/*/*.o  $(SECONDARY_SIZE_QUOTED) $(EXECUTABLES_QUOTED)
+	-$(RM) ./*/*.d ./*/*/*.d ./*/*/*/*.d ./*/*/*/*/*.d ./*/*/*/*/*/*.d ./*/*/*/*/*/*/*.d  ./*/*.o ./*/*/*.o ./*/*/*/*.o ./*/*/*/*/*.o ./*/*/*/*/*/*.o ./*/*/*/*/*/*/*.o  $(SECONDARY_SIZE_QUOTED) $(EXECUTABLES_QUOTED)
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_SIZE) $(SECONDARY_SIZE)

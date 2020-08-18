@@ -37,7 +37,7 @@ C_DEPS += \
 # Each subdirectory must supply rules for building sources it contributes
 SDK/platform/drivers/src/pins/pins_driver.o: C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/pins/pins_driver.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #41 $<'
+	@echo 'Executing target #25 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@SDK/platform/drivers/src/pins/pins_driver.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "SDK/platform/drivers/src/pins/pins_driver.o" "$<"
 	@echo 'Finished building: $<'
@@ -45,7 +45,7 @@ SDK/platform/drivers/src/pins/pins_driver.o: C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32
 
 SDK/platform/drivers/src/pins/pins_port_hw_access.o: C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/src/pins/pins_port_hw_access.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #42 $<'
+	@echo 'Executing target #26 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@SDK/platform/drivers/src/pins/pins_port_hw_access.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "SDK/platform/drivers/src/pins/pins_port_hw_access.o" "$<"
 	@echo 'Finished building: $<'

@@ -29,7 +29,7 @@ extern "C"
 //Node Info Mgt
 #define _CAN_Ch (0)             //fixed
 #define _CAN_Speed (250)        //K
-#define _CAN_ClockSpeed (8)    //M
+#define _CAN_ClockSpeed (16)    //M
 #define _CAN_ClockSource (0)    //Outside
 //#define _CAN_ClockSource (1)    //SYS_CLK
 #define _CAN_SamplePoint (8125) //81.25%

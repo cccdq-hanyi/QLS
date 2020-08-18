@@ -14,6 +14,7 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
+#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -307,8 +308,8 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
-#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
+#define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 1
@@ -841,8 +842,8 @@
 
 
 #define _EWL_SIZEOF_LONG_LONG 8
-# 52 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
-#define _EWL_UNSIGNED_CHAR 0
+# 50 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
+#define _EWL_UNSIGNED_CHAR 1
 # 61 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
 #define _EWL_SCHAR_MAX 0x7f
 #define _EWL_UCHAR_MAX 0xff
@@ -850,11 +851,11 @@
 #define _EWL_SCHAR_MIN (-_EWL_SCHAR_MAX - 1)
 
 
+#define _EWL_CHAR_MIN 0
+#define _EWL_CHAR_MAX _EWL_UCHAR_MAX
 
 
 
-#define _EWL_CHAR_MIN _EWL_SCHAR_MIN
-#define _EWL_CHAR_MAX _EWL_SCHAR_MAX
 
 
 
@@ -10620,7 +10621,7 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
 
 #define _CAN_Ch (0)
 #define _CAN_Speed (250)
-#define _CAN_ClockSpeed (8)
+#define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
 
 #define _CAN_SamplePoint (8125)
@@ -11014,7 +11015,14 @@ void v_task_MgtCallback(void)
 
 void Sys_Init(void)
 {
-# 94 "D:/QLS/common/Sys_Init.c"
+ u8_comm_init();
+
+ u8_task_AppInit();
+ u8_node_ParaInit();
+
+
+
+
  (void)u8_hw_Timer_Init(v_task_MgtCallback);
 
  (void)u8_hw_wtd_Init();

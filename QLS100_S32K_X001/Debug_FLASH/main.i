@@ -14,6 +14,7 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
+#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -307,8 +308,8 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
-#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
+#define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 1
@@ -893,8 +894,8 @@
 
 
 #define _EWL_SIZEOF_LONG_LONG 8
-# 52 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
-#define _EWL_UNSIGNED_CHAR 0
+# 50 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
+#define _EWL_UNSIGNED_CHAR 1
 # 61 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
 #define _EWL_SCHAR_MAX 0x7f
 #define _EWL_UCHAR_MAX 0xff
@@ -902,11 +903,11 @@
 #define _EWL_SCHAR_MIN (-_EWL_SCHAR_MAX - 1)
 
 
+#define _EWL_CHAR_MIN 0
+#define _EWL_CHAR_MAX _EWL_UCHAR_MAX
 
 
 
-#define _EWL_CHAR_MIN _EWL_SCHAR_MIN
-#define _EWL_CHAR_MAX _EWL_SCHAR_MAX
 
 
 
@@ -15139,686 +15140,22 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
     extern void Sys_Init(void);
 # 26 "../Sources/main.c" 2
 
+# 1 "D:/s32dsworkspace/QLS/common/HW_Driver\\hw_abstract.h" 1
+# 28 "../Sources/main.c" 2
+# 1 "D:/s32dsworkspace/QLS/common/Comm_Mgt\\comm_mgt.h" 1
+# 29 "../Sources/main.c" 2
+# 1 "D:/QLS/common/APP/task/App_Task_Mgt.h" 1
+# 30 "../Sources/main.c" 2
 
 
 
 
-
-# 1 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_platforms/S32xx/freemaster.h" 1
-# 21 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_platforms/S32xx/freemaster.h"
-#define __FREEMASTER_H 
-
-
-#define FMSTR_PLATFORM_S32xx 1
-
-
-# 1 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h" 1
-# 17 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define __FREEMASTER_DEFCFG_H 
-
-
-# 1 "D:/QLS/QLS100_S32K_X001/include/freemaster_cfg.h" 1
-# 16 "D:/QLS/QLS100_S32K_X001/include/freemaster_cfg.h"
-#define __FREEMASTER_CFG_H 
-
-
-
-
-
-#define FMSTR_LONG_INTR 0
-#define FMSTR_SHORT_INTR 0
-#define FMSTR_POLL_DRIVEN 1
-
-
-
-
-
-#define FMSTR_SCI_BASE 0x4006A000UL
-#define FMSTR_CAN_BASE 0x40024000UL
-
-#define FMSTR_DISABLE 0
-#define FMSTR_USE_LPUART 0
-#define FMSTR_USE_FLEXCAN 1
-#define FMSTR_USE_PDBDM 0
-
-
-#define FMSTR_FLEXCAN_TXMB 0
-#define FMSTR_FLEXCAN_RXMB 1
-
-
-
-
-
-#define FMSTR_COMM_BUFFER_SIZE 0
-
-
-
-
-
-#define FMSTR_COMM_RQUEUE_SIZE 32
-
-
-
-
-
-
-#define FMSTR_DEMO_ENOUGH_RAM 1
-#define FMSTR_DEMO_ENOUGH_ROM 1
-#define FMSTR_DEMO_LARGE_ROM 1
-
-
-
-
-
-
-
-#define FMSTR_DEMO_SUPPORT_I64 0
-#define FMSTR_DEMO_SUPPORT_FLT 0
-#define FMSTR_DEMO_SUPPORT_DBL 0
-
-
-
-
-
-#define FMSTR_USE_APPCMD FMSTR_DEMO_ENOUGH_ROM
-#define FMSTR_APPCMD_BUFF_SIZE 32
-#define FMSTR_MAX_APPCMD_CALLS 4
-
-
-
-
-
-#define FMSTR_USE_SCOPE FMSTR_DEMO_ENOUGH_RAM
-#define FMSTR_MAX_SCOPE_VARS 8
-
-
-
-
-
-#define FMSTR_USE_RECORDER FMSTR_DEMO_ENOUGH_RAM
-#define FMSTR_MAX_REC_VARS 8
-#define FMSTR_REC_OWNBUFF 0
-
-
-#define FMSTR_REC_BUFF_SIZE 2048
-
-
-#define FMSTR_REC_TIMEBASE FMSTR_REC_BASE_MILLISEC(0)
-
-#define FMSTR_REC_FLOAT_TRIG 0
-
-
-
-
-
-#define FMSTR_USE_TSA 0
-#define FMSTR_USE_TSA_INROM 1
-#define FMSTR_USE_TSA_SAFETY FMSTR_DEMO_ENOUGH_RAM
-
-#define FMSTR_USE_TSA_DYNAMIC FMSTR_DEMO_ENOUGH_RAM
-
-
-
-
-
-#define FMSTR_USE_PIPES 0
-#define FMSTR_MAX_PIPES_COUNT 3
-
-
-
-
-
-#define FMSTR_USE_READMEM 1
-#define FMSTR_USE_WRITEMEM 1
-#define FMSTR_USE_WRITEMEMMASK 1
-
-
-
-
-
-#define FMSTR_USE_READVAR 1
-#define FMSTR_USE_WRITEVAR 1
-#define FMSTR_USE_WRITEVARMASK 1
-# 21 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h" 2
-
-
-#define FMSTR_VERSION 0x00020000
-# 63 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_USE_ESCI 0
-
-
-
-
-
-#define FMSTR_USE_JTAG 0
-
-
-#define FMSTR_USE_MSCAN 0
-
-
-
-
-
-#define FMSTR_USE_MCAN 0
-
-
-#define FMSTR_USE_FLEXCAN32 0
-
-
-
-#define FMSTR_USE_CAN 1
-
-
-
-
-
-#define FMSTR_USE_LINTL 0
-
-
-#define FMSTR_USE_MQX_IO 0
-
-
-#define FMSTR_USE_USB_CDC 0
-
-
-
-
-
-#define FMSTR_USE_MBED 0
-# 114 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_USE_SCI 0
-# 134 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_SCI_BASE_DYNAMIC 0
-
-
-
-
-#define FMSTR_SCI_STATUS_W1C 1
-# 154 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_CAN_EXTID 0x80000000U
-# 195 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_CAN_CMDID 0x7aa
-
-
-
-
-#define FMSTR_CAN_CMDID_DYNAMIC 0
-
-
-
-
-#define FMSTR_CAN_RESPID 0x7aa
-
-
-
-
-#define FMSTR_CAN_RESPID_DYNAMIC 0
-# 223 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_CAN_BASE_DYNAMIC 0
-# 260 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_BYTE_BUFFER_ACCESS 1
-# 309 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_REC_FARBUFF 0
-
-
-
-
-
-
-
-#define FMSTR_USE_FASTREC 0
-
-
-
-
-#define FMSTR_LIGHT_VERSION 0
-
-
-
-
-#define FMSTR_REC_COMMON_ERR_CODES FMSTR_LIGHT_VERSION
-
-
-
-
-#define FMSTR_SCI_TWOWIRE_ONLY FMSTR_LIGHT_VERSION
-
-
-
-
-#define FMSTR_REC_STATIC_POSTTRIG 0
-
-
-
-
-#define FMSTR_REC_STATIC_DIVISOR 0
-# 352 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_REC_LARGE_MODE 0
-
-
-
-
-
-#define FMSTR_CFG_REC_LARGE_MODE 0
-# 367 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_DEBUG_TX 0
-# 418 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_TSA_CDECL const
-# 429 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_USE_SFIO 0
-# 439 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_USE_PIPE_PRINTF 1
-
-
-
-
-#define FMSTR_USE_PIPE_PRINTF_VARG FMSTR_USE_PIPE_PRINTF
-# 463 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#define FMSTR_USE_BRIEFINFO 0
-# 478 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#undef FMSTR_COMM_BUFFER_SIZE
-#define FMSTR_COMM_BUFFER_SIZE 11
-
-
-
-#undef FMSTR_COMM_BUFFER_SIZE
-#define FMSTR_COMM_BUFFER_SIZE (35+1)
-# 495 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h"
-#undef FMSTR_COMM_BUFFER_SIZE
-#define FMSTR_COMM_BUFFER_SIZE (((FMSTR_MAX_SCOPE_VARS)*5)+1+2)
-
-
-
-
-#undef FMSTR_COMM_BUFFER_SIZE
-#define FMSTR_COMM_BUFFER_SIZE (((FMSTR_MAX_REC_VARS)*5)+18+2)
-# 28 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_platforms/S32xx/freemaster.h" 2
-
-
-
-
-
-typedef unsigned char *FMSTR_ADDR;
-typedef unsigned short FMSTR_SIZE;
-typedef unsigned long FMSTR_SIZE32;
-typedef unsigned char FMSTR_BOOL;
-
-
-
-typedef unsigned short FMSTR_SIZE_RECBUFF;
-
-
-
-typedef unsigned char FMSTR_APPCMD_CODE;
-typedef unsigned char FMSTR_APPCMD_DATA, *FMSTR_APPCMD_PDATA;
-typedef unsigned char FMSTR_APPCMD_RESULT;
-
-
-typedef FMSTR_APPCMD_RESULT (*FMSTR_PAPPCMDFUNC)(FMSTR_APPCMD_CODE code, FMSTR_APPCMD_PDATA pdata, FMSTR_SIZE size);
-
-
-typedef void* FMSTR_HPIPE;
-typedef unsigned short FMSTR_PIPE_PORT;
-typedef unsigned short FMSTR_PIPE_SIZE;
-
-
-typedef void (*FMSTR_PPIPEFUNC)(FMSTR_HPIPE);
-
-
-
-
-
-# 1 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_tsa.h" 1
-# 17 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_tsa.h"
-#define __FREEMASTER_TSA_H 
-
-# 1 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_defcfg.h" 1
-# 20 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_tsa.h" 2
-
-
-
-
-
-
-#define FMSTR_TSA_VERSION 2U
-
-
-#define FMSTR_TSA_INFO_ENTRYTYPE_MASK 0x0003U
-#define FMSTR_TSA_INFO_STRUCT 0x0000U
-#define FMSTR_TSA_INFO_RO_VAR 0x0001U
-#define FMSTR_TSA_INFO_MEMBER 0x0002U
-#define FMSTR_TSA_INFO_RW_VAR 0x0003U
-#define FMSTR_TSA_INFO_VAR_FLAG 0x0001U
-#define FMSTR_TSA_INFO_RWV_FLAG 0x0002U
-
-
-typedef FMSTR_SIZE FMSTR_TSA_TINDEX;
-typedef FMSTR_SIZE FMSTR_TSA_TSIZE;
-
-
-
-
-#define FMSTR_TSATBL_STRPTR const char*
-
-
-#define FMSTR_TSATBL_STRPTR_CAST(x) ((FMSTR_TSATBL_STRPTR)(x))
-
-
-#define FMSTR_TSATBL_STRPTR_ENTRY(x) {FMSTR_TSATBL_STRPTR_CAST(x)}
-
-
-#define FMSTR_TSATBL_VOIDPTR volatile const void*
-
-
-#define FMSTR_TSATBL_VOIDPTR_CAST(x) ((FMSTR_TSATBL_VOIDPTR)(x))
-
-
-#define FMSTR_TSATBL_VOIDPTR_ENTRY(x) {FMSTR_TSATBL_VOIDPTR_CAST(x)}
-# 77 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_tsa.h"
-typedef struct
-{
-    union { const char* p; FMSTR_ADDR n; } name;
-    union { const char* p; FMSTR_ADDR n; } type;
-    union { volatile const void* p; FMSTR_ADDR n; } addr;
-    union { volatile const void* p; FMSTR_ADDR n; } info;
-} FMSTR_TSA_ENTRY;
-
-
-
-#define FMSTR_TSA_STRUCT_CFG(name) FMSTR_TSATBL_STRPTR_ENTRY(#name), FMSTR_TSATBL_STRPTR_ENTRY(NULL), FMSTR_TSATBL_VOIDPTR_ENTRY(NULL), FMSTR_TSATBL_VOIDPTR_ENTRY(FMSTR_TSA_INFO1(name, FMSTR_TSA_INFO_STRUCT)),
-
-
-#define FMSTR_TSA_MEMBER_CFG(parenttype,name,type) FMSTR_TSATBL_STRPTR_ENTRY(#name), FMSTR_TSATBL_STRPTR_ENTRY(type), FMSTR_TSATBL_VOIDPTR_ENTRY(&((parenttype*)0)->name), FMSTR_TSATBL_VOIDPTR_ENTRY(FMSTR_TSA_INFO1(((parenttype*)0)->name, FMSTR_TSA_INFO_MEMBER)),
-
-
-#define FMSTR_TSA_RO_VAR_CFG(name,type) FMSTR_TSATBL_STRPTR_ENTRY(#name), FMSTR_TSATBL_STRPTR_ENTRY(type), FMSTR_TSATBL_VOIDPTR_ENTRY(&(name)), FMSTR_TSATBL_VOIDPTR_ENTRY(FMSTR_TSA_INFO1(name, FMSTR_TSA_INFO_RO_VAR)),
-
-
-#define FMSTR_TSA_RW_VAR_CFG(name,type) FMSTR_TSATBL_STRPTR_ENTRY(#name), FMSTR_TSATBL_STRPTR_ENTRY(type), FMSTR_TSATBL_VOIDPTR_ENTRY(&(name)), FMSTR_TSATBL_VOIDPTR_ENTRY(FMSTR_TSA_INFO1(name, FMSTR_TSA_INFO_RW_VAR)),
-
-
-#define FMSTR_TSA_RO_MEM_CFG(name,type,addr,size) FMSTR_TSATBL_STRPTR_ENTRY(#name), FMSTR_TSATBL_STRPTR_ENTRY(type), FMSTR_TSATBL_VOIDPTR_ENTRY(addr), FMSTR_TSATBL_VOIDPTR_ENTRY(FMSTR_TSA_INFO2(size, FMSTR_TSA_INFO_RO_VAR)),
-
-
-#define FMSTR_TSA_RW_MEM_CFG(name,type,addr,size) FMSTR_TSATBL_STRPTR_ENTRY(#name), FMSTR_TSATBL_STRPTR_ENTRY(type), FMSTR_TSATBL_VOIDPTR_ENTRY(addr), FMSTR_TSATBL_VOIDPTR_ENTRY(FMSTR_TSA_INFO2(size, FMSTR_TSA_INFO_RW_VAR)),
-
-
-#define FMSTR_TSA_RO_ENTRY(name_string,type_string,addr,size) FMSTR_TSATBL_STRPTR_ENTRY(name_string), FMSTR_TSATBL_STRPTR_ENTRY(type_string), FMSTR_TSATBL_VOIDPTR_ENTRY(addr), FMSTR_TSATBL_VOIDPTR_ENTRY(FMSTR_TSA_INFO2(size, FMSTR_TSA_INFO_RW_VAR)),
-# 116 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_tsa.h"
-#define FMSTR_TSA_UINT8 "\xE0"
-#define FMSTR_TSA_UINT16 "\xE1"
-#define FMSTR_TSA_UINT32 "\xE2"
-#define FMSTR_TSA_UINT64 "\xE3"
-
-#define FMSTR_TSA_SINT8 "\xF0"
-#define FMSTR_TSA_SINT16 "\xF1"
-#define FMSTR_TSA_SINT32 "\xF2"
-#define FMSTR_TSA_SINT64 "\xF3"
-
-#define FMSTR_TSA_UFRAC_UQ(m,n) "\xE4:" #m "." #n
-#define FMSTR_TSA_UFRAC16 "\xE5"
-#define FMSTR_TSA_UFRAC32 "\xE6"
-#define FMSTR_TSA_UFRAC64 "\xE7"
-
-#define FMSTR_TSA_FRAC_Q(m,n) "\xF4:" #m "." #n
-#define FMSTR_TSA_FRAC16 "\xF5"
-#define FMSTR_TSA_FRAC32 "\xF6"
-#define FMSTR_TSA_FRAC64 "\xF7"
-
-#define FMSTR_TSA_FLOAT "\xFA"
-#define FMSTR_TSA_DOUBLE "\xFB"
-
-#define FMSTR_TSA_SPECIAL "\xEC"
-
-
-
-
-
-
-
-#define FMSTR_TSA_POINTER ""
-
-
-
-#define FMSTR_TSA_USERTYPE(type) #type
-
-
-#define FMSTR_TSA_MEMORY NULL
-# 223 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_tsa.h"
-#define FMSTR_TSA_TABLE_BEGIN(id) 
-#define FMSTR_TSA_INFO1(elem,flags) 
-#define FMSTR_TSA_INFO2(size,flags) 
-#define FMSTR_TSA_STRUCT(name) 
-#define FMSTR_TSA_MEMBER(parenttype,name,type) 
-#define FMSTR_TSA_RO_VAR(name,type) 
-#define FMSTR_TSA_RW_VAR(name,type) 
-#define FMSTR_TSA_RO_MEM(name,type,addr,size) 
-#define FMSTR_TSA_RW_MEM(name,type,addr,size) 
-#define FMSTR_TSA_DIRECTORY(dirname) 
-#define FMSTR_TSA_MEMFILE(filename,filemem,filesize) 
-#define FMSTR_TSA_PROJECT(projectname,project_uri) 
-#define FMSTR_TSA_HREF(linkname,link_uri) 
-#define FMSTR_TSA_TABLE_END() 
-# 280 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_tsa.h"
-#define FMSTR_TSA_TABLE_LIST_BEGIN() 
-#define FMSTR_TSA_TABLE(id) 
-#define FMSTR_TSA_TABLE_LIST_END() 
-# 64 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_platforms/S32xx/freemaster.h" 2
-
-
-
-
-
-
-#define FMSTR_APPCMDRESULT_NOCMD 0xffU
-#define FMSTR_APPCMDRESULT_RUNNING 0xfeU
-#define MFSTR_APPCMDRESULT_LASTVALID 0xf7U
-
-
-#define FMSTR_REC_BASE_SECONDS(x) ((x) & 0x3fffU)
-#define FMSTR_REC_BASE_MILLISEC(x) (((x) & 0x3fffU) | 0x4000U)
-#define FMSTR_REC_BASE_MICROSEC(x) (((x) & 0x3fffU) | 0x8000U)
-#define FMSTR_REC_BASE_NANOSEC(x) (((x) & 0x3fffU) | 0xc000U)
-# 100 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_platforms/S32xx/freemaster.h"
-void FMSTR_SetSciBaseAddress(FMSTR_ADDR nSciAddr);
-void FMSTR_SetCanBaseAddress(FMSTR_ADDR nCanAddr);
-void FMSTR_SetSciMbedObject(FMSTR_ADDR pSerObj);
-
-
-FMSTR_BOOL FMSTR_Init(void);
-void FMSTR_Poll(void);
-void FMSTR_Isr(void);
-
-
-void FMSTR_Recorder(void);
-void FMSTR_TriggerRec(void);
-void FMSTR_SetUpRecBuff(FMSTR_ADDR nBuffAddr, FMSTR_SIZE_RECBUFF nBuffSize);
-
-
-FMSTR_APPCMD_CODE FMSTR_GetAppCmd(void);
-FMSTR_APPCMD_PDATA FMSTR_GetAppCmdData(FMSTR_SIZE* pDataLen);
-FMSTR_BOOL FMSTR_RegisterAppCmdCall(FMSTR_APPCMD_CODE nAppCmdCode, FMSTR_PAPPCMDFUNC pCallbackFunc);
-
-void FMSTR_AppCmdAck(FMSTR_APPCMD_RESULT nResultCode);
-void FMSTR_AppCmdSetResponseData(FMSTR_ADDR nResultDataAddr, FMSTR_SIZE nResultDataLen);
-
-
-FMSTR_BOOL FMSTR_SetUpTsaBuff(FMSTR_ADDR nBuffAddr, FMSTR_SIZE nBuffSize);
-FMSTR_BOOL FMSTR_TsaAddVar(const char* pszName, const char* pszType,
-                           volatile const void* nAddr, FMSTR_SIZE32 nSize, FMSTR_SIZE nFlags);
-
-
-FMSTR_BOOL FMSTR_IsLinTLFrame(FMSTR_ADDR nFrameAddr, FMSTR_SIZE nFrameSize);
-FMSTR_BOOL FMSTR_ProcessLinTLFrame(FMSTR_ADDR nFrameAddr, FMSTR_SIZE nFrameSize);
-
-
-FMSTR_HPIPE FMSTR_PipeOpen(FMSTR_PIPE_PORT nPort, FMSTR_PPIPEFUNC pCallback,
-                           FMSTR_ADDR pRxBuff, FMSTR_PIPE_SIZE nRxSize,
-                           FMSTR_ADDR pTxBuff, FMSTR_PIPE_SIZE nTxSize);
-void FMSTR_PipeClose(FMSTR_HPIPE hpipe);
-FMSTR_PIPE_SIZE FMSTR_PipeWrite(FMSTR_HPIPE hpipe, FMSTR_ADDR addr, FMSTR_PIPE_SIZE length, FMSTR_PIPE_SIZE granularity);
-FMSTR_PIPE_SIZE FMSTR_PipeRead(FMSTR_HPIPE hpipe, FMSTR_ADDR addr, FMSTR_PIPE_SIZE length, FMSTR_PIPE_SIZE granularity);
-
-
-FMSTR_BOOL FMSTR_PipePuts(FMSTR_HPIPE hpipe, const char* pszStr);
-FMSTR_BOOL FMSTR_PipePrintf(FMSTR_HPIPE hpipe, const char* pszFmt, ...);
-FMSTR_BOOL FMSTR_PipePrintfU8(FMSTR_HPIPE hpipe, const char* pszFmt, unsigned char arg);
-FMSTR_BOOL FMSTR_PipePrintfS8(FMSTR_HPIPE hpipe, const char* pszFmt, signed char arg);
-FMSTR_BOOL FMSTR_PipePrintfU16(FMSTR_HPIPE hpipe, const char* pszFmt, unsigned short arg);
-FMSTR_BOOL FMSTR_PipePrintfS16(FMSTR_HPIPE hpipe, const char* pszFmt, signed short arg);
-FMSTR_BOOL FMSTR_PipePrintfU32(FMSTR_HPIPE hpipe, const char* pszFmt, unsigned long arg);
-FMSTR_BOOL FMSTR_PipePrintfS32(FMSTR_HPIPE hpipe, const char* pszFmt, signed long arg);
-# 33 "../Sources/main.c" 2
-# 1 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_protocol.h" 1
-# 17 "D:/QLS/QLS100_S32K_X001/FreeMaster_S32xx/src_common/freemaster_protocol.h"
-#define __FREEMASTER_PROTOCOL_H 
-
-
-
-
-
-#define FMSTR_CMD_READMEM 0x01U
-#define FMSTR_CMD_WRITEMEM 0x02U
-#define FMSTR_CMD_WRITEMEMMASK 0x03U
-#define FMSTR_CMD_READMEM_EX 0x04U
-#define FMSTR_CMD_WRITEMEM_EX 0x05U
-#define FMSTR_CMD_WRITEMEMMASK_EX 0x06U
-#define FMSTR_CMD_SETUPSCOPE 0x08U
-#define FMSTR_CMD_SETUPREC 0x09U
-#define FMSTR_CMD_SETUPSCOPE_EX 0x0aU
-#define FMSTR_CMD_SETUPREC_EX 0x0bU
-#define FMSTR_CMD_SENDAPPCMD 0x10U
-#define FMSTR_CMD_GETTSAINFO 0x11U
-#define FMSTR_CMD_GETTSAINFO_EX 0x12U
-#define FMSTR_CMD_SFIOFRAME_1 0x13U
-#define FMSTR_CMD_SFIOFRAME_0 0x14U
-#define FMSTR_CMD_PIPE 0x15U
-
-
-
-
-
-
-#define FMSTR_CMD_GETINFO 0xc0U
-#define FMSTR_CMD_STARTREC 0xc1U
-#define FMSTR_CMD_STOPREC 0xc2U
-#define FMSTR_CMD_GETRECSTS 0xc3U
-#define FMSTR_CMD_GETRECBUFF 0xc4U
-#define FMSTR_CMD_READSCOPE 0xc5U
-#define FMSTR_CMD_GETAPPCMDSTS 0xc6U
-#define FMSTR_CMD_GETINFOBRIEF 0xc8U
-#define FMSTR_CMD_GETRECBUFF_EX 0xc9U
-#define FMSTR_CMD_SFIOGETRESP_0 0xcaU
-#define FMSTR_CMD_SFIOGETRESP_1 0xcbU
-
-
-#define FMSTR_CMD_READVAR8 0xD0U
-#define FMSTR_CMD_READVAR16 0xD1U
-#define FMSTR_CMD_READVAR32 0xD2U
-#define FMSTR_CMD_GETAPPCMDDATA 0xD3U
-#define FMSTR_CMD_GETSTRLEN 0xD4U
-
-
-#define FMSTR_CMD_READVAR8_EX 0xe0U
-#define FMSTR_CMD_READVAR16_EX 0xe1U
-#define FMSTR_CMD_READVAR32_EX 0xe2U
-#define FMSTR_CMD_WRITEVAR8 0xe3U
-#define FMSTR_CMD_WRITEVAR16 0xe4U
-#define FMSTR_CMD_WRITEVAR8MASK 0xe5U
-#define FMSTR_CMD_GETSTRLEN_EX 0xe6U
-
-
-#define FMSTR_CMD_WRITEVAR32 0xf0U
-#define FMSTR_CMD_WRITEVAR16MASK 0xf1U
-
-
-
-
-
-
-#define FMSTR_STSF_ERROR 0x80U
-#define FMSTR_STSF_VARLEN 0x40U
-#define FMSTR_STSF_EVENT 0x20U
-
-
-#define FMSTR_STS_OK 0x00U
-#define FMSTR_STS_RECRUN 0x01U
-#define FMSTR_STS_RECDONE 0x02U
-
-
-#define FMSTR_STC_INVCMD 0x81U
-#define FMSTR_STC_CMDCSERR 0x82U
-#define FMSTR_STC_CMDTOOLONG 0x83U
-#define FMSTR_STC_RSPBUFFOVF 0x84U
-#define FMSTR_STC_INVBUFF 0x85U
-#define FMSTR_STC_INVSIZE 0x86U
-#define FMSTR_STC_SERVBUSY 0x87U
-#define FMSTR_STC_NOTINIT 0x88U
-#define FMSTR_STC_EACCESS 0x89U
-#define FMSTR_STC_SFIOERR 0x8AU
-#define FMSTR_STC_SFIOUNMATCH 0x8BU
-#define FMSTR_STC_PIPEERR 0x8CU
-#define FMSTR_STC_FASTRECERR 0x8DU
-#define FMSTR_STC_CANTGLERR 0x8EU
-#define FMSTR_STC_CANMSGERR 0x8FU
-#define FMSTR_STC_FLOATDISABLED 0x90U
-#define FMSTR_STC_DEBUGTX_TEST 0xA9U
-
-
-
-
-
-#define FMSTR_SOB 0x2bU
-#define FMSTR_FASTCMD 0xc0U
-#define FMSTR_FASTCMD_DATALEN_MASK 0x30U
-#define FMSTR_FASTCMD_DATALEN_SHIFT 3
-#define FMSTR_DESCR_SIZE 25U
-
-
-#define FMSTR_CFGFLAG_BIGENDIAN 0x01U
-#define FMSTR_CFGFLAG_REC_LARGE_MODE 0x10U
-
-
-#define FMSTR_TSA_INFO_VERSION_MASK 0x000fU
-#define FMSTR_TSA_INFO_32BIT 0x0100U
-#define FMSTR_TSA_INFO_HV2BA 0x0200U
-
-
-
-
-
-
-#define FMSTR_CANCTL_TGL 0x80
-#define FMSTR_CANCTL_M2S 0x40
-#define FMSTR_CANCTL_FST 0x20
-#define FMSTR_CANCTL_LST 0x10
-#define FMSTR_CANCTL_SPC 0x08
-#define FMSTR_CANCTL_LEN_MASK 0x07
-
-
-#define FMSTR_CANSPC_PING 0xc0
-
-
-
-
-
-
-#define FMSTR_PDBDM_BUFFBORDER_CODE1 0x07e0
-#define FMSTR_PDBDM_BUFFBORDER_CODE2 0xf81f
-
-
-#define FMSTR_PDBDM_NOT_INIT 0x00
-#define FMSTR_PDBDM_IDLE 0x01
-#define FMSTR_PDBDM_RECEIVED_FRAME 0x02
-#define FMSTR_PDBDM_DECODING_FRAME 0x04
-#define FMSTR_PDBDM_FRAME_TO_SEND 0x08
-# 34 "../Sources/main.c" 2
 
 #define QLS_111 (1)
 #define DO_CAN_STB_PORT PTC
 #define DO_CAN_STB 5U
 volatile int exit_code = 0;
-# 58 "../Sources/main.c"
+# 59 "../Sources/main.c"
 int main(void)
 {
 
@@ -15826,11 +15163,10 @@ int main(void)
  static float rf_us_tof_level;
  static float rf_us_tof_concentra;
     static float rf_VBat = 0.0;
+    static float rf_Velocity = 0.0,level = 0.0;
     static short int rf_ult_temp = 0;
     static uint16_t rf_tmr_level = 0.0;
-    static float rf_Velocity = 0.0,level = 0.0;
-    static uint32_t r32u_tofcon = 0,r32u_toflevel = 0;
-# 79 "../Sources/main.c"
+# 78 "../Sources/main.c"
     CLOCK_SYS_Init(g_clockManConfigsArr, 1U, g_clockManCallbacksArr, 0U);
     CLOCK_SYS_UpdateConfiguration(0U, CLOCK_MANAGER_POLICY_AGREEMENT);
 
@@ -15849,26 +15185,25 @@ int main(void)
 
 
 
-    CAN_Comm_Init();
-    FMSTR_Init();
+
+
     for(;;)
     {
   (void)u8_hw_wtd_reset();
-     FMSTR_Poll();
+
 
 
   if ( spi_comm_Spi_Transfer() )
   {
-   runion_qls_results.members.ru8_temp_environment = ntc_calibration_cal_temp(results.members.temp_environment)+40;
-   runion_qls_results.members.ru8_temp_ultrasonic = ntc_calibration_cal_temp(results.members.temp_ultrasonic)+40;
-# 130 "../Sources/main.c"
+# 129 "../Sources/main.c"
   }
 
 
   if (task_1ms_OK != 0)
   {
    task_1ms_OK = 0;
-# 147 "../Sources/main.c"
+   u8_task_AppMgt_1ms();
+# 146 "../Sources/main.c"
   }
 
   if ( task_100ms_OK !=0 )
@@ -15878,10 +15213,11 @@ int main(void)
    rf_us_tof_concentra = (float) results.members.tof_concentration / 1000000;
    rf_Velocity = tof_capture_Get_AvgVelocity(rf_us_tof_concentra);
 
-   rf_tmr_level = adsample_Get_TmrLevel();
+   sendresults.members.ru16_level = adsample_Get_TmrLevel();
    rf_ult_temp = adsample_Get_NTCTemp();
+   sendresults.members.ru8_temp_ultrasonic = rf_ult_temp + 40;
    adsample_Get_EnvirTemp();
-   ultrasonic_cal_concentration(&rf_Velocity,rf_ult_temp);
+   sendresults.members.ru8_concentration = ultrasonic_cal_concentration(&rf_Velocity,rf_ult_temp);
   }
     }
 # 170 "../Sources/main.c"

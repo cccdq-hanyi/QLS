@@ -23,14 +23,14 @@
 #endif
 
 #include "Sys_Init.h"
-/*******  2020-7-21  close J1939 CAN function commented   *******/
-//#include "HW_Driver\hw_abstract.h"
-//#include "Comm_Mgt\comm_mgt.h"
-//#include "App_Task_Mgt.h"
+/*******  2020-7-21  J1939 CAN function   *******/
+#include "HW_Driver\hw_abstract.h"
+#include "Comm_Mgt\comm_mgt.h"
+#include "App_Task_Mgt.h"
 
-/******   freemaster   *********/
-#include "freemaster.h"
-#include "freemaster_protocol.h"
+/*******  2020-8-18  freemasterover CAN function commented   *******/
+//#include "freemaster.h"
+//#include "freemaster_protocol.h"
 
 #define QLS_111		(1)
 #define DO_CAN_STB_PORT	PTC
@@ -55,6 +55,7 @@ uint16_t u16_timerCnt = 0;
  *     - Peripherals_Init()
  */
 
+
 int main(void)
 {
     /* Write your local variable definition here */
@@ -62,11 +63,9 @@ int main(void)
 	static float rf_us_tof_level;
 	static float rf_us_tof_concentra;
     static float rf_VBat = 0.0;
+    static float rf_Velocity = 0.0,level = 0.0;
     static short int rf_ult_temp = 0;
     static uint16_t rf_tmr_level = 0.0;
-    static float rf_Velocity = 0.0,level = 0.0;
-    static uint32_t r32u_tofcon = 0,r32u_toflevel = 0;
-
     /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
 #ifdef PEX_RTOS_INIT
     PEX_RTOS_INIT(); /* Initialization of the selected RTOS. Macro is defined by the RTOS component. */
@@ -94,38 +93,38 @@ int main(void)
 //	PINS_DRV_ClearPins(	DO_CAN_STB_PORT, 	1 << DO_CAN_STB );//QLS_111:CAN_STB pull_down;
 //#endif
 
-    CAN_Comm_Init();
-    FMSTR_Init();
+//    CAN_Comm_Init();
+//    FMSTR_Init();
     for(;;)
     {
 		(void)u8_hw_wtd_reset();
-    	FMSTR_Poll();
+//    	FMSTR_Poll();
 
     	/**** spi_comm_Spi_Transfer,获得E703.15的TOF、温度数据 ******/
 		if ( spi_comm_Spi_Transfer() )
 		{
-			runion_qls_results.members.ru8_temp_environment = ntc_calibration_cal_temp(results.members.temp_environment)+40;//spn 3515
-			runion_qls_results.members.ru8_temp_ultrasonic = ntc_calibration_cal_temp(results.members.temp_ultrasonic)+40;//spn 3515
+//			sendresults.members.ru8_temp_environment = ntc_calibration_cal_temp(results.members.temp_environment)+40;//spn 3515
+//			sendresults.members.ru8_temp_ultrasonic = ntc_calibration_cal_temp(results.members.temp_ultrasonic)+40;//spn 3515
 	/*    2020-7-21  close J1939 CAN function commented    */
 //#ifdef CAN_Tx_Test
-//				runion_qls_results.members.ru16_level--;
-//				if ( runion_qls_results.members.ru16_level<=0 )
+//				sendresults.members.ru16_level--;
+//				if ( sendresults.members.ru16_level<=0 )
 //				{
-//					runion_qls_results.members.ru16_level = 65535;
+//					sendresults.members.ru16_level = 65535;
 //				}
-//				runion_qls_results.members.ru8_concentration++;
-//				if ( runion_qls_results.members.ru8_concentration>=255 )
+//				sendresults.members.ru8_concentration++;
+//				if ( sendresults.members.ru8_concentration>=255 )
 //				{
-//					runion_qls_results.members.ru8_concentration = 0;
+//					sendresults.members.ru8_concentration = 0;
 //				}
 //#else
 //			rf_us_tof_level =  (float) results.members.tof_level / 1000000;
 //			rf_us_tof_concentra =  (float) results.members.tof_concentration / 1000000;
 //			sonic_velocity = get_AvgVelocity(rf_us_tof_concentra);
 //        	tmp_ultrasonic = results.members.tof_level & 0xFFFF;
-//        	runion_qls_results.members.ru16_level = cal_level(tmp_ultrasonic);
+//        	sendresults.members.ru16_level = cal_level(tmp_ultrasonic);
 //        	tmp_concentration = results.members.tof_concentration & 0xFFFF;
-//        	runion_qls_results.members.ru8_concentration = cal_concentration(tmp_concentration);
+//        	sendresults.members.ru8_concentration = cal_concentration(tmp_concentration);
 //#endif
 		}
 
@@ -133,7 +132,7 @@ int main(void)
 		if (task_1ms_OK != 0)
 		{
 			task_1ms_OK = 0;
-//			u8_task_AppMgt_1ms();
+			u8_task_AppMgt_1ms();
 //			u8_comm_task(); //放在主循环周期不准，移到timer_1ms_isr()函数中运行
 
 //#ifdef CAN_Tx_Test
@@ -153,10 +152,11 @@ int main(void)
 			rf_us_tof_concentra =  (float) results.members.tof_concentration / 1000000;
 			rf_Velocity = tof_capture_Get_AvgVelocity(rf_us_tof_concentra);
 //			rf_VBat = adsample_Get_Voltage();
-			rf_tmr_level = adsample_Get_TmrLevel();
+			sendresults.members.ru16_level = adsample_Get_TmrLevel();
 			rf_ult_temp = adsample_Get_NTCTemp();
+			sendresults.members.ru8_temp_ultrasonic = rf_ult_temp + 40;
 			adsample_Get_EnvirTemp();
-			ultrasonic_cal_concentration(&rf_Velocity,rf_ult_temp);
+			sendresults.members.ru8_concentration = ultrasonic_cal_concentration(&rf_Velocity,rf_ult_temp);
 		}
     }
 

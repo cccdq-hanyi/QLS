@@ -77,16 +77,10 @@ void v_task_MgtCallback(void)
 //System Init ------------------------------------------------------------------
 void Sys_Init(void)
 {
-	//Init Clock
-//	FIRC_Init_48MHz();
-//	SIRC_Init_8MHz();
-//	SOSC_init_8MHz();
-//	SYS_CLK_Init_FIRC();
-//	(void)u8_hw_SpiInit();
-//	u8_comm_init(); //include u8_cancomm_Init, u8_int_Init
-//	//init basic
-//	u8_task_AppInit();
-//	u8_node_ParaInit();
+	u8_comm_init(); //include u8_cancomm_Init, u8_int_Init
+	//init basic
+	u8_task_AppInit();
+	u8_node_ParaInit();
 	//timer init
 #ifdef QLS_111
 	PINS_DRV_ClearPins(	DO_CAN_STB_PORT, 	1 << DO_CAN_STB );//QLS_111:CAN_STB pull_down;

@@ -6,14 +6,14 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS_QUOTED += \
-"D:/s32dsworkspace/QLS/common/Node_Mgt/node_cfg.c" \
-"D:/s32dsworkspace/QLS/common/Node_Mgt/node_interface.c" \
-"D:/s32dsworkspace/QLS/common/Node_Mgt/node_para.c" \
+"D:/QLS/common/Node_Mgt/node_cfg.c" \
+"D:/QLS/common/Node_Mgt/node_interface.c" \
+"D:/QLS/common/Node_Mgt/node_para.c" \
 
 C_SRCS += \
-D:/s32dsworkspace/QLS/common/Node_Mgt/node_cfg.c \
-D:/s32dsworkspace/QLS/common/Node_Mgt/node_interface.c \
-D:/s32dsworkspace/QLS/common/Node_Mgt/node_para.c \
+D:/QLS/common/Node_Mgt/node_cfg.c \
+D:/QLS/common/Node_Mgt/node_interface.c \
+D:/QLS/common/Node_Mgt/node_para.c \
 
 OBJS_OS_FORMAT += \
 ./Sources/common/Node_Mgt/node_cfg.o \
@@ -42,25 +42,25 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Sources/common/Node_Mgt/node_cfg.o: D:/s32dsworkspace/QLS/common/Node_Mgt/node_cfg.c
+Sources/common/Node_Mgt/node_cfg.o: D:/QLS/common/Node_Mgt/node_cfg.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #62 $<'
+	@echo 'Executing target #40 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@Sources/common/Node_Mgt/node_cfg.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "Sources/common/Node_Mgt/node_cfg.o" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/Node_Mgt/node_interface.o: D:/s32dsworkspace/QLS/common/Node_Mgt/node_interface.c
+Sources/common/Node_Mgt/node_interface.o: D:/QLS/common/Node_Mgt/node_interface.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #63 $<'
+	@echo 'Executing target #41 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@Sources/common/Node_Mgt/node_interface.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "Sources/common/Node_Mgt/node_interface.o" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/Node_Mgt/node_para.o: D:/s32dsworkspace/QLS/common/Node_Mgt/node_para.c
+Sources/common/Node_Mgt/node_para.o: D:/QLS/common/Node_Mgt/node_para.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #64 $<'
+	@echo 'Executing target #42 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
 	arm-none-eabi-gcc "@Sources/common/Node_Mgt/node_para.args" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "Sources/common/Node_Mgt/node_para.o" "$<"
 	@echo 'Finished building: $<'

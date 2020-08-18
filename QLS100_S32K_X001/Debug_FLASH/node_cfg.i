@@ -1,5 +1,5 @@
-# 1 "../Sources/Node_Mgt/node_cfg.c"
-# 1 "D:\\s32dsworkspace\\QLS\\lpspi_transfer_slave_s32k116\\Debug_FLASH//"
+# 1 "D:/QLS/common/Node_Mgt/node_cfg.c"
+# 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -309,6 +309,7 @@
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
 #define __STRICT_ANSI__ 1
+#define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 1
@@ -349,11 +350,11 @@
 #define __USES_INITFINI__ 1
 #define CPU_S32K116 1
 #define DEV_ERROR_DETECT 1
-# 1 "../Sources/Node_Mgt/node_cfg.c"
-# 1 "../Sources/Node_Mgt/node_cfg.h" 1
+# 1 "D:/QLS/common/Node_Mgt/node_cfg.c"
+# 1 "D:/QLS/common/Node_Mgt/node_cfg.h" 1
 
 #define _node_cfg_h 
-# 11 "../Sources/Node_Mgt/node_cfg.h"
+# 11 "D:/QLS/common/Node_Mgt/node_cfg.h"
 #define node_task_period (1)
 #define int_task_period (1)
 #define comm_task_period (1)
@@ -374,9 +375,10 @@
 
 
 #define _CAN_Ch (0)
-#define _CAN_Speed (500)
+#define _CAN_Speed (250)
 #define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
+
 #define _CAN_SamplePoint (8125)
 
 
@@ -384,8 +386,8 @@
 
 #define comm_user_rx 
 #define comm_user_tx 
-# 2 "../Sources/Node_Mgt/node_cfg.c" 2
-# 1 "../Sources/Node_Mgt/../typedef_all.h" 1
+# 2 "D:/QLS/common/Node_Mgt/node_cfg.c" 2
+# 1 "d:\\qls\\common\\typedef_all.h" 1
 
 #define typedef_all_h 
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 1
@@ -855,8 +857,8 @@
 
 
 #define _EWL_SIZEOF_LONG_LONG 8
-# 52 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
-#define _EWL_UNSIGNED_CHAR 0
+# 50 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
+#define _EWL_UNSIGNED_CHAR 1
 # 61 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
 #define _EWL_SCHAR_MAX 0x7f
 #define _EWL_UCHAR_MAX 0xff
@@ -864,11 +866,11 @@
 #define _EWL_SCHAR_MIN (-_EWL_SCHAR_MAX - 1)
 
 
+#define _EWL_CHAR_MIN 0
+#define _EWL_CHAR_MAX _EWL_UCHAR_MAX
 
 
 
-#define _EWL_CHAR_MIN _EWL_SCHAR_MIN
-#define _EWL_CHAR_MAX _EWL_SCHAR_MAX
 
 
 
@@ -1143,8 +1145,8 @@ typedef uint32_t uintptr_t;
 #define INTMAX_C(value) value ## LL
 #define UINTMAX_C(value) value ## ULL
 # 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 2
-# 4 "../Sources/Node_Mgt/../typedef_all.h" 2
-# 32 "../Sources/Node_Mgt/../typedef_all.h"
+# 4 "d:\\qls\\common\\typedef_all.h" 2
+# 32 "d:\\qls\\common\\typedef_all.h"
 #define TRUE (1)
 
 
@@ -1153,7 +1155,7 @@ typedef uint32_t uintptr_t;
 
 
 typedef void (*func_v_v)(void);
-# 3 "../Sources/Node_Mgt/node_cfg.c" 2
+# 3 "D:/QLS/common/Node_Mgt/node_cfg.c" 2
 
 
 uint8_t u8_appl_dllcanTxOk(uint32_t id, uint8_t data[], uint8_t len)

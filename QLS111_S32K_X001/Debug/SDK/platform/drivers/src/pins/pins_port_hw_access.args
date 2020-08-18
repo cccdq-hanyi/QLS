@@ -64,6 +64,7 @@
 -I"D:/QLS/QLS111_S32K_X001/SDK/rtos/osif/"
 -I"D:/QLS/QLS111_S32K_X001/SDK/platform/drivers/src/ftm"
 -I"D:/QLS/QLS111_S32K_X001/SDK/platform/pal/can/inc"
+-I"D:/QLS/QLS111_S32K_X001/SDK/platform/pal/inc"
 -O0
 -g3
 -Wall

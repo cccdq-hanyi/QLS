@@ -14,6 +14,7 @@
 #define __ATOMIC_RELEASE 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_CONSUME 1
+#define __OPTIMIZE__ 1
 #define __FINITE_MATH_ONLY__ 0
 #define __SIZEOF_INT__ 4
 #define __SIZEOF_LONG__ 4
@@ -307,8 +308,8 @@
 #define __REGISTER_PREFIX__ 
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
-#define __NO_INLINE__ 1
 #define __STRICT_ANSI__ 1
+#define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 1
@@ -829,8 +830,8 @@
 
 
 #define _EWL_SIZEOF_LONG_LONG 8
-# 52 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
-#define _EWL_UNSIGNED_CHAR 0
+# 50 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
+#define _EWL_UNSIGNED_CHAR 1
 # 61 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
 #define _EWL_SCHAR_MAX 0x7f
 #define _EWL_UCHAR_MAX 0xff
@@ -838,11 +839,11 @@
 #define _EWL_SCHAR_MIN (-_EWL_SCHAR_MAX - 1)
 
 
+#define _EWL_CHAR_MIN 0
+#define _EWL_CHAR_MAX _EWL_UCHAR_MAX
 
 
 
-#define _EWL_CHAR_MIN _EWL_SCHAR_MIN
-#define _EWL_CHAR_MAX _EWL_SCHAR_MAX
 
 
 
@@ -10604,7 +10605,7 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
 
 #define _CAN_Ch (0)
 #define _CAN_Speed (250)
-#define _CAN_ClockSpeed (8)
+#define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
 
 #define _CAN_SamplePoint (8125)
@@ -10869,7 +10870,45 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
 #define v_hw_GPIO_Tranceiver_Disable v_GPIO_Tranceiver_Disable
 #define v_hw_GPIO_Tranceiver_Enable v_GPIO_Tranceiver_Enable
 # 2 "D:/QLS/common/HW_Driver/hw_abstract.c" 2
+# 1 "D:/QLS/common/Comm_Mgt/comm_mgt.h" 1
 
+#define _comm_mgt_h 
+
+
+
+
+
+
+# 1 "d:\\qls\\common\\node_mgt\\node_para.h" 1
+# 10 "D:/QLS/common/Comm_Mgt/comm_mgt.h" 2
+# 1 "d:\\qls\\common\\hw_driver\\hw_abstract.h" 1
+# 11 "D:/QLS/common/Comm_Mgt/comm_mgt.h" 2
+# 1 "d:\\qls\\common\\node_mgt\\node_interface.h" 1
+
+#define _node_interface_h 
+
+
+
+
+
+
+# 1 "d:\\qls\\common\\node_mgt\\node_para.h" 1
+# 10 "d:\\qls\\common\\node_mgt\\node_interface.h" 2
+
+    extern uint8_t u8_node_task(void);
+    extern uint8_t u8_node_ParaInit(void);
+# 12 "D:/QLS/common/Comm_Mgt/comm_mgt.h" 2
+# 1 "D:/QLS/common/Comm_Mgt/Int_Mgt\\Int_interface.h" 1
+# 13 "D:/QLS/common/Comm_Mgt/comm_mgt.h" 2
+
+    extern uint8_t u8_comm_init(void);
+    extern uint8_t u8_comm_task(void);
+    extern uint8_t u8_comm_MsgStatus_Get(uint32_t id);
+    extern uint8_t u8_comm_TxRx_Set(uint8_t type);
+    extern uint8_t u8_comm_TxRx_Get(void);
+    extern uint8_t u8_comm_TxReset(void);
+    extern uint8_t u8_comm_TxAfterT(uint16_t timeDelay);
+# 3 "D:/QLS/common/HW_Driver/hw_abstract.c" 2
 
 uint8_t u8_hw_ISRDisable(void)
 {
@@ -11028,11 +11067,13 @@ void timer_1ms_isr(void)
 {
  static uint8_t u8_cnt = 0;
  task_1ms_OK = 1;
+ u8_comm_task();
  u8_cnt++;
  if (0 == (u8_timer_cnt % 5))
  {
   task_5ms_OK = 1;
   u8_cnt = 0;
+
  }
  if (u8_timer_cnt >=100)
  {
@@ -11070,7 +11111,8 @@ uint8_t u8_hw_Timer_Init(func_v_v _func)
 
 
  ((LPIT_Type *)(0x40037000u))->MIER |= 0x1u;
- ((LPIT_Type *)(0x40037000u))->TMR[0].TVAL = 24000U;
+ ((LPIT_Type *)(0x40037000u))->TMR[0].TVAL = 48000U;
+
  ((LPIT_Type *)(0x40037000u))->TMR[0].TCTRL |= 0x1u;
 
 

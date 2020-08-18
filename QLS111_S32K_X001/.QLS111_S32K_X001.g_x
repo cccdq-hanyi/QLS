@@ -25,8 +25,8 @@
     <GeneratedByPE>
       <File Name="SDK/platform/drivers/src/lpspi/lpspi_master_driver.c" FileDate="2020-05-29, 13:11:16" FileAge="1590729076669" FileType="1048576" CompNumb="10" />
       <File Name="SDK/platform/drivers/inc/ftm_common.h" FileDate="2020-06-02, 12:19:36" FileAge="1591071576576" FileType="1048576" CompNumb="14" />
-      <File Name="SDK/platform/drivers/src/lpspi/lpspi_slave_driver.c" FileDate="2020-05-29, 13:11:16" FileAge="1590729076679" FileType="1048576" CompNumb="10" />
       <File Name="SDK/platform/drivers/inc/clock_manager.h" FileDate="2020-05-28, 16:58:54" FileAge="1590656334355" FileType="1048576" CompNumb="3" />
+      <File Name="SDK/platform/drivers/src/lpspi/lpspi_slave_driver.c" FileDate="2020-05-29, 13:11:16" FileAge="1590729076679" FileType="1048576" CompNumb="10" />
       <File Name="SDK/platform/pal/can/inc/can_pal_mapping.h" FileDate="2020-07-06, 22:26:49" FileAge="1594045609263" FileType="1048576" CompNumb="0" />
       <File Name="SDK/platform/drivers/src/pins/pins_port_hw_access.h" FileDate="2020-05-28, 16:58:54" FileAge="1590656334315" FileType="1048576" CompNumb="2" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/pcc_hw_access.h" FileDate="2020-05-28, 16:58:54" FileAge="1590656334341" FileType="1048576" CompNumb="3" />
@@ -39,8 +39,8 @@
       <File Name="SDK/platform/drivers/src/lpspi/lpspi_irq.c" FileDate="2020-05-29, 13:11:16" FileAge="1590729076669" FileType="1048576" CompNumb="10" />
       <File Name="SDK/platform/drivers/inc/lpspi_slave_driver.h" FileDate="2020-05-29, 13:11:16" FileAge="1590729076699" FileType="1048576" CompNumb="10" />
       <File Name="Generated_Code/flexTimer_ic1.h" FileDate="2020-07-21, 11:52:40" FileAge="1595303560750" FileType="45637" CompNumb="14" />
-      <File Name="SDK/platform/drivers/src/edma/edma_hw_access.h" FileDate="2020-05-29, 13:11:16" FileAge="1590729076649" FileType="1048576" CompNumb="11" />
       <File Name="Generated_Code/flexTimer_ic1.c" FileDate="2020-08-03, 11:24:49" FileAge="1596425089626" FileType="45637" CompNumb="14" />
+      <File Name="SDK/platform/drivers/src/edma/edma_hw_access.h" FileDate="2020-05-29, 13:11:16" FileAge="1590729076649" FileType="1048576" CompNumb="11" />
       <File Name="SDK/platform/drivers/src/flexcan/flexcan_irq.h" FileDate="2020-07-06, 22:26:49" FileAge="1594045609313" FileType="1048576" CompNumb="18" />
       <File Name="Generated_Code/pdly1.h" FileDate="2020-08-14, 17:02:30" FileAge="1597395750379" FileType="45637" CompNumb="20" />
       <File Name="SDK/platform/devices/S32K116/include/S32K116_features.h" FileDate="2020-05-28, 16:58:54" FileAge="1590656334390" FileType="1048576" CompNumb="18" />
@@ -104,14 +104,14 @@
       <File Name="SDK/platform/drivers/src/pdb/pdb_hw_access.h" FileDate="2020-06-05, 10:17:46" FileAge="1591323466017" FileType="1048576" CompNumb="20" />
       <File Name="SDK/platform/drivers/src/edma/edma_irq.h" FileDate="2020-05-29, 13:11:16" FileAge="1590729076649" FileType="1048576" CompNumb="11" />
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/clock_S32K1xx.c" FileDate="2020-05-28, 16:58:54" FileAge="1590656334334" FileType="1048576" CompNumb="3" />
-      <File Name="Generated_Code/dmaController1.h" FileDate="2020-08-14, 17:02:30" FileAge="1597395750391" FileType="45637" CompNumb="11" />
       <File Name="SDK/platform/drivers/src/pdb/pdb_hw_access.c" FileDate="2020-06-05, 10:17:46" FileAge="1591323466017" FileType="1048576" CompNumb="20" />
+      <File Name="Generated_Code/dmaController1.h" FileDate="2020-08-14, 17:02:30" FileAge="1597395750391" FileType="45637" CompNumb="11" />
       <File Name="SDK/platform/drivers/src/edma/edma_irq.c" FileDate="2020-05-29, 13:11:16" FileAge="1590729076639" FileType="1048576" CompNumb="11" />
-      <File Name="SDK/platform/drivers/src/edma/edma_driver.c" FileDate="2020-05-29, 13:11:16" FileAge="1590729076629" FileType="1048576" CompNumb="11" />
       <File Name="Generated_Code/dmaController1.c" FileDate="2020-08-14, 17:02:30" FileAge="1597395750389" FileType="45637" CompNumb="11" />
+      <File Name="SDK/platform/drivers/src/edma/edma_driver.c" FileDate="2020-05-29, 13:11:16" FileAge="1590729076629" FileType="1048576" CompNumb="11" />
       <File Name="SDK/platform/drivers/inc/pins_driver.h" FileDate="2020-05-28, 16:58:54" FileAge="1590656334308" FileType="1048576" CompNumb="2" />
       <File Name="SDK/platform/drivers/src/ftm/ftm_common.c" FileDate="2020-06-02, 12:19:36" FileAge="1591071576569" FileType="1048576" CompNumb="14" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>102</CodeGenReference>
+  <CodeGenReference>103</CodeGenReference>
 </CodeGenerationInfo>

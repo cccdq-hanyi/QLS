@@ -50,8 +50,6 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-FreeMaster_S32xx/src_common \
-FreeMaster_S32xx/src_platforms/S32xx \
 Generated_Code \
 Project_Settings/Linker_Files \
 Project_Settings/Startup_Code \
@@ -61,14 +59,18 @@ SDK/platform/drivers/src/adc \
 SDK/platform/drivers/src/clock/S32K1xx \
 SDK/platform/drivers/src/clock \
 SDK/platform/drivers/src/edma \
-SDK/platform/drivers/src/flexcan \
 SDK/platform/drivers/src/interrupt \
 SDK/platform/drivers/src/lpspi \
 SDK/platform/drivers/src/pdb \
 SDK/platform/drivers/src/pins \
 SDK/platform/pal/can/src \
 SDK/rtos/osif \
-Sources \
+Sources/common/APP/task \
+Sources/common/Comm_Mgt/Can_Com \
+Sources/common/Comm_Mgt/Int_Mgt \
+Sources/common/Comm_Mgt \
 Sources/common/HW_Driver \
+Sources/common/Node_Mgt \
 Sources/common \
+Sources \
 

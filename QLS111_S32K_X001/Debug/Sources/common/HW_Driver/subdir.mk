@@ -6,16 +6,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS_QUOTED += \
-"D:/s32dsworkspace/QLS/common/HW_Driver/SPI.c" \
-"D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.c" \
-"D:/s32dsworkspace/QLS/common/HW_Driver/hw_abstract.c" \
-"D:/s32dsworkspace/QLS/common/HW_Driver/prj_gpio.c" \
+"D:/QLS/common/HW_Driver/SPI.c" \
+"D:/QLS/common/HW_Driver/WatchDog.c" \
+"D:/QLS/common/HW_Driver/hw_abstract.c" \
+"D:/QLS/common/HW_Driver/prj_gpio.c" \
 
 C_SRCS += \
-D:/s32dsworkspace/QLS/common/HW_Driver/SPI.c \
-D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.c \
-D:/s32dsworkspace/QLS/common/HW_Driver/hw_abstract.c \
-D:/s32dsworkspace/QLS/common/HW_Driver/prj_gpio.c \
+D:/QLS/common/HW_Driver/SPI.c \
+D:/QLS/common/HW_Driver/WatchDog.c \
+D:/QLS/common/HW_Driver/hw_abstract.c \
+D:/QLS/common/HW_Driver/prj_gpio.c \
 
 OBJS_OS_FORMAT += \
 ./Sources/common/HW_Driver/SPI.o \
@@ -49,7 +49,7 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Sources/common/HW_Driver/SPI.o: D:/s32dsworkspace/QLS/common/HW_Driver/SPI.c
+Sources/common/HW_Driver/SPI.o: D:/QLS/common/HW_Driver/SPI.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #54 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
@@ -57,7 +57,7 @@ Sources/common/HW_Driver/SPI.o: D:/s32dsworkspace/QLS/common/HW_Driver/SPI.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/HW_Driver/WatchDog.o: D:/s32dsworkspace/QLS/common/HW_Driver/WatchDog.c
+Sources/common/HW_Driver/WatchDog.o: D:/QLS/common/HW_Driver/WatchDog.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #55 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
@@ -65,7 +65,7 @@ Sources/common/HW_Driver/WatchDog.o: D:/s32dsworkspace/QLS/common/HW_Driver/Watc
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/HW_Driver/hw_abstract.o: D:/s32dsworkspace/QLS/common/HW_Driver/hw_abstract.c
+Sources/common/HW_Driver/hw_abstract.o: D:/QLS/common/HW_Driver/hw_abstract.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #56 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'
@@ -73,7 +73,7 @@ Sources/common/HW_Driver/hw_abstract.o: D:/s32dsworkspace/QLS/common/HW_Driver/h
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Sources/common/HW_Driver/prj_gpio.o: D:/s32dsworkspace/QLS/common/HW_Driver/prj_gpio.c
+Sources/common/HW_Driver/prj_gpio.o: D:/QLS/common/HW_Driver/prj_gpio.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #57 $<'
 	@echo 'Invoking: Standard S32DS C Compiler'

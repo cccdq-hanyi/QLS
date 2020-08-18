@@ -1,5 +1,5 @@
-# 1 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.c"
-# 1 "D:\\s32dsworkspace\\QLS\\lpspi_transfer_slave_s32k116\\Debug_FLASH//"
+# 1 "D:/QLS/common/HW_Driver/CAN.c"
+# 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -309,6 +309,7 @@
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
 #define __STRICT_ANSI__ 1
+#define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 1
@@ -349,19 +350,19 @@
 #define __USES_INITFINI__ 1
 #define CPU_S32K116 1
 #define DEV_ERROR_DETECT 1
-# 1 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.c"
+# 1 "D:/QLS/common/HW_Driver/CAN.c"
 
 
 
 
 
 
-# 1 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.h" 1
-# 9 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.h"
+# 1 "D:/QLS/common/HW_Driver/CAN.h" 1
+# 9 "D:/QLS/common/HW_Driver/CAN.h"
 #define CAN_H_ 
 
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h" 1
-# 99 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
+# 99 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32K116_H_ 
 #define MCU_S32K116 
 
@@ -838,8 +839,8 @@
 
 
 #define _EWL_SIZEOF_LONG_LONG 8
-# 52 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
-#define _EWL_UNSIGNED_CHAR 0
+# 50 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
+#define _EWL_UNSIGNED_CHAR 1
 # 61 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
 #define _EWL_SCHAR_MAX 0x7f
 #define _EWL_UCHAR_MAX 0xff
@@ -847,11 +848,11 @@
 #define _EWL_SCHAR_MIN (-_EWL_SCHAR_MAX - 1)
 
 
+#define _EWL_CHAR_MIN 0
+#define _EWL_CHAR_MAX _EWL_UCHAR_MAX
 
 
 
-#define _EWL_CHAR_MIN _EWL_SCHAR_MIN
-#define _EWL_CHAR_MAX _EWL_SCHAR_MAX
 
 
 
@@ -1126,14 +1127,14 @@ typedef uint32_t uintptr_t;
 #define INTMAX_C(value) value ## LL
 #define UINTMAX_C(value) value ## ULL
 # 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 2
-# 109 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h" 2
+# 109 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 2
 
 
 
 #define MCU_MEM_MAP_VERSION 0x0100u
 
 #define MCU_MEM_MAP_VERSION_MINOR 0x0003u
-# 130 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 130 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define __I volatile const
 
 #define __O volatile
@@ -1175,9 +1176,9 @@ typedef uint32_t uintptr_t;
 
 
 #define REG_RMW32(address,mask,value) (REG_WRITE32((address), ((REG_READ32(address)& ((uint32_t)~((uint32_t)(mask))))| ((uint32_t)(value)))))
-# 184 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 184 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define NUMBER_OF_INT_VECTORS 48u
-# 193 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 193 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef enum
 {
 
@@ -1223,7 +1224,7 @@ typedef enum
   LPUART1_RxTx_IRQn = 30u,
   LPUART0_RxTx_IRQn = 31u
 } IRQn_Type;
-# 266 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 266 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define ADC_SC1_COUNT 16u
 #define ADC_R_COUNT 16u
 #define ADC_CV_COUNT 2u
@@ -1279,7 +1280,7 @@ typedef struct {
 #define ADC_IRQS_CH_COUNT (1u)
 
 #define ADC_IRQS { ADC0_IRQn }
-# 332 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 332 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define ADC_SC1_ADCH_MASK 0x1Fu
 #define ADC_SC1_ADCH_SHIFT 0u
 #define ADC_SC1_ADCH_WIDTH 5u
@@ -1487,7 +1488,7 @@ typedef struct {
 #define ADC_CLP9_OFS_CLP9_OFS_SHIFT 0u
 #define ADC_CLP9_OFS_CLP9_OFS_WIDTH 12u
 #define ADC_CLP9_OFS_CLP9_OFS(x) (((uint32_t)(((uint32_t)(x))<<ADC_CLP9_OFS_CLP9_OFS_SHIFT))&ADC_CLP9_OFS_CLP9_OFS_MASK)
-# 561 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 561 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define AIPS_PACR_COUNT 4u
 #define AIPS_OPACR_COUNT 12u
 
@@ -1513,7 +1514,7 @@ typedef struct {
 #define AIPS_BASE_ADDRS { AIPS_BASE }
 
 #define AIPS_BASE_PTRS { AIPS }
-# 597 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 597 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define AIPS_MPRA_MPL2_MASK 0x100000u
 #define AIPS_MPRA_MPL2_SHIFT 20u
 #define AIPS_MPRA_MPL2_WIDTH 1u
@@ -1684,7 +1685,7 @@ typedef struct {
 #define AIPS_OPACR_SP0_SHIFT 30u
 #define AIPS_OPACR_SP0_WIDTH 1u
 #define AIPS_OPACR_SP0(x) (((uint32_t)(((uint32_t)(x))<<AIPS_OPACR_SP0_SHIFT))&AIPS_OPACR_SP0_MASK)
-# 789 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 789 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CAN_RAMn_COUNT 128u
 #define CAN_RXIMR_COUNT 32u
 #define CAN_WMB_COUNT 4u
@@ -1776,7 +1777,7 @@ typedef struct {
 #define CAN_Bus_Off_IRQS { CAN0_ORed_Err_Wakeup_IRQn }
 #define CAN_ORed_0_15_MB_IRQS { CAN0_ORed_0_31_MB_IRQn }
 #define CAN_ORed_16_31_MB_IRQS { CAN0_ORed_0_31_MB_IRQn }
-# 891 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 891 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CAN_MCR_MAXMB_MASK 0x7Fu
 #define CAN_MCR_MAXMB_SHIFT 0u
 #define CAN_MCR_MAXMB_WIDTH 7u
@@ -2467,7 +2468,7 @@ typedef struct {
 #define CAN_FDCRC_FD_MBCRC_SHIFT 24u
 #define CAN_FDCRC_FD_MBCRC_WIDTH 7u
 #define CAN_FDCRC_FD_MBCRC(x) (((uint32_t)(((uint32_t)(x))<<CAN_FDCRC_FD_MBCRC_SHIFT))&CAN_FDCRC_FD_MBCRC_MASK)
-# 1605 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 1605 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t C0;
   volatile uint32_t C1;
@@ -2493,7 +2494,7 @@ typedef struct {
 #define CMP_IRQS_CH_COUNT (1u)
 
 #define CMP_IRQS { CMP0_IRQn }
-# 1641 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 1641 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CMP_C0_HYSTCTR_MASK 0x3u
 #define CMP_C0_HYSTCTR_SHIFT 0u
 #define CMP_C0_HYSTCTR_WIDTH 2u
@@ -2684,7 +2685,7 @@ typedef struct {
 #define CMP_C2_RRE_SHIFT 31u
 #define CMP_C2_RRE_WIDTH 1u
 #define CMP_C2_RRE(x) (((uint32_t)(((uint32_t)(x))<<CMP_C2_RRE_SHIFT))&CMP_C2_RRE_MASK)
-# 1855 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 1855 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t GCR;
   volatile uint32_t RCCR;
@@ -2717,7 +2718,7 @@ typedef struct {
 #define CMU_FC_IRQS_CH_COUNT (1u)
 
 #define CMU_FC_IRQS { SCG_CMU_LVD_LVWSCG_IRQn, SCG_CMU_LVD_LVWSCG_IRQn }
-# 1898 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 1898 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CMU_FC_GCR_FCE_MASK 0x1u
 #define CMU_FC_GCR_FCE_SHIFT 0u
 #define CMU_FC_GCR_FCE_WIDTH 1u
@@ -2771,7 +2772,7 @@ typedef struct {
 #define CMU_FC_IER_FHHAEE_SHIFT 3u
 #define CMU_FC_IER_FHHAEE_WIDTH 1u
 #define CMU_FC_IER_FHHAEE(x) (((uint32_t)(((uint32_t)(x))<<CMU_FC_IER_FHHAEE_SHIFT))&CMU_FC_IER_FHHAEE_MASK)
-# 1975 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 1975 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   union {
     volatile uint32_t DATA;
@@ -2803,7 +2804,7 @@ typedef struct {
 #define CRC_BASE_ADDRS { CRC_BASE }
 
 #define CRC_BASE_PTRS { CRC }
-# 2017 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 2017 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CRC_DATAu_DATA_LL_MASK 0xFFu
 #define CRC_DATAu_DATA_LL_SHIFT 0u
 #define CRC_DATAu_DATA_LL_WIDTH 8u
@@ -2880,7 +2881,7 @@ typedef struct {
 #define CRC_CTRL_TOT_SHIFT 30u
 #define CRC_CTRL_TOT_WIDTH 2u
 #define CRC_CTRL_TOT(x) (((uint32_t)(((uint32_t)(x))<<CRC_CTRL_TOT_SHIFT))&CRC_CTRL_TOT_MASK)
-# 2115 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 2115 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CSE_PRAM_RAMn_COUNT 32u
 
 
@@ -2909,7 +2910,7 @@ typedef struct {
 #define CSE_PRAM_BASE_ADDRS { CSE_PRAM_BASE }
 
 #define CSE_PRAM_BASE_PTRS { CSE_PRAM }
-# 2154 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 2154 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define CSE_PRAM_RAMn_DATA_32_BYTE_3_MASK 0xFFu
 #define CSE_PRAM_RAMn_DATA_32_BYTE_3_SHIFT 0u
 #define CSE_PRAM_RAMn_DATA_32_BYTE_3_WIDTH 8u
@@ -2946,7 +2947,7 @@ typedef struct {
 #define CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU_SHIFT 0u
 #define CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU_WIDTH 8u
 #define CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU(x) (((uint8_t)(((uint8_t)(x))<<CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU_SHIFT))&CSE_PRAM_RAMn_ACCESS8BIT_DATA_8HU_RAM_HU_MASK)
-# 2212 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 2212 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define DMA_DCHPRI_COUNT 4u
 #define DMA_TCD_COUNT 4u
 
@@ -3024,7 +3025,7 @@ typedef struct {
 
 #define DMA_CHN_IRQS { DMA0_IRQn, DMA1_IRQn, DMA2_IRQn, DMA3_IRQn }
 #define DMA_ERROR_IRQS { DMA_Error_IRQn }
-# 2300 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 2300 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define DMA_CR_EDBG_MASK 0x2u
 #define DMA_CR_EDBG_SHIFT 1u
 #define DMA_CR_EDBG_WIDTH 1u
@@ -3784,7 +3785,7 @@ typedef struct {
 #define DMA_TCD_BITER_ELINKYES_ELINK_SHIFT 15u
 #define DMA_TCD_BITER_ELINKYES_ELINK_WIDTH 1u
 #define DMA_TCD_BITER_ELINKYES_ELINK(x) (((uint16_t)(((uint16_t)(x))<<DMA_TCD_BITER_ELINKYES_ELINK_SHIFT))&DMA_TCD_BITER_ELINKYES_ELINK_MASK)
-# 3081 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3081 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define DMAMUX_CHCFG_COUNT 4u
 
 
@@ -3805,7 +3806,7 @@ typedef struct {
 #define DMAMUX_BASE_ADDRS { DMAMUX_BASE }
 
 #define DMAMUX_BASE_PTRS { DMAMUX }
-# 3112 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3112 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define DMAMUX_CHCFG_SOURCE_MASK 0x3Fu
 #define DMAMUX_CHCFG_SOURCE_SHIFT 0u
 #define DMAMUX_CHCFG_SOURCE_WIDTH 6u
@@ -3818,7 +3819,7 @@ typedef struct {
 #define DMAMUX_CHCFG_ENBL_SHIFT 7u
 #define DMAMUX_CHCFG_ENBL_WIDTH 1u
 #define DMAMUX_CHCFG_ENBL(x) (((uint8_t)(((uint8_t)(x))<<DMAMUX_CHCFG_ENBL_SHIFT))&DMAMUX_CHCFG_ENBL_MASK)
-# 3146 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3146 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define EIM_EICHDn_COUNT 1u
 
 
@@ -3845,7 +3846,7 @@ typedef struct {
 #define EIM_BASE_ADDRS { EIM_BASE }
 
 #define EIM_BASE_PTRS { EIM }
-# 3183 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3183 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define EIM_EIMCR_GEIEN_MASK 0x1u
 #define EIM_EIMCR_GEIEN_SHIFT 0u
 #define EIM_EIMCR_GEIEN_WIDTH 1u
@@ -3865,7 +3866,7 @@ typedef struct {
 #define EIM_EICHDn_WORD1_B0_3DATA_MASK_SHIFT 0u
 #define EIM_EICHDn_WORD1_B0_3DATA_MASK_WIDTH 32u
 #define EIM_EICHDn_WORD1_B0_3DATA_MASK(x) (((uint32_t)(((uint32_t)(x))<<EIM_EICHDn_WORD1_B0_3DATA_MASK_SHIFT))&EIM_EICHDn_WORD1_B0_3DATA_MASK_MASK)
-# 3224 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3224 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define ERM_EARn_COUNT 1u
 
 
@@ -3899,7 +3900,7 @@ typedef struct {
 
 #define ERM_SINGLE_IRQS { ERM_fault_IRQn }
 #define ERM_DOUBLE_IRQS { ERM_fault_IRQn }
-# 3268 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3268 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define ERM_CR0_ENCIE0_MASK 0x40000000u
 #define ERM_CR0_ENCIE0_SHIFT 30u
 #define ERM_CR0_ENCIE0_WIDTH 1u
@@ -3922,7 +3923,7 @@ typedef struct {
 #define ERM_EARn_EAR_SHIFT 0u
 #define ERM_EARn_EAR_WIDTH 32u
 #define ERM_EARn_EAR(x) (((uint32_t)(((uint32_t)(x))<<ERM_EARn_EAR_SHIFT))&ERM_EARn_EAR_MASK)
-# 3312 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3312 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FLEXIO_SHIFTCTL_COUNT 4u
 #define FLEXIO_SHIFTCFG_COUNT 4u
 #define FLEXIO_SHIFTBUF_COUNT 4u
@@ -3987,7 +3988,7 @@ typedef struct {
 #define FLEXIO_IRQS_CH_COUNT (1u)
 
 #define FLEXIO_IRQS { FLEXIO_IRQn }
-# 3387 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3387 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FLEXIO_VERID_FEATURE_MASK 0xFFFFu
 #define FLEXIO_VERID_FEATURE_SHIFT 0u
 #define FLEXIO_VERID_FEATURE_WIDTH 16u
@@ -4199,7 +4200,7 @@ typedef struct {
 #define FLEXIO_TIMCMP_CMP_SHIFT 0u
 #define FLEXIO_TIMCMP_CMP_WIDTH 16u
 #define FLEXIO_TIMCMP_CMP(x) (((uint32_t)(((uint32_t)(x))<<FLEXIO_TIMCMP_CMP_SHIFT))&FLEXIO_TIMCMP_CMP_MASK)
-# 3620 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3620 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FTFC_FCCOB_COUNT 12u
 #define FTFC_FPROT_COUNT 4u
 
@@ -4243,7 +4244,7 @@ typedef struct {
 
 #define FTFC_COMMAND_COMPLETE_IRQS { FTFC_IRQn }
 #define FTFC_READ_COLLISION_IRQS { FTFC_IRQn }
-# 3674 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3674 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FTFC_FSTAT_MGSTAT0_MASK 0x1u
 #define FTFC_FSTAT_MGSTAT0_SHIFT 0u
 #define FTFC_FSTAT_MGSTAT0_WIDTH 1u
@@ -4378,7 +4379,7 @@ typedef struct {
 #define FTFC_FERCNFG_FDFD_SHIFT 5u
 #define FTFC_FERCNFG_FDFD_WIDTH 1u
 #define FTFC_FERCNFG_FDFD(x) (((uint8_t)(((uint8_t)(x))<<FTFC_FERCNFG_FDFD_SHIFT))&FTFC_FERCNFG_FDFD_MASK)
-# 3830 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3830 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FTM_CONTROLS_COUNT 8u
 #define FTM_CV_MIRROR_COUNT 8u
 
@@ -4457,7 +4458,7 @@ typedef struct {
 #define FTM_Fault_IRQS { FTM0_Fault_IRQn, FTM1_Fault_IRQn }
 #define FTM_Overflow_IRQS { FTM0_Ovf_Reload_IRQn, FTM1_Ovf_Reload_IRQn }
 #define FTM_Reload_IRQS { FTM0_Ovf_Reload_IRQn, FTM1_Ovf_Reload_IRQn }
-# 3919 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 3919 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define FTM_SC_PS_MASK 0x7u
 #define FTM_SC_PS_SHIFT 0u
 #define FTM_SC_PS_WIDTH 3u
@@ -5389,7 +5390,7 @@ typedef struct {
 #define FTM_CV_MIRROR_VAL_SHIFT 16u
 #define FTM_CV_MIRROR_VAL_WIDTH 16u
 #define FTM_CV_MIRROR_VAL(x) (((uint32_t)(((uint32_t)(x))<<FTM_CV_MIRROR_VAL_SHIFT))&FTM_CV_MIRROR_VAL_MASK)
-# 4874 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 4874 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t PDOR;
   volatile uint32_t PSOR;
@@ -5429,7 +5430,7 @@ typedef struct {
 #define GPIO_BASE_ADDRS { PTA_BASE, PTB_BASE, PTC_BASE, PTD_BASE, PTE_BASE }
 
 #define GPIO_BASE_PTRS { PTA, PTB, PTC, PTD, PTE }
-# 4924 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 4924 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define GPIO_PDOR_PDO_MASK 0xFFFFFFFFu
 #define GPIO_PDOR_PDO_SHIFT 0u
 #define GPIO_PDOR_PDO_WIDTH 32u
@@ -5464,7 +5465,7 @@ typedef struct {
 #define GPIO_PIDR_PID_SHIFT 0u
 #define GPIO_PIDR_PID_WIDTH 32u
 #define GPIO_PIDR_PID(x) (((uint32_t)(((uint32_t)(x))<<GPIO_PIDR_PID_SHIFT))&GPIO_PIDR_PID_MASK)
-# 4982 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 4982 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t PCCCR;
   volatile uint32_t PCCLCR;
@@ -5487,7 +5488,7 @@ typedef struct {
 #define LMEM_BASE_ADDRS { LMEM_BASE }
 
 #define LMEM_BASE_PTRS { LMEM }
-# 5015 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 5015 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LMEM_PCCCR_ENCACHE_MASK 0x1u
 #define LMEM_PCCCR_ENCACHE_SHIFT 0u
 #define LMEM_PCCCR_ENCACHE_WIDTH 1u
@@ -5640,7 +5641,7 @@ typedef struct {
 #define LMEM_PCCRMR_R0_SHIFT 30u
 #define LMEM_PCCRMR_R0_WIDTH 2u
 #define LMEM_PCCRMR_R0(x) (((uint32_t)(((uint32_t)(x))<<LMEM_PCCRMR_R0_SHIFT))&LMEM_PCCRMR_R0_MASK)
-# 5191 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 5191 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -5706,7 +5707,7 @@ typedef struct {
 
 #define LPI2C_MASTER_IRQS { LPI2C0_Master_Slave_IRQn }
 #define LPI2C_SLAVE_IRQS { LPI2C0_Master_Slave_IRQn }
-# 5267 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 5267 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPI2C_VERID_FEATURE_MASK 0xFFFFu
 #define LPI2C_VERID_FEATURE_SHIFT 0u
 #define LPI2C_VERID_FEATURE_WIDTH 16u
@@ -6234,7 +6235,7 @@ typedef struct {
 #define LPI2C_SRDR_SOF_SHIFT 15u
 #define LPI2C_SRDR_SOF_WIDTH 1u
 #define LPI2C_SRDR_SOF(x) (((uint32_t)(((uint32_t)(x))<<LPI2C_SRDR_SOF_SHIFT))&LPI2C_SRDR_SOF_MASK)
-# 5816 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 5816 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPIT_TMR_COUNT 4u
 
 
@@ -6274,7 +6275,7 @@ typedef struct {
 #define LPIT_IRQS_CH_COUNT (1u)
 
 #define LPIT_IRQS { LPIT0_IRQn, LPIT0_IRQn, LPIT0_IRQn, LPIT0_IRQn }
-# 5866 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 5866 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPIT_VERID_FEATURE_MASK 0xFFFFu
 #define LPIT_VERID_FEATURE_SHIFT 0u
 #define LPIT_VERID_FEATURE_WIDTH 16u
@@ -6424,7 +6425,7 @@ typedef struct {
 #define LPIT_TMR_TCTRL_TRG_SEL_SHIFT 24u
 #define LPIT_TMR_TCTRL_TRG_SEL_WIDTH 4u
 #define LPIT_TMR_TCTRL_TRG_SEL(x) (((uint32_t)(((uint32_t)(x))<<LPIT_TMR_TCTRL_TRG_SEL_SHIFT))&LPIT_TMR_TCTRL_TRG_SEL_MASK)
-# 6039 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 6039 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -6469,7 +6470,7 @@ typedef struct {
 #define LPSPI_IRQS_CH_COUNT (1u)
 
 #define LPSPI_IRQS { LPSPI0_IRQn }
-# 6094 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 6094 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPSPI_VERID_FEATURE_MASK 0xFFFFu
 #define LPSPI_VERID_FEATURE_SHIFT 0u
 #define LPSPI_VERID_FEATURE_WIDTH 16u
@@ -6766,7 +6767,7 @@ typedef struct {
 #define LPSPI_RDR_DATA_SHIFT 0u
 #define LPSPI_RDR_DATA_WIDTH 32u
 #define LPSPI_RDR_DATA(x) (((uint32_t)(((uint32_t)(x))<<LPSPI_RDR_DATA_SHIFT))&LPSPI_RDR_DATA_MASK)
-# 6414 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 6414 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t CSR;
   volatile uint32_t PSR;
@@ -6793,7 +6794,7 @@ typedef struct {
 #define LPTMR_IRQS_CH_COUNT (1u)
 
 #define LPTMR_IRQS { LPTMR0_IRQn }
-# 6451 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 6451 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPTMR_CSR_TEN_MASK 0x1u
 #define LPTMR_CSR_TEN_SHIFT 0u
 #define LPTMR_CSR_TEN_WIDTH 1u
@@ -6849,7 +6850,7 @@ typedef struct {
 #define LPTMR_CNR_COUNTER_SHIFT 0u
 #define LPTMR_CNR_COUNTER_WIDTH 16u
 #define LPTMR_CNR_COUNTER(x) (((uint32_t)(((uint32_t)(x))<<LPTMR_CNR_COUNTER_SHIFT))&LPTMR_CNR_COUNTER_MASK)
-# 6530 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 6530 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -6888,7 +6889,7 @@ typedef struct {
 #define LPUART_RX_TX_IRQS_CH_COUNT (1u)
 
 #define LPUART_RX_TX_IRQS { LPUART0_RxTx_IRQn, LPUART1_RxTx_IRQn }
-# 6579 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 6579 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define LPUART_VERID_FEATURE_MASK 0xFFFFu
 #define LPUART_VERID_FEATURE_SHIFT 0u
 #define LPUART_VERID_FEATURE_WIDTH 16u
@@ -7340,7 +7341,7 @@ typedef struct {
 #define LPUART_WATER_RXCOUNT_SHIFT 24u
 #define LPUART_WATER_RXCOUNT_WIDTH 3u
 #define LPUART_WATER_RXCOUNT(x) (((uint32_t)(((uint32_t)(x))<<LPUART_WATER_RXCOUNT_SHIFT))&LPUART_WATER_RXCOUNT_MASK)
-# 7052 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 7052 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MCM_LMDR_COUNT 2u
 
 
@@ -7381,7 +7382,7 @@ typedef struct {
 #define MCM_BASE_ADDRS { MCM_BASE }
 
 #define MCM_BASE_PTRS { MCM }
-# 7103 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 7103 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MCM_PLASC_ASC_MASK 0xFFu
 #define MCM_PLASC_ASC_SHIFT 0u
 #define MCM_PLASC_ASC_WIDTH 8u
@@ -7554,7 +7555,7 @@ typedef struct {
 #define MCM_LMFDLR_PEFDL_SHIFT 0u
 #define MCM_LMFDLR_PEFDL_WIDTH 32u
 #define MCM_LMFDLR_PEFDL(x) (((uint32_t)(((uint32_t)(x))<<MCM_LMFDLR_PEFDL_SHIFT))&MCM_LMFDLR_PEFDL_MASK)
-# 7297 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 7297 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MPU_EAR_EDR_COUNT 2u
 #define MPU_RGD_COUNT 8u
 #define MPU_RGDAAC_COUNT 8u
@@ -7597,7 +7598,7 @@ typedef struct {
 #define MPU_BASE_ADDRS { MPU_BASE }
 
 #define MPU_BASE_PTRS { MPU }
-# 7350 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 7350 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MPU_CESR_VLD_MASK 0x1u
 #define MPU_CESR_VLD_SHIFT 0u
 #define MPU_CESR_VLD_WIDTH 1u
@@ -7809,7 +7810,7 @@ typedef struct {
 #define MPU_RGDAAC_M7RE_SHIFT 31u
 #define MPU_RGDAAC_M7RE_WIDTH 1u
 #define MPU_RGDAAC_M7RE(x) (((uint32_t)(((uint32_t)(x))<<MPU_RGDAAC_M7RE_SHIFT))&MPU_RGDAAC_M7RE_MASK)
-# 7583 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 7583 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MSCM_OCMDR_COUNT 3u
 
 
@@ -7847,7 +7848,7 @@ typedef struct {
 #define MSCM_BASE_ADDRS { MSCM_BASE }
 
 #define MSCM_BASE_PTRS { MSCM }
-# 7631 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 7631 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MSCM_CPxTYPE_RYPZ_MASK 0xFFu
 #define MSCM_CPxTYPE_RYPZ_SHIFT 0u
 #define MSCM_CPxTYPE_RYPZ_WIDTH 8u
@@ -8064,7 +8065,7 @@ typedef struct {
 #define MSCM_OCMDR_V_SHIFT 31u
 #define MSCM_OCMDR_V_WIDTH 1u
 #define MSCM_OCMDR_V(x) (((uint32_t)(((uint32_t)(x))<<MSCM_OCMDR_V_SHIFT))&MSCM_OCMDR_V_MASK)
-# 7869 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 7869 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MTB_DWT_CMF_COUNT 2u
 #define MTB_DWT_PERIPHID_COUNT 8u
 #define MTB_DWT_COMPID_COUNT 4u
@@ -8101,7 +8102,7 @@ typedef struct {
 #define MTB_DWT_BASE_ADDRS { MTB_DWT_BASE }
 
 #define MTB_DWT_BASE_PTRS { MTB_DWT }
-# 7916 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 7916 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define MTB_DWT_CTRL_DWTCFGCTRL_MASK 0xFFFFFFFu
 #define MTB_DWT_CTRL_DWTCFGCTRL_SHIFT 0u
 #define MTB_DWT_CTRL_DWTCFGCTRL_WIDTH 28u
@@ -8174,7 +8175,7 @@ typedef struct {
 #define MTB_DWT_COMPID_COMPID_SHIFT 0u
 #define MTB_DWT_COMPID_COMPID_WIDTH 32u
 #define MTB_DWT_COMPID_COMPID(x) (((uint32_t)(((uint32_t)(x))<<MTB_DWT_COMPID_COMPID_SHIFT))&MTB_DWT_COMPID_COMPID_MASK)
-# 8010 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8010 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PCC_PCCn_COUNT 116u
 
 
@@ -8221,7 +8222,7 @@ typedef struct {
 #define PCC_LPUART0_INDEX 106
 #define PCC_LPUART1_INDEX 107
 #define PCC_CMP0_INDEX 115
-# 8067 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8067 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PCC_PCCn_PCD_MASK 0xFu
 #define PCC_PCCn_PCD_SHIFT 0u
 #define PCC_PCCn_PCD_WIDTH 4u
@@ -8242,7 +8243,7 @@ typedef struct {
 #define PCC_PCCn_PR_SHIFT 31u
 #define PCC_PCCn_PR_WIDTH 1u
 #define PCC_PCCn_PR(x) (((uint32_t)(((uint32_t)(x))<<PCC_PCCn_PR_SHIFT))&PCC_PCCn_PR_MASK)
-# 8109 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8109 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PDB_CH_COUNT 2u
 #define PDB_DLY_COUNT 8u
 #define PDB_POnDLY_COUNT 1u
@@ -8288,7 +8289,7 @@ typedef struct {
 #define PDB_IRQS_CH_COUNT (1u)
 
 #define PDB_IRQS { PDB0_IRQn }
-# 8165 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8165 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PDB_SC_LDOK_MASK 0x1u
 #define PDB_SC_LDOK_SHIFT 0u
 #define PDB_SC_LDOK_WIDTH 1u
@@ -8403,7 +8404,7 @@ typedef struct {
 #define PDB_POnDLY_ACCESS16BIT_DLY1_DLY1_SHIFT 0u
 #define PDB_POnDLY_ACCESS16BIT_DLY1_DLY1_WIDTH 16u
 #define PDB_POnDLY_ACCESS16BIT_DLY1_DLY1(x) (((uint16_t)(((uint16_t)(x))<<PDB_POnDLY_ACCESS16BIT_DLY1_DLY1_SHIFT))&PDB_POnDLY_ACCESS16BIT_DLY1_DLY1_MASK)
-# 8303 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8303 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint8_t LVDSC1;
   volatile uint8_t LVDSC2;
@@ -8431,7 +8432,7 @@ typedef struct {
 #define PMC_IRQS_CH_COUNT (1u)
 
 #define PMC_IRQS { SCG_CMU_LVD_LVWSCG_IRQn }
-# 8341 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8341 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PMC_LVDSC1_LVDRE_MASK 0x10u
 #define PMC_LVDSC1_LVDRE_SHIFT 4u
 #define PMC_LVDSC1_LVDRE_WIDTH 1u
@@ -8487,7 +8488,7 @@ typedef struct {
 #define PMC_LPOTRIM_LPOTRIM_SHIFT 0u
 #define PMC_LPOTRIM_LPOTRIM_WIDTH 5u
 #define PMC_LPOTRIM_LPOTRIM(x) (((uint8_t)(((uint8_t)(x))<<PMC_LPOTRIM_LPOTRIM_SHIFT))&PMC_LPOTRIM_LPOTRIM_MASK)
-# 8418 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8418 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PORT_PCR_COUNT 32u
 
 
@@ -8540,7 +8541,7 @@ typedef struct {
 #define PORT_IRQS_CH_COUNT (1u)
 
 #define PORT_IRQS { PORT_IRQn, PORT_IRQn, PORT_IRQn, PORT_IRQn, PORT_IRQn }
-# 8481 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8481 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define PORT_PCR_PS_MASK 0x1u
 #define PORT_PCR_PS_SHIFT 0u
 #define PORT_PCR_PS_WIDTH 1u
@@ -8629,7 +8630,7 @@ typedef struct {
 #define PORT_DFWR_FILT_SHIFT 0u
 #define PORT_DFWR_FILT_WIDTH 5u
 #define PORT_DFWR_FILT(x) (((uint32_t)(((uint32_t)(x))<<PORT_DFWR_FILT_SHIFT))&PORT_DFWR_FILT_MASK)
-# 8593 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8593 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -8659,7 +8660,7 @@ typedef struct {
 #define RCM_IRQS_CH_COUNT (1u)
 
 #define RCM_IRQS { RCM_IRQn }
-# 8633 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8633 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define RCM_VERID_FEATURE_MASK 0xFFFFu
 #define RCM_VERID_FEATURE_SHIFT 0u
 #define RCM_VERID_FEATURE_WIDTH 16u
@@ -8893,7 +8894,7 @@ typedef struct {
 #define RCM_SRIE_SACKERR_SHIFT 13u
 #define RCM_SRIE_SACKERR_WIDTH 1u
 #define RCM_SRIE_SACKERR(x) (((uint32_t)(((uint32_t)(x))<<RCM_SRIE_SACKERR_SHIFT))&RCM_SRIE_SACKERR_MASK)
-# 8890 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8890 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t TSR;
   volatile uint32_t TPR;
@@ -8927,7 +8928,7 @@ typedef struct {
 
 #define RTC_IRQS { RTC_IRQn }
 #define RTC_SECONDS_IRQS { RTC_Seconds_IRQn }
-# 8934 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 8934 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define RTC_TSR_TSR_MASK 0xFFFFFFFFu
 #define RTC_TSR_TSR_SHIFT 0u
 #define RTC_TSR_TSR_WIDTH 32u
@@ -9043,7 +9044,7 @@ typedef struct {
 #define RTC_IER_TSIC_SHIFT 16u
 #define RTC_IER_TSIC_WIDTH 3u
 #define RTC_IER_TSIC(x) (((uint32_t)(((uint32_t)(x))<<RTC_IER_TSIC_SHIFT))&RTC_IER_TSIC_MASK)
-# 9071 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9071 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32_NVIC_ISER_COUNT 1u
 #define S32_NVIC_ICER_COUNT 1u
 #define S32_NVIC_ISPR_COUNT 1u
@@ -9076,7 +9077,7 @@ typedef struct {
 #define S32_NVIC_BASE_ADDRS { S32_NVIC_BASE }
 
 #define S32_NVIC_BASE_PTRS { S32_NVIC }
-# 9114 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9114 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32_NVIC_ISER_SETENA_MASK 0xFFFFFFFFu
 #define S32_NVIC_ISER_SETENA_SHIFT 0u
 #define S32_NVIC_ISER_SETENA_WIDTH 32u
@@ -9113,7 +9114,7 @@ typedef struct {
 #define S32_NVIC_IPR_PRI_3_SHIFT 24u
 #define S32_NVIC_IPR_PRI_3_WIDTH 8u
 #define S32_NVIC_IPR_PRI_3(x) (((uint32_t)(((uint32_t)(x))<<S32_NVIC_IPR_PRI_3_SHIFT))&S32_NVIC_IPR_PRI_3_MASK)
-# 9174 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9174 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
        uint8_t RESERVED_0[8];
   volatile const uint32_t ACTLR;
@@ -9145,7 +9146,7 @@ typedef struct {
 #define S32_SCB_BASE_ADDRS { S32_SCB_BASE }
 
 #define S32_SCB_BASE_PTRS { S32_SCB }
-# 9216 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9216 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32_SCB_CPUID_REVISION_MASK 0xFu
 #define S32_SCB_CPUID_REVISION_SHIFT 0u
 #define S32_SCB_CPUID_REVISION_WIDTH 4u
@@ -9279,7 +9280,7 @@ typedef struct {
 #define S32_SCB_DFSR_EXTERNAL_SHIFT 4u
 #define S32_SCB_DFSR_EXTERNAL_WIDTH 1u
 #define S32_SCB_DFSR_EXTERNAL(x) (((uint32_t)(((uint32_t)(x))<<S32_SCB_DFSR_EXTERNAL_SHIFT))&S32_SCB_DFSR_EXTERNAL_MASK)
-# 9373 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9373 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t CSR;
   volatile uint32_t RVR;
@@ -9306,7 +9307,7 @@ typedef struct {
 #define S32_SysTick_IRQS_CH_COUNT (1u)
 
 #define S32_SysTick_IRQS { SysTick_IRQn }
-# 9410 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9410 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define S32_SysTick_CSR_ENABLE_MASK 0x1u
 #define S32_SysTick_CSR_ENABLE_SHIFT 0u
 #define S32_SysTick_CSR_ENABLE_WIDTH 1u
@@ -9346,7 +9347,7 @@ typedef struct {
 #define S32_SysTick_CALIB_NOREF_SHIFT 31u
 #define S32_SysTick_CALIB_NOREF_WIDTH 1u
 #define S32_SysTick_CALIB_NOREF(x) (((uint32_t)(((uint32_t)(x))<<S32_SysTick_CALIB_NOREF_SHIFT))&S32_SysTick_CALIB_NOREF_MASK)
-# 9473 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9473 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -9389,7 +9390,7 @@ typedef struct {
 #define SCG_IRQS_CH_COUNT (1u)
 
 #define SCG_IRQS { SCG_CMU_LVD_LVWSCG_IRQn }
-# 9526 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9526 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define SCG_VERID_VERSION_MASK 0xFFFFFFFFu
 #define SCG_VERID_VERSION_SHIFT 0u
 #define SCG_VERID_VERSION_WIDTH 32u
@@ -9588,7 +9589,7 @@ typedef struct {
 #define SCG_FIRCCFG_RANGE_SHIFT 0u
 #define SCG_FIRCCFG_RANGE_WIDTH 2u
 #define SCG_FIRCCFG_RANGE(x) (((uint32_t)(((uint32_t)(x))<<SCG_FIRCCFG_RANGE_SHIFT))&SCG_FIRCCFG_RANGE_MASK)
-# 9748 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9748 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
        uint8_t RESERVED_0[4];
   volatile uint32_t CHIPCTL;
@@ -9627,7 +9628,7 @@ typedef struct {
 #define SIM_BASE_ADDRS { SIM_BASE }
 
 #define SIM_BASE_PTRS { SIM }
-# 9797 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 9797 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define SIM_CHIPCTL_ADC_INTERLEAVE_EN_MASK 0xFu
 #define SIM_CHIPCTL_ADC_INTERLEAVE_EN_SHIFT 0u
 #define SIM_CHIPCTL_ADC_INTERLEAVE_EN_WIDTH 4u
@@ -9910,7 +9911,7 @@ typedef struct {
 #define SIM_MISCTRL1_SW_TRG_SHIFT 0u
 #define SIM_MISCTRL1_SW_TRG_WIDTH 1u
 #define SIM_MISCTRL1_SW_TRG(x) (((uint32_t)(((uint32_t)(x))<<SIM_MISCTRL1_SW_TRG_SHIFT))&SIM_MISCTRL1_SW_TRG_MASK)
-# 10103 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 10103 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile const uint32_t VERID;
   volatile const uint32_t PARAM;
@@ -9933,7 +9934,7 @@ typedef struct {
 #define SMC_BASE_ADDRS { SMC_BASE }
 
 #define SMC_BASE_PTRS { SMC }
-# 10136 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 10136 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define SMC_VERID_FEATURE_MASK 0xFFFFu
 #define SMC_VERID_FEATURE_SHIFT 0u
 #define SMC_VERID_FEATURE_WIDTH 16u
@@ -9991,7 +9992,7 @@ typedef struct {
 #define SMC_PMSTAT_PMSTAT_SHIFT 0u
 #define SMC_PMSTAT_PMSTAT_WIDTH 8u
 #define SMC_PMSTAT_PMSTAT(x) (((uint32_t)(((uint32_t)(x))<<SMC_PMSTAT_PMSTAT_SHIFT))&SMC_PMSTAT_PMSTAT_MASK)
-# 10215 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 10215 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define TRGMUX_TRGMUXn_COUNT 26u
 
 
@@ -10029,7 +10030,7 @@ typedef struct {
 #define TRGMUX_LPI2C0_INDEX 21
 #define TRGMUX_LPSPI0_INDEX 23
 #define TRGMUX_LPTMR0_INDEX 25
-# 10263 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 10263 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define TRGMUX_TRGMUXn_SEL0_MASK 0x3Fu
 #define TRGMUX_TRGMUXn_SEL0_SHIFT 0u
 #define TRGMUX_TRGMUXn_SEL0_WIDTH 6u
@@ -10050,7 +10051,7 @@ typedef struct {
 #define TRGMUX_TRGMUXn_LK_SHIFT 31u
 #define TRGMUX_TRGMUXn_LK_WIDTH 1u
 #define TRGMUX_TRGMUXn_LK(x) (((uint32_t)(((uint32_t)(x))<<TRGMUX_TRGMUXn_LK_SHIFT))&TRGMUX_TRGMUXn_LK_MASK)
-# 10307 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 10307 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 typedef struct {
   volatile uint32_t CS;
   volatile uint32_t CNT;
@@ -10077,7 +10078,7 @@ typedef struct {
 #define WDOG_IRQS_CH_COUNT (1u)
 
 #define WDOG_IRQS { WDOG_IRQn }
-# 10344 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h"
+# 10344 "D:/QLS/QLS100_S32K_X001/include/S32K116.h"
 #define WDOG_CS_STOP_MASK 0x1u
 #define WDOG_CS_STOP_SHIFT 0u
 #define WDOG_CS_STOP_WIDTH 1u
@@ -10161,7 +10162,7 @@ typedef struct {
 #define WDOG_WIN_WINHIGH_SHIFT 8u
 #define WDOG_WIN_WINHIGH_WIDTH 8u
 #define WDOG_WIN_WINHIGH(x) (((uint32_t)(((uint32_t)(x))<<WDOG_WIN_WINHIGH_SHIFT))&WDOG_WIN_WINHIGH_MASK)
-# 12 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.h" 2
+# 12 "D:/QLS/common/HW_Driver/CAN.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
 # 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h"
 #define DEVASSERT_H 
@@ -10178,10 +10179,10 @@ typedef struct {
 
 #define false 0
 # 23 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 2
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h" 1
-# 47 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 1 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h" 1
+# 47 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define CORE_CM0_H 
-# 65 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 65 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define BKPT_ASM __asm ("BKPT #0\n\t")
 
 
@@ -10189,18 +10190,18 @@ typedef struct {
 
 
 #define ENABLE_INTERRUPTS() __asm volatile ("cpsie i" : : : "memory");
-# 82 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 82 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define DISABLE_INTERRUPTS() __asm volatile ("cpsid i" : : : "memory");
-# 94 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 94 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define STANDBY() __asm volatile ("wfi")
-# 105 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 105 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define REV_BYTES_32(a,b) __asm volatile ("rev %0, %1" : "=r" (b) : "r" (a))
-# 114 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 114 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define REV_BYTES_16(a,b) __asm volatile ("rev16 %0, %1" : "=r" (b) : "r" (a))
-# 123 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 123 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define START_FUNCTION_DECLARATION_RAMSECTION 
 #define END_FUNCTION_DECLARATION_RAMSECTION __attribute__((section (".code_ram")));
-# 146 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 146 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define START_FUNCTION_DEFINITION_RAMSECTION 
 #define END_FUNCTION_DEFINITION_RAMSECTION 
 
@@ -10222,7 +10223,7 @@ typedef struct {
 
 
 #define ALIGNED(x) __attribute__((aligned(x)))
-# 178 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/s32_core_cm0.h"
+# 178 "D:/QLS/QLS100_S32K_X001/include/s32_core_cm0.h"
 #define CORE_LITTLE_ENDIAN 
 # 24 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 2
 # 70 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h"
@@ -10231,7 +10232,7 @@ static inline void DevAssert(volatile int x)
     if(x) { } else { __asm ("BKPT #0\n\t"); for(;;) {} }
 }
 #define DEV_ASSERT(x) DevAssert(x)
-# 13 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.h" 2
+# 13 "D:/QLS/common/HW_Driver/CAN.h" 2
 
 #define BIT1ERR 1
 #define BIT0ERR 2
@@ -10284,8 +10285,8 @@ typedef uint8_t (*FunType_Error)(uint8_t ErrorCode);
 extern uint8_t CAN_Tx_Call(uint32_t id, uint8_t *data, uint8_t len);
 extern uint8_t J1939_CAN_Init(void);
 extern void J1939_FLEXCAN_DRV_Deinit(void);
-# 8 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.c" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_com.h" 1
+# 8 "D:/QLS/common/HW_Driver/CAN.c" 2
+# 1 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 1
 
 #define _can_com_mgt_h 
 
@@ -10293,10 +10294,10 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
 
 
 
-# 1 "d:\\s32dsworkspace\\qls\\common\\typedef_all.h" 1
+# 1 "d:\\qls\\common\\typedef_all.h" 1
 
 #define typedef_all_h 
-# 32 "d:\\s32dsworkspace\\qls\\common\\typedef_all.h"
+# 32 "d:\\qls\\common\\typedef_all.h"
 #define TRUE (1)
 
 
@@ -10305,8 +10306,8 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
 
 
 typedef void (*func_v_v)(void);
-# 9 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h" 1
+# 9 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
+# 1 "d:\\qls\\common\\node_mgt\\node_para.h" 1
 
 #define _node_mbd_para_h 
 
@@ -10538,13 +10539,13 @@ typedef void (*func_v_v)(void);
 # 327 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/cstring"
 
 # 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/string.h" 2
-# 8 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h" 2
-# 1 "D:/s32dsworkspace/QLS/common/typedef_all.h" 1
-# 9 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_cfg.h" 1
+# 8 "d:\\qls\\common\\node_mgt\\node_para.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Sources/typedef_all.h" 1
+# 9 "d:\\qls\\common\\node_mgt\\node_para.h" 2
+# 1 "d:\\qls\\common\\node_mgt\\node_cfg.h" 1
 
 #define _node_cfg_h 
-# 11 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_cfg.h"
+# 11 "d:\\qls\\common\\node_mgt\\node_cfg.h"
 #define node_task_period (1)
 #define int_task_period (1)
 #define comm_task_period (1)
@@ -10566,7 +10567,7 @@ typedef void (*func_v_v)(void);
 
 #define _CAN_Ch (0)
 #define _CAN_Speed (250)
-#define _CAN_ClockSpeed (8)
+#define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
 
 #define _CAN_SamplePoint (8125)
@@ -10576,7 +10577,7 @@ typedef void (*func_v_v)(void);
 
 #define comm_user_rx 
 #define comm_user_tx 
-# 10 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h" 2
+# 10 "d:\\qls\\common\\node_mgt\\node_para.h" 2
 
 #define subs_fixed (1)
 #define subs_last (2)
@@ -10674,13 +10675,13 @@ typedef void (*func_v_v)(void);
   uint8_t Event_tx_num;
   MsgBuffer Buffer;
  } msg_struct, *pmsg_struct;
-# 168 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h"
+# 168 "d:\\qls\\common\\node_mgt\\node_para.h"
  typedef struct
  {
   uint8_t run_status;
   uint8_t comm_status;
   uint8_t u8_Dcomm_status;
-# 183 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h"
+# 183 "d:\\qls\\common\\node_mgt\\node_para.h"
   u8_SigInfo_Struct Frame_Tx_1_Temp;
   u8_SigInfo_Struct Frame_Tx_1_Conc;
   u8_SigInfo_Struct Frame_Tx_1_Temp_Pre;
@@ -10701,8 +10702,8 @@ typedef void (*func_v_v)(void);
  } node_info_struct;
 
  extern node_info_struct node_info;
-# 10 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\hw_abstract.h" 1
+# 10 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
+# 1 "d:\\qls\\common\\hw_driver\\hw_abstract.h" 1
 
 #define _hw_abstract_h 
 
@@ -10711,27 +10712,27 @@ typedef void (*func_v_v)(void);
 
 
 
-# 1 "d:\\s32dsworkspace\\qls\\common\\typedef_all.h" 1
-# 10 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\hw_abstract.h" 2
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h" 1
-# 11 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\hw_abstract.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\WatchDog.h" 1
-# 9 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\WatchDog.h"
+# 1 "d:\\qls\\common\\typedef_all.h" 1
+# 10 "d:\\qls\\common\\hw_driver\\hw_abstract.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
+# 11 "d:\\qls\\common\\hw_driver\\hw_abstract.h" 2
+# 1 "d:\\qls\\common\\hw_driver\\WatchDog.h" 1
+# 9 "d:\\qls\\common\\hw_driver\\WatchDog.h"
 #define WATCHDOG_H_ 
 
 
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h" 1
-# 13 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\WatchDog.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
+# 13 "d:\\qls\\common\\hw_driver\\WatchDog.h" 2
 
 
 extern uint8_t u8_wtd_Feed(void);
 extern void v_wtd_DeInit(void);
 extern uint8_t u8_wtd_Init(uint16_t Period);
 extern void v_wtd_SysReset(void);
-# 12 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\hw_abstract.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\CAN.h" 1
-# 13 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\hw_abstract.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\prj_gpio.h" 1
+# 12 "d:\\qls\\common\\hw_driver\\hw_abstract.h" 2
+# 1 "d:\\qls\\common\\hw_driver\\CAN.h" 1
+# 13 "d:\\qls\\common\\hw_driver\\hw_abstract.h" 2
+# 1 "d:\\qls\\common\\hw_driver\\prj_gpio.h" 1
 
 #define _PRJ_GPIO_H 
 
@@ -10739,17 +10740,17 @@ extern void v_wtd_SysReset(void);
 
 
 
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h" 1
-# 9 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\prj_gpio.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
+# 9 "d:\\qls\\common\\hw_driver\\prj_gpio.h" 2
 
 
     extern void v_GPIO_Init(func_v_v _func);
     extern uint8_t u8_GPIO_Read(uint8_t u8_type);
     extern void v_GPIO_Tranceiver_Disable(void);
     extern void v_GPIO_Tranceiver_Enable(void);
-# 14 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\hw_abstract.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_com.h" 1
-# 15 "d:\\s32dsworkspace\\qls\\common\\hw_driver\\hw_abstract.h" 2
+# 14 "d:\\qls\\common\\hw_driver\\hw_abstract.h" 2
+# 1 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 1
+# 15 "d:\\qls\\common\\hw_driver\\hw_abstract.h" 2
 
     extern uint8_t task_1ms_OK;
     extern uint8_t task_5ms_OK;
@@ -10777,8 +10778,8 @@ extern void v_wtd_SysReset(void);
 #define u8_hw_GPIO_Read u8_GPIO_Read
 #define v_hw_GPIO_Tranceiver_Disable v_GPIO_Tranceiver_Disable
 #define v_hw_GPIO_Tranceiver_Enable v_GPIO_Tranceiver_Enable
-# 11 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 1
+# 11 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
+# 1 "d:\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 1
 
 #define _Int_interface_h 
 
@@ -10786,7 +10787,7 @@ extern void v_wtd_SysReset(void);
 
 
 
-# 1 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\int_mgt\\Int_para.h" 1
+# 1 "d:\\qls\\common\\comm_mgt\\int_mgt\\Int_para.h" 1
 
 #define _int_para_h 
 
@@ -10795,8 +10796,8 @@ extern void v_wtd_SysReset(void);
 
 
 
-# 1 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h" 1
-# 10 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\int_mgt\\Int_para.h" 2
+# 1 "d:\\qls\\common\\node_mgt\\node_para.h" 1
+# 10 "d:\\qls\\common\\comm_mgt\\int_mgt\\Int_para.h" 2
 
 #define int_msg_init (0)
 #define int_msg_txing (1)
@@ -10810,9 +10811,9 @@ extern void v_wtd_SysReset(void);
  } IntInfo_Struct;
 
  extern IntInfo_Struct IntInfo;
-# 9 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_com.h" 1
-# 10 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 2
+# 9 "d:\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 2
+# 1 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 1
+# 10 "d:\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 2
 
 
 
@@ -10832,13 +10833,13 @@ extern void v_wtd_SysReset(void);
     extern uint8_t u8_int_task(void);
     extern uint8_t u8_int_TxCallback(uint32_t id, uint8_t *data, uint8_t len);
     extern uint8_t u8_int_RxCallback(uint32_t id, uint8_t *data, uint8_t len);
-# 12 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_busoff.h" 1
+# 12 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
+# 1 "d:\\qls\\common\\comm_mgt\\can_com\\can_busoff.h" 1
 
 #define _can_busoff_h 
-# 18 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_busoff.h"
+# 18 "d:\\qls\\common\\comm_mgt\\can_com\\can_busoff.h"
     extern uint8_t u8_can_CANErr_Callback(uint8_t ErrCode);
-# 13 "d:\\s32dsworkspace\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
+# 13 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 2
     typedef uint8_t (*u8_cancomm_frame_func)(uint32_t id, uint8_t *data, uint8_t len);
     typedef uint8_t (*u8_cancomm_err_func)(uint8_t errorCode);
 
@@ -10876,7 +10877,7 @@ extern void v_wtd_SysReset(void);
     extern uint8_t u8_cancomm_TxCall(uint32_t id, uint8_t *data, uint8_t len);
     extern uint8_t u8_cancomm_TxOneFrame(void);
     extern uint8_t u8_cancomm_TxDirect(uint32_t id, uint8_t *data, uint8_t len);
-# 9 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.c" 2
+# 9 "D:/QLS/common/HW_Driver/CAN.c" 2
 # 1 "D:/s32dsworkspace/QLS/common/common.h" 1
 
 
@@ -10885,12 +10886,12 @@ extern void v_wtd_SysReset(void);
 
 
 
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/lpspiCom1.h" 1
-# 54 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/lpspiCom1.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 1
+# 54 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h"
 #define lpspiCom1_H 
-# 72 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/lpspiCom1.h"
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/clockMan1.h" 1
-# 50 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/clockMan1.h"
+# 72 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 1
+# 50 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h"
 #define clockMan1_H 
 
 
@@ -10898,8 +10899,8 @@ extern void v_wtd_SysReset(void);
 
 
 
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 1
-# 51 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 1
+# 51 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h"
 #define Cpu_H 
 
 
@@ -11883,7 +11884,7 @@ typedef enum {
 # 297 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/device_registers.h"
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/devassert.h" 1
 # 298 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/devices/device_registers.h" 2
-# 59 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
+# 59 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/clock_manager.h" 1
 # 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/clock_manager.h"
@@ -12829,7 +12830,7 @@ clock_manager_callback_user_config_t* CLOCK_SYS_GetErrorCallback(void);
 # 257 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/clock_manager.h"
 status_t CLOCK_SYS_GetFreq(clock_names_t clockName,
                            uint32_t *frequency);
-# 61 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
+# 61 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/interrupt_manager.h" 1
 # 19 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/interrupt_manager.h"
 #define INTERRUPT_MANAGER_H 
@@ -12875,7 +12876,7 @@ void INT_SYS_ClearPending(IRQn_Type irqNumber);
 void INT_SYS_SetPending(IRQn_Type irqNumber);
 # 197 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/interrupt_manager.h"
 uint32_t INT_SYS_GetPending(IRQn_Type irqNumber);
-# 62 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
+# 62 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/edma_driver.h" 1
 # 36 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/edma_driver.h"
 #define EDMA_DRIVER_H 
@@ -13301,7 +13302,7 @@ status_t EDMA_DRV_InstallCallback(uint8_t virtualChannel,
                                   void *parameter);
 # 951 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/edma_driver.h"
 edma_chn_status_t EDMA_DRV_GetChannelStatus(uint8_t virtualChannel);
-# 63 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
+# 63 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_master_driver.h" 1
 # 29 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_master_driver.h"
 #define LPSPI_MASTER_DRIVER_H 
@@ -13657,7 +13658,7 @@ status_t LPSPI_DRV_MasterAbortTransfer(uint32_t instance);
 
 
 void LPSPI_DRV_MasterIRQHandler(uint32_t instance);
-# 64 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
+# 64 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_slave_driver.h" 1
 # 29 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_slave_driver.h"
 #define LPSPI_SLAVE_DRIVER_H 
@@ -13700,13 +13701,13 @@ status_t LPSPI_DRV_SlaveGetTransferStatus(uint32_t instance,
                                             uint32_t * bytesRemained);
 # 211 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_slave_driver.h"
 void LPSPI_DRV_SlaveIRQHandler(uint32_t instance);
-# 65 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
+# 65 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/lpspi_shared_function.h" 1
-# 66 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/system_S32K116.h" 1
-# 29 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/system_S32K116.h"
+# 66 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h" 1
+# 29 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 #define SYSTEM_S32K116_H_ 
-# 43 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/system_S32K116.h"
+# 43 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 #define DISABLE_WDOG 1
 
 
@@ -13723,11 +13724,11 @@ void LPSPI_DRV_SlaveIRQHandler(uint32_t instance);
 
 
 #define DEFAULT_SYSTEM_CLOCK 48000000u
-# 70 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/system_S32K116.h"
+# 70 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 extern uint32_t SystemCoreClock;
-# 79 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/system_S32K116.h"
+# 79 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 void SystemInit(void);
-# 92 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/system_S32K116.h"
+# 92 "D:/QLS/QLS100_S32K_X001/include/system_S32K116.h"
 void SystemCoreClockUpdate(void);
 
 
@@ -13736,11 +13737,11 @@ void SystemCoreClockUpdate(void);
 
 
 void SystemSoftwareReset(void);
-# 67 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
+# 67 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
 
 
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/pin_mux.h" 1
-# 647 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/pin_mux.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h" 1
+# 647 "D:/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h"
 #define pin_mux_H 
 
 
@@ -13967,26 +13968,26 @@ void PINS_DRV_TogglePins(GPIO_Type * const base,
                          pins_channel_type_t pins);
 # 1135 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pins_driver.h"
 pins_channel_type_t PINS_DRV_ReadPins(const GPIO_Type * const base);
-# 651 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/pin_mux.h" 2
+# 651 "D:/QLS/QLS100_S32K_X001/Generated_Code/pin_mux.h" 2
 
 
 #define NUM_OF_CONFIGURED_PINS 28
 
 
 extern pin_settings_config_t g_pin_mux_InitConfigArr[28];
-# 70 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/clockMan1.h" 1
-# 71 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/lpspiCom1.h" 1
-# 72 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/dmaController1.h" 1
-# 80 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/dmaController1.h"
+# 70 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 1
+# 71 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 1
+# 72 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h" 1
+# 80 "D:/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h"
 #define dmaController1_H 
 
 
 
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 1
-# 85 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/dmaController1.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 1
+# 85 "D:/QLS/QLS100_S32K_X001/Generated_Code/dmaController1.h" 2
 
 
 #define EDMA_CHN0_NUMBER 0U
@@ -14011,9 +14012,1073 @@ extern edma_channel_config_t dmaController1Chn0_Config;
 
 
 extern const edma_channel_config_t * const edmaChnConfigArray[1U];
-# 73 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/Cpu.h" 2
-# 58 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/clockMan1.h" 2
-# 80 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/clockMan1.h"
+# 73 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 1
+# 54 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h"
+#define can_pal1_H 
+# 70 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h"
+# 1 "D:/s32dsworkspace/QLS/common/canheader.h" 1
+# 9 "D:/s32dsworkspace/QLS/common/canheader.h"
+#define CANHEADER_H_ 
+
+
+
+
+
+typedef enum {
+
+    CAN_INST_TYPE_FLEXCAN = 0u,
+
+} can_inst_type_t;
+# 71 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 2
+# 1 "D:/s32dsworkspace/QLS/common/canheader2.h" 1
+# 9 "D:/s32dsworkspace/QLS/common/canheader2.h"
+#define SOURCES_COMMON_CANHEADER2_H_ 
+
+# 1 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h" 1
+# 29 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h"
+#define CAN_PAL_MAPPING_H 
+# 153 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h"
+typedef enum
+{
+    CAN_OVER_FLEXCAN0_INSTANCE = 0U,
+} can_instance_t;
+
+
+#define NUMBER_OF_CAN_PAL_INSTANCES 1U
+
+
+#define FLEXCAN_HIGH_INDEX 0U
+# 12 "D:/s32dsworkspace/QLS/common/canheader2.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 1
+# 19 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+#define CAN_PAL_H 
+
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal_cfg.h" 1
+# 22 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal_cfg.h"
+#define CAN_PAL_CFG_H 
+
+
+#define CAN_OVER_FLEXCAN 
+
+
+#define NO_OF_FLEXCAN_INSTS_FOR_CAN 1U
+# 22 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal_mapping.h" 1
+# 23 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
+
+
+
+
+
+# 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h" 1
+# 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+#define FLEXCAN_DRIVER_H 
+# 42 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+typedef enum {
+    FLEXCAN_RXFIFO_USING_INTERRUPTS,
+
+    FLEXCAN_RXFIFO_USING_DMA
+
+} flexcan_rxfifo_transfer_type_t;
+
+
+
+
+typedef enum {
+    FLEXCAN_EVENT_RX_COMPLETE,
+    FLEXCAN_EVENT_RXFIFO_COMPLETE,
+    FLEXCAN_EVENT_TX_COMPLETE,
+
+    FLEXCAN_EVENT_WAKEUP_TIMEOUT,
+    FLEXCAN_EVENT_WAKEUP_MATCH,
+    FLEXCAN_EVENT_SELF_WAKEUP
+
+} flexcan_event_type_t;
+
+
+
+
+typedef enum {
+    FLEXCAN_MB_IDLE,
+    FLEXCAN_MB_RX_BUSY,
+    FLEXCAN_MB_TX_BUSY
+} flexcan_mb_state_t;
+
+
+
+
+typedef enum {
+    FLEXCAN_MSG_ID_STD,
+    FLEXCAN_MSG_ID_EXT
+} flexcan_msgbuff_id_type_t;
+
+
+
+
+
+typedef enum {
+    FLEXCAN_CLK_SOURCE_OSC = 0U,
+    FLEXCAN_CLK_SOURCE_PERIPH = 1U
+} flexcan_clk_source_t;
+
+
+
+
+
+typedef struct {
+    uint32_t cs;
+    uint32_t msgId;
+    uint8_t data[64];
+    uint8_t dataLen;
+} flexcan_msgbuff_t;
+
+
+
+
+typedef struct {
+    flexcan_msgbuff_t *mb_message;
+    semaphore_t mbSema;
+    volatile flexcan_mb_state_t state;
+    int isBlocking;
+    int isRemote;
+} flexcan_mb_handle_t;
+# 119 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+typedef struct FlexCANState {
+    flexcan_mb_handle_t mbs[(32U)];
+    void (*callback)(uint8_t instance, flexcan_event_type_t eventType, uint32_t buffIdx,
+                     struct FlexCANState *driverState);
+    void *callbackParam;
+
+    uint8_t rxFifoDMAChannel;
+
+    flexcan_rxfifo_transfer_type_t transferType;
+} flexcan_state_t;
+
+
+
+
+typedef struct {
+    flexcan_msgbuff_id_type_t msg_id_type;
+    uint32_t data_length;
+
+    int fd_enable;
+    uint8_t fd_padding;
+
+    int enable_brs;
+
+    int is_remote;
+} flexcan_data_info_t;
+
+
+
+
+typedef enum {
+    FLEXCAN_RX_FIFO_ID_FILTERS_8 = 0x0,
+    FLEXCAN_RX_FIFO_ID_FILTERS_16 = 0x1,
+    FLEXCAN_RX_FIFO_ID_FILTERS_24 = 0x2,
+    FLEXCAN_RX_FIFO_ID_FILTERS_32 = 0x3,
+    FLEXCAN_RX_FIFO_ID_FILTERS_40 = 0x4,
+    FLEXCAN_RX_FIFO_ID_FILTERS_48 = 0x5,
+    FLEXCAN_RX_FIFO_ID_FILTERS_56 = 0x6,
+    FLEXCAN_RX_FIFO_ID_FILTERS_64 = 0x7,
+    FLEXCAN_RX_FIFO_ID_FILTERS_72 = 0x8,
+    FLEXCAN_RX_FIFO_ID_FILTERS_80 = 0x9,
+    FLEXCAN_RX_FIFO_ID_FILTERS_88 = 0xA,
+    FLEXCAN_RX_FIFO_ID_FILTERS_96 = 0xB,
+    FLEXCAN_RX_FIFO_ID_FILTERS_104 = 0xC,
+    FLEXCAN_RX_FIFO_ID_FILTERS_112 = 0xD,
+    FLEXCAN_RX_FIFO_ID_FILTERS_120 = 0xE,
+    FLEXCAN_RX_FIFO_ID_FILTERS_128 = 0xF
+} flexcan_rx_fifo_id_filter_num_t;
+
+
+
+
+typedef enum {
+    FLEXCAN_RX_MASK_GLOBAL,
+    FLEXCAN_RX_MASK_INDIVIDUAL
+} flexcan_rx_mask_type_t;
+
+
+
+
+typedef enum {
+    FLEXCAN_RX_FIFO_ID_FORMAT_A,
+    FLEXCAN_RX_FIFO_ID_FORMAT_B,
+
+    FLEXCAN_RX_FIFO_ID_FORMAT_C,
+    FLEXCAN_RX_FIFO_ID_FORMAT_D
+} flexcan_rx_fifo_id_element_format_t;
+
+
+
+
+typedef struct {
+    int isRemoteFrame;
+    int isExtendedFrame;
+    uint32_t id;
+} flexcan_id_table_t;
+
+
+
+
+typedef enum {
+    FLEXCAN_NORMAL_MODE,
+    FLEXCAN_LISTEN_ONLY_MODE,
+    FLEXCAN_LOOPBACK_MODE,
+    FLEXCAN_FREEZE_MODE,
+    FLEXCAN_DISABLE_MODE
+} flexcan_operation_modes_t;
+
+
+
+
+
+typedef enum {
+    FLEXCAN_PAYLOAD_SIZE_8 = 0,
+    FLEXCAN_PAYLOAD_SIZE_16 ,
+    FLEXCAN_PAYLOAD_SIZE_32 ,
+    FLEXCAN_PAYLOAD_SIZE_64
+} flexcan_fd_payload_size_t;
+
+
+
+
+
+typedef struct {
+    uint32_t propSeg;
+    uint32_t phaseSeg1;
+    uint32_t phaseSeg2;
+    uint32_t preDivider;
+    uint32_t rJumpwidth;
+} flexcan_time_segment_t;
+
+
+
+
+
+typedef struct {
+    uint32_t max_num_mb;
+
+    flexcan_rx_fifo_id_filter_num_t num_id_filters;
+
+    int is_rx_fifo_needed;
+
+    flexcan_operation_modes_t flexcanMode;
+
+
+    flexcan_fd_payload_size_t payload;
+    int fd_enable;
+
+
+    flexcan_clk_source_t pe_clock;
+
+    flexcan_time_segment_t bitrate;
+
+    flexcan_time_segment_t bitrate_cbt;
+
+    flexcan_rxfifo_transfer_type_t transfer_type;
+
+    uint8_t rxFifoDMAChannel;
+
+} flexcan_user_config_t;
+
+
+
+
+typedef struct {
+    int extendedId;
+    int remoteFrame;
+    uint32_t id;
+} flexcan_pn_id_filter_t;
+
+
+typedef struct {
+    uint8_t dlcLow;
+    uint8_t dlcHigh;
+    uint8_t payload1[8U];
+
+    uint8_t payload2[8U];
+} flexcan_pn_payload_filter_t;
+
+
+typedef enum {
+    FLEXCAN_FILTER_ID,
+    FLEXCAN_FILTER_ID_PAYLOAD,
+    FLEXCAN_FILTER_ID_NTIMES,
+    FLEXCAN_FILTER_ID_PAYLOAD_NTIMES
+} flexcan_pn_filter_combination_t;
+
+
+typedef enum {
+    FLEXCAN_FILTER_MATCH_EXACT,
+    FLEXCAN_FILTER_MATCH_GEQ,
+    FLEXCAN_FILTER_MATCH_LEQ,
+    FLEXCAN_FILTER_MATCH_RANGE
+
+} flexcan_pn_filter_selection_t;
+
+
+
+
+typedef struct {
+    int wakeUpTimeout;
+    int wakeUpMatch;
+    uint16_t numMatches;
+    uint16_t matchTimeout;
+    flexcan_pn_filter_combination_t filterComb;
+    flexcan_pn_id_filter_t idFilter1;
+    flexcan_pn_id_filter_t idFilter2;
+    flexcan_pn_filter_selection_t idFilterType;
+    flexcan_pn_filter_selection_t payloadFilterType;
+    flexcan_pn_payload_filter_t payloadFilter;
+} flexcan_pn_config_t;
+
+
+
+
+
+
+typedef void (*flexcan_callback_t)(uint8_t instance, flexcan_event_type_t eventType,
+                                   uint32_t buffIdx, flexcan_state_t *flexcanState);
+# 337 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_SetBitrate(uint8_t instance, const flexcan_time_segment_t *bitrate);
+# 346 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_SetBitrateCbt(uint8_t instance, const flexcan_time_segment_t *bitrate);
+# 355 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_GetBitrate(uint8_t instance, flexcan_time_segment_t *bitrate);
+# 364 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_GetBitrateFD(uint8_t instance, flexcan_time_segment_t *bitrate);
+# 380 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_SetRxMaskType(uint8_t instance, flexcan_rx_mask_type_t type);
+# 389 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_SetRxFifoGlobalMask(
+    uint8_t instance,
+    flexcan_msgbuff_id_type_t id_type,
+    uint32_t mask);
+# 401 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_SetRxMbGlobalMask(
+    uint8_t instance,
+    flexcan_msgbuff_id_type_t id_type,
+    uint32_t mask);
+# 413 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_SetRxMb14Mask(
+    uint8_t instance,
+    flexcan_msgbuff_id_type_t id_type,
+    uint32_t mask);
+# 425 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_SetRxMb15Mask(
+    uint8_t instance,
+    flexcan_msgbuff_id_type_t id_type,
+    uint32_t mask);
+# 441 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_SetRxIndividualMask(
+    uint8_t instance,
+    flexcan_msgbuff_id_type_t id_type,
+    uint8_t mb_idx,
+    uint32_t mask);
+# 468 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_GetDefaultConfig(flexcan_user_config_t *config);
+# 481 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_Init(
+       uint8_t instance,
+       flexcan_state_t *state,
+       const flexcan_user_config_t *data);
+# 493 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_Deinit(uint8_t instance);
+# 506 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_SetTDCOffset(uint8_t instance, int enable, uint8_t offset);
+# 516 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+uint8_t FLEXCAN_DRV_GetTDCValue(uint8_t instance);
+# 526 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+int FLEXCAN_DRV_GetTDCFail(uint8_t instance);
+
+
+
+
+
+
+void FLEXCAN_DRV_ClearTDCFail(uint8_t instance);
+# 553 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_ConfigTxMb(
+    uint8_t instance,
+    uint8_t mb_idx,
+    const flexcan_data_info_t *tx_info,
+    uint32_t msg_id);
+# 576 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_SendBlocking(
+    uint8_t instance,
+    uint8_t mb_idx,
+    const flexcan_data_info_t *tx_info,
+    uint32_t msg_id,
+    const uint8_t *mb_data,
+    uint32_t timeout_ms);
+# 600 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_Send(
+    uint8_t instance,
+    uint8_t mb_idx,
+    const flexcan_data_info_t *tx_info,
+    uint32_t msg_id,
+    const uint8_t *mb_data);
+# 624 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_ConfigRxMb(
+    uint8_t instance,
+    uint8_t mb_idx,
+    const flexcan_data_info_t *rx_info,
+    uint32_t msg_id);
+# 646 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_ConfigRxFifo(
+    uint8_t instance,
+    flexcan_rx_fifo_id_element_format_t id_format,
+    const flexcan_id_table_t *id_filter_table);
+# 666 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_ReceiveBlocking(
+    uint8_t instance,
+    uint8_t mb_idx,
+    flexcan_msgbuff_t *data,
+    uint32_t timeout_ms);
+# 686 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_Receive(
+    uint8_t instance,
+    uint8_t mb_idx,
+    flexcan_msgbuff_t *data);
+# 705 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_RxFifoBlocking(
+    uint8_t instance,
+    flexcan_msgbuff_t *data,
+    uint32_t timeout_ms);
+# 723 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_RxFifo(
+    uint8_t instance,
+    flexcan_msgbuff_t *data);
+# 742 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_AbortTransfer(uint8_t instance, uint8_t mb_idx);
+# 755 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+status_t FLEXCAN_DRV_GetTransferStatus(uint8_t instance, uint8_t mb_idx);
+# 771 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_InstallEventCallback(uint8_t instance,
+                                      flexcan_callback_t callback,
+                                      void *callbackParam);
+# 791 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_ConfigPN(uint8_t instance, int enable, const flexcan_pn_config_t *pnConfig);
+# 800 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/flexcan_driver.h"
+void FLEXCAN_DRV_GetWMB(uint8_t instance, uint8_t wmbIndex, flexcan_msgbuff_t *wmb);
+# 29 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h" 2
+# 45 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+typedef enum {
+    CAN_NORMAL_MODE = 0U,
+    CAN_LOOPBACK_MODE = 2U,
+    CAN_DISABLE_MODE = 4U
+} can_operation_modes_t;
+
+
+
+
+typedef enum {
+    CAN_PAYLOAD_SIZE_8 = 0,
+    CAN_PAYLOAD_SIZE_16 ,
+    CAN_PAYLOAD_SIZE_32 ,
+    CAN_PAYLOAD_SIZE_64
+} can_fd_payload_size_t;
+
+
+
+
+typedef struct {
+    uint32_t propSeg;
+    uint32_t phaseSeg1;
+    uint32_t phaseSeg2;
+    uint32_t preDivider;
+    uint32_t rJumpwidth;
+} can_time_segment_t;
+
+
+
+
+typedef enum {
+    CAN_NOMINAL_BITRATE,
+    CAN_FD_DATA_BITRATE
+} can_bitrate_phase_t;
+
+
+
+
+typedef enum {
+    CAN_MSG_ID_STD,
+    CAN_MSG_ID_EXT
+} can_msg_id_type_t;
+
+
+
+
+typedef enum {
+    CAN_CLK_SOURCE_OSC = 0U,
+    CAN_CLK_SOURCE_PERIPH = 1U
+} can_clk_source_t;
+
+
+
+
+typedef struct {
+    int enableFD;
+    int enableBRS;
+    uint8_t fdPadding;
+
+    can_msg_id_type_t idType;
+    int isRemote;
+} can_buff_config_t;
+
+
+
+
+typedef struct {
+ uint32_t cs;
+    uint32_t id;
+    uint8_t data[64];
+    uint8_t length;
+} can_message_t;
+
+
+
+
+typedef struct
+{
+    uint32_t maxBuffNum;
+    can_operation_modes_t mode;
+    can_clk_source_t peClkSrc;
+    int enableFD;
+    can_fd_payload_size_t payloadSize;
+    can_time_segment_t nominalBitrate;
+    can_time_segment_t dataBitrate;
+    void *extension;
+
+} can_user_config_t;
+
+
+
+
+
+typedef struct
+{
+    flexcan_rx_fifo_id_filter_num_t numIdFilters;
+    flexcan_rx_fifo_id_element_format_t idFormat;
+    flexcan_id_table_t *idFilterTable;
+} extension_flexcan_rx_fifo_t;
+# 160 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_Init(can_instance_t instance, const can_user_config_t *config);
+# 171 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_Deinit(can_instance_t instance);
+# 184 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_SetBitrate(can_instance_t instance,
+                        can_bitrate_phase_t phase,
+                        const can_time_segment_t *bitTiming);
+# 199 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_GetBitrate(can_instance_t instance,
+                        can_bitrate_phase_t phase,
+                        can_time_segment_t *bitTiming);
+# 215 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_ConfigTxBuff(can_instance_t instance,
+                          uint32_t buffIdx,
+                          const can_buff_config_t *config);
+# 232 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_ConfigRxBuff(can_instance_t instance,
+                          uint32_t buffIdx,
+                          const can_buff_config_t *config,
+                          uint32_t acceptedId);
+# 252 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_Send(can_instance_t instance,
+                  uint32_t buffIdx,
+                  const can_message_t *message);
+# 272 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_SendBlocking(can_instance_t instance,
+                          uint32_t buffIdx,
+                          const can_message_t *message,
+                          uint32_t timeoutMs);
+# 292 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_Receive(can_instance_t instance,
+                     uint32_t buffIdx,
+                     can_message_t *message);
+# 312 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_ReceiveBlocking(can_instance_t instance,
+                             uint32_t buffIdx,
+                             can_message_t *message,
+                             uint32_t timeoutMs);
+# 330 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_SetRxFilter(can_instance_t instance,
+                         can_msg_id_type_t idType,
+                         uint32_t buffIdx,
+                         uint32_t mask);
+# 347 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_GetTransferStatus(can_instance_t instance, uint32_t buffIdx);
+# 358 "D:/QLS/QLS100_S32K_X001/SDK/platform/pal/can/inc/can_pal.h"
+status_t CAN_InstallEventCallback(can_instance_t instance,
+                                  can_callback_t callback,
+                                  void *callbackParam);
+# 13 "D:/s32dsworkspace/QLS/common/canheader2.h" 2
+# 72 "D:/QLS/QLS100_S32K_X001/Generated_Code/can_pal1.h" 2
+
+extern const can_instance_t can_pal1_instance;
+
+
+extern const can_user_config_t can_pal1_Config0;
+# 74 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h" 1
+# 63 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h"
+#define adConv1_H 
+# 76 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h"
+# 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h" 1
+# 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+#define ADC_DRIVER_H 
+# 60 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+typedef enum
+{
+    ADC_CLK_DIVIDE_1 = 0x00U,
+    ADC_CLK_DIVIDE_2 = 0x01U,
+    ADC_CLK_DIVIDE_4 = 0x02U,
+    ADC_CLK_DIVIDE_8 = 0x03U
+} adc_clk_divide_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_RESOLUTION_8BIT = 0x00U,
+    ADC_RESOLUTION_12BIT = 0x01U,
+    ADC_RESOLUTION_10BIT = 0x02U
+} adc_resolution_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_CLK_ALT_1 = 0x00U,
+    ADC_CLK_ALT_2 = 0x01U,
+    ADC_CLK_ALT_3 = 0x02U,
+    ADC_CLK_ALT_4 = 0x03U
+} adc_input_clock_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_TRIGGER_SOFTWARE = 0x00U,
+    ADC_TRIGGER_HARDWARE = 0x01U
+} adc_trigger_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_PRETRIGGER_SEL_PDB = 0x00U,
+    ADC_PRETRIGGER_SEL_TRGMUX = 0x01U,
+    ADC_PRETRIGGER_SEL_SW = 0x02U
+} adc_pretrigger_sel_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_TRIGGER_SEL_PDB = 0x00U,
+    ADC_TRIGGER_SEL_TRGMUX = 0x01U
+} adc_trigger_sel_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_SW_PRETRIGGER_DISABLED = 0x00U,
+    ADC_SW_PRETRIGGER_0 = 0x04U,
+    ADC_SW_PRETRIGGER_1 = 0x05U,
+    ADC_SW_PRETRIGGER_2 = 0x06U,
+    ADC_SW_PRETRIGGER_3 = 0x07U
+} adc_sw_pretrigger_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_VOLTAGEREF_VREF = 0x00U,
+    ADC_VOLTAGEREF_VALT = 0x01U
+} adc_voltage_reference_t;
+
+
+
+
+
+
+typedef enum
+{
+    ADC_AVERAGE_4 = 0x00U,
+    ADC_AVERAGE_8 = 0x01U,
+    ADC_AVERAGE_16 = 0x02U,
+    ADC_AVERAGE_32 = 0x03U
+} adc_average_t;
+# 180 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+typedef enum
+{
+    ADC_INPUTCHAN_EXT0 = 0x00U,
+    ADC_INPUTCHAN_EXT1 = 0x01U,
+
+
+
+    ADC_INPUTCHAN_EXT3 = 0x03U,
+    ADC_INPUTCHAN_EXT4 = 0x04U,
+    ADC_INPUTCHAN_EXT5 = 0x05U,
+    ADC_INPUTCHAN_EXT6 = 0x06U,
+    ADC_INPUTCHAN_EXT7 = 0x07U,
+
+
+
+    ADC_INPUTCHAN_EXT9 = 0x09U,
+    ADC_INPUTCHAN_EXT10 = 0x0AU,
+    ADC_INPUTCHAN_EXT11 = 0x0BU,
+    ADC_INPUTCHAN_EXT12 = 0x0CU,
+    ADC_INPUTCHAN_EXT13 = 0x0DU,
+    ADC_INPUTCHAN_EXT14 = 0x0EU,
+# 225 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+    ADC_INPUTCHAN_DISABLED = 0x1Fu,
+
+    ADC_INPUTCHAN_INT0 = 0x15,
+    ADC_INPUTCHAN_INT1 = 0x16,
+    ADC_INPUTCHAN_INT2 = 0x17,
+    ADC_INPUTCHAN_INT3 = 0x1C,
+
+    ADC_INPUTCHAN_TEMP = 0x1A,
+    ADC_INPUTCHAN_BANDGAP = 0x1B,
+    ADC_INPUTCHAN_VREFSH = 0x1D,
+    ADC_INPUTCHAN_VREFSL = 0x1E,
+
+    ADC_INPUTCHAN_SUPPLY_VDD = 0xF00U,
+    ADC_INPUTCHAN_SUPPLY_VDDA = 0xF01U,
+    ADC_INPUTCHAN_SUPPLY_VREFH = 0xF02U,
+    ADC_INPUTCHAN_SUPPLY_VDD_3V = 0xF03U,
+    ADC_INPUTCHAN_SUPPLY_VDD_FLASH_3V = 0xF04U,
+    ADC_INPUTCHAN_SUPPLY_VDD_LV = 0xF05U
+} adc_inputchannel_t;
+# 252 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+typedef struct
+{
+    adc_clk_divide_t clockDivide;
+    uint8_t sampleTime;
+    adc_resolution_t resolution;
+    adc_input_clock_t inputClock;
+    adc_trigger_t trigger;
+    adc_pretrigger_sel_t pretriggerSel;
+    adc_trigger_sel_t triggerSel;
+    int dmaEnable;
+    adc_voltage_reference_t voltageRef;
+    int continuousConvEnable;
+    int supplyMonitoringEnable;
+} adc_converter_config_t;
+# 275 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+typedef struct
+{
+    int compareEnable;
+    int compareGreaterThanEnable;
+    int compareRangeFuncEnable;
+    uint16_t compVal1;
+    uint16_t compVal2;
+} adc_compare_config_t;
+# 292 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+typedef struct
+{
+    int hwAvgEnable;
+    adc_average_t hwAverage;
+} adc_average_config_t;
+# 306 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+typedef struct
+{
+    int interruptEnable;
+    adc_inputchannel_t channel;
+} adc_chan_config_t;
+# 320 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+typedef struct
+{
+    uint16_t userGain;
+    uint16_t userOffset;
+} adc_calibration_t;
+
+
+
+
+
+typedef enum
+{
+    ADC_LATCH_CLEAR_WAIT,
+    ADC_LATCH_CLEAR_FORCE
+} adc_latch_clear_t;
+# 361 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_InitConverterStruct(adc_converter_config_t * const config);
+# 372 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_ConfigConverter(const uint32_t instance,
+                             const adc_converter_config_t * const config);
+# 384 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_GetConverterConfig(const uint32_t instance,
+                                adc_converter_config_t * const config);
+# 419 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_InitHwCompareStruct(adc_compare_config_t * const config);
+# 431 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_ConfigHwCompare(const uint32_t instance,
+                             const adc_compare_config_t * const config);
+# 443 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_GetHwCompareConfig(const uint32_t instance,
+                                adc_compare_config_t * const config);
+# 467 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_InitHwAverageStruct(adc_average_config_t * const config);
+# 479 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_ConfigHwAverage(const uint32_t instance,
+                             const adc_average_config_t * const config);
+# 491 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_GetHwAverageConfig(const uint32_t instance,
+                                adc_average_config_t * const config);
+# 513 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_InitChanStruct(adc_chan_config_t * const config);
+# 530 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_ConfigChan(const uint32_t instance,
+                        const uint8_t chanIndex,
+                        const adc_chan_config_t * const config);
+# 544 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_GetChanConfig(const uint32_t instance,
+                           const uint8_t chanIndex,
+                           adc_chan_config_t * const config);
+
+
+
+
+
+
+
+void ADC_DRV_SetSwPretrigger(const uint32_t instance,
+                             const adc_sw_pretrigger_t swPretrigger);
+# 591 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_Reset(const uint32_t instance);
+# 601 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_WaitConvDone(const uint32_t instance);
+# 615 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+int ADC_DRV_GetConvCompleteFlag(const uint32_t instance,
+                                 const uint8_t chanIndex);
+# 643 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_GetChanResult(const uint32_t instance,
+                           const uint8_t chanIndex,
+                           uint16_t * const result);
+# 670 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_AutoCalibration(const uint32_t instance);
+# 684 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_InitUserCalibrationStruct(adc_calibration_t * const config);
+# 696 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_ConfigUserCalibration(const uint32_t instance,
+                                   const adc_calibration_t * const config);
+# 708 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_GetUserCalibration(const uint32_t instance,
+                                adc_calibration_t * const config);
+# 728 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+IRQn_Type ADC_DRV_GetInterruptNumber(const uint32_t instance);
+# 749 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_ClearLatchedTriggers(const uint32_t instance,
+                                  const adc_latch_clear_t clearMode);
+# 759 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+void ADC_DRV_ClearTriggerErrors(const uint32_t instance);
+# 769 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/adc_driver.h"
+uint32_t ADC_DRV_GetTriggerErrorFlags(const uint32_t instance);
+# 77 "D:/QLS/QLS100_S32K_X001/Generated_Code/adConv1.h" 2
+
+
+#define INST_ADCONV1 0U
+
+
+extern const adc_converter_config_t adConv1_ConvConfig0;
+
+
+extern const adc_chan_config_t adConv1_ChnConfig0;
+extern const adc_chan_config_t adConv1_ChnConfig1;
+extern const adc_chan_config_t adConv1_ChnConfig2;
+# 75 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 1 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h" 1
+# 59 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h"
+#define pdly1_H 
+# 72 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h"
+# 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h" 1
+# 20 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+#define PDB_DRIVER_H 
+# 45 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+typedef enum
+{
+    PDB_LOAD_VAL_IMMEDIATELY = 0U,
+
+    PDB_LOAD_VAL_AT_MODULO_COUNTER = 1U,
+
+    PDB_LOAD_VAL_AT_NEXT_TRIGGER = 2U,
+
+    PDB_LOAD_VAL_AT_MODULO_COUNTER_OR_NEXT_TRIGGER = 3U
+
+} pdb_load_value_mode_t;
+
+
+
+
+
+typedef enum
+{
+    PDB_CLK_PREDIV_BY_1 = 0U,
+    PDB_CLK_PREDIV_BY_2 = 1U,
+    PDB_CLK_PREDIV_BY_4 = 2U,
+    PDB_CLK_PREDIV_BY_8 = 3U,
+    PDB_CLK_PREDIV_BY_16 = 4U,
+    PDB_CLK_PREDIV_BY_32 = 5U,
+    PDB_CLK_PREDIV_BY_64 = 6U,
+    PDB_CLK_PREDIV_BY_128 = 7U
+} pdb_clk_prescaler_div_t;
+# 80 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+typedef enum
+{
+    PDB_TRIGGER_IN0 = 0U,
+    PDB_SOFTWARE_TRIGGER = 15U
+} pdb_trigger_src_t;
+
+
+
+
+
+
+
+typedef enum
+{
+    PDB_CLK_PREMULT_FACT_AS_1 = 0U,
+    PDB_CLK_PREMULT_FACT_AS_10 = 1U,
+    PDB_CLK_PREMULT_FACT_AS_20 = 2U,
+    PDB_CLK_PREMULT_FACT_AS_40 = 3U
+} pdb_clk_prescaler_mult_factor_t;
+
+
+
+
+
+
+
+typedef struct
+{
+    pdb_load_value_mode_t loadValueMode;
+    int seqErrIntEnable;
+    pdb_clk_prescaler_div_t clkPreDiv;
+    pdb_clk_prescaler_mult_factor_t clkPreMultFactor;
+    pdb_trigger_src_t triggerInput;
+    int continuousModeEnable;
+    int dmaEnable;
+    int intEnable;
+} pdb_timer_config_t;
+
+
+
+
+
+
+typedef struct
+{
+    uint32_t adcPreTriggerIdx;
+    int preTriggerEnable;
+    int preTriggerOutputEnable;
+    int preTriggerBackToBackEnable;
+} pdb_adc_pretrigger_config_t;
+# 146 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_Init(const uint32_t instance,
+                  const pdb_timer_config_t * userConfigPtr);
+# 157 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_Deinit(const uint32_t instance);
+# 171 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_GetDefaultConfig(pdb_timer_config_t * const config);
+# 180 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_Enable(const uint32_t instance);
+# 189 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_Disable(const uint32_t instance);
+# 200 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_SoftTriggerCmd(const uint32_t instance);
+# 210 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+uint32_t PDB_DRV_GetTimerValue(const uint32_t instance);
+# 220 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+int PDB_DRV_GetTimerIntFlag(const uint32_t instance);
+# 229 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_ClearTimerIntFlag(const uint32_t instance);
+# 238 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_LoadValuesCmd(const uint32_t instance);
+# 248 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_SetTimerModulusValue(const uint32_t instance,
+                                  const uint16_t value);
+# 259 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_SetValueForTimerInterrupt(const uint32_t instance,
+                                       const uint16_t value);
+# 271 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_ConfigAdcPreTrigger(const uint32_t instance,
+                                 const uint32_t chn,
+                                 const pdb_adc_pretrigger_config_t * configPtr);
+# 285 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+uint32_t PDB_DRV_GetAdcPreTriggerFlags(const uint32_t instance,
+                                       const uint32_t chn,
+                                       const uint32_t preChnMask);
+# 298 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_ClearAdcPreTriggerFlags(const uint32_t instance,
+                                     const uint32_t chn,
+                                     const uint32_t preChnMask);
+# 312 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+uint32_t PDB_DRV_GetAdcPreTriggerSeqErrFlags(const uint32_t instance,
+                                             const uint32_t chn,
+                                             const uint32_t preChnMask);
+# 325 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_ClearAdcPreTriggerSeqErrFlags(const uint32_t instance,
+                                           const uint32_t chn,
+                                           const uint32_t preChnMask);
+# 339 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_SetAdcPreTriggerDelayValue(const uint32_t instance,
+                                        const uint32_t chn,
+                                        const uint32_t preChn,
+                                        const uint32_t value);
+# 353 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_SetCmpPulseOutEnable(const uint32_t instance,
+                                  const uint32_t pulseChnMask,
+                                  int enable);
+# 366 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_SetCmpPulseOutDelayForHigh(const uint32_t instance,
+                                        const uint32_t pulseChn,
+                                        const uint32_t value);
+# 379 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/S32SDK_S32K116_EAR_1.8.7/platform/drivers/inc/pdb_driver.h"
+void PDB_DRV_SetCmpPulseOutDelayForLow(const uint32_t instance,
+                                       const uint32_t pulseChn,
+                                       const uint32_t value);
+# 73 "D:/QLS/QLS100_S32K_X001/Generated_Code/pdly1.h" 2
+
+#define INST_PDLY1 (0U)
+
+
+extern const pdb_adc_pretrigger_config_t pdly1_AdcTrigInitConfig0;
+extern const pdb_adc_pretrigger_config_t pdly1_AdcTrigInitConfig1;
+extern const pdb_adc_pretrigger_config_t pdly1_AdcTrigInitConfig2;
+
+
+extern const pdb_timer_config_t pdly1_InitConfig0;
+# 76 "D:/QLS/QLS100_S32K_X001/Generated_Code/Cpu.h" 2
+# 58 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h" 2
+# 80 "D:/QLS/QLS100_S32K_X001/Generated_Code/clockMan1.h"
 extern clock_manager_user_config_t clockMan1_InitConfig0;
 
 
@@ -14034,7 +15099,7 @@ extern peripheral_clock_config_t peripheralClockConfig0[];
 
 
 extern clock_manager_callback_user_config_t *g_clockManCallbacksArr[];
-# 73 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Generated_Code/lpspiCom1.h" 2
+# 73 "D:/QLS/QLS100_S32K_X001/Generated_Code/lpspiCom1.h" 2
 
 
 
@@ -14048,10 +15113,13 @@ extern lpspi_state_t lpspiCom1State;
 
 extern const lpspi_slave_config_t lpspiCom1_SlaveConfig0;
 # 9 "D:/s32dsworkspace/QLS/common/common.h" 2
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/include/S32K116.h" 1
+# 1 "D:/QLS/QLS100_S32K_X001/include/S32K116.h" 1
 # 10 "D:/s32dsworkspace/QLS/common/common.h" 2
-# 1 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Sources/spi_comm.h" 1
-# 10 "D:/s32dsworkspace/QLS/lpspi_transfer_slave_s32k116/Sources/spi_comm.h"
+# 1 "D:/QLS/QLS100_S32K_X001/Sources/spi_comm.h" 1
+
+
+
+
 #define SOURCES_SPI_COMM_H_ 
 
 #define SRESULTS_LEN sizeof(qls_results_members)
@@ -14105,7 +15173,7 @@ uint8_t spi_comm_Spi_Transfer(void);
 #define DO_HV_STATUS_DIS 10U
 
 
-#define QLS_111 (1)
+
 
 
 
@@ -14124,13 +15192,13 @@ typedef struct QLS_RESULTS_CAL_MEMBERS {
 } qls_results_cal_members;
 typedef union QLS_RESULTS_CAL {
  qls_results_cal_members members;
-  uint8_t candata[sizeof(qls_results_cal_members)];
+  uint8_t rs8_candata[sizeof(qls_results_cal_members)];
 } qls_results_cal;
 qls_results_cal runion_qls_results;
 
 
 qls_results_cal sendresults;
-# 10 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.c" 2
+# 10 "D:/QLS/common/HW_Driver/CAN.c" 2
 #define CAN_Choose (((CAN_Type *)CAN_Addr))
 #define MSG_BUF_SIZE (4)
 #define ErrCode 1
@@ -14217,7 +15285,7 @@ uint8_t CAN_Tx_Call(uint32_t id, uint8_t *data, uint8_t len)
 {
  return CAN_Tx_Call_X(id, data, len, 1);
 }
-# 104 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.c"
+# 104 "D:/QLS/common/HW_Driver/CAN.c"
 void FLEXCAN_HAL_Disable(CAN_Type *base)
 {
  if ((void *)0 == base)
@@ -14234,7 +15302,7 @@ void FLEXCAN_HAL_Disable(CAN_Type *base)
   }
  }
 }
-# 154 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.c"
+# 154 "D:/QLS/common/HW_Driver/CAN.c"
 void J1939_FLEXCAN_DRV_Deinit(void)
 {
 
@@ -14251,7 +15319,7 @@ uint8_t J1939_CAN_Init(void)
  clockSrc->CAN_ch = (0);
  clockSrc->SampPoint = (8125);
  clockSrc->clockSrc = (0);
- clockSrc->clockspd = (8);
+ clockSrc->clockspd = (16);
  clockSrc->comm_spd = (250);
  if ((clockSrc->clockSrc != 0) && (clockSrc->clockSrc != 1))
   return 1;
@@ -14321,7 +15389,7 @@ uint8_t J1939_CAN_Init(void)
   (((CAN_Type *)CAN_Addr))->RXIMR[i] = 0xFFFFFFFF;
  }
  (((CAN_Type *)CAN_Addr))->RXMGMASK = 0x00;
-# 250 "D:/s32dsworkspace/QLS/common/HW_Driver/CAN.c"
+# 250 "D:/QLS/common/HW_Driver/CAN.c"
  (((CAN_Type *)CAN_Addr))->RAMn[5 * (4) + 0] = 0x04200000;
 
 

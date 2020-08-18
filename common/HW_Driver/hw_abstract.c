@@ -1,5 +1,5 @@
 #include "hw_abstract.h"
-
+#include "comm_mgt.h"
 //ISR---------------------------------------------------------------------------
 uint8_t u8_hw_ISRDisable(void)
 {
@@ -185,11 +185,13 @@ void timer_1ms_isr(void)
 {
 	static uint8_t u8_cnt = 0;
 	task_1ms_OK = 1;
+	u8_comm_task();
 	u8_cnt++;
 	if (0 == (u8_timer_cnt % 5))
 	{
 		task_5ms_OK = 1;
 		u8_cnt = 0;
+
 	}
 	if (u8_timer_cnt >=100)
 	{
@@ -227,7 +229,8 @@ uint8_t u8_hw_Timer_Init(func_v_v _func)
 	/* SW_RST=0: SW reset does not reset timer chans, regs */
 	/* M_CEN=1: enable module clk (allows writing other LPIT0 regs) */
 	LPIT0->MIER |= LPIT_MIER_TIE0_MASK;				 /* TIE0=1: Timer Interrupt Enabled fot Chan 0 */
-	LPIT0->TMR[0].TVAL = 24000U;					 /* Timeout period: 1k clocks */
+	LPIT0->TMR[0].TVAL = 48000U;					 /* Timeout period: 1k clocks */
+//	LPIT0->TMR[0].TVAL = 24000U;					 /* Timeout period: 1k clocks */
 	LPIT0->TMR[0].TCTRL |= LPIT_TMR_TCTRL_T_EN_MASK; /* T_EN=1: Timer channel is enabled */
 	/* CHAIN=0: channel chaining is disabled */
 	/* MODE=0: 32 periodic counter mode */

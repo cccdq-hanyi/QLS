@@ -1,5 +1,5 @@
-# 1 "D:/s32dsworkspace/QLS/common/Comm_Mgt/Int_Mgt/Int_para.c"
-# 1 "D:\\s32dsworkspace\\QLS\\lpspi_transfer_slave_s32k116\\Debug_FLASH//"
+# 1 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_para.c"
+# 1 "D:\\QLS\\QLS100_S32K_X001\\Debug_FLASH//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 199901L
@@ -309,6 +309,7 @@
 #define __USER_LABEL_PREFIX__ 
 #define __GNUC_STDC_INLINE__ 1
 #define __STRICT_ANSI__ 1
+#define __CHAR_UNSIGNED__ 1
 #define __GCC_ATOMIC_BOOL_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR_LOCK_FREE 1
 #define __GCC_ATOMIC_CHAR16_T_LOCK_FREE 1
@@ -349,8 +350,8 @@
 #define __USES_INITFINI__ 1
 #define CPU_S32K116 1
 #define DEV_ERROR_DETECT 1
-# 1 "D:/s32dsworkspace/QLS/common/Comm_Mgt/Int_Mgt/Int_para.c"
-# 1 "D:/s32dsworkspace/QLS/common/Comm_Mgt/Int_Mgt/Int_para.h" 1
+# 1 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_para.c"
+# 1 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_para.h" 1
 
 #define _int_para_h 
 
@@ -358,7 +359,7 @@
 
 
 
-# 1 "D:/s32dsworkspace/QLS/common/typedef_all.h" 1
+# 1 "D:/QLS/QLS100_S32K_X001/Sources/typedef_all.h" 1
 
 #define typedef_all_h 
 # 1 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 1
@@ -828,8 +829,8 @@
 
 
 #define _EWL_SIZEOF_LONG_LONG 8
-# 52 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
-#define _EWL_UNSIGNED_CHAR 0
+# 50 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
+#define _EWL_UNSIGNED_CHAR 1
 # 61 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/limits_api.h"
 #define _EWL_SCHAR_MAX 0x7f
 #define _EWL_UCHAR_MAX 0xff
@@ -837,11 +838,11 @@
 #define _EWL_SCHAR_MIN (-_EWL_SCHAR_MAX - 1)
 
 
+#define _EWL_CHAR_MIN 0
+#define _EWL_CHAR_MAX _EWL_UCHAR_MAX
 
 
 
-#define _EWL_CHAR_MIN _EWL_SCHAR_MIN
-#define _EWL_CHAR_MAX _EWL_SCHAR_MAX
 
 
 
@@ -1116,8 +1117,8 @@ typedef uint32_t uintptr_t;
 #define INTMAX_C(value) value ## LL
 #define UINTMAX_C(value) value ## ULL
 # 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/stdint.h" 2
-# 4 "D:/s32dsworkspace/QLS/common/typedef_all.h" 2
-# 32 "D:/s32dsworkspace/QLS/common/typedef_all.h"
+# 4 "D:/QLS/QLS100_S32K_X001/Sources/typedef_all.h" 2
+# 32 "D:/QLS/QLS100_S32K_X001/Sources/typedef_all.h"
 #define TRUE (1)
 
 
@@ -1126,8 +1127,8 @@ typedef uint32_t uintptr_t;
 
 
 typedef void (*func_v_v)(void);
-# 9 "D:/s32dsworkspace/QLS/common/Comm_Mgt/Int_Mgt/Int_para.h" 2
-# 1 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h" 1
+# 9 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_para.h" 2
+# 1 "d:\\qls\\common\\node_mgt\\node_para.h" 1
 
 #define _node_mbd_para_h 
 
@@ -1361,12 +1362,12 @@ typedef void (*func_v_v)(void);
 # 327 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/cstring"
 
 # 18 "C:/NXP/S32DS_ARM_v2018.R1/S32DS/arm_ewl2/EWL_C/include/string.h" 2
-# 8 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h" 2
+# 8 "d:\\qls\\common\\node_mgt\\node_para.h" 2
 
-# 1 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_cfg.h" 1
+# 1 "d:\\qls\\common\\node_mgt\\node_cfg.h" 1
 
 #define _node_cfg_h 
-# 11 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_cfg.h"
+# 11 "d:\\qls\\common\\node_mgt\\node_cfg.h"
 #define node_task_period (1)
 #define int_task_period (1)
 #define comm_task_period (1)
@@ -1388,7 +1389,7 @@ typedef void (*func_v_v)(void);
 
 #define _CAN_Ch (0)
 #define _CAN_Speed (250)
-#define _CAN_ClockSpeed (8)
+#define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
 
 #define _CAN_SamplePoint (8125)
@@ -1398,7 +1399,7 @@ typedef void (*func_v_v)(void);
 
 #define comm_user_rx 
 #define comm_user_tx 
-# 10 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h" 2
+# 10 "d:\\qls\\common\\node_mgt\\node_para.h" 2
 
 #define subs_fixed (1)
 #define subs_last (2)
@@ -1496,13 +1497,13 @@ typedef void (*func_v_v)(void);
   uint8_t Event_tx_num;
   MsgBuffer Buffer;
  } msg_struct, *pmsg_struct;
-# 168 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h"
+# 168 "d:\\qls\\common\\node_mgt\\node_para.h"
  typedef struct
  {
   uint8_t run_status;
   uint8_t comm_status;
   uint8_t u8_Dcomm_status;
-# 183 "d:\\s32dsworkspace\\qls\\common\\node_mgt\\node_para.h"
+# 183 "d:\\qls\\common\\node_mgt\\node_para.h"
   u8_SigInfo_Struct Frame_Tx_1_Temp;
   u8_SigInfo_Struct Frame_Tx_1_Conc;
   u8_SigInfo_Struct Frame_Tx_1_Temp_Pre;
@@ -1523,7 +1524,7 @@ typedef void (*func_v_v)(void);
  } node_info_struct;
 
  extern node_info_struct node_info;
-# 10 "D:/s32dsworkspace/QLS/common/Comm_Mgt/Int_Mgt/Int_para.h" 2
+# 10 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_para.h" 2
 
 #define int_msg_init (0)
 #define int_msg_txing (1)
@@ -1537,6 +1538,6 @@ typedef void (*func_v_v)(void);
  } IntInfo_Struct;
 
  extern IntInfo_Struct IntInfo;
-# 2 "D:/s32dsworkspace/QLS/common/Comm_Mgt/Int_Mgt/Int_para.c" 2
+# 2 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_para.c" 2
 
 IntInfo_Struct IntInfo;

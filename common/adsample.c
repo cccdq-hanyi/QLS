@@ -59,7 +59,7 @@ void adsample_ADC_IRQHandler(void)
     ADC_DRV_GetChanResult(INST_ADCONV1, 0U, (uint16_t *)&adcRawValue);
     /* Set ADC conversion complete flag */
     adcConvDone = true;
-    FMSTR_Recorder();
+//    FMSTR_Recorder();
     return;
 }
 
