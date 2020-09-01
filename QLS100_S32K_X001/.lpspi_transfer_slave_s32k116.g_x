@@ -26,7 +26,7 @@
       <File Name="SDK/platform/drivers/src/clock/S32K1xx/sim_hw_access.h" FileDate="2020-03-22, 20:28:16" FileAge="1584880096600" FileType="262144" />
       <File Name="SDK/platform/devices/common/s32_core_cm0.h" FileDate="2020-03-22, 20:28:16" FileAge="1584880096370" FileType="262144" />
       <File Name="SDK/platform/drivers/inc/adc_driver.h" FileDate="2020-03-22, 20:28:16" FileAge="1584880096540" FileType="262144" />
-      <File Name="Sources/main.c" FileDate="2020-08-18, 14:09:44" FileAge="1597730984858" FileType="128" />
+      <File Name="Sources/main.c" FileDate="2020-08-27, 11:35:11" FileAge="1598499311198" FileType="128" />
       <File Name="SDK/platform/drivers/src/pins/pins_port_hw_access.c" FileDate="2020-03-22, 20:28:16" FileAge="1584880096860" FileType="262144" />
       <File Name="SDK/platform/drivers/src/interrupt/interrupt_manager.c" FileDate="2020-03-22, 20:28:16" FileAge="1584880096780" FileType="262144" />
       <File Name="SDK/platform/pal/can/src/can_pal.c" FileDate="2020-03-22, 20:28:16" FileAge="1584880096910" FileType="262144" />
@@ -104,5 +104,5 @@
       <File Name="SDK/platform/drivers/src/lpspi/lpspi_slave_driver.c" FileDate="2020-03-22, 20:28:16" FileAge="1584880096800" FileType="262144" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>112</CodeGenReference>
+  <CodeGenReference>114</CodeGenReference>
 </CodeGenerationInfo>

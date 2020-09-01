@@ -332,7 +332,8 @@ J1939_CAN_Init:
 	mov	r2, #16
 	strb	r2, [r3, #3]
 	.loc 1 171 0
-	add	r2, r2, #234
+	add	r2, r2, #229
+	add	r2, r2, #255
 	strh	r2, [r3]
 	.loc 1 176 0
 	ldr	r2, .L52+8
@@ -441,9 +442,9 @@ J1939_CAN_Init:
 .LVL21:
 	.loc 1 196 0
 	cmp	r3, #0
-	bne	.LCB380
+	bne	.LCB381
 	b	.L43	@long jump
-.LCB380:
+.LCB381:
 .LVL22:
 .L27:
 	.loc 1 193 0
@@ -466,9 +467,9 @@ J1939_CAN_Init:
 .LVL27:
 	.loc 1 205 0
 	cmp	r4, r6
-	bne	.LCB408
+	bne	.LCB409
 	b	.L44	@long jump
-.LCB408:
+.LCB409:
 .LVL28:
 .L42:
 	.loc 1 207 0
@@ -28499,7 +28500,7 @@ CAN_Addr:
 	.uleb128 0xd
 	.4byte	.LASF7965
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.cedbde0e4b4559e582dbd0eb61a2a991,comdat
+	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.82c265112a2d658c69ce24ec9563a368,comdat
 .Ldebug_macro17:
 	.2byte	0x4
 	.byte	0
@@ -35763,6 +35764,8 @@ CAN_Addr:
 	.ascii	"_SR_FCF_SHIFT))&LPSPI_SR_FCF_MASK)\000"
 .LASF3962:
 	.ascii	"FTM_PWMLOAD_CH2SEL_SHIFT 2u\000"
+.LASF7981:
+	.ascii	"_CAN_Speed (500)\000"
 .LASF2873:
 	.ascii	"FLEXIO_PIN_PDI_WIDTH 8u\000"
 .LASF8553:
@@ -37258,8 +37261,6 @@ CAN_Addr:
 	.ascii	"SIM_FTMOPT1_FTM1CH0SEL_MASK 0x30u\000"
 .LASF3434:
 	.ascii	"FTM_OUTMASK_CH4OM_SHIFT 4u\000"
-.LASF7981:
-	.ascii	"_CAN_Speed (250)\000"
 .LASF6126:
 	.ascii	"MSCM_CPxCFG0_DCWY_WIDTH 8u\000"
 .LASF3661:

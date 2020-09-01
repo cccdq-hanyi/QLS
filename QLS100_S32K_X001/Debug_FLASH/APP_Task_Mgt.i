@@ -1410,7 +1410,7 @@ typedef void (*func_v_v)(void);
 
 
 #define _CAN_Ch (0)
-#define _CAN_Speed (250)
+#define _CAN_Speed (500)
 #define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
 
@@ -10889,7 +10889,7 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
     extern uint8_t u8_cancomm_TxOneFrame(void);
     extern uint8_t u8_cancomm_TxDirect(uint32_t id, uint8_t *data, uint8_t len);
 # 10 "d:\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 2
-
+extern uint8_t u8_int_Write_PGN64923_message(uint8_t *data,uint8_t len);
 
 
     extern uint8_t u8_int_Write_PGN64923_SPN3515(uint8_t val);
@@ -15250,24 +15250,24 @@ qls_results_cal runion_qls_results;
 qls_results_cal sendresults;
 # 5 "D:/QLS/common/APP/task/APP_Task_Mgt.c" 2
 
-
+extern float rf_Velocity;
 
 
 
 static uint8_t u8_task_Write_CanSigs(void)
 {
- uint8_t val = 0;
- uint8_t can_concen,can_temp;
- u8_int_Write_PGN64923_SPN3515(sendresults.members.ru8_temp_ultrasonic);
- u8_int_Write_PGN64923_SPN3516(sendresults.members.ru8_concentration);
- u8_int_Write_PGN64923_SPN3519(val);
- u8_int_Write_PGN64923_SPN3520(val);
- u8_int_Write_PGN64923_SPN3521(val);
- u8_int_Write_PGN65110_SPN1761(val);
- u8_int_Write_PGN65110_SPN3031(sendresults.members.ru8_temp_ultrasonic);
- u8_int_Write_PGN65110_SPN3517(sendresults.members.ru16_level);
- u8_int_Write_PGN65110_SPN3532(val);
- u8_int_Write_PGN65110_SPN4365(val);
+# 24 "D:/QLS/common/APP/task/APP_Task_Mgt.c"
+ uint8_t senddata[8];
+ uint8_t *vp=(uint8_t *)&rf_Velocity;
+ senddata[0] = sendresults.members.ru8_temp_ultrasonic;
+ senddata[1] = sendresults.members.ru8_concentration;
+ senddata[2] = sendresults.members.ru16_level & 0xff;
+ senddata[3] = sendresults.members.ru16_level >> 8;
+ senddata[4] = *vp++;
+ senddata[5] = *vp++;
+ senddata[6] = *vp++;
+ senddata[7] = *vp;
+ u8_int_Write_PGN64923_message(senddata,sizeof(senddata));
  return 0;
 }
 

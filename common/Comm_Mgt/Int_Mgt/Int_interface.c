@@ -1,6 +1,32 @@
 #include "Int_interface.h"
 
 //COMMON INTERFACE
+
+uint8_t u8_int_Write_PGN64923_message(uint8_t *data,uint8_t len)
+{
+	msg_struct *Pmsg;
+	uint8_t writelen = len > 8 ? 8 : len;
+	uint8_t i;
+	Pmsg = &node_info.msg_tx_ecu[Frame_Tx_1];
+	for (i=0;i<len;i++)
+	{
+		Pmsg->Buffer.Data[i] = data[i];
+	}
+	return 0;
+}
+
+uint8_t u8_int_Write_PGN65110_message(uint8_t *data,uint8_t len)
+{
+	msg_struct *Pmsg;
+	uint8_t writelen = len > 8 ? 8 : len;
+	uint8_t i;
+	Pmsg = &node_info.msg_tx_ecu[Frame_Tx_2];
+	for (i=0;i<len;i++)
+	{
+		Pmsg->Buffer.Data[i] = data[i];
+	}
+	return 0;
+}
 //read normal msg ----------------------------------------------------------------------------------
 //write normal msg ---------------------------------------------------------------------------------
 uint8_t u8_int_Write_PGN64923_SPN3515(uint8_t val)

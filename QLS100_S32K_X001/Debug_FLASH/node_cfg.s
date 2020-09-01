@@ -1540,7 +1540,7 @@ u8_appl_dllcanRx:
 	.byte	0x4
 	.byte	0x4
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.cedbde0e4b4559e582dbd0eb61a2a991,comdat
+	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.82c265112a2d658c69ce24ec9563a368,comdat
 .Ldebug_macro1:
 	.2byte	0x4
 	.byte	0
@@ -2327,6 +2327,8 @@ u8_appl_dllcanRx:
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
 .LASF145:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
+.LASF363:
+	.ascii	"_CAN_Speed (500)\000"
 .LASF427:
 	.ascii	"_EWL_LONGLONG 1\000"
 .LASF179:
@@ -2797,8 +2799,8 @@ u8_appl_dllcanRx:
 	.ascii	"__UACCUM_IBIT__ 16\000"
 .LASF123:
 	.ascii	"__DEC_EVAL_METHOD__ 2\000"
-.LASF363:
-	.ascii	"_CAN_Speed (250)\000"
+.LASF142:
+	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF234:
 	.ascii	"__USACCUM_IBIT__ 8\000"
 .LASF92:
@@ -3516,8 +3518,6 @@ u8_appl_dllcanRx:
 	.ascii	"_EWL_SIZEOF_LONG_LONG 8\000"
 .LASF220:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
-.LASF142:
-	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF488:
 	.ascii	"__global() \000"
 .LASF227:

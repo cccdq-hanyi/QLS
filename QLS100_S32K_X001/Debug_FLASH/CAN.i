@@ -10566,7 +10566,7 @@ typedef void (*func_v_v)(void);
 
 
 #define _CAN_Ch (0)
-#define _CAN_Speed (250)
+#define _CAN_Speed (500)
 #define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
 
@@ -10814,7 +10814,7 @@ extern void v_wtd_SysReset(void);
 # 9 "d:\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 2
 # 1 "d:\\qls\\common\\comm_mgt\\can_com\\can_com.h" 1
 # 10 "d:\\qls\\common\\comm_mgt\\int_mgt\\int_interface.h" 2
-
+extern uint8_t u8_int_Write_PGN64923_message(uint8_t *data,uint8_t len);
 
 
     extern uint8_t u8_int_Write_PGN64923_SPN3515(uint8_t val);
@@ -15320,7 +15320,7 @@ uint8_t J1939_CAN_Init(void)
  clockSrc->SampPoint = (8125);
  clockSrc->clockSrc = (0);
  clockSrc->clockspd = (16);
- clockSrc->comm_spd = (250);
+ clockSrc->comm_spd = (500);
  if ((clockSrc->clockSrc != 0) && (clockSrc->clockSrc != 1))
   return 1;
  if (clockSrc->SampPoint < 100)

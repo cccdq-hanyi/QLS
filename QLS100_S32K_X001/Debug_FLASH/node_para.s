@@ -3258,7 +3258,7 @@ FrameTx:
 	.uleb128 0x24
 	.4byte	.LASF584
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.cedbde0e4b4559e582dbd0eb61a2a991,comdat
+	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.82c265112a2d658c69ce24ec9563a368,comdat
 .Ldebug_macro12:
 	.2byte	0x4
 	.byte	0
@@ -3386,6 +3386,8 @@ FrameTx:
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
 .LASF145:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
+.LASF600:
+	.ascii	"_CAN_Speed (500)\000"
 .LASF323:
 	.ascii	"__SIZEOF_WINT_T__ 4\000"
 .LASF299:
@@ -4280,8 +4282,6 @@ FrameTx:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF665:
 	.ascii	"run_status\000"
-.LASF600:
-	.ascii	"_CAN_Speed (250)\000"
 .LASF551:
 	.ascii	"INT_FAST64_MIN _EWL_LLONG_MIN\000"
 .LASF503:

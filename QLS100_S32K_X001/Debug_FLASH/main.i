@@ -15155,7 +15155,8 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
 #define DO_CAN_STB_PORT PTC
 #define DO_CAN_STB 5U
 volatile int exit_code = 0;
-# 59 "../Sources/main.c"
+# 58 "../Sources/main.c"
+float rf_Velocity = 0.0;
 int main(void)
 {
 
@@ -15163,7 +15164,7 @@ int main(void)
  static float rf_us_tof_level;
  static float rf_us_tof_concentra;
     static float rf_VBat = 0.0;
-    static float rf_Velocity = 0.0,level = 0.0;
+    static float level = 0.0;
     static short int rf_ult_temp = 0;
     static uint16_t rf_tmr_level = 0.0;
 # 78 "../Sources/main.c"

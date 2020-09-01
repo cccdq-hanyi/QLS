@@ -2171,7 +2171,7 @@
 	.uleb128 0xd
 	.4byte	.LASF585
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.cedbde0e4b4559e582dbd0eb61a2a991,comdat
+	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.82c265112a2d658c69ce24ec9563a368,comdat
 .Ldebug_macro12:
 	.2byte	0x4
 	.byte	0
@@ -2313,6 +2313,8 @@
 	.ascii	"__WCHAR_MAX__ 4294967295U\000"
 .LASF145:
 	.ascii	"__DBL_DECIMAL_DIG__ 17\000"
+.LASF601:
+	.ascii	"_CAN_Speed (500)\000"
 .LASF128:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF585:
@@ -3131,8 +3133,6 @@
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF451:
 	.ascii	"_EWL_CDECL \000"
-.LASF601:
-	.ascii	"_CAN_Speed (250)\000"
 .LASF540:
 	.ascii	"INT_FAST64_MIN _EWL_LLONG_MIN\000"
 .LASF490:

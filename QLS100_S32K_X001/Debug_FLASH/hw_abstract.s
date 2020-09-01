@@ -854,11 +854,11 @@ u8_timer_cnt:
 	.size	task_5ms_OK, 1
 task_5ms_OK:
 	.space	1
-	.section	.bss.u8_cnt.5167,"aw",%nobits
+	.section	.bss.u8_cnt.5170,"aw",%nobits
 	.set	.LANCHOR1,. + 0
-	.type	u8_cnt.5167, %object
-	.size	u8_cnt.5167, 1
-u8_cnt.5167:
+	.type	u8_cnt.5170, %object
+	.size	u8_cnt.5170, 1
+u8_cnt.5170:
 	.space	1
 	.text
 .Letext0:
@@ -1806,7 +1806,7 @@ u8_cnt.5167:
 	.4byte	0x48
 	.uleb128 0x5
 	.byte	0x3
-	.4byte	u8_cnt.5167
+	.4byte	u8_cnt.5170
 	.uleb128 0x16
 	.4byte	.LVL29
 	.4byte	0x967
@@ -27188,7 +27188,7 @@ u8_cnt.5167:
 	.uleb128 0xd
 	.4byte	.LASF7968
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.cedbde0e4b4559e582dbd0eb61a2a991,comdat
+	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.82c265112a2d658c69ce24ec9563a368,comdat
 .Ldebug_macro16:
 	.2byte	0x4
 	.byte	0
@@ -32851,6 +32851,8 @@ u8_cnt.5167:
 	.ascii	"_SR_FCF_SHIFT))&LPSPI_SR_FCF_MASK)\000"
 .LASF3965:
 	.ascii	"FTM_PWMLOAD_CH2SEL_SHIFT 2u\000"
+.LASF7984:
+	.ascii	"_CAN_Speed (500)\000"
 .LASF2876:
 	.ascii	"FLEXIO_PIN_PDI_WIDTH 8u\000"
 .LASF925:
@@ -34218,8 +34220,6 @@ u8_cnt.5167:
 	.ascii	"SIM_FTMOPT1_FTM1CH0SEL_MASK 0x30u\000"
 .LASF5977:
 	.ascii	"MPU_RGD_WORD2_M2SM_MASK 0x18000u\000"
-.LASF7984:
-	.ascii	"_CAN_Speed (250)\000"
 .LASF6129:
 	.ascii	"MSCM_CPxCFG0_DCWY_WIDTH 8u\000"
 .LASF3664:

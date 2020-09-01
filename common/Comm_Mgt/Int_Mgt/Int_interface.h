@@ -7,7 +7,7 @@ extern "C"
 #include "typedef_all.h"
 #include "Int_para.h"
 #include "..\Can_Com\can_com.h"
-
+extern uint8_t u8_int_Write_PGN64923_message(uint8_t *data,uint8_t len);
     //CAN Network
     //write normal msg ---------------------------------------------------------------------------------
     extern uint8_t u8_int_Write_PGN64923_SPN3515(uint8_t val);

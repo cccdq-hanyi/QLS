@@ -2300,7 +2300,7 @@ u8_node_task:
 	.uleb128 0xd
 	.4byte	.LASF585
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.cedbde0e4b4559e582dbd0eb61a2a991,comdat
+	.section	.debug_macro,"G",%progbits,wm4.node_cfg.h.2.82c265112a2d658c69ce24ec9563a368,comdat
 .Ldebug_macro12:
 	.2byte	0x4
 	.byte	0
@@ -25751,8 +25751,8 @@ u8_node_task:
 .LASF6102:
 	.ascii	"MPU_RGDAAC_M2UM(x) (((uint32_t)(((uint32_t)(x))<<MP"
 	.ascii	"U_RGDAAC_M2UM_SHIFT))&MPU_RGDAAC_M2UM_MASK)\000"
-.LASF2214:
-	.ascii	"DMA_EEI_EEI2_WIDTH 1u\000"
+.LASF2240:
+	.ascii	"DMA_EEI_EEI9_MASK 0x200u\000"
 .LASF237:
 	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
 .LASF1918:
@@ -25894,8 +25894,6 @@ u8_node_task:
 	.ascii	"GSEL_MASK)\000"
 .LASF7534:
 	.ascii	"SIM_CHIPCTL_PDB_BB_SEL_SHIFT 13u\000"
-.LASF2240:
-	.ascii	"DMA_EEI_EEI9_MASK 0x200u\000"
 .LASF1411:
 	.ascii	"CAN_CBT_EPRESDIV_MASK 0x7FE00000u\000"
 .LASF4652:
@@ -30074,6 +30072,8 @@ u8_node_task:
 	.ascii	"_SR_FCF_SHIFT))&LPSPI_SR_FCF_MASK)\000"
 .LASF4011:
 	.ascii	"FTM_PWMLOAD_CH2SEL_SHIFT 2u\000"
+.LASF601:
+	.ascii	"_CAN_Speed (500)\000"
 .LASF2922:
 	.ascii	"FLEXIO_PIN_PDI_WIDTH 8u\000"
 .LASF971:
@@ -30148,6 +30148,8 @@ u8_node_task:
 	.ascii	"RCM_PARAM_ELVD_SHIFT 1u\000"
 .LASF3943:
 	.ascii	"FTM_SWOCTRL_CH1OC_SHIFT 1u\000"
+.LASF2214:
+	.ascii	"DMA_EEI_EEI2_WIDTH 1u\000"
 .LASF4611:
 	.ascii	"LPI2C_SSR_TDF_SHIFT 0u\000"
 .LASF740:
@@ -31448,8 +31450,8 @@ u8_node_task:
 	.ascii	"SIM_FTMOPT1_FTM1CH0SEL_MASK 0x30u\000"
 .LASF6023:
 	.ascii	"MPU_RGD_WORD2_M2SM_MASK 0x18000u\000"
-.LASF601:
-	.ascii	"_CAN_Speed (250)\000"
+.LASF7622:
+	.ascii	"SIM_ADCOPT_ADC1PRETRGSEL_SHIFT 12u\000"
 .LASF6175:
 	.ascii	"MSCM_CPxCFG0_DCWY_WIDTH 8u\000"
 .LASF3710:
@@ -41348,8 +41350,6 @@ u8_node_task:
 	.ascii	"FTM_INVCTRL_INV0EN(x) (((uint32_t)(((uint32_t)(x))<"
 	.ascii	"<FTM_INVCTRL_INV0EN_SHIFT))&FTM_INVCTRL_INV0EN_MASK"
 	.ascii	")\000"
-.LASF7622:
-	.ascii	"SIM_ADCOPT_ADC1PRETRGSEL_SHIFT 12u\000"
 .LASF5068:
 	.ascii	"LPSPI_IER_WCIE_SHIFT 8u\000"
 .LASF2185:

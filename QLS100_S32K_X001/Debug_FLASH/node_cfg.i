@@ -375,7 +375,7 @@
 
 
 #define _CAN_Ch (0)
-#define _CAN_Speed (250)
+#define _CAN_Speed (500)
 #define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
 

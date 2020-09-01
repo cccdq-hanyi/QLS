@@ -55,7 +55,7 @@ uint16_t u16_timerCnt = 0;
  *     - Peripherals_Init()
  */
 
-
+float rf_Velocity = 0.0;
 int main(void)
 {
     /* Write your local variable definition here */
@@ -63,7 +63,7 @@ int main(void)
 	static float rf_us_tof_level;
 	static float rf_us_tof_concentra;
     static float rf_VBat = 0.0;
-    static float rf_Velocity = 0.0,level = 0.0;
+    static float level = 0.0;
     static short int rf_ult_temp = 0;
     static uint16_t rf_tmr_level = 0.0;
     /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/

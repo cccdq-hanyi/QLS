@@ -1396,7 +1396,7 @@ typedef void (*func_v_v)(void);
 
 
 #define _CAN_Ch (0)
-#define _CAN_Speed (250)
+#define _CAN_Speed (500)
 #define _CAN_ClockSpeed (16)
 #define _CAN_ClockSource (0)
 
@@ -10852,7 +10852,7 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
     extern uint8_t u8_cancomm_TxOneFrame(void);
     extern uint8_t u8_cancomm_TxDirect(uint32_t id, uint8_t *data, uint8_t len);
 # 10 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_interface.h" 2
-
+extern uint8_t u8_int_Write_PGN64923_message(uint8_t *data,uint8_t len);
 
 
     extern uint8_t u8_int_Write_PGN64923_SPN3515(uint8_t val);
@@ -10874,6 +10874,32 @@ extern void J1939_FLEXCAN_DRV_Deinit(void);
 # 2 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_interface.c" 2
 
 
+
+uint8_t u8_int_Write_PGN64923_message(uint8_t *data,uint8_t len)
+{
+ msg_struct *Pmsg;
+ uint8_t writelen = len > 8 ? 8 : len;
+ uint8_t i;
+ Pmsg = &node_info.msg_tx_ecu[Frame_Tx_1];
+ for (i=0;i<len;i++)
+ {
+  Pmsg->Buffer.Data[i] = data[i];
+ }
+ return 0;
+}
+
+uint8_t u8_int_Write_PGN65110_message(uint8_t *data,uint8_t len)
+{
+ msg_struct *Pmsg;
+ uint8_t writelen = len > 8 ? 8 : len;
+ uint8_t i;
+ Pmsg = &node_info.msg_tx_ecu[Frame_Tx_2];
+ for (i=0;i<len;i++)
+ {
+  Pmsg->Buffer.Data[i] = data[i];
+ }
+ return 0;
+}
 
 
 uint8_t u8_int_Write_PGN64923_SPN3515(uint8_t val)
@@ -10962,14 +10988,14 @@ uint8_t u8_int_Init(void)
 
 static uint8_t u8_int_FrameRx(void)
 {
-# 137 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_interface.c"
+# 163 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_interface.c"
  return 0;
 }
 static uint8_t u8_int_FrameTx(void)
 {
  uint8_t i = 0;
  pmsg_struct Pmsg;
-# 155 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_interface.c"
+# 181 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_interface.c"
  if ((0 == (node_info.comm_status & (0x01))))
   return 2;
 
@@ -11030,6 +11056,6 @@ uint8_t u8_int_TxCallback(uint32_t id, uint8_t *data, uint8_t len)
 }
 uint8_t u8_int_RxCallback(uint32_t id, uint8_t *data, uint8_t len)
 {
-# 246 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_interface.c"
+# 272 "D:/QLS/common/Comm_Mgt/Int_Mgt/Int_interface.c"
  return 0;
 }
